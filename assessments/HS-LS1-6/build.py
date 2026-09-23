@@ -117,8 +117,18 @@ def mc_item(n, item):
 
 
 def essay_item(n, item):
-    rubric = "".join(f"<li><strong>{c}:</strong> {d}</li>" for c, d in item["rubric"])
-    fb = f"Scoring rubric:</p><ul>{rubric}</ul><p><strong>Exemplar:</strong> {item['exemplar']}"
+    rows = "".join(
+        f"<tr><td><strong>{score}</strong></td><td>{level}</td><td>{desc}</td></tr>"
+        for score, level, desc in item["rubric"]
+    )
+    notes = "".join(f"<li>{n}</li>" for n in item["grading_notes"])
+    fb = (
+        "<strong>4-point scoring rubric</strong></p>"
+        '<table border="1" cellpadding="4"><tr><th>Score</th><th>Level</th><th>Descriptor</th></tr>'
+        f"{rows}<tr><td><strong>0</strong></td><td>No response</td><td>Blank or off-topic.</td></tr></table>"
+        f"<p><strong>Grading notes</strong></p><ul>{notes}</ul>"
+        f"<p><strong>Exemplar (score 4):</strong> {item['exemplar']}"
+    )
     return (
         f'<item ident="{QUIZ_ID}_fr{n}" title="{escape(item["title"])} (DOK {item["dok"]})">'
         + metadata("essay_question", item["points"])
@@ -205,9 +215,12 @@ def build_key(mc, total):
     out += ["---", "", "## Part 3: Free Response", ""]
     for i, item in enumerate(q.FREE_RESPONSE, 1):
         out += [f"### {i}. {item['title'].split(' - ', 1)[1]} (DOK {item['dok']}, {item['points']} pts)", "",
-                to_md(item["prompt"]), "", "**Rubric**", "", "| Criterion | Full credit looks like |", "| --- | --- |"]
-        out += [f"| {c} | {d} |" for c, d in item["rubric"]]
-        out += ["", f"**Exemplar response:** {item['exemplar']}", ""]
+                to_md(item["prompt"]), "", "**4-point scoring rubric**", "",
+                "| Score | Level | Descriptor |", "| --- | --- | --- |"]
+        out += [f"| {score} | {level} | {desc} |" for score, level, desc in item["rubric"]]
+        out += ["| 0 | No response | Blank or off-topic. |", "", "**Grading notes**", ""]
+        out += [f"- {n}" for n in item["grading_notes"]]
+        out += ["", f"**Exemplar response (score 4):** {item['exemplar']}", ""]
     out += ["---", "", "## Quick answer key", "",
             "| MC # | " + " | ".join(str(i) for i in range(1, len(mc) + 1)) + " |",
             "| --- | " + " | ".join("---" for _ in mc) + " |",

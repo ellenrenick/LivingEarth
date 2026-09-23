@@ -2,13 +2,13 @@
 
 **Course:** Living Earth (Biology), Grade 9  
 **Priority standard:** HS-LS1-6  
-**Total points:** 40
+**Total points:** 36
 
 | Part | Items | DOK | Points |
 | --- | --- | --- | --- |
 | 1. Vocabulary matching | 8 terms | 1 | 8 |
 | 2. Multiple choice | 10 | 2, 3 | 20 |
-| 3. Free response | 2 | 3 | 12 |
+| 3. Free response | 2 | 3 | 8 |
 
 ---
 
@@ -193,7 +193,7 @@ D. Plants use light energy to build sugar from CO2 and water; atoms from that su
 
 ## Part 3: Free Response
 
-### 1. Yellow lettuce in the greenhouse (DOK 3, 6 pts)
+### 1. Yellow lettuce in the greenhouse (DOK 3, 4 pts)
 
 A greenhouse grower raises two batches of lettuce. Both get the same light, water, carbon dioxide, and temperature. Batch 1 receives a nitrogen fertilizer; Batch 2 does not. After 4 weeks she measures the plants:
 
@@ -212,18 +212,28 @@ Write a scientific explanation for the grower using **Claim, Evidence, and Reaso
 - **Reasoning:** Explain how the carbon, hydrogen, and oxygen in sugar combine with other elements to build the molecules a plant needs to grow. Include why the sugar built up in Batch 2.
 - **Prediction:** Predict what would happen to the sugar and protein levels in Batch 2 if the grower began adding nitrogen fertilizer, and explain why.
 
-**Rubric**
+**4-point scoring rubric**
 
-| Criterion | Full credit looks like |
-| --- | --- |
-| Claim (1 pt) | States that Batch 2 lacked nitrogen, so it could not turn its sugar into amino acids/proteins needed to build new tissue. |
-| Evidence (2 pts) | Cites at least two accurate data points (e.g., protein 38 vs. 7 mg/g; mass 310 vs. 95 g; sugar 15 vs. 28 mg/g; yellow vs. green leaves). 1 pt per relevant data point, max 2. |
-| Reasoning (2 pts) | 1 pt: Sugar contains only C, H, and O; amino acids/proteins also need nitrogen, which must come from the soil/fertilizer. 1 pt: Atoms from sugar are rearranged and combined with nitrogen to build amino acids (and other large carbon-based molecules); without nitrogen, sugar is not used and accumulates. |
-| Prediction (1 pt) | Predicts sugar will decrease and protein (and mass) will increase, because sugar's atoms will now be combined with nitrogen to build amino acids/proteins. |
+| Score | Level | Descriptor |
+| --- | --- | --- |
+| 4 | Advanced | Accurate claim that the missing nitrogen kept Batch 2 from turning its sugar into amino acids and proteins. Cites at least two accurate data points and contrasts them (for example, sugar is higher but protein and mass are lower). Reasoning explains that sugar contains only C, H, and O, and that atoms from sugar are rearranged and combined with nitrogen to form amino acids that build proteins and new cells. Explains why the sugar built up. Prediction is correct (sugar goes down, protein and mass go up) and justified. |
+| 3 | Proficient | Accurate claim and at least two accurate data points. Reasoning connects sugar plus nitrogen to amino acids or proteins but leaves out one piece (for example, that sugar has no nitrogen, or why sugar built up). Prediction is correct, but the justification is brief. |
+| 2 | Developing | Claim is partly correct (for example, "it needs nitrogen to grow") without linking nitrogen to using sugar. Uses only one data point, or uses data inaccurately. Reasoning is vague or has a minor misconception. Prediction is missing or not justified. |
+| 1 | Beginning | Claim is wrong or missing (for example, "nitrogen is needed for photosynthesis" or "more sugar should mean a bigger plant"). Little or no data. Reasoning is missing or shows a major misconception (for example, atoms are created, or sunlight becomes matter). |
+| 0 | No response | Blank or off-topic. |
 
-**Exemplar response:** Batch 2 is smaller because it did not have nitrogen, so it could not use its sugar to build proteins for new cells. Batch 2 had only 7 mg/g of protein compared to 38 mg/g in Batch 1, and its heads were only 95 g compared to 310 g, even though it had more sugar (28 vs. 15 mg/g). Photosynthesis makes sugar, which only contains carbon, hydrogen, and oxygen. To build amino acids, the plant rearranges atoms from sugar and combines them with nitrogen from the soil or fertilizer. The amino acids link into proteins that build new cells. Without nitrogen, Batch 2 kept making sugar but could not convert it, so the sugar built up while growth stayed low. If nitrogen is added, I predict sugar levels will drop and protein and mass will rise, because the stored sugar will be used with the new nitrogen to make amino acids and proteins.
+**Grading notes**
 
-### 2. Revise the chicken explanation (DOK 3, 6 pts)
+- Look for: "sugar only has C, H, and O"; "nitrogen comes from the fertilizer or soil"; "atoms are rearranged or combined"; "the sugar piled up because it couldn't be used".
+- Key data contrast: Batch 2 made MORE sugar (28 vs. 15 mg/g), so photosynthesis still worked. Nitrogen limited protein (7 vs. 38 mg/g) and growth (95 vs. 310 g).
+- Common misconception: "without nitrogen the plant can't do photosynthesis." The sugar data contradict this, so the claim can't earn a 3 or 4.
+- Common misconception: fertilizer is "plant food" that supplies energy or carbon. Fertilizer supplies elements like nitrogen, not sugar.
+- Mentioning that chlorophyll needs nitrogen (the yellow leaves) is a good extension but isn't required.
+- Don't take off points for leaving out chemical reaction details or names of macromolecule types. Both are outside the HS-LS1-6 assessment boundary.
+
+**Exemplar response (score 4):** Batch 2 is smaller because it did not have nitrogen, so it could not use its sugar to build proteins for new cells. Batch 2 had only 7 mg/g of protein compared to 38 mg/g in Batch 1, and its heads were only 95 g compared to 310 g, even though it had more sugar (28 vs. 15 mg/g). Photosynthesis makes sugar, which only contains carbon, hydrogen, and oxygen. To build amino acids, the plant rearranges atoms from sugar and combines them with nitrogen from the soil or fertilizer. The amino acids link into proteins that build new cells. Without nitrogen, Batch 2 kept making sugar but could not convert it, so the sugar built up while growth stayed low. If nitrogen is added, I predict sugar levels will drop and protein and mass will rise, because the stored sugar will be used with the new nitrogen to make amino acids and proteins.
+
+### 2. Revise the chicken explanation (DOK 3, 4 pts)
 
 A student wrote this explanation about a chicken that eats only corn:
 > “The chicken's muscle proteins come straight from the corn. The chicken eats corn protein and stores it in its muscles without changing it.”
@@ -236,15 +246,25 @@ Scientists then collected the following evidence:
 - **Revise:** Write an improved explanation that traces carbon atoms from the *air* to the *chicken's muscle*. Your explanation must describe how carbon, hydrogen, and oxygen from sugar combine with other elements (such as nitrogen) to form amino acids and proteins.
 - **Connect:** Explain how the bead model supports the idea that matter is conserved during this process.
 
-**Rubric**
+**4-point scoring rubric**
 
-| Criterion | Full credit looks like |
-| --- | --- |
-| Evaluate (2 pts) | 1 pt: Supported part - the atoms in chicken protein do come from the corn (tracer carbon moved from corn to chicken muscle). 1 pt: Unsupported part - the protein is not stored unchanged; chicken protein has a different amino acid order, so the corn molecules were broken down and rebuilt. |
-| Revise (3 pts) | 1 pt: Traces carbon from CO2 in air into corn sugar by photosynthesis. 1 pt: Explains that C, H, and O from sugar combine with nitrogen (from soil in corn; from eaten protein in the chicken) to form amino acids. 1 pt: Explains the chicken breaks down corn molecules and rearranges the atoms/amino acids into its own new proteins. |
-| Connect (1 pt) | Explains that the bead model shows atoms are rearranged into new molecules without being created or destroyed, so the same atoms move from air to corn to chicken. |
+| Score | Level | Descriptor |
+| --- | --- | --- |
+| 4 | Advanced | Correctly evaluates both parts with evidence: the tracer data support that the atoms come from the corn, and the different amino acid order refutes "stored unchanged." The revision traces carbon completely: CO2 from the air goes into corn sugar through photosynthesis. Atoms from sugar combine with nitrogen to form amino acids and corn proteins. The chicken breaks these down and rearranges the atoms into its own new proteins. Clearly explains that the bead model shows atoms are rearranged, not created or destroyed. |
+| 3 | Proficient | Evaluates both parts, with evidence for at least one. Traces carbon from the air to the corn to the chicken and includes sugar and nitrogen, but one step is thin (for example, doesn't say the chicken breaks down and rebuilds the molecules). Links the bead model to conservation of matter, even if briefly. |
+| 2 | Developing | Identifies only the supported part or only the unsupported part. The revision is incomplete: it skips the sugar step or the nitrogen, or still suggests the protein is stored unchanged. The bead-model connection is vague or missing. |
+| 1 | Beginning | Repeats the original explanation or shows a major misconception. Little or no evidence. No traceable path for the carbon atoms. |
+| 0 | No response | Blank or off-topic. |
 
-**Exemplar response:** The student is partly right: the atoms in the chicken's muscle protein do come from the corn, because the labeled carbon traveled from the corn into the chicken's muscle. But the chicken does not store corn protein unchanged, because the amino acid order in chicken protein is very different from any corn protein. Revised explanation: The corn takes in carbon dioxide from the air and uses light energy to build sugar during photosynthesis. The corn then rearranges the carbon, hydrogen, and oxygen atoms from sugar and combines them with nitrogen from the soil to make amino acids, which link into corn proteins (and it also makes starch). When the chicken eats the corn, it breaks those molecules down into smaller pieces like amino acids and sugars. The chicken's cells then rearrange those atoms and build its own amino acid chains in a new order, making chicken muscle protein. The bead model supports this because the same beads were taken apart and rebuilt into different molecules with none added or lost, showing atoms are conserved - they are only rearranged.
+**Grading notes**
+
+- The key idea to look for is breaking down "stored unchanged": words like "broken down," "rearranged," "rebuilt," or "new order of amino acids."
+- Nitrogen sources: the corn gets nitrogen from the soil, and the chicken gets nitrogen from the corn proteins it eats (the bead model's blue beads). Either source counts for the nitrogen step.
+- Common misconceptions: the carbon comes from soil or water; the chicken "makes" carbon; sunlight becomes the protein (confusing energy with matter).
+- "The chicken digests the corn" alone is a Developing-level response. It must say the atoms or amino acids are rebuilt into the chicken's own proteins.
+- Don't take off points for leaving out chemical reaction details or names of macromolecule types. Both are outside the HS-LS1-6 assessment boundary.
+
+**Exemplar response (score 4):** The student is partly right: the atoms in the chicken's muscle protein do come from the corn, because the labeled carbon traveled from the corn into the chicken's muscle. But the chicken does not store corn protein unchanged, because the amino acid order in chicken protein is very different from any corn protein. Revised explanation: The corn takes in carbon dioxide from the air and uses light energy to build sugar during photosynthesis. The corn then rearranges the carbon, hydrogen, and oxygen atoms from sugar and combines them with nitrogen from the soil to make amino acids, which link into corn proteins (and it also makes starch). When the chicken eats the corn, it breaks those molecules down into smaller pieces like amino acids and sugars. The chicken's cells then rearrange those atoms and build its own amino acid chains in a new order, making chicken muscle protein. The bead model supports this because the same beads were taken apart and rebuilt into different molecules with none added or lost, showing atoms are conserved - they are only rearranged.
 
 ---
 
