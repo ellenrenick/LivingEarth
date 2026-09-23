@@ -9,6 +9,8 @@ Grade 9 Living Earth (Biology) assessment for **HS-LS1-6**: how carbon, hydrogen
 | Free response (CER / revise an explanation), 4-point rubric | 2 | 3 | 8 |
 | **Total** | | | **36** |
 
+**Lessons:** the 7-lesson unit that leads into these assessments is in [`lessons/HS-LS1-6`](../../lessons/HS-LS1-6/README.md).
+
 ## Files
 
 **Summative test** (about 50 minutes)
