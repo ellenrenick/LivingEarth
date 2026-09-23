@@ -5,6 +5,12 @@ package and the teacher copy.
 """
 
 TITLE = "HS-LS1-6 Assessment: From Sugar to Building Blocks"
+QUIZ_ID = "hs_ls1_6_sugar_to_building_blocks"
+FILE_PREFIX = "HS-LS1-6"
+MAX_ATTEMPTS = 1
+TIME_MINUTES = 50
+# Where the correct answer lands for each MC item (0 = A), balanced across letters.
+KEY_POSITIONS = [1, 3, 0, 2, 1, 0, 3, 2, 0, 3]
 
 DESCRIPTION = (
     "<p><strong>Living Earth (Biology) &ndash; HS-LS1-6</strong></p>"

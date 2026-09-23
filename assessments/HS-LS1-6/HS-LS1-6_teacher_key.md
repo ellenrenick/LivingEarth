@@ -2,7 +2,8 @@
 
 **Course:** Living Earth (Biology), Grade 9  
 **Priority standard:** HS-LS1-6  
-**Total points:** 36
+**Total points:** 36  
+**Suggested time:** 50 minutes
 
 | Part | Items | DOK | Points |
 | --- | --- | --- | --- |

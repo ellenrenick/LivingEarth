@@ -11,9 +11,21 @@ Grade 9 Living Earth (Biology) assessment for **HS-LS1-6**: how carbon, hydrogen
 
 ## Files
 
+**Summative test** (about 50 minutes)
 - `HS-LS1-6_canvas_qti.zip`: import this into Canvas.
 - `HS-LS1-6_teacher_key.md`: all questions with the answer key, DOK levels, 4-point rubrics, grading notes, and sample answers.
-- `questions.py`: the question bank. Edit it and run `python3 build.py` to rebuild both files.
+- `questions.py`: the question bank.
+
+**Practice test** (about 20 minutes, 22 points, unlimited attempts)
+- `HS-LS1-6_practice_canvas_qti.zip`: import this into Canvas. It has 6 matching terms, 6 multiple-choice questions (DOK 2 and 3), and 1 free-response question (DOK 3, 4-point rubric). All scenarios are new, so the practice test doesn't give away the summative.
+- `HS-LS1-6_practice_teacher_key.md`: answer key, rubric, and grading notes.
+- `practice_questions.py`: the question bank.
+
+**Review** (do after the practice test, about 30–40 minutes)
+- `HS-LS1-6_review.html`: student review. It maps each practice question to a review section and includes vocabulary, atom accounting, energy vs. matter, tracing atoms, evidence matching, scoring sample answers, and revising an explanation. Open it in a browser to print. To use it as a Canvas Page, paste the part between `<body>` and `</body>` into the page's HTML editor.
+- `HS-LS1-6_review_key.md`: answer key for the review.
+
+To change a quiz, edit its question bank and run `python3 build.py`, which rebuilds both quizzes.
 
 ## Importing into Canvas
 
@@ -21,6 +33,7 @@ Grade 9 Living Earth (Biology) assessment for **HS-LS1-6**: how carbon, hydrogen
 2. Content Type: **QTI .zip file**. Choose `HS-LS1-6_canvas_qti.zip`.
 3. Select **All content**, then click **Import**. When it finishes, the quiz shows up under **Quizzes**. Canvas creates it unpublished.
 4. Before you publish, check the settings: time limit, availability dates, and whether students can see correct answers.
+5. For the practice test, set **Quiz Type** to **Practice Quiz** so it doesn't count toward grades, and set the **Time Limit** to 20 minutes if you want one. The zip doesn't set these.
 
 Notes:
 - Canvas grades the matching and multiple-choice questions automatically. The 2 free-response questions are essays that you grade in SpeedGrader. Each essay's feedback holds its 4-point rubric, grading notes, and a sample answer. Canvas shows this feedback to students after they submit. To hide it, turn off **Let students see their quiz responses** in the quiz settings.

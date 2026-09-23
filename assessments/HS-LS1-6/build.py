@@ -1,9 +1,9 @@
-"""Build the Canvas QTI 1.2 package and teacher copy from questions.py.
+"""Build Canvas QTI 1.2 packages and teacher copies from the question banks.
 
 Usage: python3 build.py
-Outputs (next to this file):
-  HS-LS1-6_canvas_qti.zip  - import into Canvas (Settings > Import Course Content > QTI .zip)
-  HS-LS1-6_teacher_key.md  - readable copy with answer key, DOK levels, and rubrics
+For each bank in BANKS, writes (next to this file):
+  <FILE_PREFIX>_canvas_qti.zip  - import into Canvas (Settings > Import Course Content > QTI .zip)
+  <FILE_PREFIX>_teacher_key.md  - readable copy with answer key, DOK levels, and rubrics
 """
 
 import html
@@ -13,19 +13,16 @@ import zipfile
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-import questions as q
+import practice_questions
+import questions
 
+BANKS = [questions, practice_questions]
 HERE = Path(__file__).parent
-ZIP_PATH = HERE / "HS-LS1-6_canvas_qti.zip"
-KEY_PATH = HERE / "HS-LS1-6_teacher_key.md"
-QUIZ_ID = "hs_ls1_6_sugar_to_building_blocks"
 MC_POINTS = 2
 LETTERS = "ABCDEFGH"
-# Where the correct answer lands for each MC item (0 = A), balanced across letters.
-KEY_POSITIONS = [1, 3, 0, 2, 1, 0, 3, 2, 0, 3]
 
 
-def shuffled_mc():
+def shuffled_mc(q):
     """Return MC items with choices shuffled deterministically."""
     rng = random.Random(16)
     items = []
@@ -33,7 +30,7 @@ def shuffled_mc():
         key = item["choices"][item["answer"]]
         others = [c for i, c in enumerate(item["choices"]) if i != item["answer"]]
         rng.shuffle(others)
-        pos = KEY_POSITIONS[n % len(KEY_POSITIONS)]
+        pos = q.KEY_POSITIONS[n % len(q.KEY_POSITIONS)]
         choices = others[:pos] + [key] + others[pos:]
         items.append({**item, "choices": choices, "answer": pos})
     return items
@@ -61,7 +58,7 @@ def general_feedback(text):
     )
 
 
-def matching_item():
+def matching_item(q):
     m = q.MATCHING
     rights = [d for _, d in m["pairs"]] + m["distractors"]
     rng = random.Random(9)
@@ -84,7 +81,7 @@ def matching_item():
             f'</conditionvar><setvar varname="SCORE" action="Add">{share:.2f}</setvar></respcondition>'
         )
     return (
-        f'<item ident="{QUIZ_ID}_match" title="{escape(m["title"])}">'
+        f'<item ident="{q.QUIZ_ID}_match" title="{escape(m["title"])}">'
         + metadata("matching_question", m["points"])
         + f"<presentation>{mattext(m['prompt'])}{''.join(responses)}</presentation>"
         + '<resprocessing><outcomes><decvar maxvalue="100" minvalue="0" varname="SCORE" vartype="Decimal"/></outcomes>'
@@ -93,8 +90,8 @@ def matching_item():
     )
 
 
-def mc_item(n, item):
-    ident = f"{QUIZ_ID}_mc{n}"
+def mc_item(q, n, item):
+    ident = f"{q.QUIZ_ID}_mc{n}"
     labels = "".join(
         f'<response_label ident="{ident}_c{i}">{mattext(c)}</response_label>'
         for i, c in enumerate(item["choices"])
@@ -116,7 +113,7 @@ def mc_item(n, item):
     )
 
 
-def essay_item(n, item):
+def essay_item(q, n, item):
     rows = "".join(
         f"<tr><td><strong>{score}</strong></td><td>{level}</td><td>{desc}</td></tr>"
         for score, level, desc in item["rubric"]
@@ -130,7 +127,7 @@ def essay_item(n, item):
         f"<p><strong>Exemplar (score 4):</strong> {item['exemplar']}"
     )
     return (
-        f'<item ident="{QUIZ_ID}_fr{n}" title="{escape(item["title"])} (DOK {item["dok"]})">'
+        f'<item ident="{q.QUIZ_ID}_fr{n}" title="{escape(item["title"])} (DOK {item["dok"]})">'
         + metadata("essay_question", item["points"])
         + f"<presentation>{mattext(item['prompt'])}"
         + '<response_str ident="response1" rcardinality="Single"><render_fib><response_label ident="answer1" rshuffle="No"/></render_fib></response_str>'
@@ -146,35 +143,35 @@ def section(ident, title, items):
     return f'<section ident="{ident}" title="{escape(title)}">{"".join(items)}</section>'
 
 
-def build_qti(mc):
+def build_qti(q, mc):
     total = q.MATCHING["points"] + MC_POINTS * len(mc) + sum(f["points"] for f in q.FREE_RESPONSE)
     body = (
-        section("part1", q.MATCHING["title"], [matching_item()])
-        + section("part2", "Part 2: Multiple Choice", [mc_item(i + 1, it) for i, it in enumerate(mc)])
-        + section("part3", "Part 3: Free Response", [essay_item(i + 1, it) for i, it in enumerate(q.FREE_RESPONSE)])
+        section("part1", q.MATCHING["title"], [matching_item(q)])
+        + section("part2", "Part 2: Multiple Choice", [mc_item(q, i + 1, it) for i, it in enumerate(mc)])
+        + section("part3", "Part 3: Free Response", [essay_item(q, i + 1, it) for i, it in enumerate(q.FREE_RESPONSE)])
     )
     assessment = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<questestinterop xmlns="http://www.imsglobal.org/xsd/ims_qtiasiv1p2" '
         'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
         'xsi:schemaLocation="http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsglobal.org/xsd/ims_qtiasiv1p2p1.xsd">'
-        f'<assessment ident="{QUIZ_ID}" title="{escape(q.TITLE)}">'
-        "<qtimetadata><qtimetadatafield><fieldlabel>cc_maxattempts</fieldlabel><fieldentry>1</fieldentry></qtimetadatafield></qtimetadata>"
+        f'<assessment ident="{q.QUIZ_ID}" title="{escape(q.TITLE)}">'
+        f"<qtimetadata><qtimetadatafield><fieldlabel>cc_maxattempts</fieldlabel><fieldentry>{q.MAX_ATTEMPTS}</fieldentry></qtimetadatafield></qtimetadata>"
         f'<section ident="root_section">{body}</section>'
         "</assessment></questestinterop>\n"
     )
     manifest = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
-        f'<manifest identifier="{QUIZ_ID}_manifest" xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1">'
+        f'<manifest identifier="{q.QUIZ_ID}_manifest" xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1">'
         "<metadata><schema>IMS Content</schema><schemaversion>1.1.3</schemaversion></metadata>"
         "<organizations/>"
-        f'<resources><resource identifier="{QUIZ_ID}" type="imsqti_xmlv1p2" href="{QUIZ_ID}.xml">'
-        f'<file href="{QUIZ_ID}.xml"/></resource></resources>'
+        f'<resources><resource identifier="{q.QUIZ_ID}" type="imsqti_xmlv1p2" href="{q.QUIZ_ID}.xml">'
+        f'<file href="{q.QUIZ_ID}.xml"/></resource></resources>'
         "</manifest>\n"
     )
-    with zipfile.ZipFile(ZIP_PATH, "w", zipfile.ZIP_DEFLATED) as z:
+    with zipfile.ZipFile(HERE / f"{q.FILE_PREFIX}_canvas_qti.zip", "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("imsmanifest.xml", manifest)
-        z.writestr(f"{QUIZ_ID}.xml", assessment)
+        z.writestr(f"{q.QUIZ_ID}.xml", assessment)
     return total
 
 
@@ -196,9 +193,10 @@ def to_md(fragment):
     return re.sub(r"\n{3,}", "\n\n", s).strip()
 
 
-def build_key(mc, total):
+def build_key(q, mc, total):
     out = [f"# {q.TITLE}", "", "**Course:** Living Earth (Biology), Grade 9  ",
-           "**Priority standard:** HS-LS1-6  ", f"**Total points:** {total}", "",
+           "**Priority standard:** HS-LS1-6  ", f"**Total points:** {total}  ",
+           f"**Suggested time:** {q.TIME_MINUTES} minutes", "",
            "| Part | Items | DOK | Points |", "| --- | --- | --- | --- |",
            f"| 1. Vocabulary matching | {len(q.MATCHING['pairs'])} terms | 1 | {q.MATCHING['points']} |",
            f"| 2. Multiple choice | {len(mc)} | " + ", ".join(sorted({str(i['dok']) for i in mc})) + f" | {MC_POINTS * len(mc)} |",
@@ -225,11 +223,12 @@ def build_key(mc, total):
             "| MC # | " + " | ".join(str(i) for i in range(1, len(mc) + 1)) + " |",
             "| --- | " + " | ".join("---" for _ in mc) + " |",
             "| Answer | " + " | ".join(LETTERS[m["answer"]] for m in mc) + " |", ""]
-    KEY_PATH.write_text("\n".join(out), encoding="utf-8")
+    (HERE / f"{q.FILE_PREFIX}_teacher_key.md").write_text("\n".join(out), encoding="utf-8")
 
 
 if __name__ == "__main__":
-    mc = shuffled_mc()
-    total = build_qti(mc)
-    build_key(mc, total)
-    print(f"Wrote {ZIP_PATH.name} and {KEY_PATH.name} ({total} points)")
+    for bank in BANKS:
+        mc = shuffled_mc(bank)
+        total = build_qti(bank, mc)
+        build_key(bank, mc, total)
+        print(f"Wrote {bank.FILE_PREFIX}_canvas_qti.zip and {bank.FILE_PREFIX}_teacher_key.md ({total} points)")
