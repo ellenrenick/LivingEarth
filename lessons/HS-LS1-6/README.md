@@ -80,6 +80,6 @@ Per pair unless noted. Everything is reused from day to day.
 Each handout in `handouts/` is a plain HTML page that works like the review page:
 
 - **Print:** open it in a browser and print.
-- **Canvas Page:** open the page's HTML editor and paste everything between `<body>` and `</body>`.
+- **Canvas Page:** open the page's HTML editor and paste everything between `<body>` and `</body>`. Or create all seven pages at once with the uploader: `CANVAS_TOKEN=... python3 assessments/HS-LS1-6/canvas_upload.py https://kernhigh.instructure.com <course id> --only lessons`. The pages are created unpublished and named "HS-LS1-6 Lesson 1: ..." through "HS-LS1-6 Lesson 7: ...".
 
 The answer key for each handout is at the end of that lesson's plan.

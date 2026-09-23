@@ -1,10 +1,16 @@
-"""Create the HS-LS1-6 quizzes and review page directly in a Canvas course.
+"""Create the HS-LS1-6 quizzes, review page, and lesson handout pages in a Canvas course.
 
 Uses the Canvas REST API (Classic Quizzes), so no file upload is needed.
-Everything is created unpublished.
+Everything is created unpublished. Running it again creates duplicates, so use
+--only to create just the parts you don't have yet.
 
 Usage:
   CANVAS_TOKEN=... python3 canvas_upload.py https://kernhigh.instructure.com 330720
+  CANVAS_TOKEN=... python3 canvas_upload.py https://kernhigh.instructure.com 330720 --only lessons
+  python3 canvas_upload.py https://kernhigh.instructure.com 330720 --dry-run
+
+--only takes a comma-separated list of: quizzes, review, lessons (default: all three).
+--dry-run lists what would be created without contacting Canvas.
 """
 
 import json
@@ -16,11 +22,15 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+import argparse
+
 import build
 import practice_questions
 import questions
 
 HERE = Path(__file__).parent
+HANDOUTS = HERE.parent.parent / "lessons" / "HS-LS1-6" / "handouts"
+PARTS = ("quizzes", "review", "lessons")
 CA = "/root/.ccr/ca-bundle.crt"
 CTX = ssl.create_default_context(cafile=CA) if os.path.exists(CA) else ssl.create_default_context()
 
@@ -118,21 +128,55 @@ def upload_quiz(api, bank):
     print(f"Quiz: {quiz['title']} ({quiz['points_possible']} pts, {quiz['question_count']} items) {quiz['html_url']}")
 
 
-def upload_review(api):
-    src = (HERE / "HS-LS1-6_review.html").read_text(encoding="utf-8")
+def page_body(path):
+    """Return the part of an HTML file between <body> and </body>, without comments."""
+    src = path.read_text(encoding="utf-8")
     body = re.search(r"<body>(.*)</body>", src, re.S).group(1)
-    body = re.sub(r"<!--.*?-->", "", body, flags=re.S).strip()
-    page = api.call("POST", "/pages", {"wiki_page": {
-        "title": "HS-LS1-6 Review: From Sugar to Building Blocks",
-        "body": body,
-        "published": False,
-    }})
+    return re.sub(r"<!--.*?-->", "", body, flags=re.S).strip()
+
+
+def page_title(path):
+    return re.search(r"<title>(.*?)</title>", path.read_text(encoding="utf-8"), re.S).group(1).strip()
+
+
+def upload_page(api, title, body):
+    if api is None:
+        print(f"Would create page: {title} ({len(body):,} characters)")
+        return
+    page = api.call("POST", "/pages", {"wiki_page": {"title": title, "body": body, "published": False}})
     print(f"Page: {page['title']} {page['html_url']}")
 
 
+def upload_review(api):
+    upload_page(api, "HS-LS1-6 Review: From Sugar to Building Blocks", page_body(HERE / "HS-LS1-6_review.html"))
+
+
+def upload_lessons(api):
+    # lesson_1_handout.html ... lesson_7_handout.html, created in lesson order.
+    for path in sorted(HANDOUTS.glob("lesson_*_handout.html")):
+        upload_page(api, f"HS-LS1-6 {page_title(path)}", page_body(path))
+
+
 if __name__ == "__main__":
-    base, course = sys.argv[1], sys.argv[2]
-    api = Canvas(base, course, os.environ["CANVAS_TOKEN"])
-    for bank in (questions, practice_questions):
-        upload_quiz(api, bank)
-    upload_review(api)
+    ap = argparse.ArgumentParser(description="Create the HS-LS1-6 materials in a Canvas course.")
+    ap.add_argument("base", help="Canvas URL, e.g. https://kernhigh.instructure.com")
+    ap.add_argument("course", help="Canvas course id")
+    ap.add_argument("--only", default=",".join(PARTS), help="comma-separated: quizzes, review, lessons")
+    ap.add_argument("--dry-run", action="store_true", help="list what would be created without contacting Canvas")
+    args = ap.parse_args()
+    parts = [p.strip() for p in args.only.split(",") if p.strip()]
+    bad = [p for p in parts if p not in PARTS]
+    if bad:
+        sys.exit(f"Unknown part(s) for --only: {', '.join(bad)}. Choose from: {', '.join(PARTS)}")
+
+    api = None if args.dry_run else Canvas(args.base, args.course, os.environ["CANVAS_TOKEN"])
+    if "quizzes" in parts:
+        for bank in (questions, practice_questions):
+            if api is None:
+                print(f"Would create quiz: {bank.TITLE}")
+            else:
+                upload_quiz(api, bank)
+    if "review" in parts:
+        upload_review(api)
+    if "lessons" in parts:
+        upload_lessons(api)
