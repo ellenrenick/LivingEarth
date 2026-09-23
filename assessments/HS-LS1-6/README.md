@@ -27,6 +27,8 @@ Grade 9 Living Earth (Biology) assessment for **HS-LS1-6**: how carbon, hydrogen
 
 To change a quiz, edit its question bank and run `python3 build.py`, which rebuilds both quizzes.
 
+**Uploading straight to Canvas:** `CANVAS_TOKEN=... python3 canvas_upload.py https://kernhigh.instructure.com <course id>` builds both quizzes question by question through the Canvas API and creates the review page. It doesn't need a file upload. Everything is created unpublished. Running it again creates duplicates.
+
 ## Importing into Canvas
 
 1. In your course, go to **Settings → Import Course Content**.
