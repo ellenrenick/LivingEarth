@@ -40,3 +40,18 @@ To change a quiz, edit its question bank and run `python3 build.py`, which rebui
 Notes:
 - Canvas grades the matching and multiple-choice questions automatically. The 2 free-response questions are essays that you grade in SpeedGrader. Each essay's feedback holds its 4-point rubric, grading notes, and a sample answer. Canvas shows this feedback to students after they submit. To hide it, turn off **Let students see their quiz responses** in the quiz settings.
 - If you use **New Quizzes**, import into Classic first and then migrate the quiz, or import the zip from inside New Quizzes. Check the data tables after migration.
+
+## Unit 1.3 in New Quizzes (outcomes, CFAs, practice test, CSA)
+
+Built to match Earth Science Unit 3 (Forces Beneath Our Feet):
+
+- **Outcomes**: one per learning target, LS1-6.1 to LS1-6.6, in the outcome group "HS-LS1-6 · Unit 1.3: Sugar to Structures". They use a 4-point scale (Mastered 4, Proficient 3, Approaching 2, Not yet meeting 1, Insufficient evidence 0), mastery at 3, and the highest-score calculation.
+- **CFAs**: one per learning target, 5 one-point auto-graded questions each.
+- **Practice test and CSA**: parallel forms, 16 questions and 22 points each. A DOK 1–2 target (LS1-6.1 to 6.4) gets 3 one-point questions. A DOK 3 target (LS1-6.5, 6.6) gets 1 multiple-choice question plus 1 four-point written response that the teacher grades. The CSA reuses the questions in `questions.py`, and the practice test reuses `practice_questions.py` where an item fits a target.
+
+Files:
+- `unit13_bank.py`: targets, outcomes, and every question.
+- `newquiz_upload.py`: `CANVAS_TOKEN=... python3 newquiz_upload.py https://kernhigh.instructure.com 330720 1634113` creates the outcomes and the New Quizzes (unpublished) and adds the quizzes to the module. It skips anything whose title already exists.
+- `Unit1.3_teacher_key.md`: the outcome alignment map (each question → its target), answer keys, feedback, and rubrics. Rebuild it with `python3 build_unit13_key.py`.
+
+Each question title starts with its number and target ID (for example `Q7 · LS1-6.3 · ...`). Align outcomes to questions in the New Quizzes editor using those IDs.
