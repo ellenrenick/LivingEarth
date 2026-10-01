@@ -277,7 +277,7 @@ DAYS = [
     dict(
         day=6, title="Small Pieces, Big Molecules", lesson="Lesson 5", targets=["LS1-6.4", "LS1-6.2"],
         focus="How do amino acids become proteins, and what happens to them when an animal eats?",
-        slides=("Lesson 5: Small Pieces, Big Molecules (pptx)", FILE.format("1bCiFgSB37Z9wspFwRZTgaGJC0iR37q0M")),
+        slides=("Lesson 5: Small Pieces, Big Molecules", SLIDES.format("1tF7urG91FWcNfaae2WjjEmJLZPPd1_C2BmPdBm1regM")),
         handout=FILE.format("1vCEnX0TvmkAm6seT2VDEmlomYGl637Yj"),
         notebook=[
             "Title: <strong>D6 Small Pieces, Big Molecules</strong>. Add it to your table of contents.",
@@ -295,11 +295,11 @@ DAYS = [
         cfa="LS1-6.4",
         teacher=dict(
             glance="Monomers to polymers, and digest-and-rebuild. Students trace a carbon atom from the air into their own hair. CFA LS1-6.4 closes the lesson.",
-            materials="Lesson 5 slides (pptx in Drive) and handout; colored paper clips (5 colors) per pair; a \"cafeteria\" cup of extra clips; Chromebooks.",
+            materials="Lesson 5 slides and handout; colored paper clips (5 colors) per pair; a \"cafeteria\" cup of extra clips; Chromebooks.",
             agenda=[("0–4", "Warm-up"), ("4–10", "Monomers and polymers"), ("10–19", "Activity A: build a pumpkin seed protein"),
                     ("19–31", "Activity B: eat, digest, and rebuild"), ("31–37", "Trace a carbon atom"),
                     ("37–39", "Exit ticket (\"you are what you eat\")"), ("39–45", "CFA LS1-6.4")],
-            notes=["This deck has no Google Slides version yet, so the CFA isn't on a slide. Announce it from this page, or add a CFA slide after you convert the deck.",
+            notes=["The CFA slide is the last slide of the deck.",
                    "Keep the starch/cellulose rows about elements, not about classifying macromolecules (outside the HS-LS1-6 boundary)."],
             key=ul("Monomer/polymer: amino acid → protein · glucose → starch (energy storage) · glucose → cellulose (cell walls) · nucleotide → DNA/RNA. "
                    "Starch and cellulose: C, H, O. Proteins: C, H, O, N (some S).",
@@ -315,7 +315,7 @@ DAYS = [
     dict(
         day=7, title="What's the Evidence?", lesson="Lesson 6", targets=["LS1-6.5"],
         focus="What evidence do scientists have for how plants build their molecules?",
-        slides=("Lesson 6: What's the Evidence? (pptx)", FILE.format("13x4a21FJcHhXzfqfl6rtNMw57F4frh49")),
+        slides=("Lesson 6: What's the Evidence?", SLIDES.format("1Uip06UmGWFJnyU8avQuP3ko_bnp3yRbCBXrCxBCDRYI")),
         handout=FILE.format("1sxD7Lttp_p1Q7yeqIV17SXu-OV6kXn7X"),
         notebook=[
             "Title: <strong>D7 What's the Evidence?</strong> Add it to your table of contents.",
@@ -338,12 +338,12 @@ DAYS = [
         cfa="LS1-6.5",
         teacher=dict(
             glance="Jigsaw on four real data sets, then a short CER scored with the same 4-point rubric as the CSA. CFA LS1-6.5 closes the lesson.",
-            materials="Lesson 6 slides (pptx) and handout; station data cards (last pages of the handout/deck); Chromebooks.",
+            materials="Lesson 6 slides and handout; station data cards (last pages of the handout/deck); Chromebooks.",
             agenda=[("0–3", "How the jigsaw works"), ("3–16", "Expert groups"), ("16–30", "Home groups"),
                     ("30–35", "Match evidence to claims"), ("35–39", "Exit ticket: short CER"), ("39–45", "CFA LS1-6.5")],
             notes=["Expert and home-group time are each trimmed by 1–2 minutes from the original plan to fit the CFA.",
                    "Score the CER exit ticket with the 4-point rubric; it previews the CSA's written response (Q14).",
-                   "No Google Slides version of this deck yet, so the CFA isn't on a slide. Announce it from this page."],
+                   "The CFA slide comes right after the exit-ticket rubric (slide 9), before the station data slides."],
             key=ul("Station 1: labeled C appears first in a 3-carbon molecule, then sugars, then amino acids, then starch/proteins/fats; the carbon in proteins comes from CO₂ via sugar; atoms keep their identity. Claims A, B.",
                    "Station 2: still photosynthesizing (sugar 25 vs. 12 mg/g); lower without N: height 11 vs. 32 cm, amino acids 2 vs. 9, protein 10 vs. 40, dry mass 2.4 vs. 7.5 g; sugar built up because it couldn't be combined with N; chlorophyll contains N, so leaves are pale. Claims B, C, D.",
                    "Station 3: fungus gets sugar (carbon) from the plant; plant gets phosphorus (3.0 vs. 1.2 mg/g; dry mass 9.0 vs. 4.0 g); P is needed for DNA, RNA, membranes, ATP; less sugar with fungi because the plant used more for growth and sent some to the fungus; carbon traces back to CO₂. Claims C, D (and A, B).",
@@ -355,7 +355,7 @@ DAYS = [
     dict(
         day=8, title="Solving the Pumpkin Mystery", lesson="Lesson 7", targets=["LS1-6.5", "LS1-6.6"],
         focus="What is the pumpkin made of, and how did it get built?",
-        slides=("Lesson 7: Solving the Pumpkin Mystery (pptx)", FILE.format("1LJ1QOxwElYP00TDNnBghfjYlW5_K3c90")),
+        slides=("Lesson 7: Solving the Pumpkin Mystery", SLIDES.format("1t8Lrk0jHV10WnJJ9fgdSycAylj6la1xpOCUN383YD74")),
         handout=FILE.format("1yRUJCpK1hiP8DKsd9oxKwkJz5PFDngp-"),
         notebook=[
             "Title: <strong>D8 Solving the Pumpkin Mystery</strong>. Add it to your table of contents.",
@@ -374,12 +374,12 @@ DAYS = [
         cfa="LS1-6.6",
         teacher=dict(
             glance="Revise the Day 1 model and finish the unit CER as an explanation for the grower, peer-scored with the CSA rubric. CFA LS1-6.6 closes the lesson.",
-            materials="Lesson 7 slides (pptx) and handout; students' Day 1 models; different-colored pens; Chromebooks.",
+            materials="Lesson 7 slides and handout; students' Day 1 models; different-colored pens; Chromebooks.",
             agenda=[("0–4", "Warm-up"), ("4–11", "Class consensus model"), ("11–17", "Revise your model"),
                     ("17–29", "Explain it to the grower (unit CER)"), ("29–37", "Peer scoring"),
                     ("37–39", "Wrap-up: before the practice test, can you…"), ("39–45", "CFA LS1-6.6")],
             notes=["Collect the grower explanations as the unit CER grade (4-point rubric).",
-                   "No Google Slides version of this deck yet, so the CFA isn't on a slide. Announce it from this page."],
+                   "The CFA slide is the last slide of the deck."],
             key="<p><strong>Exemplar (score 4):</strong> Your pumpkin is made mostly from carbon dioxide from the air and water, not from the soil or fertilizer. "
                 "The soil level barely changed, yet the dry pumpkin has about 50 kg of carbon, and the fertilizer has no carbon at all. In class, labeled carbon "
                 "from CO₂ showed up first in sugar and later in proteins. The leaves use light energy to build sugar from CO₂ and water; sugar contains only "

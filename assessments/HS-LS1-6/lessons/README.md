@@ -9,9 +9,9 @@ Launch to CSA in 10 class days (45 minutes each). Each CFA closes the lesson tha
 | 3 | What Are Living Things Made Of? | Lesson 2 (CFA slide added) | LS1-6.1 |
 | 4 | Building Sugar from Air and Water | Lesson 3 (CFA slide added) | LS1-6.2 |
 | 5 | From Sugar to Amino Acids | Lesson 4 (CFA slide added) | LS1-6.3 |
-| 6 | Small Pieces, Big Molecules | Lesson 5 (pptx) | LS1-6.4 |
-| 7 | What's the Evidence? (jigsaw) | Lesson 6 (pptx) | LS1-6.5 |
-| 8 | Solving the Pumpkin Mystery (the unit CER is finished) | Lesson 7 (pptx) | LS1-6.6 |
+| 6 | Small Pieces, Big Molecules | Lesson 5 (CFA slide added) | LS1-6.4 |
+| 7 | What's the Evidence? (jigsaw) | Lesson 6 (CFA slide added after the exit ticket) | LS1-6.5 |
+| 8 | Solving the Pumpkin Mystery (the unit CER is finished) | Lesson 7 (CFA slide added) | LS1-6.6 |
 | 9 | Practice test and review stations | Day 9 Practice Test and Review | practice test → review or extension |
 | 10 | Unit 1.3 CSA | Day 10 Unit 1.3 CSA | |
 
@@ -27,4 +27,4 @@ Files:
 - `unit13_lessons.py`: the content of every day's pages.
 - `canvas_lessons_upload.py`: `CANVAS_TOKEN=... python3 canvas_lessons_upload.py https://kernhigh.instructure.com 330720 1634113` creates or updates the pages and orders the module. It's safe to run again.
 - `deck_requests.py`: Google Slides requests that built the Day 2, 9, and 10 decks (each a copy of the Lesson 2 deck).
-- `cfa_slide_requests.py`: requests that added the CFA slide to the Lesson 2–4 Google decks.
+- `cfa_slide_requests.py`: requests that added the CFA slide to the Lesson 2–7 Google decks.

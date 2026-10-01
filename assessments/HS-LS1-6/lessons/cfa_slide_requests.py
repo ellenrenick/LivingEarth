@@ -12,11 +12,15 @@ import sys
 sys.path.insert(0, "..")
 import unit13_bank as U  # noqa: E402
 
-# deck: (CFA target, list slide to copy, its kicker/title/list ids, slides in deck after the copy)
+# deck: (CFA target, list slide to copy, its kicker/title/list ids, where the CFA slide goes)
+# Lesson 6 ends with station data slides, so its CFA goes right after the exit-ticket rubric (slide 8).
 DECKS = {
     "L2": ("LS1-6.1", "h287605ecd2867468_0_184", ["h287605ecd2867468_0_185", "h287605ecd2867468_0_186", "h287605ecd2867468_0_187"], 13),
     "L3": ("LS1-6.2", "h5a55907624f9106e_0_216", ["h5a55907624f9106e_0_217", "h5a55907624f9106e_0_218", "h5a55907624f9106e_0_219"], 12),
     "L4": ("LS1-6.3", "h146d7118798b7cf1_0_212", ["h146d7118798b7cf1_0_213", "h146d7118798b7cf1_0_214", "h146d7118798b7cf1_0_215"], 11),
+    "L5": ("LS1-6.4", "p8", ["p8_i2", "p8_i3", "p8_i4"], 11),
+    "L6": ("LS1-6.5", "p10", ["p10_i2", "p10_i3", "p10_i4"], 8),
+    "L7": ("LS1-6.6", "p12", ["p12_i2", "p12_i3", "p12_i4"], 13),
 }
 
 
