@@ -3,19 +3,21 @@
 Each day becomes a student Canvas page and an unpublished teacher page, laid out
 like Earth Science Unit 3. The lessons are the Giant Pumpkin Mystery lessons
 (slides and handouts in Drive, Unit 1.3 Sugar to Structures folder), plus a new
-Day 2 (vocabulary and SketchNotes), a practice test and review day, and a CSA day.
+Day 5 (vocabulary and SketchNotes), a practice test and review day, and a CSA day.
+The two sub days (Wed Oct 14, Fri Oct 16) get the notebook-only vocabulary day and
+the evidence jigsaw.
 Each CFA sits at the end of the lesson that teaches its target.
 
-  Day 1   Lesson 1  The Giant Pumpkin Mystery (phenomenon, unit CER starts)
-  Day 2   new       Vocabulary and SketchNotes
-  Day 3   Lesson 2  What Are Living Things Made Of?        CFA LS1-6.1
-  Day 4   Lesson 3  Building Sugar from Air and Water      CFA LS1-6.2
-  Day 5   Lesson 4  From Sugar to Amino Acids              CFA LS1-6.3
-  Day 6   Lesson 5  Small Pieces, Big Molecules            CFA LS1-6.4
-  Day 7   Lesson 6  What's the Evidence?                   CFA LS1-6.5
-  Day 8   Lesson 7  Solving the Pumpkin Mystery            CFA LS1-6.6 (unit CER finished)
-  Day 9   new       Practice Test and Review
-  Day 10  new       Unit 1.3 CSA
+  Day 1   Thu Oct 8   Lesson 1  The Giant Pumpkin Mystery (phenomenon, unit CER starts)
+  Day 2   Fri Oct 9   Lesson 2  What Are Living Things Made Of?        CFA LS1-6.1
+  Day 3   Mon Oct 12  Lesson 3  Building Sugar from Air and Water      CFA LS1-6.2
+  Day 4   Tue Oct 13  Lesson 4  From Sugar to Amino Acids              CFA LS1-6.3
+  Day 5   Wed Oct 14  new       Vocabulary and SketchNotes (sub day)
+  Day 6   Thu Oct 15  Lesson 5  Small Pieces, Big Molecules            CFA LS1-6.4
+  Day 7   Fri Oct 16  Lesson 6  What's the Evidence? (sub day)        CFA LS1-6.5
+  Day 8   Mon Oct 19  Lesson 7  Solving the Pumpkin Mystery            CFA LS1-6.6 (unit CER finished)
+  Day 9   Tue Oct 20  new       Practice Test and Review
+  Day 10  Wed Oct 21  new       Unit 1.3 CSA
 """
 
 import sys
@@ -50,7 +52,7 @@ CER_LOG = ("<strong>Unit CER evidence log:</strong> add one row: the day, one pi
            "and what it shows about where the pumpkin's matter comes from.")
 
 DAYS = [
-    # ------------------------------------------------------------------ Day 1
+    # ------------------------------------------------------------------
     dict(
         day=1, title="The Giant Pumpkin Mystery", lesson="Lesson 1", targets=["LS1-6.1"],
         focus="Where does a pumpkin's mass come from?",
@@ -86,7 +88,7 @@ DAYS = [
                 "No CFA today. The exit ticket becomes each student's first claim on the Unit CER page.",
                 "Keep the class poll results and the driving question board; students revisit both on Days 8 and 9.",
                 "Nitrogen gas (N₂) is 78% of air, but plants can't use N₂ directly. If students list air as the nitrogen source, "
-                "note it and come back to it on Day 5 (soil nitrogen).",
+                "note it and come back to it on Day 4 (soil nitrogen).",
             ],
             key=ul("Most of the dry pumpkin: carbon (45%) and oxygen (42%).",
                    "Silicon is less than 1% and aluminum almost 0% of the pumpkin, but 28% and 8% of soil, so soil can't be the main source.",
@@ -96,17 +98,17 @@ DAYS = [
             supports="Sentence frames are on the slides and handout. Pair students for the element-data questions.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 2
+    # ------------------------------------------------------------------
     dict(
-        day=2, title="Vocabulary and SketchNotes", lesson="New", targets=["LS1-6.1", "LS1-6.2", "LS1-6.3"],
+        day=5, title="Vocabulary and SketchNotes", lesson="New", targets=["LS1-6.1", "LS1-6.2", "LS1-6.3"],
         focus="What words and big ideas will we need to solve the pumpkin mystery?",
-        slides=("Day 2 Vocabulary and SketchNotes", SLIDES.format("1SakPKw-q29gXMRUfa0g7DF0myjJ3qIO-bjUgRttQLR8")),
+        slides=("Day 5 Vocabulary and SketchNotes", SLIDES.format("1SakPKw-q29gXMRUfa0g7DF0myjJ3qIO-bjUgRttQLR8")),
         handout=None,
         notebook=[
-            "Title: <strong>D2 Vocabulary</strong>. Add it to your table of contents.",
+            "Title: <strong>D5 Vocabulary</strong>. Add it to your table of contents.",
             "Make 10 Frayer models, 2 per page (5 pages): definition in your own words, facts, examples, non-examples. Draw at least one example for each word.",
-            "Title the next page <strong>D2 SketchNotes: Sugar to Structures</strong>. Fill ½ to 1 page with the 5 big ideas as short phrases and icons.",
-            "Title the next page <strong>The Pumpkin Path</strong> (sensemaking). Draw the plant, its sources, and arrows. You'll add to this page after every lesson.",
+            "Title the next page <strong>D5 SketchNotes: Sugar to Structures</strong>. Fill ½ to 1 page with the 5 big ideas as short phrases and icons.",
+            "Title the next page <strong>The Pumpkin Path</strong> (sensemaking). Draw the plant, its sources, and arrows. First add one idea from each of Days 1–4, then keep adding after every lesson.",
         ],
         sections=[
             ("Do Now", "<p>Rate each word from 1 (never heard it) to 4 (I could teach it).</p>"),
@@ -129,18 +131,21 @@ DAYS = [
                 "Atoms from sugar join with nitrogen from the soil to build amino acids, which link into proteins.",
                 "Animals eat, break molecules down, and rebuild the atoms into their own molecules.")),
             ("Sensemaking: the Pumpkin Path", "<p>Draw the pumpkin plant with the air, water, soil, and sunlight. Use solid arrows for matter "
-             "and dashed arrows for energy. Label where sugar is built and where nitrogen comes in. After each lesson, add one new idea or piece of evidence.</p>"),
+             "and dashed arrows for energy. Label where sugar is built and where nitrogen comes in. Add one idea from each lesson so far, then keep adding after each lesson.</p>"),
             ("Exit ticket", "<p>Use 3 vocabulary words to answer: Where do you think most of the pumpkin's matter comes from? Underline the 3 words.</p>"),
         ],
         cfa=None,
         teacher=dict(
-            glance="Vocabulary and SketchNotes day, front-loading the 10 words and 5 big ideas the lessons build on. The SketchNotes are a preview; "
-                   "the Pumpkin Path sensemaking page grows after each lesson and becomes a study tool on Day 9.",
-            materials="Day 2 slides; notebooks; colored pencils. Optional: a printed word list for students who need it.",
+            glance="<strong>Sub day (Wed Oct 14).</strong> Mid-unit vocabulary and SketchNotes: students make Frayer models for the 10 words they've "
+                   "been using since Day 1 and pull the 5 big ideas together. It is notebook-only, with no lab materials, so a sub can run it from the slides. "
+                   "The Pumpkin Path page collects Days 1–4 and grows after each lesson; it becomes a study tool on Day 9.",
+            materials="Day 5 slides; notebooks; colored pencils. Optional: a printed word list for students who need it.",
             agenda=[("0–3", "Do Now: rate the 10 words"), ("3–8", "Model one Frayer (atom) together"),
                     ("8–25", "Frayer models for all 10 words"), ("25–35", "SketchNotes: 5 big ideas"),
                     ("35–42", "Sensemaking: the Pumpkin Path"), ("42–45", "Exit ticket")],
             notes=[
+                "Sub plan: project the Day 5 slides and go in order; every slide has the directions and minutes. Collect notebooks or check the Frayer pages on Day 6.",
+                "Students who finish early add Days 1–4 evidence to their Pumpkin Path page and their Unit CER evidence log.",
                 "Same 10 words as the vocabulary on the old CSA matching section, so this also covers the vocabulary piece of the unit.",
                 "To save time, let students write the given definition first and reword it later; examples and non-examples matter more.",
                 "Collect the Do Now ratings and compare them with the Day 9 self-ratings.",
@@ -151,14 +156,14 @@ DAYS = [
             supports="Provide the word list with definitions for students with IEPs/504s or English learners; they still complete examples, non-examples, and sketches.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 3
+    # ------------------------------------------------------------------
     dict(
-        day=3, title="What Are Living Things Made Of?", lesson="Lesson 2", targets=["LS1-6.1", "LS1-6.2"],
+        day=2, title="What Are Living Things Made Of?", lesson="Lesson 2", targets=["LS1-6.1", "LS1-6.2"],
         focus="Which elements make up the molecules of life, and where could a plant get them?",
         slides=("Lesson 2: What Are Living Things Made Of?", SLIDES.format("1xD36Y-QqwdvhmE8EQXBZGkN-qBNUNDJlT91reKUuRwM")),
         handout=FILE.format("1Yr8aG_aEqOTw2zAsyiwfNEAljeeKXjez"),
         notebook=[
-            "Title: <strong>D3 What Are Living Things Made Of?</strong> Add it to your table of contents.",
+            "Title: <strong>D2 What Are Living Things Made Of?</strong> Add it to your table of contents.",
             "Record the sealed-bag demo table, the formula counts, the molecule card sort, and the atom accounting rule.",
             CER_LOG,
         ],
@@ -197,16 +202,16 @@ DAYS = [
             supports="Assign each group member specific cards to count. Sentence frames on the slides and handout.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 4
+    # ------------------------------------------------------------------
     dict(
-        day=4, title="Building Sugar from Air and Water", lesson="Lesson 3", targets=["LS1-6.2"],
+        day=3, title="Building Sugar from Air and Water", lesson="Lesson 3", targets=["LS1-6.2"],
         focus="Where do the atoms in sugar come from, and what does light do?",
         slides=("Lesson 3: Building Sugar from Air and Water", SLIDES.format("1eJKaJgqK0YgDJ3YA_qJKm99gpPedl4CcBoXNR-K9ZqQ")),
         handout=FILE.format("1VNnbigr9yBPgX-adcan2KsGvfiRvp9JQ"),
         notebook=[
-            "Title: <strong>D4 Building Sugar from Air and Water</strong>. Add it to your table of contents.",
+            "Title: <strong>D3 Building Sugar from Air and Water</strong>. Add it to your table of contents.",
             "Record the leaf-chamber data answers, the bead-model Before/After table, and the energy-or-matter sort.",
-            "Save your 2 glucose bead models in your labeled bag for Day 5.",
+            "Save your 2 glucose bead models in your labeled bag for Day 4.",
             CER_LOG,
         ],
         sections=[
@@ -227,7 +232,7 @@ DAYS = [
             agenda=[("0–4", "Warm-up"), ("4–10", "Leaf-chamber data"), ("10–14", "Photosynthesis: the big idea"),
                     ("14–32", "Bead model, rounds 1 and 2"), ("32–36", "Energy or matter?"),
                     ("36–39", "Exit ticket"), ("39–45", "CFA LS1-6.2")],
-            notes=["Make sure every pair bags 2 glucose models; Day 5 depends on them. Keep spares for absent students.",
+            notes=["Make sure every pair bags 2 glucose models; Day 4 (tomorrow) depends on them. Keep spares for absent students.",
                    "The CFA includes atom counting (photosynthesis oxygen count; two glucose joining and releasing water). The bead table is good practice for it."],
             key=ul("Light: CO₂ fell 420 → 300 ppm (120 ppm in 20 min). Dark: rose 420 → 470 ppm (cellular respiration).",
                    "The carbon went into sugar (glucose) in the leaf. Light had to be present.",
@@ -238,14 +243,14 @@ DAYS = [
             supports="Pre-count bead bags for pairs who need it. Let students point to bead colors as they explain.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 5
+    # ------------------------------------------------------------------
     dict(
-        day=5, title="From Sugar to Amino Acids", lesson="Lesson 4", targets=["LS1-6.3", "LS1-6.4"],
+        day=4, title="From Sugar to Amino Acids", lesson="Lesson 4", targets=["LS1-6.3", "LS1-6.4"],
         focus="How can a plant turn sugar into amino acids?",
         slides=("Lesson 4: From Sugar to Amino Acids", SLIDES.format("1uMGH58CJ-PGAOWvFJJOtj08df_M0AtiBVRFrrxXCGYU")),
         handout=FILE.format("1qff5is2qHqgSV6771int-volqu3GDN8k"),
         notebook=[
-            "Title: <strong>D5 From Sugar to Amino Acids</strong>. Add it to your table of contents.",
+            "Title: <strong>D4 From Sugar to Amino Acids</strong>. Add it to your table of contents.",
             "Record the bead lab table (Start, Added from soil, Total available, In valine, In threonine, Recycle tray, Total at end) and draw the atoms you end up with.",
             CER_LOG,
         ],
@@ -258,8 +263,8 @@ DAYS = [
         ],
         cfa="LS1-6.3",
         teacher=dict(
-            glance="Sugar plus nitrogen makes amino acids. Students rebuild Day 4's glucose beads into valine and threonine, adding nitrogen from the soil cup. CFA LS1-6.3 closes the lesson.",
-            materials="Lesson 4 slides and handout; students' glucose bags from Day 4; blue beads (soil cup); recycle trays; spare glucose models; Chromebooks.",
+            glance="Sugar plus nitrogen makes amino acids. Students rebuild Day 3's glucose beads into valine and threonine, adding nitrogen from the soil cup. CFA LS1-6.3 closes the lesson.",
+            materials="Lesson 4 slides and handout; students' glucose bags from Day 3; blue beads (soil cup); recycle trays; spare glucose models; Chromebooks.",
             agenda=[("0–4", "Warm-up"), ("4–10", "The amino acid recipe"), ("10–29", "Bead lab"),
                     ("29–36", "Atom accounting and discussion"), ("36–39", "Exit ticket (is fertilizer plant food?)"), ("39–45", "CFA LS1-6.3")],
             notes=["The lysine challenge is for early finishers only.",
@@ -273,7 +278,7 @@ DAYS = [
             supports="Give pairs a filled-in Start row. Color-coded bead key on the table.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 6
+    # ------------------------------------------------------------------
     dict(
         day=6, title="Small Pieces, Big Molecules", lesson="Lesson 5", targets=["LS1-6.4", "LS1-6.2"],
         focus="How do amino acids become proteins, and what happens to them when an animal eats?",
@@ -311,7 +316,7 @@ DAYS = [
             supports="Post the clip color key at each table. Partners alternate building and checking the sequence.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 7
+    # ------------------------------------------------------------------
     dict(
         day=7, title="What's the Evidence?", lesson="Lesson 6", targets=["LS1-6.5"],
         focus="What evidence do scientists have for how plants build their molecules?",
@@ -341,7 +346,9 @@ DAYS = [
             materials="Lesson 6 slides and handout; station data cards (last pages of the handout/deck); Chromebooks.",
             agenda=[("0–3", "How the jigsaw works"), ("3–16", "Expert groups"), ("16–30", "Home groups"),
                     ("30–35", "Match evidence to claims"), ("35–39", "Exit ticket: short CER"), ("39–45", "CFA LS1-6.5")],
-            notes=["Expert and home-group time are each trimmed by 1–2 minutes from the original plan to fit the CFA.",
+            notes=["<strong>Sub day (Fri Oct 16).</strong> The jigsaw runs from the slides and handout with no lab materials. Leave the station data pages "
+                   "printed (or point students to the station slides), the home-group numbers, and a reminder to collect the CER exit tickets.",
+                   "Expert and home-group time are each trimmed by 1–2 minutes from the original plan to fit the CFA.",
                    "Score the CER exit ticket with the 4-point rubric; it previews the CSA's written response (Q14).",
                    "The CFA slide comes right after the exit-ticket rubric (slide 9), before the station data slides."],
             key=ul("Station 1: labeled C appears first in a 3-carbon molecule, then sugars, then amino acids, then starch/proteins/fats; the carbon in proteins comes from CO₂ via sugar; atoms keep their identity. Claims A, B.",
@@ -351,7 +358,7 @@ DAYS = [
             supports="Assign station roles by readiness (Station 2 is the most direct). Sentence frames on the slides.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 8
+    # ------------------------------------------------------------------
     dict(
         day=8, title="Solving the Pumpkin Mystery", lesson="Lesson 7", targets=["LS1-6.5", "LS1-6.6"],
         focus="What is the pumpkin made of, and how did it get built?",
@@ -389,7 +396,7 @@ DAYS = [
             supports="Sentence frames on the slides and handout. Students may use their evidence log and Pumpkin Path page.",
         ),
     ),
-    # ------------------------------------------------------------------ Day 9
+    # ------------------------------------------------------------------
     dict(
         day=9, title="Practice Test and Review", lesson="Review", targets=[t[0] for t in U.TARGETS],
         focus="Can I explain how a pumpkin builds its body from sugar?",
@@ -439,7 +446,7 @@ DAYS = [
             supports="Send students to the station for their lowest CFA target first. Allow notebooks and the Pumpkin Path page at stations (not on the practice test).",
         ),
     ),
-    # ------------------------------------------------------------------ Day 10
+    # ------------------------------------------------------------------
     dict(
         day=10, title="Unit 1.3 CSA", lesson="CSA", targets=[t[0] for t in U.TARGETS],
         focus="How do atoms from sugar become the structures of living things?",
@@ -464,6 +471,8 @@ DAYS = [
         ),
     ),
 ]
+
+DAYS.sort(key=lambda d: d["day"])
 
 
 def page_title(d):
