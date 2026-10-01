@@ -55,3 +55,14 @@ Files:
 - `Unit1.3_teacher_key.md`: the outcome alignment map (each question → its target), answer keys, feedback, and rubrics. Rebuild it with `python3 build_unit13_key.py`.
 
 Each question title starts with its number and target ID (for example `Q7 · LS1-6.3 · ...`). Align outcomes to questions in the New Quizzes editor using those IDs.
+
+### Mastery Paths (Unit 1.3)
+
+`CANVAS_TOKEN=... python3 mastery_paths_upload.py https://kernhigh.instructure.com 330720 1634113` sets these up the same way as Earth Science Unit 3:
+
+- **CFA reviews:** a CFA score below 67.5% (a B, 2.7 out of 4) opens that target's review. The reviews are in `unit13_reviews.py`.
+- **Practice test:** a score below 67.5% opens "Review: Back to the Building Blocks", and 67.5% or higher opens "Extension: Algae for Fuel or Food?".
+- **Assignments:** each review and the extension is 10 points, graded complete/incomplete, and only students the Mastery Path sends there can see it.
+- **Module order:** the script puts each CFA next to its review, then the practice test, the review, the extension, and the CSA.
+
+The answers are in `Unit1.3_mastery_paths_key.md`. The old "HS-LS1-6 Assessment" New Quiz was deleted from the sandbox and replaced by the Unit 1.3 CSA.

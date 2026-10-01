@@ -189,20 +189,22 @@ def all_quizzes():
         out.append((
             f"{U.UNIT} CFA {tid}: {name}",
             f"<p><strong>Learning target {tid}:</strong> {ican}</p>"
-            "<p>5 questions. Aim for a B or better (at least 4 of 5 correct, 67.5% or higher). "
-            "If you score lower, talk with your teacher about reviewing this target.</p>",
+            "<p>5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), "
+            "a review for this target will open for you.</p>",
             items))
     ids = ", ".join(t[0] for t in U.TARGETS)
     for prefix, bank, label, lead in (
         ("P", U.PRACTICE, "Practice Test", "Practice for the Unit 1.3 CSA."),
         ("Q", U.CSA, "CSA", "Common summative assessment for Unit 1.3."),
     ):
+        unlock = (" Your score unlocks your next assignment: a review (below a B, under 67.5%) "
+                  "or an extension (A or B, 67.5% or higher).") if prefix == "P" else ""
         items = lt_items(prefix, bank)
         ess = essay_numbers(items)
         out.append((
             f"{U.UNIT} {label}: {U.UNIT_NAME} ({U.STANDARD})",
             f"<p>{lead} {len(items)} questions on learning targets {ids}. "
-            f"Questions {ess[0]} and {ess[1]} are written responses your teacher will grade.</p>",
+            f"Questions {ess[0]} and {ess[1]} are written responses your teacher will grade.{unlock}</p>",
             items))
     return out
 
@@ -210,7 +212,7 @@ def all_quizzes():
 def upload_quizzes(api, module_id=None):
     groups = api.v1("GET", "/assignment_groups?per_page=50")
     group = next((g for g in groups if g["name"] == "Assignments"), groups[0])
-    existing = {q["title"] for q in api.nq("GET", "/quizzes")}
+    existing = {q["title"] for q in api.nq("GET", "/quizzes?per_page=50")}
     for title, instr, items in all_quizzes():
         if title in existing:
             print(f"Quiz exists, skipped: {title}")

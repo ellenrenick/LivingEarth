@@ -29,7 +29,7 @@ Every question title starts with its number and target ID, so you can align it i
 ## Unit 1.3 CFA LS1-6.1: Elements in sugar and large molecules
 
 Learning target LS1-6.1: I can name the three elements that make up most of sugar and the body's large molecules.
-5 questions. Aim for a B or better (at least 4 of 5 correct, 67.5% or higher). If you score lower, talk with your teacher about reviewing this target.
+5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), a review for this target will open for you.
 
 ### LS1-6.1.1 · LS1-6.1 · Elements in sugar and large molecules (1 pt)
 
@@ -97,7 +97,7 @@ D. Phosphorus
 ## Unit 1.3 CFA LS1-6.2: Taking in and rearranging matter
 
 Learning target LS1-6.2: I can describe how living things take in matter and rearrange its atoms, with no atoms lost.
-5 questions. Aim for a B or better (at least 4 of 5 correct, 67.5% or higher). If you score lower, talk with your teacher about reviewing this target.
+5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), a review for this target will open for you.
 
 ### LS1-6.2.1 · LS1-6.2 · Taking in and rearranging matter (1 pt)
 
@@ -168,7 +168,7 @@ D. It is impossible to predict, because living things do not follow conservation
 ## Unit 1.3 CFA LS1-6.3: Sugar atoms plus other elements
 
 Learning target LS1-6.3: I can explain how atoms from sugar join with other elements, like nitrogen, to build larger molecules.
-5 questions. Aim for a B or better (at least 4 of 5 correct, 67.5% or higher). If you score lower, talk with your teacher about reviewing this target.
+5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), a review for this target will open for you.
 
 ### LS1-6.3.1 · LS1-6.3 · Sugar atoms plus other elements (1 pt)
 
@@ -236,7 +236,7 @@ True or false: A plant growing in soil with no phosphorus can still make sugar, 
 ## Unit 1.3 CFA LS1-6.4: Trace atoms with a model
 
 Learning target LS1-6.4: I can use a model to trace atoms from sugar into a larger molecule.
-5 questions. Aim for a B or better (at least 4 of 5 correct, 67.5% or higher). If you score lower, talk with your teacher about reviewing this target.
+5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), a review for this target will open for you.
 
 ### LS1-6.4.1 · LS1-6.4 · Trace atoms with a model (1 pt)
 
@@ -309,7 +309,7 @@ D. 12
 ## Unit 1.3 CFA LS1-6.5: Explain with evidence
 
 Learning target LS1-6.5: I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules.
-5 questions. Aim for a B or better (at least 4 of 5 correct, 67.5% or higher). If you score lower, talk with your teacher about reviewing this target.
+5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), a review for this target will open for you.
 
 ### LS1-6.5.1 · LS1-6.5 · Explain with evidence (1 pt)
 
@@ -389,7 +389,7 @@ D. The plant makes sugar, and the sugar becomes protein without needing any othe
 ## Unit 1.3 CFA LS1-6.6: Revise an explanation
 
 Learning target LS1-6.6: I can revise my explanation when new evidence comes in.
-5 questions. Aim for a B or better (at least 4 of 5 correct, 67.5% or higher). If you score lower, talk with your teacher about reviewing this target.
+5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), a review for this target will open for you.
 
 ### LS1-6.6.1 · LS1-6.6 · Revise an explanation (1 pt)
 
@@ -462,7 +462,7 @@ E. Water alone explains the gain in dry mass.
 
 ## Unit 1.3 Practice Test: Sugar to Structures (HS-LS1-6)
 
-Practice for the Unit 1.3 CSA. 16 questions on learning targets LS1-6.1, LS1-6.2, LS1-6.3, LS1-6.4, LS1-6.5, LS1-6.6. Questions 14 and 16 are written responses your teacher will grade.
+Practice for the Unit 1.3 CSA. 16 questions on learning targets LS1-6.1, LS1-6.2, LS1-6.3, LS1-6.4, LS1-6.5, LS1-6.6. Questions 14 and 16 are written responses your teacher will grade. Your score unlocks your next assignment: a review (below a B, under 67.5%) or an extension (A or B, 67.5% or higher).
 
 ### P1 · LS1-6.1 · Elements in sugar and large molecules (1 pt)
 
