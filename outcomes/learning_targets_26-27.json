@@ -1,0 +1,1312 @@
+[
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-2",
+  "Tier": "Priority",
+  "ID": "LS1-2.1",
+  "Learning target": "Identify the levels of biological organization in multicellular organisms (cells, tissues, organs, organ systems, organism).",
+  "DOK": "1",
+  "Student \"I can\"": "I can name the levels of organization in an organism, from cells to the whole organism."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-2",
+  "Tier": "Priority",
+  "ID": "LS1-2.2",
+  "Learning target": "Recognize that all living things are made of cells, the basic unit of structure and function.",
+  "DOK": "1",
+  "Student \"I can\"": "I can state that all living things are made of cells, the basic unit of structure and function."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-2",
+  "Tier": "Priority",
+  "ID": "LS1-2.3",
+  "Learning target": "Describe how each level is composed of the level below it (cells form tissues, tissues form organs, organs form organ systems).",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how each level is built from the level below it."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-2",
+  "Tier": "Priority",
+  "ID": "LS1-2.4",
+  "Learning target": "Explain how the structure at each level relates to the specific function it performs, and how systems interact to keep the organism functioning.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how a part's structure fits its job, and how an organism's systems work together."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-2",
+  "Tier": "Priority",
+  "ID": "LS1-2.5",
+  "Learning target": "Use a model or diagram to illustrate how interacting systems work together to carry out a specific function (e.g., nutrient uptake, water delivery, movement in response to stimuli).",
+  "DOK": "2",
+  "Student \"I can\"": "I can use a model to show how an organism's systems work together to do one job, like moving."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-2",
+  "Tier": "Priority",
+  "ID": "LS1-2.6",
+  "Learning target": "Develop a model that illustrates the hierarchical organization of interacting systems that provide specific functions within a multicellular organism.",
+  "DOK": "3",
+  "Student \"I can\"": "I can build my own model showing how levels and systems in an organism work together to carry out functions."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-3",
+  "Tier": "Supporting",
+  "ID": "LS1-3.1",
+  "Learning target": "Describe how a negative feedback loop (stimulus, response) keeps a body condition within a steady range, and how positive feedback differs by pushing a change further.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how negative feedback keeps a body condition steady and how positive feedback differs."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-3",
+  "Tier": "Supporting",
+  "ID": "LS1-3.2",
+  "Learning target": "Use data from an investigation, such as heart rate before and after exercise, as evidence that a feedback mechanism returns a condition toward normal.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use data, like heart rate after exercise, to show feedback bringing the body back to normal."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-3",
+  "Tier": "Supporting",
+  "ID": "LS1-3.3",
+  "Learning target": "Plan and conduct an investigation to provide evidence that feedback mechanisms maintain homeostasis.",
+  "DOK": "3",
+  "Student \"I can\"": "I can carry out an investigation that shows feedback keeping the body in balance."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-4",
+  "Tier": "Supporting",
+  "ID": "LS1-4.1",
+  "Learning target": "Describe that cell division (mitosis) makes new cells with the same DNA, for growth and repair.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe how cell division makes new cells with the same DNA, for growth and repair."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-4",
+  "Tier": "Supporting",
+  "ID": "LS1-4.2",
+  "Learning target": "Explain that cells with the same DNA become specialized (differentiation) by using different genes, and so form different tissues, without the mechanisms of gene control.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain that cells with the same DNA specialize by using different genes."
+ },
+ {
+  "Unit": "1.1",
+  "Unit title": "Organization in Organisms (CP: Cells to Organisms)",
+  "Standard": "LS1-4",
+  "Tier": "Supporting",
+  "ID": "LS1-4.3",
+  "Learning target": "Use a model to illustrate the role of cellular division (mitosis) and differentiation in producing and maintaining complex organisms.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use a model to show how cell division and specialization build and maintain a body."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS2-5",
+  "Tier": "Priority",
+  "ID": "LS2-5.1",
+  "Learning target": "Identify the four spheres and where carbon is stored in each: carbon dioxide in air, dissolved carbon in water, living and dead matter, and rock and fossil fuels.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name the four spheres and where carbon is stored in each one."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS2-5",
+  "Tier": "Priority",
+  "ID": "LS2-5.2",
+  "Learning target": "Name the processes besides photosynthesis and respiration that move carbon between spheres: burning, dissolving into and out of the ocean, burial into rock and fossil fuels, and volcanic release.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name processes besides photosynthesis and respiration that move carbon, like burning and burial in rock."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS2-5",
+  "Tier": "Priority",
+  "ID": "LS2-5.3",
+  "Learning target": "Describe photosynthesis as moving carbon from the atmosphere and hydrosphere into the biosphere, and cellular respiration as moving it back.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how photosynthesis moves carbon from air and water into living things, and respiration moves it back."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS2-5",
+  "Tier": "Priority",
+  "ID": "LS2-5.4",
+  "Learning target": "Use a carbon-cycle model to trace a carbon atom through at least three spheres, naming the process at each transfer.",
+  "DOK": "2",
+  "Student \"I can\"": "I can trace one carbon atom through at least three spheres and name each process that moves it."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS2-5",
+  "Tier": "Priority",
+  "ID": "LS2-5.5",
+  "Learning target": "Use a model or simulation to predict how a change in one flow, such as burning fossil fuels or clearing forest, changes the carbon stored in other spheres.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use a model to predict what happens to carbon elsewhere when one part of the cycle changes."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS2-5",
+  "Tier": "Priority",
+  "ID": "LS2-5.6",
+  "Learning target": "Develop a model to illustrate the role of photosynthesis and cellular respiration in the cycling of carbon among the biosphere, atmosphere, hydrosphere, and geosphere.",
+  "DOK": "3",
+  "Student \"I can\"": "I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS1-5",
+  "Tier": "Supporting",
+  "ID": "LS1-5.1",
+  "Learning target": "Name the inputs (carbon dioxide, water, light) and outputs (sugar, oxygen) of photosynthesis.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name what photosynthesis uses and what it makes."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS1-5",
+  "Tier": "Supporting",
+  "ID": "LS1-5.2",
+  "Learning target": "Explain that photosynthesis transforms light energy into chemical energy stored in sugar and oxygen, which respiration later releases.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how photosynthesis stores light energy as chemical energy in sugar."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS1-5",
+  "Tier": "Supporting",
+  "ID": "LS1-5.3",
+  "Learning target": "Use a model to illustrate how photosynthesis transforms light energy into stored chemical energy, tracking the matter that goes in and comes out.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use a model to show photosynthesis storing light energy in sugar, and track the matter in and out."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS1-7",
+  "Tier": "Supporting",
+  "ID": "LS1-7.1",
+  "Learning target": "Name the inputs (sugar, oxygen) and outputs (carbon dioxide, water, usable energy) of cellular respiration.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name what cellular respiration uses and what it makes."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS1-7",
+  "Tier": "Supporting",
+  "ID": "LS1-7.2",
+  "Learning target": "Explain that cellular respiration breaks the bonds in food and oxygen molecules and forms bonds in new compounds, with a net release of energy the cell can use.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how respiration breaks and forms bonds, releasing energy a cell can use."
+ },
+ {
+  "Unit": "1.2",
+  "Unit title": "Energy Through Carbon",
+  "Standard": "LS1-7",
+  "Tier": "Supporting",
+  "ID": "LS1-7.3",
+  "Learning target": "Use a model to illustrate that cellular respiration is a chemical process in which bonds are broken and new bonds formed, resulting in a net transfer of energy.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use a model to show respiration breaking and forming bonds, releasing more energy than it uses."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "LS1-6",
+  "Tier": "Priority",
+  "ID": "LS1-6.1",
+  "Learning target": "Identify that sugar molecules and large carbon-based molecules (amino acids, proteins, lipids, nucleic acids) are composed largely of carbon, hydrogen, and oxygen atoms.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name the three elements that make up most of sugar and the body's large molecules."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "LS1-6",
+  "Tier": "Priority",
+  "ID": "LS1-6.2",
+  "Learning target": "Describe how organisms take in matter (for growth and maintenance) and rearrange atoms through chemical reactions, with matter conserved.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how living things take in matter and rearrange its atoms, with no atoms lost."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "LS1-6",
+  "Tier": "Priority",
+  "ID": "LS1-6.3",
+  "Learning target": "Explain that chemical reactions rearrange atoms from simpler reactants into more complex products, sometimes incorporating other elements (e.g., nitrogen, sulfur).",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how atoms from sugar join with other elements, like nitrogen, to build larger molecules."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "LS1-6",
+  "Tier": "Priority",
+  "ID": "LS1-6.4",
+  "Learning target": "Use a model or simulation to trace atoms from sugar molecules as they recombine with other elements to form amino acids and other macromolecules.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use a model to trace atoms from sugar into a larger molecule."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "LS1-6",
+  "Tier": "Priority",
+  "ID": "LS1-6.5",
+  "Learning target": "Construct an explanation, based on evidence, for how carbon, hydrogen, and oxygen from sugar molecules combine with other elements to form large carbon-based molecules.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "LS1-6",
+  "Tier": "Priority",
+  "ID": "LS1-6.6",
+  "Learning target": "Revise the explanation in light of new evidence from models, simulations, students' own investigations, or peer review.",
+  "DOK": "3",
+  "Student \"I can\"": "I can revise my explanation when new evidence comes in."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "PS1-7",
+  "Tier": "Thread",
+  "ID": "PS1-7.1",
+  "Learning target": "Count the atoms of each element on each side of a simple chemical reaction.",
+  "DOK": "1",
+  "Student \"I can\"": "I can count the atoms of each element on both sides of a reaction."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "PS1-7",
+  "Tier": "Thread",
+  "ID": "PS1-7.2",
+  "Learning target": "Explain that a chemical reaction rearranges atoms, so the number of each kind of atom, and so the mass, stays the same.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain why a reaction keeps every atom, so the total mass stays the same."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "PS1-7",
+  "Tier": "Thread",
+  "ID": "PS1-7.3",
+  "Learning target": "Use atom counts to support the claim that atoms, and therefore mass, are conserved when sugar is rebuilt into larger molecules, using a simple reaction such as two sugars joining and releasing water.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use atom counts to show that no atoms are lost when sugar is rebuilt."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "ETS1-3",
+  "Tier": "Thread",
+  "ID": "ETS1-3.1",
+  "Learning target": "Identify the criteria a solution must meet and the constraints it must work within, such as cost, safety, reliability, and aesthetics, and its possible social, cultural, and environmental impacts.",
+  "DOK": "1",
+  "Student \"I can\"": "I can list what a solution must do, the limits it must work within, and its possible impacts."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "ETS1-3",
+  "Tier": "Thread",
+  "ID": "ETS1-3.2",
+  "Learning target": "Compare the trade-offs of two solutions to the same problem using given data.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use data to compare what two solutions gain and give up."
+ },
+ {
+  "Unit": "1.3",
+  "Unit title": "Sugar to Structures",
+  "Standard": "ETS1-3",
+  "Tier": "Thread",
+  "ID": "ETS1-3.3",
+  "Learning target": "Evaluate a solution to a complex real-world problem, such as algae biofuel, based on prioritized criteria and trade-offs.",
+  "DOK": "3",
+  "Student \"I can\"": "I can judge a real solution, like algae fuel, by ranking what matters and weighing gains against costs."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS1-1",
+  "Tier": "Priority",
+  "ID": "LS1-1.1",
+  "Learning target": "Students can label or describe DNA as a double helix made of nucleotides containing sugar, phosphate, and nitrogen bases.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS1-1",
+  "Tier": "Priority",
+  "ID": "LS1-1.2",
+  "Learning target": "Students can state that DNA contains the genetic instructions for building proteins.",
+  "DOK": "1",
+  "Student \"I can\"": "I can state that DNA holds the instructions for building proteins."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS1-1",
+  "Tier": "Priority",
+  "ID": "LS1-1.3",
+  "Learning target": "Students can describe the role of mRNA and tRNA in the transcription and translation processes.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how a gene's message is copied and read to build a chain of amino acids."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS1-1",
+  "Tier": "Priority",
+  "ID": "LS1-1.4",
+  "Learning target": "Students can explain that a single base change can alter a protein and possibly change its function.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how changing one DNA base can change a protein and what it does."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS1-1",
+  "Tier": "Priority",
+  "ID": "LS1-1.5",
+  "Learning target": "Students connect the idea that DNA codes for proteins and that these proteins contribute to the specialized functions of different cells",
+  "DOK": "3",
+  "Student \"I can\"": "I can explain how DNA, through proteins, gives different cells their different jobs."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS1-1",
+  "Tier": "Priority",
+  "ID": "LS1-1.6",
+  "Learning target": "Students use data from case studies or simulations to analyze the impacts of protein defects (e.g., sickle cell anemia or cystic fibrosis).",
+  "DOK": "3",
+  "Student \"I can\"": "I can use case data, like sickle cell, to explain how a DNA change affects the body."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS3-1",
+  "Tier": "Supporting",
+  "ID": "LS3-1.1",
+  "Learning target": "Describe a chromosome as one long DNA molecule packed with proteins, and a gene as a section of that DNA that codes for a protein that affects a trait.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe how chromosomes, DNA, and genes are related."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS3-1",
+  "Tier": "Supporting",
+  "ID": "LS3-1.2",
+  "Learning target": "Explain how offspring receive one set of chromosomes, and so genes, from each parent.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how a child gets half of its chromosomes from each parent."
+ },
+ {
+  "Unit": "2.1",
+  "Unit title": "DNA to Proteins",
+  "Standard": "LS3-1",
+  "Tier": "Supporting",
+  "ID": "LS3-1.3",
+  "Learning target": "Ask questions to clarify relationships about the role of DNA and chromosomes in coding the instructions for characteristic traits passed from parents to offspring.",
+  "DOK": "2",
+  "Student \"I can\"": "I can ask questions that clarify how DNA and chromosomes carry the instructions for traits passed to offspring."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-2",
+  "Tier": "Priority",
+  "ID": "LS3-2.1",
+  "Learning target": "Name three sources of inheritable genetic variation: new gene combinations through meiosis, errors in DNA copying, and mutations caused by environmental factors.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name three ways new genetic variation arises."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-2",
+  "Tier": "Priority",
+  "ID": "LS3-2.2",
+  "Learning target": "Describe how meiosis and fertilization give offspring new combinations of alleles, without naming the phases of meiosis.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how making sex cells and fertilization mix alleles into new combinations."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-2",
+  "Tier": "Priority",
+  "ID": "LS3-2.3",
+  "Learning target": "Explain how a viable error in DNA copying, or a mutation caused by an environmental factor such as UV light, can change a gene, and why, in animals, only changes in cells that make eggs or sperm are inherited.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how copying errors and things like UV light change genes, and when that change is inherited."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-2",
+  "Tier": "Priority",
+  "ID": "LS3-2.4",
+  "Learning target": "Interpret data, such as mutation counts under different exposures or trait combinations in offspring, as evidence for a source of variation.",
+  "DOK": "2",
+  "Student \"I can\"": "I can read data as evidence for where a genetic variation came from."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-2",
+  "Tier": "Priority",
+  "ID": "LS3-2.5",
+  "Learning target": "Make a claim, supported by data, about which source or sources explain a given case of inheritable genetic variation.",
+  "DOK": "3",
+  "Student \"I can\"": "I can make a claim, backed by data, about what caused a genetic variation."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-2",
+  "Tier": "Priority",
+  "ID": "LS3-2.6",
+  "Learning target": "Defend the claim against a counterclaim or new data, explaining why the evidence supports one source over another.",
+  "DOK": "3",
+  "Student \"I can\"": "I can defend my claim against another explanation using the evidence."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-3",
+  "Tier": "Supporting",
+  "ID": "LS3-3.1",
+  "Learning target": "Use a Punnett square to list the possible allele combinations from a cross.",
+  "DOK": "1",
+  "Student \"I can\"": "I can use a Punnett square to show the possible allele combinations from a cross."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-3",
+  "Tier": "Supporting",
+  "ID": "LS3-3.2",
+  "Learning target": "Calculate the probability of each trait among offspring as a fraction or percent, and compare it with observed counts.",
+  "DOK": "2",
+  "Student \"I can\"": "I can calculate the chance of each trait and compare it with real counts."
+ },
+ {
+  "Unit": "2.2",
+  "Unit title": "Inherited Instructions",
+  "Standard": "LS3-3",
+  "Tier": "Supporting",
+  "ID": "LS3-3.3",
+  "Learning target": "Apply concepts of statistics and probability to explain the variation and distribution of expressed traits in a population, including the role of environmental factors.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use probability to explain how traits vary and spread in a population, including effects of environment."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-5",
+  "Tier": "Priority",
+  "ID": "ESS1-5.1",
+  "Learning target": "Describe Earth's outer layer (lithosphere) as moving plates that carry continental or oceanic crust, and name the three kinds of plate boundary.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe Earth's outer layer as moving plates and name three kinds of plate boundaries."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-5",
+  "Tier": "Priority",
+  "ID": "ESS1-5.2",
+  "Learning target": "Describe how new oceanic crust forms at mid-ocean ridges and is destroyed at subduction zones.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe where ocean crust is made and where it sinks back down."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-5",
+  "Tier": "Priority",
+  "ID": "ESS1-5.3",
+  "Learning target": "Read a map or graph of rock ages and describe the pattern: oceanic crust is older farther from a ridge, and continental crust is oldest near an ancient core.",
+  "DOK": "2",
+  "Student \"I can\"": "I can read a rock-age map and describe the pattern in the ages."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-5",
+  "Tier": "Priority",
+  "ID": "ESS1-5.4",
+  "Learning target": "Explain why oceanic crust is young compared with the oldest continental rocks, and why continental crust is youngest far from its ancient core, using how each kind of crust forms, grows, and is recycled.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain why ocean crust is young and why continents are oldest at their ancient cores."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-5",
+  "Tier": "Priority",
+  "ID": "ESS1-5.5",
+  "Learning target": "Evaluate evidence, such as rock ages, magnetic striping, and measured plate motion, for past and current movements of continental and oceanic crust.",
+  "DOK": "3",
+  "Student \"I can\"": "I can judge how strong the evidence is that the crust has moved and is still moving."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-5",
+  "Tier": "Priority",
+  "ID": "ESS1-5.6",
+  "Learning target": "Evaluate how well the theory of plate tectonics explains the ages of crustal rocks, using evidence from both oceanic and continental crust.",
+  "DOK": "3",
+  "Student \"I can\"": "I can judge how well plate tectonics explains the ages of rocks, using evidence."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-6",
+  "Tier": "Supporting",
+  "ID": "ESS1-6.1",
+  "Learning target": "Describe the evidence for Earth's early history: radiometric ages of meteorites, moon rocks, and Earth's oldest minerals, and the impact-crater record.",
+  "DOK": "1",
+  "Student \"I can\"": "I can list the evidence scientists use to learn about early Earth."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-6",
+  "Tier": "Supporting",
+  "ID": "ESS1-6.2",
+  "Learning target": "Explain why the age of the solar system, about 4.6 billion years, comes mostly from meteorites and moon rocks rather than from Earth's own rocks.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain why meteorites and moon rocks tell Earth's age better than Earth rocks do."
+ },
+ {
+  "Unit": "3.1",
+  "Unit title": "Age of the Earth",
+  "Standard": "ESS1-6",
+  "Tier": "Supporting",
+  "ID": "ESS1-6.3",
+  "Learning target": "Apply scientific reasoning and evidence from ancient Earth materials, meteorites, and other planetary surfaces to construct an account of Earth's formation and early history.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use evidence from rocks, meteorites, and other planets to tell how Earth formed."
+ },
+ {
+  "Unit": "3.2",
+  "Unit title": "Changing Earth, Changing Life",
+  "Standard": "ESS2-7",
+  "Tier": "Priority",
+  "ID": "ESS2-7.1",
+  "Learning target": "Identifies examples of changes in Earth systems (e.g., volcanic eruptions, plate movement, climate shifts) and life on Earth (e.g., species changes, extinctions), but does not yet connect them.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name examples of how Earth has changed and how life has changed."
+ },
+ {
+  "Unit": "3.2",
+  "Unit title": "Changing Earth, Changing Life",
+  "Standard": "ESS2-7",
+  "Tier": "Priority",
+  "ID": "ESS2-7.2",
+  "Learning target": "Describes basic interactions between Earth's systems and living organisms (e.g., photosynthesis increasing oxygen levels, or how volcanic eruptions impact species). Begins to relate cause and effect.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe one way Earth changed life and one way life changed Earth."
+ },
+ {
+  "Unit": "3.2",
+  "Unit title": "Changing Earth, Changing Life",
+  "Standard": "ESS2-7",
+  "Tier": "Priority",
+  "ID": "ESS2-7.3",
+  "Learning target": "Explains how specific events in Earth's history (e.g., ice ages, mass extinctions, oxygenation events) influenced the evolution of life and vice versa. Demonstrates understanding of reciprocal change.",
+  "DOK": "2/3",
+  "Student \"I can\"": "I can explain how events in Earth's history changed life, and how life in turn changed Earth."
+ },
+ {
+  "Unit": "3.2",
+  "Unit title": "Changing Earth, Changing Life",
+  "Standard": "ESS2-7",
+  "Tier": "Priority",
+  "ID": "ESS2-7.4",
+  "Learning target": "Constructs a logical argument using specific evidence from geoscience and biological records to show how life and Earth systems influenced each other. Organizes claim, reasoning, and supporting data.",
+  "DOK": "3",
+  "Student \"I can\"": "I can write an argument, with evidence, that Earth and life changed each other."
+ },
+ {
+  "Unit": "3.2",
+  "Unit title": "Changing Earth, Changing Life",
+  "Standard": "ESS2-7",
+  "Tier": "Priority",
+  "ID": "ESS2-7.5",
+  "Learning target": "Evaluates multiple lines of evidence (e.g., fossil records, geologic data, atmospheric composition) to synthesize a coherent argument. Considers feedback loops, time scales, and long-term interactions in constructing a persuasive scientific explanation.",
+  "DOK": "4",
+  "Student \"I can\"": "I can combine several kinds of evidence into one strong argument about Earth and life."
+ },
+ {
+  "Unit": "3.2",
+  "Unit title": "Changing Earth, Changing Life",
+  "Standard": "ESS2-7",
+  "Tier": "Priority",
+  "ID": "ESS2-7.6",
+  "Learning target": "Construct an argument based on evidence about the simultaneous coevolution of Earth's systems and life on Earth.",
+  "DOK": "3",
+  "Student \"I can\"": "I can argue from evidence that Earth's systems and life have changed together over time."
+ },
+ {
+  "Unit": "3.3",
+  "Unit title": "Patterns of the Past",
+  "Standard": "LS4-1",
+  "Tier": "Priority",
+  "ID": "LS4-1.1",
+  "Learning target": "Describe what I already know and wonder about how different animals and humans are connected over time.",
+  "DOK": "1",
+  "Student \"I can\"": "I can say what I already know and wonder about how living things are related."
+ },
+ {
+  "Unit": "3.3",
+  "Unit title": "Patterns of the Past",
+  "Standard": "LS4-1",
+  "Tier": "Priority",
+  "ID": "LS4-1.2",
+  "Learning target": "Understand what types of evidence prove common ancestry",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe the kinds of evidence that support common ancestry: DNA, body structures, and embryos."
+ },
+ {
+  "Unit": "3.3",
+  "Unit title": "Patterns of the Past",
+  "Standard": "LS4-1",
+  "Tier": "Priority",
+  "ID": "LS4-1.3",
+  "Learning target": "Communicate how common ancestry is supported by evidence",
+  "DOK": "3",
+  "Student \"I can\"": "I can explain to others how several lines of evidence support common ancestry."
+ },
+ {
+  "Unit": "3.3",
+  "Unit title": "Patterns of the Past",
+  "Standard": "LS4-1",
+  "Tier": "Priority",
+  "ID": "LS4-1.4",
+  "Learning target": "Understand what types of evidence prove biological evolution",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe the kinds of evidence that support evolution, like the fossil record."
+ },
+ {
+  "Unit": "3.3",
+  "Unit title": "Patterns of the Past",
+  "Standard": "LS4-1",
+  "Tier": "Priority",
+  "ID": "LS4-1.5",
+  "Learning target": "Communicate how biological evolution is supported by evidence.",
+  "DOK": "3",
+  "Student \"I can\"": "I can explain to others how several lines of evidence support evolution."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-4",
+  "Tier": "Priority",
+  "ID": "LS4-4.1",
+  "Learning target": "Vocabulary: natural selection, adaptation, populations, abiotic, biotic",
+  "DOK": "1",
+  "Student \"I can\"": "I can define natural selection, adaptation, population, biotic, and abiotic."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-4",
+  "Tier": "Priority",
+  "ID": "LS4-4.2",
+  "Learning target": "Understanding the connection between natural selection and evolution",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how natural selection causes a population to evolve."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-4",
+  "Tier": "Priority",
+  "ID": "LS4-4.3",
+  "Learning target": "Evaluating evidence of natural selection as part of evolution",
+  "DOK": "2",
+  "Student \"I can\"": "I can use data to show that a population's traits shifted because of natural selection."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-4",
+  "Tier": "Priority",
+  "ID": "LS4-4.4",
+  "Learning target": "Construct an explanation based on evidence for how natural selection leads to adaptations of populations.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use evidence to explain how natural selection makes a population better suited to its environment."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-2",
+  "Tier": "Supporting",
+  "ID": "LS4-2.1",
+  "Learning target": "Name the four factors: potential to increase in number, heritable variation from mutation and sexual reproduction, competition for limited resources, and greater survival and reproduction of better-suited organisms.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name the four factors that drive evolution."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-2",
+  "Tier": "Supporting",
+  "ID": "LS4-2.2",
+  "Learning target": "Describe the influence of each factor on a population, using simple distribution graphs and proportional reasoning.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use simple graphs to describe how each factor affects a population."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-2",
+  "Tier": "Supporting",
+  "ID": "LS4-2.3",
+  "Learning target": "Construct an explanation based on evidence that the process of evolution primarily results from the four factors.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use evidence to explain how the four factors together cause evolution."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-3",
+  "Tier": "Supporting",
+  "ID": "LS4-3.1",
+  "Learning target": "Read a graph or table showing the proportion of a trait in a population across generations.",
+  "DOK": "1",
+  "Student \"I can\"": "I can read a graph that shows how common a trait is over several generations."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-3",
+  "Tier": "Supporting",
+  "ID": "LS4-3.2",
+  "Learning target": "Calculate the percent of a population with a trait in each generation and describe the trend.",
+  "DOK": "2",
+  "Student \"I can\"": "I can calculate the percent with a trait in each generation and describe the trend."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS4-3",
+  "Tier": "Supporting",
+  "ID": "LS4-3.3",
+  "Learning target": "Apply concepts of statistics and probability to support explanations that organisms with an advantageous heritable trait tend to increase in proportion to organisms lacking this trait.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use statistics to show that a helpful inherited trait becomes more common."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS2-8",
+  "Tier": "Supporting",
+  "ID": "LS2-8.1",
+  "Learning target": "Distinguish group behavior from individual behavior, with examples such as flocking, schooling, and cooperative hunting.",
+  "DOK": "1",
+  "Student \"I can\"": "I can tell group behavior from individual behavior and give examples."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS2-8",
+  "Tier": "Supporting",
+  "ID": "LS2-8.2",
+  "Learning target": "Identify evidence of an outcome of a group behavior, such as survival or feeding success, in a data set.",
+  "DOK": "2",
+  "Student \"I can\"": "I can find evidence in data of what a group behavior does for survival."
+ },
+ {
+  "Unit": "3.4",
+  "Unit title": "Evolution by Selection",
+  "Standard": "LS2-8",
+  "Tier": "Supporting",
+  "ID": "LS2-8.3",
+  "Learning target": "Evaluate evidence for the role of group behavior on individual and species' chances to survive and reproduce.",
+  "DOK": "3",
+  "Student \"I can\"": "I can judge evidence about how group behavior affects an animal's chances to survive and reproduce."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-4",
+  "Tier": "Priority",
+  "ID": "LS2-4.1",
+  "Learning target": "Identify Basic Components of an Ecosystem",
+  "DOK": "1",
+  "Student \"I can\"": "I can name producers, consumers, and decomposers and the role of each."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-4",
+  "Tier": "Priority",
+  "ID": "LS2-4.2",
+  "Learning target": "Describe the Movement of Matter and Energy",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how matter cycles and energy flows through a food web."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-4",
+  "Tier": "Priority",
+  "ID": "LS2-4.3",
+  "Learning target": "Interpret Visual and Mathematical Models of Energy and Matter",
+  "DOK": "3",
+  "Student \"I can\"": "I can interpret energy pyramids and matter diagrams, including the 10 percent rule."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-4",
+  "Tier": "Priority",
+  "ID": "LS2-4.4",
+  "Learning target": "Use Quantitative Data to Describe Energy Flow",
+  "DOK": "2",
+  "Student \"I can\"": "I can use numbers to show how much energy passes from one level to the next."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-4",
+  "Tier": "Priority",
+  "ID": "LS2-4.5",
+  "Learning target": "Use Quantitative Data to Describe Matter Cycling",
+  "DOK": "3",
+  "Student \"I can\"": "I can use numbers to show that matter is conserved as it cycles."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-4",
+  "Tier": "Priority",
+  "ID": "LS2-4.6",
+  "Learning target": "Construct Claims Supported by Mathematical Representations",
+  "DOK": "3",
+  "Student \"I can\"": "I can use math to support a claim about how matter cycles and energy flows."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-3",
+  "Tier": "Supporting",
+  "ID": "LS2-3.1",
+  "Learning target": "Describe aerobic respiration (with oxygen) and anaerobic respiration (without oxygen) by their inputs and outputs.",
+  "DOK": "1",
+  "Student \"I can\"": "I can compare what goes in and out of respiration with and without oxygen."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-3",
+  "Tier": "Supporting",
+  "ID": "LS2-3.2",
+  "Learning target": "Explain how matter cycles and energy flows where oxygen is present and where it is scarce, such as waterlogged soil or working muscle, and why less energy is released where oxygen is scarce.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how matter and energy move where oxygen is plentiful and where it is scarce."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "LS2-3",
+  "Tier": "Supporting",
+  "ID": "LS2-3.3",
+  "Learning target": "Construct and revise an explanation based on evidence for the cycling of matter and flow of energy in aerobic and anaerobic conditions.",
+  "DOK": "3",
+  "Student \"I can\"": "I can explain, and revise with new evidence, how matter and energy move with and without oxygen."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "ESS3-5",
+  "Tier": "Supporting",
+  "ID": "ESS3-5.1",
+  "Learning target": "Describe what a climate record, such as atmospheric carbon dioxide, temperature, sea level, or ice volume, shows about change over time.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe what a climate record shows about change over time."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "ESS3-5",
+  "Tier": "Supporting",
+  "ID": "ESS3-5.2",
+  "Learning target": "Determine the current rate of one climate change from a graph of geoscience data, such as degrees per decade or millimeters of sea level per year.",
+  "DOK": "2",
+  "Student \"I can\"": "I can find how fast one part of climate is changing from a graph."
+ },
+ {
+  "Unit": "4.1",
+  "Unit title": "Cycles of Life",
+  "Standard": "ESS3-5",
+  "Tier": "Supporting",
+  "ID": "ESS3-5.3",
+  "Learning target": "Analyze geoscience data and the results from global climate models to make an evidence-based forecast of one climate change and its future impacts on Earth's systems.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use data and climate models to forecast one climate change and its effects."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-2",
+  "Tier": "Priority",
+  "ID": "LS2-2.1",
+  "Learning target": "Define population and biodiversity, and identify factors that affect them in an ecosystem (resources, predation, competition, disease, climate, available space).",
+  "DOK": "1",
+  "Student \"I can\"": "I can define population and biodiversity and name factors that change them."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-2",
+  "Tier": "Priority",
+  "ID": "LS2-2.2",
+  "Learning target": "Read and interpret graphs, charts, and data tables showing population sizes or biodiversity over time or across locations.",
+  "DOK": "2",
+  "Student \"I can\"": "I can read graphs and tables of population or biodiversity data."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-2",
+  "Tier": "Priority",
+  "ID": "LS2-2.3",
+  "Learning target": "Determine mathematical patterns from data (e.g., averages, rates of change, trends) for populations or biodiversity.",
+  "DOK": "2",
+  "Student \"I can\"": "I can find averages, rates of change, and trends in population data."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-2",
+  "Tier": "Priority",
+  "ID": "LS2-2.4",
+  "Learning target": "Compare populations and biodiversity within and across ecosystems of different scales using mathematical representations.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use math to compare populations and biodiversity across ecosystems of different sizes."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-2",
+  "Tier": "Priority",
+  "ID": "LS2-2.5",
+  "Learning target": "Use mathematical representations as evidence to support an explanation about how a factor affects biodiversity or a population.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use math as evidence to explain how a factor affects a population or biodiversity."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-2",
+  "Tier": "Priority",
+  "ID": "LS2-2.6",
+  "Learning target": "Revise an explanation about factors affecting biodiversity or populations when new mathematical evidence or data is presented.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use new data to revise my explanation of what affects a population or biodiversity."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-1",
+  "Tier": "Supporting",
+  "ID": "LS2-1.1",
+  "Learning target": "Define carrying capacity and name factors that limit it, such as resources, space, climate, and competition.",
+  "DOK": "1",
+  "Student \"I can\"": "I can define carrying capacity and name what limits it."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-1",
+  "Tier": "Supporting",
+  "ID": "LS2-1.2",
+  "Learning target": "Read a population graph to find the carrying capacity and describe how the population changes as it approaches it.",
+  "DOK": "2",
+  "Student \"I can\"": "I can find carrying capacity on a graph and describe the population's growth toward it."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-1",
+  "Tier": "Supporting",
+  "ID": "LS2-1.3",
+  "Learning target": "Use mathematical and/or computational representations to support explanations of factors that affect carrying capacity of ecosystems at different scales.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use graphs and data to explain what sets an ecosystem's carrying capacity."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-6",
+  "Tier": "Supporting",
+  "ID": "LS2-6.1",
+  "Learning target": "Describe how complex interactions keep the numbers and types of organisms in an ecosystem fairly steady when conditions are stable.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe how an ecosystem's many interactions keep it steady."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-6",
+  "Tier": "Supporting",
+  "ID": "LS2-6.2",
+  "Learning target": "Distinguish modest changes, such as moderate hunting or a seasonal flood, from extreme changes, such as a volcanic eruption or sea level rise, by their effect on an ecosystem.",
+  "DOK": "2",
+  "Student \"I can\"": "I can tell a small disturbance from an extreme one by what it does to an ecosystem."
+ },
+ {
+  "Unit": "4.2",
+  "Unit title": "Patterns in Populations",
+  "Standard": "LS2-6",
+  "Tier": "Supporting",
+  "ID": "LS2-6.3",
+  "Learning target": "Evaluate claims, evidence, and reasoning that the complex interactions in ecosystems maintain relatively consistent numbers and types of organisms in stable conditions, but changing conditions may result in a new ecosystem.",
+  "DOK": "3",
+  "Student \"I can\"": "I can judge the claim, evidence, and reasoning about whether an ecosystem stays stable or becomes a new one."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS3-1",
+  "Tier": "Priority",
+  "ID": "ESS3-1.1",
+  "Learning target": "Identify the major types of natural resources, natural hazards, and climate factors that influence human populations.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name the resources, hazards, and climate factors that shape where people live."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS3-1",
+  "Tier": "Priority",
+  "ID": "ESS3-1.2",
+  "Learning target": "Describe how natural resources (fresh water, fertile soil, minerals, fossil fuels) are unevenly distributed across regions.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how resources like water and fertile soil are spread unevenly."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS3-1",
+  "Tier": "Priority",
+  "ID": "ESS3-1.3",
+  "Learning target": "Describe examples of natural hazards (volcanic eruptions, earthquakes, tsunamis, floods, droughts) and how they affect where and how people live.",
+  "DOK": "2",
+  "Student \"I can\"": "I can describe how hazards like earthquakes and floods affect where and how people live."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS3-1",
+  "Tier": "Priority",
+  "ID": "ESS3-1.4",
+  "Learning target": "Explain how changes in climate (sea level, temperature and precipitation patterns, crop and livestock viability) can affect populations and drive migration.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how climate change can move people and change what they grow."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS3-1",
+  "Tier": "Priority",
+  "ID": "ESS3-1.5",
+  "Learning target": "Interpret data, maps, or case studies that show relationships between Earth's resources, hazards, or climate and patterns of human activity.",
+  "DOK": "2",
+  "Student \"I can\"": "I can read maps and data that connect resources, hazards, or climate to human activity."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS3-1",
+  "Tier": "Priority",
+  "ID": "ESS3-1.6",
+  "Learning target": "Construct an explanation, based on evidence, for how the availability of natural resources, the occurrence of natural hazards, and changes in climate have influenced human activity.",
+  "DOK": "3",
+  "Student \"I can\"": "I can use evidence to explain how resources, hazards, and climate have shaped human activity."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS2-5",
+  "Tier": "Supporting",
+  "ID": "ESS2-5.1",
+  "Learning target": "Describe properties of water that change Earth materials: it expands when it freezes, dissolves many materials, and carries and drops sediment as it flows.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe the properties of water that let it break down and move rock and soil."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS2-5",
+  "Tier": "Supporting",
+  "ID": "ESS2-5.2",
+  "Learning target": "Carry out an investigation of how water weathers, erodes, or deposits Earth materials, such as with a stream table, record the data, and connect the result to the rock cycle.",
+  "DOK": "2",
+  "Student \"I can\"": "I can carry out a test of how water wears away or moves Earth materials and record data."
+ },
+ {
+  "Unit": "4.3",
+  "Unit title": "Earth Shaping Humanity",
+  "Standard": "ESS2-5",
+  "Tier": "Supporting",
+  "ID": "ESS2-5.3",
+  "Learning target": "Plan and conduct an investigation of the properties of water and its effects on Earth materials and surface processes.",
+  "DOK": "3",
+  "Student \"I can\"": "I can plan and carry out my own investigation of water's effect on Earth materials."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "LS2-7",
+  "Tier": "Priority",
+  "ID": "LS2-7.1",
+  "Learning target": "Identify and explain how human activities (e.g., pollution, deforestation, climate change) impact ecosystems and biodiversity.",
+  "DOK": "2",
+  "Student \"I can\"": "I can explain how human activities like pollution and deforestation affect ecosystems and biodiversity."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "LS2-7",
+  "Tier": "Priority",
+  "ID": "LS2-7.2",
+  "Learning target": "Create an evidence-based solution to reduce the negative effects of human activities on the environment and biodiversity.",
+  "DOK": "3",
+  "Student \"I can\"": "I can design a solution, based on evidence, that reduces a human impact on the environment."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "LS2-7",
+  "Tier": "Priority",
+  "ID": "LS2-7.3",
+  "Learning target": "Assess the feasibility, benefits, and limitations of a solution aimed at reducing human impact on the environment.",
+  "DOK": "3",
+  "Student \"I can\"": "I can judge whether a solution will work, and what it gains and costs."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "LS2-7",
+  "Tier": "Priority",
+  "ID": "LS2-7.4",
+  "Learning target": "Use feedback and new evidence to improve a designed solution to mitigate human impacts.",
+  "DOK": "4",
+  "Student \"I can\"": "I can use feedback and new evidence to improve my solution."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "LS2-7",
+  "Tier": "Priority",
+  "ID": "LS2-7.5",
+  "Learning target": "Effectively communicate and defend a designed solution using scientific evidence and reasoning.",
+  "DOK": "4",
+  "Student \"I can\"": "I can present and defend my solution with evidence."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "ESS3-6",
+  "Tier": "Supporting",
+  "ID": "ESS3-6.1",
+  "Learning target": "Name Earth's systems (hydrosphere, atmosphere, cryosphere, geosphere, biosphere), with the cryosphere as the frozen part of the hydrosphere, and one way each connects to another.",
+  "DOK": "1",
+  "Student \"I can\"": "I can name Earth's systems, including the frozen cryosphere, and one link between two of them."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "ESS3-6",
+  "Tier": "Supporting",
+  "ID": "ESS3-6.2",
+  "Learning target": "Read the published output of a computational model, such as a graph or map, that shows how a human activity changes one Earth system.",
+  "DOK": "2",
+  "Student \"I can\"": "I can read a computer model's graph or map of how people change an Earth system."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "ESS3-6",
+  "Tier": "Supporting",
+  "ID": "ESS3-6.3",
+  "Learning target": "Use a computational representation to illustrate the relationships among Earth systems and how those relationships are being modified due to human activity.",
+  "DOK": "2",
+  "Student \"I can\"": "I can use a computer model's results to show how human activity changes links among Earth's systems."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "ESS3-4",
+  "Tier": "Supporting",
+  "ID": "ESS3-4.1",
+  "Learning target": "Describe data on a human impact, such as pollutant amounts, change in biomass and species diversity, or area of land converted.",
+  "DOK": "1",
+  "Student \"I can\"": "I can describe data that measures a human impact on a natural system."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "ESS3-4",
+  "Tier": "Supporting",
+  "ID": "ESS3-4.2",
+  "Learning target": "Compare how well technological solutions, from local to large-scale, change that data.",
+  "DOK": "2",
+  "Student \"I can\"": "I can compare how much different technologies reduce that impact."
+ },
+ {
+  "Unit": "4.4",
+  "Unit title": "Solutions for Sustainability",
+  "Standard": "ESS3-4",
+  "Tier": "Supporting",
+  "ID": "ESS3-4.3",
+  "Learning target": "Evaluate or refine a technological solution that reduces impacts of human activities on natural systems.",
+  "DOK": "3",
+  "Student \"I can\"": "I can judge or improve a technology that reduces a human impact on nature."
+ }
+]
