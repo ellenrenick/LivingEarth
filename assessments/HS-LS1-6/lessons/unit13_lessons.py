@@ -483,12 +483,24 @@ def targets_html(tids):
     return "".join(f"<li><strong>{t}</strong> {U.TARGET[t][3]}</li>" for t in tids)
 
 
+def slides_embed(d):
+    """Embedded Google Slides viewer for the day's deck, with a link for full screen."""
+    title, url = d["slides"]
+    if "/presentation/d/" not in url:
+        return ""
+    embed = url.replace("/edit", "/embed?start=false&loop=false&delayms=3000")
+    return (f'<h2>Today\'s slides</h2><p><iframe title="{title}" src="{embed}" width="960" height="569" '
+            'style="max-width:100%;border:0" allowfullscreen="allowfullscreen"></iframe></p>'
+            f'<p><a href="{url.replace("/edit", "/present")}" target="_blank" rel="noopener">Open the slides full screen</a></p>')
+
+
 def student_html(d):
     label = "Learning target" if len(d["targets"]) == 1 else "Learning targets"
     lesson = f" ({d['lesson']} of the Giant Pumpkin Mystery)" if d["lesson"].startswith("Lesson") else ""
     out = [f'<div style="{BOX}"><p><strong>Day {d["day"]}</strong>{lesson} · Unit 1.3: Sugar to Structures (HS-LS1-6)</p>'
            f"<p><strong>Driving question:</strong> {DRIVING_Q}</p><p><strong>Focus question:</strong> {d['focus']}</p>"
            f"<p><strong>{label}:</strong></p><ul>{targets_html(d['targets'])}</ul></div>",
+           slides_embed(d),
            f'<h2>Notebook setup</h2><div style="{BOX}">' + ol(*d["notebook"]) +
            "<p><em>Your notebook is your answer sheet for this lesson. Keep it neat; your teacher will check it.</em></p></div>"]
     sections = list(d["sections"])
@@ -499,7 +511,7 @@ def student_html(d):
                          "If you score below a B, a review page for this target will open for you.</p>"))
     for n, (h, body) in enumerate(sections, 1):
         out.append(f"<hr><h2>Part {n}: {h}</h2>{body}")
-    out.append("<hr><p><strong>If you were absent:</strong> view today's slides with your teacher's link or ask for a copy, complete the notebook "
+    out.append("<hr><p><strong>If you were absent:</strong> go through today's slides above, complete the notebook "
                "pages above, and take any CFA listed on this page.</p>")
     return "\n".join(out)
 
