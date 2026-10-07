@@ -163,8 +163,9 @@ def make_quiz(api, title, instructions, items, group_id):
         if it["type"] == "choice":
             n_choice += 1
     total = sum(4 if it["type"] == "essay" else 1 for _, it in items)
-    api.nq("PATCH", f"/quizzes/{quiz['id']}", {"quiz": {"points_possible": total}})
-    print(f"Quiz: {title} ({len(items)} questions, {total} pts) id={quiz['id']}")
+    # Every Unit 1.3 grade is out of 4 (the 4-point scale); Canvas scales the raw score.
+    api.nq("PATCH", f"/quizzes/{quiz['id']}", {"quiz": {"points_possible": U.GRADE_POINTS}})
+    print(f"Quiz: {title} ({len(items)} questions, {total} raw pts, graded out of {U.GRADE_POINTS}) id={quiz['id']}")
     return quiz
 
 

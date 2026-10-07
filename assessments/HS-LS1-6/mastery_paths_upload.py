@@ -3,7 +3,7 @@
 Run after newquiz_upload.py. It:
 - refreshes the CFA, practice test, and CSA instructions from newquiz_upload.py;
 - creates the 6 CFA reviews, the practice test review, and the extension
-  (10-point complete/incomplete, visible only to students the Mastery Path sends there);
+  (4-point complete/incomplete, visible only to students the Mastery Path sends there);
 - sets the Mastery Path rules: CFA below 67.5% -> that target's review;
   practice test below 67.5% -> review, 67.5% and up -> extension;
 - puts the module in order: each CFA followed by its review, then the practice
@@ -42,7 +42,7 @@ def ensure_review(api, existing, title, html, group_id):
     a = api.v1("POST", "/assignments", {"assignment": {
         "name": title,
         "description": html,
-        "points_possible": 10,
+        "points_possible": U.GRADE_POINTS,
         "grading_type": "pass_fail",
         "submission_types": ["online_text_entry", "online_upload"],
         "only_visible_to_overrides": True,

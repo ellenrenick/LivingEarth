@@ -106,13 +106,13 @@ DAYS = [
         handout=None,
         notebook=[
             "Title: <strong>D5 Vocabulary</strong>. Add it to your table of contents.",
-            "Make 10 Frayer models, 2 per page (5 pages): definition in your own words, facts, examples, non-examples. Draw at least one example for each word.",
-            "Title the next page <strong>D5 SketchNotes: Sugar to Structures</strong>. Fill ½ to 1 page with the 5 big ideas as short phrases and icons.",
-            "Title the next page <strong>The Pumpkin Path</strong> (sensemaking). Draw the plant, its sources, and arrows. First add one idea from each of Days 1–4, then keep adding after every lesson.",
+            "Make one Frayer chart for all 10 words (1 page): columns for word, definition in your own words, facts, example (draw it), and non-example.",
+            "On the facing page, title the top half <strong>D5 SketchNotes: Sugar to Structures</strong>: the 5 big ideas as short phrases and icons.",
+            "Title the bottom half <strong>The Pumpkin Path</strong> (sensemaking). Draw the plant, its sources, and arrows. First add one idea from each of Days 1–4, then keep adding after every lesson.",
         ],
         sections=[
             ("Do Now", "<p>Rate each word from 1 (never heard it) to 4 (I could teach it).</p>"),
-            ("Frayer models: 10 words", table(
+            ("Frayer chart: 10 words", table(
                 ["Word", "Definition"],
                 ["Atom", "The smallest piece of an element that still acts like that element"],
                 ["Element", "A pure substance made of only one kind of atom (C, H, O, N, …)"],
@@ -136,15 +136,15 @@ DAYS = [
         ],
         cfa=None,
         teacher=dict(
-            glance="<strong>Sub day (Wed Oct 14).</strong> Mid-unit vocabulary and SketchNotes: students make Frayer models for the 10 words they've "
+            glance="<strong>Sub day (Wed Oct 14).</strong> Mid-unit vocabulary and SketchNotes: students make a one-page Frayer chart for the 10 words they've "
                    "been using since Day 1 and pull the 5 big ideas together. It is notebook-only, with no lab materials, so a sub can run it from the slides. "
                    "The Pumpkin Path page collects Days 1–4 and grows after each lesson; it becomes a study tool on Day 9.",
             materials="Day 5 slides; notebooks; colored pencils. Optional: a printed word list for students who need it.",
             agenda=[("0–3", "Do Now: rate the 10 words"), ("3–8", "Model one Frayer (atom) together"),
-                    ("8–25", "Frayer models for all 10 words"), ("25–35", "SketchNotes: 5 big ideas"),
+                    ("8–25", "Frayer chart for all 10 words"), ("25–35", "SketchNotes: 5 big ideas"),
                     ("35–42", "Sensemaking: the Pumpkin Path"), ("42–45", "Exit ticket")],
             notes=[
-                "Sub plan: project the Day 5 slides and go in order; every slide has the directions and minutes. Collect notebooks or check the Frayer pages on Day 6.",
+                "Sub plan: project the Day 5 slides and go in order; every slide has the directions and minutes. Collect notebooks or check the Frayer chart on Day 6.",
                 "Students who finish early add Days 1–4 evidence to their Pumpkin Path page and their Unit CER evidence log.",
                 "Same 10 words as the vocabulary on the old CSA matching section, so this also covers the vocabulary piece of the unit.",
                 "To save time, let students write the given definition first and reword it later; examples and non-examples matter more.",
@@ -456,12 +456,12 @@ DAYS = [
         sections=[
             ("Before you start", "<p>Clear your desk except your Chromebook, a pencil, and scratch paper. Read every question twice. "
              "Questions 14 and 16 need written answers: use claim, evidence, and reasoning.</p>"),
-            ("Unit 1.3 CSA", "<p>Open <strong>Unit 1.3 CSA: Sugar to Structures (HS-LS1-6)</strong> on Canvas. 16 questions, 22 points.</p>"),
+            ("Unit 1.3 CSA", "<p>Open <strong>Unit 1.3 CSA: Sugar to Structures (HS-LS1-6)</strong> on Canvas. 16 questions, graded out of 4 points.</p>"),
             ("When you finish", "<p>Do your notebook reflection. Then work quietly on your review or extension assignment from the practice test.</p>"),
         ],
         cfa=None,
         teacher=dict(
-            glance="Common summative assessment: 16 questions (3 per DOK 1–2 target; 1 multiple choice + 1 written response per DOK 3 target), 22 points.",
+            glance="Common summative assessment: 16 questions (3 per DOK 1–2 target; 1 multiple choice + 1 written response per DOK 3 target), 22 raw points, graded out of 4 in Canvas.",
             materials="Day 10 slides; Chromebooks; scratch paper.",
             agenda=[("0–3", "Settle in; directions"), ("3–43", "Unit 1.3 CSA"), ("43–45", "Notebook reflection; review or extension work")],
             notes=["Grade Q14 and Q16 with the rubric in each question's grading notes (SpeedGrader).",
@@ -501,7 +501,9 @@ def student_html(d):
            f"<p><strong>Driving question:</strong> {DRIVING_Q}</p><p><strong>Focus question:</strong> {d['focus']}</p>"
            f"<p><strong>{label}:</strong></p><ul>{targets_html(d['targets'])}</ul></div>",
            slides_embed(d),
-           f'<h2>Notebook setup</h2><div style="{BOX}">' + ol(*d["notebook"]) +
+           f'<h2>Notebook setup</h2><div style="{BOX}">'
+           "<p><strong>Before the lesson:</strong> set up your page(s) like the notebook example on slide 2 of today's slides.</p>"
+           + ol(*d["notebook"]) +
            "<p><em>Your notebook is your answer sheet for this lesson. Keep it neat; your teacher will check it.</em></p></div>"]
     sections = list(d["sections"])
     if d["cfa"] and not any(h.startswith("Show what you know") for h, _ in sections):

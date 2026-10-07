@@ -16,7 +16,7 @@ Grade 9 Living Earth (Biology) assessment for **HS-LS1-6**: how carbon, hydrogen
 - `HS-LS1-6_teacher_key.md`: all questions with the answer key, DOK levels, 4-point rubrics, grading notes, and sample answers.
 - `questions.py`: the question bank.
 
-**Practice test** (about 20 minutes, 22 points, unlimited attempts)
+**Practice test** (about 20 minutes, 22 raw points, graded out of 4, unlimited attempts)
 - `HS-LS1-6_practice_canvas_qti.zip`: import this into Canvas. It has 6 matching terms, 6 multiple-choice questions (DOK 2 and 3), and 1 free-response question (DOK 3, 4-point rubric). All scenarios are new, so the practice test doesn't give away the summative.
 - `HS-LS1-6_practice_teacher_key.md`: answer key, rubric, and grading notes.
 - `practice_questions.py`: the question bank.
@@ -47,7 +47,7 @@ Built to match Earth Science Unit 3 (Forces Beneath Our Feet):
 
 - **Outcomes**: one per learning target, LS1-6.1 to LS1-6.6, in the outcome group "HS-LS1-6 · Unit 1.3: Sugar to Structures". They use a 4-point scale (Mastered 4, Proficient 3, Approaching 2, Not yet meeting 1, Insufficient evidence 0), mastery at 3, and the highest-score calculation.
 - **CFAs**: one per learning target, 5 one-point auto-graded questions each.
-- **Practice test and CSA**: parallel forms, 16 questions and 22 points each. A DOK 1–2 target (LS1-6.1 to 6.4) gets 3 one-point questions. A DOK 3 target (LS1-6.5, 6.6) gets 1 multiple-choice question plus 1 four-point written response that the teacher grades. The CSA reuses the questions in `questions.py`, and the practice test reuses `practice_questions.py` where an item fits a target.
+- **Practice test and CSA**: parallel forms, 16 questions and 22 raw points each. In Canvas every CFA, the practice test, and the CSA is graded out of 4 points, the same 4-point scale as the outcomes (Canvas scales the raw score). A DOK 1–2 target (LS1-6.1 to 6.4) gets 3 one-point questions. A DOK 3 target (LS1-6.5, 6.6) gets 1 multiple-choice question plus 1 four-point written response that the teacher grades. The CSA reuses the questions in `questions.py`, and the practice test reuses `practice_questions.py` where an item fits a target.
 
 Files:
 - `unit13_bank.py`: targets, outcomes, and every question.
@@ -62,7 +62,7 @@ Each question title starts with its number and target ID (for example `Q7 · LS1
 
 - **CFA reviews:** a CFA score below 67.5% (a B, 2.7 out of 4) opens that target's review. The reviews are in `unit13_reviews.py`.
 - **Practice test:** a score below 67.5% opens "Review: Back to the Building Blocks", and 67.5% or higher opens "Extension: Algae for Fuel or Food?".
-- **Assignments:** each review and the extension is 10 points, graded complete/incomplete, and only students the Mastery Path sends there can see it.
+- **Assignments:** each review and the extension is 4 points, graded complete/incomplete, and only students the Mastery Path sends there can see it.
 - **Module order:** the script puts each CFA next to its review, then the practice test, the review, the extension, and the CSA.
 
 The answers are in `Unit1.3_mastery_paths_key.md`. The old "HS-LS1-6 Assessment" New Quiz was deleted from the sandbox and replaced by the Unit 1.3 CSA.

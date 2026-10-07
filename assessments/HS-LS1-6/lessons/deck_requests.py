@@ -159,7 +159,7 @@ DECKS = {
                       "Questions 14 and 16 are written answers: use claim, evidence, and reasoning.\n"
                       "You may sketch bead models or atom counts on scratch paper."]),
             ("warmup", ["UNIT 1.3 CSA · ON CANVAS", "Open Unit 1.3 CSA: Sugar to Structures (HS-LS1-6)",
-                        "16 questions · 22 points. Take your time and check your work before you submit."]),
+                        "16 questions · graded out of 4 points. Take your time and check your work before you submit."]),
             ("list", ["WHEN YOU FINISH", "Reflect, then keep learning",
                       "In your notebook, re-rate yourself 1–4 on all six targets. Which one improved most since Day 1?\n"
                       "Then work quietly on your review or extension assignment from the practice test."]),

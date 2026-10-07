@@ -55,6 +55,7 @@ RATINGS = [
     ("Not yet meeting", 1), ("Insufficient evidence", 0),
 ]
 MASTERY_POINTS = 3
+GRADE_POINTS = 4  # every Unit 1.3 assignment and quiz is graded out of 4 in Canvas
 
 # Where the key lands for each "choice" item (0 = A), cycled per quiz.
 KEY_POSITIONS = [1, 3, 0, 2, 2, 0, 3, 1]

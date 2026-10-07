@@ -1,6 +1,6 @@
 # Unit 1.3 Mastery Paths: Answer Key
 
-Each review is 10 points, graded complete/incomplete. Use these answers to decide whether a student's work is complete.
+Each review is 4 points, graded complete/incomplete. Use these answers to decide whether a student's work is complete.
 
 | Trigger | Score | Opens |
 | --- | --- | --- |
