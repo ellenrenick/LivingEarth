@@ -12,7 +12,7 @@ Generated from `questions.py`. Do not share with students.
 | ESS1-6.1 Radiometric dating and Earth's oldest rocks | Day 6 | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
 | ESS1-5.4 Argue why the seafloor is young and the continents are old | Day 6 | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
 
-Day 7 is a cushion: any CFA that did not fit, absent students, and review work all land there before the practice test.
+Day 7 is a review day: any CFA that did not fit, absent students, Mastery Path reviews, and the Enrichment choice board all happen there. There is no practice test.
 
 ## CFAs (5 questions each, auto-graded)
 

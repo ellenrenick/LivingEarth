@@ -15,7 +15,9 @@ Grade 9 Living Earth. Five CFAs, one CSA, and five Mastery Path review assignmen
 ## Files
 
 - `questions.py`: the question bank (CFAs, CSA, reviews). Answer order is shuffled with a fixed seed.
-- `canvas_upload.py`: builds everything in a Canvas course through the API.
+- `canvas_upload.py`: builds the CFAs, CSA, reviews, and Mastery Path rules in a Canvas course through the API.
+- `lessons.py`: the student pages, teacher pages, and extra assignments (Lesson 1, Lesson 4 SketchNotes, CER, Enrichment).
+- `canvas_lessons.py`: builds the pages and assignments and replaces the simple module with the full day-by-day module plus a teacher module.
 - `build_key.py` and `HS-ESS1-5_teacher_key.md`: the teacher key, generated from the bank.
 - `canvas_ids.json`: IDs created in the last upload, used by `--cleanup`.
 
@@ -23,10 +25,14 @@ Grade 9 Living Earth. Five CFAs, one CSA, and five Mastery Path review assignmen
 
 ```
 python3 canvas_upload.py https://kernhigh.instructure.com <course id> --dry-run   # check only
-python3 canvas_upload.py https://kernhigh.instructure.com <course id>             # build
+python3 canvas_upload.py https://kernhigh.instructure.com <course id>             # build quizzes, reviews, rules
+python3 canvas_lessons.py https://kernhigh.instructure.com <course id>            # then build pages, assignments, modules
+python3 canvas_lessons.py https://kernhigh.instructure.com <course id> --cleanup  # remove pages, extra assignments, teacher module
 python3 canvas_upload.py https://kernhigh.instructure.com <course id> --cleanup   # remove what the last run built
 python3 build_key.py                                                              # rebuild the teacher key
 ```
+
+Run `canvas_upload.py` first, then `canvas_lessons.py`. To start over, run both `--cleanup` options.
 
 Set `CANVAS_TOKEN` when running outside the cloud sandbox. Everything is created unpublished, in a module with one subheader per day. Running the upload twice makes duplicates, so run `--cleanup` first.
 
@@ -35,3 +41,5 @@ To change a question, edit `questions.py`, run `build_key.py`, and rebuild in Ca
 ## Built so far
 
 Built in the **26-27 CP Living Earth Sandbox** (course 330720) only. Not yet in the GATE sandbox or any teaching course.
+
+The Enrichment choice board is unpublished and hidden from all students. Use **Assign To** for the students you pick, then publish it.

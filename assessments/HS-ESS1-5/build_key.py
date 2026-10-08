@@ -43,7 +43,7 @@ def main():
            "| Target | CFA taken on | Review opens when |", "| --- | --- | --- |"]
     for code, (name, _) in Q.TARGETS.items():
         out.append(f"| {code} {name} | Day {Q.CFA_DAY[code]} | CFA score below 3 of 4 (fewer than 4 of 5 correct) |")
-    out += ["", "Day 7 is a cushion: any CFA that did not fit, absent students, and review work all land there before the practice test.", ""]
+    out += ["", "Day 7 is a review day: any CFA that did not fit, absent students, Mastery Path reviews, and the Enrichment choice board all happen there. There is no practice test.", ""]
 
     out += ["## CFAs (5 questions each, auto-graded)", ""]
     for code, items in Q.CFAS.items():

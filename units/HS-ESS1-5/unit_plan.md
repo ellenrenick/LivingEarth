@@ -204,13 +204,16 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 
 **CFA ESS1-5.4:** 5 auto-graded questions on choosing a complete claim, telling evidence from reasoning, picking the strongest evidence, and answering a counterclaim. The written CER is scored with the rubric below and also feeds the CSA.
 
-### Day 7 · Cushion, Practice Test and Review
+### Day 7 · Review Day (cushion, Mastery Path reviews, enrichment)
 
 | Min | What happens |
 | --- | --- |
-| 0–12 | **Cushion.** Any CFA that did not fit on Days 2–6 (unfinished, absent students, or a lesson that ran long), and time to start Mastery Path reviews that opened. If everything is done, students begin their reviews or the enrichment choice board. |
-| 12–32 | Practice test (about 20 minutes, unlimited attempts, practice quiz type). Same item types as the CSA with new scenarios. |
-| 32–45 | Review by target. Students open the Mastery Path review for each target they missed, or play Blooket if they have no reviews open. |
+| 0–5 | Self-rating chart: students rate each target 1–4 and compare with their CFA scores. |
+| 5–38 | Work time, matched to scores. **Cushion:** any CFA not yet taken. **Mastery Path reviews** that opened (CFA below 3 of 4). **Enrichment choice board** for students with no reviews open (you assign it manually). Everyone finishes Frayer cards and the Unit CER evidence log. |
+| 38–43 | Vocabulary self-check with a partner. |
+| 43–45 | Preview the CSA. |
+
+There is no practice test in this unit. The CFAs and the Mastery Path reviews are the practice for the CSA.
 
 **Where each CFA is taken (and why):**
 
@@ -222,7 +225,7 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 | ESS1-6.1 | 6 (first 8 minutes) | Day 5's half-life lab needs the full period. A day's gap before the check is fine for a calculation and method-choice target. |
 | ESS1-5.4 | 6 (last 7 minutes) | Right after CER drafting and peer feedback, when students are thinking about claim, evidence, and reasoning. |
 
-If a CFA still does not fit, it moves to the cushion block on Day 7. Students who score below 3 of 4 on a CFA from Day 5 or 6 have two days to do the review before the CSA on Day 8.
+If a CFA still does not fit, it moves to Day 7's work time. Students who score below 3 of 4 on a CFA from Day 5 or 6 have two days to do the review before the CSA on Day 8.
 
 ### Day 8 · Unit 3.1 CSA
 
@@ -301,7 +304,7 @@ The written CER is **Q14** and the revise-an-explanation is **Q16**.
 | 4 | Quake and volcano coordinate data, map of plates, density demo materials (oil and water or clay), SketchNotes paper |
 | 5 | Coins or candies with a marked side, cups with lids, graph paper, Chromebooks |
 | 6 | Evidence log, sentence frames, peer feedback checklist |
-| 7 | Practice quiz on Canvas, Blooket |
+| 7 | Students' notebooks, Chromebooks, optional Blooket; Mastery Path reviews and the Enrichment choice board on Canvas |
 | 8 | CSA on Canvas |
 
 ## Textbook alignment (Inspire Earth Science, optional close reading)
@@ -314,7 +317,7 @@ Plate Tectonics (plate boundaries and landforms); Building Pangaea (alternate); 
 
 ## Canvas build (done in the 26-27 CP Living Earth Sandbox, all unpublished)
 
-Built by `assessments/HS-ESS1-5/canvas_upload.py` in the module "Unit 3.1 Age of the Earth HS-ESS1-5":
+Built by `assessments/HS-ESS1-5/canvas_upload.py` and `canvas_lessons.py` in the module "Unit 3.1 Age of the Earth HS-ESS1-5":
 
 1. Day 1 · Where Did the Old Ocean Floor Go? (student page not built yet)
 2. Day 2 · The Fossil Puzzle: CFA ESS1-5.1, Review ESS1-5.1
@@ -322,13 +325,20 @@ Built by `assessments/HS-ESS1-5/canvas_upload.py` in the module "Unit 3.1 Age of
 4. Day 4 · Where Crust Goes, and Where It Stays (no CFA; it moves to Day 5)
 5. Day 5 · Reading Deep Time: CFA ESS1-5.3, Review ESS1-5.3
 6. Day 6 · Build the Argument: CFA ESS1-6.1, Review ESS1-6.1, CFA ESS1-5.4, Review ESS1-5.4
-7. Day 7 · Cushion, Practice Test and Review (practice test not built yet)
+7. Day 7 · Review Day: Enrichment choice board (hidden until you assign it)
 8. Day 8 · Unit 3.1 CSA
 
-Still to build: eight student day pages, eight teacher pages, the practice test, and the enrichment choice board.
+Also built (by `assessments/HS-ESS1-5/canvas_lessons.py`): eight student day pages with the lesson content inline, eight teacher pages in a separate unpublished module "Unit 3.1 TEACHER PAGES (keep unpublished)", and four assignments: Lesson 1 (launch, completion), Lesson 4 SketchNotes (photo upload), the Unit 3.1 CER (text or upload, 4-point rubric), and the Enrichment choice board.
+
+**Enrichment choice board (Day 7).** For students who have no Mastery Path reviews open. It is unpublished and hidden from all students (visible only to those you assign), so use Assign To on selected students and then publish it. Choose one of four options, scored on a 4-point rubric: Life at the Ridge (biology: vent food web, chemosynthesis versus photosynthesis, spreading-rate arithmetic), The Missing Record (scaled timeline and the fossil-record bias), Iceland (a divergent boundary on land), and A Planet Without Plate Tectonics (Mars).
+
+Not built: Google Slides (the pages carry the lesson content inline instead), printable maps and handouts, and the images for the seafloor age map and the southern continents puzzle. See the open items below.
 
 ## Open items for review
 
-- Seafloor-age and sediment values are simplified classroom numbers (spreading at about 2.5 cm/yr). Replace with measured values if you want an authentic data set.
-- Living Earth Unit 3.2 is "Changing Earth, Changing Life" (HS-ESS2-7). Day 3's vent thread and Day 4's carbon thread are placed to lead into it but stop short of it.
-- The Earth Science Unit 4 learning targets are 6; this unit uses 5. If you want the ES split restored, separate ESS1-5.2 (age pattern) from spreading and ESS1-5.3 (boundaries) from subduction.
+- **Images and handouts:** add (1) a seafloor age map for Day 1, (2) a printable map of the southern continents with the continental shelf edge dashed for Day 2, (3) a world map with latitude and longitude for Day 4, and (4) a plate boundaries map. The pages include text and data versions.
+- **Slides:** the Unit 1.3 pages embed Google Slides. The Unit 3.1 pages carry the content directly; slides can be added later.
+- **Data:** seafloor-age and sediment values are simplified classroom numbers (spreading at about 2.5 cm per year). Replace them with measured NOAA or DSDP/IODP values if you want an authentic data set.
+- **Unit 3.2:** Living Earth Unit 3.2 is "Changing Earth, Changing Life" (HS-ESS2-7). Day 3's vent thread and Day 4's carbon thread lead into it but stop short of it.
+- **Targets:** Earth Science Unit 4 has 6 targets; this unit uses 5. Separate ESS1-5.2 (age pattern) from spreading and ESS1-5.3 (boundaries) from subduction to restore the Earth Science split.
+- **GATE sandbox:** built in the CP sandbox only.
