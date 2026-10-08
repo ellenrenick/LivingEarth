@@ -33,11 +33,11 @@ If you get a 9th day, add it between Days 4 and 5 for the full Vocabulary and Sk
 
 | # | Learning target | Type | Day(s) | Assessed in |
 | --- | --- | --- | --- | --- |
-| ESS1-5.1 | I can describe evidence for continental drift: matching fossils, matching rock types and mountain ranges, glacial evidence, and how the continents fit together. | Knowledge | 2 | CFA, CSA |
-| ESS1-5.2 | I can describe the pattern of seafloor rock ages, sediment thickness, and magnetic stripes, and explain how seafloor spreading makes new crust at mid-ocean ridges. | Reasoning | 3 | CFA, CSA |
-| ESS1-5.3 | I can identify the three plate boundary types and explain why ocean crust sinks at subduction zones while less-dense continental crust survives. | Reasoning | 4 | CFA, CSA |
-| ESS1-6.1 | I can explain how radiometric dating uses half-life to find the age of a rock, and why Earth's oldest rocks are younger than meteorites. | Reasoning | 5 | CFA, CSA |
-| ESS1-5.4 | I can argue from evidence why ocean-floor rock is young and continental rock is old. | Product | 6, 8 | CER, CSA |
+| ESS1-5.1 | I can describe evidence for continental drift: matching fossils, matching rock types and mountain ranges, glacial evidence, and how the continents fit together. | Knowledge | 2 | CFA (Day 2), CSA |
+| ESS1-5.2 | I can describe the pattern of seafloor rock ages, sediment thickness, and magnetic stripes, and explain how seafloor spreading makes new crust at mid-ocean ridges. | Reasoning | 3 | CFA (Day 3), CSA |
+| ESS1-5.3 | I can identify the three plate boundary types and explain why ocean crust sinks at subduction zones while less-dense continental crust survives. | Reasoning | 4 | CFA (Day 5), CSA |
+| ESS1-6.1 | I can explain how radiometric dating uses half-life to find the age of a rock, and why Earth's oldest rocks are younger than meteorites. | Reasoning | 5 | CFA (Day 6), CSA |
+| ESS1-5.4 | I can argue from evidence why ocean-floor rock is young and continental rock is old. | Product | 6, 8 | CFA (Day 6), CER, CSA |
 
 ## Vocabulary (10 words, Frayer model)
 
@@ -114,10 +114,7 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 
 **Biology reasoning prompt:** The seeds of *Glossopteris* were large and heavy and would not drift across an ocean. The animals could not swim across salt water. Which explanation fits better: "they crossed a gap" or "there was no gap"?
 
-**CFA ESS1-5.1 (3 questions)**
-1. *Mesosaurus* fossils are found only in South America and southern Africa, and it lived in fresh water. What does this suggest? **Answer:** The two continents were once connected, because the animal could not have crossed a salt-water ocean.
-2. Name two kinds of evidence, other than fossils, that the continents were once joined. **Answer (any two):** coastline/shelf fit, matching rock layers, matching mountain belts, glacial scratches that line up when the continents are fit together.
-3. Why did many scientists reject Wegener's idea in 1912? **Answer:** He could not explain what force moves continents.
+**CFA ESS1-5.1:** 5 auto-graded questions, built as a New Quiz. Questions and answers are in `assessments/HS-ESS1-5/HS-ESS1-5_teacher_key.md`.
 
 ### Day 3 · Making New Crust (ESS1-5.2)
 
@@ -144,10 +141,7 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 
 **Rate check:** 500 km in 20 million years = 25 km per million years = **2.5 cm per year**, about the speed fingernails grow.
 
-**CFA ESS1-5.2 (3 questions)**
-1. Describe the pattern of crust age moving away from a mid-ocean ridge. **Answer:** It gets older in both directions, symmetrically.
-2. Why are the magnetic stripes mirror images on both sides of the ridge? **Answer:** New rock forms at the ridge and records Earth's magnetic field at that time, then splits and moves apart in both directions. When the field reverses, the stripe polarity flips.
-3. Seafloor sediment is thickest far from the ridge. Explain this with the crust-age pattern. **Answer:** Older crust has had more time for sediment to settle.
+**CFA ESS1-5.2:** 5 auto-graded questions, built as a New Quiz. Questions and answers are in `assessments/HS-ESS1-5/HS-ESS1-5_teacher_key.md`.
 
 ### Day 4 · Where Crust Goes, and Where It Stays (ESS1-5.3, SketchNotes)
 
@@ -155,28 +149,26 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 | --- | --- |
 | 0–4 | Warm-up: if new crust is made at ridges and Earth is not getting bigger, where does the old crust go? |
 | 4–14 | Quake and volcano map: students plot a small set of earthquake and volcano points (Ring of Fire, Mid-Atlantic Ridge, San Andreas) and describe the pattern. Name the three boundary types and match each to its landforms. |
-| 14–24 | Density demo and discussion: oceanic crust (basalt, about 3.0 g/cm³) versus continental crust (granite, about 2.7 g/cm³) versus mantle (about 3.3 g/cm³). Which sinks, which floats? Why is old ocean crust denser than young? (It has cooled.) |
+| 14–24 | Density demo and discussion: ocean crust (basalt, about 3.0 g/cm³) versus continental crust (granite, about 2.7 g/cm³). When they collide, which plate sinks, and why? Why does an ocean plate get denser as it ages? (It cools as it moves away from the ridge.) |
 | 24–28 | **Biology link:** the ocean floor carries a layer of sediment, including carbonate shells from dead plankton, down with it. Arc volcanoes release CO2. Connect to Unit 1.2. |
 | 28–40 | SketchNotes: half page of notes, one page of sensemaking (a labeled cross-section of a subduction zone with the trench, volcanic arc, and sinking plate). Finish the Frayer cards as homework if needed. |
-| 40–45 | CFA ESS1-5.3. Update the CER evidence log. |
+| 40–45 | Update the CER evidence log. Finish SketchNotes and Frayer cards as homework. CFA ESS1-5.3 is taken at the start of Day 5, so Day 4 does not run over. |
 
-**Why continents survive (the key idea):** Continental crust is thicker and less dense than the mantle below it, so it floats and is rarely pulled down. Ocean crust is thinner and, once cooled, denser, so it can sink. Some continental rock is eroded and recycled, but most of it stays at the surface for billions of years.
+**Why continents survive (the key idea):** Continental crust is thick and less dense (about 2.7 g/cm³), so it is buoyant and rarely pulled down. Old ocean plates are cold and dense (the crust is about 3.0 g/cm³, and the cold mantle rock beneath it adds to the pull), so they can sink. Some continental rock is eroded and recycled, but most of it stays at the surface for billions of years.
 
-**CFA ESS1-5.3 (3 questions)**
-1. Which boundary type has two plates moving apart, and what forms there? **Answer:** Divergent; mid-ocean ridges (and rift valleys on land).
-2. Why does ocean crust sink at a subduction zone but continental crust usually does not? **Answer:** Ocean crust is denser (especially when old and cool), and continental crust is less dense, so it floats.
-3. Explain one way subduction links to the carbon cycle. **Answer:** Sediment containing carbon from dead plankton is carried into the mantle; some carbon returns to the air as CO2 through volcanoes.
+**Teacher note:** Ocean *crust* alone is slightly less dense than the mantle. It is the old, cold ocean *plate* (crust plus the rock beneath it) that is denser than the hot mantle below and sinks. Keep student comparisons to plate against plate, as the CFA and CSA do.
 
-### Day 5 · Reading Deep Time (ESS1-6.1)
+**CFA ESS1-5.3:** 5 auto-graded questions, built as a New Quiz. Questions and answers are in `assessments/HS-ESS1-5/HS-ESS1-5_teacher_key.md`.
+
+### Day 5 · Reading Deep Time (ESS1-6.1; CFA ESS1-5.3 opens the day)
 
 | Min | What happens |
 | --- | --- |
-| 0–5 | Warm-up: the oldest ocean floor is about 200 million years old, but scientists say Earth is 4.5 billion years old. How could anyone know that? |
-| 5–10 | Radiometric dating: unstable atoms decay at a steady rate. Half-life defined. |
-| 10–30 | **Half-life lab:** shake-and-count with coins or candies. Remove "decayed" pieces each round, graph the remaining atoms versus rounds, and find that half remain after each half-life. |
-| 30–38 | Which clock for which sample? Students match samples to methods (table below). |
-| 38–41 | The ESS1-6 payoff: Earth's oldest known minerals are about 4.4 billion years (zircons), the oldest known rocks about 4.0 billion years, and meteorites about 4.56 billion. Plate tectonics and erosion recycled the earliest rocks, but meteorites and the Moon kept their record. |
-| 41–45 | CFA ESS1-6.1. Update the CER evidence log. |
+| 0–8 | **CFA ESS1-5.3** (a spaced check on Day 4; it replaces the warm-up). |
+| 8–12 | Hook: the oldest ocean floor is about 200 million years old, but scientists say Earth is 4.5 billion years old. How could anyone know that? Radiometric dating: unstable atoms decay at a steady rate. Half-life defined. |
+| 12–30 | **Half-life lab:** shake-and-count with coins or candies. Remove "decayed" pieces each round, graph the remaining atoms versus rounds, and find that half remain after each half-life. |
+| 30–37 | Which clock for which sample? Students match samples to methods (table below). |
+| 37–45 | The ESS1-6 payoff: Earth's oldest known minerals are about 4.4 billion years (zircons), the oldest known rocks about 4.0 billion years, and meteorites about 4.56 billion. Plate tectonics and erosion recycled the earliest rocks, but meteorites and the Moon kept their record. Update the CER evidence log. CFA ESS1-6.1 is taken at the start of Day 6. |
 
 **Which clock?**
 
@@ -190,20 +182,17 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 
 **Life's oldest evidence (read-aloud or short text):** The oldest widely accepted fossils are stromatolites about 3.5 billion years old, preserved in continental rock in Western Australia. No ocean floor survives from that time, so the fossil record of early life comes from continental rock.
 
-**CFA ESS1-6.1 (3 questions)**
-1. After 3 half-lives, what fraction of the original parent atoms remains? **Answer:** 1/8.
-2. A bone from an archaeological site is 8,000 years old. Which method can date it, and why? **Answer:** Carbon-14; the bone was once living and is younger than about 50,000 years. Uranium dating does not apply to bone.
-3. Why are meteorites older than any rock found on Earth? **Answer:** Earth's earliest rocks were destroyed or recycled by plate tectonics and erosion; meteorites have changed little since they formed.
+**CFA ESS1-6.1:** 5 auto-graded questions, built as a New Quiz. Questions and answers are in `assessments/HS-ESS1-5/HS-ESS1-5_teacher_key.md`.
 
 ### Day 6 · Build the Argument (ESS1-5.4)
 
 | Min | What happens |
 | --- | --- |
-| 0–5 | Warm-up: return to the Day 1 claim. What would you change after what you have learned? |
-| 5–12 | Review the evidence log. Students sort evidence into three buckets: the seafloor is young (Days 3 and 4), the continents are old (Days 2 and 5), and the record is missing (Days 4 and 5). |
-| 12–25 | Draft the CER using sentence frames (below). |
-| 25–38 | Peer feedback with a checklist: Is the claim a complete answer? Is each piece of evidence specific (a number or a named pattern)? Does the reasoning connect the evidence to a process? |
-| 38–45 | CFA ESS1-5.4: revise one weak sentence. |
+| 0–8 | **CFA ESS1-6.1** (a spaced check on Day 5; it replaces the warm-up). |
+| 8–13 | Review the evidence log. Students sort evidence into three buckets: the seafloor is young (Days 3 and 4), the continents are old (Days 2 and 5), and the record is missing (Days 4 and 5). Return to the Day 1 claim: what would you change? |
+| 13–27 | Draft the CER using sentence frames (below). |
+| 27–38 | Peer feedback with a checklist: Is the claim a complete answer? Is each piece of evidence specific (a number or a named pattern)? Does the reasoning connect the evidence to a process? |
+| 38–45 | **CFA ESS1-5.4** (checks what makes a strong claim, evidence, and reasoning). |
 
 **Sentence frames**
 - **Claim:** The ocean floor is much younger than the continents because ______.
@@ -213,15 +202,27 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 - **Reasoning:** Because ocean crust is ______ than continental crust, it ______ at subduction zones, so ______.
 - **Counterclaim:** Someone might say the ocean floor is young because ______. This does not fit the evidence because ______.
 
-**CFA ESS1-5.4:** Students are given a claim that has a missing reason ("The seafloor is young because it is new rock") and must revise it with evidence and a mechanism. Scored with the CER rubric below.
+**CFA ESS1-5.4:** 5 auto-graded questions on choosing a complete claim, telling evidence from reasoning, picking the strongest evidence, and answering a counterclaim. The written CER is scored with the rubric below and also feeds the CSA.
 
-### Day 7 · Practice Test and Review
+### Day 7 · Cushion, Practice Test and Review
 
 | Min | What happens |
 | --- | --- |
-| 0–25 | Practice test (about 20 minutes, unlimited attempts, practice quiz type). Same item types as the CSA with new scenarios. |
-| 25–40 | Review by target. Students open the Mastery Path review for each target they missed. |
-| 40–45 | Blooket review or exit ticket. |
+| 0–12 | **Cushion.** Any CFA that did not fit on Days 2–6 (unfinished, absent students, or a lesson that ran long), and time to start Mastery Path reviews that opened. If everything is done, students begin their reviews or the enrichment choice board. |
+| 12–32 | Practice test (about 20 minutes, unlimited attempts, practice quiz type). Same item types as the CSA with new scenarios. |
+| 32–45 | Review by target. Students open the Mastery Path review for each target they missed, or play Blooket if they have no reviews open. |
+
+**Where each CFA is taken (and why):**
+
+| CFA | Day | Why there |
+| --- | --- | --- |
+| ESS1-5.1 | 2 | The fossil puzzle lab ends by minute 35, so there is room at the end of class. |
+| ESS1-5.2 | 3 | The paper-stripe model and graphing finish with time to spare, and the data is fresh. |
+| ESS1-5.3 | 5 (first 8 minutes) | Day 4 already holds boundaries, density, the carbon link, and SketchNotes. Taking the CFA the next day doubles as spaced retrieval. |
+| ESS1-6.1 | 6 (first 8 minutes) | Day 5's half-life lab needs the full period. A day's gap before the check is fine for a calculation and method-choice target. |
+| ESS1-5.4 | 6 (last 7 minutes) | Right after CER drafting and peer feedback, when students are thinking about claim, evidence, and reasoning. |
+
+If a CFA still does not fit, it moves to the cushion block on Day 7. Students who score below 3 of 4 on a CFA from Day 5 or 6 have two days to do the review before the CSA on Day 8.
 
 ### Day 8 · Unit 3.1 CSA
 
@@ -252,39 +253,29 @@ Example rows to model on Day 1:
 
 ## Unit 3.1 CSA: Age of the Earth (HS-ESS1-5, HS-ESS1-6)
 
-About 45 minutes. 36 points, matching the HS-LS1-6 CSA layout.
+About 45 minutes. 16 questions on a 4-point scale, built as a New Quiz in the same layout as the Unit 1.3 CSA. Questions 14 and 16 are teacher-graded written responses (4-point rubrics); the other 14 are auto-graded.
 
-| Part | Items | DOK | Points |
-| --- | --- | --- | --- |
-| Vocabulary matching | 8 terms (plus 2 distractors) | 1 | 8 |
-| Multiple choice (scenario-based) | 10 | 2 and 3 | 20 |
-| Free response (CER and a revise-the-explanation item), 4-point rubric | 2 | 3 | 8 |
-| **Total** | | | **36** |
-
-**Multiple-choice blueprint (10 items)**
-
-| Target | Items | Example scenario |
+| Target | Questions | Item types |
 | --- | --- | --- |
-| ESS1-5.1 | 2 | A fossil fern is found in India and Antarctica; which explanation is best supported? |
-| ESS1-5.2 | 3 | Interpret a transect of crust age and magnetic stripes; predict the age of a sample at a given distance. |
-| ESS1-5.3 | 2 | Choose which of two plates will subduct given density data. |
-| ESS1-6.1 | 3 | Calculate remaining parent atoms after a number of half-lives; pick the right dating method for a given sample. |
+| ESS1-5.1 | Q1–Q3 | Fossil evidence (choice), three lines of evidence (select three), Wegener's missing mechanism (true/false) |
+| ESS1-5.2 | Q4–Q6 | Spreading-rate calculation from a table, mirror-image magnetic stripes, sediment thickness across three drill sites |
+| ESS1-5.3 | Q7–Q9 | Reading a trench and volcano pattern, which plate subducts given densities, why continental crust survives |
+| ESS1-5.4 | Q13, Q14 (written), Q15 | Completing the reasoning, the CER, why no early fossils are in ocean-floor rock |
+| ESS1-6.1 | Q10–Q12, Q16 (written) | Half-life calculation, matching a sample to a dating method, interpreting zircon and meteorite ages, revising an explanation |
 
-**Free response 1 (CER, 4 points):** "A student says, 'The ocean floor is young because the ocean is young.' Use the seafloor age map and the data packet to write a CER that explains why the ocean floor is much younger than the continents."
+The written CER is **Q14** and the revise-an-explanation is **Q16**.
 
-**Data packet for FR1:**
-- Seafloor age map for the Atlantic and Pacific (color-coded, 0 to about 200 million years).
-- The crust age and distance table from Day 3.
-- Two facts: the oldest known continental minerals are about 4.4 billion years old; the oldest fossils (about 3.5 billion years old) are in continental rock.
-- A density table: oceanic crust about 3.0 g/cm³, continental crust about 2.7 g/cm³, mantle about 3.3 g/cm³.
+**Q14 (CER, 4 points):** "A student says, 'The ocean floor is young because the ocean is young.' Use the seafloor age map and the data packet to write a CER that explains why the ocean floor is much younger than the continents."
 
-**Free response 2 (revise an explanation, 4 points):** A student writes, "Scientists cannot know how old the Earth is because the oldest rock on Earth is only about 4 billion years old." Revise the explanation using what meteorites and plate tectonics tell us. A strong answer states that Earth's earliest rocks were destroyed or recycled, that meteorites formed with the solar system and have changed little, and that their ages (about 4.56 billion years) give the best estimate for Earth.
+**Data in the question:** a crust age and distance table (0 to 120 million years across 3,000 km); the oldest ocean floor (about 200 million years); the oldest continental minerals (about 4.4 billion years); ocean crust about 3.0 g/cm³ versus continental crust about 2.7 g/cm³; and ocean plates sinking at trenches. If you want students to also use the seafloor age map, add it to the question as an image.
+
+**Q16 (revise an explanation, 4 points):** A student writes, "Scientists cannot know how old the Earth is because the oldest rock on Earth is only about 4 billion years old." Revise the explanation using what meteorites and plate tectonics tell us. A strong answer states that Earth's earliest rocks were destroyed or recycled, that meteorites formed with the solar system and have changed little, and that their ages (about 4.56 billion years) give the best estimate for Earth.
 
 ---
 
 ## Intervention and enrichment
 
-**Intervention (if the score on a target is below a B):** Mastery Path review page for that target. Each review page uses a different scenario from the CFA, a model to manipulate, and a short retake.
+**Intervention (CFA score below 3 of 4, which is fewer than 4 of 5 correct):** a Mastery Path review assignment opens for that target only. Each review is a short study page with worked "Try it" checks (answers hidden under a click) and 3 written questions (pass/fail, 4 points). Review answers are in the teacher key.
 
 **Enrichment (if the score is 3 or 4):** Choice board; pick one.
 1. **Life at the ridge:** research how vent animals get energy and why a vent community dies when a vent shuts off. Write a short paragraph linking the vent to the crust age pattern.
@@ -321,17 +312,20 @@ Module 13, Lesson 1: Drifting Continents (pp. 344–348). Module 13, Lesson 2: S
 
 Plate Tectonics (plate boundaries and landforms); Building Pangaea (alternate); Half-life (alternate for Day 5).
 
-## Canvas build order (follows the Unit 1.3 pattern)
+## Canvas build (done in the 26-27 CP Living Earth Sandbox, all unpublished)
 
-1. SubHeader "Day 1 · Where Did the Old Ocean Floor Go?" with student page and a launch assignment.
-2. SubHeader "Day 2 · The Fossil Puzzle": student page, CFA ESS1-5.1, Mastery Path review ESS1-5.1.
-3. SubHeader "Day 3 · Making New Crust": student page, CFA ESS1-5.2, Mastery Path review ESS1-5.2.
-4. SubHeader "Day 4 · Where Crust Goes, and Where It Stays": student page, CFA ESS1-5.3, Mastery Path review ESS1-5.3.
-5. SubHeader "Day 5 · Reading Deep Time": student page, CFA ESS1-6.1, Mastery Path review ESS1-6.1.
-6. SubHeader "Day 6 · Build the Argument": student page, CFA ESS1-5.4, Mastery Path review ESS1-5.4.
-7. SubHeader "Day 7 · Practice Test and Review": student page, practice test, Mastery Path review, extension.
-8. SubHeader "Day 8 · Unit 3.1 CSA": student page, CSA.
-9. A separate "Unit 3.1 TEACHER PAGES (keep unpublished)" module with eight teacher pages.
+Built by `assessments/HS-ESS1-5/canvas_upload.py` in the module "Unit 3.1 Age of the Earth HS-ESS1-5":
+
+1. Day 1 · Where Did the Old Ocean Floor Go? (student page not built yet)
+2. Day 2 · The Fossil Puzzle: CFA ESS1-5.1, Review ESS1-5.1
+3. Day 3 · Making New Crust: CFA ESS1-5.2, Review ESS1-5.2
+4. Day 4 · Where Crust Goes, and Where It Stays (no CFA; it moves to Day 5)
+5. Day 5 · Reading Deep Time: CFA ESS1-5.3, Review ESS1-5.3
+6. Day 6 · Build the Argument: CFA ESS1-6.1, Review ESS1-6.1, CFA ESS1-5.4, Review ESS1-5.4
+7. Day 7 · Cushion, Practice Test and Review (practice test not built yet)
+8. Day 8 · Unit 3.1 CSA
+
+Still to build: eight student day pages, eight teacher pages, the practice test, and the enrichment choice board.
 
 ## Open items for review
 
