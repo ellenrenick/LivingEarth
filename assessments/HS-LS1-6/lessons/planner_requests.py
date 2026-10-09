@@ -1,7 +1,7 @@
 """Requests that write the Unit 1.3 days into the LE Planner 2026-2027 October calendar.
 
 October table g3f07a7a478a_0_97 (5 columns, Mon-Fri). Unit 1.3 runs Thu Oct 8 to
-Wed Oct 21; Unit 2.1 starts Thu Oct 22. Oct 14 and Oct 16 are sub days. Each cell gets the day's lesson (linked
+Thu Oct 22 (Fri Oct 9 is a makeup work day); Unit 2.1 starts Fri Oct 23. Oct 14 and Oct 16 are sub days. Each cell gets the day's lesson (linked
 to its slides), its teacher page, and its CFA or test (linked to Canvas). Text
 goes at the start of the cell, so anything already there stays after it.
 
@@ -15,16 +15,18 @@ import unit13_lessons as L
 TABLE = "g3f07a7a478a_0_97"
 CANVAS = "https://kernhigh.instructure.com/courses/330720"
 # Unit 1.3 day -> (row, column) in the October table
-CELLS = {1: (2, 3), 2: (2, 4), 3: (4, 0), 4: (4, 1), 5: (4, 2), 6: (4, 3), 7: (4, 4),
-         8: (6, 0), 9: (6, 1), 10: (6, 2)}
+CELLS = {1: (2, 3), 2: (4, 0), 3: (4, 1), 4: (4, 2), 5: (4, 3), 6: (4, 4),
+         7: (6, 0), 8: (6, 1), 9: (6, 2), 10: (6, 3)}
+MAKEUP = (2, 4)  # Fri Oct 9
+MAKEUP_TEXT = "Makeup work day (no Unit 1.3 lesson)"
 # Oct 14 and Oct 16 are sub days: the notebook-only vocabulary day and the evidence jigsaw.
-SHORT = {1: "Phenomena + CER intro: The Giant Pumpkin Mystery", 4: "From Sugar to Amino Acids (bead lab)",
-         5: "SUB DAY: Vocab (Frayer) + SketchNotes", 7: "SUB DAY: What's the Evidence? (jigsaw)",
-         8: "Solving the Pumpkin Mystery (finish CER)", 9: "Practice Test + review stations",
+SHORT = {1: "Phenomena + CER intro: The Giant Pumpkin Mystery", 5: "From Sugar to Amino Acids (bead lab)",
+         4: "SUB DAY: Vocab (Frayer) + SketchNotes", 6: "SUB DAY: What's the Evidence? (jigsaw)",
+         8: "Solving the Pumpkin Mystery (finish CER)", 9: "Interventions: assigned CFA reviews + review stations",
          10: "HS-LS1-6 Sugar to Structures Summative assessment (CSA)"}
 CFA_IDS = {"LS1-6.1": 13882514, "LS1-6.2": 13882515, "LS1-6.3": 13882517,
            "LS1-6.4": 13882519, "LS1-6.5": 13882520, "LS1-6.6": 13882521}
-PRACTICE, CSA = 13882522, 13882523
+CSA = 13882523
 
 
 def lines(d):
@@ -35,14 +37,19 @@ def lines(d):
     if d["cfa"]:
         out.append((f"CFA {d['cfa']}", f"{CANVAS}/assignments/{CFA_IDS[d['cfa']]}"))
     if n == 9:
-        out.append(("Practice Test", f"{CANVAS}/assignments/{PRACTICE}"))
+        out.append(("CFA reviews (Mastery Paths)", f"{CANVAS}/modules"))
     if n == 10:
         out.append(("Unit 1.3 CSA", f"{CANVAS}/assignments/{CSA}"))
     return out
 
 
 def requests(teacher_slugs):
-    reqs = []
+    loc = {"rowIndex": MAKEUP[0], "columnIndex": MAKEUP[1]}
+    reqs = [{"insertText": {"objectId": TABLE, "cellLocation": loc, "insertionIndex": 0, "text": MAKEUP_TEXT + "\n"}},
+            {"updateTextStyle": {"objectId": TABLE, "cellLocation": loc,
+             "textRange": {"type": "FIXED_RANGE", "startIndex": 0, "endIndex": len(MAKEUP_TEXT) + 1},
+             "style": {"bold": True, "fontSize": {"magnitude": 10, "unit": "PT"}, "link": None},
+             "fields": "bold,fontSize,link"}}]
     for d in L.DAYS:
         r, c = CELLS[d["day"]]
         loc = {"rowIndex": r, "columnIndex": c}

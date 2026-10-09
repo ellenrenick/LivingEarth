@@ -124,12 +124,16 @@ def main(base, course, module_id):
         if d["cfa"]:
             wanted.append(("Assignment", quizzes[cfa_title[d["cfa"]]]))
             wanted.append(("Assignment", assignments[R.REVIEW_TITLE[d["cfa"]]]))
-        if d["day"] == 9:
-            wanted.append(("Assignment", quizzes[f"{U.UNIT} Practice Test: {U.UNIT_NAME} ({U.STANDARD})"]))
-            wanted.append(("Assignment", assignments[R.PRACTICE_REVIEW_TITLE]))
-            wanted.append(("Assignment", assignments[R.EXTENSION_TITLE]))
+        # Day 9 has no practice test (removed Oct 2026): students do the CFA reviews above.
         if d["day"] == 10:
             wanted.append(("Assignment", quizzes[f"{U.UNIT} CSA: {U.UNIT_NAME} ({U.STANDARD})"]))
+    # The practice test, its review, and the extension are no longer part of the unit.
+    retired = {quizzes.get(f"{U.UNIT} Practice Test: {U.UNIT_NAME} ({U.STANDARD})"),
+               assignments.get(R.PRACTICE_REVIEW_TITLE), assignments.get(R.EXTENSION_TITLE)}
+    for it in get_all(api, f"/modules/{module_id}/items"):
+        if it["type"] in ("Assignment", "Quiz") and it.get("content_id") in retired:
+            api.v1("DELETE", f"/modules/{module_id}/items/{it['id']}")
+            print(f"Removed from module: {it['title']}")
     n, rest = order_module(api, module_id, wanted)
     print(f"Unit module ordered: {n} items by day, {rest} other items after them")
 

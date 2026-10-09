@@ -3,21 +3,25 @@
 Each day becomes a student Canvas page and an unpublished teacher page, laid out
 like Earth Science Unit 3. The lessons are the Giant Pumpkin Mystery lessons
 (slides and handouts in Drive, Unit 1.3 Sugar to Structures folder), plus a new
-Day 5 (vocabulary and SketchNotes), a practice test and review day, and a CSA day.
+Day 4 (vocabulary and SketchNotes), an intervention and review day, and a CSA day.
+There is no practice test: the six CFAs spread through the unit do that job, and
+Day 9 is for the CFA reviews each student was assigned.
+Fri Oct 9 is a school makeup work day, so Lesson 2 starts Mon Oct 12.
 The two sub days (Wed Oct 14, Fri Oct 16) get the notebook-only vocabulary day and
-the evidence jigsaw.
+the evidence jigsaw (Lesson 6 runs before Lesson 5; its stations use Lessons 3-4).
 Each CFA sits at the end of the lesson that teaches its target.
 
   Day 1   Thu Oct 8   Lesson 1  The Giant Pumpkin Mystery (phenomenon, unit CER starts)
-  Day 2   Fri Oct 9   Lesson 2  What Are Living Things Made Of?        CFA LS1-6.1
-  Day 3   Mon Oct 12  Lesson 3  Building Sugar from Air and Water      CFA LS1-6.2
-  Day 4   Tue Oct 13  Lesson 4  From Sugar to Amino Acids              CFA LS1-6.3
-  Day 5   Wed Oct 14  new       Vocabulary and SketchNotes (sub day)
-  Day 6   Thu Oct 15  Lesson 5  Small Pieces, Big Molecules            CFA LS1-6.4
-  Day 7   Fri Oct 16  Lesson 6  What's the Evidence? (sub day)        CFA LS1-6.5
-  Day 8   Mon Oct 19  Lesson 7  Solving the Pumpkin Mystery            CFA LS1-6.6 (unit CER finished)
-  Day 9   Tue Oct 20  new       Practice Test and Review
-  Day 10  Wed Oct 21  new       Unit 1.3 CSA
+          Fri Oct 9             Makeup work day (no Unit 1.3 lesson)
+  Day 2   Mon Oct 12  Lesson 2  What Are Living Things Made Of?        CFA LS1-6.1
+  Day 3   Tue Oct 13  Lesson 3  Building Sugar from Air and Water      CFA LS1-6.2
+  Day 4   Wed Oct 14  new       Vocabulary and SketchNotes (sub day)
+  Day 5   Thu Oct 15  Lesson 4  From Sugar to Amino Acids              CFA LS1-6.3
+  Day 6   Fri Oct 16  Lesson 6  What's the Evidence? (sub day)        CFA LS1-6.5
+  Day 7   Mon Oct 19  Lesson 5  Small Pieces, Big Molecules            CFA LS1-6.4
+  Day 8   Tue Oct 20  Lesson 7  Solving the Pumpkin Mystery            CFA LS1-6.6 (unit CER finished)
+  Day 9   Wed Oct 21  new       Interventions and Review (assigned CFA reviews)
+  Day 10  Thu Oct 22  new       Unit 1.3 CSA
 """
 
 import sys
@@ -88,7 +92,7 @@ DAYS = [
                 "No CFA today. The exit ticket becomes each student's first claim on the Unit CER page.",
                 "Keep the class poll results and the driving question board; students revisit both on Days 8 and 9.",
                 "Nitrogen gas (N₂) is 78% of air, but plants can't use N₂ directly. If students list air as the nitrogen source, "
-                "note it and come back to it on Day 4 (soil nitrogen).",
+                "note it and come back to it on Day 5 (soil nitrogen).",
             ],
             key=ul("Most of the dry pumpkin: carbon (45%) and oxygen (42%).",
                    "Silicon is less than 1% and aluminum almost 0% of the pumpkin, but 28% and 8% of soil, so soil can't be the main source.",
@@ -100,15 +104,15 @@ DAYS = [
     ),
     # ------------------------------------------------------------------
     dict(
-        day=5, title="Vocabulary and SketchNotes", lesson="New", targets=["LS1-6.1", "LS1-6.2", "LS1-6.3"],
+        day=4, title="Vocabulary and SketchNotes", lesson="New", targets=["LS1-6.1", "LS1-6.2", "LS1-6.3"],
         focus="What words and big ideas will we need to solve the pumpkin mystery?",
-        slides=("Day 5 Vocabulary and SketchNotes", SLIDES.format("1SakPKw-q29gXMRUfa0g7DF0myjJ3qIO-bjUgRttQLR8")),
+        slides=("Day 4 Vocabulary and SketchNotes", SLIDES.format("1SakPKw-q29gXMRUfa0g7DF0myjJ3qIO-bjUgRttQLR8")),
         handout=None,
         notebook=[
-            "Title: <strong>D5 Vocabulary</strong>. Add it to your table of contents.",
+            "Title: <strong>D4 Vocabulary</strong>. Add it to your table of contents.",
             "Make one Frayer chart for all 10 words (1 page): columns for word, definition in your own words, facts, example (draw it), and non-example.",
-            "On the facing page, title the top half <strong>D5 SketchNotes: Sugar to Structures</strong>: the 5 big ideas as short phrases and icons.",
-            "Title the bottom half <strong>The Pumpkin Path</strong> (sensemaking). Draw the plant, its sources, and arrows. First add one idea from each of Days 1–4, then keep adding after every lesson.",
+            "On the facing page, title the top half <strong>D4 SketchNotes: Sugar to Structures</strong>: the 5 big ideas as short phrases and icons.",
+            "Title the bottom half <strong>The Pumpkin Path</strong> (sensemaking). Draw the plant, its sources, and arrows. First add one idea from each of Days 1–3, then keep adding after every lesson.",
         ],
         sections=[
             ("Do Now", "<p>Rate each word from 1 (never heard it) to 4 (I could teach it).</p>"),
@@ -138,14 +142,14 @@ DAYS = [
         teacher=dict(
             glance="<strong>Sub day (Wed Oct 14).</strong> Mid-unit vocabulary and SketchNotes: students make a one-page Frayer chart for the 10 words they've "
                    "been using since Day 1 and pull the 5 big ideas together. It is notebook-only, with no lab materials, so a sub can run it from the slides. "
-                   "The Pumpkin Path page collects Days 1–4 and grows after each lesson; it becomes a study tool on Day 9.",
-            materials="Day 5 slides; notebooks; colored pencils. Optional: a printed word list for students who need it.",
+                   "The Pumpkin Path page collects Days 1–3 and grows after each lesson; it becomes a study tool on Day 9.",
+            materials="Day 4 slides; notebooks; colored pencils. Optional: a printed word list for students who need it.",
             agenda=[("0–3", "Do Now: rate the 10 words"), ("3–8", "Model one Frayer (atom) together"),
                     ("8–25", "Frayer chart for all 10 words"), ("25–35", "SketchNotes: 5 big ideas"),
                     ("35–42", "Sensemaking: the Pumpkin Path"), ("42–45", "Exit ticket")],
             notes=[
-                "Sub plan: project the Day 5 slides and go in order; every slide has the directions and minutes. Collect notebooks or check the Frayer chart on Day 6.",
-                "Students who finish early add Days 1–4 evidence to their Pumpkin Path page and their Unit CER evidence log.",
+                "Sub plan: project the Day 4 slides and go in order; every slide has the directions and minutes. Collect notebooks or check the Frayer chart on Day 5.",
+                "Students who finish early add Days 1–3 evidence to their Pumpkin Path page and their Unit CER evidence log.",
                 "Same 10 words as the vocabulary on the old CSA matching section, so this also covers the vocabulary piece of the unit.",
                 "To save time, let students write the given definition first and reword it later; examples and non-examples matter more.",
                 "Collect the Do Now ratings and compare them with the Day 9 self-ratings.",
@@ -211,7 +215,7 @@ DAYS = [
         notebook=[
             "Title: <strong>D3 Building Sugar from Air and Water</strong>. Add it to your table of contents.",
             "Record the leaf-chamber data answers, the bead-model Before/After table, and the energy-or-matter sort.",
-            "Save your 2 glucose bead models in your labeled bag for Day 4.",
+            "Save your 2 glucose bead models in your labeled bag for Day 5 (Thursday).",
             CER_LOG,
         ],
         sections=[
@@ -232,7 +236,7 @@ DAYS = [
             agenda=[("0–4", "Warm-up"), ("4–10", "Leaf-chamber data"), ("10–14", "Photosynthesis: the big idea"),
                     ("14–32", "Bead model, rounds 1 and 2"), ("32–36", "Energy or matter?"),
                     ("36–39", "Exit ticket"), ("39–45", "CFA LS1-6.2")],
-            notes=["Make sure every pair bags 2 glucose models; Day 4 (tomorrow) depends on them. Keep spares for absent students.",
+            notes=["Make sure every pair bags 2 glucose models; Day 5 (Thursday, after the Wednesday sub day) depends on them, so collect and store the bags. Keep spares for absent students.",
                    "The CFA includes atom counting (photosynthesis oxygen count; two glucose joining and releasing water). The bead table is good practice for it."],
             key=ul("Light: CO₂ fell 420 → 300 ppm (120 ppm in 20 min). Dark: rose 420 → 470 ppm (cellular respiration).",
                    "The carbon went into sugar (glucose) in the leaf. Light had to be present.",
@@ -245,12 +249,12 @@ DAYS = [
     ),
     # ------------------------------------------------------------------
     dict(
-        day=4, title="From Sugar to Amino Acids", lesson="Lesson 4", targets=["LS1-6.3", "LS1-6.4"],
+        day=5, title="From Sugar to Amino Acids", lesson="Lesson 4", targets=["LS1-6.3", "LS1-6.4"],
         focus="How can a plant turn sugar into amino acids?",
         slides=("Lesson 4: From Sugar to Amino Acids", SLIDES.format("1uMGH58CJ-PGAOWvFJJOtj08df_M0AtiBVRFrrxXCGYU")),
         handout=FILE.format("1qff5is2qHqgSV6771int-volqu3GDN8k"),
         notebook=[
-            "Title: <strong>D4 From Sugar to Amino Acids</strong>. Add it to your table of contents.",
+            "Title: <strong>D5 From Sugar to Amino Acids</strong>. Add it to your table of contents.",
             "Record the bead lab table (Start, Added from soil, Total available, In valine, In threonine, Recycle tray, Total at end) and draw the atoms you end up with.",
             CER_LOG,
         ],
@@ -280,12 +284,12 @@ DAYS = [
     ),
     # ------------------------------------------------------------------
     dict(
-        day=6, title="Small Pieces, Big Molecules", lesson="Lesson 5", targets=["LS1-6.4", "LS1-6.2"],
+        day=7, title="Small Pieces, Big Molecules", lesson="Lesson 5", targets=["LS1-6.4", "LS1-6.2"],
         focus="How do amino acids become proteins, and what happens to them when an animal eats?",
         slides=("Lesson 5: Small Pieces, Big Molecules", SLIDES.format("1tF7urG91FWcNfaae2WjjEmJLZPPd1_C2BmPdBm1regM")),
         handout=FILE.format("1vCEnX0TvmkAm6seT2VDEmlomYGl637Yj"),
         notebook=[
-            "Title: <strong>D6 Small Pieces, Big Molecules</strong>. Add it to your table of contents.",
+            "Title: <strong>D7 Small Pieces, Big Molecules</strong>. Add it to your table of contents.",
             "Record the monomer/polymer table, both paper-clip count tables, and the 6-step carbon trace.",
             CER_LOG,
         ],
@@ -318,12 +322,12 @@ DAYS = [
     ),
     # ------------------------------------------------------------------
     dict(
-        day=7, title="What's the Evidence?", lesson="Lesson 6", targets=["LS1-6.5"],
+        day=6, title="What's the Evidence?", lesson="Lesson 6", targets=["LS1-6.5"],
         focus="What evidence do scientists have for how plants build their molecules?",
         slides=("Lesson 6: What's the Evidence?", SLIDES.format("1Uip06UmGWFJnyU8avQuP3ko_bnp3yRbCBXrCxBCDRYI")),
         handout=FILE.format("1sxD7Lttp_p1Q7yeqIV17SXu-OV6kXn7X"),
         notebook=[
-            "Title: <strong>D7 What's the Evidence?</strong> Add it to your table of contents.",
+            "Title: <strong>D6 What's the Evidence?</strong> Add it to your table of contents.",
             "Record your expert notes, the home-group evidence table (4 stations), and your CER exit ticket.",
             CER_LOG + " Today, add the strongest piece of evidence from the jigsaw.",
         ],
@@ -384,7 +388,7 @@ DAYS = [
             materials="Lesson 7 slides and handout; students' Day 1 models; different-colored pens; Chromebooks.",
             agenda=[("0–4", "Warm-up"), ("4–11", "Class consensus model"), ("11–17", "Revise your model"),
                     ("17–29", "Explain it to the grower (unit CER)"), ("29–37", "Peer scoring"),
-                    ("37–39", "Wrap-up: before the practice test, can you…"), ("39–45", "CFA LS1-6.6")],
+                    ("37–39", "Wrap-up: before the CSA, can you…"), ("39–45", "CFA LS1-6.6")],
             notes=["Collect the grower explanations as the unit CER grade (4-point rubric).",
                    "The CFA slide is the last slide of the deck."],
             key="<p><strong>Exemplar (score 4):</strong> Your pumpkin is made mostly from carbon dioxide from the air and water, not from the soil or fertilizer. "
@@ -398,21 +402,21 @@ DAYS = [
     ),
     # ------------------------------------------------------------------
     dict(
-        day=9, title="Practice Test and Review", lesson="Review", targets=[t[0] for t in U.TARGETS],
-        focus="Can I explain how a pumpkin builds its body from sugar?",
-        slides=("Day 9 Practice Test and Review", SLIDES.format("1yKhzC3fnl-McGFuwPbjTfEk3VI_Vff_qkEfvcL3ExYA")),
+        day=9, title="Interventions and Review", lesson="Review", targets=[t[0] for t in U.TARGETS],
+        focus="Which targets do I still need to work on before the CSA?",
+        slides=("Day 9 Interventions and Review", SLIDES.format("1yKhzC3fnl-McGFuwPbjTfEk3VI_Vff_qkEfvcL3ExYA")),
         handout=None,
         notebook=[
             "Title: <strong>D9 Review</strong>. Add it to your table of contents.",
             "Rate yourself 1–4 on all 6 targets.",
-            "For each review station, write one thing you learned or fixed.",
+            "List the CFA reviews that opened for you on Canvas. Check each one off when you finish it.",
             f"Answer the driving question in 2–3 sentences: <em>{DRIVING_Q}</em> Use at least 4 vocabulary words.",
         ],
         sections=[
-            ("Do Now: rate yourself", "<p>Rate yourself 1–4 on each Unit 1.3 target. Circle the one you'll focus on today.</p>"),
-            ("Practice test", "<p>Take the <strong>Unit 1.3 Practice Test: Sugar to Structures (HS-LS1-6)</strong> on Canvas. It looks just like the CSA: "
-             "16 questions, including 2 written answers. After your teacher grades it, a review (below a B) or an extension (A or B) opens for you.</p>"),
-            ("Review stations", ol(
+            ("Do Now: rate yourself", "<p>Rate yourself 1–4 on each Unit 1.3 target. Then open Canvas and list every CFA review that opened for you.</p>"),
+            ("1. Finish your assigned reviews", "<p>If you scored below a B on a CFA, a review for that target opened for you on Canvas. "
+             "Do those first, starting with your lowest target. Your teacher will check in with small groups.</p>"),
+            ("2. Review stations (done, or no reviews assigned)", ol(
                 "<strong>Station A · Atoms and elements (LS1-6.1, 6.2):</strong> recount 4 molecule cards and check the photosynthesis atom count.",
                 "<strong>Station B · Sugar plus nitrogen (LS1-6.3):</strong> build glycine from a glucose bead model and the soil cup; count what's left.",
                 "<strong>Station C · Trace the atoms (LS1-6.4):</strong> put the 8 carbon-path cards in order, from the air to your hair.",
@@ -421,16 +425,15 @@ DAYS = [
         ],
         cfa=None,
         teacher=dict(
-            glance="Practice test in the CSA's format, then review stations chosen from CFA results. The practice test's Mastery Path opens the review "
-                   "(below a B) or the extension (A or B) once the two written answers (P14, P16) are graded.",
+            glance="Intervention and review day before the CSA. There is no practice test: students finish the CFA reviews their Mastery Paths assigned "
+                   "(below a B on a CFA), with teacher small groups by target. Students with no reviews, or who finish, rotate through the review stations.",
             materials="Day 9 slides; Chromebooks; Station A: 4 molecule cards from Lesson 2 + the photosynthesis equation; Station B: glucose bead models, "
                       "blue beads; Station C: the 8 carbon-path cards below (cut apart); Station D: the two sample answers below and the 4-point rubric.",
-            agenda=[("0–3", "Self-rating"), ("3–28", "Practice test (grade P14 and P16 during stations)"),
-                    ("28–31", "Choose your stations (lowest CFA target first)"), ("31–37", "Station round 1"),
-                    ("37–43", "Station round 2"), ("43–45", "Driving question revisited")],
-            notes=["Mastery Paths wait for the full practice-test score, so grade the two written answers today if you can.",
-                   "If grading can't finish today, students start their review or extension on Day 10 after the CSA.",
-                   "Students who finished early can open any CFA review that opened for them."],
+            agenda=[("0–5", "Self-rating; list assigned reviews"), ("5–30", "Assigned CFA reviews (teacher small groups by target)"),
+                    ("30–42", "Review stations (lowest target first)"), ("42–45", "Driving question revisited")],
+            notes=["Before class, pull the CFA scores: anyone below a B on a target has that target's review open. Group students by their lowest target.",
+                   "Grade the CFA LS1-6.5 and 6.6 written answers before today so those Mastery Paths open.",
+                   "Reviews are 4 points, complete/incomplete."],
             key=(
                 "<p><strong>Station A:</strong> photosynthesis 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂: C 6/6, H 12/12, O 18/18.</p>"
                 "<p><strong>Station B:</strong> glycine C₂H₅NO₂ from one glucose (6 C, 12 H, 6 O): add 1 blue bead; left over 4 C, 7 H, 4 O.</p>"
@@ -442,8 +445,9 @@ DAYS = [
                 "Sample 1 (scores 2): \"The plant needs nitrogen to grow. The data shows it was smaller.\" Missing: data with numbers, and why nitrogen matters (sugar has only C, H, O; amino acids need N).<br>"
                 "Sample 2 (scores 4): \"The no-nitrogen plant made more sugar (25 vs. 12 mg/g) but less protein (10 vs. 40 mg/g) and less dry mass (2.4 vs. 7.5 g). "
                 "Sugar has only carbon, hydrogen, and oxygen. To build amino acids and proteins, the plant has to combine atoms from sugar with nitrogen. Without nitrogen, "
-                "the sugar couldn't be used, so it built up and the plant couldn't make new cells.\"</p>"),
-            supports="Send students to the station for their lowest CFA target first. Allow notebooks and the Pumpkin Path page at stations (not on the practice test).",
+                "the sugar couldn't be used, so it built up and the plant couldn't make new cells.\"</p>"
+                "<p>CFA review answers: <em>assessments/HS-LS1-6/Unit1.3_mastery_paths_key.md</em>.</p>"),
+            supports="Small groups by lowest CFA target. Allow notebooks and the Pumpkin Path page during reviews and stations.",
         ),
     ),
     # ------------------------------------------------------------------
@@ -457,13 +461,13 @@ DAYS = [
             ("Before you start", "<p>Clear your desk except your Chromebook, a pencil, and scratch paper. Read every question twice. "
              "Questions 14 and 16 need written answers: use claim, evidence, and reasoning.</p>"),
             ("Unit 1.3 CSA", "<p>Open <strong>Unit 1.3 CSA: Sugar to Structures (HS-LS1-6)</strong> on Canvas. 16 questions, graded out of 4 points.</p>"),
-            ("When you finish", "<p>Do your notebook reflection. Then work quietly on your review or extension assignment from the practice test.</p>"),
+            ("When you finish", "<p>Do your notebook reflection. Then finish any CFA review that is still open for you.</p>"),
         ],
         cfa=None,
         teacher=dict(
             glance="Common summative assessment: 16 questions (3 per DOK 1–2 target; 1 multiple choice + 1 written response per DOK 3 target), 22 raw points, graded out of 4 in Canvas.",
             materials="Day 10 slides; Chromebooks; scratch paper.",
-            agenda=[("0–3", "Settle in; directions"), ("3–43", "Unit 1.3 CSA"), ("43–45", "Notebook reflection; review or extension work")],
+            agenda=[("0–3", "Settle in; directions"), ("3–43", "Unit 1.3 CSA"), ("43–45", "Notebook reflection; finish open CFA reviews")],
             notes=["Grade Q14 and Q16 with the rubric in each question's grading notes (SpeedGrader).",
                    "Students who score below proficient on a target can redo that target's CFA review before reassessment."],
             key="<p>CSA answer key, rubrics, and outcome alignment: <em>assessments/HS-LS1-6/Unit1.3_teacher_key.md</em> in the course repo.</p>",
