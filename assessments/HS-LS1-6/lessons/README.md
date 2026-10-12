@@ -32,3 +32,4 @@ Files:
 - `deck_requests.py`: Google Slides requests that built the Day 5, 9, and 10 decks (each a copy of the Lesson 2 deck).
 - `cfa_slide_requests.py`: requests that added the CFA slide to the Lesson 2–7 Google decks.
 - `planner_requests.py`: requests that wrote these days into the October page of the LE Planner 2026-2027 deck.
+- `live_lessons_upload.py`: puts the unit into the live course (342850) with each lesson day as a 4-point, no-submission assignment (like Lesson 1), and lays out the module in the current day order. Nothing is published.
