@@ -113,15 +113,15 @@ DECKS = {
                         "Where do you think most of the pumpkin's matter comes from? Underline the 3 words you used."]),
         ]),
     "day9": lambda: deck(
-        "d9", "HS-LS1-6 · THE GIANT PUMPKIN MYSTERY · DAY 9", "Practice Test and Review",
-        "Can I explain how a pumpkin builds its body from sugar?",
+        "d9", "HS-LS1-6 · THE GIANT PUMPKIN MYSTERY · DAY 9", "Interventions and Review",
+        "Which targets do I still need to work on before the CSA?",
         "Have ready: your Chromebook, your notebook, and a pencil",
-        ["show what I know on a practice test that looks like the CSA",
+        ["finish the CFA reviews that opened for me on Canvas",
          "find my weakest target and fix it at a review station",
          "answer the driving question with evidence"],
-        ["Self-rating", "Practice test", "Choose your stations", "Review station, round 1", "Review station, round 2",
+        ["Self-rating", "Assigned CFA reviews", "Choose your stations", "Review station, round 1", "Review station, round 2",
          "Driving question"],
-        "Day 9 · Practice Test and Review",
+        "Day 9 · Interventions and Review",
         [
             ("list", ["DO NOW · 3 MIN · ON YOUR OWN", "Rate yourself 1–4 on each target",
                       "LS1-6.1 Elements in sugar and large molecules\n"
@@ -130,15 +130,15 @@ DECKS = {
                       "LS1-6.4 Trace atoms with a model\n"
                       "LS1-6.5 Explain with evidence\n"
                       "LS1-6.6 Revise an explanation"]),
-            ("warmup", ["PRACTICE TEST · 25 MIN · ON YOUR OWN", "Take the Unit 1.3 Practice Test on Canvas",
-                        "16 questions, just like the CSA. Questions 14 and 16 are written answers: use claim, evidence, and reasoning. "
-                        "After your teacher grades it, a review (below a B) or an extension (A or B) opens for you."]),
+            ("warmup", ["INTERVENTIONS · 25 MIN · ON YOUR OWN + SMALL GROUPS", "Finish your assigned CFA reviews",
+                        "Scored below a B on a CFA? A review for that target opened for you on Canvas. Do your reviews first, lowest target first. "
+                        "Your teacher will pull small groups. No reviews open? Go to the review stations."]),
             ("list", ["REVIEW STATIONS · 2 ROUNDS OF 6 MIN", "Start at the station for your lowest target",
                       "Station A · Atoms and elements (LS1-6.1, 6.2): recount the molecule cards and check the photosynthesis atom count.\n"
                       "Station B · Sugar plus nitrogen (LS1-6.3): build an amino acid from glucose beads and the soil cup.\n"
                       "Station C · Trace the atoms (LS1-6.4): put the carbon-path cards in order, from the air to your hair.\n"
                       "Station D · Evidence and revision (LS1-6.5, 6.6): score two sample answers with the rubric, then fix one.\n"
-                      "Finished? Open any CFA review that opened for you on Canvas."]),
+                      "Still have an open CFA review? Finish it before the CSA tomorrow."]),
             ("key", ["DRIVING QUESTION · 2 MIN",
                      "How does a plant build its body, and what is it built from?",
                      "Answer it in 2–3 sentences in your notebook. Use at least 4 vocabulary words."]),
@@ -150,7 +150,7 @@ DECKS = {
         ["show what I know about all six Unit 1.3 targets",
          "use claim, evidence, and reasoning in my written answers",
          "reflect on how my understanding grew since Day 1"],
-        ["Settle in", "Before you start", "Unit 1.3 CSA (about 40 minutes)", "Check your answers", "Notebook reflection", "Review or extension work"],
+        ["Settle in", "Before you start", "Unit 1.3 CSA (about 40 minutes)", "Check your answers", "Notebook reflection", "Finish open CFA reviews"],
         "Day 10 · Unit 1.3 CSA",
         [
             ("list", ["BEFORE YOU START", "Set up for success",
@@ -162,7 +162,7 @@ DECKS = {
                         "16 questions · graded out of 4 points. Take your time and check your work before you submit."]),
             ("list", ["WHEN YOU FINISH", "Reflect, then keep learning",
                       "In your notebook, re-rate yourself 1–4 on all six targets. Which one improved most since Day 1?\n"
-                      "Then work quietly on your review or extension assignment from the practice test."]),
+                      "Then work quietly on any CFA review that is still open for you."]),
         ]),
 }
 
