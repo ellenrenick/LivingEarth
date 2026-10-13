@@ -1,0 +1,475 @@
+<title>Leaf Atom Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: a lab bench. Left = the leaf (molecules, loose atoms, builders); right = light switch, counts, round tracker. Stacks on phones. */
+:root {
+  --bg: #f3f6ee; --panel: #ffffff; --ink: #1f3326; --muted: #5d6e61; --line: #cfd9c8;
+  --leaf: #2f7d3a; --leaf-soft: #e1efdc; --sun: #f2a516; --sun-soft: #fff1cf;
+  --good: #2e7d32; --bad: #b3261e; --bad-soft: #fbe3e1;
+  --c: #222222; --h: #fafafa; --h-ring: #8a8a8a; --o: #d23c32;
+  --air: #3d8fd6; --water: #1fa59a;
+  --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --r: 14px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121a14; --panel: #1b261d; --ink: #e5eee3; --muted: #9db0a0; --line: #31423a;
+  --leaf: #6cc27a; --leaf-soft: #20352a; --sun: #f6b73c; --sun-soft: #3a2f14; --good: #7fd08a; --bad: #ff8a80; --bad-soft: #3d1f1d;
+  --c: #0b0b0b; --h: #f4f4f4; --h-ring: #bdbdbd; --o: #e2574c; --air: #6db3ee; --water: #4fd1c5; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121a14; --panel: #1b261d; --ink: #e5eee3; --muted: #9db0a0; --line: #31423a;
+  --leaf: #6cc27a; --leaf-soft: #20352a; --sun: #f6b73c; --sun-soft: #3a2f14; --good: #7fd08a; --bad: #ff8a80; --bad-soft: #3d1f1d;
+  --c: #0b0b0b; --h: #f4f4f4; --h-ring: #bdbdbd; --o: #e2574c; --air: #6db3ee; --water: #4fd1c5; color-scheme: dark }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--body); margin: 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 18px 40px; display: grid; gap: 18px; }
+header { display: grid; gap: 6px; }
+.kicker { font: 700 12px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 800 clamp(28px, 4vw, 40px)/1.05 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 20px/1.2 var(--display); margin: 0; }
+.eq { font: 700 18px/1.4 var(--body); color: var(--muted); }
+.eq b { color: var(--ink); }
+.steps { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 4px 0 0; }
+.steps li { padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.steps li.on { background: var(--leaf); border-color: var(--leaf); color: var(--panel); font-weight: 700; }
+.steps li.done { color: var(--leaf); border-color: var(--leaf); }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.leaf { position: relative; background: var(--leaf-soft); border-color: transparent; }
+.leaf.lit { box-shadow: 0 0 0 3px var(--sun) inset; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.hint { color: var(--muted); font-size: 14px; margin: 0; }
+.zone { background: var(--panel); border: 1px dashed var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 10px; min-width: 0; }
+.zone h3 { font: 700 13px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; display: flex; justify-content: space-between; gap: 8px; }
+.mols { display: flex; flex-wrap: wrap; gap: 10px; }
+.mol { display: inline-flex; align-items: center; padding: 6px 8px; border-radius: 999px; background: var(--leaf-soft); gap: 0; }
+.mol .lbl { font: 700 13px var(--body); color: var(--muted); margin-left: 6px; }
+.bond { width: 8px; height: 4px; background: var(--muted); border-radius: 2px; }
+.atom { --size: 34px; width: var(--size); height: var(--size); border-radius: 50%; display: inline-grid; place-items: center;
+  font: 700 15px/1 var(--body); border: 2px solid transparent; padding: 0; cursor: default; position: relative; flex: none; }
+button.atom { cursor: pointer; }
+button.atom:hover { transform: translateY(-2px); }
+.atom.C { background: var(--c); color: #fff; }
+.atom.H { background: var(--h); color: #333; border-color: var(--h-ring); }
+.atom.O { background: var(--o); color: #fff; }
+.atom.empty { background: transparent; border: 2px dashed var(--line); color: var(--muted); font-weight: 400; }
+.show-origin .atom.from-air { box-shadow: 0 0 0 3px var(--air); }
+.show-origin .atom.from-water { box-shadow: 0 0 0 3px var(--water); }
+.pool { display: grid; gap: 8px; }
+.pool .el { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; min-height: 36px; }
+.pool .el span.tag { width: 92px; font-size: 14px; color: var(--muted); }
+.build { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 12px; }
+@media (max-width: 640px) { .build { grid-template-columns: minmax(0, 1fr); } }
+.target { cursor: pointer; text-align: left; font: inherit; color: inherit; }
+.target.active { border: 2px solid var(--leaf); border-style: solid; }
+.slots { display: flex; flex-wrap: wrap; gap: 5px; }
+.slots .atom { --size: 26px; font-size: 12px; }
+.o2s { display: grid; grid-template-columns: repeat(3, auto); gap: 8px; justify-content: start; }
+.o2 { display: inline-flex; align-items: center; padding: 4px 6px; border-radius: 999px; background: var(--leaf-soft); }
+.o2 .atom { --size: 26px; font-size: 12px; }
+.done-badge { color: var(--good); font-weight: 700; }
+.btn { font: 700 15px var(--body); border-radius: 10px; padding: 10px 14px; border: 2px solid var(--leaf); background: var(--leaf); color: var(--panel); cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--leaf); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+.switch { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 12px; background: var(--sun-soft); }
+.switch button { width: 64px; height: 36px; border-radius: 999px; border: 2px solid var(--sun); background: var(--panel); position: relative; cursor: pointer; flex: none; }
+.switch button::after { content: ""; position: absolute; top: 3px; left: 3px; width: 26px; height: 26px; border-radius: 50%; background: var(--muted); transition: left .2s; }
+.switch button[aria-pressed="true"] { background: var(--sun); }
+.switch button[aria-pressed="true"]::after { left: 31px; background: var(--panel); }
+.sun { width: 34px; height: 34px; border-radius: 50%; background: var(--line); flex: none; transition: background .2s, box-shadow .2s; }
+.lit-on .sun { background: var(--sun); box-shadow: 0 0 18px var(--sun); }
+.meter { height: 12px; border-radius: 999px; background: var(--sun-soft); overflow: hidden; border: 1px solid var(--line); }
+.meter i { display: block; height: 100%; width: 0; background: var(--sun); transition: width .25s; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { border: 1px solid var(--line); padding: 6px; text-align: center; font-size: 14px; }
+th:first-child, td:first-child { text-align: left; }
+td input { width: 100%; max-width: 52px; font: 700 15px var(--body); text-align: center; padding: 4px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); }
+td input.ok { border-color: var(--good); background: var(--leaf-soft); }
+td input.no { border-color: var(--bad); background: var(--bad-soft); }
+.msg { min-height: 24px; font-weight: 700; margin: 0; }
+.msg.good { color: var(--good); } .msg.bad { color: var(--bad); }
+.toast { position: sticky; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); justify-self: center; max-width: 560px; padding: 10px 16px; border-radius: 12px;
+  background: var(--ink); color: var(--bg); font-weight: 700; text-align: center; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.legend .a::before { box-shadow: 0 0 0 3px var(--air) inset; } .legend .w::before { box-shadow: 0 0 0 3px var(--water) inset; }
+label.chk { display: flex; gap: 8px; align-items: center; font-size: 14px; cursor: pointer; }
+.shelf { display: flex; gap: 8px; flex-wrap: wrap; }
+.shelf .g { font: 700 13px var(--body); padding: 4px 10px; border-radius: 999px; background: var(--leaf-soft); color: var(--leaf); }
+.qs { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.q { display: grid; gap: 8px; align-content: start; }
+.q p { margin: 0; font-weight: 700; }
+.q .opts { display: flex; flex-wrap: wrap; gap: 6px; }
+.q button { font: 15px var(--body); padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.q button.right { border-color: var(--good); background: var(--leaf-soft); font-weight: 700; }
+.q button.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.q .fb { font-size: 14px; color: var(--muted); margin: 0; min-height: 20px; }
+.shake { animation: shake .3s; }
+@keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } button.atom:hover { transform: none; } }
+</style>
+
+<div class="wrap" id="app">
+  <header>
+    <div class="kicker">Unit 1.3 · Lesson 3 · Building sugar from air and water</div>
+    <h1>Leaf Atom Lab</h1>
+    <div class="eq"><b>6 CO₂ + 6 H₂O</b> + light energy → <b>C₆H₁₂O₆</b> (glucose) + <b>6 O₂</b></div>
+    <ol class="steps" id="steps">
+      <li data-s="0">1 · Count the atoms</li><li data-s="1">2 · Turn on the light</li><li data-s="2">3 · Take apart</li>
+      <li data-s="3">4 · Build glucose + O₂</li><li data-s="4">5 · Count again</li>
+    </ol>
+  </header>
+
+  <div class="grid">
+    <section class="panel leaf" id="leaf" aria-label="Inside the leaf">
+      <div class="row" style="justify-content:space-between">
+        <h2 id="roundTitle">Round 1 · Build one glucose</h2>
+        <label class="chk"><input type="checkbox" id="origin"> Show where atoms came from</label>
+      </div>
+      <div class="legend" id="legend" hidden><span class="a">from CO₂ (air)</span><span class="w">from H₂O (water)</span></div>
+
+      <div class="zone" id="startZone">
+        <h3>Air and water inside the leaf <span id="startCount"></span></h3>
+        <div class="mols" id="mols"></div>
+        <div class="row">
+          <button class="btn" id="breakBtn">Take the molecules apart</button>
+          <p class="hint">Count the atoms first and fill in the <b>Before</b> row.</p>
+        </div>
+      </div>
+
+      <div class="zone" id="poolZone" hidden>
+        <h3>Loose atoms <span id="poolCount"></span></h3>
+        <div class="pool" id="pool"></div>
+        <p class="hint">Tap an atom to add it to the molecule you're building. Tap a placed atom to send it back.</p>
+      </div>
+
+      <div class="build" id="buildZone" hidden>
+        <button class="zone target active" id="tGlucose" aria-pressed="true">
+          <h3>Glucose C₆H₁₂O₆ <span id="gStatus"></span></h3>
+          <div class="slots" id="gSlots"></div>
+        </button>
+        <button class="zone target" id="tO2" aria-pressed="false">
+          <h3>Oxygen gas 6 O₂ <span id="oStatus"></span></h3>
+          <div class="o2s" id="oSlots"></div>
+        </button>
+      </div>
+
+      <div class="row" id="fastRow" hidden>
+        <button class="btn ghost" id="fastBtn">Let the leaf do it (fast)</button>
+        <p class="hint">A real leaf does this millions of times every second.</p>
+      </div>
+      <p class="msg" id="leafMsg" role="status"></p>
+    </section>
+
+    <aside class="panel" aria-label="Light and counts">
+      <div class="switch" id="switchBox">
+        <span class="sun" aria-hidden="true"></span>
+        <div style="flex:1; min-width:0">
+          <b>Light energy</b>
+          <div class="hint" id="lightState">Off. The leaf can't rearrange atoms.</div>
+        </div>
+        <button id="light" aria-pressed="false" aria-label="Light energy on or off"></button>
+      </div>
+      <div>
+        <div class="row" style="justify-content:space-between"><b>Energy used</b><span class="hint" id="energyTxt">0 units</span></div>
+        <div class="meter"><i id="energyBar"></i></div>
+        <p class="hint">Energy is not matter. It never shows up as an atom.</p>
+      </div>
+
+      <div>
+        <h2 style="font-size:17px">Count the atoms</h2>
+        <p class="hint">Same table as your notebook.</p>
+        <table>
+          <thead><tr><th></th><th>C</th><th>H</th><th>O</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr id="beforeRow"><td>Before (6 CO₂ + 6 H₂O)</td><td><input id="b0" inputmode="numeric" aria-label="Before carbon"></td><td><input id="b1" inputmode="numeric" aria-label="Before hydrogen"></td><td><input id="b2" inputmode="numeric" aria-label="Before oxygen"></td><td><input id="b3" inputmode="numeric" aria-label="Before total"></td></tr>
+            <tr id="afterRow"><td>After (1 glucose + 6 O₂)</td><td><input id="a0" inputmode="numeric" aria-label="After carbon" disabled></td><td><input id="a1" inputmode="numeric" aria-label="After hydrogen" disabled></td><td><input id="a2" inputmode="numeric" aria-label="After oxygen" disabled></td><td><input id="a3" inputmode="numeric" aria-label="After total" disabled></td></tr>
+          </tbody>
+        </table>
+        <div class="row" style="margin-top:8px"><button class="btn ghost" id="checkBtn">Check my counts</button></div>
+        <p class="msg" id="countMsg" role="status"></p>
+      </div>
+
+      <div>
+        <h2 style="font-size:17px">Glucose made</h2>
+        <div class="shelf" id="shelf"><span class="hint">None yet.</span></div>
+        <button class="btn" id="roundBtn" hidden>Round 2 · Do it again, faster</button>
+      </div>
+    </aside>
+  </div>
+
+  <section class="panel" aria-label="Check your thinking">
+    <h2>What does the model show?</h2>
+    <div class="qs" id="qs"></div>
+  </section>
+  <div class="toast" id="toast" hidden></div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const NEED = { C: 6, H: 12, O: 6 };
+const BEFORE = [6, 12, 18, 36];
+let atoms = [], light = false, energy = 0, round = 1, phase = "start", target = "glucose", made = 0, countsOk = { before: false, after: false };
+
+function newAtoms() {
+  atoms = []; let id = 0;
+  for (let i = 0; i < 6; i++) ["C", "O", "O"].forEach((el) => atoms.push({ id: id++, el, from: "air", where: "mol", mol: "co2-" + i }));
+  for (let i = 0; i < 6; i++) ["H", "H", "O"].forEach((el) => atoms.push({ id: id++, el, from: "water", where: "mol", mol: "h2o-" + i }));
+}
+
+function atomEl(a, tag = "span") {
+  const e = document.createElement(tag);
+  e.className = `atom ${a.el} from-${a.from}`;
+  e.textContent = a.el;
+  e.title = `${a.el === "C" ? "Carbon" : a.el === "H" ? "Hydrogen" : "Oxygen"} atom from ${a.from === "air" ? "CO₂ in the air" : "water"}`;
+  return e;
+}
+
+function toast(t) {
+  const el = $("toast"); el.textContent = t; el.hidden = false;
+  clearTimeout(toast.t); toast.t = setTimeout(() => (el.hidden = true), 2600);
+}
+function say(t, kind = "") { const m = $("leafMsg"); m.textContent = t; m.className = "msg " + kind; }
+
+function renderMols() {
+  const box = $("mols"); box.innerHTML = "";
+  const groups = {};
+  atoms.filter((a) => a.where === "mol").forEach((a) => (groups[a.mol] = groups[a.mol] || []).push(a));
+  Object.entries(groups).forEach(([k, list]) => {
+    const m = document.createElement("span"); m.className = "mol";
+    const order = k.startsWith("co2") ? ["O", "C", "O"] : ["H", "O", "H"];
+    const pool = [...list];
+    order.forEach((el, i) => {
+      const idx = pool.findIndex((a) => a.el === el);
+      if (i) m.append(Object.assign(document.createElement("span"), { className: "bond" }));
+      m.append(atomEl(pool.splice(idx, 1)[0]));
+    });
+    m.append(Object.assign(document.createElement("span"), { className: "lbl", textContent: k.startsWith("co2") ? "CO₂" : "H₂O" }));
+    box.append(m);
+  });
+}
+
+function renderPool() {
+  const box = $("pool"); box.innerHTML = "";
+  ["C", "H", "O"].forEach((el) => {
+    const row = document.createElement("div"); row.className = "el";
+    row.append(Object.assign(document.createElement("span"), { className: "tag", textContent: { C: "Carbon", H: "Hydrogen", O: "Oxygen" }[el] }));
+    atoms.filter((a) => a.where === "pool" && a.el === el).forEach((a) => {
+      const b = atomEl(a, "button"); b.type = "button";
+      b.addEventListener("click", () => place(a, b));
+      row.append(b);
+    });
+    box.append(row);
+  });
+  $("poolCount").textContent = atoms.filter((a) => a.where === "pool").length + " atoms";
+}
+
+function renderBuild() {
+  const g = $("gSlots"); g.innerHTML = "";
+  ["C", "H", "O"].forEach((el) => {
+    const placed = atoms.filter((a) => a.where === "glucose" && a.el === el);
+    for (let i = 0; i < NEED[el]; i++) {
+      if (placed[i]) {
+        const b = atomEl(placed[i], "button"); b.type = "button";
+        b.addEventListener("click", (e) => { e.stopPropagation(); unplace(placed[i]); });
+        g.append(b);
+      } else g.append(Object.assign(document.createElement("span"), { className: "atom empty", textContent: el }));
+    }
+  });
+  const gDone = glucoseDone();
+  $("gStatus").innerHTML = gDone ? '<span class="done-badge">Built ✓</span>' : `${atoms.filter((a) => a.where === "glucose").length}/24`;
+
+  const o = $("oSlots"); o.innerHTML = "";
+  const placedO = atoms.filter((a) => a.where === "o2");
+  for (let m = 0; m < 6; m++) {
+    const mol = document.createElement("span"); mol.className = "o2";
+    for (let j = 0; j < 2; j++) {
+      const a = placedO[m * 2 + j];
+      if (j) mol.append(Object.assign(document.createElement("span"), { className: "bond" }));
+      if (a) {
+        const b = atomEl(a, "button"); b.type = "button";
+        b.addEventListener("click", (e) => { e.stopPropagation(); unplace(a); });
+        mol.append(b);
+      } else mol.append(Object.assign(document.createElement("span"), { className: "atom empty", textContent: "O" }));
+    }
+    o.append(mol);
+  }
+  $("oStatus").innerHTML = o2Done() ? '<span class="done-badge">Released ✓</span>' : `${Math.floor(placedO.length / 2)}/6`;
+}
+
+const glucoseDone = () => ["C", "H", "O"].every((el) => atoms.filter((a) => a.where === "glucose" && a.el === el).length === NEED[el]);
+const o2Done = () => atoms.filter((a) => a.where === "o2").length === 12;
+
+function useEnergy(n = 1) {
+  energy += n;
+  $("energyTxt").textContent = energy + (energy === 1 ? " unit" : " units");
+  $("energyBar").style.width = Math.min(100, (energy / 60) * 100) + "%";
+}
+
+function needLight(el) {
+  if (light) return true;
+  if (el) { el.classList.remove("shake"); void el.offsetWidth; el.classList.add("shake"); }
+  toast("The light is off. Rearranging atoms takes energy: turn on the light.");
+  return false;
+}
+
+function place(a, el) {
+  if (!needLight(el)) return;
+  if (target === "glucose") {
+    const have = atoms.filter((x) => x.where === "glucose" && x.el === a.el).length;
+    if (have >= NEED[a.el]) {
+      toast(`Glucose has only ${NEED[a.el]} ${a.el} atoms. Try building O₂ instead${a.el === "O" ? "" : ", or check your glucose"}.`);
+      return;
+    }
+    a.where = "glucose";
+  } else {
+    if (a.el !== "O") { toast("Oxygen gas (O₂) is made of 2 oxygen atoms only."); return; }
+    if (o2Done()) { toast("All 6 O₂ molecules are built."); return; }
+    a.where = "o2";
+  }
+  useEnergy();
+  update();
+}
+
+function unplace(a) { a.where = "pool"; update(); }
+
+function setTarget(t) {
+  target = t;
+  $("tGlucose").classList.toggle("active", t === "glucose"); $("tGlucose").setAttribute("aria-pressed", t === "glucose");
+  $("tO2").classList.toggle("active", t === "o2"); $("tO2").setAttribute("aria-pressed", t === "o2");
+}
+
+function stepIndex() {
+  if (phase === "start") return countsOk.before ? (light ? 2 : 1) : 0;
+  if (phase === "broken") return 3;
+  return 4;
+}
+
+function update() {
+  if (phase === "broken" && glucoseDone() && o2Done()) {
+    phase = "built"; made++;
+    say(`Round ${round} done: 1 glucose and 6 O₂. No atoms were added or lost.`, "good");
+    ["a0", "a1", "a2", "a3"].forEach((id) => ($(id).disabled = false));
+    if (made < 2) $("roundBtn").hidden = false;
+    renderShelf();
+  }
+  $("startZone").hidden = phase !== "start";
+  $("poolZone").hidden = phase === "start";
+  $("buildZone").hidden = phase === "start";
+  $("fastRow").hidden = !(round === 2 && phase === "broken");
+  renderMols(); renderPool(); renderBuild();
+  $("startCount").textContent = phase === "start" ? "6 CO₂ · 6 H₂O" : "";
+  const s = stepIndex();
+  document.querySelectorAll("#steps li").forEach((li) => {
+    const i = +li.dataset.s; li.className = i === s ? "on" : i < s ? "done" : "";
+  });
+}
+
+function renderShelf() {
+  const sh = $("shelf"); sh.innerHTML = "";
+  if (!made) { sh.innerHTML = '<span class="hint">None yet.</span>'; return; }
+  for (let i = 0; i < made; i++) sh.append(Object.assign(document.createElement("span"), { className: "g", textContent: "Glucose " + (i + 1) }));
+  if (made >= 2) sh.append(Object.assign(document.createElement("span"), { className: "hint", textContent: "Both glucose molecules are ready. In Lesson 4 you'll rebuild glucose into amino acids." }));
+}
+
+$("light").addEventListener("click", () => {
+  light = !light;
+  $("light").setAttribute("aria-pressed", light);
+  $("switchBox").classList.toggle("lit-on", light);
+  $("leaf").classList.toggle("lit", light);
+  $("lightState").textContent = light ? "On. Light supplies the energy to rearrange atoms." : "Off. The leaf can't rearrange atoms.";
+  update();
+});
+
+$("breakBtn").addEventListener("click", (e) => {
+  if (!countsOk.before) { toast("Count first: fill in and check the Before row."); return; }
+  if (!needLight(e.currentTarget)) return;
+  atoms.forEach((a) => (a.where = "pool"));
+  useEnergy(12);
+  phase = "broken"; setTarget("glucose");
+  say("The bonds are broken. Now rebuild the same atoms into 1 glucose and 6 O₂.");
+  update();
+});
+
+$("tGlucose").addEventListener("click", () => setTarget("glucose"));
+$("tO2").addEventListener("click", () => setTarget("o2"));
+
+$("fastBtn").addEventListener("click", (e) => {
+  if (!needLight(e.currentTarget)) return;
+  const steps = [];
+  atoms.filter((a) => a.where === "pool").forEach((a) => steps.push(a));
+  let i = 0;
+  const tick = () => {
+    const a = steps[i++]; if (!a) return;
+    const g = atoms.filter((x) => x.where === "glucose" && x.el === a.el).length;
+    a.where = g < NEED[a.el] ? "glucose" : "o2";
+    useEnergy(); update();
+    if (phase === "broken") setTimeout(tick, 60);
+  };
+  tick();
+});
+
+$("roundBtn").addEventListener("click", () => {
+  round = 2; phase = "start"; newAtoms(); $("roundBtn").hidden = true;
+  $("roundTitle").textContent = "Round 2 · Do it again, faster";
+  countsOk.before = true; // same starting molecules as round 1
+  say("New CO₂ and water came in. Take them apart and build a second glucose.");
+  update();
+});
+
+$("checkBtn").addEventListener("click", () => {
+  const read = (p) => [0, 1, 2, 3].map((i) => $(p + i));
+  const mark = (inputs) => inputs.map((inp, i) => {
+    const ok = inp.value.trim() !== "" && +inp.value === BEFORE[i];
+    inp.classList.toggle("ok", ok); inp.classList.toggle("no", !ok && inp.value.trim() !== ""); return ok;
+  }).every(Boolean);
+  const m = $("countMsg");
+  countsOk.before = mark(read("b"));
+  if (phase === "built" || made > 0) countsOk.after = mark(read("a"));
+  if (!countsOk.before) { m.textContent = "Check the Before row. Each CO₂ has 1 C and 2 O; each H₂O has 2 H and 1 O."; m.className = "msg bad"; }
+  else if (made === 0) { m.textContent = "Before row is right. Turn on the light and take the molecules apart."; m.className = "msg good"; }
+  else if (!countsOk.after) { m.textContent = "Check the After row. Count glucose (C₆H₁₂O₆) plus all 6 O₂."; m.className = "msg bad"; }
+  else { m.textContent = "Before = After. The atoms were rearranged, not created or destroyed."; m.className = "msg good"; }
+  update();
+});
+
+$("origin").addEventListener("change", (e) => {
+  $("app").classList.toggle("show-origin", e.target.checked);
+  $("legend").hidden = !e.target.checked;
+});
+
+const QS = [
+  ["Compare Before and After. The total number of atoms…", ["went up", "stayed the same", "went down"], 1,
+   "Same 36 atoms before and after. They were rearranged, not created or destroyed."],
+  ["The carbon atoms in glucose came from…", ["carbon dioxide", "water", "sunlight"], 0,
+   "Every carbon came from CO₂ in the air. Turn on \"Show where atoms came from\" to see it."],
+  ["The hydrogen atoms in glucose came from…", ["carbon dioxide", "water", "the soil"], 1,
+   "Only water has hydrogen, so every H in glucose came from water."],
+  ["The extra oxygen atoms…", ["were destroyed", "were released as O₂ gas", "became light"], 1,
+   "The leftover oxygen leaves the leaf as oxygen gas (O₂)."],
+  ["Did light energy become any atoms in the glucose?", ["Yes", "No"], 1,
+   "No. Light supplied the energy to rearrange the atoms. The atom count never changed when you used energy."],
+];
+QS.forEach(([q, opts, right, why], qi) => {
+  const box = document.createElement("div"); box.className = "q";
+  box.append(Object.assign(document.createElement("p"), { textContent: `${qi + 1}. ${q}` }));
+  const o = document.createElement("div"); o.className = "opts";
+  const fb = Object.assign(document.createElement("p"), { className: "fb" });
+  opts.forEach((t, i) => {
+    const b = Object.assign(document.createElement("button"), { type: "button", textContent: t });
+    b.addEventListener("click", () => {
+      o.querySelectorAll("button").forEach((x) => x.classList.remove("right", "wrong"));
+      b.classList.add(i === right ? "right" : "wrong");
+      fb.textContent = i === right ? why : "Not quite. Look back at your model and try again.";
+    });
+    o.append(b);
+  });
+  box.append(o, fb); $("qs").append(box);
+});
+
+newAtoms(); update();
+</script>

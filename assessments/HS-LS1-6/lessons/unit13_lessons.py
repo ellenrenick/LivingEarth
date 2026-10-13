@@ -218,11 +218,10 @@ DAYS = [
         day=3, title="Building Sugar from Air and Water", lesson="Lesson 3", targets=["LS1-6.2"],
         focus="Where do the atoms in sugar come from, and what does light do?",
         slides=("Lesson 3: Building Sugar from Air and Water", SLIDES.format("1eJKaJgqK0YgDJ3YA_qJKm99gpPedl4CcBoXNR-K9ZqQ")),
-        handout=FILE.format("1VNnbigr9yBPgX-adcan2KsGvfiRvp9JQ"),
+        handout=FILE.format("1j2Xsh4kTmtqNH3y_X0VMT-dHaCrhsd7_TDH6AmEYfIw"),
         notebook=[
             "Title: <strong>D3 Building Sugar from Air and Water</strong>. Add it to your table of contents.",
-            "Record the leaf-chamber data answers, the bead-model Before/After table, and the energy-or-matter sort.",
-            "Save your 2 glucose bead models in your labeled bag for Day 5 (Thursday).",
+            "Record the leaf-chamber data answers, the simulation Before/After atom table, and the energy-or-matter sort.",
             CER_LOG,
         ],
         sections=[
@@ -231,27 +230,30 @@ DAYS = [
              "Where did the carbon go in the light?</p>"),
             ("Photosynthesis: the big idea", "<p>Carbon dioxide and water supply the <strong>atoms</strong>. Light supplies the <strong>energy</strong> to rearrange them "
              "into glucose; oxygen gas is released.</p>"),
-            ("Build sugar with beads", "<p>Build 6 CO₂ and 6 H₂O, count, then rebuild the same beads into 1 glucose and 6 O₂ while the LIGHT ENERGY card is out. "
-             "Count again. Build a second glucose and save both.</p>"),
+            ("Leaf Atom Lab simulation", "<p>Open the <a href=\"https://claude.ai/artifact/JyQjAzmqPp4jY1ef52tkvp\" target=\"_blank\">Leaf Atom Lab</a>. Count the atoms in 6 CO₂ and 6 H₂O "
+             "(Before row), turn on the light, take the molecules apart, and rebuild the same atoms into 1 glucose and 6 O₂. Count again (After row). "
+             "Then do Round 2 and answer the five check questions.</p>"),
             ("Energy or matter?", "<p>Sort sunlight, CO₂, water, glucose, oxygen gas, heat, nitrogen in fertilizer, and chlorophyll.</p>"),
         ],
         cfa="LS1-6.2",
         teacher=dict(
-            glance="Photosynthesis as atom rearrangement. Leaf-chamber data, then a bead model with before/after atom counts (conservation), then matter vs. "
+            glance="Photosynthesis as atom rearrangement. Leaf-chamber data, then the Leaf Atom Lab simulation with before/after atom counts (conservation), then matter vs. "
                    "energy. CFA LS1-6.2 closes the lesson.",
-            materials="Lesson 3 slides and handout; beads (black, white, red), pipe cleaners, labeled bags, LIGHT ENERGY cards; Chromebooks.",
+            materials="Lesson 3 slides and handout; Chromebooks with the Leaf Atom Lab simulation (https://claude.ai/artifact/JyQjAzmqPp4jY1ef52tkvp).",
             agenda=[("0–4", "Warm-up"), ("4–10", "Leaf-chamber data"), ("10–14", "Photosynthesis: the big idea"),
-                    ("14–32", "Bead model, rounds 1 and 2"), ("32–36", "Energy or matter?"),
-                    ("36–39", "Exit ticket"), ("39–45", "CFA LS1-6.2")],
-            notes=["Make sure every pair bags 2 glucose models; Day 5 (Thursday, after the Wednesday sub day) depends on them, so collect and store the bags. Keep spares for absent students.",
-                   "The CFA includes atom counting (photosynthesis oxygen count; two glucose joining and releasing water). The bead table is good practice for it."],
+                    ("14–30", "Leaf Atom Lab simulation, rounds 1 and 2 + check questions"), ("30–34", "Energy or matter?"),
+                    ("34–38", "Exit ticket"), ("38–44", "CFA LS1-6.2")],
+            notes=["The simulation replaces the bead model. Students can't take molecules apart until the Before row is checked and the light is on; "
+                   "the energy meter rises while the atom count never changes. The page doesn't save, so the notebook table is the record.",
+                   "Lesson 4 still uses beads: pre-build 2 glucose bead models per pair (6 black, 12 white, 6 red each) before Day 5, since students no longer bag them today.",
+                   "The CFA includes atom counting (photosynthesis oxygen count; two glucose joining and releasing water). The simulation table is good practice for it."],
             key=ul("Light: CO₂ fell 420 → 300 ppm (120 ppm in 20 min). Dark: rose 420 → 470 ppm (cellular respiration).",
                    "The carbon went into sugar (glucose) in the leaf. Light had to be present.",
-                   "Beads before = after: 6 black (C), 12 white (H), 18 red (O), 36 total.",
-                   "C came from CO₂, H from water, the extra O left as O₂. The light card never became beads: it stands for energy.",
+                   "Before = after: 6 C, 12 H, 18 O, 36 atoms total.",
+                   "C came from CO₂, H from water, the extra O left as O₂. Light energy never became atoms: the energy meter rose while the atom count stayed at 36.",
                    "Matter: CO₂, water, glucose, oxygen gas, nitrogen in fertilizer, chlorophyll. Energy: sunlight, heat.",
                    "Exit ticket: CO₂ and water supply the atoms; light supplies the energy; sunlight does not become part of the sugar."),
-            supports="Pre-count bead bags for pairs who need it. Let students point to bead colors as they explain.",
+            supports="Pair students on one Chromebook. The “Show where atoms came from” toggle helps students who need to see each atom's source.",
         ),
     ),
     # ------------------------------------------------------------------
@@ -275,7 +277,7 @@ DAYS = [
         cfa="LS1-6.3",
         teacher=dict(
             glance="Sugar plus nitrogen makes amino acids. Students rebuild Day 3's glucose beads into valine and threonine, adding nitrogen from the soil cup. CFA LS1-6.3 closes the lesson.",
-            materials="Lesson 4 slides and handout; students' glucose bags from Day 3; blue beads (soil cup); recycle trays; spare glucose models; Chromebooks.",
+            materials="Lesson 4 slides and handout; glucose bags, 2 pre-built glucose bead models per pair (Lesson 3 is now a simulation, so students don't build these on Day 3); blue beads (soil cup); recycle trays; spare glucose models; Chromebooks.",
             agenda=[("0–4", "Warm-up"), ("4–10", "The amino acid recipe"), ("10–29", "Bead lab"),
                     ("29–36", "Atom accounting and discussion"), ("36–39", "Exit ticket (is fertilizer plant food?)"), ("39–45", "CFA LS1-6.3")],
             notes=["The lysine challenge is for early finishers only.",
