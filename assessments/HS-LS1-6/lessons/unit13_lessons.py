@@ -168,7 +168,7 @@ DAYS = [
         handout=FILE.format("1Yr8aG_aEqOTw2zAsyiwfNEAljeeKXjez"),
         notebook=[
             "Title: <strong>D2 What Are Living Things Made Of?</strong> Add it to your table of contents.",
-            "Record the sealed-bag demo table, the formula counts, the molecule card sort, and the atom accounting rule.",
+            "Record the sealed-bag demo table, the formula counts, the “Who needs the soil?” quick sort, and the atom accounting rule.",
             CER_LOG,
         ],
         sections=[
@@ -176,34 +176,41 @@ DAYS = [
             ("Sealed-bag demo", "<p>Record the mass before and after tipping the cup, then after opening the bag. "
              "<strong>Conservation of matter:</strong> atoms are rearranged into new molecules. They are never created, destroyed, or changed into a different element.</p>"),
             ("Reading formulas", "<p>C₆H₁₂O₆ has 6 carbon, 12 hydrogen, and 6 oxygen atoms. Count the atoms in CO₂, H₂O, and C₆H₁₂O₆.</p>"),
-            ("Molecule card sort", "<p>Count the atoms on each of the 11 cards, sort them by which elements they contain, and decide which molecules a plant "
-             "could build from only CO₂ and water.</p>"),
-            ("The atom accounting rule", "<p>As a class, write one rule for deciding whether a plant can build a molecule. Copy it into your notebook.</p>"),
+            ("Who needs the soil? (10 min)", "<p><strong>Watch (3 min):</strong> the video <em>Plants Need More Than C, H, and O</em>.</p>"
+             "<p><strong>Quick sort (5 min, with a partner):</strong> for each molecule, name its type of big molecule, circle the elements it has, "
+             "decide whether a plant could build it from only CO₂ and water, and list any extra element it needs.</p>"
+             + table(["Molecule", "Formula", "Type of big molecule", "CO₂ + H₂O only? (Y/N)", "Extra element(s)"],
+                     ["Glucose", "C₆H₁₂O₆", "", "", ""], ["Oleic acid", "C₁₈H₃₄O₂", "", "", ""],
+                     ["Valine", "C₅H₁₁NO₂", "", "", ""], ["AMP", "C₁₀H₁₄N₅O₇P", "", "", ""],
+                     ["Challenge: chlorophyll a", "C₅₅H₇₂MgN₄O₅", "", "", ""])),
+            ("The atom accounting rule", "<p>Finish the rule and copy it into your notebook: A plant can build ____ from only CO₂ and water. "
+             "To build ____, it also needs ____ from the ____.</p>"),
         ],
         cfa="LS1-6.1",
         teacher=dict(
-            glance="Atoms and elements. The sealed-bag demo grounds conservation of matter; the card sort shows that sugar's elements (C, H, O) can't "
-                   "build anything with N or P. CFA LS1-6.1 closes the lesson.",
-            materials="Lesson 2 slides and handout (cards on the last page, 1 set per group); sealed-bag demo (zip bag, cup, baking soda, vinegar, balance) "
+            glance="Atoms and elements. The sealed-bag demo grounds conservation of matter; the 10-minute “Who needs the soil?” video and quick sort show that "
+                   "sugar's elements (C, H, O) can't build anything with N or P. CFA LS1-6.1 closes the lesson.",
+            materials="Lesson 2 slides and handout; the Part 3 video (Plants Need More Than C, H, and O, 3 min); sealed-bag demo (zip bag, cup, baking soda, vinegar, balance) "
                       "or the sealed-bag demo video in the Unit 1.3 Drive folder; Chromebooks for the CFA.",
             agenda=[("0–5", "Warm-up"), ("5–11", "Sealed-bag demo"), ("11–15", "Reading formulas"),
-                    ("15–31", "Molecule card sort (count, sort, apply)"), ("31–36", "Atom accounting rule"),
-                    ("36–39", "Exit ticket (glucose vs. histidine)"), ("39–45", "CFA LS1-6.1 (slide at the end of the deck)")],
+                    ("15–25", "Who needs the soil? (3 min video + 5 min quick sort + 2 min share)"), ("25–29", "Atom accounting rule"),
+                    ("29–32", "Exit ticket (glucose vs. histidine)"), ("32–38", "CFA LS1-6.1 (slide at the end of the deck)"), ("38–45", "Buffer")],
             notes=[
-                "Minutes are trimmed from the original 45-minute plan to fit the 6-minute CFA. If time runs short, do the exit ticket orally.",
+                "The 11-card sort was replaced with a 10-minute video and 4-molecule quick sort (the card sort ran long). "
+                "If time runs short, do the exit ticket orally.",
                 "Students below a B on the CFA get the LS1-6.1 review on Canvas automatically (Mastery Path).",
             ],
             key=ul(
                 "Sealed bag: mass stays the same while sealed (no atoms leave); drops after opening because CO₂ gas escapes. No atoms are destroyed.",
                 "CO₂: 1 C, 2 O · H₂O: 2 H, 1 O · C₆H₁₂O₆: 6 C, 12 H, 6 O.",
-                "Cards: glucose and fructose C₆H₁₂O₆ · sucrose C₁₂H₂₂O₁₁ · cellulose unit C₆H₁₀O₅ · oleic acid C₁₈H₃₄O₂ · beta-carotene C₄₀H₅₆ · "
-                "valine C₅H₁₁NO₂ · lysine C₆H₁₄N₂O₂ · tryptophan C₁₁H₁₂N₂O₂ · AMP C₁₀H₁₄N₅O₇P · chlorophyll a C₅₅H₇₂MgN₄O₅.",
-                "Groups: C, H, O only (cards 1–5) · C and H only (6) · C, H, O, N (7–9) · C, H, O, N, P (10) · C, H, O, N, Mg (11).",
-                "From only CO₂ and H₂O: cards 1–6. Need other elements: 7–9 (N), 10 (N, P), 11 (N, Mg), from the soil.",
+                "Quick sort: glucose, carbohydrate, Y, none · oleic acid, lipid, Y, none · valine, protein (amino acid), N, needs N · "
+                "AMP, nucleic acid (RNA building block), N, needs N and P · challenge: chlorophyll a, pigment, N, needs N and Mg.",
+                "Rule: a plant can build carbohydrates and lipids from only CO₂ and water. To build proteins and nucleic acids "
+                "(and chlorophyll), it also needs N and P (and Mg) from the soil.",
                 "Carbon can't turn into nitrogen: atoms are never changed into other elements (the bag's mass shows atoms are conserved).",
                 "Exit ticket: disagree. Histidine has 3 N; glucose has 0 N. Atoms can't be created, so the N must come from the soil.",
             ),
-            supports="Assign each group member specific cards to count. Sentence frames on the slides and handout.",
+            supports="Pair students; the video has a built-in pause point for the quick sort. Sentence frame for the rule on the slides and handout.",
         ),
     ),
     # ------------------------------------------------------------------
