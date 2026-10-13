@@ -165,7 +165,7 @@ DAYS = [
         day=2, title="What Are Living Things Made Of?", lesson="Lesson 2", targets=["LS1-6.1", "LS1-6.2"],
         focus="Which elements make up the molecules of life, and where could a plant get them?",
         slides=("Lesson 2: What Are Living Things Made Of?", SLIDES.format("1xD36Y-QqwdvhmE8EQXBZGkN-qBNUNDJlT91reKUuRwM")),
-        handout=FILE.format("1Yr8aG_aEqOTw2zAsyiwfNEAljeeKXjez"),
+        handout=FILE.format("1Vd5hyM9JIgWy8fbJtJWJttWKs0NgdPrFa-n6jqys4Rs"),
         notebook=[
             "Title: <strong>D2 What Are Living Things Made Of?</strong> Add it to your table of contents.",
             "Record the sealed-bag demo table, the formula counts, the “Who needs the soil?” quick sort, and the atom accounting rule.",
