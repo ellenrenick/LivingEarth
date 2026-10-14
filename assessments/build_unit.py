@@ -26,6 +26,7 @@ import build  # noqa: E402  (the HS-LS1-6 builder, reused for the CSA)
 LETTERS = "ABCD"
 PACING = json.loads((ROOT / "pacing.json").read_text(encoding="utf-8"))
 CFA_MC_POINTS = 2
+CFA_ONLY = {"HS-LS1-6"}
 
 
 def load(path, name):
@@ -146,11 +147,14 @@ def build_cfa(unit_dir, cfa_mod):
 def build_unit(std):
     unit_dir = ROOT / std
     build.HERE = unit_dir
+    n = build_cfa(unit_dir, load(unit_dir / "cfa.py", f"c_{std}"))
+    if std in CFA_ONLY:  # CSA already built and published; rebuild it with HS-LS1-6/build.py
+        print(f"{std}: {n} CFAs")
+        return
     q = load(unit_dir / "questions.py", f"q_{std}")
     mc = build.shuffled_mc(q)
     total = build.build_qti(q, mc)
     build.build_key(q, mc, total)
-    n = build_cfa(unit_dir, load(unit_dir / "cfa.py", f"c_{std}"))
     print(f"{std}: CSA {total} points, {n} CFAs")
 
 

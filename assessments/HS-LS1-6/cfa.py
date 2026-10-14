@@ -1,0 +1,130 @@
+"""CFAs for HS-LS1-6 (unit 1.3): one short exit-ticket check per priority learning target.
+
+Each CFA is worth 6 points. MC items list the correct choice FIRST (the builder shuffles).
+Teaching note from the department: never write an item that asks students to identify or
+classify a macromolecule, and never say amino acids or proteins are only C, H, and O.
+"""
+
+STANDARD = "HS-LS1-6"
+UNIT = "1.3"
+UNIT_TITLE = "Sugar to Structures"
+
+CFAS = [
+    {
+        "id": "LS1-6.1", "dok": 1,
+        "lt": "I can name the three elements that make up most of sugar and the body's large molecules.",
+        "items": [
+            {"prompt": "<p>Which three elements make up a sugar such as glucose?</p>",
+             "choices": ["Carbon, hydrogen, and oxygen", "Carbon, nitrogen, and sulfur", "Hydrogen, oxygen, and iron", "Calcium, carbon, and oxygen"],
+             "feedback": "Sugar is made only of carbon, hydrogen, and oxygen."},
+            {"prompt": "<p>Amino acids contain carbon, hydrogen, and oxygen. What else do all amino acids contain?</p>",
+             "choices": ["Nitrogen", "Iron", "Calcium", "Helium"],
+             "feedback": "Amino acids also contain nitrogen (a few contain sulfur)."},
+            {"prompt": "<p>Which element is in an amino acid but is <strong>not</strong> in sugar?</p>",
+             "choices": ["Nitrogen", "Carbon", "Hydrogen", "Oxygen"],
+             "feedback": "Sugar has no nitrogen, so the nitrogen in amino acids has to come from somewhere else."},
+        ],
+    },
+    {
+        "id": "LS1-6.2", "dok": 2,
+        "lt": "I can describe how living things take in matter and rearrange its atoms, with no atoms lost.",
+        "items": [
+            {"prompt": "<p>A student builds a molecule from beads, takes it apart, and builds a different molecule with the same beads. What does this show?</p>",
+             "choices": ["Atoms are rearranged, and none are created or destroyed.", "Atoms disappear when a molecule is taken apart.",
+                         "New atoms form when a molecule is built.", "Atoms change into other elements."],
+             "feedback": "Matter is conserved: atoms are rearranged, not created or destroyed."},
+            {"prompt": "<p>A plant takes in CO<sub>2</sub> and water and builds sugar. Compared with the atoms taken in, the atoms in the sugar are</p>",
+             "choices": ["the same atoms, rearranged into a new molecule", "new atoms made by the plant", "fewer atoms, because some are lost", "atoms of different elements"],
+             "feedback": "The carbon, hydrogen, and oxygen atoms are rearranged into sugar."},
+            {"prompt": "<p>In 1 or 2 sentences, explain what happens to the atoms in food when your body uses it to build new body parts.</p>",
+             "points": 2,
+             "criteria": [(2, "Says the atoms are taken in and rearranged into new molecules, with none lost or created."),
+                          (1, "Says the food is used or broken down, but does not say the atoms are rearranged or conserved."),
+                          (0, "Blank or says atoms disappear or are created.")],
+             "exemplar": "The atoms in food are rearranged into the molecules of new body parts. No atoms are lost or made, only moved into new arrangements."},
+        ],
+    },
+    {
+        "id": "LS1-6.3", "dok": 2,
+        "lt": "I can explain how atoms from sugar join with other elements, like nitrogen, to build larger molecules.",
+        "items": [
+            {"prompt": "<p>A plant has plenty of sugar but no nitrogen in the soil. Why can it not build amino acids?</p>",
+             "choices": ["Sugar has no nitrogen, and amino acids need nitrogen.", "Sugar blocks the plant from making amino acids.",
+                         "Amino acids are made of sugar only.", "Plants do not make amino acids."],
+             "feedback": "Atoms from sugar must join with nitrogen from another source to build amino acids."},
+            {"prompt": "<p>Which statement is correct?</p>",
+             "choices": ["Atoms from sugar are rearranged and combined with other elements, such as nitrogen, to build larger molecules.",
+                         "Sugar becomes amino acids without any other atoms.",
+                         "Larger molecules are made by creating new atoms.",
+                         "Nitrogen atoms turn into carbon atoms."],
+             "feedback": "Building amino acids takes atoms from sugar plus atoms of other elements."},
+            {"prompt": "<p>Where does the nitrogen come from that a plant combines with atoms from sugar? Explain in 1 or 2 sentences how it is used.</p>",
+             "points": 2,
+             "criteria": [(2, "Names a source (soil or fertilizer) and says the nitrogen joins with atoms from sugar to build amino acids."),
+                          (1, "Names the source or the use, but not both."),
+                          (0, "Blank or incorrect.")],
+             "exemplar": "The nitrogen comes from the soil. The plant combines it with carbon, hydrogen, and oxygen atoms from sugar to build amino acids."},
+        ],
+    },
+    {
+        "id": "LS1-6.4", "dok": 2,
+        "lt": "I can use a model to trace atoms from sugar into a larger molecule.",
+        "items": [
+            {"prompt": "<p>In a bead model, black beads are carbon, white beads are hydrogen, red beads are oxygen, and blue beads are nitrogen. A student wants to build an amino acid from sugar beads. What must she add?</p>",
+             "choices": ["Blue (nitrogen) beads from outside the sugar", "More black beads made from nothing", "Nothing; sugar has everything", "A different kind of sugar"],
+             "feedback": "Sugar has no nitrogen, so nitrogen beads have to be added."},
+            {"prompt": "<p>The student builds the amino acid and has some red and white beads left over. What does this show?</p>",
+             "choices": ["Not every atom from the sugar ends up in the amino acid; the leftover atoms are still there and can be used elsewhere.",
+                         "The leftover atoms disappeared.",
+                         "The model is wrong because all atoms must be used.",
+                         "The leftover beads became nitrogen."],
+             "feedback": "Atoms are conserved, so leftover atoms form other molecules."},
+            {"prompt": "<p>Use the bead model idea to trace the atoms: start with a sugar and an amino acid you build from it. Say which atoms come from the sugar and which are added.</p>",
+             "points": 2,
+             "criteria": [(2, "Carbon, hydrogen, and oxygen are traced from the sugar into the amino acid and nitrogen is identified as added."),
+                          (1, "Traces atoms from sugar but does not identify what is added, or the reverse."),
+                          (0, "Blank or incorrect.")],
+             "exemplar": "Carbon, hydrogen, and oxygen atoms from the sugar are rearranged into the amino acid. Nitrogen is added from outside because sugar has none."},
+        ],
+    },
+    {
+        "id": "LS1-6.5", "dok": 3,
+        "lt": "I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules.",
+        "items": [
+            {"prompt": "<table border=\"1\" cellpadding=\"4\"><tr><th>Plant</th><th>Nitrogen added</th><th>Sugar (mg/g)</th><th>Protein (mg/g)</th></tr><tr><td>A</td><td>Yes</td><td>14</td><td>40</td></tr><tr><td>B</td><td>No</td><td>30</td><td>8</td></tr></table><p>Which conclusion is best supported by the data?</p>",
+             "choices": ["Plant B made sugar but without nitrogen could not build much protein.", "Plant B could not make sugar.",
+                         "Nitrogen is a kind of sugar.", "Plant A made less sugar because it was not getting light."],
+             "feedback": "Both plants made sugar; only the plant with nitrogen built much protein."},
+            {"prompt": "<p>Which piece of evidence supports the claim that atoms from sugar are used to build proteins?</p>",
+             "choices": ["Labeled carbon from CO<sub>2</sub> shows up first in sugar and later in proteins.", "Plants are green.",
+                         "Proteins are larger than sugars.", "Plants need water."],
+             "feedback": "A tracer moving from sugar to proteins shows the atoms were reused."},
+            {"prompt": "<p>Using the table above, write 2 or 3 sentences that use data to explain why Plant B grows poorly even though it has more sugar.</p>",
+             "points": 2,
+             "criteria": [(2, "Uses data (more sugar, less protein) and explains that without nitrogen the sugar's atoms cannot be built into proteins."),
+                          (1, "Uses data or gives the idea, but not both."),
+                          (0, "Blank or claims plants cannot make sugar without nitrogen.")],
+             "exemplar": "Plant B has more sugar (30 vs. 14 mg/g) but much less protein (8 vs. 40 mg/g). Without nitrogen it cannot combine atoms from sugar to build amino acids and proteins, so it cannot grow much."},
+        ],
+    },
+    {
+        "id": "LS1-6.6", "dok": 3,
+        "lt": "I can revise my explanation when new evidence comes in.",
+        "items": [
+            {"prompt": "<p>A student wrote, &ldquo;Plants make all their molecules from sunlight.&rdquo; New evidence shows labeled carbon from CO<sub>2</sub> ends up in plant proteins. Which revision is best?</p>",
+             "choices": ["Plants use light energy to build sugar from CO2 and water, and atoms from that sugar are used to build other molecules.",
+                         "Plants make molecules from soil only.", "Plants change sunlight into carbon.", "No revision is needed."],
+             "feedback": "Light supplies energy; the atoms come from CO2, water, and soil."},
+            {"prompt": "<p>Why should a scientist revise an explanation when new evidence does not fit it?</p>",
+             "choices": ["Because an explanation should match all the evidence we have.", "Because explanations can never be right.",
+                         "Because the first explanation is always the best.", "Because evidence does not matter."],
+             "feedback": "Scientific explanations are revised to fit new evidence."},
+            {"prompt": "<p>Your first explanation was, &ldquo;Plants get all the matter they need from the soil.&rdquo; Then you learn that the soil in a pot barely changes in mass while the plant grows a lot. Revise your explanation in 1 or 2 sentences.</p>",
+             "points": 2,
+             "criteria": [(2, "Revised explanation uses the new evidence and says most of the matter comes from CO2 and water, with small amounts from the soil."),
+                          (1, "Revises, but does not use the evidence or does not name the new source."),
+                          (0, "Blank or repeats the original claim.")],
+             "exemplar": "Because the soil barely changed, most of the plant's matter must come from CO2 in the air and water. The soil supplies small amounts of elements such as nitrogen."},
+        ],
+    },
+]
