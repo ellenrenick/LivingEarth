@@ -13,10 +13,9 @@ import zipfile
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-import practice_questions
 import questions
 
-BANKS = [questions, practice_questions]
+BANKS = [questions]
 HERE = Path(__file__).parent
 MC_POINTS = 2
 LETTERS = "ABCDEFGH"

@@ -1,0 +1,83 @@
+"""Unit review for HS-ESS3-1 (unit 4.3). Done on the review day, built around the CFAs (no practice test)."""
+
+STANDARD = "HS-ESS3-1"
+UNIT_TITLE = "Earth Shaping Humanity"
+GOAL = ("Explain, using evidence, how natural resources, natural hazards, and changes in climate have influenced "
+        "where and how people live.")
+
+KEY_IDEAS = [
+    "<strong>Natural resources</strong> (fresh water, fertile soil, minerals, fossil fuels) are spread unevenly, and people settle where they can get them.",
+    "<strong>Natural hazards</strong> (earthquakes, floods, volcanoes, hurricanes, droughts) can harm people, but many people live in hazardous places because the benefits are large.",
+    "<strong>Some features are both a resource and a hazard.</strong> A flood plain has fertile soil but floods.",
+    "<strong>People adapt</strong> to hazards, for example with earthquake-resistant buildings, levees, and early warnings.",
+    "<strong>Changes in climate</strong> (less rain, rising seas) can change what farmers can grow and push people to move.",
+    "<strong>Use data from maps and tables</strong> to connect a resource, hazard, or climate factor to what people do.",
+]
+
+VOCAB = {
+    "bank": ["natural resource", "natural hazard", "fertile soil", "climate", "migration", "sea level rise"],
+    "blanks": [
+        ("Fresh water is a ____________, a material from Earth that people use.", "natural resource"),
+        ("An earthquake or flood that can harm people is a ____________.", "natural hazard"),
+        ("Soil with the nutrients plants need is ____________.", "fertile soil"),
+        ("The typical weather of a region over many years is its ____________.", "climate"),
+        ("The movement of people from one place to live in another is ____________.", "migration"),
+        ("The increase in the average height of the ocean's surface is ____________.", "sea level rise"),
+    ],
+}
+
+SECTIONS = [
+    {"id": "A", "title": "Resources, hazards, and climate factors", "lts": ["ESS3-1.1", "ESS3-1.2"],
+     "intro": "<table border=\"1\" cellpadding=\"6\"><tr><th>Region</th><th>Fresh water per person (cubic meters per year)</th></tr><tr><td>A</td><td>12,000</td></tr><tr><td>B</td><td>1,500</td></tr><tr><td>C</td><td>400</td></tr></table>",
+     "items": [
+         ("Sort into resource, hazard, or climate factor: fertile soil, an earthquake, less yearly rainfall, a river, a hurricane, rising sea level.", "Resources: fertile soil, a river. Hazards: earthquake, hurricane. Climate factors: less rainfall, rising sea level."),
+         ("What does the table show about fresh water?", "It is spread unevenly: Region A has 30 times as much as Region C."),
+         ("Which region is likely to have the most trouble growing food and supporting cities? Why?", "Region C, because it has the least fresh water per person."),
+     ]},
+    {"id": "B", "title": "How hazards shape where and how people live", "lts": ["ESS3-1.3"],
+     "intro": "<p>Millions of people live near earthquake faults, flood plains, and volcanoes.</p>",
+     "items": [
+         ("Why might people choose to live on a flood plain?", "Fertile soil and nearby water make farming productive, and the benefits outweigh the flood risk for them."),
+         ("Name one way people reduce the risk of earthquakes or floods.", "Earthquake-resistant buildings, levees, early-warning systems, or raised homes."),
+         ("Explain how a flood can be both a hazard and a resource.", "Floods damage property (hazard) but leave nutrient-rich mud that renews the soil (resource)."),
+     ]},
+    {"id": "C", "title": "Climate change, crops, and migration", "lts": ["ESS3-1.4"],
+     "intro": "<table border=\"1\" cellpadding=\"6\"><tr><th>Year</th><th>1990</th><th>2005</th><th>2020</th></tr><tr><td>Rainfall (mm)</td><td>800</td><td>650</td><td>500</td></tr><tr><td>Corn yield (tons per hectare)</td><td>6.0</td><td>4.4</td><td>2.5</td></tr></table>",
+     "items": [
+         ("Describe the trends in rainfall and yield.", "Both fell: rainfall from 800 to 500 mm, yield from 6.0 to 2.5 tons per hectare."),
+         ("Predict what farmers might do if the trends continue.", "Switch to crops that need less water, irrigate, or move away."),
+         ("A coastal city floods more often as the sea rises. List two things people might do.", "Build sea walls, raise buildings, move to higher ground, or relocate inland."),
+     ]},
+    {"id": "D", "title": "Reading data and maps", "lts": ["ESS3-1.5"],
+     "intro": "<table border=\"1\" cellpadding=\"6\"><tr><th>City</th><th>Distance to river or coast (km)</th><th>Rainfall (mm)</th><th>Population (millions)</th></tr><tr><td>P</td><td>3</td><td>1,000</td><td>8.0</td></tr><tr><td>Q</td><td>10</td><td>900</td><td>3.5</td></tr><tr><td>R</td><td>150</td><td>120</td><td>0.2</td></tr></table>",
+     "items": [
+         ("Describe the pattern between distance to water and population.", "The cities nearest water are the largest; the farthest is the smallest."),
+         ("What does the rainfall column suggest?", "More rainfall goes with larger populations, because water supports farming and cities."),
+         ("Write one sentence with a number that connects a resource to human activity.", "City P is 3 km from water and has 8.0 million people, while City R is 150 km away and has 0.2 million."),
+     ]},
+    {"id": "E", "title": "Putting it together with evidence", "lts": ["ESS3-1.6"],
+     "intro": "<p>Use a resource, a hazard, and a climate factor in the same explanation.</p>",
+     "items": [
+         ("Why do many farmers live on the slopes of active volcanoes?", "Volcanic ash makes the soil very fertile, which gives good harvests, and the benefit outweighs the hazard for them."),
+         ("A river's flow fell by half during a long drought and the town lost half its farms. What does this show?", "A change in climate and a resource can change what people do."),
+         ("A student says, &ldquo;People only live in safe places.&rdquo; Use two examples to respond.", "People live on flood plains, volcano slopes, and earthquake zones because of fertile soil, ports, and water, so they accept hazards for resources."),
+     ]},
+]
+
+WRITE = {
+    "prompt": ("<p>Farmers have grown crops for 500 years on the slopes of a volcano. Scientists collect:</p>"
+               "<table border=\"1\" cellpadding=\"6\"><tr><th></th><th>Volcano slopes</th><th>Nearby plain</th></tr>"
+               "<tr><td>Crop yield (tons per hectare)</td><td>9</td><td>4</td></tr>"
+               "<tr><td>People per km<sup>2</sup></td><td>800</td><td>120</td></tr>"
+               "<tr><td>Eruptions that damaged farms (per century)</td><td>2</td><td>0</td></tr>"
+               "<tr><td>Rainfall change over 30 years (mm per year)</td><td>-6</td><td>-6</td></tr></table>"
+               "<p>Write an explanation: <strong>Claim</strong> (why so many people live on the slopes), <strong>Evidence</strong> (at least two numbers), and <strong>Reasoning</strong> (name the resource, the hazard, and the climate change, and explain how each may influence people in the future).</p>"),
+    "checklist": ["States that the benefits of the slopes outweigh the hazard for many people",
+                  "Uses at least two numbers (9 versus 4 tons; 800 versus 120 people; 2 eruptions)",
+                  "Names the resource (fertile volcanic soil), the hazard (eruptions), and the climate change (falling rainfall)",
+                  "Explains how each could influence people's future choices",
+                  "Does not say the area is safe"],
+    "exemplar": ("Many more people live on the slopes because the fertile volcanic soil makes farming much more productive, even though eruptions are a hazard. The slopes yield 9 tons per hectare compared with 4 on the plain, and they hold 800 people per km<sup>2</sup> compared with 120. "
+                 "The fertile soil is the resource, the eruptions that damaged farms twice a century are the hazard, and rainfall falling 6 mm per year is a climate change. "
+                 "Because the benefits are large, people accept the hazard and prepare for it, but if rainfall keeps falling, farmers may need irrigation or drought-tolerant crops, and some people may move."),
+}

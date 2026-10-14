@@ -33,3 +33,6 @@ One exit ticket (5 to 7 minutes, 6 points) per priority learning target. DOK 1 t
 `python3 build_unit.py HS-LS1-2` (one unit) or `python3 build_unit.py all`. `HS-LS1-6` only rebuilds its CFAs here; its CSA is built by `HS-LS1-6/build.py`.
 
 `pacing.json` holds the day-by-day plan used by the workbook (priority targets get the most time, supporting and thread targets are compressed, every unit ends with a review day and a CSA day).
+
+## Reviews (no practice tests)
+Practice tests are replaced by the CFAs given throughout each unit. Each unit also has a review for the review day: `<STD>_review.html` (student page, printable or pasted into a Canvas Page) and `<STD>_review_key.md`. A student's CFA scores point them to sections: below 4 of 6 on a CFA means do the section for that target. Everyone does Vocabulary and Write It (a new claim-evidence-reasoning prompt). The bank is `review.py` in each folder. The old HS-LS1-6 practice test was removed.

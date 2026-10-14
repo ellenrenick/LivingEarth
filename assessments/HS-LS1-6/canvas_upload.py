@@ -17,7 +17,6 @@ import urllib.request
 from pathlib import Path
 
 import build
-import practice_questions
 import questions
 
 HERE = Path(__file__).parent
@@ -27,7 +26,6 @@ CTX = ssl.create_default_context(cafile=CA) if os.path.exists(CA) else ssl.creat
 # Per-bank quiz settings.
 SETTINGS = {
     questions: {"quiz_type": "assignment", "allowed_attempts": 1},
-    practice_questions: {"quiz_type": "practice_quiz", "allowed_attempts": -1, "time_limit": 20},
 }
 
 
@@ -123,7 +121,7 @@ def upload_review(api):
     body = re.search(r"<body>(.*)</body>", src, re.S).group(1)
     body = re.sub(r"<!--.*?-->", "", body, flags=re.S).strip()
     page = api.call("POST", "/pages", {"wiki_page": {
-        "title": "HS-LS1-6 Review: From Sugar to Building Blocks",
+        "title": "HS-LS1-6 Review: Sugar to Structures",
         "body": body,
         "published": False,
     }})
@@ -133,6 +131,6 @@ def upload_review(api):
 if __name__ == "__main__":
     base, course = sys.argv[1], sys.argv[2]
     api = Canvas(base, course, os.environ["CANVAS_TOKEN"])
-    for bank in (questions, practice_questions):
+    for bank in (questions,):
         upload_quiz(api, bank)
     upload_review(api)

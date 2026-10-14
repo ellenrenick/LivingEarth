@@ -144,10 +144,44 @@ def build_cfa(unit_dir, cfa_mod):
     return len(cfa_mod.CFAS)
 
 
+def build_review(unit_dir, rev, cfa_mod):
+    """Student review page (HTML, paste into a Canvas Page or print) and answer key."""
+    std = rev.STANDARD
+    cfa_by_id = {c["id"]: c for c in cfa_mod.CFAS}
+    h = [f"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>{std} Review: {rev.UNIT_TITLE}</title>\n</head>\n<body>",
+         "<!-- To use as a Canvas Page: open the page's HTML editor and paste everything between <body> and </body>. -->", "",
+         f"<h1>Review: {rev.UNIT_TITLE} ({std})</h1>",
+         f"<p><strong>Goal:</strong> {rev.GOAL}</p>", "",
+         "<h2>Step 1: Find your focus</h2>",
+         "<p>Look at your score on each CFA (exit ticket). Each one is worth 6 points. If you scored <strong>below 4</strong> on a CFA, do the section listed for it. Everyone does the Vocabulary and Write It sections. Plan on 30 to 40 minutes.</p>",
+         '<table border="1" cellpadding="6">', "<tr><th>CFA</th><th>What it checked</th><th>Section</th></tr>"]
+    for sec in rev.SECTIONS:
+        for lt in sec["lts"]:
+            c = cfa_by_id.get(lt)
+            h.append(f"<tr><td>{lt}</td><td>{c['lt'] if c else lt}</td><td>{sec['id']}</td></tr>")
+    h += ["</table>", "", "<h2>Key ideas to know</h2>", "<ol>"] + [f"<li>{k}</li>" for k in rev.KEY_IDEAS] + ["</ol>", "",
+          "<h2>Vocabulary</h2>", f"<p><strong>Word bank:</strong> {', '.join(rev.VOCAB['bank'])}</p>",
+          "<p>Fill in each blank. Each word is used once.</p>", "<ol>"] + [f"<li>{q}</li>" for q, _ in rev.VOCAB["blanks"]] + ["</ol>", ""]
+    k = [f"# {std} Review: Answer Key", "",
+         f"Use with `{std}_review.html`. Students do it on the review day, after the CFAs and before the CSA. Plan on 30 to 40 minutes. The Vocabulary and Write It sections are for everyone; students pick the other sections by their CFA scores (below 4 of 6).", "",
+         "## Vocabulary", ""] + [f"{i}. {a}" for i, (_, a) in enumerate(rev.VOCAB["blanks"], 1)] + [""]
+    for sec in rev.SECTIONS:
+        h += [f"<h2>Section {sec['id']}: {sec['title']}</h2>", sec["intro"], "<ol>"] + [f"<li>{q}</li>" for q, _ in sec["items"]] + ["</ol>", ""]
+        k += [f"## Section {sec['id']}: {sec['title']}", ""] + [f"{i}. {a}" for i, (_, a) in enumerate(sec["items"], 1)] + [""]
+    w = rev.WRITE
+    h += ["<h2>Write It</h2>", w["prompt"], "<p><strong>Check your writing.</strong> Did you:</p>", "<ul>"] + [f"<li>{c}</li>" for c in w["checklist"]] + ["</ul>", "</body>", "</html>", ""]
+    k += ["## Write It", "", "**Checklist (what a strong answer includes):**", ""] + [f"- {c}" for c in w["checklist"]] + ["", f"**Model answer:** {w['exemplar']}", ""]
+    (unit_dir / f"{std}_review.html").write_text("\n".join(h), encoding="utf-8")
+    (unit_dir / f"{std}_review_key.md").write_text("\n".join(k), encoding="utf-8")
+
+
 def build_unit(std):
     unit_dir = ROOT / std
     build.HERE = unit_dir
-    n = build_cfa(unit_dir, load(unit_dir / "cfa.py", f"c_{std}"))
+    cfa_mod = load(unit_dir / "cfa.py", f"c_{std}")
+    n = build_cfa(unit_dir, cfa_mod)
+    if (unit_dir / "review.py").exists():
+        build_review(unit_dir, load(unit_dir / "review.py", f"r_{std}"), cfa_mod)
     if std in CFA_ONLY:  # CSA already built and published; rebuild it with HS-LS1-6/build.py
         print(f"{std}: {n} CFAs")
         return

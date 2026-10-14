@@ -16,18 +16,18 @@ Grade 9 Living Earth (Biology) assessment for **HS-LS1-6**: how carbon, hydrogen
 - `HS-LS1-6_teacher_key.md`: all questions with the answer key, DOK levels, 4-point rubrics, grading notes, and sample answers.
 - `questions.py`: the question bank.
 
-**Practice test** (about 20 minutes, 22 points, unlimited attempts)
-- `HS-LS1-6_practice_canvas_qti.zip`: import this into Canvas. It has 6 matching terms, 6 multiple-choice questions (DOK 2 and 3), and 1 free-response question (DOK 3, 4-point rubric). All scenarios are new, so the practice test doesn't give away the summative.
-- `HS-LS1-6_practice_teacher_key.md`: answer key, rubric, and grading notes.
-- `practice_questions.py`: the question bank.
+**CFAs** (one 6-point exit ticket per priority learning target, replacing a practice test)
+- `HS-LS1-6_CFA_canvas_qti.zip`: one Canvas quiz per CFA. `HS-LS1-6_CFA_key.md`: answers and scoring guides.
+- `cfa.py`: the CFA bank. Rebuild with `python3 ../build_unit.py HS-LS1-6`.
 
-**Review** (do after the practice test, about 30–40 minutes)
-- `HS-LS1-6_review.html`: student review. It maps each practice question to a review section and includes vocabulary, atom accounting, energy vs. matter, tracing atoms, evidence matching, scoring sample answers, and revising an explanation. Open it in a browser to print. To use it as a Canvas Page, paste the part between `<body>` and `</body>` into the page's HTML editor.
-- `HS-LS1-6_review_key.md`: answer key for the review.
+**Review** (done on the review day, after the CFAs and before the CSA, about 30 to 40 minutes)
+- `HS-LS1-6_review.html`: student review. Students use their CFA scores (below 4 of 6) to pick sections; everyone does Vocabulary and Write It. Open in a browser to print, or paste the part between `<body>` and `</body>` into a Canvas Page's HTML editor.
+- `HS-LS1-6_review_key.md`: answer key and model answer.
+- `review.py`: the review bank.
 
-To change a quiz, edit its question bank and run `python3 build.py`, which rebuilds both quizzes.
+To change the CSA, edit `questions.py` and run `python3 build.py`.
 
-**Uploading straight to Canvas:** `CANVAS_TOKEN=... python3 canvas_upload.py https://kernhigh.instructure.com <course id>` builds both quizzes question by question through the Canvas API and creates the review page. It doesn't need a file upload. Everything is created unpublished. Running it again creates duplicates.
+**Uploading straight to Canvas:** `CANVAS_TOKEN=... python3 canvas_upload.py https://kernhigh.instructure.com <course id>` builds the CSA question by question through the Canvas API and creates the review page. It doesn't need a file upload. Everything is created unpublished. Running it again creates duplicates.
 
 ## Importing into Canvas
 
