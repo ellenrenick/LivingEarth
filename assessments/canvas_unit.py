@@ -117,7 +117,7 @@ def scale_to(questions, total=4.0):
     scored[-1]["points_possible"] = round(total - run, 4)
     for q in scored:
         if q["question_type"] == "essay_question":
-            q["neutral_comments_html"] += ("<p><em>Scale: this question is worth %s point(s) in Canvas. Score levels 0 to 4 are 0%%, 25%%, 50%%, 75%%, and 100%% of that.</em></p>"
+            q["neutral_comments_html"] += ("<p><em>Scale: this question is worth %s point(s) in Canvas. A score of 4 earns all of the points, 3 earns three-fourths, 2 half, 1 one-fourth, and 0 none.</em></p>"
                                           % q["points_possible"])
     return questions
 
@@ -152,7 +152,7 @@ def overview_html(plan, cfa_titles):
     return (f"<h2>{plan.MODULE_NAME}</h2>{phen}<p>Eight 45-minute class periods. Every priority learning target and its CFA is kept; the supporting standard is taught lightly and is not on the CSA.</p>"
             f"<table border=\"1\" cellpadding=\"6\"><tr><th>Day</th><th>Focus</th><th>Standards</th><th>CFA</th><th>Notes</th></tr>{rows}</table>"
             f"<h3>How this differs from the full 13-day unit</h3><ul>{changes}</ul>"
-            "<p>A CFA is a short exit ticket (about 6 minutes, 4 points). Mastery is about 67 percent (2.7 of 4). Students who score below that use the matching section of the Review on Day 7.</p>")
+            "<p>A CFA is a short exit ticket (about 6 minutes, 4 points). Mastery is a 3 or 4 on the 4-point scale. Students who score below a 3 use the matching section of the Review on Day 7.</p>")
 
 
 def main():
@@ -178,7 +178,7 @@ def main():
     overview = api.call("POST", "/pages", {"wiki_page": {"title": f"{plan.MODULE_NAME}: Overview and Day-by-Day Plan", "body": overview_html(plan, None), "published": False}})
     review_src = (unit_dir / f"{std}_review.html").read_text(encoding="utf-8")
     review_body = re.sub(r"<!--.*?-->", "", re.search(r"<body>(.*)</body>", review_src, re.S).group(1), flags=re.S).strip()
-    review_body = review_body.replace("Each one is worth 6 points. If you scored <strong>below 4</strong>", "Each one is worth 4 points. If you scored <strong>below 2.7 (about 67%)</strong>")
+    review_body = review_body.replace("Each one is worth 6 points. If you scored <strong>below 4</strong>", "Each one is worth 4 points. If you scored <strong>below a 3</strong>")
     review = api.call("POST", "/pages", {"wiki_page": {"title": f"{std} Review: {cfa_mod.UNIT_TITLE}", "body": review_body, "published": False}})
     cfa_quiz = {}
     for cid, c in cfas.items():

@@ -71,7 +71,7 @@ DECKS = {
     ],
     "Day 7: Review and back to the cat": [
         {"title": "Day 7: Review and back to the cat", "bullets": ["Today: fix what you missed, revise your model, and explain the phenomenon."]},
-        {"title": "Find your focus (5 min)", "bullets": ["Look at your six CFA scores in Canvas.", "Scored below about 67% on a CFA? Do the matching section of the Review page.", "Everyone does Vocabulary and Write It."]},
+        {"title": "Find your focus (5 min)", "bullets": ["Look at your six CFA scores in Canvas.", "Scored below a 3 on a CFA? Do the matching section of the Review page.", "Everyone does Vocabulary and Write It."]},
         {"title": "Review work time (20 min)", "bullets": ["Open the Review page in Canvas.", "Do Vocabulary, then the sections for the CFAs you need.", "Check your answers on the key your teacher shares."]},
         {"title": "Revise your Day 1 model (8 min)", "bullets": ["Show: DNA with the gene.", "Show: the one-letter change.", "Show: the copy-then-read path and the amino acid chain with one amino acid different.", "Show: the protein working only in cool skin, and the dark points."]},
         {"title": "Write It: two Siamese kittens", "table": {"header": ["", "Raised warm", "Raised cool"], "rows": [["Ear skin temp (°C)", "34", "26"], ["Ear fur color", "Light tan", "Dark brown"], ["Back skin temp (°C)", "36", "35"], ["Back fur color", "Cream", "Cream"]]}, "note": "Why are the cool-room kitten's ears darker?"},
