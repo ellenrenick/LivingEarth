@@ -68,7 +68,7 @@ DAY1_PLAN = TEACHER + """
 <li>Solid parents who have Siamese-pattern kittens each carry one changed copy that is hidden. That is expected here.</li></ul>
 """
 
-DAY1_STUDENT = """
+DAY1_STUDENT = """{{SLIDES}}
 <h2>Day 1: Why are a Siamese cat's ears, paws, and tail dark?</h2>
 <h3>Notice and wonder</h3>
 <p>Look at the photos of an adult Siamese cat and a newborn Siamese kitten.</p>
@@ -124,7 +124,7 @@ DAY2_PLAN = TEACHER + """
 </ul>
 """
 
-DAY2_STUDENT = """
+DAY2_STUDENT = """{{SLIDES}}
 <h2>Day 2: What is DNA made of?</h2>
 <h3>Key ideas</h3>
 <ul>
@@ -155,7 +155,7 @@ How many letters differ? Where?</li>
 </ol>
 """
 
-LAB_STUDENT = """
+LAB_STUDENT = """{{SLIDES}}
 <h2>Gummy DNA Lab: Build, Copy, and Read a Gene</h2>
 <p><strong>Name:</strong> ______________ &nbsp; <strong>Partner:</strong> ______________</p>
 <p><strong>Question:</strong> How does a cell's copy of a gene become a chain of amino acids, and what happens if one letter of DNA changes?</p>
@@ -226,7 +226,7 @@ LAB_TEACHER = TEACHER + """
 <ul>
 <li>Teach copy-then-read only. Do not teach mRNA, tRNA, or ribosome mechanics (outside the assessment boundary). Say &ldquo;the cell copies the gene's message.&rdquo;</li>
 <li>Common mistakes: matching A with C or G; reading the template directly; not reading in groups of three from the start.</li>
-<li>Grade out of 12: Part A 1, Part B 2, Part C 4, Part D 3, Connect 2.</li>
+<li>Grade out of 12 (Part A 1, Part B 2, Part C 4, Part D 3, Connect 2), then divide by 3 to enter the 4-point score in Canvas.</li>
 </ul>
 """
 
@@ -267,7 +267,7 @@ DAY4_PLAN = TEACHER + """
 <li>Keep the protein story at the level of the standard: a different amino acid changes how the protein works. Do not go into protein folding or chemistry.</li></ul>
 """
 
-DAY4_STUDENT = """
+DAY4_STUDENT = """{{SLIDES}}
 <h2>Day 4: What can one letter do?</h2>
 <h3>Key ideas</h3>
 <ul>
@@ -322,7 +322,7 @@ DAY5_PLAN = TEACHER + """
 <li>Do not go into the chemistry of pigment production. Stay at: protein works, so pigment is made.</li></ul>
 """
 
-DAY5_STUDENT = """
+DAY5_STUDENT = """{{SLIDES}}
 <h2>Day 5: Same DNA, different jobs</h2>
 <h3>Key ideas</h3>
 <ul>
@@ -377,7 +377,7 @@ DAY6_PLAN = TEACHER + """
 </ul>
 """
 
-DAY6_STUDENT = """
+DAY6_STUDENT = """{{SLIDES}}
 <h2>Day 6: Case data</h2>
 <h3>Case 1: Siamese and solid cats</h3>
 <table border="1" cellpadding="6"><tr><th></th><th>Solid cat</th><th>Siamese cat</th></tr>
@@ -408,7 +408,7 @@ DAY7_PLAN = TEACHER + """
 <tr><th>Materials</th><td>The Review page (Canvas), students' Day 1 models and CFA scores.</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
-<li><strong>Find your focus (5 min).</strong> Students look at their six CFA scores. Below 4 of 6 on a CFA means do the matching Review section. Pull a small group for reteaching if several students are below 4 on the same CFA.</li>
+<li><strong>Find your focus (5 min).</strong> Students look at their six CFA scores. Below about 67 percent (under 2.7 of 4 points) on a CFA means do the matching Review section. Pull a small group for reteaching if several students are below that mark on the same CFA.</li>
 <li><strong>Review sections (20 min).</strong> Students do Vocabulary and the sections for any CFA below 4 (Review page). Answers are on the Review key.</li>
 <li><strong>Revise the model (8 min).</strong> Students redraw their Day 1 model with: DNA with the gene, the one-letter change, the copy-then-read path, the amino acid chain with one amino acid different, the protein working only in cool skin, and dark points.</li>
 <li><strong>Write It: the Siamese kitten (12 min).</strong> Students write a claim-evidence-reasoning explanation using the data below.</li>
@@ -425,10 +425,24 @@ DAY7_PLAN = TEACHER + """
 <ul><li>4: correct claim, two or more accurate data points, complete reasoning (DNA, gene, protein, temperature).</li><li>3: correct claim and data, one piece of the reasoning thin.</li><li>2: partly correct claim, one data point, vague reasoning.</li><li>1: wrong claim or misconception (for example, the cat changes color on purpose).</li></ul>
 """
 
+DAY7_STUDENT = """{{SLIDES}}
+<h2>Day 7: Review and back to the cat</h2>
+<h3>Part 1: Review</h3>
+<p>Open the HS-LS1-1 Review page. Do Vocabulary and the section for any CFA where you scored below about 67 percent. List the sections you did: ______________</p>
+<h3>Part 2: Revise your Day 1 model</h3>
+<p>Redraw your model of what is inside a Siamese cat's cells. Show: DNA with the gene, the one-letter change, the copy-then-read path, the amino acid chain with one amino acid different, the protein working only in cool skin, and the dark points. Upload a photo or describe your drawing in words.</p>
+<h3>Part 3: Write It</h3>
+<p>Two Siamese kittens are raised from birth, one in a warm room and one in a cool room. At 12 weeks the scientists record:</p>
+<table border="1" cellpadding="6"><tr><th></th><th>Kitten raised warm</th><th>Kitten raised cool</th></tr>
+<tr><td>Ear skin temperature (&deg;C)</td><td>34</td><td>26</td></tr><tr><td>Ear fur color</td><td>Light tan</td><td>Dark brown</td></tr>
+<tr><td>Back skin temperature (&deg;C)</td><td>36</td><td>35</td></tr><tr><td>Back fur color</td><td>Cream</td><td>Cream</td></tr></table>
+<p>Write an explanation. <strong>Claim:</strong> why are the cool-room kitten's ears darker? <strong>Evidence:</strong> use at least two numbers. <strong>Reasoning:</strong> use DNA, gene, protein, and what the amino acid change does.</p>
+"""
+
 DAY8_PLAN = TEACHER + """
 <h2>Day 8: CSA</h2>
 <ul>
-<li>CSA: HS-LS1-1, DNA to Proteins. 30 points: 6 vocabulary matches, 8 multiple choice, 2 free response. Allow the full 45 minutes.</li>
+<li>CSA: HS-LS1-1, DNA to Proteins. 4 points in Canvas (30 raw points scaled down): 6 vocabulary matches, 8 multiple choice, 2 free response. Allow the full 45 minutes.</li>
 <li>The code table is included in the questions that need it. Calculators are not needed.</li>
 <li>The free-response items are scored with the 4-point rubrics in the Canvas question comments.</li>
 <li>After the test (next class): return the CSA, review the two free-response exemplars, and ask students to compare them with their own answers. Revisit the Siamese cat: <em>What would you add to your Day 1 model now?</em></li>
@@ -455,13 +469,15 @@ MATERIALS_PAGE = TEACHER + """
 </ul>
 """
 
+SCORING = "<h3>How this is scored (4 points)</h3><ul><li>4: complete and accurate</li><li>3: mostly complete, a few errors</li><li>2: partly complete or several errors</li><li>1: started</li></ul>"
+
 LESSONS = {
-    "Day 1: Launch with the Siamese cat": [("page", "Day 1 Teacher Plan: Launch", DAY1_PLAN), ("page", "Day 1 Student Page: Why are a Siamese cat's ears, paws, and tail dark?", DAY1_STUDENT)],
-    "Day 2: What is DNA made of?": [("page", "Day 2 Teacher Plan: DNA structure", DAY2_PLAN), ("page", "Day 2 Student Page: What is DNA made of?", DAY2_STUDENT)],
-    "Day 3: LAB, build, copy, and read a gene (gummy DNA)": [("page", "Day 3 Teacher Plan: Gummy DNA Lab", DAY3_PLAN), ("page", "Day 3 Teacher Key and Prep: Gummy DNA Lab", LAB_TEACHER), ("assignment", "Gummy DNA Lab Sheet", LAB_STUDENT, 12)],
-    "Day 4: What can one letter do?": [("page", "Day 4 Teacher Plan: One-letter changes", DAY4_PLAN), ("page", "Day 4 Student Page: What can one letter do?", DAY4_STUDENT)],
-    "Day 5: Same DNA, different jobs": [("page", "Day 5 Teacher Plan: Same DNA, different jobs", DAY5_PLAN), ("page", "Day 5 Student Page: Same DNA, different jobs", DAY5_STUDENT)],
-    "Day 6: Case data": [("page", "Day 6 Teacher Plan: Case data", DAY6_PLAN), ("page", "Day 6 Student Page: Case data", DAY6_STUDENT)],
-    "Day 7: Review and back to the cat": [("page", "Day 7 Teacher Plan: Review and Write It", DAY7_PLAN)],
+    "Day 1: Launch with the Siamese cat": [("page", "Day 1 Teacher Plan: Launch", DAY1_PLAN), ("assignment", "Day 1 Student Assignment: Why are a Siamese cat's ears, paws, and tail dark?", DAY1_STUDENT + SCORING, 4)],
+    "Day 2: What is DNA made of?": [("page", "Day 2 Teacher Plan: DNA structure", DAY2_PLAN), ("assignment", "Day 2 Student Assignment: What is DNA made of?", DAY2_STUDENT + SCORING, 4)],
+    "Day 3: LAB, build, copy, and read a gene (gummy DNA)": [("page", "Day 3 Teacher Plan: Gummy DNA Lab", DAY3_PLAN), ("page", "Day 3 Teacher Key and Prep: Gummy DNA Lab", LAB_TEACHER), ("assignment", "Gummy DNA Lab Sheet", LAB_STUDENT + SCORING, 4)],
+    "Day 4: What can one letter do?": [("page", "Day 4 Teacher Plan: One-letter changes", DAY4_PLAN), ("assignment", "Day 4 Student Assignment: What can one letter do?", DAY4_STUDENT + SCORING, 4)],
+    "Day 5: Same DNA, different jobs": [("page", "Day 5 Teacher Plan: Same DNA, different jobs", DAY5_PLAN), ("assignment", "Day 5 Student Assignment: Same DNA, different jobs", DAY5_STUDENT + SCORING, 4)],
+    "Day 6: Case data": [("page", "Day 6 Teacher Plan: Case data", DAY6_PLAN), ("assignment", "Day 6 Student Assignment: Case data", DAY6_STUDENT + SCORING, 4)],
+    "Day 7: Review and back to the cat": [("page", "Day 7 Teacher Plan: Review and Write It", DAY7_PLAN), ("assignment", "Day 7 Student Assignment: Review, revise your model, and Write It", DAY7_STUDENT + SCORING, 4)],
     "Day 8: CSA": [("page", "Day 8 Teacher Plan: CSA", DAY8_PLAN)],
 }
