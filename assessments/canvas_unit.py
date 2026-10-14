@@ -122,21 +122,18 @@ def scale_to(questions, total=4.0):
     return questions
 
 
-def slides_html(title, deck):
-    """Student-facing slides as one Canvas page: each slide is a 16:9-style card (Canvas file storage is not reachable from here)."""
+def slides_html(title, deck, deck_id=None):
+    """Student slides as an embedded Google Slides deck, like unit 1.3 (falls back to HTML cards if there is no deck id)."""
+    if deck_id:
+        return (f"<h2>Today's slides</h2><p><iframe title=\"{title}\" src=\"https://docs.google.com/presentation/d/{deck_id}/embed?start=false&amp;loop=false&amp;delayms=3000\" "
+                f"width=\"960\" height=\"569\" style=\"max-width:100%;border:0\" allowfullscreen=\"allowfullscreen\" loading=\"lazy\"></iframe></p>"
+                f"<p><a href=\"https://docs.google.com/presentation/d/{deck_id}/present\" target=\"_blank\">Open the slides full screen</a></p>")
     cards = []
     for n, sl in enumerate(deck, 1):
         body = ""
         if sl.get("bullets"):
-            body += "<ul style=\"font-size:22px;line-height:1.5\">" + "".join(f"<li>{b}</li>" for b in sl["bullets"]) + "</ul>"
-        if sl.get("table"):
-            t = sl["table"]
-            body += ("<table border=\"1\" cellpadding=\"8\" style=\"border-collapse:collapse;font-size:18px\"><tr>" + "".join(f"<th style=\"background:#2a9d8f;color:#fff\">{h}</th>" for h in t["header"]) + "</tr>"
-                     + "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in t["rows"]) + "</table>")
-        if sl.get("note"):
-            body += f"<p style=\"font-style:italic;color:#1f3a5f\">{sl['note']}</p>"
-        cards.append(f"<div style=\"border:2px solid #1f3a5f;border-radius:8px;margin:0 0 24px 0;overflow:hidden\"><div style=\"background:#1f3a5f;color:#fff;padding:12px 20px;font-size:28px;font-weight:bold\">{sl['title']}</div>"
-                     f"<div style=\"padding:12px 24px\">{body}</div><div style=\"text-align:right;font-size:12px;color:#666;padding:0 12px 6px\">Unit 2.1: DNA to Proteins | {n} of {len(deck)}</div></div>")
+            body += "<ul>" + "".join(f"<li>{b}</li>" for b in sl["bullets"]) + "</ul>"
+        cards.append(f"<div style=\"border:2px solid #1f3a5f;margin:0 0 16px 0\"><div style=\"background:#1f3a5f;color:#fff;padding:8px 16px;font-size:24px\">{sl['title']}</div><div style=\"padding:8px 16px\">{body}</div></div>")
     return f"<h2>{title}: Slides</h2>" + "".join(cards)
 
 
@@ -170,7 +167,7 @@ def main():
     if (unit_dir / "slides_8day.py").exists():
         sd = load(unit_dir / "slides_8day.py", "slides_def")
         for day_title, deck in sd.DECKS.items():
-            slides[day_title] = slides_html(day_title, deck)
+            slides[day_title] = slides_html(day_title, deck, getattr(sd, 'GOOGLE_SLIDES', {}).get(day_title.split(':')[0]))
 
     overview = api.call("POST", "/pages", {"wiki_page": {"title": f"{plan.MODULE_NAME}: Overview and Day-by-Day Plan", "body": overview_html(plan, None), "published": False}})
     review_src = (unit_dir / f"{std}_review.html").read_text(encoding="utf-8")

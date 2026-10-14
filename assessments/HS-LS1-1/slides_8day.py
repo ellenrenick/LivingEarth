@@ -14,7 +14,7 @@ CODE_TABLE = {"header": ["DNA triplet", "Amino acid", "DNA triplet", "Amino acid
 
 DECKS = {
     "Day 1: Launch with the Siamese cat": [
-        {"title": "Day 1: Why are a Siamese cat's ears, paws, and tail dark?", "bullets": ["Unit 2.1: DNA to Proteins", "Today's target: DNA holds the instructions for building proteins (LS1-1.2)"], "note": "Illustrations in this unit are simplified."},
+        {"title": "Day 1: The Siamese cat mystery", "bullets": ["Unit 2.1: DNA to Proteins", "Today's target: DNA holds the instructions for building proteins (LS1-1.2)"], "note": "Illustrations in this unit are simplified."},
         {"title": "Notice and wonder", "bullets": ["Look at the photos of an adult Siamese cat and a newborn Siamese kitten.", "Write 2 things you notice.", "Write 2 things you wonder.", "Where is the cat dark? Where is it cream? What about the kitten?"]},
         {"title": "Data 1: Temperature and fur color", "table": TEMP_TABLE, "note": "Simplified class data. What pattern do you see? (Question 1)"},
         {"title": "Think about it", "bullets": ["A kitten is born almost white. The dark parts show up in the first weeks.", "Use the temperature data to suggest why (Question 2).", "A newborn is warm all over before birth."]},
@@ -57,7 +57,7 @@ DECKS = {
         {"title": "Key ideas", "bullets": ["Every cell has the same DNA, including all the genes.", "Each kind of cell uses a different set of genes.", "The proteins a cell makes decide its job.", "In a cat, only pigment-making cells use the gene for the pigment-making protein."]},
         {"title": "Part A: two kinds of cells", "table": {"header": ["Cell", "Genes in cell", "Proteins made", "Job"], "rows": [["P", "1, 2, 3, 4", "1 and 2", "Carries signals"], ["Q", "1, 2, 3, 4", "3 and 4", "Squeezes to move the body"]]}, "note": "Same DNA? Why different jobs?"},
         {"title": "Part B: cells in a Siamese cat's ear", "bullets": ["Which cells have the gene for the pigment-making protein?", "Which cells make the protein?", "Fill in the table: pigment-making cell, skin cell, nerve cell."]},
-        {"title": "Part C: where does the changed protein work?", "bullets": ["One amino acid is different. The protein works only in skin cooler than about 33 °C (a simplified number).", "Use the temperatures to fill in each body part: protein works? Fur dark or cream?"], "table": {"header": ["Body part", "Skin temp (°C)"], "rows": [["Ear", "28"], ["Nose", "30"], ["Paw", "28"], ["Tail tip", "27"], ["Upper leg", "34"], ["Back", "36"], ["Belly", "36"]]}},
+        {"title": "Part C: where does the protein work?", "bullets": ["One amino acid is different. The protein works only in skin cooler than about 33 °C (a simplified number).", "Use the temperatures to fill in each body part: protein works? Fur dark or cream?"], "table": {"header": ["Body part", "Skin temp (°C)"], "rows": [["Ear", "28"], ["Nose", "30"], ["Paw", "28"], ["Tail tip", "27"], ["Upper leg", "34"], ["Back", "36"], ["Belly", "36"]]}},
         {"title": "Explain it", "bullets": ["Use the words DNA, gene, protein, and job to explain why a Siamese cat has dark points.", "Then: Exit ticket CFA LS1-1.5 (6 minutes)."]},
     ],
     "Day 6: Case data": [
@@ -82,4 +82,16 @@ DECKS = {
         {"title": "Before you begin", "bullets": ["Work alone. Put everything away except what your teacher allows.", "Read each question carefully. Use the code table when it is given.", "Part 1: matching. Part 2: multiple choice. Part 3: free response.", "Free response: use claim, evidence, and reasoning where asked."]},
         {"title": "Reminders", "bullets": ["Do your best on every question.", "Answer every question; do not leave blanks.", "If you finish early, check your free responses.", "Next class: we will review the free-response examples and revisit the Siamese cat."]},
     ],
+}
+
+# Google Slides decks (created in the teacher's Drive; embedded in Canvas the way unit 1.3 does). Day title prefix -> presentation id.
+GOOGLE_SLIDES = {
+    "Day 1": "106rMdQG_0IeAEf5jqw0iweQsOENXrI-FO03M1AtAG9Y",
+    "Day 2": "14VUkeJg7dzRqjE7pAQaF977NHpbQLTZ-0IvkkV-0LEk",
+    "Day 3": "1xQ8vInixkGQ-GSjPvgjxy1tU0Km0WUFePmGom_Vc_Jw",
+    "Day 4": "1AVuYKvzRQ_5X8foqPmBsFoD1eUDOfhb8q4gGC7zkvo0",
+    "Day 5": "1RSwKsvHk3EA2AVP-OG7FOLztOSvMMhP4w9tsi2PtCVk",
+    "Day 6": "1Sl9fLQ1vGKhflGUwq-kwTyLq8d-sF0ouam0vrj47Dg4",
+    "Day 7": "1kYa-APWEmr3hGHXxDmyQ_XWIWAyZMg2Mu3k2PLjaHLA",
+    "Day 8": "1pr4St5yqy16ahHplN47ECXYyYi2QriyDBCcn-zStpi4",
 }
