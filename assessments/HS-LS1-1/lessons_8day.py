@@ -405,11 +405,11 @@ DAY6_STUDENT = """{{SLIDES}}
 DAY7_PLAN = TEACHER + """
 <h2>Day 7: Review and return to the Siamese cat</h2>
 <table border="1" cellpadding="6"><tr><th>Goal</th><td>Reteach from CFA results; students revise their Day 1 model and write the final explanation of the phenomenon.</td></tr>
-<tr><th>Materials</th><td>The Review page (Canvas), students' Day 1 models and CFA scores.</td></tr></table>
+<tr><th>Materials</th><td>Students' Day 1 models and CFA scores; the Mastery Path review assignments.</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
 <li><strong>Find your focus (5 min).</strong> Students look at their six CFA scores. The goal is at least a 3 on every CFA. A CFA score below 2.67 (so 2.67 rounds up and counts as a 3) opens that target's review assignment automatically through the Mastery Path; students do it. Pull a small group for reteaching if several students are below a 3 on the same CFA.</li>
-<li><strong>Review sections (20 min).</strong> Students do the Mastery Path reviews that opened for any CFA below a 3, plus Vocabulary (Review page). Answers are on the Review key.</li>
+<li><strong>Review sections (20 min).</strong> Students do the Mastery Path reviews that opened for any CFA below a 3, plus Vocabulary (Part 1 of the Day 7 assignment). Vocabulary answers: {{VOCAB_KEY}}</li>
 <li><strong>Revise the model (8 min).</strong> Students redraw their Day 1 model with: DNA with the gene, the one-letter change, the copy-then-read path, the amino acid chain with one amino acid different, the protein working only in cool skin, and dark points.</li>
 <li><strong>Write It: the Siamese kitten (12 min).</strong> Students write a claim-evidence-reasoning explanation using the data below.</li>
 </ol>
@@ -428,7 +428,7 @@ DAY7_PLAN = TEACHER + """
 DAY7_STUDENT = """{{SLIDES}}
 <h2>Day 7: Review and back to the cat</h2>
 <h3>Part 1: Review</h3>
-<p>Open the HS-LS1-1 Review page. Your goal on every CFA is at least a 3. If you scored below a 3, a review assignment opened for that target in your Mastery Path; do it. Then do Vocabulary on the Review page. List the reviews you did: ______________</p>
+<p>Your goal on every CFA is at least a 3. If you scored below a 3, a review assignment opened for that target in your Mastery Path; do it first. List the reviews you did: ______________</p><h4>Vocabulary (everyone)</h4>{{VOCAB}}
 <h3>Part 2: Revise your Day 1 model</h3>
 <p>Redraw your model of what is inside a Siamese cat's cells. Show: DNA with the gene, the one-letter change, the copy-then-read path, the amino acid chain with one amino acid different, the protein working only in cool skin, and the dark points. Upload a photo or describe your drawing in words.</p>
 <h3>Part 3: Write It</h3>
@@ -459,7 +459,7 @@ MATERIALS_PAGE = TEACHER + """
 <tr><td>4</td><td>Student page (card sort), printed on card stock if you want reusable cards</td></tr>
 <tr><td>5</td><td>Student page, two colors of pencil</td></tr>
 <tr><td>6</td><td>Student page</td></tr>
-<tr><td>7</td><td>Review page, Day 1 models, CFA scores</td></tr>
+<tr><td>7</td><td>Day 1 models, CFA scores</td></tr>
 <tr><td>8</td><td>CSA (Canvas quiz, 45-minute limit)</td></tr></table>
 <h3>Science background (for you)</h3>
 <ul>

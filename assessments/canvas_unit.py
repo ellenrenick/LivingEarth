@@ -166,14 +166,11 @@ def main():
     if any(m["name"] == plan.MODULE_NAME for m in api.call("GET", "/modules?per_page=100")):
         sys.exit(f"Module '{plan.MODULE_NAME}' already exists in course {course}; delete it first.")
     cfas = {c["id"]: c for c in cfa_mod.CFAS}
-    slides, slide_pages = {}, {}  # day title -> link block html / page url
+    slides = {}  # day title -> slides embedded at the top of that day's student assignment
     if (unit_dir / "slides_8day.py").exists():
         sd = load(unit_dir / "slides_8day.py", "slides_def")
         for day_title, deck in sd.DECKS.items():
-            pg = api.call("POST", "/pages", {"wiki_page": {"title": f"{day_title.split(':')[0]} Slides (student)", "body": slides_html(day_title, deck), "published": False}})
-            slides_block_html = slides_block(course, pg["url"], f"{day_title.split(':')[0]} slides")
-            slides[day_title], slide_pages[day_title] = slides_block_html, pg
-            print("Slides", day_title.split(":")[0], pg["url"])
+            slides[day_title] = slides_html(day_title, deck)
 
     overview = api.call("POST", "/pages", {"wiki_page": {"title": f"{plan.MODULE_NAME}: Overview and Day-by-Day Plan", "body": overview_html(plan, None), "published": False}})
     review_src = (unit_dir / f"{std}_review.html").read_text(encoding="utf-8")
@@ -181,7 +178,7 @@ def main():
     review_body = re.sub(r"Look at your score on each CFA.*?Plan on 30 to 40 minutes\.",
                          "Your goal on every CFA is at least a 3 out of 4. If you scored below a 3, a review for that target opened in your Mastery Path in Canvas. Do it. Everyone does Vocabulary and Write It on this page. "
                          "The sections below are the same ones used in the Mastery Path reviews.", review_body, flags=re.S)
-    review = api.call("POST", "/pages", {"wiki_page": {"title": f"{std} Review: {cfa_mod.UNIT_TITLE}", "body": review_body, "published": False}})
+    review = None if (unit_dir / "lessons_8day.py").exists() else api.call("POST", "/pages", {"wiki_page": {"title": f"{std} Review: {cfa_mod.UNIT_TITLE}", "body": review_body, "published": False}})
     cfa_quiz = {}
     for cid, c in cfas.items():
         desc = f"<p>Exit ticket (about 6 minutes, 4 points). Learning target: {c['lt']}</p><p><strong>Goal: at least a 3.</strong></p>"
@@ -214,31 +211,42 @@ def main():
         pos += 1
         api.call("POST", f"/modules/{mod['id']}/items", {"module_item": {"position": pos, **kw}})
 
-    item(title="Overview and day-by-day plan", type="Page", page_url=overview["url"])
     lessons = load(unit_dir / "lessons_8day.py", "lessons") if (unit_dir / "lessons_8day.py").exists() else None
+    vocab = "<p><strong>Word bank:</strong> " + ", ".join(rev_mod.VOCAB["bank"]) + "</p><p>Fill in each blank. Each word is used once.</p><ol>" + "".join(f"<li>{qq}</li>" for qq, _ in rev_mod.VOCAB["blanks"]) + "</ol>"
+    vocab_key = "<ol>" + "".join(f"<li>{aa}</li>" for _, aa in rev_mod.VOCAB["blanks"]) + "</ol>"
+    teacher_items = []  # (title, page_url): teacher pages go in their own section at the bottom of the module
+
+    def fill(html, title):
+        return html.replace("{{SLIDES}}", slides.get(title, "")).replace("{{VOCAB}}", vocab).replace("{{VOCAB_KEY}}", vocab_key)
+
     if lessons:
+        teacher_items.append(("Overview and day-by-day plan", overview["url"]))
         mp = api.call("POST", "/pages", {"wiki_page": {"title": "Unit materials and prep (teacher)", "body": lessons.MATERIALS_PAGE, "published": False}})
-        item(title="Unit materials and prep (teacher)", type="Page", page_url=mp["url"])
+        teacher_items.append(("Unit materials and prep (teacher)", mp["url"]))
+    else:
+        item(title="Overview and day-by-day plan", type="Page", page_url=overview["url"])
     for title, focus, _std, cfa_ids, _note in plan.DAYS:
         item(title=title, type="SubHeader")
-        if title in slide_pages:
-            item(title=f"{title.split(':')[0]} Slides (student)", type="Page", page_url=slide_pages[title]["url"], indent=1)
         for it in (lessons.LESSONS.get(title, []) if lessons else []):
             if it[0] == "page":
-                pg = api.call("POST", "/pages", {"wiki_page": {"title": it[1], "body": it[2], "published": False}})
-                item(title=it[1], type="Page", page_url=pg["url"], indent=1)
+                pg = api.call("POST", "/pages", {"wiki_page": {"title": it[1], "body": fill(it[2], title), "published": False}})
+                teacher_items.append((it[1], pg["url"]))
             else:
-                asg = api.call("POST", "/assignments", {"assignment": {"name": it[1], "description": it[2].replace("{{SLIDES}}", slides.get(title, "")), "points_possible": it[3],
+                asg = api.call("POST", "/assignments", {"assignment": {"name": it[1], "description": fill(it[2], title), "points_possible": it[3],
                                                                          "submission_types": ["online_text_entry", "online_upload"], "published": False}})
                 item(title=it[1], type="Assignment", content_id=asg["id"], indent=1)
         for cid in cfa_ids:
             item(title=f"CFA {cid}", type="Quiz", content_id=cfa_quiz[cid]["id"], indent=1)
             if cid in review_asg:
                 item(title=review_asg[cid]["name"], type="Assignment", content_id=review_asg[cid]["id"], indent=1)
-        if title.startswith("Day 7"):
+        if review is not None and title.startswith("Day 7"):
             item(title=f"{std} Review", type="Page", page_url=review["url"], indent=1)
         if title.startswith("Day 8"):
             item(title=q.TITLE + " (CSA)", type="Quiz", content_id=csa["id"], indent=1)
+    if teacher_items:
+        item(title="TEACHER PAGES (keep unpublished)", type="SubHeader")
+        for t, url in teacher_items:
+            item(title=t, type="Page", page_url=url, indent=1)
     print("Module", mod["id"], f"{BASE}/courses/{course}/modules")
 
 
