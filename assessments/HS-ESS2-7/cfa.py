@@ -81,7 +81,7 @@ CFAS = [
         ],
     },
     {
-        "id": "ESS2-7.5", "dok": 3,
+        "id": "ESS2-7.5", "dok": 4,
         "lt": "I can combine several kinds of evidence into one strong argument about Earth and life.",
         "items": [
             {"prompt": "<p>Which set of evidence gives the <strong>strongest</strong> argument that life changed the atmosphere?</p>",
