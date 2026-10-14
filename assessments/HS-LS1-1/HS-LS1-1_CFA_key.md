@@ -7,12 +7,12 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS1-1.1 | I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base. | 1 | 6 | Unit day 2 (course day 41) |
-| LS1-1.2 | I can state that DNA holds the instructions for building proteins. | 1 | 6 | Unit day 5 (course day 44) |
-| LS1-1.3 | I can describe how a gene's message is copied and read to build a chain of amino acids. | 2 | 6 | Unit day 6 (course day 45) |
-| LS1-1.4 | I can explain how changing one DNA base can change a protein and what it does. | 2 | 6 | Unit day 7 (course day 46) |
-| LS1-1.5 | I can explain how DNA, through proteins, gives different cells their different jobs. | 3 | 6 | Unit day 9 (course day 48) |
-| LS1-1.6 | I can use case data, like sickle cell, to explain how a DNA change affects the body. | 3 | 6 | Unit day 11 (course day 50) |
+| LS1-1.1 | I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base. | 1 | 6 | Unit day 2 (course day 40) |
+| LS1-1.2 | I can state that DNA holds the instructions for building proteins. | 1 | 6 | Unit day 4 (course day 42) |
+| LS1-1.3 | I can describe how a gene's message is copied and read to build a chain of amino acids. | 2 | 6 | Unit day 6 (course day 44) |
+| LS1-1.4 | I can explain how changing one DNA base can change a protein and what it does. | 2 | 6 | Unit day 7 (course day 45) |
+| LS1-1.5 | I can explain how DNA, through proteins, gives different cells their different jobs. | 3 | 6 | Unit day 9 (course day 47) |
+| LS1-1.6 | I can use case data, like sickle cell, to explain how a DNA change affects the body. | 3 | 6 | Unit day 11 (course day 49) |
 
 ---
 

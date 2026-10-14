@@ -7,12 +7,12 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS2-2.1 | I can define population and biodiversity and name factors that change them. | 1 | 6 | Unit day 2 (course day 139) |
-| LS2-2.2 | I can read graphs and tables of population or biodiversity data. | 2 | 6 | Unit day 3 (course day 140) |
-| LS2-2.3 | I can find averages, rates of change, and trends in population data. | 2 | 6 | Unit day 4 (course day 141) |
-| LS2-2.4 | I can use math to compare populations and biodiversity across ecosystems of different sizes. | 2 | 6 | Unit day 5 (course day 142) |
-| LS2-2.5 | I can use math as evidence to explain how a factor affects a population or biodiversity. | 3 | 6 | Unit day 9 (course day 146) |
-| LS2-2.6 | I can use new data to revise my explanation of what affects a population or biodiversity. | 3 | 6 | Unit day 13 (course day 150) |
+| LS2-2.1 | I can define population and biodiversity and name factors that change them. | 1 | 6 | Unit day 2 (course day 136) |
+| LS2-2.2 | I can read graphs and tables of population or biodiversity data. | 2 | 6 | Unit day 3 (course day 137) |
+| LS2-2.3 | I can find averages, rates of change, and trends in population data. | 2 | 6 | Unit day 5 (course day 139) |
+| LS2-2.4 | I can use math to compare populations and biodiversity across ecosystems of different sizes. | 2 | 6 | Unit day 6 (course day 140) |
+| LS2-2.5 | I can use math as evidence to explain how a factor affects a population or biodiversity. | 3 | 6 | Unit day 10 (course day 144) |
+| LS2-2.6 | I can use new data to revise my explanation of what affects a population or biodiversity. | 3 | 6 | Unit day 13 (course day 147) |
 
 ---
 

@@ -10,9 +10,9 @@
 | ESS2-7.1 | I can name examples of how Earth has changed and how life has changed. | 1 | 6 | Unit day 2 (course day 88) |
 | ESS2-7.2 | I can describe one way Earth changed life and one way life changed Earth. | 2 | 6 | Unit day 3 (course day 89) |
 | ESS2-7.3 | I can explain how events in Earth's history changed life, and how life in turn changed Earth. | 3 | 6 | Unit day 5 (course day 91) |
-| ESS2-7.4 | I can write an argument, with evidence, that Earth and life changed each other. | 3 | 6 | Unit day 7 (course day 93) |
-| ESS2-7.5 | I can combine several kinds of evidence into one strong argument about Earth and life. | 4 | 6 | Unit day 8 (course day 94) |
-| ESS2-7.6 | I can argue from evidence that Earth's systems and life have changed together over time. | 3 | 6 | Unit day 10 (course day 96) |
+| ESS2-7.4 | I can write an argument, with evidence, that Earth and life changed each other. | 3 | 6 | Unit day 6 (course day 92) |
+| ESS2-7.5 | I can combine several kinds of evidence into one strong argument about Earth and life. | 4 | 6 | Unit day 7 (course day 93) |
+| ESS2-7.6 | I can argue from evidence that Earth's systems and life have changed together over time. | 3 | 6 | Unit day 9 (course day 95) |
 
 ---
 

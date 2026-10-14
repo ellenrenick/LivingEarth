@@ -12,7 +12,7 @@
 | LS1-6.3 | I can explain how atoms from sugar join with other elements, like nitrogen, to build larger molecules. | 2 | 6 | Unit day 5 (course day 31) |
 | LS1-6.4 | I can use a model to trace atoms from sugar into a larger molecule. | 2 | 6 | Unit day 6 (course day 32) |
 | LS1-6.5 | I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules. | 3 | 6 | Unit day 9 (course day 35) |
-| LS1-6.6 | I can revise my explanation when new evidence comes in. | 3 | 6 | Unit day 11 (course day 37) |
+| LS1-6.6 | I can revise my explanation when new evidence comes in. | 3 | 6 | Unit day 10 (course day 36) |
 
 ---
 

@@ -7,10 +7,10 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS4-1.2 | I can describe the kinds of evidence that support common ancestry: DNA, body structures, and embryos. | 2 | 6 | Unit day 2 (course day 100) |
-| LS4-1.3 | I can explain to others how several lines of evidence support common ancestry. | 3 | 6 | Unit day 4 (course day 102) |
-| LS4-1.4 | I can describe the kinds of evidence that support evolution, like the fossil record. | 2 | 6 | Unit day 5 (course day 103) |
-| LS4-1.5 | I can explain to others how several lines of evidence support evolution. | 3 | 6 | Unit day 7 (course day 105) |
+| LS4-1.2 | I can describe the kinds of evidence that support common ancestry: DNA, body structures, and embryos. | 2 | 6 | Unit day 2 (course day 99) |
+| LS4-1.3 | I can explain to others how several lines of evidence support common ancestry. | 3 | 6 | Unit day 4 (course day 101) |
+| LS4-1.4 | I can describe the kinds of evidence that support evolution, like the fossil record. | 2 | 6 | Unit day 5 (course day 102) |
+| LS4-1.5 | I can explain to others how several lines of evidence support evolution. | 3 | 6 | Unit day 7 (course day 104) |
 
 ---
 

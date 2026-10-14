@@ -7,12 +7,12 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS2-5.1 | I can name the four spheres and where carbon is stored in each one. | 1 | 6 | Unit day 2 (course day 15) |
-| LS2-5.2 | I can name processes besides photosynthesis and respiration that move carbon, like burning and burial in rock. | 1 | 6 | Unit day 2 (course day 15) |
-| LS2-5.3 | I can describe how photosynthesis moves carbon from air and water into living things, and respiration moves it back. | 2 | 6 | Unit day 7 (course day 20) |
-| LS2-5.4 | I can trace one carbon atom through at least three spheres and name each process that moves it. | 2 | 6 | Unit day 8 (course day 21) |
-| LS2-5.5 | I can use a model to predict what happens to carbon elsewhere when one part of the cycle changes. | 2 | 6 | Unit day 9 (course day 22) |
-| LS2-5.6 | I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres. | 3 | 6 | Unit day 11 (course day 24) |
+| LS2-5.1 | I can name the four spheres and where carbon is stored in each one. | 1 | 6 | Unit day 2 (course day 14) |
+| LS2-5.2 | I can name processes besides photosynthesis and respiration that move carbon, like burning and burial in rock. | 1 | 6 | Unit day 2 (course day 14) |
+| LS2-5.3 | I can describe how photosynthesis moves carbon from air and water into living things, and respiration moves it back. | 2 | 6 | Unit day 7 (course day 19) |
+| LS2-5.4 | I can trace one carbon atom through at least three spheres and name each process that moves it. | 2 | 6 | Unit day 9 (course day 21) |
+| LS2-5.5 | I can use a model to predict what happens to carbon elsewhere when one part of the cycle changes. | 2 | 6 | Unit day 10 (course day 22) |
+| LS2-5.6 | I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres. | 3 | 6 | Unit day 12 (course day 24) |
 
 ---
 

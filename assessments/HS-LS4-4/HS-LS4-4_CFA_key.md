@@ -7,10 +7,10 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS4-4.1 | I can define natural selection, adaptation, population, biotic, and abiotic. | 1 | 6 | Unit day 2 (course day 109) |
-| LS4-4.2 | I can describe how natural selection causes a population to evolve. | 2 | 6 | Unit day 5 (course day 112) |
-| LS4-4.3 | I can use data to show that a population's traits shifted because of natural selection. | 2 | 6 | Unit day 10 (course day 117) |
-| LS4-4.4 | I can use evidence to explain how natural selection makes a population better suited to its environment. | 3 | 6 | Unit day 12 (course day 119) |
+| LS4-4.1 | I can define natural selection, adaptation, population, biotic, and abiotic. | 1 | 6 | Unit day 2 (course day 108) |
+| LS4-4.2 | I can describe how natural selection causes a population to evolve. | 2 | 6 | Unit day 5 (course day 111) |
+| LS4-4.3 | I can use data to show that a population's traits shifted because of natural selection. | 2 | 6 | Unit day 9 (course day 115) |
+| LS4-4.4 | I can use evidence to explain how natural selection makes a population better suited to its environment. | 3 | 6 | Unit day 11 (course day 117) |
 
 ---
 

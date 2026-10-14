@@ -10,9 +10,9 @@
 | LS1-2.1 | I can name the levels of organization in an organism, from cells to the whole organism. | 1 | 6 | Unit day 2 (course day 2) |
 | LS1-2.2 | I can state that all living things are made of cells, the basic unit of structure and function. | 1 | 6 | Unit day 2 (course day 2) |
 | LS1-2.3 | I can describe how each level is built from the level below it. | 2 | 6 | Unit day 5 (course day 5) |
-| LS1-2.4 | I can explain how a part's structure fits its job, and how an organism's systems work together. | 2 | 6 | Unit day 8 (course day 8) |
-| LS1-2.5 | I can use a model to show how an organism's systems work together to do one job, like moving. | 2 | 6 | Unit day 9 (course day 9) |
-| LS1-2.6 | I can build my own model showing how levels and systems in an organism work together to carry out functions. | 3 | 6 | Unit day 11 (course day 11) |
+| LS1-2.4 | I can explain how a part's structure fits its job, and how an organism's systems work together. | 2 | 6 | Unit day 7 (course day 7) |
+| LS1-2.5 | I can use a model to show how an organism's systems work together to do one job, like moving. | 2 | 6 | Unit day 8 (course day 8) |
+| LS1-2.6 | I can build my own model showing how levels and systems in an organism work together to carry out functions. | 3 | 6 | Unit day 10 (course day 10) |
 
 ---
 

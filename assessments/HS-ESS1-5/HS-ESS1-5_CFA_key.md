@@ -7,12 +7,12 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| ESS1-5.1 | I can describe Earth's outer layer as moving plates and name three kinds of plate boundaries. | 1 | 6 | Unit day 2 (course day 67) |
-| ESS1-5.2 | I can describe where ocean crust is made and where it sinks back down. | 1 | 6 | Unit day 2 (course day 67) |
-| ESS1-5.3 | I can read a rock-age map and describe the pattern in the ages. | 2 | 6 | Unit day 3 (course day 68) |
-| ESS1-5.4 | I can explain why ocean crust is young and why continents are oldest at their ancient cores. | 2 | 6 | Unit day 6 (course day 71) |
-| ESS1-5.5 | I can judge how strong the evidence is that the crust has moved and is still moving. | 3 | 6 | Unit day 8 (course day 73) |
-| ESS1-5.6 | I can judge how well plate tectonics explains the ages of rocks, using evidence. | 3 | 6 | Unit day 10 (course day 75) |
+| ESS1-5.1 | I can describe Earth's outer layer as moving plates and name three kinds of plate boundaries. | 1 | 6 | Unit day 2 (course day 68) |
+| ESS1-5.2 | I can describe where ocean crust is made and where it sinks back down. | 1 | 6 | Unit day 2 (course day 68) |
+| ESS1-5.3 | I can read a rock-age map and describe the pattern in the ages. | 2 | 6 | Unit day 3 (course day 69) |
+| ESS1-5.4 | I can explain why ocean crust is young and why continents are oldest at their ancient cores. | 2 | 6 | Unit day 6 (course day 72) |
+| ESS1-5.5 | I can judge how strong the evidence is that the crust has moved and is still moving. | 3 | 6 | Unit day 8 (course day 74) |
+| ESS1-5.6 | I can judge how well plate tectonics explains the ages of rocks, using evidence. | 3 | 6 | Unit day 10 (course day 76) |
 
 ---
 

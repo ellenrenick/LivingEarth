@@ -7,11 +7,11 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS2-7.1 | I can explain how human activities like pollution and deforestation affect ecosystems and biodiversity. | 2 | 6 | Unit day 4 (course day 168) |
-| LS2-7.2 | I can design a solution, based on evidence, that reduces a human impact on the environment. | 3 | 6 | Unit day 6 (course day 170) |
-| LS2-7.3 | I can judge whether a solution will work, and what it gains and costs. | 3 | 6 | Unit day 10 (course day 174) |
-| LS2-7.4 | I can use feedback and new evidence to improve my solution. | 4 | 6 | Unit day 11 (course day 175) |
-| LS2-7.5 | I can present and defend my solution with evidence. | 4 | 6 | Unit day 12 (course day 176) |
+| LS2-7.1 | I can explain how human activities like pollution and deforestation affect ecosystems and biodiversity. | 2 | 6 | Unit day 4 (course day 165) |
+| LS2-7.2 | I can design a solution, based on evidence, that reduces a human impact on the environment. | 3 | 6 | Unit day 6 (course day 167) |
+| LS2-7.3 | I can judge whether a solution will work, and what it gains and costs. | 3 | 6 | Unit day 9 (course day 170) |
+| LS2-7.4 | I can use feedback and new evidence to improve my solution. | 4 | 6 | Unit day 10 (course day 171) |
+| LS2-7.5 | I can present and defend my solution with evidence. | 4 | 6 | Unit day 11 (course day 172) |
 
 ---
 

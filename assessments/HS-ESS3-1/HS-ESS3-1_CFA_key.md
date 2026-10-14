@@ -7,12 +7,12 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| ESS3-1.1 | I can name the resources, hazards, and climate factors that shape where people live. | 1 | 6 | Unit day 2 (course day 154) |
-| ESS3-1.2 | I can describe how resources like water and fertile soil are spread unevenly. | 2 | 6 | Unit day 3 (course day 155) |
-| ESS3-1.3 | I can describe how hazards like earthquakes and floods affect where and how people live. | 2 | 6 | Unit day 6 (course day 158) |
-| ESS3-1.4 | I can explain how climate change can move people and change what they grow. | 2 | 6 | Unit day 7 (course day 159) |
-| ESS3-1.5 | I can read maps and data that connect resources, hazards, or climate to human activity. | 2 | 6 | Unit day 8 (course day 160) |
-| ESS3-1.6 | I can use evidence to explain how resources, hazards, and climate have shaped human activity. | 3 | 6 | Unit day 10 (course day 162) |
+| ESS3-1.1 | I can name the resources, hazards, and climate factors that shape where people live. | 1 | 6 | Unit day 2 (course day 151) |
+| ESS3-1.2 | I can describe how resources like water and fertile soil are spread unevenly. | 2 | 6 | Unit day 3 (course day 152) |
+| ESS3-1.3 | I can describe how hazards like earthquakes and floods affect where and how people live. | 2 | 6 | Unit day 6 (course day 155) |
+| ESS3-1.4 | I can explain how climate change can move people and change what they grow. | 2 | 6 | Unit day 7 (course day 156) |
+| ESS3-1.5 | I can read maps and data that connect resources, hazards, or climate to human activity. | 2 | 6 | Unit day 8 (course day 157) |
+| ESS3-1.6 | I can use evidence to explain how resources, hazards, and climate have shaped human activity. | 3 | 6 | Unit day 10 (course day 159) |
 
 ---
 

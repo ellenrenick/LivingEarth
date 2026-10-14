@@ -7,12 +7,12 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS3-2.1 | I can name three ways new genetic variation arises. | 1 | 6 | Unit day 2 (course day 54) |
-| LS3-2.2 | I can describe how making sex cells and fertilization mix alleles into new combinations. | 2 | 6 | Unit day 5 (course day 57) |
-| LS3-2.3 | I can explain how copying errors and things like UV light change genes, and when that change is inherited. | 2 | 6 | Unit day 6 (course day 58) |
-| LS3-2.4 | I can read data as evidence for where a genetic variation came from. | 2 | 6 | Unit day 7 (course day 59) |
-| LS3-2.5 | I can make a claim, backed by data, about what caused a genetic variation. | 3 | 6 | Unit day 9 (course day 61) |
-| LS3-2.6 | I can defend my claim against another explanation using the evidence. | 3 | 6 | Unit day 11 (course day 63) |
+| LS3-2.1 | I can name three ways new genetic variation arises. | 1 | 6 | Unit day 2 (course day 53) |
+| LS3-2.2 | I can describe how making sex cells and fertilization mix alleles into new combinations. | 2 | 6 | Unit day 6 (course day 57) |
+| LS3-2.3 | I can explain how copying errors and things like UV light change genes, and when that change is inherited. | 2 | 6 | Unit day 8 (course day 59) |
+| LS3-2.4 | I can read data as evidence for where a genetic variation came from. | 2 | 6 | Unit day 9 (course day 60) |
+| LS3-2.5 | I can make a claim, backed by data, about what caused a genetic variation. | 3 | 6 | Unit day 11 (course day 62) |
+| LS3-2.6 | I can defend my claim against another explanation using the evidence. | 3 | 6 | Unit day 13 (course day 64) |
 
 ---
 

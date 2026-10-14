@@ -7,12 +7,12 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS2-4.1 | I can name producers, consumers, and decomposers and the role of each. | 1 | 6 | Unit day 2 (course day 123) |
-| LS2-4.2 | I can describe how matter cycles and energy flows through a food web. | 2 | 6 | Unit day 5 (course day 126) |
-| LS2-4.3 | I can interpret energy pyramids and matter diagrams, including the 10 percent rule. | 3 | 6 | Unit day 7 (course day 128) |
-| LS2-4.4 | I can use numbers to show how much energy passes from one level to the next. | 2 | 6 | Unit day 8 (course day 129) |
-| LS2-4.5 | I can use numbers to show that matter is conserved as it cycles. | 3 | 6 | Unit day 12 (course day 133) |
-| LS2-4.6 | I can use math to support a claim about how matter cycles and energy flows. | 3 | 6 | Unit day 14 (course day 135) |
+| LS2-4.1 | I can name producers, consumers, and decomposers and the role of each. | 1 | 6 | Unit day 2 (course day 121) |
+| LS2-4.2 | I can describe how matter cycles and energy flows through a food web. | 2 | 6 | Unit day 4 (course day 123) |
+| LS2-4.3 | I can interpret energy pyramids and matter diagrams, including the 10 percent rule. | 3 | 6 | Unit day 6 (course day 125) |
+| LS2-4.4 | I can use numbers to show how much energy passes from one level to the next. | 2 | 6 | Unit day 8 (course day 127) |
+| LS2-4.5 | I can use numbers to show that matter is conserved as it cycles. | 3 | 6 | Unit day 12 (course day 131) |
+| LS2-4.6 | I can use math to support a claim about how matter cycles and energy flows. | 3 | 6 | Unit day 13 (course day 132) |
 
 ---
 
