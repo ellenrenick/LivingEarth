@@ -58,7 +58,7 @@
     "course_day": 5,
     "focus": "LS1-2.3 I can describe how each level is built from the level below it.",
     "standard": "LS1-2",
-    "resources": "CFA LS1-2.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-2.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-2.3"
@@ -95,7 +95,7 @@
     "course_day": 8,
     "focus": "LS1-2.4 I can explain how a part's structure fits its job, and how an organism's systems work together.",
     "standard": "LS1-2",
-    "resources": "CFA LS1-2.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-2.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-2.4"
@@ -107,7 +107,7 @@
     "course_day": 9,
     "focus": "LS1-2.5 I can use a model to show how an organism's systems work together to do one job, like moving.",
     "standard": "LS1-2",
-    "resources": "CFA LS1-2.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-2.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-2.5"
@@ -131,7 +131,7 @@
     "course_day": 11,
     "focus": "LS1-2.6 I can build my own model showing how levels and systems in an organism work together to carry out functions. (day 2 of 2: apply it, then CFA)",
     "standard": "LS1-2",
-    "resources": "CFA LS1-2.6 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-2.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-2.6"
@@ -252,7 +252,7 @@
     "course_day": 20,
     "focus": "LS2-5.3 I can describe how photosynthesis moves carbon from air and water into living things, and respiration moves it back.",
     "standard": "LS2-5",
-    "resources": "CFA LS2-5.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-5.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-5.3"
@@ -264,7 +264,7 @@
     "course_day": 21,
     "focus": "LS2-5.4 I can trace one carbon atom through at least three spheres and name each process that moves it.",
     "standard": "LS2-5",
-    "resources": "CFA LS2-5.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-5.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-5.4"
@@ -276,7 +276,7 @@
     "course_day": 22,
     "focus": "LS2-5.5 I can use a model to predict what happens to carbon elsewhere when one part of the cycle changes.",
     "standard": "LS2-5",
-    "resources": "CFA LS2-5.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-5.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-5.5"
@@ -300,7 +300,7 @@
     "course_day": 24,
     "focus": "LS2-5.6 I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-5",
-    "resources": "CFA LS2-5.6 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-5.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-5.6"
@@ -358,7 +358,7 @@
     "course_day": 28,
     "focus": "LS1-6.1 I can name the three elements that make up most of sugar and the body's large molecules.",
     "standard": "LS1-6",
-    "resources": "CFA LS1-6.1 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-6.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-6.1"
@@ -384,7 +384,7 @@
     "course_day": 30,
     "focus": "LS1-6.2 I can describe how living things take in matter and rearrange its atoms, with no atoms lost.",
     "standard": "LS1-6",
-    "resources": "CFA LS1-6.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-6.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-6.2"
@@ -396,7 +396,7 @@
     "course_day": 31,
     "focus": "LS1-6.3 I can explain how atoms from sugar join with other elements, like nitrogen, to build larger molecules.",
     "standard": "LS1-6",
-    "resources": "CFA LS1-6.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-6.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-6.3"
@@ -408,7 +408,7 @@
     "course_day": 32,
     "focus": "LS1-6.4 I can use a model to trace atoms from sugar into a larger molecule.",
     "standard": "LS1-6",
-    "resources": "CFA LS1-6.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-6.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-6.4"
@@ -446,7 +446,7 @@
     "course_day": 35,
     "focus": "LS1-6.5 I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules. (day 2 of 2: apply it, then CFA)",
     "standard": "LS1-6",
-    "resources": "CFA LS1-6.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-6.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-6.5"
@@ -470,7 +470,7 @@
     "course_day": 37,
     "focus": "LS1-6.6 I can revise my explanation when new evidence comes in. (day 2 of 2: apply it, then CFA)",
     "standard": "LS1-6",
-    "resources": "CFA LS1-6.6 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-6.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-6.6"
@@ -528,7 +528,7 @@
     "course_day": 41,
     "focus": "LS1-1.1 I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base.",
     "standard": "LS1-1",
-    "resources": "CFA LS1-1.1 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-1.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-1.1"
@@ -565,7 +565,7 @@
     "course_day": 44,
     "focus": "LS1-1.2 I can state that DNA holds the instructions for building proteins.",
     "standard": "LS1-1",
-    "resources": "CFA LS1-1.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-1.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-1.2"
@@ -577,7 +577,7 @@
     "course_day": 45,
     "focus": "LS1-1.3 I can describe how a gene's message is copied and read to build a chain of amino acids.",
     "standard": "LS1-1",
-    "resources": "CFA LS1-1.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-1.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-1.3"
@@ -589,7 +589,7 @@
     "course_day": 46,
     "focus": "LS1-1.4 I can explain how changing one DNA base can change a protein and what it does.",
     "standard": "LS1-1",
-    "resources": "CFA LS1-1.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-1.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-1.4"
@@ -613,7 +613,7 @@
     "course_day": 48,
     "focus": "LS1-1.5 I can explain how DNA, through proteins, gives different cells their different jobs. (day 2 of 2: apply it, then CFA)",
     "standard": "LS1-1",
-    "resources": "CFA LS1-1.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-1.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-1.5"
@@ -637,7 +637,7 @@
     "course_day": 50,
     "focus": "LS1-1.6 I can use case data, like sickle cell, to explain how a DNA change affects the body. (day 2 of 2: apply it, then CFA)",
     "standard": "LS1-1",
-    "resources": "CFA LS1-1.6 (exit ticket, about 6 min each)",
+    "resources": "CFA LS1-1.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS1-1.6"
@@ -695,7 +695,7 @@
     "course_day": 54,
     "focus": "LS3-2.1 I can name three ways new genetic variation arises.",
     "standard": "LS3-2",
-    "resources": "CFA LS3-2.1 (exit ticket, about 6 min each)",
+    "resources": "CFA LS3-2.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS3-2.1"
@@ -732,7 +732,7 @@
     "course_day": 57,
     "focus": "LS3-2.2 I can describe how making sex cells and fertilization mix alleles into new combinations.",
     "standard": "LS3-2",
-    "resources": "CFA LS3-2.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS3-2.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS3-2.2"
@@ -744,7 +744,7 @@
     "course_day": 58,
     "focus": "LS3-2.3 I can explain how copying errors and things like UV light change genes, and when that change is inherited.",
     "standard": "LS3-2",
-    "resources": "CFA LS3-2.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS3-2.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS3-2.3"
@@ -756,7 +756,7 @@
     "course_day": 59,
     "focus": "LS3-2.4 I can read data as evidence for where a genetic variation came from.",
     "standard": "LS3-2",
-    "resources": "CFA LS3-2.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS3-2.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS3-2.4"
@@ -780,7 +780,7 @@
     "course_day": 61,
     "focus": "LS3-2.5 I can make a claim, backed by data, about what caused a genetic variation. (day 2 of 2: apply it, then CFA)",
     "standard": "LS3-2",
-    "resources": "CFA LS3-2.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS3-2.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS3-2.5"
@@ -804,7 +804,7 @@
     "course_day": 63,
     "focus": "LS3-2.6 I can defend my claim against another explanation using the evidence. (day 2 of 2: apply it, then CFA)",
     "standard": "LS3-2",
-    "resources": "CFA LS3-2.6 (exit ticket, about 6 min each)",
+    "resources": "CFA LS3-2.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS3-2.6"
@@ -875,7 +875,7 @@
     "course_day": 68,
     "focus": "ESS1-5.3 I can read a rock-age map and describe the pattern in the ages.",
     "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.3 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS1-5.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS1-5.3"
@@ -912,7 +912,7 @@
     "course_day": 71,
     "focus": "ESS1-5.4 I can explain why ocean crust is young and why continents are oldest at their ancient cores.",
     "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.4 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS1-5.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS1-5.4"
@@ -936,7 +936,7 @@
     "course_day": 73,
     "focus": "ESS1-5.5 I can judge how strong the evidence is that the crust has moved and is still moving. (day 2 of 2: apply it, then CFA)",
     "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.5 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS1-5.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS1-5.5"
@@ -960,7 +960,7 @@
     "course_day": 75,
     "focus": "ESS1-5.6 I can judge how well plate tectonics explains the ages of rocks, using evidence. (day 2 of 2: apply it, then CFA)",
     "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.6 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS1-5.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS1-5.6"
@@ -1018,7 +1018,7 @@
     "course_day": 88,
     "focus": "ESS2-7.1 I can name examples of how Earth has changed and how life has changed.",
     "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.1 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS2-7.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS2-7.1"
@@ -1030,7 +1030,7 @@
     "course_day": 89,
     "focus": "ESS2-7.2 I can describe one way Earth changed life and one way life changed Earth.",
     "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.2 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS2-7.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS2-7.2"
@@ -1054,7 +1054,7 @@
     "course_day": 91,
     "focus": "ESS2-7.3 I can explain how events in Earth's history changed life, and how life in turn changed Earth. (day 2 of 2: apply it, then CFA)",
     "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.3 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS2-7.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS2-7.3"
@@ -1078,7 +1078,7 @@
     "course_day": 93,
     "focus": "ESS2-7.4 I can write an argument, with evidence, that Earth and life changed each other. (day 2 of 2: apply it, then CFA)",
     "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.4 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS2-7.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS2-7.4"
@@ -1090,7 +1090,7 @@
     "course_day": 94,
     "focus": "ESS2-7.5 I can combine several kinds of evidence into one strong argument about Earth and life.",
     "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.5 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS2-7.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS2-7.5"
@@ -1114,7 +1114,7 @@
     "course_day": 96,
     "focus": "ESS2-7.6 I can argue from evidence that Earth's systems and life have changed together over time. (day 2 of 2: apply it, then CFA)",
     "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.6 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS2-7.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS2-7.6"
@@ -1174,7 +1174,7 @@
     "course_day": 100,
     "focus": "LS4-1.2 I can describe the kinds of evidence that support common ancestry: DNA, body structures, and embryos.",
     "standard": "LS4-1",
-    "resources": "CFA LS4-1.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-1.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-1.2"
@@ -1198,7 +1198,7 @@
     "course_day": 102,
     "focus": "LS4-1.3 I can explain to others how several lines of evidence support common ancestry. (day 2 of 2: apply it, then CFA)",
     "standard": "LS4-1",
-    "resources": "CFA LS4-1.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-1.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-1.3"
@@ -1210,7 +1210,7 @@
     "course_day": 103,
     "focus": "LS4-1.4 I can describe the kinds of evidence that support evolution, like the fossil record.",
     "standard": "LS4-1",
-    "resources": "CFA LS4-1.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-1.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-1.4"
@@ -1234,7 +1234,7 @@
     "course_day": 105,
     "focus": "LS4-1.5 I can explain to others how several lines of evidence support evolution. (day 2 of 2: apply it, then CFA)",
     "standard": "LS4-1",
-    "resources": "CFA LS4-1.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-1.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-1.5"
@@ -1290,7 +1290,7 @@
     "course_day": 109,
     "focus": "LS4-4.1 I can define natural selection, adaptation, population, biotic, and abiotic.",
     "standard": "LS4-4",
-    "resources": "CFA LS4-4.1 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-4.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-4.1"
@@ -1327,7 +1327,7 @@
     "course_day": 112,
     "focus": "LS4-4.2 I can describe how natural selection causes a population to evolve.",
     "standard": "LS4-4",
-    "resources": "CFA LS4-4.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-4.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-4.2"
@@ -1389,7 +1389,7 @@
     "course_day": 117,
     "focus": "LS4-4.3 I can use data to show that a population's traits shifted because of natural selection.",
     "standard": "LS4-4",
-    "resources": "CFA LS4-4.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-4.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-4.3"
@@ -1413,7 +1413,7 @@
     "course_day": 119,
     "focus": "LS4-4.4 I can use evidence to explain how natural selection makes a population better suited to its environment. (day 2 of 2: apply it, then CFA)",
     "standard": "LS4-4",
-    "resources": "CFA LS4-4.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS4-4.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS4-4.4"
@@ -1469,7 +1469,7 @@
     "course_day": 123,
     "focus": "LS2-4.1 I can name producers, consumers, and decomposers and the role of each.",
     "standard": "LS2-4",
-    "resources": "CFA LS2-4.1 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-4.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-4.1"
@@ -1506,7 +1506,7 @@
     "course_day": 126,
     "focus": "LS2-4.2 I can describe how matter cycles and energy flows through a food web.",
     "standard": "LS2-4",
-    "resources": "CFA LS2-4.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-4.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-4.2"
@@ -1530,7 +1530,7 @@
     "course_day": 128,
     "focus": "LS2-4.3 I can interpret energy pyramids and matter diagrams, including the 10 percent rule. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-4",
-    "resources": "CFA LS2-4.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-4.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-4.3"
@@ -1542,7 +1542,7 @@
     "course_day": 129,
     "focus": "LS2-4.4 I can use numbers to show how much energy passes from one level to the next.",
     "standard": "LS2-4",
-    "resources": "CFA LS2-4.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-4.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-4.4"
@@ -1591,7 +1591,7 @@
     "course_day": 133,
     "focus": "LS2-4.5 I can use numbers to show that matter is conserved as it cycles. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-4",
-    "resources": "CFA LS2-4.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-4.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-4.5"
@@ -1615,7 +1615,7 @@
     "course_day": 135,
     "focus": "LS2-4.6 I can use math to support a claim about how matter cycles and energy flows. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-4",
-    "resources": "CFA LS2-4.6 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-4.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-4.6"
@@ -1673,7 +1673,7 @@
     "course_day": 139,
     "focus": "LS2-2.1 I can define population and biodiversity and name factors that change them.",
     "standard": "LS2-2",
-    "resources": "CFA LS2-2.1 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-2.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-2.1"
@@ -1685,7 +1685,7 @@
     "course_day": 140,
     "focus": "LS2-2.2 I can read graphs and tables of population or biodiversity data.",
     "standard": "LS2-2",
-    "resources": "CFA LS2-2.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-2.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-2.2"
@@ -1697,7 +1697,7 @@
     "course_day": 141,
     "focus": "LS2-2.3 I can find averages, rates of change, and trends in population data.",
     "standard": "LS2-2",
-    "resources": "CFA LS2-2.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-2.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-2.3"
@@ -1709,7 +1709,7 @@
     "course_day": 142,
     "focus": "LS2-2.4 I can use math to compare populations and biodiversity across ecosystems of different sizes.",
     "standard": "LS2-2",
-    "resources": "CFA LS2-2.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-2.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-2.4"
@@ -1758,7 +1758,7 @@
     "course_day": 146,
     "focus": "LS2-2.5 I can use math as evidence to explain how a factor affects a population or biodiversity. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-2",
-    "resources": "CFA LS2-2.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-2.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-2.5"
@@ -1807,7 +1807,7 @@
     "course_day": 150,
     "focus": "LS2-2.6 I can use new data to revise my explanation of what affects a population or biodiversity. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-2",
-    "resources": "CFA LS2-2.6 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-2.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-2.6"
@@ -1865,7 +1865,7 @@
     "course_day": 154,
     "focus": "ESS3-1.1 I can name the resources, hazards, and climate factors that shape where people live.",
     "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.1 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS3-1.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS3-1.1"
@@ -1877,7 +1877,7 @@
     "course_day": 155,
     "focus": "ESS3-1.2 I can describe how resources like water and fertile soil are spread unevenly.",
     "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.2 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS3-1.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS3-1.2"
@@ -1914,7 +1914,7 @@
     "course_day": 158,
     "focus": "ESS3-1.3 I can describe how hazards like earthquakes and floods affect where and how people live.",
     "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.3 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS3-1.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS3-1.3"
@@ -1926,7 +1926,7 @@
     "course_day": 159,
     "focus": "ESS3-1.4 I can explain how climate change can move people and change what they grow.",
     "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.4 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS3-1.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS3-1.4"
@@ -1938,7 +1938,7 @@
     "course_day": 160,
     "focus": "ESS3-1.5 I can read maps and data that connect resources, hazards, or climate to human activity.",
     "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.5 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS3-1.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS3-1.5"
@@ -1962,7 +1962,7 @@
     "course_day": 162,
     "focus": "ESS3-1.6 I can use evidence to explain how resources, hazards, and climate have shaped human activity. (day 2 of 2: apply it, then CFA)",
     "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.6 (exit ticket, about 6 min each)",
+    "resources": "CFA ESS3-1.6 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "ESS3-1.6"
@@ -2045,7 +2045,7 @@
     "course_day": 168,
     "focus": "LS2-7.1 I can explain how human activities like pollution and deforestation affect ecosystems and biodiversity.",
     "standard": "LS2-7",
-    "resources": "CFA LS2-7.1 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-7.1 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-7.1"
@@ -2069,7 +2069,7 @@
     "course_day": 170,
     "focus": "LS2-7.2 I can design a solution, based on evidence, that reduces a human impact on the environment. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-7",
-    "resources": "CFA LS2-7.2 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-7.2 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-7.2"
@@ -2118,7 +2118,7 @@
     "course_day": 174,
     "focus": "LS2-7.3 I can judge whether a solution will work, and what it gains and costs. (day 2 of 2: apply it, then CFA)",
     "standard": "LS2-7",
-    "resources": "CFA LS2-7.3 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-7.3 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-7.3"
@@ -2130,7 +2130,7 @@
     "course_day": 175,
     "focus": "LS2-7.4 I can use feedback and new evidence to improve my solution.",
     "standard": "LS2-7",
-    "resources": "CFA LS2-7.4 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-7.4 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-7.4"
@@ -2142,7 +2142,7 @@
     "course_day": 176,
     "focus": "LS2-7.5 I can present and defend my solution with evidence.",
     "standard": "LS2-7",
-    "resources": "CFA LS2-7.5 (exit ticket, about 6 min each)",
+    "resources": "CFA LS2-7.5 (exit ticket, about 6 min)",
     "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
     "ids": [
      "LS2-7.5"
