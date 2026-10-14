@@ -21,7 +21,7 @@ DAYS = [
     ("Day 4: What can one letter do?", "LS1-1.4: one-letter DNA changes can change an amino acid (the Siamese cat), change whether or when a protein is made, or change nothing.", "LS1-1", ["LS1-1.4"], "Card sort."),
     ("Day 5: Same DNA, different jobs", "LS1-1.5: all cells have the same DNA but use different genes; only pigment-making cells use the pigment gene; map where the changed protein works by skin temperature.", "LS1-1", ["LS1-1.5"], ""),
     ("Day 6: Case data", "LS1-1.6: trace a DNA change to a protein to an effect on the body in two cases (the Siamese cat and a human gene change).", "LS1-1", ["LS1-1.6"], ""),
-    ("Day 7: Review and back to the cat", "Review sections for any CFA below a 3; revise the Day 1 model; Write It about warm-raised and cool-raised Siamese kittens.", "LS1-1", [], ""),
+    ("Day 7: Review and back to the cat", "Mastery Path reviews for any CFA below a 3 (trigger: below 2.67); revise the Day 1 model; Write It about warm-raised and cool-raised Siamese kittens.", "LS1-1", [], ""),
     ("Day 8: CSA", "CSA: priority targets for HS-LS1-1 (45 minutes, 30 points).", "LS1-1", [], "Allow the full 45 minutes."),
 ]
 

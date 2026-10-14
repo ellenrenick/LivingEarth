@@ -152,7 +152,7 @@ def overview_html(plan, cfa_titles):
     return (f"<h2>{plan.MODULE_NAME}</h2>{phen}<p>Eight 45-minute class periods. Every priority learning target and its CFA is kept; the supporting standard is taught lightly and is not on the CSA.</p>"
             f"<table border=\"1\" cellpadding=\"6\"><tr><th>Day</th><th>Focus</th><th>Standards</th><th>CFA</th><th>Notes</th></tr>{rows}</table>"
             f"<h3>How this differs from the full 13-day unit</h3><ul>{changes}</ul>"
-            "<p>A CFA is a short exit ticket (about 6 minutes, 4 points). Mastery is a 3 or 4 on the 4-point scale. Students who score below a 3 use the matching section of the Review on Day 7.</p>")
+            "<p>A CFA is a short exit ticket (about 6 minutes, 4 points). Students aim for at least a 3. In Canvas, a score below 2.67 triggers a Mastery Path that opens the review assignment for that target (2.67 rounds up to a 3); students never see the decimal.</p>")
 
 
 def main():
@@ -178,15 +178,33 @@ def main():
     overview = api.call("POST", "/pages", {"wiki_page": {"title": f"{plan.MODULE_NAME}: Overview and Day-by-Day Plan", "body": overview_html(plan, None), "published": False}})
     review_src = (unit_dir / f"{std}_review.html").read_text(encoding="utf-8")
     review_body = re.sub(r"<!--.*?-->", "", re.search(r"<body>(.*)</body>", review_src, re.S).group(1), flags=re.S).strip()
-    review_body = review_body.replace("Each one is worth 6 points. If you scored <strong>below 4</strong>", "Each one is worth 4 points. If you scored <strong>below a 3</strong>")
+    review_body = re.sub(r"Look at your score on each CFA.*?Plan on 30 to 40 minutes\.",
+                         "Your goal on every CFA is at least a 3 out of 4. If you scored below a 3, a review for that target opened in your Mastery Path in Canvas. Do it. Everyone does Vocabulary and Write It on this page. "
+                         "The sections below are the same ones used in the Mastery Path reviews.", review_body, flags=re.S)
     review = api.call("POST", "/pages", {"wiki_page": {"title": f"{std} Review: {cfa_mod.UNIT_TITLE}", "body": review_body, "published": False}})
     cfa_quiz = {}
     for cid, c in cfas.items():
-        desc = f"<p>Exit ticket (about 6 minutes, 4 points). Learning target: {c['lt']}</p>"
+        desc = f"<p>Exit ticket (about 6 minutes, 4 points). Learning target: {c['lt']}</p><p><strong>Goal: at least a 3.</strong></p>"
         cfa_quiz[cid] = make_quiz(api, f"CFA {cid}", desc, scale_to(cfa_questions(c)))
         print("CFA", cid, cfa_quiz[cid]["html_url"])
+    rev_mod = load(unit_dir / "review.py", f"r_{std}")
+    review_asg = {}
+    for sec in rev_mod.SECTIONS:
+        for lt in sec["lts"]:
+            body = (f"<div style=\"background:#eef5fb;border-left:4px solid #2b6cb0;padding:10px 14px\"><p><strong>Learning target {lt}:</strong> {cfas[lt]['lt']}</p></div>"
+                    f"<p>Your goal on every CFA is at least a 3. Your CFA score was below a 3, so this review is for you. Work through the questions, check your answers, then submit your answers.</p>"
+                    f"<h3>{sec['title']}</h3>{sec['intro']}<ol>" + "".join(f"<li>{qq}<details><summary>Check your answer</summary><p>{aa}</p></details></li>" for qq, aa in sec["items"]) + "</ol>")
+            asg = api.call("POST", "/assignments", {"assignment": {"name": f"Review {lt}: {(lambda t: t[0].upper() + t[1:])(cfas[lt]['lt'].replace('I can ', '').rstrip('.'))} (Mastery Path)", "description": body,
+                                                                  "points_possible": 4, "grading_type": "pass_fail", "submission_types": ["online_text_entry", "online_upload"], "published": False}})
+            review_asg[lt] = asg
     csa = make_quiz(api, q.TITLE + " (CSA)", slides.get(next((t for t in slides if t.startswith("Day 8")), ""), "") + q.DESCRIPTION + "<p>45 minutes, 4 points.</p>", scale_to(csa_questions(q)), time_limit=45)
     print("CSA", csa["html_url"])
+    for cid, quiz in cfa_quiz.items():  # Mastery Path: below 2.67 of 4 opens the review (0.6665 of the points; 2.67 rounds up to a 3)
+        trig = api.call("GET", f"/quizzes/{quiz['id']}")["assignment_id"]
+        api.call("POST", "/mastery_paths/rules", {"trigger_assignment_id": trig, "scoring_ranges": [
+            {"lower_bound": 0.6665, "upper_bound": None, "assignment_sets": []},
+            {"lower_bound": 0.0, "upper_bound": 0.6665, "assignment_sets": [{"assignment_set_associations": [{"assignment_id": review_asg[cid]["id"]}]}]}]})
+        print("Mastery path", cid)
 
     mod = api.call("POST", "/modules", {"module": {"name": plan.MODULE_NAME, "published": False}})
     pos = 0
@@ -215,6 +233,8 @@ def main():
                 item(title=it[1], type="Assignment", content_id=asg["id"], indent=1)
         for cid in cfa_ids:
             item(title=f"CFA {cid}", type="Quiz", content_id=cfa_quiz[cid]["id"], indent=1)
+            if cid in review_asg:
+                item(title=review_asg[cid]["name"], type="Assignment", content_id=review_asg[cid]["id"], indent=1)
         if title.startswith("Day 7"):
             item(title=f"{std} Review", type="Page", page_url=review["url"], indent=1)
         if title.startswith("Day 8"):
