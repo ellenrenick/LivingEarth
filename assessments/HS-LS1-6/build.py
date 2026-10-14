@@ -195,7 +195,7 @@ def to_md(fragment):
 
 def build_key(q, mc, total):
     out = [f"# {q.TITLE}", "", "**Course:** Living Earth (Biology), Grade 9  ",
-           "**Priority standard:** HS-LS1-6  ", f"**Total points:** {total}  ",
+           f"**Priority standard:** {getattr(q, 'STANDARD', 'HS-LS1-6')}  ", f"**Total points:** {total}  ",
            f"**Suggested time:** {q.TIME_MINUTES} minutes", "",
            "| Part | Items | DOK | Points |", "| --- | --- | --- | --- |",
            f"| 1. Vocabulary matching | {len(q.MATCHING['pairs'])} terms | 1 | {q.MATCHING['points']} |",
