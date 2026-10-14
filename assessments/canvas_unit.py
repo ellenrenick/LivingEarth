@@ -107,9 +107,10 @@ def cfa_questions(cfa):
 
 
 def overview_html(plan, cfa_titles):
-    rows = "".join(f"<tr><td>{d[0]}</td><td>{d[1]}</td><td>{d[2]}</td><td>{', '.join('CFA ' + c for c in d[3]) or '&mdash;'}</td><td>{d[4]}</td></tr>" for d in plan.DAYS)
+    rows = "".join(f"<tr><td>{d[0].split(':')[0]}</td><td>{d[1]}</td><td>{d[2]}</td><td>{', '.join('CFA ' + c for c in d[3]) or '&mdash;'}</td><td>{d[4]}</td></tr>" for d in plan.DAYS)
     changes = "".join(f"<li>{c}</li>" for c in plan.CHANGES)
-    return (f"<h2>{plan.MODULE_NAME}</h2><p>Eight 45-minute class periods. Every priority learning target and its CFA is kept; the supporting standard is taught lightly and is not on the CSA.</p>"
+    phen = f"<h3>Anchoring phenomenon</h3><p>{plan.PHENOMENON}</p>" if hasattr(plan, "PHENOMENON") else ""
+    return (f"<h2>{plan.MODULE_NAME}</h2>{phen}<p>Eight 45-minute class periods. Every priority learning target and its CFA is kept; the supporting standard is taught lightly and is not on the CSA.</p>"
             f"<table border=\"1\" cellpadding=\"6\"><tr><th>Day</th><th>Focus</th><th>Standards</th><th>CFA</th><th>Notes</th></tr>{rows}</table>"
             f"<h3>How this differs from the full 13-day unit</h3><ul>{changes}</ul>"
             "<p>A CFA is a short exit ticket (about 6 minutes, 6 points). Mastery is 4 of 6. Students who score below 4 use the matching section of the Review on Day 7.</p>")
@@ -148,8 +149,20 @@ def main():
         api.call("POST", f"/modules/{mod['id']}/items", {"module_item": {"position": pos, **kw}})
 
     item(title="Overview and day-by-day plan", type="Page", page_url=overview["url"])
+    lessons = load(unit_dir / "lessons_8day.py", "lessons") if (unit_dir / "lessons_8day.py").exists() else None
+    if lessons:
+        mp = api.call("POST", "/pages", {"wiki_page": {"title": "Unit materials and prep (teacher)", "body": lessons.MATERIALS_PAGE, "published": False}})
+        item(title="Unit materials and prep (teacher)", type="Page", page_url=mp["url"])
     for title, focus, _std, cfa_ids, _note in plan.DAYS:
         item(title=title, type="SubHeader")
+        for it in (lessons.LESSONS.get(title, []) if lessons else []):
+            if it[0] == "page":
+                pg = api.call("POST", "/pages", {"wiki_page": {"title": it[1], "body": it[2], "published": False}})
+                item(title=it[1], type="Page", page_url=pg["url"], indent=1)
+            else:
+                asg = api.call("POST", "/assignments", {"assignment": {"name": it[1], "description": it[2], "points_possible": it[3],
+                                                                         "submission_types": ["online_text_entry"], "published": False}})
+                item(title=it[1], type="Assignment", content_id=asg["id"], indent=1)
         for cid in cfa_ids:
             item(title=f"CFA {cid}", type="Quiz", content_id=cfa_quiz[cid]["id"], indent=1)
         if title.startswith("Day 7"):
