@@ -51,22 +51,22 @@ th { background: #eef2f7; }
 """
 
 NB_CSS = CSS_COMMON % "landscape" + """
-.sheet { width: 11in; height: 8.5in; padding: 0.22in; page-break-after: always; position: relative; }
-.nb { width: 100%; height: 100%; border: 7px solid #d8a98b; border-radius: 0.55in; background: #fffdf9; position: relative; overflow: hidden; }
-.spine { position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px solid #222; }
-.page { position: absolute; top: 0; bottom: 0; width: 50%; padding: 0.12in 0.35in 0.1in 0.38in;
-  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 0.285in, #9aa6e6 0.285in, #9aa6e6 0.3in); background-position: 0 0.52in; }
+/* ink-saver: black outline only, no fills, no ruled lines */
+.sheet { width: 11in; height: 8.5in; padding: 0.25in; page-break-after: always; position: relative; }
+.nb { width: 100%; height: 100%; border: 1px solid #000; border-radius: 0.25in; background: #fff; position: relative; overflow: hidden; }
+.spine { position: absolute; left: 50%; top: 0; bottom: 0; border-left: 1px solid #000; }
+.page { position: absolute; top: 0; bottom: 0; width: 50%; padding: 0.12in 0.35in 0.1in 0.38in; }
 .page.l { left: 0; } .page.r { left: 50%; }
-.title { position: absolute; left: 0; right: 0; top: 0.08in; text-align: center; font-family: 'Inter Display','Inter',sans-serif; font-weight: 900; font-size: 30pt; letter-spacing: 0.5px; z-index: 3; }
-.tag { position: absolute; top: 0.12in; font-size: 9pt; color: #777; z-index: 3; }
-.fq { background: #00e5ff; display: inline-block; padding: 0 5px; font-size: 11pt; line-height: 0.3in; margin-top: 0.55in; }
+.title { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; background: #fff; padding: 0 0.12in; top: 0.1in; text-align: center; font-family: 'Liberation Sans', Arial, sans-serif; font-weight: bold; font-size: 24pt; z-index: 3; }
+.tag { position: absolute; top: 0.14in; font-size: 9pt; color: #000; z-index: 3; }
+.fq { display: inline-block; font-size: 11pt; line-height: 0.3in; margin-top: 0.55in; }
 .sec { margin-top: 0; }
-.h { display: inline-block; font-family: 'Inter',sans-serif; font-weight: 600; font-size: 13pt; color: #24402f; border-bottom: 2px solid #24402f; background: #fffdf9; line-height: 0.27in; padding: 0 4px; }
-.tape { position: absolute; right: 0.4in; border: 1.5px dashed #999; background: rgba(255,255,255,0.8); color: #888; font-size: 8.5pt; font-style: italic; padding: 2px 10px; }
+.h { display: inline-block; font-weight: bold; font-size: 12pt; border-bottom: 1px solid #000; line-height: 0.27in; }
+.tape { position: absolute; right: 0.4in; border: 1px dashed #000; color: #000; font-size: 8.5pt; font-style: italic; padding: 2px 10px; }
 .nums { position: absolute; left: 0.35in; right: 0.35in; bottom: 0.12in; }
-.nums div { height: 0.3in; line-height: 0.3in; font-size: 10pt; color: #555; position: relative; }
-.nums div span { display: inline-block; width: 0.3in; } .nums div i { position: absolute; left: 0.3in; right: 0; bottom: 0.03in; border-bottom: 1px solid #5560b8; }
-.nums .cap { font-size: 8.5pt; font-style: italic; color: #777; height: 0.22in; line-height: 0.22in; background: #fffdf9; display: inline-block; padding: 0 4px; }
+.nums div { height: 0.3in; line-height: 0.3in; font-size: 10pt; position: relative; }
+.nums div span { display: inline-block; width: 0.3in; } .nums div i { position: absolute; left: 0.3in; right: 0; bottom: 0.03in; border-bottom: 1px solid #000; }
+.nums .cap { font-size: 8.5pt; font-style: italic; height: 0.22in; line-height: 0.22in; display: inline-block; }
 """
 
 PR_CSS = CSS_COMMON % "portrait" + """
