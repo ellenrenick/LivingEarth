@@ -1,6 +1,6 @@
 """Convert a simple handout HTML file (h1, h2, p, b/strong, ol/ul > li, table) to .docx.
 
-  python3 html_to_docx.py in.html out.docx
+  python3 html_to_docx.py in.html out.docx [body_pt]
 """
 
 import sys
@@ -29,9 +29,19 @@ class Builder(HTMLParser):
         elif tag == "p" and self.cell_text is None:
             self.start_para()
         elif tag in ("ol", "ul"):
-            self.lists.append(tag)
+            self.lists.append([tag, 0])
         elif tag == "li":
-            self.start_para("List Number" if self.lists[-1] == "ol" else "List Bullet")
+            kind = self.lists[-1]
+            if kind[0] == "ol":
+                # Number by hand so each list restarts at 1 (Word's List Number style keeps counting).
+                kind[1] += 1
+                self.start_para()
+                self.para.paragraph_format.left_indent = Inches(0.3)
+                self.para.paragraph_format.first_line_indent = Inches(-0.2)
+                self.para.paragraph_format.space_after = Pt(1)
+                self.para.add_run(f"{kind[1]}. ")
+            else:
+                self.start_para("List Bullet")
         elif tag in ("b", "strong"):
             self.bold += 1
         elif tag == "br" and self.para is not None:
@@ -87,17 +97,24 @@ class Builder(HTMLParser):
             self.para.add_run(text).bold = self.bold > 0
 
 
-def main(src, out):
+def main(src, out, body_pt="11"):
     doc = Document()
     for s in doc.sections:
         s.top_margin = s.bottom_margin = Inches(0.7)
         s.left_margin = s.right_margin = Inches(0.8)
     normal = doc.styles["Normal"]
-    normal.font.name, normal.font.size = "Calibri", Pt(11)
+    normal.font.name, normal.font.size = "Calibri", Pt(float(body_pt))
+    # Compact headings so a two-page plan stays on two pages.
+    for name, size in (("Heading 1", 15), ("Heading 2", 12.5)):
+        st = doc.styles[name]
+        st.font.size = Pt(size)
+        st.paragraph_format.space_before = Pt(8 if name == "Heading 2" else 0)
+        st.paragraph_format.space_after = Pt(2)
+    doc.styles["List Bullet"].paragraph_format.space_after = Pt(1)
     Builder(doc).feed(open(src, encoding="utf-8").read())
     doc.save(out)
     print(out)
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:3])
+    main(*sys.argv[1:4])
