@@ -182,6 +182,18 @@ def lt_items(prefix, bank):
     return out
 
 
+CFA_NOTE = (
+    '<div style="border: 2px solid #2f7d3a; padding: 8px 12px; margin: 8px 0;">'
+    "<p><strong>Please do this CFA from memory.</strong> Don't use your notes, the textbook, the internet, a friend, or AI. "
+    "Cheating doesn't help you learn.</p>"
+    "<p>A CFA is practice. It shows you (and me) what you still need to review. It is open to make up any time.</p>"
+    "<p>The CFA is just an assignment credit, not an assessment, so it does not affect your grade if you do poorly. "
+    "There is no pressure to get a perfect score.</p>"
+    "<p>If you look things up to get a good grade here, it will show up on the CSA (the test) and you will do poorly. "
+    "This is practice to help you.</p></div>"
+)
+
+
 def all_quizzes():
     """(title, instructions, items) for every quiz, in module order."""
     out = []
@@ -189,7 +201,7 @@ def all_quizzes():
         items = [(f"{tid}.{n} · {tid} · {name}", {**it, "lt": tid}) for n, it in enumerate(U.CFAS[tid], 1)]
         out.append((
             f"{U.UNIT} CFA {tid}: {name}",
-            f"<p><strong>Learning target {tid}:</strong> {ican}</p>"
+            CFA_NOTE + f"<p><strong>Learning target {tid}:</strong> {ican}</p>"
             "<p>5 questions. If you score below a B (under 67.5%, or fewer than 4 of 5 correct), "
             "a review for this target will open for you.</p>",
             items))
