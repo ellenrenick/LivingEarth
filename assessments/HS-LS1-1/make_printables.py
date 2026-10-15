@@ -130,6 +130,7 @@ p, li { font-size: 11pt; line-height: 1.4; } .note { font-size: 9.5pt; color: #6
 .mat td { width: 0.55in; height: 0.6in; text-align: center; font-size: 14pt; } .mat { margin: 6px 0 14px; }
 .cat { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; } .cat div { border: 2px solid #555; height: 2.3in; padding: 6px; font-size: 11pt; } 
 .lines div { border-bottom: 1px solid #666; height: 0.32in; }
+.lab-dir h1 { font-size: 20pt; margin-bottom: 4px; } .lab-dir p, .lab-dir li { font-size: 11pt; line-height: 1.35; margin: 3px 0; } .lab-dir h3 { font-size: 12.5pt; margin: 10px 0 3px; } .lab-dir ul, .lab-dir ol { margin: 2px 0; padding-left: 20px; } .lab-dir .two { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; }
 .box { border: 2px solid #555; padding: 8px; min-height: 1.6in; margin: 6px 0; }
 """
 
@@ -168,25 +169,19 @@ def printables_html():
        '<div class="cut"><div class="lab">Day 7 &middot; Part 3: Write It data, two Siamese kittens</div><table><tr><th></th><th>Kitten raised warm</th><th>Kitten raised cool</th></tr>'
        '<tr><td>Ear skin temperature (&deg;C)</td><td>34</td><td>26</td></tr><tr><td>Ear fur color</td><td>Light tan</td><td>Dark brown</td></tr>'
        '<tr><td>Back skin temperature (&deg;C)</td><td>36</td><td>35</td></tr><tr><td>Back fur color</td><td>Cream</td><td>Cream</td></tr></table></div>')
-    pg('<h1>Day 3 &middot; Gummy DNA Lab: Directions</h1>'
-       '<p><b>Question:</b> How does a cell\'s copy of a gene become a chain of amino acids, and what happens if one letter of DNA changes?</p>'
-       '<p>You will build a short model of the start of a cat\'s gene for a pigment-making protein. (The letters are an illustration, not the real gene.) Record everything in your notebook, Part 1 and Part 2 on the Day 3 pages.</p>'
-       '<h3>Materials (per pair)</h3><ul><li>2 licorice strands (the backbone: sugars and phosphates)</li><li>Candy bases: 6 red (A), 6 yellow (T), 6 green (C), 6 orange (G), plus 2 extra of each</li>'
-       '<li>Toothpicks, a paper plate, the mats, the base key and code table</li></ul>'
-       '<p><b>Safety:</b> Keep materials clean. Do not eat the lab materials until your teacher says you may. Toothpicks are sharp. Tell your teacher about any food allergy.</p>'
-       '<h3>Part A: Build the template strand (6 min)</h3><ol><li>Attach the bases to one licorice strand, left to right: <b>T A C &nbsp;C C T &nbsp;G A C &nbsp;A A A</b></li><li>Write the colors you built in your notebook.</li></ol>'
-       '<h3>Part B: Build the partner strand and make the ladder (8 min)</h3><ol><li>Build the partner strand on the second licorice strand. Pair each base: A with T, C with G.</li>'
-       '<li>Join the strands with toothpicks. Gently twist the ladder. Have your teacher check it.</li><li>Which strand carries the coding letters? How do you know? Answer in your notebook.</li></ol>'
-       '<h3>Part C: Copy the message, then read it (10 min)</h3><p>The cell does not use the DNA directly to make a protein. It <b>copies the gene\'s message</b> from the template strand, and then the <b>copy is read</b> to link amino acids. The DNA stays safe.</p>'
-       '<ol><li>Pull the two strands apart. Keep the template strand.</li><li>Build a new strand by pairing with the template. This is the <b>copy</b>. Write its sequence.</li>'
-       '<li>Read the copy three letters at a time with the code table. Write the amino acid chain.</li><li>Line up one bead or paper tag per amino acid on your plate. This chain would fold to make a protein.</li>'
-       '<li>Explain the path in your own words, starting with the DNA.</li></ol>'
-       '<h3>Part D: Change one letter (7 min)</h3><ol><li>On your template strand, replace the 4th base (the first C of the second triplet) with a T. Swap a green gummy for a yellow one. The template now reads <b>T A C &nbsp;T C T &nbsp;G A C &nbsp;A A A</b>.</li>'
-       '<li>Build the new copy by pairing with the changed template. Write its sequence.</li><li>Read it with the code table. Write the amino acid chain.</li>'
-       '<li>Compare with Part C. How many amino acids changed? Which one?</li><li>Predict: could a protein built from this changed chain work differently? Explain.</li></ol>'
-       '<h3>Connect to the Siamese cat</h3><ol><li>In a Siamese cat, a one-letter change in the gene for a pigment-making protein swaps one amino acid. What did your one-letter change do to the chain in the model?</li>'
-       '<li>Name two ways your gummy model is different from real DNA.</li></ol>'
-       '<p><b>Clean up:</b> Put toothpicks and candy in the trash or the labeled container. Wipe your table. Wash your hands.</p>')
+    pg('<div class="lab-dir"><h1>Day 3 &middot; Gummy DNA Lab: Directions</h1>'
+       '<p><b>Question:</b> How does a cell\'s copy of a gene become a chain of amino acids, and what happens if one letter changes? You will model the start of a cat\'s gene for a pigment-making protein. (The letters are an illustration, not the real gene.) Record your work in your notebook.</p>'
+       '<div class="two"><div><h3>Materials (per pair)</h3><ul><li>2 licorice strands (the backbone)</li><li>Candy bases: 6 each of red (A), yellow (T), green (C), orange (G), plus a few extra</li><li>Toothpicks, a plate, the mats, the code table</li></ul></div>'
+       '<div><h3>Safety</h3><ul><li>Do not eat lab materials until your teacher says you may.</li><li>Toothpicks are sharp.</li><li>Tell your teacher about any food allergy.</li></ul></div></div>'
+       '<h3>Part A: Build the template strand (6 min)</h3><ol><li>Attach bases to a licorice strand, left to right: <b>T A C &nbsp;C C T &nbsp;G A C &nbsp;A A A</b></li><li>Write the colors you built.</li></ol>'
+       '<h3>Part B: Build the partner strand and the ladder (8 min)</h3><ol><li>On the second strand, pair each base (A with T, C with G).</li><li>Join the strands with toothpicks, twist gently, and have your teacher check it.</li><li>Which strand has the coding letters? How do you know?</li></ol>'
+       '<h3>Part C: Copy the message, then read it (10 min)</h3><p>The cell <b>copies the gene\'s message</b> from the template strand, then the <b>copy is read</b> to link amino acids. The DNA stays safe.</p>'
+       '<ol><li>Pull the strands apart. Keep the template.</li><li>Build a new strand by pairing with the template. This is the <b>copy</b>. Write its sequence.</li>'
+       '<li>Read the copy three letters at a time with the code table. Write the amino acid chain.</li><li>Explain the path in your own words, starting with the DNA.</li></ol>'
+       '<h3>Part D: Change one letter (7 min)</h3><ol><li>Swap the 4th base of the template (green C) for a yellow T. It now reads <b>T A C &nbsp;T C T &nbsp;G A C &nbsp;A A A</b>.</li>'
+       '<li>Build the new copy and read it. Write the amino acid chain.</li><li>Compare with Part C. How many amino acids changed? Which one?</li><li>Predict: could this protein work differently? Explain.</li></ol>'
+       '<h3>Connect to the Siamese cat</h3><ol><li>A one-letter change in the cat\'s gene swaps one amino acid. What did your one-letter change do to the chain?</li><li>Name two ways your gummy model is different from real DNA.</li></ol>'
+       '<p><b>Clean up:</b> trash the toothpicks and candy (or put them in the labeled container), wipe your table, and wash your hands.</p></div>')
     pg('<h1>Day 3 &middot; Gummy DNA mats</h1><p class="note">Slide the licorice strand along the mat. One base per box, three boxes per amino acid.</p>'
        '<div class="cut"><div class="lab">Parts A and B: template strand (T A C &nbsp;C C T &nbsp;G A C &nbsp;A A A) and partner strand</div><p>Template</p>' + mat + '<p>Partner</p>' + mat + '</div>'
        '<div class="cut"><div class="lab">Part C: the copy</div>' + mat + '<p>Amino acids: ______ &ndash; ______ &ndash; ______ &ndash; ______</p></div>'
