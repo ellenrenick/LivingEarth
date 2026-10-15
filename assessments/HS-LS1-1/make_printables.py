@@ -63,9 +63,9 @@ NOTEBOOK = [
                p("How many amino acids changed? Which one?"), lines(2), hh("Part 3: Connect to the cat"),
                p("What did one letter do to the chain? Name two ways the gummy model is different from real DNA."), lines(4), hh("Exit ticket"), lines(4)]},
     {"day": 4, "title": "What Can One Letter Do?", "fq": "What can a one-letter change in DNA do?",
-     "left": [hh("Warm-up"), lines(2), hh("Part 1: Three things a one-letter change can do"),
-              tbl(["Category", "What it means", "Cards"], [["1", "Changes an amino acid in the chain", ""], ["2", "Changes whether or when the protein is made", ""], ["3", "No noticeable change", ""]], [14, 56, 30], rh=0.62),
-              hh("Part 2: Card sort"), tbl(["Card", "Category", "My reason"], [[x, "", ""] for x in "ABCDEF"], [12, 18, 70], rh=0.5)],
+     "left": [hh("Warm-up"), lines(2), hh("Part 1: Card sort, glue each card under its category"),
+              tbl(["1: Changes an amino acid in the chain", "2: Changes whether or when the protein is made", "3: No noticeable change"], [[""]], [33, 34, 33], rh=3.0),
+              hh("Part 2: My reasons"), tbl(["Card", "Category", "My reason"], [[x, "", ""] for x in "ABCDEF"], [12, 18, 70], rh=0.34)],
      "right": [hh("Part 3: The Siamese cat"), tbl(["DNA", "Amino acid", "Protein", "Fur"], [[""]], [25, 25, 25, 25], rh=0.9),
                p("How does this explain the dark points and the white newborn?"), lines(4),
                p("Claim check: “Every change in DNA changes how a cell works.” Use the cards to respond."), lines(4), hh("Exit ticket"), lines(5)]},
@@ -126,7 +126,7 @@ h1 { font-size: 22pt; margin: 0 0 4px; color: #1f3a5f; } h2 { font-size: 15pt; m
 .day { display: inline-block; background: #1f3a5f; color: #fff; padding: 2px 10px; border-radius: 3px; font-size: 10pt; margin-bottom: 6px; }
 p, li { font-size: 11pt; line-height: 1.4; } .note { font-size: 9.5pt; color: #666; font-style: italic; }
 .cut { border: 2px dashed #888; padding: 10px 14px; margin: 10px 0; border-radius: 6px; } .cut .lab { font-size: 9pt; color: #888; margin: -22px 0 6px; background: #fff; display: inline-block; padding: 0 6px; position: relative; top: -2px; }
-.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0; } .card { border: 2px dashed #888; padding: 14px; height: 2.1in; } .card b { font-size: 24pt; color: #1f3a5f; display: block; } .card p { font-size: 12.5pt; margin: 4px 0; }
+.cards { display: grid; grid-template-columns: repeat(3, 1.95in); gap: 0; } .card { border: 1px dashed #666; padding: 5px 7px; height: 1.05in; overflow: hidden; } .card b { font-size: 11pt; } .card p { font-size: 8.5pt; line-height: 1.25; margin: 2px 0 0; }
 .mat td { width: 0.55in; height: 0.6in; text-align: center; font-size: 14pt; } .mat { margin: 6px 0 14px; }
 .cat { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; } .cat div { border: 2px solid #555; height: 2.3in; padding: 6px; font-size: 11pt; } 
 .lines div { border-bottom: 1px solid #666; height: 0.32in; }
@@ -156,15 +156,13 @@ def printables_html():
     pg('<h1>Unit 2.1 Printables</h1><p><b>DNA to Proteins (HS-LS1-1) &middot; 8-day version: Siamese Cats</b></p>'
        '<p>Everything students write goes in the notebook (Unit_2.1_Student_Notebook.pdf). These pages are only the extras.</p>'
        '<table><tr><th>Day</th><th>Print</th><th>Copies</th></tr>'
-       '<tr><td>1, 3, 4, 7</td><td>Glue-in strips (page 2): Day 1 key ideas, Day 3 base key and code table, Day 4 code table, Day 7 Write It data</td><td>1 per student (cut apart)</td></tr>'
+       '<tr><td>3, 4, 7</td><td>Glue-in strips (page 2): Day 3 base key and code table, Day 4 code table, Day 7 Write It data</td><td>1 per student (cut apart)</td></tr>'
        '<tr><td>3</td><td>Gummy DNA Lab directions (page 3) and mats (page 4)</td><td>1 directions page per student, 1 mat set per pair</td></tr>'
        '<tr><td>4</td><td>Card sort, cards A to F (page 5)</td><td>1 set per group</td></tr></table>'
        '<h2>Day 3 lab materials (per pair)</h2><ul><li>2 licorice strands (6 to 8 inches)</li><li>24 candy bases: 6 red (A), 6 yellow (T), 6 green (C), 6 orange (G), plus a few spare</li>'
        '<li>Toothpicks, a paper plate</li><li>No food? Use colored beads and pipe cleaners, or colored paper circles</li></ul>'
        '<p class="note">Cut on the dashed lines. Strips are sized to fit half of a notebook page.</p>')
     pg('<h1>Glue-in strips</h1><p class="note">Cut apart on the dashed lines and glue into the notebook.</p>'
-       '<div class="cut"><div class="lab">Day 1 &middot; Part 2: Key ideas</div><ul><li><b>DNA</b> in every cell stores instructions.</li><li>A <b>gene</b> is a section of DNA with the instructions for one <b>protein</b>.</li>'
-       '<li><b>Proteins</b> do jobs for the cell.</li><li>A kitten gets one set of chromosomes (long DNA molecules with many genes) from each parent.</li></ul></div>'
        '<div class="cut"><div class="lab">Day 3 &middot; glue in above Part 1: Lab record</div><p><b>Red = A &nbsp; Yellow = T &nbsp; Green = C &nbsp; Orange = G</b></p>' + L.CODE_TABLE + '</div>'
        '<div class="cut"><div class="lab">Day 4 &middot; glue in at Part 2: Card sort</div>' + L.CODE_TABLE_D4 + '</div>'
        '<div class="cut"><div class="lab">Day 7 &middot; Part 3: Write It data, two Siamese kittens</div><table><tr><th></th><th>Kitten raised warm</th><th>Kitten raised cool</th></tr>'
@@ -196,7 +194,7 @@ def printables_html():
     cards = [("A", "In a Siamese cat, one letter changes in the gene for a pigment-making protein: GGA becomes AGA."), ("B", "A gene's triplet changes from GAG to GAA."),
              ("C", "A gene's triplet changes from CTG to CCG."), ("D", "One letter changes in a stretch of DNA that has no gene and no switch."),
              ("E", "One letter changes in a switch next to a gene so the gene can never be turned on, and its protein is not made."), ("F", "In a human gene, GAG becomes GTG.")]
-    pg('<h1>Day 4 &middot; Card sort</h1><p class="note">Cut on the dashed lines. Sort into three categories, glue into the notebook, and write your reasons.</p><div class="cards">'
+    pg('<h1>Day 4 &middot; Card sort</h1><p class="note">Cards are 1.95 in wide to fit a notebook category column. Cut on the dashed lines, sort, and glue each card under its category on the Day 4 left page.</p><div class="cards">'
        + "".join(f"<div class='card'><b>{k}</b><p>{t}</p></div>" for k, t in cards) + '</div>')
     return f'<html><head><meta charset="utf-8"><style>{PR_CSS}</style></head><body>{"".join(P)}</body></html>'
 
