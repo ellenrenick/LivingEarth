@@ -143,6 +143,21 @@ def entry(item, title, n_choice):
     return {"title": title, "item_body": item["prompt"], "calculator_type": "none", "feedback": fb, **e}
 
 
+# Every CFA and CSA: shuffle questions and answers, and hide results with every
+# "show" option under it turned off.
+RESULT_VIEW_HIDDEN = {
+    "result_view_restricted": True,
+    "display_points_awarded": False,
+    "display_points_possible": False,
+    "display_items": False,
+    "display_item_response": False,
+    "display_item_response_correctness": False,
+    "display_item_correct_answer": False,
+    "display_item_feedback": False,
+}
+CFA_CSA_SETTINGS = {"shuffle_answers": True, "shuffle_questions": True, "result_view_settings": RESULT_VIEW_HIDDEN}
+
+
 def make_quiz(api, title, instructions, items, group_id):
     """items: list of (title, bank item). Returns the quiz."""
     quiz = api.nq("POST", "/quizzes", {"quiz": {
@@ -151,8 +166,8 @@ def make_quiz(api, title, instructions, items, group_id):
         "assignment_group_id": group_id,
         "grading_type": "points",
         "published": False,
-        "quiz_settings": {"shuffle_answers": False, "shuffle_questions": False,
-                          "has_time_limit": False, "one_at_a_time_type": "none", "allow_backtracking": True},
+        "quiz_settings": {"has_time_limit": False, "one_at_a_time_type": "none", "allow_backtracking": True,
+                          **CFA_CSA_SETTINGS},
     }})
     n_choice = 0
     for pos, (qtitle, it) in enumerate(items, 1):
