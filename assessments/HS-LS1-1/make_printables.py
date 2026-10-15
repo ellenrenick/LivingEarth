@@ -14,32 +14,87 @@ import lessons_8day as L
 OUT = Path(__file__).parent / "printables"
 CHROME = os.environ.get("CHROME", "/opt/pw-browsers/chromium-1194/chrome-linux/chrome")
 
+
+# ---- student notebook: one lesson = two portrait pages (LEFT PAGE / RIGHT PAGE), same layout as the unit 1.3 student notebook ----
+def lines(n):
+    return '<div class="ln">' + "<div></div>" * n + "</div>"
+
+
+def box(h, hint=""):
+    return f'<div class="bx" style="height:{h}in">{f"<span>{hint}</span>" if hint else ""}</div>'
+
+
+def tbl(head, rows, widths=None, rh=0.42, bold_first=False):
+    w = "".join(f'<col style="width:{x}%">' for x in widths) if widths else ""
+    th = "".join(f"<th>{h}</th>" for h in head)
+    body = "".join("<tr style=\"height:%sin\">" % rh + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
+    return f'<table class="gt"><colgroup>{w}</colgroup><tr>{th}</tr>{body}</table>'
+
+
+def p(text):
+    return f'<p class="tx">{text}</p>'
+
+
+def hh(text):
+    return f'<div class="hd">{text}</div>'
+
+
+BLANK = ["&nbsp;"] * 1
 NOTEBOOK = [
-    # (day label, title, focus question, [left sections: warm-up, part 1, part 2], part 3, tape-in notes {section index: text})
-    ("Day 1", "The Siamese Cat Mystery", "How can a difference in DNA change which parts of a cat are dark?",
-     ["Warm-up: Notice and wonder", "Part 1: Data 1, temperature and fur color", "Part 2: Data 2, litters of kittens"],
-     "Part 3: Key ideas and my first model", {1: "tape the temperature table here", 2: "tape the litter table here"}),
-    ("Day 2", "What Is DNA Made Of?", "What is DNA built from, and what is the message?",
-     ["Warm-up: What does DNA look like?", "Part 1: One nucleotide", "Part 2: Base pairing, write the partner strands"],
-     "Part 3: One letter apart", {}),
-    ("Day 3", "Build, Copy, and Read a Gene", "How does a gene's message become a chain of amino acids?",
-     ["Warm-up: Copy, then read", "Part 1: Base key and code table", "Part 2: Lab, build the gene, copy it, read it"],
-     "Part 3: Change one letter, then connect to the cat", {1: "tape the code table here"}),
-    ("Day 4", "What Can One Letter Do?", "What can a one-letter change in DNA do?",
-     ["Warm-up: What changed in Part D?", "Part 1: Three things a one-letter change can do", "Part 2: Card sort, cards A to F"],
-     "Part 3: The Siamese cat, one amino acid different", {2: "glue the sorted cards here"}),
-    ("Day 5", "Same DNA, Different Jobs", "If all cells have the same DNA, why do cells have different jobs?",
-     ["Warm-up: Skin cells and nerve cells", "Part 1: Two kinds of cells", "Part 2: Cells in a Siamese cat's ear"],
-     "Part 3: Where does the changed protein work?", {1: "tape the cell table here"}),
-    ("Day 6", "Case Data", "How does a DNA change lead to an effect on the body?",
-     ["Warm-up: The chain for the cat", "Part 1: Case 1, Siamese and solid cats", "Part 2: Case 2, a human gene"],
-     "Part 3: Claim, evidence, reasoning", {1: "tape the case table here"}),
-    ("Day 7", "Review and Back to the Cat", "How can I explain the Siamese cat with DNA, genes, and proteins?",
-     ["Warm-up: My CFA scores and my reviews", "Part 1: Vocabulary", "Part 2: My revised model"],
-     "Part 3: Write It, two Siamese kittens", {}),
-    ("Day 8", "Unit Assessment and Reflection", "What do I know about how DNA leads to traits?",
-     ["Warm-up: Before the test", "Part 1: Back to the cat, what I would add", "Part 2: Looking back at my CFAs"],
-     "Part 3: What I will do next time", {}),
+    {"day": 1, "title": "Phenomena: The Siamese Cat Mystery", "fq": "How can a difference in DNA change which parts of a cat are dark?",
+     "left": [tbl(["I notice…", "I wonder…"], [[""]], [50, 50], rh=1.55), hh("Part 1: My initial model"), box(2.9, "Draw what is inside a Siamese cat's cells that leads to dark ears, paws, and tail."),
+              hh("Part 2: Key ideas"), lines(4)],
+     "right": [hh("Part 3: Temperature and fur color"), tbl(["Body part", "Skin temp (°C)", "Fur color"], [[x, "", ""] for x in ["Back", "Belly", "Upper leg", "Ear", "Nose and face", "Paw", "Tail tip"]], [40, 30, 30], rh=0.32),
+               p("Pattern: dark fur goes with ______________ skin."), hh("Part 4: Litters of kittens"),
+               tbl(["Parents", "What kittens did they have?"], [["Siamese × Siamese", ""], ["Siamese × solid", ""], ["Solid × solid", ""]], [32, 68], rh=0.5),
+               hh("Exit ticket"), lines(4)]},
+    {"day": 2, "title": "What Is DNA Made Of?", "fq": "What is DNA built from, and what is the message?",
+     "left": [hh("Warm-up"), box(1.5, "Sketch what you think DNA looks like."), hh("Part 1: One nucleotide"), box(2.2, "Draw and label the sugar, phosphate, and base."),
+              hh("Part 2: Words to know"), tbl(["Word", "In my words"], [["double helix", ""], ["nucleotide", ""], ["backbone", ""], ["base pair", ""]], [30, 70], rh=0.5)],
+     "right": [hh("Part 3: Partner strands"), tbl(["Strand", "Partner strand"], [["A T G C C T", ""], ["T T T G A C", ""], ["C T G G G A", ""]], [40, 60], rh=0.5),
+               p("The order of the bases is the ______________________."), hh("Part 4: One letter apart"),
+               p("Solid cat: A T G <u>G</u> G A C T G T T T<br>Siamese cat: A T G <u>A</u> G A C T G T T T"), p("How many letters differ? Where?"), lines(3),
+               hh("Exit ticket"), lines(5)]},
+    {"day": 3, "title": "Build, Copy, and Read a Gene", "fq": "How does a gene's message become a chain of amino acids?",
+     "left": [hh("Warm-up"), p("In my own words, what does “copy, then read” mean?"), lines(3), hh("Part 1: Lab record"),
+              tbl(["Step", "What I built (letters or colors)"], [["A: Template strand", ""], ["B: Partner strand", ""], ["C: The copy", ""], ["C: Amino acid chain", ""]], [34, 66], rh=0.62),
+              p("Which strand carries the “coding” letters? How do you know?"), lines(3)],
+     "right": [hh("Part 2: Change one letter"), tbl(["Step", "What I found"], [["Changed template", ""], ["New copy", ""], ["New amino acid chain", ""]], [34, 66], rh=0.6),
+               p("How many amino acids changed? Which one?"), lines(2), hh("Part 3: Connect to the cat"),
+               p("What did one letter do to the chain? Name two ways the gummy model is different from real DNA."), lines(4), hh("Exit ticket"), lines(4)]},
+    {"day": 4, "title": "What Can One Letter Do?", "fq": "What can a one-letter change in DNA do?",
+     "left": [hh("Warm-up"), lines(2), hh("Part 1: Three things a one-letter change can do"),
+              tbl(["Category", "What it means", "Cards"], [["1", "Changes an amino acid in the chain", ""], ["2", "Changes whether or when the protein is made", ""], ["3", "No noticeable change", ""]], [14, 56, 30], rh=0.62),
+              hh("Part 2: Card sort"), tbl(["Card", "Category", "My reason"], [[x, "", ""] for x in "ABCDEF"], [12, 18, 70], rh=0.5)],
+     "right": [hh("Part 3: The Siamese cat"), tbl(["DNA", "Amino acid", "Protein", "Fur"], [[""]], [25, 25, 25, 25], rh=0.9),
+               p("How does this explain the dark points and the white newborn?"), lines(4),
+               p("Claim check: “Every change in DNA changes how a cell works.” Use the cards to respond."), lines(4), hh("Exit ticket"), lines(5)]},
+    {"day": 5, "title": "Same DNA, Different Jobs", "fq": "If all cells have the same DNA, why do cells have different jobs?",
+     "left": [hh("Warm-up"), lines(2), hh("Part 1: Two kinds of cells"),
+              tbl(["Cell", "Genes in cell", "Proteins made", "Job"], [["P", "1, 2, 3, 4", "1 and 2", "Carries signals"], ["Q", "1, 2, 3, 4", "3 and 4", "Squeezes to move the body"]], [12, 24, 24, 40], rh=0.5),
+              p("Same DNA? Why different jobs?"), lines(3), hh("Part 2: Cells in a Siamese cat's ear"),
+              tbl(["Cell type", "Has the gene?", "Makes protein X?", "Job"], [["Pigment-making cell", "", "", "Makes dark color"], ["Skin cell", "", "", "Covers and protects"], ["Nerve cell", "", "", "Carries signals"]], [28, 20, 22, 30], rh=0.55)],
+     "right": [hh("Part 3: Where does the changed protein work?"), p("Works only in skin cooler than about 33 °C (a simplified number)."),
+               tbl(["Body part", "Skin temp (°C)", "Protein works?", "Fur color"], [[a, b, "", ""] for a, b in [("Ear", 28), ("Nose", 30), ("Paw", 28), ("Tail tip", 27), ("Upper leg", 34), ("Back", 36), ("Belly", 36)]], [28, 24, 24, 24], rh=0.34),
+               p("Explain it with the words DNA, gene, protein, and job."), lines(5), hh("Exit ticket"), lines(4)]},
+    {"day": 6, "title": "Case Data", "fq": "How does a DNA change lead to an effect on the body?",
+     "left": [hh("Warm-up"), p("The chain for the cat: one-letter DNA change → ______ → ______ → ______"), lines(2), hh("Part 1: Case 1, Siamese and solid cats"),
+              tbl(["", "Solid cat", "Siamese cat"], [["Gene", "", ""], ["Amino acid chain", "", ""], ["Where the protein works", "", ""], ["Fur color", "", ""]], [30, 35, 35], rh=0.55),
+              hh("Part 2: Case 2, a human gene"), tbl(["Person", "Gene", "Protein", "Symptoms"], [["1", "", "", ""], ["2", "", "", ""]], [14, 24, 36, 26], rh=0.55),
+              p("The chain for Case 2: ______ → ______ → ______ → ______")],
+     "right": [hh("Part 3: Compare the cases"), tbl(["How they are alike", "How they are different"], [[""]], [50, 50], rh=1.5),
+               hh("Part 4: Claim, evidence, reasoning"), p("<b>Claim:</b> what caused the Siamese cat's dark points?"), lines(2), p("<b>Evidence:</b> at least two numbers from the data."), lines(2),
+               p("<b>Reasoning:</b> how does a one-letter DNA change lead to dark color only on the cooler body parts?"), lines(4), hh("Exit ticket"), lines(3)]},
+    {"day": 7, "title": "Review and Back to the Cat", "fq": "How can I explain the Siamese cat with DNA, genes, and proteins?",
+     "left": [hh("Warm-up: My CFA scores"), tbl(["CFA", "My score", "Review done?"], [[x, "", ""] for x in ["LS1-1.1", "LS1-1.2", "LS1-1.3", "LS1-1.4", "LS1-1.5", "LS1-1.6"]], [30, 30, 40], rh=0.38),
+              hh("Part 1: Vocabulary"), tbl(["Word", "In my words"], [[x, ""] for x in ["DNA", "nucleotide", "gene", "base sequence", "amino acid", "protein"]], [28, 72], rh=0.5)],
+     "right": [hh("Part 2: My revised model"), box(2.7, "Show the gene, the one-letter change, the copy-then-read path, the amino acid chain, the protein, and the dark points."),
+               hh("Part 3: Write It, two Siamese kittens"), p("Why are the cool-room kitten's ears darker?"), lines(9)]},
+    {"day": 8, "title": "Unit Assessment and Reflection", "fq": "What do I know about how DNA leads to traits?",
+     "left": [hh("Warm-up: Before the test"), p("Three things I am sure about:"), lines(4), hh("Part 1: Back to the cat"), box(2.9, "What I would add to my Day 1 model now."),
+              hh("Part 2: Looking back at my CFAs"), tbl(["CFA", "My score", "What helped me"], [[x, "", ""] for x in ["LS1-1.1", "LS1-1.2", "LS1-1.3"]], [24, 22, 54], rh=0.4)],
+     "right": [tbl(["CFA", "My score", "What helped me"], [[x, "", ""] for x in ["LS1-1.4", "LS1-1.5", "LS1-1.6"]], [24, 22, 54], rh=0.4),
+               hh("Part 3: What I will do next time"), lines(6), hh("Exit ticket"), p("One question I still have about DNA and proteins:"), lines(4)]},
 ]
 
 CSS_COMMON = """
@@ -50,23 +105,19 @@ table { border-collapse: collapse; } td, th { border: 1px solid #555; padding: 4
 th { background: #eef2f7; }
 """
 
-NB_CSS = CSS_COMMON % "landscape" + """
-/* ink-saver: black outline only, no fills, no ruled lines */
-.sheet { width: 11in; height: 8.5in; padding: 0.25in; page-break-after: always; position: relative; }
-.nb { width: 100%; height: 100%; border: 1px solid #000; border-radius: 0.25in; background: #fff; position: relative; overflow: hidden; }
-.spine { position: absolute; left: 50%; top: 0; bottom: 0; border-left: 1px solid #000; }
-.page { position: absolute; top: 0; bottom: 0; width: 50%; padding: 0.12in 0.35in 0.1in 0.38in; }
-.page.l { left: 0; } .page.r { left: 50%; }
-.title { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; background: #fff; padding: 0 0.12in; top: 0.1in; text-align: center; font-family: 'Liberation Sans', Arial, sans-serif; font-weight: bold; font-size: 24pt; z-index: 3; }
-.tag { position: absolute; top: 0.14in; font-size: 9pt; color: #000; z-index: 3; }
-.fq { display: inline-block; font-size: 11pt; line-height: 0.3in; margin-top: 0.55in; }
-.sec { margin-top: 0; }
-.h { display: inline-block; font-weight: bold; font-size: 12pt; border-bottom: 1px solid #000; line-height: 0.27in; }
-.tape { position: absolute; right: 0.4in; border: 1px dashed #000; color: #000; font-size: 8.5pt; font-style: italic; padding: 2px 10px; }
-.nums { position: absolute; left: 0.35in; right: 0.35in; bottom: 0.12in; }
-.nums div { height: 0.3in; line-height: 0.3in; font-size: 10pt; position: relative; }
-.nums div span { display: inline-block; width: 0.3in; } .nums div i { position: absolute; left: 0.3in; right: 0; bottom: 0.03in; border-bottom: 1px solid #000; }
-.nums .cap { font-size: 8.5pt; font-style: italic; height: 0.22in; line-height: 0.22in; display: inline-block; }
+NB_CSS = CSS_COMMON % "portrait" + """
+.sheet { width: 8.5in; height: 11in; padding: 0.8in 0.78in; page-break-after: always; }
+.frame { width: 100%; height: 100%; border: 1px dashed #888; padding: 0.28in 0.28in 0.1in; overflow: hidden; }
+.top { display: flex; justify-content: space-between; font-size: 8.5pt; color: #777; letter-spacing: 0.4px; }
+.nm { font-size: 10.5pt; margin-top: 3px; }
+.ti { font-family: 'Inter Display','Inter',sans-serif; font-weight: 800; font-size: 22pt; margin-top: 6px; line-height: 1.1; } .ti.sm { font-size: 17pt; }
+.fqq { font-size: 10.5pt; margin: 2px 0 6px; }
+.hd { font-family: 'Inter',sans-serif; font-weight: 600; font-size: 13pt; margin: 12px 0 6px; }
+.tx { font-size: 10pt; margin: 4px 0; line-height: 1.35; }
+.gt { width: 100%; border: 1px solid #777; margin: 3px 0; } .gt th { text-align: left; font-size: 10.5pt; background: none; border: 1px solid #777; border-bottom: 2px solid #333; padding: 3px 6px; }
+.gt td { border: 1px solid #aaa; vertical-align: top; font-size: 10pt; padding: 3px 6px; }
+.bx { border: 1px solid #777; margin: 4px 0; padding: 4px 8px; } .bx span { font-size: 9pt; color: #777; }
+.ln div { border-bottom: 1px solid #aaa; height: 0.31in; }
 """
 
 PR_CSS = CSS_COMMON % "portrait" + """
@@ -83,18 +134,14 @@ p, li { font-size: 11pt; line-height: 1.4; } .note { font-size: 9.5pt; color: #6
 """
 
 
-def notebook_page(day, title, fq, left, part3, tapes):
-    def sec(i, text, h_in):
-        tape = f'<div class="tape" style="margin-top:-0.02in">{tapes[i]}</div>' if i in tapes else ""
-        return f'<div class="sec" style="height:{h_in}in"><span class="h">{text}</span>{tape}</div>'
-    leftp = (f'<div class="page l"><span class="fq"><b>Focus question:</b> {fq}</span>'
-             f'{sec(0, left[0], 1.15)}{sec(1, left[1], 2.0)}{sec(2, left[2], 2.4)}'
-             '<div class="nums"><div class="cap">Questions I still have</div><div><span>1.</span><i></i></div><div><span>2.</span><i></i></div></div></div>')
-    rows = "".join(f"<div><span>{i}.</span><i></i></div>" for i in range(1, 6))
-    rightp = (f'<div class="page r"><div style="height:0.55in"></div><span class="h">{part3}</span>'
-              f'<div class="nums" style="bottom:0.12in"><div class="cap">Five things I learned today</div>{rows}</div></div>')
-    return (f'<div class="sheet"><div class="nb"><div class="title">{title}</div><div class="tag" style="left:0.4in">Unit 2.1 &middot; {day}</div>'
-            f'<div class="tag" style="right:0.4in">Name ____________  Period ___</div>{leftp}{rightp}<div class="spine"></div></div></div>')
+def notebook_page(n):
+    out = []
+    for side, label, cont in (("left", "LEFT PAGE", ""), ("right", "RIGHT PAGE", " (continued)")):
+        title = f'<div class="ti{" sm" if cont else ""}">{n["title"]}{cont}</div>'
+        fq = '' if cont else f'<div class="fqq"><b>Focus question:</b> {n["fq"]}</div>'
+        out.append(f'<div class="sheet"><div class="frame"><div class="top"><span>UNIT 2.1 &middot; DAY {n["day"]} &middot; LESSON {n["day"]}</span><span>{label}</span></div>'
+                   f'<div class="nm">Name ______________________________ Period ______ Date ____________</div>{title}{fq}{"".join(n[side])}</div></div>')
+    return "".join(out)
 
 
 def clean(html):
@@ -172,7 +219,7 @@ def to_pdf(html, name):
 
 
 def main():
-    nb = "".join(notebook_page(*n) for n in NOTEBOOK)
+    nb = "".join(notebook_page(n) for n in NOTEBOOK)
     to_pdf(f'<html><head><meta charset="utf-8"><style>{NB_CSS}</style></head><body>{nb}</body></html>', "Unit_2.1_Student_Notebook")
     to_pdf(printables_html(), "Unit_2.1_Printables")
     print("done")
