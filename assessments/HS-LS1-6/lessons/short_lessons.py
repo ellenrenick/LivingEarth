@@ -142,7 +142,7 @@ LESSONS = {
         ],
     ),
     "B": dict(
-        day=8, date="Wed Oct 21", title="The Nitrogen Clue", lesson="Short Lesson B", targets=["LS1-6.5", "LS1-6.6"],
+        day=8, date="Wed Oct 21", title="Nitrogen: The Missing Piece", lesson="Short Lesson B", targets=["LS1-6.5", "LS1-6.6"],
         cfas=["LS1-6.5", "LS1-6.6"], deck="1jlKZanJduvVKbdG4zJk80E2SaIftkEAnk4VSwyN3I_A",
         focus="What does the evidence say, and how has my thinking changed?",
         ready="Have ready: your notebook (with your Day 1 model), a pencil, and a Chromebook",

@@ -1,0 +1,395 @@
+<title>Nitrogen: The Missing Piece</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: a case-file card per scene; two side-by-side "pots" (all nutrients vs. no nitrogen) that stack on phones. */
+:root {
+  --bg: #f6f7f1;
+  --card: #ffffff;
+  --ink: #1f2a1e;
+  --muted: #5d6a5a;
+  --line: #d9dfd2;
+  --leaf: #3d8b3a;          /* healthy, nitrogen-fed green */
+  --pale: #b9bf62;          /* yellowed leaves: chlorophyll needs nitrogen */
+  --soil: #7a5636;
+  --tomato: #d8452f;
+  --sugar: #e2a21b;         /* glucose */
+  --nitro: #2f6fd1;         /* nitrogen, blue like the bead kits */
+  --protein: #8b4fb8;
+  --font-display: "Boogaloo", "Comic Sans MS", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141a14; --card: #1d251d; --ink: #e9efe4; --muted: #a8b4a3; --line: #334033;
+    --leaf: #5fb35a; --pale: #c9cf72; --soil: #a07650; --tomato: #ef6a52; --sugar: #f0b93a;
+    --nitro: #6f9ef0; --protein: #b386d9; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141a14; --card: #1d251d; --ink: #e9efe4; --muted: #a8b4a3; --line: #334033;
+  --leaf: #5fb35a; --pale: #c9cf72; --soil: #a07650; --tomato: #ef6a52; --sugar: #f0b93a;
+  --nitro: #6f9ef0; --protein: #b386d9; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px;
+}
+main { max-width: 980px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; margin: 0; letter-spacing: .01em; }
+.eyebrow { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 14px; }
+.scene-head { display: grid; gap: 4px; }
+.scene-head h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.7rem; margin: 0; text-wrap: balance; line-height: 1.1; }
+.scene-head p { margin: 0; max-width: 65ch; }
+.pots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pot { border: 1px solid var(--line); border-radius: 12px; padding: 10px; display: grid; gap: 6px; min-width: 0; }
+.pot h3 { margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+.tag { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: 2px 8px; border: 1.5px solid currentColor; }
+.tag.n { color: var(--nitro); }
+.tag.non { color: var(--muted); }
+svg, canvas { width: 100%; height: auto; display: block; max-width: 100%; }
+.data { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.data th, .data td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.data th { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.barcell { width: 46%; }
+.bars { display: grid; gap: 4px; }
+.bar { height: 12px; border-radius: 6px; background: var(--leaf); width: 0%; transition: width .2s linear; }
+.bar.no { background: var(--pale); }
+.num { white-space: nowrap; font-weight: 700; }
+.num small { font-weight: 400; color: var(--muted); }
+.clue { border: 2px dashed var(--sugar); border-radius: 12px; padding: 10px 14px; }
+.clue strong { color: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .9rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.hex { width: 14px; height: 14px; background: var(--sugar); clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%); display: inline-block; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+button {
+  font: 700 1rem var(--font-body); color: var(--ink); background: var(--card); border: 1.5px solid var(--line);
+  border-radius: 999px; padding: 8px 16px; cursor: pointer;
+}
+button.primary { background: var(--leaf); border-color: var(--leaf); color: #fff; }
+button:hover { border-color: var(--ink); }
+button:focus-visible { outline: 3px solid var(--nitro); outline-offset: 2px; }
+button:disabled { opacity: .45; cursor: default; }
+.steps { display: flex; gap: 6px; margin-left: auto; }
+.steps button { width: 34px; height: 34px; padding: 0; font-size: .9rem; }
+.steps button[aria-current="step"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.solved { display: grid; gap: 8px; }
+.solved ol { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; }
+.chain { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.4; }
+.chain b { font-weight: 400; padding: 0 6px; border-radius: 6px; }
+.note { font-size: .85rem; color: var(--muted); margin: 0; }
+@media (max-width: 640px) {
+  .pots { grid-template-columns: 1fr; }
+  .steps { margin-left: 0; }
+}
+</style>
+
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">Short Lesson B · The Giant Pumpkin Mystery</div>
+      <h1>Nitrogen: The Missing Piece</h1>
+    </div>
+    <div class="eyebrow">Evidence review · about 1 minute</div>
+  </header>
+
+  <section class="card" aria-live="polite">
+    <div class="scene-head">
+      <div class="eyebrow" id="sceneNum">Scene 1 of 4</div>
+      <h2 id="sceneTitle">Two tomato plants, one difference</h2>
+      <p id="sceneText">Same light, water, CO₂, and temperature. One group got every nutrient. The other got <strong>no nitrogen</strong>.</p>
+    </div>
+
+    <div class="pots" id="pots">
+      <div class="pot">
+        <h3>All nutrients <span class="tag n">+ N</span></h3>
+        <svg id="plantN" viewBox="0 0 240 230" role="img" aria-label="Tomato plant with all nutrients"></svg>
+      </div>
+      <div class="pot">
+        <h3>No nitrogen <span class="tag non">no N</span></h3>
+        <svg id="plantX" viewBox="0 0 240 230" role="img" aria-label="Tomato plant with no nitrogen"></svg>
+      </div>
+    </div>
+
+    <div id="cells" class="pots" hidden>
+      <div class="pot">
+        <h3>Inside a leaf cell <span class="tag n">+ N</span></h3>
+        <canvas id="cellN" width="480" height="300" aria-label="Sugar joins nitrogen and becomes protein"></canvas>
+        <div class="legend"><span>Sugar left: <b id="sugN">0</b></span><span>Protein links: <b id="proN">0</b></span></div>
+      </div>
+      <div class="pot">
+        <h3>Inside a leaf cell <span class="tag non">no N</span></h3>
+        <canvas id="cellX" width="480" height="300" aria-label="Sugar piles up with no nitrogen to join"></canvas>
+        <div class="legend"><span>Sugar left: <b id="sugX">0</b></span><span>Protein links: <b id="proX">0</b></span></div>
+      </div>
+    </div>
+
+    <div id="dataWrap" style="overflow-x:auto">
+      <table class="data" aria-label="Tomato data after 4 weeks">
+        <thead><tr><th>Measurement</th><th class="barcell">All nutrients / No nitrogen</th><th>Week 4 data</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+
+    <div class="legend" id="cellLegend" hidden>
+      <span><i class="hex"></i> glucose (C, H, O only)</span>
+      <span><i class="dot" style="background:var(--nitro)"></i> nitrogen from the soil</span>
+      <span><i class="dot" style="background:var(--protein)"></i> amino acid in a protein chain</span>
+    </div>
+
+    <div class="clue" id="clue" hidden></div>
+
+    <div class="solved" id="solved" hidden>
+      <div class="chain">
+        <b style="background:color-mix(in srgb, var(--sugar) 25%, transparent)">sugar (C, H, O)</b> +
+        <b style="background:color-mix(in srgb, var(--nitro) 25%, transparent)">N from soil</b> →
+        <b style="background:color-mix(in srgb, var(--protein) 25%, transparent)">amino acids → proteins</b> → new cells → a bigger plant
+      </div>
+      <ol>
+        <li>The no-nitrogen plants still made sugar. They made <strong>more</strong>: 25 vs. 12 mg/g.</li>
+        <li>But sugar has only C, H, and O. Amino acids need <strong>nitrogen</strong>, so they made less protein: 10 vs. 40 mg/g.</li>
+        <li>No new protein means no new cells, so they stayed small: 11 vs. 32 cm and 2.4 vs. 7.5 g.</li>
+        <li>The unused sugar <strong>built up</strong> in the leaves.</li>
+      </ol>
+      <p><strong>Your turn:</strong> use 2 of these numbers in your CER.</p>
+    </div>
+
+    <div class="controls">
+      <button id="back" type="button">◀ Back</button>
+      <button id="play" type="button" class="primary">▶ Play</button>
+      <button id="next" type="button">Next ▶</button>
+      <div class="steps" id="steps" aria-label="Scenes"></div>
+    </div>
+    <p class="note">Week 4 numbers are the class data. The growth in between is animated to show the idea.</p>
+  </section>
+</main>
+
+<script>
+(() => {
+  const DATA = [
+    { name: "Height", unit: "cm", n: 32, x: 11 },
+    { name: "Sugar in leaves", unit: "mg/g", n: 12, x: 25 },
+    { name: "Protein in leaves", unit: "mg/g", n: 40, x: 10 },
+    { name: "Dry mass", unit: "g", n: 7.5, x: 2.4 },
+  ];
+  const SCENES = [
+    { title: "Two tomato plants, one difference", text: "Same light, water, CO₂, and temperature. One group got every nutrient. The other got <strong>no nitrogen</strong>.", mode: "plants", dur: 2500 },
+    { title: "Watch 4 weeks of growth", text: "Watch the height, the leaves, and the bars. Which plant grows more?", mode: "plants", dur: 7000 },
+    { title: "The clue: more sugar, but smaller", text: "The no-nitrogen plants had <strong>more</strong> sugar in their leaves. So why are they so small? Look inside a leaf cell.", mode: "cells", dur: 12000 },
+    { title: "Mystery solved", text: "Sugar is not enough. To turn sugar into protein, a plant needs nitrogen from the soil.", mode: "solved", dur: 0 },
+  ];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (id) => document.getElementById(id);
+  const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  let scene = 0, t0 = 0, playing = false, raf = 0, progress = 0, fresh = true;
+
+  // ---------- data table ----------
+  const rows = $("rows");
+  DATA.forEach((d, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${d.name}</td><td class="barcell"><div class="bars"><div class="bar" id="bn${i}"></div><div class="bar no" id="bx${i}"></div></div></td>
+      <td class="num" id="v${i}"><small>at week 4</small></td>`;
+    rows.appendChild(tr);
+  });
+  function setBars(f, showNums) {
+    DATA.forEach((d, i) => {
+      const max = Math.max(d.n, d.x);
+      $("bn" + i).style.width = (d.n / max * 100 * f) + "%";
+      $("bx" + i).style.width = (d.x / max * 100 * f) + "%";
+      $("v" + i).innerHTML = showNums ? `${d.n} <small>vs.</small> ${d.x} <small>${d.unit}</small>` : `<small>at week 4</small>`;
+    });
+  }
+
+  // ---------- plants (SVG) ----------
+  const NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function drawPlant(svg, f, rich) {
+    svg.textContent = "";
+    const heightCm = (rich ? 32 : 11) * f + 2;     // seedlings start ~2 cm
+    const px = heightCm * 4.6;                     // 32 cm -> ~150 px
+    const baseY = 185, cx = 120;
+    const leafColor = rich ? "var(--leaf)" : `color-mix(in srgb, var(--leaf) ${Math.round(100 - 80 * f)}%, var(--pale))`;
+    // ruler
+    svg.appendChild(el("line", { x1: 18, y1: baseY, x2: 18, y2: baseY - 160, stroke: "var(--line)", "stroke-width": 2 }));
+    [0, 10, 20, 30].forEach((cm) => {
+      const y = baseY - cm * 4.6;
+      svg.appendChild(el("line", { x1: 14, y1: y, x2: 24, y2: y, stroke: "var(--muted)", "stroke-width": 1.5 }));
+      const tx = el("text", { x: 28, y: y + 4, "font-size": 11, fill: "var(--muted)", "font-family": "Atkinson Hyperlegible, sans-serif" });
+      tx.textContent = cm + " cm"; svg.appendChild(tx);
+    });
+    // pot + soil
+    svg.appendChild(el("path", { d: `M75 ${baseY} L165 ${baseY} L155 225 L85 225 Z`, fill: "var(--soil)" }));
+    svg.appendChild(el("rect", { x: 70, y: baseY - 6, width: 100, height: 10, rx: 3, fill: "var(--soil)", opacity: .8 }));
+    if (rich) [[92, 195], [128, 205], [146, 196]].forEach(([x, y]) =>
+      svg.appendChild(el("circle", { cx: x, cy: y, r: 3.2, fill: "var(--nitro)" })));
+    // stem
+    const top = baseY - px;
+    svg.appendChild(el("path", { d: `M${cx} ${baseY - 4} C ${cx - 6} ${baseY - px * .4}, ${cx + 6} ${baseY - px * .7}, ${cx} ${top}`,
+      stroke: leafColor, "stroke-width": rich ? 5 : 3.5, fill: "none", "stroke-linecap": "round" }));
+    // leaves
+    const n = Math.max(1, Math.floor(px / 22));
+    for (let i = 0; i < n; i++) {
+      const y = baseY - 14 - i * (px - 10) / n, side = i % 2 ? 1 : -1;
+      const size = (rich ? 16 : 10) * (0.6 + 0.4 * Math.min(1, f * 1.5));
+      const leaf = el("ellipse", { cx: cx + side * size, cy: y, rx: size, ry: size * .45, fill: leafColor,
+        transform: `rotate(${side * -25} ${cx + side * size} ${y})` });
+      svg.appendChild(leaf);
+    }
+    // tomatoes
+    if (f > .65) {
+      const k = (f - .65) / .35;
+      const fruit = rich ? [[cx + 22, top + 40], [cx - 24, top + 70], [cx + 18, top + 95]] : [[cx + 12, top + 18]];
+      fruit.forEach(([x, y]) => svg.appendChild(el("circle", { cx: x, cy: y, r: (rich ? 9 : 4.5) * k, fill: "var(--tomato)" })));
+    }
+    const wk = el("text", { x: 232, y: 18, "text-anchor": "end", "font-size": 14, fill: "var(--ink)", "font-weight": 700, "font-family": "Atkinson Hyperlegible, sans-serif" });
+    wk.textContent = "Week " + Math.round(f * 4); svg.appendChild(wk);
+  }
+
+  // ---------- leaf cells (canvas) ----------
+  function hexPath(ctx, x, y, r) {
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) { const a = Math.PI / 3 * i; ctx.lineTo(x + r * Math.cos(a), y + r * Math.sin(a)); }
+    ctx.closePath();
+  }
+  function cellState(rich, ms) {
+    // Deterministic timeline: a glucose arrives every 600 ms; with N each one is used, without N it piles up.
+    const every = 600, made = Math.min(18, Math.floor(ms / every) + 1);
+    const items = [];
+    let chain = 0;
+    for (let k = 0; k < made; k++) {
+      const age = ms - k * every;
+      items.push({ k, age });
+      if (rich && age > 1500) chain++;
+    }
+    return { items, chain, made };
+  }
+  function drawCell(canvas, rich, ms) {
+    const ctx = canvas.getContext("2d"), W = canvas.width, H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    // cell
+    ctx.fillStyle = `color-mix(in srgb, ${rich ? css("--leaf") : css("--pale")} 16%, ${css("--card")})`;
+    ctx.strokeStyle = rich ? css("--leaf") : css("--pale"); ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.roundRect(10, 10, W - 20, H - 20, 26); ctx.fill(); ctx.stroke();
+    ctx.font = "15px Atkinson Hyperlegible, sans-serif"; ctx.fillStyle = css("--muted");
+    ctx.fillText("sugar from photosynthesis ↓", 26, 34);
+    ctx.fillText(rich ? "nitrogen from the roots ↑" : "no nitrogen coming in", 26, H - 22);
+    ctx.fillText("protein →", W - 120, 34);
+    const { items, chain } = cellState(rich, ms);
+    let left = 0;
+    items.forEach(({ k, age }) => {
+      const lane = 60 + (k * 53) % 220;
+      if (rich) {
+        if (age < 900) {           // fall in
+          const y = 50 + Math.min(1, age / 900) * 90;
+          ctx.fillStyle = css("--sugar"); hexPath(ctx, lane, y, 11); ctx.fill(); left++;
+          // nitrogen rising to meet it
+          const ny = H - 40 - Math.min(1, age / 900) * (H - 40 - 150);
+          ctx.fillStyle = css("--nitro"); ctx.beginPath(); ctx.arc(lane + 14, ny, 6, 0, 7); ctx.fill();
+        } else if (age < 1500) {   // join: becomes an amino acid and slides to the chain
+          const p = (age - 900) / 600, x = lane + (W - 70 - lane) * p, y = 140 - 60 * p;
+          ctx.fillStyle = css("--protein"); ctx.beginPath(); ctx.arc(x, y, 8, 0, 7); ctx.fill();
+        }
+      } else {
+        const slot = k, col = slot % 9, row = Math.floor(slot / 9);
+        const tx = 70 + col * 30, ty = H - 70 - row * 26;
+        const p = Math.min(1, age / 900), y = 50 + (ty - 50) * p, x = lane + (tx - lane) * p;
+        ctx.fillStyle = css("--sugar"); hexPath(ctx, x, y, 11); ctx.fill(); left++;
+      }
+    });
+    // protein chain on the right
+    for (let i = 0; i < chain; i++) {
+      const x = W - 70 + (i % 2) * 18, y = 56 + i * 12.5;
+      if (i) { ctx.strokeStyle = css("--protein"); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(W - 70 + ((i - 1) % 2) * 18, y - 12.5); ctx.lineTo(x, y); ctx.stroke(); }
+      ctx.fillStyle = css("--protein"); ctx.beginPath(); ctx.arc(x, y, 7, 0, 7); ctx.fill();
+    }
+    $(rich ? "sugN" : "sugX").textContent = left;
+    $(rich ? "proN" : "proX").textContent = chain;
+  }
+
+  // ---------- scenes ----------
+  const steps = $("steps");
+  SCENES.forEach((s, i) => {
+    const b = document.createElement("button"); b.type = "button"; b.textContent = i + 1;
+    b.setAttribute("aria-label", "Scene " + (i + 1) + ": " + s.title);
+    b.addEventListener("click", () => { fresh = false; go(i, true); }); steps.appendChild(b);
+  });
+
+  function render(f) {
+    const s = SCENES[scene];
+    const plants = s.mode === "plants", cells = s.mode === "cells", solved = s.mode === "solved";
+    $("pots").hidden = cells; $("cells").hidden = !cells; $("cellLegend").hidden = !cells;
+    $("solved").hidden = !solved;
+    $("dataWrap").hidden = cells;
+    const grow = scene === 0 ? 0 : scene === 1 ? f : 1;
+    drawPlant($("plantN"), grow, true); drawPlant($("plantX"), grow, false);
+    setBars(grow, scene >= 2 || (scene === 1 && f >= 1));
+    if (cells) {
+      const ms = f * s.dur;
+      drawCell($("cellN"), true, ms); drawCell($("cellX"), false, ms);
+    }
+    const clue = $("clue");
+    clue.hidden = !(scene === 1 && f >= 1) && scene !== 2;
+    clue.innerHTML = scene === 2
+      ? "<strong>Same sugar going in.</strong> With nitrogen, each sugar is joined to N and built into protein. Without nitrogen, the sugar has nothing to join, so it <strong>piles up</strong>."
+      : "<strong>Clue:</strong> the no-nitrogen plants made <strong>more</strong> sugar (25 vs. 12 mg/g) but much less protein (10 vs. 40 mg/g).";
+  }
+
+  function go(i, stop) {
+    scene = Math.max(0, Math.min(SCENES.length - 1, i));
+    const s = SCENES[scene];
+    $("sceneNum").textContent = `Scene ${scene + 1} of ${SCENES.length}`;
+    $("sceneTitle").textContent = s.title; $("sceneText").innerHTML = s.text;
+    [...steps.children].forEach((b, k) => k === scene ? b.setAttribute("aria-current", "step") : b.removeAttribute("aria-current"));
+    $("back").disabled = scene === 0; $("next").disabled = scene === SCENES.length - 1;
+    if (stop) { playing = false; cancelAnimationFrame(raf); }
+    progress = (reduce || !s.dur) ? 1 : 0;
+    t0 = performance.now();
+    render(progress);
+    $("play").textContent = scene === SCENES.length - 1 && !playing ? "↺ Replay" : (playing ? "❚❚ Pause" : "▶ Play");
+    if (stop && s.dur && !reduce) { playing = true; $("play").textContent = "❚❚ Pause"; raf = requestAnimationFrame(tick); }
+  }
+
+  function tick(now) {
+    if (!playing) return;
+    const s = SCENES[scene];
+    progress = Math.min(1, (now - t0) / s.dur);
+    render(progress);
+    if (progress >= 1) {
+      if (scene < SCENES.length - 1) {
+        setTimeout(() => { if (playing) { go(scene + 1, false); raf = requestAnimationFrame(tick); } }, 1800);
+        return;
+      }
+      playing = false; $("play").textContent = "↺ Replay"; return;
+    }
+    raf = requestAnimationFrame(tick);
+  }
+
+  $("play").addEventListener("click", () => {
+    if (playing) { playing = false; cancelAnimationFrame(raf); $("play").textContent = "▶ Play"; return; }
+    if (fresh || scene === SCENES.length - 1) { fresh = false; go(0, false); progress = 0; }
+    if (reduce) { go(scene + 1 < SCENES.length ? scene + 1 : 0, false); return; }
+    playing = true; $("play").textContent = "❚❚ Pause";
+    t0 = performance.now() - progress * (SCENES[scene].dur || 1);
+    if (progress >= 1 && scene < SCENES.length - 1) go(scene + 1, false);
+    raf = requestAnimationFrame(tick);
+  });
+  $("back").addEventListener("click", () => { fresh = false; go(scene - 1, true); });
+  $("next").addEventListener("click", () => { fresh = false; go(scene + 1, true); });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => render(progress));
+  new MutationObserver(() => render(progress)).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  // Open on the finished growth scene so the first view shows the evidence.
+  scene = 1; go(1, false); progress = 1; render(1);
+  $("play").textContent = "▶ Play";
+  $("sceneNum").textContent = "Scene 2 of 4";
+})();
+</script>
