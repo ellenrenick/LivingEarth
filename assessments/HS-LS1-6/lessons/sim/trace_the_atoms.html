@@ -1,0 +1,300 @@
+<title>Trace the Atoms</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: one journey map (air -> leaf -> seed -> you -> blood -> hair) with a gold-ringed carbon atom that travels it;
+   a molecule panel beside it shows what that carbon is part of at each stop. Panels stack on phones. */
+:root {
+  --bg: #f6f7f1;
+  --card: #ffffff;
+  --ink: #1f2a1e;
+  --muted: #5d6a5a;
+  --line: #d9dfd2;
+  --leaf: #3d8b3a;
+  --sky: #dcebf5;
+  --soil: #7a5636;
+  --pumpkin: #e07b22;
+  --carbon: #2b2b2b;        /* C atoms */
+  --oxygen: #d8452f;        /* O atoms */
+  --hydrogen: #9aa59a;      /* H atoms */
+  --nitro: #2f6fd1;         /* N, blue like the bead kits */
+  --gold: #e2a21b;          /* the one carbon we follow */
+  --font-display: "Boogaloo", "Comic Sans MS", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141a14; --card: #1d251d; --ink: #e9efe4; --muted: #a8b4a3; --line: #334033; --leaf: #5fb35a;
+    --sky: #20303a; --soil: #a07650; --pumpkin: #f0923e; --carbon: #e9efe4; --oxygen: #ef6a52;
+    --hydrogen: #7d887d; --nitro: #6f9ef0; --gold: #f0b93a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141a14; --card: #1d251d; --ink: #e9efe4; --muted: #a8b4a3; --line: #334033; --leaf: #5fb35a;
+  --sky: #20303a; --soil: #a07650; --pumpkin: #f0923e; --carbon: #e9efe4; --oxygen: #ef6a52;
+  --hydrogen: #7d887d; --nitro: #6f9ef0; --gold: #f0b93a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px;
+}
+main { max-width: 1040px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; margin: 0; }
+.eyebrow { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 14px; }
+.stage { display: grid; grid-template-columns: 1.7fr 1fr; gap: 14px; }
+.panel { border: 1px solid var(--line); border-radius: 12px; padding: 10px; min-width: 0; display: grid; gap: 6px; align-content: start; }
+.panel h3 { margin: 0; font-size: 1rem; }
+svg { width: 100%; height: auto; display: block; max-width: 100%; }
+.step-head { display: grid; gap: 4px; }
+.step-head h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.7rem; margin: 0; line-height: 1.1; text-wrap: balance; }
+.step-head p { margin: 0; max-width: 65ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .9rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.ring { width: 16px; height: 16px; border-radius: 50%; display: inline-block; background: var(--carbon); box-shadow: 0 0 0 3px var(--gold); }
+.path { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.5; }
+.path span { opacity: .3; transition: opacity .3s; }
+.path span.on { opacity: 1; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+button {
+  font: 700 1rem var(--font-body); color: var(--ink); background: var(--card); border: 1.5px solid var(--line);
+  border-radius: 999px; padding: 8px 16px; cursor: pointer;
+}
+button.primary { background: var(--leaf); border-color: var(--leaf); color: #fff; }
+button:hover { border-color: var(--ink); }
+button:focus-visible { outline: 3px solid var(--nitro); outline-offset: 2px; }
+button:disabled { opacity: .45; cursor: default; }
+.steps { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.steps button { width: 34px; height: 34px; padding: 0; font-size: .9rem; }
+.steps button[aria-current="step"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.big { border: 2px dashed var(--gold); border-radius: 12px; padding: 10px 14px; }
+.note { font-size: .85rem; color: var(--muted); margin: 0; }
+@media (max-width: 720px) {
+  .stage { grid-template-columns: 1fr; }
+  .steps { margin-left: 0; }
+}
+</style>
+
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">Short Lesson A · The Giant Pumpkin Mystery</div>
+      <h1>Trace the Atoms</h1>
+    </div>
+    <div class="eyebrow">Follow one carbon atom · about 1 minute</div>
+  </header>
+
+  <section class="card" aria-live="polite">
+    <div class="step-head">
+      <div class="eyebrow" id="stepNum">Step 6 of 6</div>
+      <h2 id="stepTitle">In your hair protein</h2>
+      <p id="stepText">Your cells link the amino acids in a new order. The carbon that was in the air is now part of you.</p>
+    </div>
+
+    <div class="stage">
+      <div class="panel">
+        <h3>Where is the carbon atom?</h3>
+        <svg id="map" viewBox="0 0 600 340" role="img" aria-label="Journey of one carbon atom from the air to your hair"></svg>
+      </div>
+      <div class="panel">
+        <h3 id="molTitle">What is it part of?</h3>
+        <svg id="mol" viewBox="0 0 300 220" role="img" aria-label="The molecule the carbon atom is part of"></svg>
+        <div class="legend">
+          <span><i class="ring"></i> our carbon</span>
+          <span><i class="dot" style="background:var(--carbon)"></i> C</span>
+          <span><i class="dot" style="background:var(--oxygen)"></i> O</span>
+          <span><i class="dot" style="background:var(--hydrogen)"></i> H</span>
+          <span><i class="dot" style="background:var(--nitro)"></i> N</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="path" id="pathLine" aria-label="The whole path">
+      <span>CO₂ in the air</span> → <span>glucose</span> → <span>amino acid</span> → <span>seed protein</span> →
+      <span>amino acid in your blood</span> → <span>your hair protein</span>
+    </div>
+
+    <div class="big" id="final" hidden>
+      <strong>Same carbon atom the whole way.</strong> It was never created, destroyed, or changed, only rearranged into new molecules.
+      Light supplied the energy. The soil supplied the nitrogen.
+    </div>
+
+    <div class="controls">
+      <button id="back" type="button">◀ Back</button>
+      <button id="play" type="button" class="primary">▶ Play</button>
+      <button id="next" type="button">Next ▶</button>
+      <div class="steps" id="steps" aria-label="Steps"></div>
+    </div>
+    <p class="note">Play this after students fill in their 6-step table, to check the path. Molecules are simplified; H atoms are left off the big molecules.</p>
+  </section>
+</main>
+
+<script>
+(() => {
+  const STEPS = [
+    { title: "In a carbon dioxide molecule in the air", text: "Our carbon atom starts in a CO₂ molecule in the air. A pumpkin leaf takes it in.", mol: "co2", label: "CO₂", at: [70, 60] },
+    { title: "In a glucose molecule in the leaf", text: "During photosynthesis, light energy is used to build glucose (C₆H₁₂O₆). Our carbon is now one of its 6 carbons.", mol: "glucose", label: "glucose", at: [210, 120] },
+    { title: "In an amino acid", text: "The plant combines atoms from glucose with nitrogen from the soil. Our carbon is now in an amino acid.", mol: "amino", label: "amino acid", at: [260, 230] },
+    { title: "In a pumpkin seed protein", text: "Amino acids link in a specific order to make a protein. The protein is stored in the pumpkin seed.", mol: "protein", label: "seed protein", at: [360, 255] },
+    { title: "In an amino acid in your blood", text: "You eat the seed. Digestion breaks the protein back into amino acids. Your blood carries them to your cells.", mol: "digest", label: "your blood", at: [470, 200] },
+    { title: "In your hair protein", text: "Your cells link the amino acids in a new order. The carbon that was in the air is now part of you.", mol: "hair", label: "hair protein", at: [500, 70] },
+  ];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (id) => document.getElementById(id);
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, a, parent) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (parent) parent.appendChild(e); return e; };
+  const txt = (s, a, parent) => { const t = el("text", { "font-family": "Atkinson Hyperlegible, sans-serif", fill: "var(--ink)", ...a }, parent); t.textContent = s; return t; };
+  let step = 0, playing = false, raf = 0, t0 = 0, fresh = true;
+  const MOVE = 1400, HOLD = 3600;
+
+  // ---------- journey map ----------
+  const map = $("map");
+  function drawMap() {
+    map.textContent = "";
+    el("rect", { x: 0, y: 0, width: 600, height: 340, rx: 10, fill: "var(--sky)" }, map);
+    el("rect", { x: 0, y: 275, width: 330, height: 65, fill: "var(--soil)" }, map);
+    txt("air", { x: 20, y: 28, "font-size": 15, fill: "var(--muted)" }, map);
+    txt("soil (N)", { x: 20, y: 325, "font-size": 15, fill: "var(--card)" }, map);
+    [[60, 300], [140, 312], [230, 298], [290, 318]].forEach(([x, y]) => el("circle", { cx: x, cy: y, r: 5, fill: "var(--nitro)" }, map));
+    // sun
+    el("circle", { cx: 300, cy: 40, r: 18, fill: "var(--gold)" }, map);
+    txt("light", { x: 325, y: 45, "font-size": 14, fill: "var(--muted)" }, map);
+    // pumpkin vine + leaf + pumpkin
+    el("path", { d: "M150 275 C 170 220, 200 180, 215 140", stroke: "var(--leaf)", "stroke-width": 6, fill: "none", "stroke-linecap": "round" }, map);
+    el("ellipse", { cx: 210, cy: 120, rx: 46, ry: 26, fill: "var(--leaf)", transform: "rotate(-20 210 120)" }, map);
+    txt("leaf", { x: 165, y: 92, "font-size": 14, fill: "var(--muted)" }, map);
+    el("ellipse", { cx: 300, cy: 250, rx: 52, ry: 34, fill: "var(--pumpkin)" }, map);
+    el("path", { d: "M300 216 q 6 -12 14 -14", stroke: "var(--leaf)", "stroke-width": 4, fill: "none" }, map);
+    // seed
+    el("ellipse", { cx: 360, cy: 255, rx: 12, ry: 7, fill: "var(--card)", stroke: "var(--muted)", "stroke-width": 1.5 }, map);
+    txt("seed", { x: 376, y: 276, "font-size": 14, fill: "var(--muted)" }, map);
+    // person (simple)
+    el("circle", { cx: 505, cy: 75, r: 26, fill: "var(--card)", stroke: "var(--ink)", "stroke-width": 2 }, map);
+    el("path", { d: "M480 68 q 25 -32 50 0", stroke: "var(--ink)", "stroke-width": 6, fill: "none", "stroke-linecap": "round" }, map);
+    el("path", { d: "M505 101 L505 210 M505 130 L470 175 M505 130 L540 175 M505 210 L480 270 M505 210 L530 270", stroke: "var(--ink)", "stroke-width": 3, fill: "none", "stroke-linecap": "round" }, map);
+    el("path", { d: "M470 200 C 490 190, 520 190, 540 200", stroke: "var(--oxygen)", "stroke-width": 3, fill: "none", "stroke-dasharray": "5 4" }, map);
+    txt("hair", { x: 540, y: 52, "font-size": 14, fill: "var(--muted)" }, map);
+    txt("blood", { x: 548, y: 205, "font-size": 14, fill: "var(--muted)" }, map);
+    // dotted route
+    el("polyline", { points: STEPS.map((s) => s.at.join(",")).join(" "), fill: "none", stroke: "var(--gold)", "stroke-width": 2, "stroke-dasharray": "3 6", opacity: .8 }, map);
+    STEPS.forEach((s, i) => {
+      el("circle", { cx: s.at[0], cy: s.at[1], r: 11, fill: i <= step ? "var(--gold)" : "var(--card)", stroke: "var(--gold)", "stroke-width": 2 }, map);
+      txt(String(i + 1), { x: s.at[0], y: s.at[1] + 4, "font-size": 12, "font-weight": 700, "text-anchor": "middle", fill: i <= step ? "#1f2a1e" : "var(--ink)" }, map);
+    });
+    const c = el("g", { id: "tracker" }, map);
+    el("circle", { r: 13, fill: "var(--carbon)", stroke: "var(--gold)", "stroke-width": 4 }, c);
+    txt("C", { y: 5, "font-size": 14, "font-weight": 700, "text-anchor": "middle", fill: "var(--card)" }, c);
+  }
+  function placeTracker(x, y) { const t = $("tracker"); if (t) t.setAttribute("transform", `translate(${x} ${y - 24})`); }
+
+  // ---------- molecule panel ----------
+  const mol = $("mol");
+  function atom(x, y, kind, ours, parent, r = 13) {
+    const color = { C: "var(--carbon)", O: "var(--oxygen)", H: "var(--hydrogen)", N: "var(--nitro)" }[kind];
+    el("circle", { cx: x, cy: y, r, fill: color, stroke: ours ? "var(--gold)" : "none", "stroke-width": ours ? 5 : 0 }, parent);
+    txt(kind, { x, y: y + 5, "font-size": 13, "font-weight": 700, "text-anchor": "middle", fill: kind === "C" ? "var(--card)" : "#fff" }, parent);
+  }
+  function bond(a, b, parent) { el("line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: "var(--muted)", "stroke-width": 4 }, parent); }
+  function chain(beads, parent, y, oursAt, gap = 30, x0 = 30) {
+    const pts = beads.map((_, i) => [x0 + i * gap, y + (i % 2 ? 16 : -16)]);
+    pts.slice(1).forEach((p, i) => bond(pts[i], p, parent));
+    beads.forEach((col, i) => el("circle", { cx: pts[i][0], cy: pts[i][1], r: 11, fill: col, stroke: i === oursAt ? "var(--gold)" : "none", "stroke-width": i === oursAt ? 5 : 0 }, parent));
+    return pts;
+  }
+  const BEAD = ["var(--leaf)", "var(--pumpkin)", "var(--nitro)", "var(--oxygen)", "var(--hydrogen)", "var(--gold)"];
+  function drawMol(kind, f) {
+    mol.textContent = "";
+    const g = el("g", { opacity: Math.min(1, f * 1.4) }, mol);
+    const cap = (s) => txt(s, { x: 150, y: 210, "font-size": 15, "text-anchor": "middle", fill: "var(--muted)" }, g);
+    if (kind === "co2") {
+      bond([90, 100], [150, 100], g); bond([150, 100], [210, 100], g);
+      atom(90, 100, "O", false, g, 18); atom(150, 100, "C", true, g, 18); atom(210, 100, "O", false, g, 18);
+      cap("carbon dioxide, CO₂");
+    } else if (kind === "glucose") {
+      const ring = [[150, 40], [200, 70], [200, 130], [150, 160], [100, 130], [100, 70]];
+      ring.forEach((p, i) => bond(p, ring[(i + 1) % 6], g));
+      ring.forEach((p, i) => atom(p[0], p[1], i === 5 ? "O" : "C", i === 2, g));
+      atom(245, 140, "C", false, g, 11); bond([200, 130], [245, 140], g);
+      [[60, 60], [60, 140], [240, 60]].forEach((p) => atom(p[0], p[1], "O", false, g, 10));
+      cap("glucose, C₆H₁₂O₆ (H atoms not shown)");
+    } else if (kind === "amino") {
+      const pts = [[60, 100], [115, 100], [170, 100], [225, 100]];
+      pts.slice(1).forEach((p, i) => bond(pts[i], p, g));
+      bond([115, 100], [115, 50], g); bond([115, 50], [80, 25], g); bond([115, 50], [150, 25], g); bond([170, 100], [170, 150], g);
+      atom(60, 100, "N", false, g, 15); atom(115, 100, "C", true, g, 15); atom(170, 100, "C", false, g, 15); atom(225, 100, "O", false, g, 15);
+      atom(115, 50, "C", false, g, 12); atom(80, 25, "C", false, g, 10); atom(150, 25, "C", false, g, 10); atom(170, 150, "O", false, g, 12);
+      txt("from the soil", { x: 60, y: 140, "font-size": 13, "text-anchor": "middle", fill: "var(--nitro)" }, g);
+      cap("an amino acid (valine): C, H, O + N");
+    } else if (kind === "protein") {
+      chain(["var(--leaf)", "var(--pumpkin)", "var(--nitro)", "var(--oxygen)", "var(--leaf)", "var(--hydrogen)", "var(--pumpkin)", "var(--nitro)", "var(--oxygen)"], g, 100, 3, 30, 30);
+      cap("amino acids linked in a specific order");
+    } else if (kind === "digest") {
+      const cols = ["var(--leaf)", "var(--pumpkin)", "var(--nitro)", "var(--oxygen)", "var(--leaf)", "var(--hydrogen)"];
+      cols.forEach((c, i) => {
+        const x = 40 + i * 44 + Math.sin(i * 2.1) * 6, y = 100 + (i % 2 ? 22 : -22);
+        el("circle", { cx: x, cy: y, r: 11, fill: c, stroke: i === 3 ? "var(--gold)" : "none", "stroke-width": i === 3 ? 5 : 0 }, g);
+      });
+      cap("digestion breaks the protein into amino acids");
+    } else if (kind === "hair") {
+      chain(["var(--oxygen)", "var(--leaf)", "var(--hydrogen)", "var(--pumpkin)", "var(--leaf)", "var(--nitro)", "var(--leaf)", "var(--pumpkin)", "var(--hydrogen)"], g, 100, 0, 30, 30);
+      cap("linked in a new order: your hair protein");
+    }
+  }
+
+  // ---------- steps ----------
+  const stepsEl = $("steps");
+  STEPS.forEach((s, i) => {
+    const b = document.createElement("button"); b.type = "button"; b.textContent = i + 1;
+    b.setAttribute("aria-label", "Step " + (i + 1) + ": " + s.title);
+    b.addEventListener("click", () => { fresh = false; stop(); show(i, 1); stop(); });
+    stepsEl.appendChild(b);
+  });
+  const ease = (x) => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+
+  function show(i, f) {
+    step = i;
+    const s = STEPS[i], prev = STEPS[Math.max(0, i - 1)];
+    $("stepNum").textContent = `Step ${i + 1} of ${STEPS.length}`;
+    $("stepTitle").textContent = s.title; $("stepText").textContent = s.text;
+    $("molTitle").textContent = "Our carbon is part of: " + s.label;
+    drawMap();
+    const e = ease(Math.min(1, f));
+    placeTracker(prev.at[0] + (s.at[0] - prev.at[0]) * e, prev.at[1] + (s.at[1] - prev.at[1]) * e);
+    drawMol(s.mol, f);
+    [...$("pathLine").children].forEach((sp, k) => sp.classList.toggle("on", k <= i));
+    [...stepsEl.children].forEach((b, k) => k === i ? b.setAttribute("aria-current", "step") : b.removeAttribute("aria-current"));
+    $("final").hidden = !(i === STEPS.length - 1 && f >= 1);
+    $("back").disabled = i === 0; $("next").disabled = i === STEPS.length - 1;
+  }
+  function stop() { playing = false; cancelAnimationFrame(raf); $("play").textContent = step === STEPS.length - 1 ? "↺ Replay" : "▶ Play"; }
+  function tick(now) {
+    if (!playing) return;
+    const el = now - t0, f = Math.min(1, el / MOVE);
+    show(step, f);
+    if (el >= MOVE + HOLD) {
+      if (step < STEPS.length - 1) { step++; t0 = now; }
+      else { stop(); return; }
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  $("play").addEventListener("click", () => {
+    if (playing) { stop(); return; }
+    if (fresh || step === STEPS.length - 1) { fresh = false; step = 0; }
+    if (reduce) { show(Math.min(step + 1, STEPS.length - 1), 1); return; }
+    playing = true; $("play").textContent = "❚❚ Pause"; t0 = performance.now(); raf = requestAnimationFrame(tick);
+  });
+  $("back").addEventListener("click", () => { fresh = false; stop(); show(step - 1, 1); stop(); });
+  $("next").addEventListener("click", () => { fresh = false; stop(); show(step + 1, 1); stop(); });
+
+  // Opens on the finished path so the first view shows the whole journey; Play starts from step 1.
+  show(STEPS.length - 1, 1);
+  $("play").textContent = "▶ Play";
+})();
+</script>
