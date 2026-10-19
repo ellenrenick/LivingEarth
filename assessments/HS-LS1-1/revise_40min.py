@@ -9,6 +9,7 @@ Day 3 (gummy DNA lab) and Day 8 (CSA) are not touched.
 """
 
 import json
+import random
 import sys
 import urllib.parse
 from pathlib import Path
@@ -32,6 +33,16 @@ def tbl(rows, head=True):
 
 
 def bank(words):
+    # Scramble so the bank is never in answer order (fixed seed, so reruns give the same page).
+    words = list(words)
+    rng = random.Random(" ".join(words))
+    original = list(words)
+    # No word keeps its answer-order spot, and (4+ words) no two answer-order neighbours stay side by side.
+    def ordered(w):
+        return any(a == b for a, b in zip(w, original)) or (len(w) > 3 and any(
+            original.index(x) + 1 == original.index(y) for x, y in zip(w, w[1:])))
+    while len(words) > 2 and ordered(words):
+        rng.shuffle(words)
     return f"<p style=\"border:1px solid #999;padding:6px\"><strong>Word bank:</strong> {' &middot; '.join(words)}</p>"
 
 

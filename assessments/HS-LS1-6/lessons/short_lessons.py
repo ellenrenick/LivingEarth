@@ -9,6 +9,7 @@ slide (slide 3), and the CFA slide(s) at the end.
 
   python3 short_lessons.py deck A      # Slides batchUpdate requests for Short Lesson A
   python3 short_lessons.py html B      # student Canvas page for Short Lesson B
+  python3 short_lessons.py live-a-slides x   # add the 2 notebook slides to the live Short Lesson A deck
 """
 
 import copy
@@ -32,10 +33,33 @@ STEPS = [["1", "In a ____ molecule in the air", "A pumpkin leaf takes it in."],
          ["5", "In an amino acid in your blood", "You ate the seed and ____ it."],
          ["6", "In your hair protein", "Your cells ____ them in a new order."]]
 # Word bank for the Short Lesson A blanks (the 6-step trace, then the valine line on the notebook page).
-WORD_BANK_A = ["carbon dioxide (CO₂)", "glucose", "photosynthesis", "light", "amino acid", "nitrogen", "protein",
-               "order", "digested", "link"]
+# Scrambled on purpose: never list the words in answer order.
+WORD_BANK_A = ["digested", "light", "protein", "carbon dioxide (CO₂)", "link", "amino acid", "order", "glucose",
+               "nitrogen", "photosynthesis"]
+# Notebook right page, Short Lesson A: what goes under each heading (slides after the warm-up and the mini-lesson).
+SUGAR_N_A = ("Glucose C₆H₁₂O₆ + N from the soil → valine C₅H₁₁NO₂\n"
+             "From sugar: C, H, and O. From the soil: N (nitrogen).\n"
+             "Write it in your notebook under “Sugar + nitrogen.”\n"
+             "On the 2 lines, finish: A plant can't make amino acids from sugar alone because sugar has no ____. "
+             "The plant gets it from the ____.")
+SMALL_PIECES_A = ("Fill in one line each in your notebook under “Small pieces, big molecules”:\n"
+                  "1. Small pieces called ____ (monomers) link to make big molecules called ____ (polymers).\n"
+                  "2. The ____ of the amino acids makes each protein different.\n"
+                  "3. Digestion breaks proteins back into ____.\n"
+                  "4. Atoms are ____, never created, destroyed, or changed.\n"
+                  "Word bank: rearranged · proteins · order · amino acids")
 TOMATO = [["Height (cm)", "32", "11"], ["Sugar in leaves (mg/g)", "12", "25"],
           ["Protein in leaves (mg/g)", "40", "10"], ["Dry mass (g)", "7.5", "2.4"]]
+
+NOTE_SUGAR_N = ("<p><strong>In your notebook, under “Sugar + nitrogen”:</strong> write which of valine's atoms come from sugar "
+                "and which from the soil. Then finish: <em>A plant can't make amino acids from sugar alone because sugar has no "
+                "____. The plant gets it from the ____.</em></p>")
+NOTE_SMALL = ("<p><strong>In your notebook, under “Small pieces, big molecules”:</strong> fill in these 4 lines.</p><ol>"
+              "<li>Small pieces called ____ (monomers) link to make big molecules called ____ (polymers).</li>"
+              "<li>The ____ of the amino acids makes each protein different.</li>"
+              "<li>Digestion breaks proteins back into ____.</li>"
+              "<li>Atoms are ____, never created, destroyed, or changed.</li></ol>"
+              "<p style=\"border:1px solid #999;padding:6px\"><strong>Word bank:</strong> rearranged · proteins · order · amino acids</p>")
 
 LESSONS = {
     "A": dict(
@@ -52,12 +76,15 @@ LESSONS = {
             ("warmup", ["WARM-UP · 3 MIN · ON YOUR OWN", "Glucose or the soil?",
                         "Glucose is C₆H₁₂O₆. Valine (an amino acid) is C₅H₁₁NO₂. Which atoms in valine could come from glucose? "
                         "Which must come from somewhere else?"]),
+            ("list", ["SUGAR + NITROGEN · 2 MIN · IN YOUR NOTEBOOK", "Check the warm-up: where do valine's atoms come from?",
+                      SUGAR_N_A]),
             ("list", ["MINI-LESSON · 5 MIN", "Sugar + nitrogen → amino acids → proteins",
                       "Glucose has only C, H, and O. To build an amino acid, the plant combines atoms from sugar with nitrogen from the soil.\n"
                       "Every amino acid has the same backbone (2 C, 4 H, 2 O, 1 N) plus a side chain that makes it unique.\n"
                       "Amino acids (monomers) link in a specific order to make proteins (polymers).\n"
                       "When you eat, digestion breaks proteins back into amino acids. Your cells link them into your own proteins.\n"
                       "The atoms are rearranged. They are never created, destroyed, or changed."]),
+            ("list", ["SMALL PIECES, BIG MOLECULES · 2 MIN · IN YOUR NOTEBOOK", "Small pieces, big molecules", SMALL_PIECES_A]),
             ("list", ["TRACE A CARBON ATOM · 8 MIN · WITH A PARTNER", "From the air to your hair",
                       "1. In a ____ molecule in the air. A pumpkin leaf takes it in.\n"
                       "2. In a ____ molecule in the leaf. Built during ____ using ____ energy.\n"
@@ -70,20 +97,21 @@ LESSONS = {
                      "It is the same carbon atom the whole way. Light supplied the energy. The soil supplied the nitrogen."]),
         ],
         notebook=dict(
+            # Same order as the slides: warm-up, sugar + nitrogen, small pieces (mini-lesson), then the trace.
             left=[("h", "Warm-up"), ("lines", 2),
-                  ("h", "Trace a carbon atom"),
-                  ("table", ["Step", "Where is the carbon atom?", "What happens to it?"], STEPS, [0.45, 2.0, 2.0], 7, None)],
-            right=[("h", "Small pieces, big molecules"), ("lines", 4),
-                   ("h", "Sugar + nitrogen"),
-                   ("text", "Glucose C₆H₁₂O₆ + N from the soil → valine C₅H₁₁NO₂. From sugar: ____  From soil: ____  (C, H, O or N?)"),
-                   ("lines", 2)]),
+                  ("h", "Sugar + nitrogen"),
+                  ("text", "Glucose C₆H₁₂O₆ + N from the soil → valine C₅H₁₁NO₂. From sugar: ____  From soil: ____  (C, H, O or N?)"),
+                  ("lines", 2),
+                  ("h", "Small pieces, big molecules"), ("lines", 4)],
+            right=[("h", "Trace a carbon atom"),
+                   ("table", ["Step", "Where is the carbon atom?", "What happens to it?"], STEPS, [0.45, 2.0, 2.0], 7, None)]),
         sections=[
             ("Warm-up", "<p>Glucose is C₆H₁₂O₆. Valine (an amino acid) is C₅H₁₁NO₂. Which atoms in valine could come from glucose? "
-             "Which must come from somewhere else?</p>"),
+             "Which must come from somewhere else?</p>" + NOTE_SUGAR_N),
             ("Sugar + nitrogen → amino acids → proteins", "<p>Glucose has only C, H, and O. To build an amino acid, a plant "
              "combines atoms from sugar with nitrogen from the soil. Amino acids (monomers) link in a specific order into proteins "
              "(polymers). When you eat, digestion breaks proteins back into amino acids, and your cells link them into your own "
-             "proteins. The atoms are rearranged, never changed.</p>"),
+             "proteins. The atoms are rearranged, never changed.</p>" + NOTE_SMALL),
             ("Trace a carbon atom", "<p>With a partner, fill in the 6-step table in your notebook: follow one carbon atom from CO₂ "
              "in the air to a protein in your hair.</p>"
              "<p style=\"border:1px solid #999;padding:6px\"><strong>Word bank:</strong> " + " · ".join(WORD_BANK_A) + "</p>"),
@@ -156,11 +184,11 @@ def cfa_slide_text(tid, minutes):
             "Below a B (fewer than 4 of 5)? A review page for this target opens for you on Canvas."]
 
 
-def word_bank_box():
-    """A bordered word-bank box under the 6-step trace (slide sa_s05)."""
-    oid = "sa_s05_wb"
+def word_bank_box(page):
+    """A bordered word-bank box under the 6-step trace."""
+    oid = f"{page}_wb"
     return [{"createShape": {"objectId": oid, "shapeType": "TEXT_BOX", "elementProperties": {
-                "pageObjectId": "sa_s05", "size": {"width": {"magnitude": 8162700, "unit": "EMU"},
+                "pageObjectId": page, "size": {"width": {"magnitude": 8162700, "unit": "EMU"},
                                                    "height": {"magnitude": 1100000, "unit": "EMU"}},
                 "transform": {"scaleX": 1, "scaleY": 1, "translateX": 609600, "translateY": 3200000, "unit": "EMU"}}}},
             {"insertText": {"objectId": oid, "text": "Word bank: " + "  ·  ".join(WORD_BANK_A)}},
@@ -191,7 +219,8 @@ def deck(key):
         reqs.append({"updateSlidesPosition": {"slideObjectIds": [sid], "insertionIndex": 2 + len(s["slides"]) + n}})
 
     if key == "A":
-        reqs += word_bank_box()
+        trace = next(n for n, (_, parts) in enumerate(s["slides"], 3) if parts[0].startswith("TRACE"))
+        reqs += word_bank_box(f"sa_s{trace:02d}")
 
     # Notebook set-up example, slide 2.
     NB.DECKS[key] = dict(id=s["deck"], scale=1.0, title=s["title"], focus=s["focus"], **s["notebook"])
@@ -209,6 +238,35 @@ def deck(key):
     treqs = json.dumps(treqs, ensure_ascii=False).replace(f"lt_d{fake['day']}_", f"lt_s{key.lower()}_")
     reqs += json.loads(treqs.replace(f"Day {fake['day']} · ", f"{s['lesson']} · "))
     return reqs
+
+
+def live_short_a_slides():
+    """Add the two notebook slides to the live Short Lesson A deck (built before they existed) by duplicating
+    its mini-lesson slide sa_s04: "Sugar + nitrogen" after the warm-up, "Small pieces, big molecules" after
+    the mini-lesson. Slide order then: ..., warm-up, sugar + nitrogen, mini-lesson, small pieces, trace, ..."""
+    footer = "Short Lesson A · Trace the Atoms"
+    new = [(sid, parts) for sid, (_, parts) in zip(("sa_s03n", None, "sa_s04n"), LESSONS["A"]["slides"][1:4]) if sid]
+    reqs = []
+    for sid, parts in new:
+        reqs.append({"duplicateObject": {"objectId": "sa_s04", "objectIds": {"sa_s04": sid, **{
+            f"sa_s04_e{i}": f"{sid}_e{i}" for i in range(4)}}}})
+        for i, t in enumerate(list(parts) + [footer]):
+            reqs += D.text(f"{sid}_e{i}", t)
+    # Title, notebook, targets, goals, warm-up (index 4), then:
+    for i, sid in enumerate(["sa_s03n", "sa_s04", "sa_s04n"], 5):
+        reqs.append({"updateSlidesPosition": {"slideObjectIds": [sid], "insertionIndex": i}})
+    return reqs
+
+
+def live_notebook_a():
+    """Rebuild the content of the live Short Lesson A notebook slide (keeps the slide, its background, and anything
+    added by hand): delete the old nb_a_02.. elements, then recreate them in the new order."""
+    s = LESSONS["A"]
+    NB.DECKS["A"] = dict(id=s["deck"], scale=1.0, title=s["title"], focus=s["focus"], **s["notebook"])
+    reqs = NB.Builder("A").build()
+    keep = [r for r in reqs if not ("createSlide" in r or r.get("createImage", {}).get("objectId") == "nb_a_01")]
+    old = [f"nb_a_{n:02d}" for n in range(2, 13)]
+    return [{"deleteObject": {"objectId": o}} for o in old] + keep
 
 
 def day_dict(key):
@@ -232,4 +290,9 @@ def student_html(key):
 
 if __name__ == "__main__":
     what, key = sys.argv[1], sys.argv[2]
-    print(json.dumps(deck(key), ensure_ascii=False) if what == "deck" else student_html(key))
+    if what == "live-a-notebook":
+        print(json.dumps(live_notebook_a(), ensure_ascii=False))
+    elif what == "live-a-slides":
+        print(json.dumps(live_short_a_slides(), ensure_ascii=False))
+    else:
+        print(json.dumps(deck(key), ensure_ascii=False) if what == "deck" else student_html(key))
