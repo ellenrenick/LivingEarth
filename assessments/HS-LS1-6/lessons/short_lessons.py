@@ -48,6 +48,17 @@ SMALL_PIECES_A = ("Fill in one line each in your notebook under “Small pieces,
                   "3. Digestion breaks proteins back into ____.\n"
                   "4. Atoms are ____, never created, destroyed, or changed.\n"
                   "Word bank: rearranged · proteins · order · amino acids")
+# Short Lesson B sentence frames. Word banks are scrambled (never in answer order).
+CER_FRAME_B = ("Claim: The tomatoes without nitrogen were smaller because ____.\n"
+               "Evidence: With no nitrogen, height was ___ cm (vs. ___ cm) and protein was ___ mg/g (vs. ___ mg/g).\n"
+               "Reasoning: Sugar has only C, H, and O. To build ____ and proteins, a plant combines sugar's atoms with ____. "
+               "With no nitrogen, the plant could not build ____, so it could not grow. The sugar it made was not used, so it ____.\n"
+               "Word bank: proteins · built up · amino acids · they had no nitrogen to make proteins · nitrogen")
+REVISE_FRAME_B = "Frame: Then I thought the mass came from ____. Now I think it comes from ____. Because ____."
+REVISE_BANK_B = "Word bank: the tomato data · CO₂ from the air · the soil · the Leaf Atom Lab · water · the leaf chamber"
+UNSURE_B = ("In your notebook, under “One thing I'm still not sure about,” write 1 question you still have.\n"
+            "Start with: I'm still not sure how / why / whether ____.\n"
+            "Example: I'm still not sure whether a plant could grow with no soil at all.")
 TOMATO = [["Height (cm)", "32", "11"], ["Sugar in leaves (mg/g)", "12", "25"],
           ["Protein in leaves (mg/g)", "40", "10"], ["Dry mass (g)", "7.5", "2.4"]]
 
@@ -60,6 +71,19 @@ NOTE_SMALL = ("<p><strong>In your notebook, under “Small pieces, big molecules
               "<li>Digestion breaks proteins back into ____.</li>"
               "<li>Atoms are ____, never created, destroyed, or changed.</li></ol>"
               "<p style=\"border:1px solid #999;padding:6px\"><strong>Word bank:</strong> rearranged · proteins · order · amino acids</p>")
+
+NOTE_CER_B = ("<p><strong>Use the frame:</strong></p><ul>"
+              "<li>Claim: The tomatoes without nitrogen were smaller because ____.</li>"
+              "<li>Evidence: With no nitrogen, height was ___ cm (vs. ___ cm) and protein was ___ mg/g (vs. ___ mg/g).</li>"
+              "<li>Reasoning: Sugar has only C, H, and O. To build ____ and proteins, a plant combines sugar's atoms with ____. "
+              "With no nitrogen, the plant could not build ____, so it could not grow. The sugar it made was not used, so it ____.</li></ul>"
+              "<p style=\"border:1px solid #999;padding:6px\"><strong>Word bank:</strong> proteins · built up · amino acids · "
+              "they had no nitrogen to make proteins · nitrogen</p>")
+NOTE_REVISE_B = ("<p><strong>Frame:</strong> Then I thought the mass came from ____. Now I think it comes from ____. Because ____.</p>"
+                 "<p style=\"border:1px solid #999;padding:6px\"><strong>Word bank:</strong> the tomato data · CO₂ from the air · "
+                 "the soil · the Leaf Atom Lab · water · the leaf chamber</p>")
+NOTE_UNSURE_B = ("<p>In your notebook, write 1 question you still have. Start with: <em>I'm still not sure how / why / whether "
+                 "____.</em></p>")
 
 LESSONS = {
     "A": dict(
@@ -136,8 +160,7 @@ LESSONS = {
                       "Dry mass: 7.5 g vs. 2.4 g"]),
             ("warmup", ["CER · 10 MIN · ON YOUR OWN",
                         "Why were the tomatoes without nitrogen so much smaller, even though they had more sugar?",
-                        "Claim: answer in one sentence. Evidence: use 2 numbers from the data. Reasoning: sugar has only C, H, and O. "
-                        "What else does a plant need to build proteins, and why did the sugar build up?"]),
+                        CER_FRAME_B]),
             ("list", ["HOW IT'S SCORED", "The 4-point rubric",
                       "4: Correct claim, 2 accurate numbers compared, explains that sugar's atoms are combined with nitrogen to build "
                       "amino acids and proteins, and why sugar built up.\n"
@@ -148,7 +171,9 @@ LESSONS = {
                       "Find your Day 1 model of where the pumpkin's mass comes from.\n"
                       "Make 3 columns: Then I thought… / Now I think… / Because (evidence)…\n"
                       "Fill in 2 rows. Use evidence from the leaf chamber, the Leaf Atom Lab, or the tomato data.\n"
-                      "Stuck? Start with the soil: does most of the pumpkin's mass really come from the soil?"]),
+                      "Stuck? Start with the soil: does most of the pumpkin's mass really come from the soil?\n"
+                      + REVISE_FRAME_B + "\n" + REVISE_BANK_B]),
+            ("list", ["STILL WONDERING · 1 MIN · ON YOUR OWN", "One thing I'm still not sure about", UNSURE_B]),
         ],
         notebook=dict(
             left=[("h", "Evidence: tomatoes without nitrogen"),
@@ -165,9 +190,10 @@ LESSONS = {
              "One group got no nitrogen. After 4 weeks:</p>"
              + L.table(["Measurement", "All nutrients", "No nitrogen"], *TOMATO)),
             ("CER: why so small?", "<p>Why were the tomatoes without nitrogen so much smaller, even though they had more sugar? "
-             "Write a claim, 2 numbers as evidence, and reasoning about the atoms in sugar and in proteins.</p>"),
+             "Write a claim, 2 numbers as evidence, and reasoning about the atoms in sugar and in proteins.</p>" + NOTE_CER_B),
             ("Revise my Day 1 model", "<p>Reread your Day 1 model. Fill in 2 rows: Then I thought… / Now I think… / "
-             "Because (evidence)…</p>"),
+             "Because (evidence)…</p>" + NOTE_REVISE_B),
+            ("One thing I'm still not sure about", NOTE_UNSURE_B),
         ],
     ),
 }
@@ -269,6 +295,33 @@ def live_notebook_a():
     return [{"deleteObject": {"objectId": o}} for o in old] + keep
 
 
+def live_short_b():
+    """Live Short Lesson B deck (built before these changes): CER frame + word bank on sb_s04, revise frame + word bank
+    on sb_s06, and a new "One thing I'm still not sure about" slide after it (a duplicate of sb_s06)."""
+    reqs = D.text("sb_s04_e2", CER_FRAME_B)
+    reqs += [{"updateTextStyle": {"objectId": "sb_s04_e2", "textRange": {"type": "ALL"},
+                                  "style": {"fontSize": {"magnitude": 14, "unit": "PT"}}, "fields": "fontSize"}},
+             # the warm-up body box is short; stretch it down to just above the footer
+             {"updatePageElementTransform": {"objectId": "sb_s04_e2", "applyMode": "ABSOLUTE", "transform": {
+                 "scaleX": 2.7209, "scaleY": 0.95, "translateX": 609600, "translateY": 1687785, "unit": "EMU"}}}]
+    revise = LESSONS["B"]["slides"][3][1][2]
+    reqs += D.text("sb_s06_e2", revise)
+    reqs += [{"updateTextStyle": {"objectId": "sb_s06_e2", "textRange": {"type": "ALL"},
+                                  "style": {"fontSize": {"magnitude": 14, "unit": "PT"}}, "fields": "fontSize"}},
+             {"updatePageElementTransform": {"objectId": "sb_s06_e2", "applyMode": "ABSOLUTE", "transform": {
+                 "scaleX": 2.7209, "scaleY": 1.0, "translateX": 609600, "translateY": 1352513, "unit": "EMU"}}}]
+    sid = "sb_s06n"
+    reqs.append({"duplicateObject": {"objectId": "sb_s06", "objectIds": {"sb_s06": sid, **{
+        f"sb_s06_e{i}": f"{sid}_e{i}" for i in range(4)}}}})  # lands right after sb_s06
+    for i, t in enumerate(LESSONS["B"]["slides"][4][1]):
+        reqs += D.text(f"{sid}_e{i}", t)
+    reqs += [{"updateTextStyle": {"objectId": f"{sid}_e2", "textRange": {"type": "ALL"},
+                                  "style": {"fontSize": {"magnitude": 16, "unit": "PT"}}, "fields": "fontSize"}},
+             {"updatePageElementTransform": {"objectId": f"{sid}_e2", "applyMode": "ABSOLUTE", "transform": {
+                 "scaleX": 2.7209, "scaleY": 0.4636, "translateX": 609600, "translateY": 1352513, "unit": "EMU"}}}]
+    return reqs
+
+
 def day_dict(key):
     """A unit13_lessons-style day for student_html()."""
     s = LESSONS[key]
@@ -290,7 +343,9 @@ def student_html(key):
 
 if __name__ == "__main__":
     what, key = sys.argv[1], sys.argv[2]
-    if what == "live-a-notebook":
+    if what == "live-b":
+        print(json.dumps(live_short_b(), ensure_ascii=False))
+    elif what == "live-a-notebook":
         print(json.dumps(live_notebook_a(), ensure_ascii=False))
     elif what == "live-a-slides":
         print(json.dumps(live_short_a_slides(), ensure_ascii=False))

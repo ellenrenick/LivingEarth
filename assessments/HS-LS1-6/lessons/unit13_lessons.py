@@ -31,6 +31,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import unit13_bank as U  # noqa: E402
 
 DRIVING_Q = "How does a plant build its body, and what is it built from?"
+
+# Day 9 enrichment for students with no CFA reviews (or done with them). Replaces the old review stations.
+ENRICH_D9_READING = ("Bean and pea plants have small bumps on their roots called nodules. Bacteria live inside them. The bacteria take "
+                     "nitrogen gas (N₂) from the air in the soil and change it into a form the plant can use. In return, the plant sends "
+                     "the bacteria sugar. Farmers who grow beans need much less nitrogen fertilizer.")
+ENRICH_D9_QS = ["What does the bean plant get from the bacteria? Why does the plant need it?",
+                "What do the bacteria get from the plant? Where did the carbon atoms in it come from?",
+                "A farmer grows beans one year and corn in the same field the next year. Predict why that corn grows better than "
+                "corn in a field that never had beans.",
+                "Trace one nitrogen atom from the air into a protein in a bean seed, in 4 steps."]
+ENRICH_D9 = (f"<p><strong>Beans that make their own fertilizer.</strong> {ENRICH_D9_READING}</p><ol>"
+             + "".join(f"<li>{q}</li>" for q in ENRICH_D9_QS) + "</ol><p>Answer in your notebook.</p>")
 SLIDES = "https://docs.google.com/presentation/d/{}/edit"
 FILE = "https://drive.google.com/file/d/{}/view"
 FOLDER = "https://drive.google.com/drive/folders/1yvFf77Y0j9kt4Do091Hh39gqWNj5G00x"
@@ -418,45 +430,35 @@ DAYS = [
         notebook=[
             "Title: <strong>D9 Review</strong>. Add it to your table of contents.",
             "Rate yourself 1–4 on all 6 targets.",
-            "List the CFA reviews that opened for you on Canvas. Check each one off when you finish it.",
+            "List the CFA reviews that opened for you on Canvas. Check each one off when you finish it. No reviews? Write “none” and do the enrichment.",
             f"Answer the driving question in 2–3 sentences: <em>{DRIVING_Q}</em> Use at least 4 vocabulary words.",
         ],
         sections=[
             ("Do Now: rate yourself", "<p>Rate yourself 1–4 on each Unit 1.3 target. Then open Canvas and list every CFA review that opened for you.</p>"),
-            ("1. Finish your assigned reviews", "<p>If you scored below a B on a CFA, a review for that target opened for you on Canvas. "
-             "Do those first, starting with your lowest target. Your teacher will check in with small groups.</p>"),
-            ("2. Review stations (done, or no reviews assigned)", ol(
-                "<strong>Station A · Atoms and elements (LS1-6.1, 6.2):</strong> recount 4 molecule cards and check the photosynthesis atom count.",
-                "<strong>Station B · Sugar plus nitrogen (LS1-6.3):</strong> build glycine from a glucose bead model and the soil cup; count what's left.",
-                "<strong>Station C · Trace the atoms (LS1-6.4):</strong> put the 8 carbon-path cards in order, from the air to your hair.",
-                "<strong>Station D · Evidence and revision (LS1-6.5, 6.6):</strong> score two sample answers with the 4-point rubric, then fix the weaker one.")),
+            ("CFA reviews (if any opened for you)", "<p>If you scored below a B on a CFA, a review for that target opened for you on Canvas. "
+             "Do those, starting with your lowest target. Your teacher will check in with small groups.</p>"),
+            ("Enrichment (no reviews, or all done)", ENRICH_D9),
             ("Driving question, revisited", f"<p><strong>{DRIVING_Q}</strong> Answer it in your notebook using at least 4 vocabulary words.</p>"),
         ],
         cfa=None,
         teacher=dict(
-            glance="Intervention and review day before the CSA. There is no practice test: students finish the CFA reviews their Mastery Paths assigned "
-                   "(below a B on a CFA), with teacher small groups by target. Students with no reviews, or who finish, rotate through the review stations.",
-            materials="Day 9 slides; Chromebooks; Station A: 4 molecule cards from Lesson 2 + the photosynthesis equation; Station B: glucose bead models, "
-                      "blue beads; Station C: the 8 carbon-path cards below (cut apart); Station D: the two sample answers below and the 4-point rubric.",
-            agenda=[("0–5", "Self-rating; list assigned reviews"), ("5–30", "Assigned CFA reviews (teacher small groups by target)"),
-                    ("30–42", "Review stations (lowest target first)"), ("42–45", "Driving question revisited")],
+            glance="Review day before the CSA. Everyone starts with the learning-target self-rating and the Great Pumpkin Mystery wrap-up. "
+                   "Then students do the CFA reviews their Mastery Paths assigned (below a B on a CFA), with teacher small groups by target. "
+                   "Students with no reviews, or who finish, do the enrichment (beans that make their own fertilizer). No stations.",
+            materials="Day 9 slides; Chromebooks. Nothing to set up: the enrichment reading and questions are on the slides and the Canvas page.",
+            agenda=[("0–3", "Self-rating (everyone); list assigned reviews"), ("3–18", "Great Pumpkin Mystery wrap-up"),
+                    ("18–40", "CFA reviews (small groups by target) or the enrichment"), ("40–45", "Driving question revisited")],
             notes=["Before class, pull the CFA scores: anyone below a B on a target has that target's review open. Group students by their lowest target.",
                    "Grade the CFA LS1-6.5 and 6.6 written answers before today so those Mastery Paths open.",
                    "Reviews are 4 points, complete/incomplete."],
             key=(
-                "<p><strong>Station A:</strong> photosynthesis 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂: C 6/6, H 12/12, O 18/18.</p>"
-                "<p><strong>Station B:</strong> glycine C₂H₅NO₂ from one glucose (6 C, 12 H, 6 O): add 1 blue bead; left over 4 C, 7 H, 4 O.</p>"
-                "<p><strong>Station C cards (correct order):</strong> 1. CO₂ in the air · 2. A pumpkin leaf takes in CO₂ · 3. Light energy powers photosynthesis; the carbon is built into glucose · "
-                "4. Atoms from glucose combine with nitrogen from the soil to make an amino acid · 5. Amino acids link in a specific order into a seed protein · "
-                "6. You eat the seed; digestion breaks the protein into amino acids · 7. Your blood carries the amino acids to your cells · "
-                "8. Your cells link them in a new order into hair protein.</p>"
-                "<p><strong>Station D sample answers</strong> (question: why is a plant with more sugar but no nitrogen smaller?)<br>"
-                "Sample 1 (scores 2): \"The plant needs nitrogen to grow. The data shows it was smaller.\" Missing: data with numbers, and why nitrogen matters (sugar has only C, H, O; amino acids need N).<br>"
-                "Sample 2 (scores 4): \"The no-nitrogen plant made more sugar (25 vs. 12 mg/g) but less protein (10 vs. 40 mg/g) and less dry mass (2.4 vs. 7.5 g). "
-                "Sugar has only carbon, hydrogen, and oxygen. To build amino acids and proteins, the plant has to combine atoms from sugar with nitrogen. Without nitrogen, "
-                "the sugar couldn't be used, so it built up and the plant couldn't make new cells.\"</p>"
+                "<p><strong>Enrichment key (beans that make their own fertilizer):</strong> 1. Nitrogen in a form it can use; it needs N to build "
+                "amino acids and proteins (sugar has only C, H, and O). 2. Sugar; its carbon came from CO₂ in the air, built into sugar by "
+                "photosynthesis. 3. The beans' roots and leftover plant parts leave usable nitrogen in the soil, so the corn has more N to build "
+                "proteins and grows bigger. 4. N₂ in the air in the soil → bacteria in a root nodule change it into a usable form → the bean "
+                "combines it with atoms from sugar to make an amino acid → amino acids link into a seed protein.</p>"
                 "<p>CFA review answers: <em>assessments/HS-LS1-6/Unit1.3_mastery_paths_key.md</em>.</p>"),
-            supports="Small groups by lowest CFA target. Allow notebooks and the Pumpkin Path page during reviews and stations.",
+            supports="Small groups by lowest CFA target. Allow notebooks and the Pumpkin Path page during reviews and the enrichment.",
         ),
     ),
     # ------------------------------------------------------------------

@@ -7,7 +7,7 @@
   Day 7 = Short A + CFA/review 6.4, Day 8 = Short B + CFA/review 6.5 and 6.6;
 - takes the Lesson 4 (folded into Short Lesson A), 5, 6, and 7 assignments out of the module (they stay in the course,
   publish state untouched);
-- adds the 15-minute Great Pumpkin Mystery wrap-up to the top of the Day 9 assignment.
+- adds the 15-minute Great Pumpkin Mystery wrap-up to the Day 9 assignment, right after the self-rating.
 
 Items it doesn't know about (your own pages and headers) keep their place. Safe to run again.
 
@@ -31,14 +31,14 @@ HEADERS = {6: "Day 6 · Vocabulary and SketchNotes (Day 4 lesson)", 7: "Day 7 ·
 # Lesson 4 (the bead lab, titled "Lesson 5: From Sugar to Amino Acids" in the live course) is folded into Short Lesson A.
 RETIRED = ("Lesson 5: From Sugar to Amino Acids", "Lesson 6: What's the Evidence?", "Lesson 5: Small Pieces, Big Molecules", "Lesson 7: Solving the Pumpkin Mystery")
 WRAP_MARK = "Great Pumpkin Mystery wrap-up"
-WRAP = (f'<h2>Start here: {WRAP_MARK} (15 min)</h2>'
+WRAP = (f'<h2>Everyone: {WRAP_MARK} (15 min)</h2>'
         "<ol><li><strong>Re-rank (3 min):</strong> find your Day 1 ranking of where the pumpkin's mass comes from "
         "(soil, water, air, sunlight, fertilizer, the seed) and fill in the “after data” row.</li>"
         "<li><strong>Mystery solved (7 min):</strong> in 3–5 sentences, answer <em>Where does a giant pumpkin's mass come from?</em> "
         "Include where the C, H, and O come from, what the soil adds, what light does, how the atoms become sugar and then proteins, "
         "and whether fertilizer is food.</li>"
         "<li><strong>Share (5 min):</strong> as a class, agree on one answer and copy it into your notebook.</li></ol>"
-        "<p>Then work on your assigned CFA reviews and the review stations below.</p>")
+        "<p>Then do your CFA reviews, or the enrichment if no reviews opened for you.</p>")
 
 
 def main(course, module_id):
@@ -125,7 +125,8 @@ def main(course, module_id):
     day9 = assignments.get("Unit 1.3 Day 9: Interventions and Review")
     if day9 and WRAP_MARK not in (day9["description"] or ""):
         d = day9["description"] or ""
-        i = d.find("<hr><h2>Part 1")
+        # After the self-rating (Part 1), before the CFA reviews.
+        i = d.find("<hr><h2>Part 2")
         d = d[:i] + "<hr>" + WRAP + "\n" + d[i:] if i >= 0 else WRAP + d
         api.v1("PUT", f"/assignments/{day9['id']}", {"assignment": {"description": d}})
         print("Day 9: added the Great Pumpkin Mystery wrap-up")
@@ -133,3 +134,35 @@ def main(course, module_id):
 
 if __name__ == "__main__":
     main(*sys.argv[1:3])
+
+
+def day9_deck_requests():
+    """Live Day 9 deck: reviews or enrichment (no stations), the wrap-up slide after the self-rating, notebook updated."""
+    import deck_requests as D
+    reqs = D.text("h287605ecd2867468_0_121", "finish the CFA reviews that opened for me on Canvas\n"
+                  "explain how bean plants get nitrogen (enrichment, if I have no reviews)\nanswer the driving question with evidence")
+    for row, t in enumerate(D.D9_PLAN, 1):
+        reqs += D.cell("h287605ecd2867468_0_125", row, t)
+    # Wrap-up slide: a copy of the stations slide (list layout), placed right after the self-rating.
+    w = "d9_s03w"
+    reqs.append({"duplicateObject": {"objectId": "d9_s05", "objectIds": {"d9_s05": w, **{f"d9_s05_e{i}": f"{w}_e{i}" for i in range(4)}}}})
+    for sid, parts, size, sy in ((w, D.D9_WRAP, 15, 0.8), ("d9_s04", D.D9_REVIEWS, None, None), ("d9_s05", D.D9_ENRICH, 13, 1.0)):
+        for i, t in enumerate(parts):
+            reqs += D.text(f"{sid}_e{i}", t)
+        if size:
+            reqs += [{"updateTextStyle": {"objectId": f"{sid}_e2", "textRange": {"type": "ALL"},
+                                          "style": {"fontSize": {"magnitude": size, "unit": "PT"}}, "fields": "fontSize"}},
+                     {"updatePageElementTransform": {"objectId": f"{sid}_e2", "applyMode": "ABSOLUTE", "transform": {
+                         "scaleX": 2.7209, "scaleY": sy, "translateX": 609600, "translateY": 1352513, "unit": "EMU"}}}]
+    reqs.append({"updateSlidesPosition": {"slideObjectIds": [w], "insertionIndex": 5}})
+    # Notebook slide.
+    loc = lambda r, c: {"rowIndex": r, "columnIndex": c}
+    def cell(t, r, c, s):
+        return [{"deleteText": {"objectId": t, "cellLocation": loc(r, c), "textRange": {"type": "ALL"}}},
+                {"insertText": {"objectId": t, "cellLocation": loc(r, c), "insertionIndex": 0, "text": s}}]
+    reqs += cell("nb_d9_05", 0, 2, "After reviews")
+    reqs += D.text("nb_d9_06", "Enrichment (no reviews, or done)")
+    reqs += cell("nb_d9_07", 0, 0, "Question") + cell("nb_d9_07", 0, 1, "My answer")
+    for r in range(1, 5):
+        reqs += cell("nb_d9_07", r, 0, str(r))
+    return reqs

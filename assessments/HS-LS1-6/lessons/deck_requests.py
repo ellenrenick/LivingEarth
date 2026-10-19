@@ -55,6 +55,28 @@ def deck(prefix, kicker, title, focus, ready, can, plan, footer, slides):
     return reqs
 
 
+# Day 9 (review day): self-rating for everyone, the Great Pumpkin Mystery wrap-up, then CFA reviews or (no reviews,
+# or done) the enrichment. No review stations.
+D9_PLAN = ["Self-rating", "Great Pumpkin Mystery wrap-up", "CFA reviews (if any opened)", "Enrichment (no reviews, or done)",
+           "Driving question", "CSA tomorrow"]
+D9_WRAP = ["GREAT PUMPKIN MYSTERY WRAP-UP · 15 MIN · EVERYONE", "Mystery solved: where does a giant pumpkin's mass come from?",
+           "Re-rank (3 min): fill in the “after data” row of your Day 1 ranking (soil, water, air, sunlight, fertilizer, the seed).\n"
+           "Mystery solved (7 min): answer in 3–5 sentences. Include where the C, H, and O come from, what the soil adds, what light does, "
+           "how the atoms become sugar and then proteins, and whether fertilizer is food.\n"
+           "Share (5 min): as a class, agree on one answer and copy it into your notebook."]
+D9_REVIEWS = ["CFA REVIEWS · 22 MIN · ON YOUR OWN + SMALL GROUPS", "Do your CFA reviews",
+              "Scored below a B on a CFA? A review for that target opened for you on Canvas. Do your reviews, lowest target first. "
+              "Your teacher will pull small groups. No reviews open, or all done? Do the enrichment on the next slide."]
+
+
+def _d9_enrich():
+    import unit13_lessons as L
+    return ["ENRICHMENT · NO REVIEWS, OR ALL DONE · IN YOUR NOTEBOOK", "Beans that make their own fertilizer",
+            L.ENRICH_D9_READING + "\n" + "\n".join(f"{n}. {q}" for n, q in enumerate(L.ENRICH_D9_QS, 1))]
+
+
+D9_ENRICH = _d9_enrich()
+
 DECKS = {
     "day2": lambda: deck(
         "d2", "HS-LS1-6 · THE GIANT PUMPKIN MYSTERY · DAY 2", "Vocabulary and SketchNotes",
@@ -117,10 +139,9 @@ DECKS = {
         "Which targets do I still need to work on before the CSA?",
         "Have ready: your Chromebook, your notebook, and a pencil",
         ["finish the CFA reviews that opened for me on Canvas",
-         "find my weakest target and fix it at a review station",
+         "explain how bean plants get nitrogen (enrichment, if I have no reviews)",
          "answer the driving question with evidence"],
-        ["Self-rating", "Assigned CFA reviews", "Choose your stations", "Review station, round 1", "Review station, round 2",
-         "Driving question"],
+        D9_PLAN,
         "Day 9 · Interventions and Review",
         [
             ("list", ["DO NOW · 3 MIN · ON YOUR OWN", "Rate yourself 1–4 on each target",
@@ -130,15 +151,9 @@ DECKS = {
                       "LS1-6.4 Trace atoms with a model\n"
                       "LS1-6.5 Explain with evidence\n"
                       "LS1-6.6 Revise an explanation"]),
-            ("warmup", ["INTERVENTIONS · 25 MIN · ON YOUR OWN + SMALL GROUPS", "Finish your assigned CFA reviews",
-                        "Scored below a B on a CFA? A review for that target opened for you on Canvas. Do your reviews first, lowest target first. "
-                        "Your teacher will pull small groups. No reviews open? Go to the review stations."]),
-            ("list", ["REVIEW STATIONS · 2 ROUNDS OF 6 MIN", "Start at the station for your lowest target",
-                      "Station A · Atoms and elements (LS1-6.1, 6.2): recount the molecule cards and check the photosynthesis atom count.\n"
-                      "Station B · Sugar plus nitrogen (LS1-6.3): build an amino acid from glucose beads and the soil cup.\n"
-                      "Station C · Trace the atoms (LS1-6.4): put the carbon-path cards in order, from the air to your hair.\n"
-                      "Station D · Evidence and revision (LS1-6.5, 6.6): score two sample answers with the rubric, then fix one.\n"
-                      "Still have an open CFA review? Finish it before the CSA tomorrow."]),
+            ("list", D9_WRAP),
+            ("warmup", D9_REVIEWS),
+            ("list", D9_ENRICH),
             ("key", ["DRIVING QUESTION · 2 MIN",
                      "How does a plant build its body, and what is it built from?",
                      "Answer it in 2–3 sentences in your notebook. Use at least 4 vocabulary words."]),
