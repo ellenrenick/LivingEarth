@@ -31,6 +31,9 @@ STEPS = [["1", "In a ____ molecule in the air", "A pumpkin leaf takes it in."],
          ["4", "In a pumpkin seed ____", "Linked in a specific ____"],
          ["5", "In an amino acid in your blood", "You ate the seed and ____ it."],
          ["6", "In your hair protein", "Your cells ____ them in a new order."]]
+# Word bank for the Short Lesson A blanks (the 6-step trace, then the valine line on the notebook page).
+WORD_BANK_A = ["carbon dioxide (CO₂)", "glucose", "photosynthesis", "light", "amino acid", "nitrogen", "protein",
+               "order", "digested", "link"]
 TOMATO = [["Height (cm)", "32", "11"], ["Sugar in leaves (mg/g)", "12", "25"],
           ["Protein in leaves (mg/g)", "40", "10"], ["Dry mass (g)", "7.5", "2.4"]]
 
@@ -72,7 +75,7 @@ LESSONS = {
                   ("table", ["Step", "Where is the carbon atom?", "What happens to it?"], STEPS, [0.45, 2.0, 2.0], 7, None)],
             right=[("h", "Small pieces, big molecules"), ("lines", 4),
                    ("h", "Sugar + nitrogen"),
-                   ("text", "Glucose C₆H₁₂O₆ + N from the soil → valine C₅H₁₁NO₂. From sugar: ____  From soil: ____"),
+                   ("text", "Glucose C₆H₁₂O₆ + N from the soil → valine C₅H₁₁NO₂. From sugar: ____  From soil: ____  (C, H, O or N?)"),
                    ("lines", 2)]),
         sections=[
             ("Warm-up", "<p>Glucose is C₆H₁₂O₆. Valine (an amino acid) is C₅H₁₁NO₂. Which atoms in valine could come from glucose? "
@@ -82,7 +85,8 @@ LESSONS = {
              "(polymers). When you eat, digestion breaks proteins back into amino acids, and your cells link them into your own "
              "proteins. The atoms are rearranged, never changed.</p>"),
             ("Trace a carbon atom", "<p>With a partner, fill in the 6-step table in your notebook: follow one carbon atom from CO₂ "
-             "in the air to a protein in your hair.</p>"),
+             "in the air to a protein in your hair.</p>"
+             "<p style=\"border:1px solid #999;padding:6px\"><strong>Word bank:</strong> " + " · ".join(WORD_BANK_A) + "</p>"),
         ],
     ),
     "B": dict(
@@ -152,6 +156,22 @@ def cfa_slide_text(tid, minutes):
             "Below a B (fewer than 4 of 5)? A review page for this target opens for you on Canvas."]
 
 
+def word_bank_box():
+    """A bordered word-bank box under the 6-step trace (slide sa_s05)."""
+    oid = "sa_s05_wb"
+    return [{"createShape": {"objectId": oid, "shapeType": "TEXT_BOX", "elementProperties": {
+                "pageObjectId": "sa_s05", "size": {"width": {"magnitude": 8162700, "unit": "EMU"},
+                                                   "height": {"magnitude": 1100000, "unit": "EMU"}},
+                "transform": {"scaleX": 1, "scaleY": 1, "translateX": 609600, "translateY": 3200000, "unit": "EMU"}}}},
+            {"insertText": {"objectId": oid, "text": "Word bank: " + "  ·  ".join(WORD_BANK_A)}},
+            {"updateTextStyle": {"objectId": oid, "style": {"fontSize": {"magnitude": 16, "unit": "PT"}}, "fields": "fontSize"}},
+            {"updateTextStyle": {"objectId": oid, "textRange": {"type": "FIXED_RANGE", "startIndex": 0, "endIndex": 10},
+                                 "style": {"bold": True}, "fields": "bold"}},
+            {"updateShapeProperties": {"objectId": oid, "shapeProperties": {"outline": {
+                "outlineFill": {"solidFill": {"color": {"rgbColor": {"red": 0.4, "green": 0.4, "blue": 0.4}}}},
+                "weight": {"magnitude": 1.5, "unit": "PT"}}}, "fields": "outline"}}]
+
+
 def deck(key):
     s = LESSONS[key]
     footer = f"{s['lesson']} · {s['title']}"
@@ -169,6 +189,9 @@ def deck(key):
         for e, t in zip(els, cfa_slide_text(tid, minutes) + [footer]):
             reqs += D.text(ids[e], t)
         reqs.append({"updateSlidesPosition": {"slideObjectIds": [sid], "insertionIndex": 2 + len(s["slides"]) + n}})
+
+    if key == "A":
+        reqs += word_bank_box()
 
     # Notebook set-up example, slide 2.
     NB.DECKS[key] = dict(id=s["deck"], scale=1.0, title=s["title"], focus=s["focus"], **s["notebook"])
