@@ -1,6 +1,6 @@
 """Live course: put the Oct 19 restructure (short_lessons.py) into the Unit 1.3 module.
 
-- creates "Short Lesson A: Trace the Atoms" and "Short Lesson B: Evidence and Revision"
+- creates "Short Lesson A: Trace the Atoms" and "Short Lesson B: The Nitrogen Clue"
   (4 pts, file upload, same group as Lesson 1, unpublished), due 3 days after their day,
   locked Dec 11;
 - renames the Day 6-8 headers and lays the module out: Day 6 = the Day 4 vocab lesson,
@@ -27,7 +27,7 @@ LESSON1 = "Lesson 1: The Giant Pumpkin Mystery"
 DUE = {"A": "2026-10-23T23:59:00-07:00", "B": "2026-10-24T23:59:00-07:00"}  # planner day + 3
 LOCK = "2026-12-11T23:59:00-08:00"
 HEADERS = {6: "Day 6 · Vocabulary and SketchNotes (Day 4 lesson)", 7: "Day 7 · Short Lesson A: Trace the Atoms",
-           8: "Day 8 · Short Lesson B: Evidence and Revision"}
+           8: "Day 8 · Short Lesson B: The Nitrogen Clue"}
 # Lesson 4 (the bead lab, titled "Lesson 5: From Sugar to Amino Acids" in the live course) is folded into Short Lesson A.
 RETIRED = ("Lesson 5: From Sugar to Amino Acids", "Lesson 6: What's the Evidence?", "Lesson 5: Small Pieces, Big Molecules", "Lesson 7: Solving the Pumpkin Mystery")
 WRAP_MARK = "Great Pumpkin Mystery wrap-up"
