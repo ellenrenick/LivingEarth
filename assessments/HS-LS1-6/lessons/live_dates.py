@@ -14,7 +14,7 @@ import newquiz_upload as N  # noqa: E402
 from canvas_lessons_upload import get_all  # noqa: E402
 
 # Planner date for each module "Day N" header (Fri Oct 9 makeup day has no unit day).
-# Days 6-10 follow the Oct 19 restructure (short_lessons.py): Day 6 = Lesson 4 continued (Mon Oct 19),
+# Days 6-10 follow the Oct 19 restructure (short_lessons.py): Day 6 = the Day 4 vocab lesson (Mon Oct 19),
 # Short Lesson A Tue Oct 20, Short Lesson B Wed Oct 21, review Thu Oct 22, CSA Fri Oct 23.
 PLANNER = {1: date(2026, 10, 8), 2: date(2026, 10, 12), 3: date(2026, 10, 13), 4: date(2026, 10, 14),
            5: date(2026, 10, 15), 6: date(2026, 10, 19), 7: date(2026, 10, 20), 8: date(2026, 10, 21),

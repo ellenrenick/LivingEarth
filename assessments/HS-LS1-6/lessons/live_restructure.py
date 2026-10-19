@@ -3,7 +3,7 @@
 - creates "Short Lesson A: Trace the Atoms" and "Short Lesson B: Evidence and Revision"
   (4 pts, file upload, same group as Lesson 1, unpublished), due 3 days after their day,
   locked Dec 11;
-- renames the Day 6-8 headers and lays the module out: Day 6 = Lesson 4 continued,
+- renames the Day 6-8 headers and lays the module out: Day 6 = the Day 4 vocab lesson,
   Day 7 = Short A + CFA/review 6.4, Day 8 = Short B + CFA/review 6.5 and 6.6;
 - takes the Lesson 5, 6, and 7 assignments out of the module (they stay in the course,
   publish state untouched);
@@ -26,7 +26,7 @@ from canvas_lessons_upload import get_all  # noqa: E402
 LESSON1 = "Lesson 1: The Giant Pumpkin Mystery"
 DUE = {"A": "2026-10-23T23:59:00-07:00", "B": "2026-10-24T23:59:00-07:00"}  # planner day + 3
 LOCK = "2026-12-11T23:59:00-08:00"
-HEADERS = {6: "Day 6 · Lesson 4 (continued)", 7: "Day 7 · Short Lesson A: Trace the Atoms",
+HEADERS = {6: "Day 6 · Vocabulary and SketchNotes (Day 4 lesson)", 7: "Day 7 · Short Lesson A: Trace the Atoms",
            8: "Day 8 · Short Lesson B: Evidence and Revision"}
 RETIRED = ("Lesson 6: What's the Evidence?", "Lesson 5: Small Pieces, Big Molecules", "Lesson 7: Solving the Pumpkin Mystery")
 WRAP_MARK = "Great Pumpkin Mystery wrap-up"

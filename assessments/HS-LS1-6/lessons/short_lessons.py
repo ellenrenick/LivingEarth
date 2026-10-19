@@ -1,6 +1,6 @@
 """Unit 1.3 restructure (Oct 19): two 30-minute lessons replace Lessons 5, 6, and 7.
 
-Mon Oct 19 Lesson 4 · Tue Oct 20 Short Lesson A (LS1-6.4) · Wed Oct 21 Short Lesson B
+Mon Oct 19 Day 4 vocab + SketchNotes · Tue Oct 20 Short Lesson A (LS1-6.4) · Wed Oct 21 Short Lesson B
 (LS1-6.5, LS1-6.6) · Thu Oct 22 review + Pumpkin Mystery wrap-up · Fri Oct 23 CSA.
 
 Each deck is a Drive copy of the Lesson 2 deck (same look, same object ids), rewritten
