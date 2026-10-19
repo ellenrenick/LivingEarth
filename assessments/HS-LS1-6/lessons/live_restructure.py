@@ -5,7 +5,7 @@
   locked Dec 11;
 - renames the Day 6-8 headers and lays the module out: Day 6 = the Day 4 vocab lesson,
   Day 7 = Short A + CFA/review 6.4, Day 8 = Short B + CFA/review 6.5 and 6.6;
-- takes the Lesson 5, 6, and 7 assignments out of the module (they stay in the course,
+- takes the Lesson 4 (folded into Short Lesson A), 5, 6, and 7 assignments out of the module (they stay in the course,
   publish state untouched);
 - adds the 15-minute Great Pumpkin Mystery wrap-up to the top of the Day 9 assignment.
 
@@ -28,7 +28,8 @@ DUE = {"A": "2026-10-23T23:59:00-07:00", "B": "2026-10-24T23:59:00-07:00"}  # pl
 LOCK = "2026-12-11T23:59:00-08:00"
 HEADERS = {6: "Day 6 · Vocabulary and SketchNotes (Day 4 lesson)", 7: "Day 7 · Short Lesson A: Trace the Atoms",
            8: "Day 8 · Short Lesson B: Evidence and Revision"}
-RETIRED = ("Lesson 6: What's the Evidence?", "Lesson 5: Small Pieces, Big Molecules", "Lesson 7: Solving the Pumpkin Mystery")
+# Lesson 4 (the bead lab, titled "Lesson 5: From Sugar to Amino Acids" in the live course) is folded into Short Lesson A.
+RETIRED = ("Lesson 5: From Sugar to Amino Acids", "Lesson 6: What's the Evidence?", "Lesson 5: Small Pieces, Big Molecules", "Lesson 7: Solving the Pumpkin Mystery")
 WRAP_MARK = "Great Pumpkin Mystery wrap-up"
 WRAP = (f'<h2>Start here: {WRAP_MARK} (15 min)</h2>'
         "<ol><li><strong>Re-rank (3 min):</strong> find your Day 1 ranking of where the pumpkin's mass comes from "
@@ -90,8 +91,11 @@ def main(course, module_id):
     rev = {t[0]: int(next(a["id"] for n, a in assignments.items() if n.startswith(f"Unit 1.3 Review {t[0]}"))) for t in U.TARGETS}
 
     # New layout for Days 6-8; everything else keeps its relative order.
-    block = [header(6), header(7), asg(new["A"]), asg(cfa["LS1-6.4"]), asg(rev["LS1-6.4"]),
-             header(8), asg(new["B"]), asg(cfa["LS1-6.5"]), asg(rev["LS1-6.5"]), asg(cfa["LS1-6.6"]), asg(rev["LS1-6.6"])]
+    block = [header(6)]
+    for day, key in ((7, "A"), (8, "B")):
+        block += [header(day), asg(new[key])]
+        for tid in S.LESSONS[key]["cfas"]:
+            block += [asg(cfa[tid]), asg(rev[tid])]
     ids = {it["id"] for it in block}
     items.sort(key=lambda it: it["position"])
     # Keep whatever sat between the Day 6 header and the Day 7 header (e.g. "Today's Work") right after Day 6.
@@ -109,6 +113,14 @@ def main(course, module_id):
         if it.get("position") != pos:
             api.v1("PUT", f"/modules/{module_id}/items/{it['id']}", {"module_item": {"position": pos}})
     print(f"Module ordered: {len(ordered)} items")
+
+    # A day header left with nothing under it (Day 5, after Lesson 4 moved into Short Lesson A) comes out.
+    for n, it in enumerate(ordered):
+        nxt = ordered[n + 1] if n + 1 < len(ordered) else None
+        if it["type"] == "SubHeader" and it["title"].startswith("Day 5 ") and (
+                nxt is None or (nxt["type"] == "SubHeader" and nxt["title"].startswith("Day "))):
+            api.v1("DELETE", f"/modules/{module_id}/items/{it['id']}")
+            print(f"Removed empty header: {it['title']}")
 
     day9 = assignments.get("Unit 1.3 Day 9: Interventions and Review")
     if day9 and WRAP_MARK not in (day9["description"] or ""):

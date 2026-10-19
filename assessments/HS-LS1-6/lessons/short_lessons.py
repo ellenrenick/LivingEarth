@@ -36,54 +36,53 @@ TOMATO = [["Height (cm)", "32", "11"], ["Sugar in leaves (mg/g)", "12", "25"],
 
 LESSONS = {
     "A": dict(
-        day=7, date="Tue Oct 20", title="Trace the Atoms", lesson="Short Lesson A", targets=["LS1-6.4"], cfas=["LS1-6.4"],
+        day=7, date="Tue Oct 20", title="Trace the Atoms", lesson="Short Lesson A", targets=["LS1-6.3", "LS1-6.4"], cfas=["LS1-6.3", "LS1-6.4"],
         deck="1Y7UTZP3ErFgW0IE67TNt1cxsOOAXuqLlS6TsBvYlxoI",
-        focus="How does a carbon atom from the air end up in your hair?",
+        focus="How do atoms from sugar and the soil end up in a protein in your hair?",
         ready="Have ready: your notebook, a pencil, and a Chromebook",
-        can=["use a model to trace a carbon atom from the air into a protein",
-             "explain how small molecules link into big ones and come apart when we eat",
+        can=["explain how a plant combines atoms from sugar with nitrogen from the soil to build amino acids",
+             "use a model to trace a carbon atom from the air into a protein",
              "show that atoms are rearranged, never changed"],
-        plan=["Warm-up", "Mini-lesson: small pieces, big molecules", "Trace a carbon atom", "Check the path",
-              "Exit sentence", "CFA LS1-6.4"],
+        plan=["Warm-up", "Mini-lesson: sugar + nitrogen → amino acids", "Trace a carbon atom", "Check the path",
+              "CFA LS1-6.3", "CFA LS1-6.4"],
         slides=[
             ("warmup", ["WARM-UP · 3 MIN · ON YOUR OWN", "Glucose or the soil?",
                         "Glucose is C₆H₁₂O₆. Valine (an amino acid) is C₅H₁₁NO₂. Which atoms in valine could come from glucose? "
                         "Which must come from somewhere else?"]),
-            ("list", ["MINI-LESSON · 5 MIN", "Small pieces, big molecules",
-                      "Monomers are small molecules that link into long chains called polymers.\n"
-                      "Amino acids link in a specific order to make proteins. Glucose links to make starch and cellulose.\n"
-                      "When you eat, digestion breaks proteins back into amino acids.\n"
-                      "Your cells link those amino acids in a new order to build your own proteins.\n"
+            ("list", ["MINI-LESSON · 5 MIN", "Sugar + nitrogen → amino acids → proteins",
+                      "Glucose has only C, H, and O. To build an amino acid, the plant combines atoms from sugar with nitrogen from the soil.\n"
+                      "Every amino acid has the same backbone (2 C, 4 H, 2 O, 1 N) plus a side chain that makes it unique.\n"
+                      "Amino acids (monomers) link in a specific order to make proteins (polymers).\n"
+                      "When you eat, digestion breaks proteins back into amino acids. Your cells link them into your own proteins.\n"
                       "The atoms are rearranged. They are never created, destroyed, or changed."]),
-            ("list", ["TRACE A CARBON ATOM · 12 MIN · WITH A PARTNER", "From the air to your hair",
+            ("list", ["TRACE A CARBON ATOM · 8 MIN · WITH A PARTNER", "From the air to your hair",
                       "1. In a ____ molecule in the air. A pumpkin leaf takes it in.\n"
                       "2. In a ____ molecule in the leaf. Built during ____ using ____ energy.\n"
                       "3. In an ____. Combined with ____ from the soil.\n"
                       "4. In a pumpkin seed ____. Linked in a specific ____.\n"
                       "5. In an amino acid in your blood. You ate the seed and ____ it.\n"
                       "6. In your hair protein. Your cells ____ them in a new order."]),
-            ("key", ["CHECK THE PATH · 2 MIN",
+            ("key", ["CHECK THE PATH · 1 MIN",
                      "CO₂ → glucose → amino acid → seed protein → amino acid in your blood → your hair protein",
                      "It is the same carbon atom the whole way. Light supplied the energy. The soil supplied the nitrogen."]),
-            ("warmup", ["EXIT SENTENCE · 2 MIN · ON YOUR OWN", "Finish the sentence in your notebook",
-                        "A carbon atom in my hair was once in ____ in the air, then in ____ in a leaf, then ____."]),
         ],
         notebook=dict(
             left=[("h", "Warm-up"), ("lines", 2),
                   ("h", "Trace a carbon atom"),
                   ("table", ["Step", "Where is the carbon atom?", "What happens to it?"], STEPS, [0.45, 2.0, 2.0], 7, None)],
             right=[("h", "Small pieces, big molecules"), ("lines", 4),
-                   ("h", "Exit sentence"),
-                   ("text", "A carbon atom in my hair was once in ____ in the air, then ____"), ("lines", 2)]),
+                   ("h", "Sugar + nitrogen"),
+                   ("text", "Glucose C₆H₁₂O₆ + N from the soil → valine C₅H₁₁NO₂. From sugar: ____  From soil: ____"),
+                   ("lines", 2)]),
         sections=[
             ("Warm-up", "<p>Glucose is C₆H₁₂O₆. Valine (an amino acid) is C₅H₁₁NO₂. Which atoms in valine could come from glucose? "
              "Which must come from somewhere else?</p>"),
-            ("Small pieces, big molecules", "<p>Small molecules (monomers) link into big ones (polymers): amino acids → proteins, "
-             "glucose → starch and cellulose. When you eat, digestion breaks proteins back into amino acids, and your cells link them "
-             "into your own proteins. The atoms are rearranged, never changed.</p>"),
+            ("Sugar + nitrogen → amino acids → proteins", "<p>Glucose has only C, H, and O. To build an amino acid, a plant "
+             "combines atoms from sugar with nitrogen from the soil. Amino acids (monomers) link in a specific order into proteins "
+             "(polymers). When you eat, digestion breaks proteins back into amino acids, and your cells link them into your own "
+             "proteins. The atoms are rearranged, never changed.</p>"),
             ("Trace a carbon atom", "<p>With a partner, fill in the 6-step table in your notebook: follow one carbon atom from CO₂ "
              "in the air to a protein in your hair.</p>"),
-            ("Exit sentence", "<p>A carbon atom in my hair was once in ____ in the air, then in ____ in a leaf, then ____.</p>"),
         ],
     ),
     "B": dict(
