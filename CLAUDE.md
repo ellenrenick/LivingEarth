@@ -20,7 +20,7 @@
 ## Rule for every lesson: pace and style
 
 Model every new or revised lesson on Unit 1.3 Short Lessons A and B
-(`assessments/HS-LS1-6/lessons/short_lessons.py`). The teacher says their pace and content style work for her classes.
+(`assessments/HS-LS1-6/lessons/short_lessons.py`). The teacher says their pace and content style work for their classes.
 
 - **Pace:** Short A and B run about 30 minutes of student work, including the CFAs. Every lesson stays within 10
   minutes of that, so 20 to 40 minutes in total, counting CFAs. Plan the minutes on the slides and the teacher
