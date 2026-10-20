@@ -73,8 +73,8 @@ def main():
             r, g, b = GREEN if s["dark"] else CREAM
             reqs.append({"updatePageProperties": {"objectId": s["id"], "fields": "pageBackgroundFill.solidFill.color",
                          "pageProperties": {"pageBackgroundFill": {"solidFill": {"color": {"rgbColor": {"red": r, "green": g, "blue": b}}}}}}})
-    if a.delete:
-        reqs.append({"deleteObject": {"objectId": a.delete}})
+    for oid in (a.delete.split(",") if a.delete else []):
+        reqs.append({"deleteObject": {"objectId": oid}})
     call["requests"] = reqs
     print(json.dumps(round_floats(call), separators=(",", ":")))
 
