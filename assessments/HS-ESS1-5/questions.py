@@ -2,7 +2,7 @@
 
 Targets follow the team workbook "Renick Living Earth Standards and Learning Targets (26-27)",
 Targets tab: ESS1-5.1 to 5.5 (priority, assessed on the CSA) and ESS1-6.1 to 6.3 (supporting,
-taught and practiced with CFAs, never on the CSA).
+taught but never assessed: no CFAs, no reviews, not on the CSA).
 
 Item types (New Quizzes):
   choice   one correct answer           {"type","body","choices","answer": index, "feedback"}
@@ -47,8 +47,7 @@ TARGET_FULL = {
 }
 
 CFA_DAY = {  # where each CFA is taken (the start of the class after the lesson; Day 7 is the cushion day)
-    "ESS1-5.1": 2, "ESS1-5.2": 3, "ESS1-6.1": 4, "ESS1-6.2": 4, "ESS1-5.3": 5, "ESS1-5.4": 6,
-    "ESS1-5.5": 7, "ESS1-6.3": 7,
+    "ESS1-5.1": 2, "ESS1-5.2": 3, "ESS1-5.3": 5, "ESS1-5.4": 6, "ESS1-5.5": 7,
 }
 
 SEAFLOOR_TABLE = ('<table border="1" cellpadding="4"><tbody><tr><th>Distance from ridge (km)</th><th>Crust age (million years)</th></tr>'
@@ -258,125 +257,6 @@ CFAS = {
                      "Scientists have not drilled the ocean floor yet."],
          "answer": 0,
          "feedback": "<p>The ocean floor does not last long enough to hold the first three billion years of life's history. That record is in the continents, which survive much longer.</p>"},
-    ],
-    # ------------------------------------------------------------------ ESS1-6.1
-    "ESS1-6.1": [
-        {"type": "choice",
-         "body": "<p>Which materials give scientists radiometric ages that tell about the early history of Earth and the solar system?</p>",
-         "choices": ["Meteorites, moon rocks, and Earth's oldest minerals",
-                     "Seafloor sediment, coral, and tree rings",
-                     "Fossil shells, bones, and wood",
-                     "Soil, sand, and river water"],
-         "answer": 0,
-         "feedback": "<p>Meteorites, rocks brought back from the Moon, and the oldest Earth minerals (zircon crystals) all have been dated and together give evidence for early Earth.</p>"},
-        {"type": "multi",
-         "body": "<p>Select the <strong>THREE</strong> kinds of evidence scientists use to learn about early Earth.</p>",
-         "choices": ["Radiometric ages of meteorites (about 4.56 billion years)", "Radiometric ages of moon rocks (up to about 4.4 billion years)", "Ages of Earth's oldest minerals, zircon crystals (about 4.4 billion years)", "The age of the Atlantic seafloor", "The pattern of magnetic stripes"],
-         "answer": [0, 1, 2],
-         "feedback": "<p>Meteorites, moon rocks, and Earth's oldest zircons are the main sources of early-Earth ages. The Atlantic seafloor is far younger, and magnetic stripes record recent movement.</p>"},
-        {"type": "choice",
-         "body": "<p>The Moon's highlands are covered with craters, but Earth's surface has few visible impact craters. What does the Moon's crater record show?</p>",
-         "choices": ["A heavily cratered surface is old and has kept a record of impacts that Earth's active surface has erased.",
-                     "The Moon was hit more often than Earth because it is larger.",
-                     "Craters are made by volcanoes, not by impacts.",
-                     "The Moon is younger than Earth."],
-         "answer": 0,
-         "feedback": "<p>The Moon has no plate tectonics and almost no weather, so its craters last. Earth's surface is renewed by tectonics, erosion, and weathering, which erase most craters.</p>"},
-        {"type": "choice",
-         "body": "<p>What does radiometric dating measure?</p>",
-         "choices": ["The amounts of a radioactive parent isotope and its daughter product in a sample, which show how much decay has happened",
-                     "The thickness of the layers of sediment",
-                     "The number of fossils in a rock",
-                     "The color of the rock"],
-         "answer": 0,
-         "feedback": "<p>Radioactive atoms decay at a steady rate. Comparing how much parent and daughter material a sample contains, along with the half-life, gives its age.</p>"},
-        {"type": "choice",
-         "body": "<p>Scientists found zircon crystals in Western Australia that are the oldest known Earth minerals. About how old are they?</p>",
-         "choices": ["About 4.4 billion years", "About 400 million years", "About 4.4 million years", "About 44,000 years"],
-         "answer": 0,
-         "feedback": "<p>The Jack Hills zircons are about 4.4 billion years old, which is almost as old as the Earth itself.</p>"},
-    ],
-    # ------------------------------------------------------------------ ESS1-6.2
-    "ESS1-6.2": [
-        {"type": "choice",
-         "body": "<p>The oldest known Earth rocks are about 4.0 billion years old, but the oldest meteorites are about 4.56 billion years old. Why are the meteorites older than any Earth rock?</p>",
-         "choices": ["Earth's earliest rocks were destroyed or recycled by plate tectonics, erosion, and weathering, but meteorites have changed very little since they formed.",
-                     "Meteorites formed before the solar system.",
-                     "Radioactive decay is faster on Earth than in space.",
-                     "Earth formed after the meteorites, so Earth is younger than they are."],
-         "answer": 0,
-         "feedback": "<p>Earth's active surface recycled its earliest rock. Meteorites formed with the solar system and stayed nearly unchanged.</p>"},
-        {"type": "choice",
-         "body": "<p>Rocks brought back from the Moon include some older than any rock found on Earth. Why does the Moon keep rocks that old?</p>",
-         "choices": ["The Moon has no plate tectonics and almost no weathering, so ancient rock stays at the surface.",
-                     "The Moon formed long before the solar system.",
-                     "Moon rocks cannot be dated.",
-                     "The Moon is covered by an ocean."],
-         "answer": 0,
-         "feedback": "<p>Earth's rocks are constantly recycled. The Moon is geologically quiet, so its early rocks have survived.</p>"},
-        {"type": "choice",
-         "body": "<p>Why do scientists use meteorites to find the age of the solar system?</p>",
-         "choices": ["They formed at about the same time as the planets from the same cloud of gas and dust and have changed little since.",
-                     "They are the youngest objects in the solar system.",
-                     "They are always found on the ocean floor.",
-                     "They contain no radioactive atoms."],
-         "answer": 0,
-         "feedback": "<p>Meteorites are leftover building material from when the planets formed. Because they were not recycled, their ages are close to the age of the solar system.</p>"},
-        {"type": "choice",
-         "body": "<p>Scientists measured the ages of several materials:</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>Material</th><th>Age (billion years)</th></tr><tr><td>Meteorites</td><td>4.56</td></tr><tr><td>Moon highland rocks</td><td>up to 4.4</td></tr><tr><td>Oldest Earth mineral (zircon)</td><td>4.4</td></tr><tr><td>Oldest known Earth rock</td><td>4.0</td></tr></tbody></table><p>Which gives the best estimate of the age of the solar system, and why?</p>",
-         "choices": ["The meteorites, about 4.56 billion years, because they are the oldest materials and have changed little since they formed",
-                     "The oldest Earth rock, 4.0 billion years, because it is from Earth",
-                     "The average of the four ages, because every material is equally reliable",
-                     "The Moon rocks, because the Moon is closest to Earth"],
-         "answer": 0,
-         "feedback": "<p>The oldest, least-altered materials give the best estimate. Earth rocks are younger because the earlier ones were destroyed or changed.</p>"},
-        {"type": "tf",
-         "body": "<p>True or false: Because the oldest Earth rock is about 4.0 billion years old, Earth must be 4.0 billion years old.</p>",
-         "answer": False,
-         "feedback": "<p>False. The oldest rock that has survived is only a minimum age for Earth. Earlier rocks were recycled, and meteorites and moon rocks show Earth formed about 4.5 billion years ago.</p>"},
-    ],
-    # ------------------------------------------------------------------ ESS1-6.3
-    "ESS1-6.3": [
-        {"type": "choice",
-         "body": "<p>Which list puts these events in order from earliest to latest, based on the evidence?</p>",
-         "choices": ["Meteorites form (4.56 billion years ago), Earth's oldest minerals form (4.4 billion), Earth's oldest rocks form (4.0 billion), the oldest fossils form (3.5 billion)",
-                     "Oldest fossils, oldest rocks, oldest minerals, meteorites",
-                     "Oldest rocks, meteorites, oldest fossils, oldest minerals",
-                     "Oldest minerals, meteorites, oldest fossils, oldest rocks"],
-         "answer": 0,
-         "feedback": "<p>The ages in billions of years ago order the events: 4.56, 4.4, 4.0, and 3.5.</p>"},
-        {"type": "choice",
-         "body": "<p>The Moon and Mars have large, heavily cratered regions. Earth's surface has few craters. Which explanation best uses this evidence to tell about Earth's early history?</p>",
-         "choices": ["All three bodies were hit by many impacts early on; the Moon and Mars kept the record, while Earth's surface was renewed by plate tectonics, erosion, and weathering.",
-                     "Earth was never hit by impacts.",
-                     "Craters on the Moon and Mars are made by volcanoes, so Earth was not affected.",
-                     "Earth formed after the Moon and Mars stopped being hit."],
-         "answer": 0,
-         "feedback": "<p>The cratered surfaces of other bodies show how many impacts early planets took. Earth was hit too, but its surface keeps renewing itself, so most of the record is gone.</p>"},
-        {"type": "choice",
-         "body": "<p>Which statement is the best evidence that Earth formed about 4.5 billion years ago?</p>",
-         "choices": ["Meteorites are about 4.56 billion years old and Earth's oldest minerals are about 4.4 billion years old, so Earth must be about as old as the oldest materials in the solar system.",
-                     "The ocean floor is about 200 million years old.",
-                     "Fossils have been found that are 3.5 billion years old.",
-                     "Mountains exist on Earth."],
-         "answer": 0,
-         "feedback": "<p>The meteorite age marks when the solar system formed. Earth's oldest minerals are only slightly younger, which fits Earth forming at about the same time.</p>"},
-        {"type": "multi",
-         "body": "<p>A table lists the ages of several materials: meteorites 4.56 billion years, moon highland rocks up to 4.4, Earth's oldest zircon 4.4, Earth's oldest rock 4.0, oldest fossils 3.5, and the oldest ocean floor 0.2. Select the <strong>TWO</strong> statements that are supported by this evidence.</p>",
-         "choices": ["Solid rock and minerals had formed on Earth by about 4.4 billion years ago.",
-                     "Earth formed about 4.0 billion years ago.",
-                     "Life existed by about 3.5 billion years ago.",
-                     "Earth's ocean floor is the oldest material on Earth."],
-         "answer": [0, 2],
-         "feedback": "<p>Zircons about 4.4 billion years old show solid crust existed by then, and fossils about 3.5 billion years old show life existed by then. Earth is older than 4.0 billion years, and the ocean floor is the youngest material in the table.</p>"},
-        {"type": "choice",
-         "body": "<p>A student writes: &ldquo;Earth formed 4.0 billion years ago because that is the age of the oldest rock.&rdquo; Which revision is best?</p>",
-         "choices": ["Earth formed about 4.5 billion years ago. The oldest surviving rocks are younger because the earliest crust was recycled, and meteorites and moon rocks, which were not recycled, are about 4.4 to 4.56 billion years old.",
-                     "Earth formed 4.0 billion years ago, but scientists are not sure.",
-                     "Earth formed 200 million years ago, the age of the ocean floor.",
-                     "Earth formed 3.5 billion years ago, when life began."],
-         "answer": 0,
-         "feedback": "<p>A strong account uses several lines of evidence and explains why the oldest Earth rock is not the same as the age of Earth.</p>"},
     ],
 }
 
@@ -670,98 +550,6 @@ REVIEWS = {
             "Plate tectonics explains the ages of rocks very well because the ocean floor is made at ridges and recycled at subduction zones, while buoyant continental crust survives and grows outward.",
             "Ocean: ages increase from 0 to 120 million years over 3,000 km, or the oldest ocean floor is about 200 million years. Continent: minerals up to 4.4 billion years, or North American crust from 2.7 billion years at the core to 400 million years in the Appalachians.",
             "Because ocean plates are denser, they sink at trenches and are destroyed, while less-dense continents stay at the surface. Limit: no ocean floor older than about 200 million years remains, so early Earth must be studied in continental rock.",
-        ],
-    },
-    "ESS1-6.1": {
-        "use": "your Day 3 notes (Reading Deep Time and Early Earth) and your half-life lab graph",
-        "sections": [
-            ("1. Radiometric dating",
-             "<p>Some atoms are unstable and decay into different atoms at a steady rate. The <strong>half-life</strong> is the time for half of the parent atoms to decay. Scientists measure how much parent and daughter material a sample has to find its age.</p>"
-             f"<table {T}><tbody><tr><th>Half-lives passed</th><th>Fraction of parent left</th></tr><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>1/2</td></tr><tr><td>2</td><td>1/4</td></tr><tr><td>3</td><td>1/8</td></tr></tbody></table>",
-             "<strong>Try it:</strong> A sample has 1/16 of its parent atoms left. How many half-lives have passed?",
-             "4 (1/2, 1/4, 1/8, 1/16)."),
-            ("2. Evidence for early Earth",
-             f"<table {T}><tbody><tr><th>Evidence</th><th>Age</th></tr>"
-             "<tr><td>Meteorites (Canyon Diablo, Arizona)</td><td>about 4.56 billion years</td></tr>"
-             "<tr><td>Moon rocks from the lunar highlands</td><td>up to about 4.4 billion years</td></tr>"
-             "<tr><td>Earth's oldest minerals (zircon, Western Australia)</td><td>about 4.4 billion years</td></tr>"
-             "<tr><td>Earth's oldest known rock (Acasta Gneiss, Canada)</td><td>about 4.0 billion years</td></tr></tbody></table>",
-             "<strong>Try it:</strong> Name the three kinds of materials whose radiometric ages give evidence for early Earth.",
-             "Meteorites, moon rocks, and Earth's oldest minerals."),
-            ("3. The crater record",
-             "<p>The Moon, Mercury, and Mars still show craters from the early solar system because they have no plate tectonics and little weathering. A surface with more craters is older. Earth had the same impacts, but plate tectonics, erosion, and weathering erased most of its craters; only about 190 impact craters are known.</p>",
-             "<strong>Try it:</strong> Why does the Moon have many more visible craters than Earth?",
-             "The Moon has no plate tectonics and almost no weathering, so craters last; Earth's surface erases them."),
-        ],
-        "questions": [
-            "A rock formed with 160 atoms of a parent isotope. How many parent atoms are left after 4 half-lives? Show your work.",
-            "Name three kinds of materials whose radiometric ages give evidence for early Earth and give the age of each.",
-            "What does the crater record on the Moon show about the early solar system?",
-        ],
-        "answers": [
-            "160 -> 80 -> 40 -> 20 -> 10. 10 atoms remain.",
-            "Meteorites about 4.56 billion years; moon rocks up to about 4.4 billion years; Earth's oldest minerals (zircons) about 4.4 billion years. (The oldest Earth rock is about 4.0 billion years.)",
-            "The Moon's surface is heavily cratered, which shows it was hit by many impacts early on, and it kept that record because it has no plate tectonics or weathering to erase the craters.",
-        ],
-    },
-    "ESS1-6.2": {
-        "use": "your Day 3 notes (Reading Deep Time and Early Earth)",
-        "sections": [
-            ("1. Why Earth's rocks are younger than Earth",
-             "<p>The oldest known Earth rock is about 4.0 billion years old and the oldest mineral about 4.4 billion years old. Earth is about 4.5 billion years old. The earliest rocks were destroyed or recycled by <strong>plate tectonics</strong>, <strong>erosion</strong>, and <strong>weathering</strong>, so the oldest rock that survives is only a minimum age for Earth.</p>",
-             "<strong>Try it:</strong> Why is the oldest Earth rock younger than Earth?",
-             "Earth's earliest rocks were destroyed or recycled, so only younger rocks survive."),
-            ("2. Why meteorites and moon rocks",
-             "<p><strong>Meteorites</strong> are leftover building material that formed from the same cloud of gas and dust as the planets. They have been little changed since. The <strong>Moon</strong> has no plate tectonics and almost no weathering, so its rocks survive. Their ages are older than any Earth rock.</p>",
-             "<strong>Try it:</strong> Name two reasons meteorites are good for finding the age of the solar system.",
-             "They formed at about the same time as the planets, and they have changed very little since they formed."),
-            ("3. The best estimate",
-             f"<table {T}><tbody><tr><th>Material</th><th>Age (billion years)</th></tr><tr><td>Meteorites</td><td>4.56</td></tr><tr><td>Moon highland rocks</td><td>up to 4.4</td></tr><tr><td>Oldest Earth mineral</td><td>4.4</td></tr><tr><td>Oldest Earth rock</td><td>4.0</td></tr></tbody></table>"
-             "<p>The oldest, least-altered materials give the best estimate: about 4.56 billion years for the solar system, and about 4.5 billion years for Earth.</p>",
-             "<strong>Try it:</strong> Which material gives the best estimate of the age of the solar system?",
-             "Meteorites (about 4.56 billion years)."),
-        ],
-        "questions": [
-            "Explain why the age of the oldest rock on Earth does not give the age of Earth.",
-            "Explain why meteorites and moon rocks give a better estimate of the age of the solar system than Earth rocks do.",
-            "Using the table, say which material gives the best estimate of the age of the solar system and why.",
-        ],
-        "answers": [
-            "Earth's earliest rocks were destroyed or recycled by plate tectonics, erosion, and weathering, so the oldest surviving rock is younger than Earth.",
-            "Meteorites formed with the solar system and changed little; the Moon is geologically quiet, so its early rocks survive. Both kept their original ages.",
-            "Meteorites, about 4.56 billion years, because they are the oldest material and have changed little since they formed.",
-        ],
-    },
-    "ESS1-6.3": {
-        "use": "your Day 6 notes (Tell Earth's Story) and your evidence cards",
-        "sections": [
-            ("1. The evidence timeline",
-             f"<table {T}><tbody><tr><th>Billions of years ago</th><th>Event</th><th>Evidence</th></tr>"
-             "<tr><td>4.56</td><td>The solar system forms</td><td>Meteorites</td></tr>"
-             "<tr><td>about 4.5</td><td>Earth forms and the Moon forms (a giant impact)</td><td>Moon rocks and Earth's oldest ages</td></tr>"
-             "<tr><td>4.4</td><td>Solid crust and minerals exist on Earth</td><td>Zircon crystals, Western Australia</td></tr>"
-             "<tr><td>4.0</td><td>Oldest surviving rock</td><td>Acasta Gneiss, Canada</td></tr>"
-             "<tr><td>3.5</td><td>Life exists</td><td>Stromatolite fossils, Western Australia</td></tr></tbody></table>",
-             "<strong>Try it:</strong> Which event came first, the oldest zircon or the oldest fossils?",
-             "The oldest zircon (4.4 billion years ago) came first; the oldest fossils are 3.5 billion years old."),
-            ("2. Building an account",
-             "<p>A strong account of Earth's formation (1) puts events in order with ages, (2) names the evidence for each event, and (3) says what is missing and why. Earth's earliest record is missing because plate tectonics and erosion recycled it.</p>",
-             "<strong>Try it:</strong> Why must scientists use evidence from outside Earth to describe Earth's formation?",
-             "Earth's earliest rocks were recycled, so meteorites and the Moon preserve the missing part of the record."),
-            ("3. Other planets as evidence",
-             "<p>The Moon and Mars have large, heavily cratered regions that have changed little in billions of years. They show that the early solar system had many impacts. Earth was hit too, but its surface has been renewed.</p>",
-             "<strong>Try it:</strong> What does a heavily cratered surface tell you about its age?",
-             "It is old; more craters mean a surface that has been exposed longer."),
-        ],
-        "questions": [
-            "Put these events in order and give an age for each: oldest fossils, meteorites form, oldest Earth rock, oldest zircon.",
-            "Choose two of the events and say what evidence supports each.",
-            "Explain why scientists study the Moon and Mars to learn about Earth's early history.",
-        ],
-        "answers": [
-            "Meteorites form (4.56 billion years ago), oldest zircon (4.4), oldest Earth rock (4.0), oldest fossils (3.5).",
-            "For example: meteorites form at 4.56 billion years, shown by radiometric ages of meteorites; life by 3.5 billion years, shown by stromatolite fossils; solid crust by 4.4 billion years, shown by zircons.",
-            "The Moon and Mars kept their ancient, cratered surfaces, while Earth's surface was renewed by plate tectonics and erosion, so they preserve the early record that Earth lost.",
         ],
     },
 }

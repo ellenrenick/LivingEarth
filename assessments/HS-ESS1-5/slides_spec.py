@@ -244,7 +244,7 @@ def build_day3():
     bullets(s, "b", ["Plate tectonics, erosion, and weathering recycled Earth's earliest rocks.",
                      "Meteorites formed with the solar system and changed little. The Moon is geologically quiet, so it kept its early rocks.",
                      "Why are there no fossils as old as 3.5 billion years in the ocean floor?",
-                     "Tomorrow starts with CFA ESS1-6.1 and CFA ESS1-6.2. Study your half-life data and the oldest-materials table."], size=16)
+                     "Tomorrow you will use density to explain why ocean crust sinks. Review your half-life data and the oldest-materials table tonight."], size=16)
     out.append(s)
     return out
 
@@ -255,8 +255,7 @@ def build_day4():
                        "Have ready: SketchNotes paper, colored pencils.")]
     out.append(goals_slide(4, 2, lesson,
                            ["use density to explain why ocean crust sinks and continents stay", "explain why continents are oldest at their cores", "connect subduction to the carbon cycle"],
-                           [["10", "CFAs ESS1-6.1 and 6.2"], ["2", "Warm-up"], ["8", "Density and subduction"], ["5", "Life of ocean crust"], ["8", "How continents grow"], ["3", "Carbon link"], ["9", "SketchNotes"]]))
-    out.append(cfa_slide(4, 3, lesson, ["ESS1-6.1", "ESS1-6.2"], 10))
+                           [["2", "Warm-up"], ["10", "Density and subduction"], ["6", "Life of ocean crust"], ["10", "How continents grow"], ["4", "Carbon link"], ["13", "SketchNotes"]]))
     s = Slide(4, 4, "Warm-up"); head(s, "Warm-up · 2 min · on your own", "Where does the old ocean crust go?", lesson)
     card(s, "q", "You know the ocean floor is under 200 million years old. Where does the old ocean crust go, and what must be different about the continents?", size=20)
     out.append(s)
@@ -347,7 +346,7 @@ def build_day6():
                        "Have ready: your Unit CER evidence log.")]
     out.append(goals_slide(6, 2, lesson,
                            ["judge how well plate tectonics explains rock ages", "write an argument with evidence from ocean and continents", "build an account of Earth's formation"],
-                           [["7", "CFA ESS1-5.4"], ["4", "Sort evidence"], ["13", "Evaluate the theory"], ["7", "Peer feedback"], ["11", "Tell Earth's story"], ["3", "Preview CFAs"]]))
+                           [["7", "CFA ESS1-5.4"], ["4", "Sort evidence"], ["13", "Evaluate the theory"], ["7", "Peer feedback"], ["11", "Tell Earth's story"], ["3", "Preview CFA"]]))
     out.append(cfa_slide(6, 3, lesson, ["ESS1-5.4"], 7))
     s = Slide(6, 4, "Sort"); head(s, "Sort your evidence · 4 min", "Put each row of your evidence log in a bucket", lesson)
     table(s, "t", [["The seafloor is young because…", "The continents are old because…", "The early record is missing because…"], ["", "", ""]],
@@ -389,7 +388,7 @@ def build_day6():
     bullets(s, "b", ["About ______ billion years ago, ______ happened. The evidence is ______. (Write three of these, in order.)",
                      "Earth's earliest record is missing because ______. Scientists fill the gap with evidence from ______.",
                      "Submit on Canvas: Unit 3.1 CER, Part B.",
-                     "Next: CFA ESS1-5.5 and CFA ESS1-6.3, on the work day or at the start of Day 7."], size=16, gap=8)
+                     "Next: CFA ESS1-5.5, on the work day or at the start of Day 7."], size=16, gap=8)
     out.append(s)
     return out
 
@@ -406,7 +405,7 @@ def build_day7():
     table(s, "t", rows, y=1.65, widths=[7.6, 1.4], align=["START", "START"])
     out.append(s)
     s = Slide(7, 4, "Work"); head(s, "Work time · 33 min", "Do the work that matches your scores", lesson)
-    bullets(s, "b", ["Have not taken a CFA yet? Take it now, including CFA ESS1-5.5 and CFA ESS1-6.3.", "A Mastery Path review opened for you? Do it now. Study your notebook first.",
+    bullets(s, "b", ["Have not taken a CFA yet? Take it now, including CFA ESS1-5.5.", "A Mastery Path review opened for you? Do it now. Study your notebook first.",
                      "No reviews open? Your teacher may assign the enrichment choice board.", "Everyone: finish your Frayer cards, your evidence log, and your CER."], size=17)
     out.append(s)
     s = Slide(7, 5, "Vocab"); head(s, "Vocabulary self-check · 5 min", "Cover the definitions. Explain each word aloud.", lesson)

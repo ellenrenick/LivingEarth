@@ -6,11 +6,11 @@ All numbers are real or simplified from real values; simplified ones are labeled
 Day map (targets from the team workbook):
   1 Where Did the Old Ocean Floor Go?          ESS1-5.1  (launch, plates and boundaries)
   2 Reading Rock Ages                          ESS1-5.2  (CFA 5.1 opens the day)
-  3 Reading Deep Time and Early Earth          ESS1-6.1, ESS1-6.2  (CFA 5.2 opens the day)
-  4 Why the Ocean Is Young, the Continents Old ESS1-5.3  (CFAs 6.1 and 6.2 open the day)
+  3 Reading Deep Time and Early Earth          ESS1-6.1, ESS1-6.2  (CFA 5.2 opens the day; ESS1-6 has no CFAs)
+  4 Why the Ocean Is Young, the Continents Old ESS1-5.3  (no CFA opens the day)
   5 Evidence for Moving Crust                  ESS1-5.4  (CFA 5.3 opens the day)
   6 Evaluate the Theory, Tell Earth's Story    ESS1-5.5, ESS1-6.3  (CFA 5.4 opens the day)
-  7 Review Day (CFAs 5.5 and 6.3 if not yet taken)
+  7 Review Day (CFA 5.5 if not yet taken)
   8 Unit 3.1 CSA (priority targets ESS1-5.1 to 5.5 only)
 """
 
@@ -269,7 +269,7 @@ DAY3 = dict(
         ("Why meteorites and moon rocks?", ol(["Why is the oldest Earth rock (4.0 billion years) younger than Earth itself?",
                                               "Why do scientists use meteorites and moon rocks, not Earth rocks, to find the age of the solar system (about 4.6 billion years)?",
                                               "The oldest fossils are in continental rock. Why are there no fossils that old in the ocean floor?"]) +
-            "<p>Tomorrow starts with <strong>CFA ESS1-6.1</strong> and <strong>CFA ESS1-6.2</strong> (5 questions each). Study your half-life data and the oldest-materials table.</p>"),
+            "<p>Tomorrow you will use density to explain why ocean crust sinks. Review your half-life data and the oldest-materials table tonight.</p>"),
     ],
 )
 
@@ -286,7 +286,6 @@ DAY4 = dict(
         "Finish your Frayer cards for all 10 words as homework.",
     ],
     parts=[
-        ("Start with two CFAs: ESS1-6.1 and ESS1-6.2", cfa_part(["ESS1-6.1", "ESS1-6.2"])),
         ("Warm-up", "<p>You know the ocean floor is under 200 million years old. Where does the old ocean crust go, and what must be different about the continents?</p>"),
         ("Why does some crust sink?", "<p>At a <strong>convergent</strong> boundary where an ocean plate meets a continent, the ocean plate bends and sinks into the mantle. This is <strong>subduction</strong>, and it makes a deep <strong>trench</strong> and a line of volcanoes on land.</p>" +
             table(["Material", "Average density (g/cm³)"], [["Ocean crust (basalt)", "about 3.0"], ["Continental crust (granite)", "about 2.7"]]) +
@@ -417,7 +416,7 @@ DAY6 = dict(
         ("Peer feedback", "<p>Trade with a partner. Check the list below and write one &ldquo;star&rdquo; (something strong) and one &ldquo;step&rdquo; (something to improve). Then revise your own.</p>" + CER_CHECK),
         ("Tell Earth's story (ESS1-6.3)", "<p>Use the evidence cards to build a short account of how Earth formed and what happened in its early history.</p>" + EVIDENCE_CARDS +
             "<p>Write your account with these frames (Part B of <strong>Unit 3.1 CER</strong> on Canvas):</p>" + STORY_FRAMES),
-        ("Take the last two CFAs", "<p>Take <strong>Unit 3.1 CFA ESS1-5.5: How well plate tectonics explains rock ages</strong> and <strong>CFA ESS1-6.3: Telling the story of Earth's formation</strong> (5 questions each) at the start of your next class or on the work day, as your teacher tells you. If you score below 3 out of 4, a review for that target will open for you.</p>"),
+        ("Take the last CFA", "<p>Take <strong>Unit 3.1 CFA ESS1-5.5: How well plate tectonics explains rock ages</strong> (5 questions) at the start of your next class or on the work day, as your teacher tells you. If you score below 3 out of 4, a review for that target will open for you.</p>"),
     ],
 )
 
@@ -434,13 +433,13 @@ DAY7 = dict(
         ("Rate yourself", "<p>Rate each target from 1 (I need help) to 4 (I could teach it). Use your CFA scores to check your rating.</p>" +
             table(["Target", "My rating (1–4)", "My CFA score"], [[f"<strong>{c}</strong> {t}", "<br>", "<br>"] for c, t in TARGET_TEXT.items()])),
         ("Do the work that matches your scores", ol([
-            "<strong>If you have not taken a CFA yet,</strong> take it now. This includes <strong>CFA ESS1-5.5</strong> and <strong>CFA ESS1-6.3</strong>. The CFAs are in this module on Canvas.",
+            "<strong>If you have not taken a CFA yet,</strong> take it now. This includes <strong>CFA ESS1-5.5</strong>. The CFAs are in this module on Canvas.",
             "<strong>If a Mastery Path review opened for you,</strong> complete it now (they are in this module). Study your notebook first, then answer the 3 written questions.",
             "<strong>If you do not have any reviews open,</strong> your teacher may assign you the Enrichment choice board. Check Canvas, or ask.",
             "<strong>Everyone:</strong> finish your Frayer cards and make sure your Unit CER evidence log and your CER are complete.",
         ])),
         ("Vocabulary self-check", "<p>Cover the definitions on your Frayer cards. Explain each word aloud to a partner without reading: lithosphere, plate boundary, mid-ocean ridge, subduction, trench, magnetic reversal, craton, radiometric dating, half-life, impact crater.</p>"),
-        ("About the CSA", "<p>The <strong>Unit 3.1 CSA</strong> covers the five priority targets, <strong>ESS1-5.1 to ESS1-5.5</strong>. The three ESS1-6 targets are practice that supports ESS1-5.3 and ESS1-5.5, but they are not tested on the CSA. Study your notebook, your CFA results, and your reviews.</p>"),
+        ("About the CSA", "<p>The <strong>Unit 3.1 CSA</strong> covers the five priority targets, <strong>ESS1-5.1 to ESS1-5.5</strong>. The three ESS1-6 targets are taught to support ESS1-5.3 and ESS1-5.5, but they have no CFAs and are not tested on the CSA. Study your notebook, your CFA results, and your reviews.</p>"),
     ],
 )
 
@@ -549,13 +548,13 @@ TEACHER[2] = dict(
 )
 
 TEACHER[3] = dict(
-    glance="CFA ESS1-5.2 opens the day. Students do the half-life lab, pick the right dating method for a sample, compare the oldest Earth materials with meteorites and moon rocks on a 45 m timeline, read the impact-crater record, and explain why meteorites and moon rocks give the age of the solar system. CFAs ESS1-6.1 and ESS1-6.2 open Day 4.",
+    glance="CFA ESS1-5.2 opens the day. Students do the half-life lab, pick the right dating method for a sample, compare the oldest Earth materials with meteorites and moon rocks on a 45 m timeline, read the impact-crater record, and explain why meteorites and moon rocks give the age of the solar system.",
     materials=["50 coins (or candies with one marked side) and a cup per pair", "Graph paper or Chromebooks", "Images of the Moon and Mars surfaces (optional)", "Chromebooks for the CFA"],
     agenda=[["0–7", "CFA ESS1-5.2"], ["7–10", "Hook and definitions"], ["10–22", "Half-life lab"], ["22–26", "Which clock?"], ["26–34", "Oldest materials and the 45 m timeline"],
-            ["34–40", "Impact-crater record"], ["40–45", "Why meteorites and moon rocks; preview tomorrow's CFAs"]],
+            ["34–40", "Impact-crater record"], ["40–45", "Why meteorites and moon rocks; preview tomorrow"]],
     notes=["Collect the coins at the end of the lab. A student can use dice or a spreadsheet for 'decay' if coins are short.",
            "Radiometric dating: zircon includes uranium but excludes lead when it forms, so any lead is from decay.",
-           "ESS1-6 is a supporting standard, taught here to feed ESS1-5.3 and ESS1-5.5. The CFAs and reviews are practice; ESS1-6 is not on the CSA.",
+           "ESS1-6 is a supporting standard, taught here to feed ESS1-5.3 and ESS1-5.5. ESS1-6 has no CFAs or reviews and is not on the CSA.",
            "Crater counts: the Moon has no plate tectonics and almost no weathering, so craters last. Earth has about 190 known craters because erosion, volcanism, and plate tectonics erase them."],
     key=["Expected counts (about): 50, 25, 12, 6, 3, 1. Each round about halves the sample; fractions 1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64.",
          "Each round equals one half-life. A sample with 1/8 left is 3 half-lives old = 3 × 5,730 = 17,190 years.",
@@ -569,13 +568,13 @@ TEACHER[3] = dict(
 )
 
 TEACHER[4] = dict(
-    glance="CFAs ESS1-6.1 and ESS1-6.2 open the day. Students use density to explain subduction, trace the life of ocean crust, learn how continents grow outward from an ancient core, connect plankton-shell carbon to the carbon cycle, and make SketchNotes. CFA ESS1-5.3 opens Day 5.",
-    materials=["SketchNotes paper", "Optional density demo: oil and water, or clay of different densities", "Chromebooks for the CFAs"],
-    agenda=[["0–10", "CFAs ESS1-6.1 and ESS1-6.2"], ["10–12", "Warm-up"], ["12–20", "Density and subduction"], ["20–25", "Life of ocean crust"], ["25–33", "How continents grow"],
-            ["33–36", "Carbon link"], ["36–45", "SketchNotes; preview tomorrow's CFA"]],
+    glance="Students use density to explain subduction, trace the life of ocean crust, learn how continents grow outward from an ancient core, connect plankton-shell carbon to the carbon cycle, and make SketchNotes. CFA ESS1-5.3 opens Day 5.",
+    materials=["SketchNotes paper", "Optional density demo: oil and water, or clay of different densities", "Chromebooks"],
+    agenda=[["0–2", "Warm-up"], ["2–12", "Density and subduction"], ["12–18", "Life of ocean crust"], ["18–28", "How continents grow"],
+            ["28–32", "Carbon link"], ["32–45", "SketchNotes; preview tomorrow's CFA"]],
     notes=["Density wording: ocean crust alone is slightly less dense than mantle; the old, cold ocean plate is denser than the hot mantle below and sinks. Compare plate against plate (ocean plate versus continental plate) with students.",
            "Continental growth is simplified: arcs and pieces of crust (terranes) collide with and are added to the margin; the continent is also eroded and parts are recycled, but most of it stays.",
-           "The two CFAs are 5 questions each. If time runs out, finish them at the start of Day 5 and take CFA ESS1-5.3 later in the week."],
+           "There is no CFA today, so use the extra time for SketchNotes. CFA ESS1-5.3 opens Day 5."],
     key=["The ocean plate sinks because it is denser (3.0 versus 2.7 g/cm³).",
          "Two continental plates collide: both are buoyant, so neither subducts; the crust crumples upward into mountains (such as the Himalaya).",
          "Continents survive because they are less dense; the ocean floor is recycled at trenches, so its age rarely exceeds about 200 million years.",
@@ -606,14 +605,14 @@ TEACHER[5] = dict(
 )
 
 TEACHER[6] = dict(
-    glance="CFA ESS1-5.4 opens the day. Students sort their evidence log, write an evaluation of how well plate tectonics explains the ages of crustal rocks (Part A), give peer feedback, and build a short account of Earth's formation from evidence cards (Part B). CFAs ESS1-5.5 and ESS1-6.3 follow on the work day or at the start of Day 7.",
+    glance="CFA ESS1-5.4 opens the day. Students sort their evidence log, write an evaluation of how well plate tectonics explains the ages of crustal rocks (Part A), give peer feedback, and build a short account of Earth's formation from evidence cards (Part B). CFA ESS1-5.5 follows on the work day or at the start of Day 7.",
     materials=["Students' Unit CER evidence logs", "Sentence frames and evidence cards (on the page)", "Peer feedback checklist (on the page)", "Chromebooks"],
     agenda=[["0–7", "CFA ESS1-5.4"], ["7–11", "Sort evidence into three buckets; revisit the Day 1 claim"], ["11–24", "Draft the evaluation (Part A) with frames"],
-            ["24–31", "Peer feedback and revision"], ["31–42", "Tell Earth's story (Part B)"], ["42–45", "Preview CFAs ESS1-5.5 and ESS1-6.3"]],
+            ["24–31", "Peer feedback and revision"], ["31–42", "Tell Earth's story (Part B)"], ["42–45", "Preview CFA ESS1-5.5"]],
     notes=["Revisit the Day 1 misconceptions. Ask students who changed their claim to say what changed their mind.",
            "Score the CER with the 4-point rubric on the assignment. Students who score below a 3 can revise during the work day, Day 7, or the reassessment window.",
            "ESS1-5.5 asks for an evaluation, not just an explanation. A strong response says how well and names a limit (no ocean crust older than about 200 million years remains).",
-           "Part B (ESS1-6.3) is supporting practice and is not on the CSA. Do not let it crowd out Part A."],
+           "Part B (ESS1-6.3) is supporting and has no CFA; it is not on the CSA. Do not let it crowd out Part A."],
     key=["Sample strong claim: Plate tectonics explains the ages of Earth's crustal rocks very well because ocean crust is made at ridges and recycled at subduction zones, while less-dense continental crust survives and grows outward.",
          "Evidence examples: crust age increases from 0 to 120 million years across 3,000 km (2.5 cm per year); the oldest ocean floor is about 200 million years; continental minerals are up to about 4.4 billion years; North American crust is about 2.7 billion years at its core and about 400 million years in the Appalachians.",
          "Reasoning: dense ocean plates sink at trenches while buoyant continents stay at the surface and grow at their edges.",
@@ -623,7 +622,7 @@ TEACHER[6] = dict(
 )
 
 TEACHER[7] = dict(
-    glance="Review day and cushion. Students rate themselves on all eight targets, take any CFA they have not taken (including ESS1-5.5 and ESS1-6.3), and complete the Mastery Path reviews that opened. Students with no reviews open can be assigned the Enrichment choice board (you assign it manually).",
+    glance="Review day and cushion. Students rate themselves on all eight targets, take any CFA they have not taken (including ESS1-5.5), and complete the Mastery Path reviews that opened. Students with no reviews open can be assigned the Enrichment choice board (you assign it manually).",
     materials=["Students' notebooks, Frayer cards, and CFA scores", "Chromebooks", "Optional: Blooket or quiz game for students who finish"],
     agenda=[["0–5", "Self-rating chart"], ["5–38", "Work time: unfinished CFAs, Mastery Path reviews, or Enrichment"], ["38–43", "Vocabulary self-check with a partner"], ["43–45", "Preview the CSA"]],
     notes=["Review assignments open automatically when a CFA score is below 3 of 4. Check the Gradebook for students with a CFA but no review yet.",

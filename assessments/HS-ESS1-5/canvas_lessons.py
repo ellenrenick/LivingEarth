@@ -112,10 +112,10 @@ def main():
     plan = {1: [extra["lesson1"]],
             2: both("ESS1-5.1"),
             3: both("ESS1-5.2"),
-            4: both("ESS1-6.1") + both("ESS1-6.2") + [extra["lesson4"]],
+            4: [extra["lesson4"]],
             5: both("ESS1-5.3"),
             6: both("ESS1-5.4") + [extra["cer"]],
-            7: both("ESS1-5.5") + both("ESS1-6.3") + [extra["enrichment"]],
+            7: both("ESS1-5.5") + [extra["enrichment"]],
             8: [ids["csa"]]}
     for day in L.DAYS:
         sub(day)

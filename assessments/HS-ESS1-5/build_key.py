@@ -45,9 +45,9 @@ def main():
     csa_codes = {c for c, _ in Q.CSA}
     for code, (name, _) in Q.TARGETS.items():
         tier, dok, _full = Q.TARGET_FULL[code]
-        out.append(f"| {code} {name} | {tier} | {dok} | Day {Q.CFA_DAY[code]} | {'yes' if code in csa_codes else 'no'} | CFA score below 3 of 4 (fewer than 4 of 5 correct) |")
-    out += ["", "Priority targets (ESS1-5) are assessed on the CSA. Supporting targets (ESS1-6) are taught and practiced with CFAs and reviews but never appear on the CSA.", "",
-            "Each CFA is taken at the start of the class after its lesson. CFAs for ESS1-5.5 and ESS1-6.3 follow Day 6, so they are taken on the work day after Day 6 or at the start of Day 7. "
+        out.append(f"| {code} {name} | {tier} | {dok} | {'Day '+str(Q.CFA_DAY[code]) if code in Q.CFA_DAY else 'none'} | {'yes' if code in csa_codes else 'no'} | {'CFA score below 3 of 4 (fewer than 4 of 5 correct)' if code in Q.CFA_DAY else 'no CFA or review'} |")
+    out += ["", "Priority targets (ESS1-5) are assessed on the CSA. Supporting targets (ESS1-6) are taught but have no CFAs, no reviews, and never appear on the CSA.", "",
+            "Each CFA is taken at the start of the class after its lesson. The CFA for ESS1-5.5 follows Day 6, so it is taken on the work day after Day 6 or at the start of Day 7. "
             "Day 7 is a review day: any CFA that did not fit, absent students, Mastery Path reviews, and the Enrichment choice board all happen there. There is no practice test.", ""]
 
     out += ["## CFAs (5 questions each, auto-graded)", ""]

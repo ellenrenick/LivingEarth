@@ -1,6 +1,6 @@
 # Unit 3.1 Age of the Earth assessments (HS-ESS1-5, supporting HS-ESS1-6)
 
-Grade 9 Living Earth. Eight CFAs (one per learning target in the team workbook), one CSA on the five priority targets, and eight Mastery Path review assignments, built as Canvas New Quizzes. See `../../units/HS-ESS1-5/unit_plan.md` for the unit.
+Grade 9 Living Earth. Five CFAs (one per priority target ESS1-5.1 to 5.5; the supporting ESS1-6 targets have none), one CSA on the same five targets, and five Mastery Path review assignments, built as Canvas New Quizzes. See `../../units/HS-ESS1-5/unit_plan.md` for the unit.
 
 | Piece | Items | Notes |
 | --- | --- | --- |
@@ -9,11 +9,8 @@ Grade 9 Living Earth. Eight CFAs (one per learning target in the team workbook),
 | CFA ESS1-5.3 (why ocean crust is young and continents are old) | 5 | Auto-graded |
 | CFA ESS1-5.4 (evidence for moving crust) | 5 | Auto-graded |
 | CFA ESS1-5.5 (how well plate tectonics explains rock ages) | 5 | Auto-graded |
-| CFA ESS1-6.1 (evidence for early Earth) | 5 | Auto-graded |
-| CFA ESS1-6.2 (why meteorites and moon rocks give the age) | 5 | Auto-graded |
-| CFA ESS1-6.3 (telling the story of Earth's formation) | 5 | Auto-graded |
 | CSA | 16 | Priority targets ESS1-5.1 to 5.5 only (supporting targets are never on the CSA). 14 auto-graded; Q12 (evaluate evidence) and Q16 (evaluate plate tectonics with data) teacher-graded with 4-point rubrics |
-| Mastery Path reviews | 8 | One per CFA. Opens when the CFA score is below 3 of 4 (fewer than 4 of 5 correct). Pass/fail, 4 points, 3 written questions |
+| Mastery Path reviews | 5 | One per CFA. Opens when the CFA score is below 3 of 4 (fewer than 4 of 5 correct). Pass/fail, 4 points, 3 written questions |
 
 Targets and tiers come from the team workbook "Renick Living Earth Standards and Learning Targets (26-27)" (Targets tab).
 

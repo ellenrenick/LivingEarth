@@ -25,12 +25,12 @@ Owner: Ellen. Built from the Earth Science 11 Unit 4 ("Clues in the Crust") blue
 | --- | --- | --- | --- | --- | --- |
 | ESS1-5.1 | Priority | 1 | I can describe Earth's outer layer as moving plates, name three kinds of plate boundaries, and describe where ocean crust is made and where it sinks back down. | Day 1 | start of Day 2 |
 | ESS1-5.2 | Priority | 2 | I can read a rock-age map and describe the pattern in the ages. | Day 2 | start of Day 3 |
-| ESS1-6.1 | Supporting | 1 | I can list the evidence scientists use to learn about early Earth. | Day 3 | start of Day 4 |
-| ESS1-6.2 | Supporting | 2 | I can explain why meteorites and moon rocks tell Earth's age better than Earth rocks do. | Day 3 | start of Day 4 |
+| ESS1-6.1 | Supporting | 1 | I can list the evidence scientists use to learn about early Earth. | none |
+| ESS1-6.2 | Supporting | 2 | I can explain why meteorites and moon rocks tell Earth's age better than Earth rocks do. | none |
 | ESS1-5.3 | Priority | 2 | I can explain why ocean crust is young and why continents are oldest at their ancient cores. | Day 4 | start of Day 5 |
 | ESS1-5.4 | Priority | 3 | I can judge how strong the evidence is that the crust has moved and is still moving. | Day 5 | start of Day 6 |
 | ESS1-5.5 | Priority | 3 | I can judge how well plate tectonics explains the ages of rocks, using evidence. | Day 6 | work day after Day 6 or start of Day 7 |
-| ESS1-6.3 | Supporting | 3 | I can use evidence from rocks, meteorites, and other planets to tell how Earth formed. | Day 6 | work day after Day 6 or start of Day 7 |
+| ESS1-6.3 | Supporting | 3 | I can use evidence from rocks, meteorites, and other planets to tell how Earth formed. | none |
 
 ESS1-6 "feeds" ESS1-5.3 in the workbook, so its lesson (Day 3) comes before ESS1-5.3 (Day 4).
 
@@ -109,17 +109,16 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 | 34–40 | Impact-crater record: Moon, Mars, Earth. |
 | 40–45 | Why meteorites and moon rocks give the age of the solar system; why the oldest Earth rock is younger than Earth. |
 
-### Day 4 · Why the Ocean Is Young and the Continents Old (ESS1-5.3; CFAs ESS1-6.1 and ESS1-6.2 open the day)
+### Day 4 · Why the Ocean Is Young and the Continents Old (ESS1-5.3; no CFA opens the day)
 
 | Min | What happens |
 | --- | --- |
-| 0–10 | **CFAs ESS1-6.1 and ESS1-6.2** |
-| 10–12 | Warm-up. |
-| 12–20 | Density and subduction (ocean crust 3.0, continental crust 2.7 g/cm³). |
-| 20–25 | The life of ocean crust: 3,000 km at 25 km per million years is 120 million years. |
-| 25–33 | How continents grow: an ancient core with arcs and crust added at the edges, like tree rings. |
-| 33–36 | Biology link: plankton-shell carbon rides the plate down. |
-| 36–45 | SketchNotes: ridge, trench, growing continent. |
+| 0–2 | Warm-up. |
+| 2–12 | Density and subduction (ocean crust 3.0, continental crust 2.7 g/cm³). |
+| 12–18 | The life of ocean crust: 3,000 km at 25 km per million years is 120 million years. |
+| 18–28 | How continents grow: an ancient core with arcs and crust added at the edges, like tree rings. |
+| 28–32 | Biology link: plankton-shell carbon rides the plate down. |
+| 32–45 | SketchNotes: ridge, trench, growing continent. |
 
 **Teacher note:** Ocean *crust* alone is slightly less dense than the mantle. It is the old, cold ocean *plate* that is denser than the hot mantle below and sinks. Keep comparisons to plate against plate.
 
@@ -143,7 +142,7 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 | 11–24 | Part A: evaluate how well plate tectonics explains the ages of crustal rocks, with sentence frames. |
 | 24–31 | Peer feedback (star and step). |
 | 31–42 | Part B: tell the story of Earth's formation from evidence cards (ESS1-6.3). |
-| 42–45 | Preview CFAs ESS1-5.5 and ESS1-6.3. |
+| 42–45 | Preview CFA ESS1-5.5. |
 
 **Sentence frames (Part A):** Claim (very well / partly / poorly); Evidence 1 and 2 from the ocean; Evidence 3 from the continents; Reasoning; Limit or counterclaim.
 
@@ -152,7 +151,7 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 | Min | What happens |
 | --- | --- |
 | 0–5 | Self-rating on all eight targets. |
-| 5–38 | Work time matched to scores. **Cushion:** any CFA not yet taken (CFAs ESS1-5.5 and ESS1-6.3 if they were not taken on the work day). **Mastery Path reviews** that opened. **Enrichment choice board** for students with no reviews open (you assign it manually). |
+| 5–38 | Work time matched to scores. **Cushion:** any CFA not yet taken (CFA ESS1-5.5 if it was not taken on the work day). **Mastery Path reviews** that opened. **Enrichment choice board** for students with no reviews open (you assign it manually). |
 | 38–43 | Vocabulary self-check. |
 | 43–45 | Preview the CSA. |
 
@@ -164,8 +163,8 @@ Full summative on the five priority targets. See below.
 
 ### Dates (Fall 2026)
 
-- **Living Earth:** Days 1 to 6 on Dec 2, 3, 4, 8, 9, 11, with work days on Dec 7, 10, and 14 (Dec 14 is the work day for CFAs ESS1-5.5 and ESS1-6.3); Day 7 review on Dec 15; CSA on Dec 16 to 18 (finals).
-- **GATE:** Days 1 to 6 on Dec 7, 8, 9, 10, 11, 14, no work days; Day 7 review on Dec 15 (CFAs ESS1-5.5 and ESS1-6.3 at the start); CSA on Dec 16.
+- **Living Earth:** Days 1 to 6 on Dec 2, 3, 4, 8, 9, 11, with work days on Dec 7, 10, and 14 (Dec 14 is the work day for CFA ESS1-5.5); Day 7 review on Dec 15; CSA on Dec 16 to 18 (finals).
+- **GATE:** Days 1 to 6 on Dec 7, 8, 9, 10, 11, 14, no work days; Day 7 review on Dec 15 (CFA ESS1-5.5 at the start); CSA on Dec 16.
 
 ---
 
@@ -203,7 +202,7 @@ About 45 minutes. 16 questions on a 4-point scale, built as a New Quiz in the sa
 
 **Q12 (evaluate the evidence, 4 points)** and **Q16 (evaluate how well plate tectonics explains the ages, 4 points)** are scored with the rubrics stored in each question's scoring data; sample answers are in the teacher key.
 
-ESS1-6.1 to 6.3 are not on the CSA.
+ESS1-6.1 to 6.3 have no CFAs or reviews and are not on the CSA. All CFAs, reviews, and the CSA assess ESS1-5 only.
 
 ---
 
@@ -252,10 +251,10 @@ Built by `assessments/HS-ESS1-5/canvas_upload.py` and `canvas_lessons.py` in the
 1. Day 1 · Where Did the Old Ocean Floor Go?: Lesson 1 assignment
 2. Day 2 · Reading Rock Ages: CFA ESS1-5.1, Review ESS1-5.1
 3. Day 3 · Reading Deep Time and Early Earth: CFA ESS1-5.2, Review ESS1-5.2
-4. Day 4 · Why the Ocean Is Young and the Continents Old: CFA ESS1-6.1, Review ESS1-6.1, CFA ESS1-6.2, Review ESS1-6.2, Lesson 4 SketchNotes
+4. Day 4 · Why the Ocean Is Young and the Continents Old: Lesson 4 SketchNotes
 5. Day 5 · Evidence for Moving Crust: CFA ESS1-5.3, Review ESS1-5.3
 6. Day 6 · Evaluate the Theory, Tell Earth's Story: CFA ESS1-5.4, Review ESS1-5.4, Unit 3.1 CER
-7. Day 7 · Review Day: CFA ESS1-5.5, Review ESS1-5.5, CFA ESS1-6.3, Review ESS1-6.3, Enrichment choice board (hidden until you assign it)
+7. Day 7 · Review Day: CFA ESS1-5.5, Review ESS1-5.5, Enrichment choice board (hidden until you assign it)
 8. Day 8 · Unit 3.1 CSA
 
 Also built: eight student day pages with the lesson content inline, eight teacher pages in a separate unpublished module "Unit 3.1 TEACHER PAGES (keep unpublished)", and four assignments: Lesson 1 (completion), Lesson 4 SketchNotes (photo upload), the Unit 3.1 CER (text or upload, 4-point rubric), and the Enrichment choice board.
