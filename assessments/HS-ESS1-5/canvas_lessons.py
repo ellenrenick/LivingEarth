@@ -36,11 +36,11 @@ def main():
 
     if "--cleanup" in flags:
         for pid in ids.get("pages", {}).values():
-            cv.v1("DELETE", f"/pages/{pid}")
+            cv.delete_quiet(f"/pages/{pid}")
         for aid in ids.get("extra_assignments", {}).values():
-            cv.v1("DELETE", f"/assignments/{aid}")
+            cv.delete_quiet(f"/assignments/{aid}")
         if ids.get("teacher_module"):
-            cv.v1("DELETE", f"/modules/{ids['teacher_module']}")
+            cv.delete_quiet(f"/modules/{ids['teacher_module']}")
         for k in ("pages", "extra_assignments", "teacher_module"):
             ids.pop(k, None)
         IDS.write_text(json.dumps(ids, indent=1))
@@ -106,13 +106,16 @@ def main():
     def asg(aid):
         item(type="Assignment", content_id=aid)
 
+    def both(code):
+        return [cfa[code], rev[code]]
+
     plan = {1: [extra["lesson1"]],
-            2: [cfa["ESS1-5.1"], rev["ESS1-5.1"]],
-            3: [cfa["ESS1-5.2"], rev["ESS1-5.2"]],
-            4: [extra["lesson4"]],
-            5: [cfa["ESS1-5.3"], rev["ESS1-5.3"]],
-            6: [cfa["ESS1-6.1"], rev["ESS1-6.1"], extra["cer"], cfa["ESS1-5.4"], rev["ESS1-5.4"]],
-            7: [extra["enrichment"]],
+            2: both("ESS1-5.1"),
+            3: both("ESS1-5.2"),
+            4: both("ESS1-6.1") + both("ESS1-6.2") + [extra["lesson4"]],
+            5: both("ESS1-5.3"),
+            6: both("ESS1-5.4") + [extra["cer"]],
+            7: both("ESS1-5.5") + both("ESS1-6.3") + [extra["enrichment"]],
             8: [ids["csa"]]}
     for day in L.DAYS:
         sub(day)

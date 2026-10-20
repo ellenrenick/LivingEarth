@@ -2,336 +2,562 @@
 
 Generated from `questions.py`. Do not share with students.
 
+Targets follow the team workbook "Renick Living Earth Standards and Learning Targets (26-27)" (Targets tab).
+
 ## Schedule and Mastery Path
 
-| Target | CFA taken on | Review opens when |
-| --- | --- | --- |
-| ESS1-5.1 Evidence for continental drift | Day 2 | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
-| ESS1-5.2 Seafloor spreading and the age pattern | Day 3 | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
-| ESS1-5.3 Plate boundaries and subduction | Day 5 | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
-| ESS1-6.1 Radiometric dating and Earth's oldest rocks | Day 6 | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
-| ESS1-5.4 Argue why the seafloor is young and the continents are old | Day 6 | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| Target | Tier | DOK | CFA taken on | On the CSA | Review opens when |
+| --- | --- | --- | --- | --- | --- |
+| ESS1-5.1 Plates, boundaries, and crust | Priority | 1 | Day 2 | yes | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| ESS1-5.2 Reading rock ages | Priority | 2 | Day 3 | yes | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| ESS1-5.3 Why ocean crust is young and continents are old | Priority | 2 | Day 5 | yes | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| ESS1-5.4 Evidence for moving crust | Priority | 3 | Day 6 | yes | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| ESS1-5.5 How well plate tectonics explains rock ages | Priority | 3 | Day 7 | yes | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| ESS1-6.1 Evidence for early Earth | Supporting | 1 | Day 4 | no | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| ESS1-6.2 Why meteorites and moon rocks give the age | Supporting | 2 | Day 4 | no | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
+| ESS1-6.3 Telling the story of Earth's formation | Supporting | 3 | Day 7 | no | CFA score below 3 of 4 (fewer than 4 of 5 correct) |
 
-Day 7 is a review day: any CFA that did not fit, absent students, Mastery Path reviews, and the Enrichment choice board all happen there. There is no practice test.
+Priority targets (ESS1-5) are assessed on the CSA. Supporting targets (ESS1-6) are taught and practiced with CFAs and reviews but never appear on the CSA.
+
+Each CFA is taken at the start of the class after its lesson. CFAs for ESS1-5.5 and ESS1-6.3 follow Day 6, so they are taken on the work day after Day 6 or at the start of Day 7. Day 7 is a review day: any CFA that did not fit, absent students, Mastery Path reviews, and the Enrichment choice board all happen there. There is no practice test.
 
 ## CFAs (5 questions each, auto-graded)
 
-### CFA ESS1-5.1: Evidence for continental drift
+### CFA ESS1-5.1: Plates, boundaries, and crust
 
-*I can describe evidence for continental drift: matching fossils, matching rock types and mountain ranges, glacial evidence, and how the continents fit together.*
+*I can describe Earth's outer layer as moving plates, name three kinds of plate boundaries, and describe where ocean crust is made and where it sinks back down.*
+
+Workbook target (Priority, DOK 1): Describe Earth's outer layer (lithosphere) as moving plates that carry continental or oceanic crust, name the three kinds of plate boundary, and describe how new oceanic crust forms at mid-ocean ridges and is destroyed at subduction zones.
 
 **ESS1-5.1.1** (choice)
 
-Mesosaurus was a small freshwater reptile that lived about 280 million years ago. Its fossils are found only in eastern South America and southwestern Africa, two places now separated by the salty Atlantic Ocean. Which explanation is best supported by this evidence?
+Which statement best describes Earth's lithosphere (the crust and rigid upper mantle)?
 
-- A. Strong winds carried Mesosaurus eggs across the ocean.
-- B. South America and Africa were joined when Mesosaurus lived.  **(correct)**
-- C. Mesosaurus fossils moved across the seafloor on ocean currents.
-- D. Mesosaurus swam across the Atlantic Ocean to lay its eggs.
+- A. It is a layer of liquid rock beneath the crust.
+- B. It is broken into rigid plates that move slowly over the softer mantle, carrying continents and ocean floor.  **(correct)**
+- C. It includes only the continents above sea level.
+- D. It is one solid shell that does not move.
 
-Feedback shown to students: Mesosaurus lived in fresh water and could not cross a salt-water ocean. Finding the same fossils on both sides is best explained by the two continents being joined at the time.
+Feedback shown to students: The lithosphere is broken into plates. They move a few centimeters a year over the softer mantle below and carry continental crust, oceanic crust, or both.
 
-**ESS1-5.1.2** (multi)
+**ESS1-5.1.2** (choice)
 
-Select the THREE observations that are evidence the continents were once joined.
+Which row correctly matches each plate boundary with the way the plates move?
 
-- A. Rock layers and mountain belts on the two sides of the Atlantic match in type and age.  **(correct)**
-- B. Whales are found in every ocean.
-- C. The edges of the continental shelves of South America and Africa fit together like puzzle pieces.  **(correct)**
-- D. Every continent has rivers that flow to the sea.
-- E. Fossils of Glossopteris (a seed fern) are found on South America, Africa, India, Australia, and Antarctica.  **(correct)**
+- A. Divergent: plates move apart. Convergent: plates move toward each other. Transform: plates slide past each other.  **(correct)**
+- B. Divergent: plates slide past each other. Convergent: plates move apart. Transform: plates move toward each other.
+- C. Divergent: plates move apart. Convergent: plates slide past each other. Transform: plates move toward each other.
+- D. Divergent: plates move toward each other. Convergent: plates move apart. Transform: plates slide past each other.
 
-Feedback shown to students: Matching rocks and mountain belts, matching fossils on separated continents, and the fit of the continental shelves all point to continents that were once joined. Rivers and whales are found everywhere and say nothing about the continents' past positions.
+Feedback shown to students: Diverge means to move apart, converge means to come together, and a transform boundary is where plates slide past each other, like the San Andreas Fault.
 
-**ESS1-5.1.3** (tf)
+**ESS1-5.1.3** (multi)
 
-True or false: When Alfred Wegener proposed continental drift in 1912, most scientists accepted it right away because he had explained the force that moves the continents.
+Select the TWO features that form where plates move toward each other.
 
-- Answer: **False**
+- A. Rift valley
+- B. Deep-sea trench  **(correct)**
+- C. Mid-ocean ridge
+- D. San Andreas Fault
+- E. Line of volcanoes on land next to a trench  **(correct)**
 
-Feedback shown to students: False. Wegener had strong evidence that the continents were once joined, but he could not explain what force could move them, so many scientists rejected the idea for decades.
+Feedback shown to students: Trenches and volcanic arcs form at convergent boundaries where one plate sinks beneath another. Mid-ocean ridges and rift valleys form where plates pull apart, and the San Andreas Fault is a transform boundary.
 
 **ESS1-5.1.4** (choice)
 
-Scratches left by glaciers, from the same ice age, are found in rock in southern Africa, India, Australia, South America, and Antarctica. Most of these places are warm today. Which explanation fits best?
+Where is new oceanic crust made?
 
-- A. Earth was colder everywhere for one day, and ice covered every continent.
-- B. Volcanoes on each continent made the ice.
-- C. The continents were joined in one landmass near the south pole, and a connected ice sheet covered it.  **(correct)**
-- D. Glaciers slid across the oceans from one continent to another.
+- A. At deep-sea trenches, where plates collide
+- B. In the middle of continents
+- C. At transform faults, where plates slide past each other
+- D. At mid-ocean ridges, where magma rises as plates move apart  **(correct)**
 
-Feedback shown to students: When the southern continents are fitted together, the directions of the glacial scratches line up as if one ice sheet made them. The continents later moved apart to their warmer positions.
+Feedback shown to students: When plates pull apart at a mid-ocean ridge, magma rises into the gap and hardens into new ocean crust.
 
 **ESS1-5.1.5** (choice)
 
-Scientists fit the continents together using the edge of the continental shelf, not the coastline. Why?
+A deep trench runs along the coast of Chile, where the Nazca plate meets South America. What happens to the ocean crust there?
 
-- A. Continental shelves are made of ocean crust.
-- B. The shelf edge is the part of the continent that is always the oldest.
-- C. Coastlines are always straight, so they cannot be fitted.
-- D. The coastline changes with sea level and erosion, but the shelf edge is closer to the true edge of the continent.  **(correct)**
+- A. It slides sideways along a fault and stays at the surface.
+- B. It sinks beneath South America and returns to the mantle.  **(correct)**
+- C. It turns into continental crust.
+- D. It is pushed up to make a new mid-ocean ridge.
 
-Feedback shown to students: Sea level and erosion keep changing the coastline. The edge of the continental shelf is a better marker of where the continental crust actually ends, so the fit is better.
+Feedback shown to students: At a trench, the ocean plate sinks into the mantle. This is called subduction, and it is how ocean crust is destroyed.
 
-### CFA ESS1-5.2: Seafloor spreading and the age pattern
+### CFA ESS1-5.2: Reading rock ages
 
-*I can describe the pattern of seafloor rock ages, sediment thickness, and magnetic stripes, and explain how seafloor spreading makes new crust at mid-ocean ridges.*
+*I can read a rock-age map and describe the pattern in the ages.*
+
+Workbook target (Priority, DOK 2): Read a map or graph of rock ages and describe the pattern: oceanic crust is older farther from a ridge, and continental crust is oldest near an ancient core.
 
 **ESS1-5.2.1** (choice)
 
-Scientists drill into the seafloor along a line across the Mid-Atlantic Ridge. Crust at the ridge crest is brand new (0 years old). Crust 1,000 km from the ridge is 40 million years old. About how fast has the seafloor moved away from the ridge?
+Scientists measured the age of seafloor crust along a line across a mid-ocean ridge:
+Distance from ridge (km) | Crust age (million years) | 
+0 | 0 | 
+500 | 20 | 
+1,000 | 40 | 
+1,500 | 60 | 
+Which statement describes the pattern in the data?
 
-- A. About 40 cm per year
-- B. About 0.25 cm per year
-- C. About 2.5 cm per year  **(correct)**
-- D. About 25 cm per year
+- A. Crust is oldest at the ridge.
+- B. Crust gets older at a steady rate as distance from the ridge increases.  **(correct)**
+- C. Crust is the same age everywhere.
+- D. Crust gets younger as distance from the ridge increases.
 
-Feedback shown to students: 1,000 km in 40 million years is 25 km per million years. That is 2.5 cm per year, about as fast as a fingernail grows.
+Feedback shown to students: The age is 0 at the ridge and increases by 20 million years for every 500 km, a steady increase with distance.
 
 **ESS1-5.2.2** (choice)
 
-Ships towing magnetic sensors find stripes of rock with normal and reversed magnetism. The pattern on one side of a mid-ocean ridge is a mirror image of the pattern on the other side. What is the best explanation?
+A map of the Atlantic Ocean is colored by the age of the seafloor. A band of the youngest color runs down the center of the ocean, and the oldest colors are next to the continents. What does the band of youngest crust show?
 
-- A. Magnetic stripes form when seawater reacts with sediment.
-- B. Magma rises at the ridge, records Earth's magnetic field as it hardens, and then the new crust splits and moves apart in both directions.  **(correct)**
-- C. The ocean floor on each side was made at different times and then pushed together.
-- D. Earth's magnetic field only reversed on one side of the ocean.
+- A. Where the continents used to touch
+- B. Where the ocean is deepest
+- C. Where new crust is forming, at the mid-ocean ridge  **(correct)**
+- D. Where ocean crust is sinking into the mantle
 
-Feedback shown to students: Rock that forms at the ridge records the direction of Earth's magnetic field at that time. As the new rock splits and moves away on both sides, the same sequence of reversals is carried in both directions, giving mirror-image stripes.
+Feedback shown to students: The youngest crust is found where new crust forms, at the ridge. Ages then increase in both directions away from it.
 
 **ESS1-5.2.3** (choice)
 
-At the same spreading rate (2.5 cm per year, or 25 km per million years), how old is seafloor crust that is 3,000 km from the ridge?
+Using the same pattern (0 million years at the ridge, 20 million years at 500 km, and so on), about how old is crust 2,500 km from the ridge?
 
-- A. About 75 million years
-- B. About 12 million years
-- C. About 300 million years
-- D. About 120 million years  **(correct)**
+- A. 100 million years  **(correct)**
+- B. 50 million years
+- C. 500 million years
+- D. 250 million years
 
-Feedback shown to students: 3,000 km divided by 25 km per million years is 120 million years.
+Feedback shown to students: The crust gains 20 million years every 500 km, which is 25 km per million years. 2,500 ÷ 25 = 100 million years.
 
-**ESS1-5.2.4** (tf)
+**ESS1-5.2.4** (choice)
 
-True or false: Seafloor sediment is thickest right at the ridge crest and gets thinner farther away.
+Geologists mapped the age of North America's continental crust:
+Region of North America | Distance from the central core (km) | Age of the crust | 
+Canadian Shield (the central core) | 0 | about 2.7 billion years | 
+Grenville Province (Great Lakes to Quebec) | about 1,200 | about 1.1 billion years | 
+Appalachian Mountains | about 2,000 | about 400 million years | 
+Simplified from geologic maps.
+Which statement describes the pattern?
+
+- A. Continental crust is the same age everywhere.
+- B. Continental crust is youngest near the central core and gets older farther away.
+- C. Continental crust is oldest near the central core and gets younger farther away.  **(correct)**
+- D. Continental crust is oldest at the Atlantic coast.
+
+Feedback shown to students: The ancient core in the Canadian Shield is about 2.7 billion years old. The crust gets younger moving outward to the Grenville Province and the Appalachians.
+
+**ESS1-5.2.5** (tf)
+
+True or false: On a map of North America's crust, the oldest rocks are found at the edges of the continent and the youngest are in the middle.
 
 - Answer: **False**
 
-Feedback shown to students: False. New crust at the ridge has had no time to collect sediment. Older crust farther away has had millions of years for the shells of dead plankton and fine particles to settle, so the layer gets thicker with distance.
+Feedback shown to students: False. It is the other way around: the oldest rocks are in the central core and the crust gets younger toward the edges.
 
-**ESS1-5.2.5** (choice)
+### CFA ESS1-5.3: Why ocean crust is young and continents are old
 
-Communities of tube worms, clams, and bacteria live around hydrothermal vents along the crest of mid-ocean ridges. They are not found on older seafloor far from the ridge. What best explains this pattern?
+*I can explain why ocean crust is young and why continents are oldest at their ancient cores.*
 
-- A. Older seafloor is too thickly covered with sediment for any animal to live there.
-- B. Vents need heat from fresh magma near the surface, which only exists where crust is new; as crust moves away and cools, the vents stop.  **(correct)**
-- C. Vent animals can only live in the deepest part of the ocean.
-- D. Vent communities move across the seafloor to follow the sunlight.
-
-Feedback shown to students: Vent water is heated by magma near the ridge. The bacteria use chemicals from that water for energy (chemosynthesis) and feed the rest of the community. As the crust moves away from the ridge it cools, the vents shut off, and the community dies.
-
-### CFA ESS1-5.3: Plate boundaries and subduction
-
-*I can identify the three plate boundary types and explain why ocean crust sinks at subduction zones while less-dense continental crust survives.*
+Workbook target (Priority, DOK 2): Explain why oceanic crust is young compared with the oldest continental rocks, and why continental crust is youngest far from its ancient core, using how each kind of crust forms, grows, and is recycled.
 
 **ESS1-5.3.1** (choice)
 
-Along the west coast of South America, the Nazca plate (ocean) sinks beneath the South American plate (continent). A deep trench forms offshore, and a chain of volcanoes (the Andes) rises on land. What type of plate boundary is this?
+The oldest ocean floor is about 200 million years old, but some continental rock is about 4 billion years old. Which explanation fits best?
 
-- A. Divergent
-- B. Mid-ocean ridge
-- C. Transform
-- D. Convergent  **(correct)**
+- A. Ocean crust is made at ridges and destroyed at subduction zones, so it is always replaced, while continental crust stays at the surface.  **(correct)**
+- B. Continental crust is made at mid-ocean ridges, and ocean crust is not.
+- C. Waves and currents wear away ocean rock faster than rain wears away continental rock.
+- D. The ocean formed after the continents did, so all ocean rock is young.
 
-Feedback shown to students: Two plates moving toward each other is a convergent boundary. When one plate sinks beneath another it is called subduction, and it makes a trench and volcanoes.
+Feedback shown to students: Ocean floor is a conveyor belt: it is made at ridges and recycled at trenches within about 200 million years. Continental crust is not recycled that way, so it can last billions of years.
 
-**ESS1-5.3.2** (multi)
+**ESS1-5.3.2** (choice)
 
-Select the TWO landforms that form where two plates move apart.
+An old ocean plate (average density about 3.0 g/cm³) collides with a continental plate (average density about 2.7 g/cm³). What happens, and why?
 
-- A. Deep-sea trench
-- B. Chain of volcanic islands above a subduction zone
-- C. Rift valley (such as in East Africa)  **(correct)**
-- D. Mid-ocean ridge  **(correct)**
+- A. The ocean plate sinks beneath the continent because it is denser.  **(correct)**
+- B. Both plates sink at the same rate.
+- C. Neither plate sinks because they have similar densities.
+- D. The continental plate sinks because it is thicker.
 
-Feedback shown to students: Where plates pull apart (a divergent boundary), new crust forms in mid-ocean ridges, and on land the crust can split to form rift valleys. Trenches and volcanic island arcs form at convergent boundaries.
+Feedback shown to students: The denser plate sinks beneath the less-dense plate. Old, cold ocean plates are denser than continental crust, so they subduct.
 
 **ESS1-5.3.3** (choice)
 
-An ocean plate (average density about 3.0 g/cm³) collides with a continental plate (average density about 2.7 g/cm³). Which statement is correct?
+Continental crust is rarely pulled down into the mantle. Which statement explains why some continental crust is billions of years old?
 
-- A. The ocean plate sinks because it is denser.  **(correct)**
-- B. Both plates sink at the same rate.
-- C. The continental plate sinks because it is thicker.
-- D. Neither plate can sink because they have similar density.
+- A. Continental crust is never worn down by weathering and erosion.
+- B. Continental crust is made at the same ridges as ocean crust.
+- C. Continental crust is less dense, so it is buoyant and stays at the surface instead of sinking at subduction zones.  **(correct)**
+- D. Continental crust is made of the same material as the mantle.
 
-Feedback shown to students: The denser plate sinks beneath the less-dense one. Old, cold ocean plates are denser than continental plates, so the ocean plate subducts.
+Feedback shown to students: Continental crust is thick and less dense, so it floats and survives. Ocean plates are denser, so they are recycled.
 
-**ESS1-5.3.4** (tf)
+**ESS1-5.3.4** (choice)
 
-True or false: Most continental crust is not pulled down into the mantle at subduction zones because it is less dense and more buoyant than ocean plates.
+In North America, the continental crust is oldest in the central core and youngest near the edges. Which explanation fits best?
 
-- Answer: **True**
+- A. Over time, volcanic island chains and pieces of crust were added to the edges of the continent, so the newest material is at the outside.  **(correct)**
+- B. The edges of the continent were made first and the center formed last.
+- C. The crust at the center was recycled at subduction zones, so it is the youngest.
+- D. New crust forms at the center of the continent, like a mid-ocean ridge.
 
-Feedback shown to students: True. Continental crust is thick and less dense, so it floats at the surface. This is why continental rock can survive for billions of years while ocean floor is recycled.
+Feedback shown to students: Continents grow outward, like tree rings. Volcanic arcs and pieces of crust collide with the edge and are added to it, so crust gets younger moving away from the ancient core.
 
 **ESS1-5.3.5** (choice)
 
-Seafloor sediment includes calcium carbonate shells from dead plankton, which contain carbon. What happens to some of this carbon at a subduction zone?
+Which sequence describes the life of a piece of ocean crust?
 
-- A. It is carried down into the mantle with the sinking plate, and some returns to the air as carbon dioxide from volcanoes.  **(correct)**
-- B. It stays on the surface because sediment is too light to sink.
-- C. It turns into oxygen as the plate sinks.
-- D. It is destroyed, so the atoms no longer exist.
+- A. It is made in the middle of a continent and moves toward the coast.
+- B. It is made at a ridge and stays in the same place for billions of years.
+- C. It is made at a trench, moves toward a ridge, and sinks at the ridge.
+- D. It is made at a ridge, moves away as part of a plate, cools and becomes denser, and sinks at a trench.  **(correct)**
 
-Feedback shown to students: Atoms are not destroyed. Sediment and its carbon ride the sinking plate into the mantle, and some of the carbon comes back to the atmosphere as CO₂ when volcanoes erupt. This links plate tectonics to the carbon cycle.
+Feedback shown to students: New crust forms at a ridge and moves away as the plate spreads. As it ages it cools and gets denser, and at a trench it sinks back into the mantle.
 
-### CFA ESS1-6.1: Radiometric dating and Earth's oldest rocks
+### CFA ESS1-5.4: Evidence for moving crust
 
-*I can explain how radiometric dating uses half-life to find the age of a rock, and why Earth's oldest rocks are younger than meteorites.*
+*I can judge how strong the evidence is that the crust has moved and is still moving.*
 
-**ESS1-6.1.1** (choice)
-
-A rock formed with 80 atoms of a radioactive parent isotope. After 3 half-lives, how many parent atoms remain?
-
-- A. 40
-- B. 0
-- C. 10  **(correct)**
-- D. 20
-
-Feedback shown to students: 80 → 40 (1 half-life) → 20 (2) → 10 (3). After 3 half-lives, 1/8 of the original remains.
-
-**ESS1-6.1.2** (choice)
-
-An archaeologist finds a wooden tool believed to be about 8,000 years old. Which dating method can she use, and why?
-
-- A. Carbon-14, because wood was once living and the tool is far younger than 50,000 years.  **(correct)**
-- B. Uranium-235, because it works on all organic material.
-- C. Uranium-238, because it has the longest half-life.
-- D. None; wood cannot be dated by radioactive decay.
-
-Feedback shown to students: Living things take in carbon-14. After death it decays with a half-life of 5,730 years, so it works for once-living material up to about 50,000 years old. Uranium isotopes decay too slowly to date something this young.
-
-**ESS1-6.1.3** (choice)
-
-Scientists often date zircon crystals in igneous rock using uranium. Zircon takes uranium into its structure when it forms but leaves out lead. Why does this make zircon a good “clock”?
-
-- A. Zircon always contains exactly the same amount of uranium.
-- B. Lead stops uranium from decaying.
-- C. Any lead found in the zircon must have come from the decay of uranium since the crystal formed.  **(correct)**
-- D. Zircon is the hardest mineral, so it cannot be scratched.
-
-Feedback shown to students: Because the crystal started with uranium and no lead, the ratio of lead to uranium shows how much decay, and so how much time, has passed since the crystal formed.
-
-**ESS1-6.1.4** (tf)
-
-True or false: Carbon-14 dating can be used to find the age of a 3.5-billion-year-old rock fossil.
-
-- Answer: **False**
-
-Feedback shown to students: False. Carbon-14 has a half-life of 5,730 years, so after about 50,000 years too little is left to measure. Rocks billions of years old are dated with isotopes that decay far more slowly, such as uranium.
-
-**ESS1-6.1.5** (choice)
-
-The oldest known meteorites are about 4.56 billion years old. The oldest known Earth rocks are about 4.0 billion years old. Why are meteorites older than any rock found on Earth?
-
-- A. Earth's earliest rocks were destroyed or recycled by plate tectonics and erosion, but meteorites have changed very little since they formed.  **(correct)**
-- B. Earth formed after the meteorites, so Earth is younger than they are.
-- C. Meteorites formed before the solar system.
-- D. Radioactive decay is faster on Earth than in space.
-
-Feedback shown to students: Earth's active surface recycled its earliest rock. Meteorites formed with the solar system and have stayed nearly unchanged, so they preserve its age, which is also the best estimate for Earth's age.
-
-### CFA ESS1-5.4: Argue why the seafloor is young and the continents are old
-
-*I can argue from evidence why ocean-floor rock is young and continental rock is old.*
+Workbook target (Priority, DOK 3): Evaluate evidence, such as rock ages, magnetic striping, and measured plate motion, for past and current movements of continental and oceanic crust.
 
 **ESS1-5.4.1** (choice)
 
-The question is: Why is the ocean floor so much younger than the continents? Which claim answers the question best?
+Scientists have three kinds of evidence about moving crust: (A) the same fossils on separated continents, (B) mirror-image magnetic stripes on the two sides of a ridge, and (C) GPS and satellite measurements of plates moving a few centimeters a year. Which is the best evidence that plates are moving right now?
 
-- A. The ocean floor is made of basalt.
-- B. The ocean floor is young.
-- C. The ocean floor is young because it is made at ridges and recycled at subduction zones, while less-dense continental crust is not recycled.  **(correct)**
-- D. The ocean is young.
+- A. A, because fossils are millions of years old
+- B. None of them, because only one kind of evidence is ever strong
+- C. C, because it is a direct measurement of present motion  **(correct)**
+- D. B, because magnetic stripes were made in the past
 
-Feedback shown to students: A strong claim answers the question completely and names the cause. The other choices restate the observation, are incorrect, or do not answer the question.
+Feedback shown to students: GPS and satellite data measure the motion of the plates today. Fossils and magnetic stripes record past movement.
 
-**ESS1-5.4.2** (multi)
+**ESS1-5.4.2** (choice)
 
-Select the TWO statements that are evidence (data or observations), not reasoning.
+A student says, “The same fossil found on two continents proves that the continents moved apart.” Which response is the best evaluation?
 
-- A. The oldest minerals found in continental rock are about 4.4 billion years old.  **(correct)**
-- B. Continents are less dense, so they do not sink.
-- C. Crust 2,000 km from the Mid-Atlantic Ridge is about 80 million years old.  **(correct)**
-- D. Because crust is made at the ridge, it must be older farther away.
+- A. Matching fossils show the lands were once connected, but they say little about how or when they moved. The case is stronger when rock ages, magnetic stripes, and measured motion agree.  **(correct)**
+- B. The student is wrong; fossils say nothing about the continents.
+- C. The student is right; fossils are the only evidence needed.
+- D. Fossils cannot be evidence because they are too old.
 
-Feedback shown to students: Evidence is a measurement or observation: a specific age or distance. The other two statements explain why the data look the way they do, which is reasoning.
+Feedback shown to students: Fossils are good evidence that lands were once joined, but a single line of evidence has limits. Several independent lines that agree make a much stronger case.
 
-**ESS1-5.4.3** (choice)
+**ESS1-5.4.3** (multi)
 
-Which piece of evidence best supports the claim that new ocean crust forms at mid-ocean ridges?
+Select the TWO observations that together show new seafloor forms at a ridge and spreads away from it.
 
-- A. Some islands are made of volcanic rock.
-- B. The ocean is very large.
-- C. Fish live in all parts of the ocean.
-- D. Seafloor ages are 0 at the ridge crest and increase evenly in both directions, with mirror-image magnetic stripes.  **(correct)**
+- A. The deepest part of the ocean is in the Pacific.
+- B. Earthquakes occur in Japan.
+- C. Whales live in every ocean.
+- D. Crust gets older with distance from the ridge.  **(correct)**
+- E. Magnetic stripes on one side of the ridge are a mirror image of those on the other.  **(correct)**
 
-Feedback shown to students: The best evidence is a specific pattern that the claim predicts: youngest rock at the ridge, ages increasing symmetrically away from it, and matching stripes on both sides.
+Feedback shown to students: A steady increase in age away from the ridge and symmetrical magnetic stripes are the two observations that match crust forming at the ridge and moving apart in both directions.
 
 **ESS1-5.4.4** (choice)
 
-Which sentence is the best reasoning to connect the evidence to the claim that continental rock is older than ocean-floor rock?
+GPS stations on opposite sides of the Mid-Atlantic Ridge in Iceland are moving apart by about 2 cm per year. Rock ages and magnetic stripes give a spreading rate of about 2.5 cm per year. What does this agreement tell you?
 
-- A. Continental rock is found on land.
-- B. Because ocean plates are denser, they sink at subduction zones and are destroyed, but continental crust is too buoyant to sink, so it stays at the surface for billions of years.  **(correct)**
-- C. Many scientists agree that continents are old.
-- D. The oldest rock is the most interesting to study.
+- A. The GPS data must be wrong because rock ages are more accurate.
+- B. Two independent methods give nearly the same rate, which makes the conclusion that the seafloor is spreading more trustworthy.  **(correct)**
+- C. Spreading stopped millions of years ago.
+- D. The evidence is weak because the two numbers are different.
 
-Feedback shown to students: Reasoning links the evidence to the claim with a scientific process. Here it is the density difference and what it does at subduction zones.
+Feedback shown to students: When two independent methods, one measuring today and one using rocks formed over millions of years, give nearly the same rate, the evidence is stronger.
 
 **ESS1-5.4.5** (choice)
 
-A student argues: “The ocean floor is young because waves and currents wear it away, so old rock is eroded.” Which evidence best shows this is incorrect?
+Which new finding would most weaken the idea that ocean crust forms at ridges and spreads away from them?
 
-- A. Waves are strongest near the coast.
-- B. The ocean has tides.
-- C. Some fish live deep in the ocean.
-- D. Sediment is thickest on the oldest seafloor, so old crust is still there and has not been worn away.  **(correct)**
+- A. Crust at the ridge is 100 million years old and crust gets younger farther away.  **(correct)**
+- B. Magnetic stripes are mirror images on both sides of the ridge.
+- C. Crust at the ridge is brand new and gets older farther away.
+- D. GPS stations on either side of the ridge are moving apart.
 
-Feedback shown to students: If old seafloor were being eroded away, it would have little sediment. Instead sediment gets thicker with age, and the ages follow a regular pattern from the ridge. The old ocean floor is recycled at subduction zones, not worn away.
+Feedback shown to students: If the crust at the ridge were old and got younger moving away, it would contradict the idea that the ridge is where new crust forms. The other findings support the idea.
 
-## CSA (16 questions; Q14 and Q16 are teacher-graded, 4 points each)
+### CFA ESS1-5.5: How well plate tectonics explains rock ages
+
+*I can judge how well plate tectonics explains the ages of rocks, using evidence.*
+
+Workbook target (Priority, DOK 3): Evaluate how well the theory of plate tectonics explains the ages of crustal rocks, using evidence from both oceanic and continental crust.
+
+**ESS1-5.5.1** (choice)
+
+Which statement best completes the reasoning?
+Plate tectonics explains why the ocean floor is under 200 million years old and continental rock can be billions of years old, because…
+
+- A. ocean rock erodes faster than continental rock.
+- B. ocean plates are continuously made at ridges and recycled at subduction zones, while buoyant continental crust is not.  **(correct)**
+- C. scientists have not found the older ocean rocks yet.
+- D. the ocean did not exist until 200 million years ago.
+
+Feedback shown to students: The theory explains both ages with one process: ocean crust is made and destroyed on a short cycle, while continental crust is too buoyant to be destroyed.
+
+**ESS1-5.5.2** (multi)
+
+Select the TWO observations about the ages of rocks that plate tectonics explains well.
+
+- A. The ocean floor is older than the continents.
+- B. All crust on Earth is the same age.
+- C. Ocean crust gets steadily older away from mid-ocean ridges and none is older than about 200 million years.  **(correct)**
+- D. Some continental rock is billions of years old, much older than the ocean floor.  **(correct)**
+
+Feedback shown to students: Plate tectonics explains the age pattern of the ocean floor (made at ridges, destroyed at trenches) and the much greater age of continental crust (too buoyant to sink).
+
+**ESS1-5.5.3** (choice)
+
+A student argues: “The ocean floor is young because waves and currents wear it away, so the old rock is eroded.” Which evidence best shows this explanation does not fit?
+
+- A. The ocean has tides.
+- B. Sediment is thickest on the oldest seafloor, so old crust is still there and is not worn away.  **(correct)**
+- C. Some fish live in the deep ocean.
+- D. Waves are strongest near the coast.
+
+Feedback shown to students: If old seafloor were eroded away, it would have little sediment. Instead it has the thickest sediment, and the ages follow a regular pattern away from the ridge. The old ocean floor is recycled at trenches, not worn away.
+
+**ESS1-5.5.4** (choice)
+
+When you judge how well plate tectonics explains the ages of rocks, which is the best limitation to point out?
+
+- A. No ocean floor older than about 200 million years survives, so the theory cannot be tested against ocean rock from early in Earth's history; continental rocks supply that evidence.  **(correct)**
+- B. Rocks do not have ages.
+- C. Plate tectonics only explains the ages of ocean rock, not continental rock.
+- D. Plate tectonics has never been supported by any measurement.
+
+Feedback shown to students: A strong evaluation notes where the evidence stops. Older ocean crust has been destroyed, so for early Earth scientists rely on continental rocks and other evidence.
+
+**ESS1-5.5.5** (choice)
+
+The oldest widely accepted fossils, about 3.5 billion years old, are found in continental rock in Western Australia. No fossils that old have been found in ocean-floor rock. How does this fit plate tectonics?
+
+- A. Life did not exist in the oceans until 200 million years ago.
+- B. Scientists have not drilled the ocean floor yet.
+- C. Fossils cannot form in rock made at mid-ocean ridges.
+- D. Ocean floor that old has been recycled at subduction zones, so it no longer exists; the early record survives in continental rock.  **(correct)**
+
+Feedback shown to students: The ocean floor does not last long enough to hold the first three billion years of life's history. That record is in the continents, which survive much longer.
+
+### CFA ESS1-6.1: Evidence for early Earth
+
+*I can list the evidence scientists use to learn about early Earth.*
+
+Workbook target (Supporting, DOK 1): Describe the evidence for Earth's early history: radiometric ages of meteorites, moon rocks, and Earth's oldest minerals, and the impact-crater record.
+
+**ESS1-6.1.1** (choice)
+
+Which materials give scientists radiometric ages that tell about the early history of Earth and the solar system?
+
+- A. Meteorites, moon rocks, and Earth's oldest minerals  **(correct)**
+- B. Seafloor sediment, coral, and tree rings
+- C. Fossil shells, bones, and wood
+- D. Soil, sand, and river water
+
+Feedback shown to students: Meteorites, rocks brought back from the Moon, and the oldest Earth minerals (zircon crystals) all have been dated and together give evidence for early Earth.
+
+**ESS1-6.1.2** (multi)
+
+Select the THREE kinds of evidence scientists use to learn about early Earth.
+
+- A. The pattern of magnetic stripes
+- B. The age of the Atlantic seafloor
+- C. Radiometric ages of moon rocks (up to about 4.4 billion years)  **(correct)**
+- D. Radiometric ages of meteorites (about 4.56 billion years)  **(correct)**
+- E. Ages of Earth's oldest minerals, zircon crystals (about 4.4 billion years)  **(correct)**
+
+Feedback shown to students: Meteorites, moon rocks, and Earth's oldest zircons are the main sources of early-Earth ages. The Atlantic seafloor is far younger, and magnetic stripes record recent movement.
+
+**ESS1-6.1.3** (choice)
+
+The Moon's highlands are covered with craters, but Earth's surface has few visible impact craters. What does the Moon's crater record show?
+
+- A. Craters are made by volcanoes, not by impacts.
+- B. The Moon was hit more often than Earth because it is larger.
+- C. The Moon is younger than Earth.
+- D. A heavily cratered surface is old and has kept a record of impacts that Earth's active surface has erased.  **(correct)**
+
+Feedback shown to students: The Moon has no plate tectonics and almost no weather, so its craters last. Earth's surface is renewed by tectonics, erosion, and weathering, which erase most craters.
+
+**ESS1-6.1.4** (choice)
+
+What does radiometric dating measure?
+
+- A. The amounts of a radioactive parent isotope and its daughter product in a sample, which show how much decay has happened  **(correct)**
+- B. The color of the rock
+- C. The number of fossils in a rock
+- D. The thickness of the layers of sediment
+
+Feedback shown to students: Radioactive atoms decay at a steady rate. Comparing how much parent and daughter material a sample contains, along with the half-life, gives its age.
+
+**ESS1-6.1.5** (choice)
+
+Scientists found zircon crystals in Western Australia that are the oldest known Earth minerals. About how old are they?
+
+- A. About 400 million years
+- B. About 44,000 years
+- C. About 4.4 million years
+- D. About 4.4 billion years  **(correct)**
+
+Feedback shown to students: The Jack Hills zircons are about 4.4 billion years old, which is almost as old as the Earth itself.
+
+### CFA ESS1-6.2: Why meteorites and moon rocks give the age
+
+*I can explain why meteorites and moon rocks tell Earth's age better than Earth rocks do.*
+
+Workbook target (Supporting, DOK 2): Explain why the age of the solar system, about 4.6 billion years, comes mostly from meteorites and moon rocks rather than from Earth's own rocks.
+
+**ESS1-6.2.1** (choice)
+
+The oldest known Earth rocks are about 4.0 billion years old, but the oldest meteorites are about 4.56 billion years old. Why are the meteorites older than any Earth rock?
+
+- A. Radioactive decay is faster on Earth than in space.
+- B. Meteorites formed before the solar system.
+- C. Earth formed after the meteorites, so Earth is younger than they are.
+- D. Earth's earliest rocks were destroyed or recycled by plate tectonics, erosion, and weathering, but meteorites have changed very little since they formed.  **(correct)**
+
+Feedback shown to students: Earth's active surface recycled its earliest rock. Meteorites formed with the solar system and stayed nearly unchanged.
+
+**ESS1-6.2.2** (choice)
+
+Rocks brought back from the Moon include some older than any rock found on Earth. Why does the Moon keep rocks that old?
+
+- A. The Moon formed long before the solar system.
+- B. Moon rocks cannot be dated.
+- C. The Moon is covered by an ocean.
+- D. The Moon has no plate tectonics and almost no weathering, so ancient rock stays at the surface.  **(correct)**
+
+Feedback shown to students: Earth's rocks are constantly recycled. The Moon is geologically quiet, so its early rocks have survived.
+
+**ESS1-6.2.3** (choice)
+
+Why do scientists use meteorites to find the age of the solar system?
+
+- A. They are always found on the ocean floor.
+- B. They are the youngest objects in the solar system.
+- C. They formed at about the same time as the planets from the same cloud of gas and dust and have changed little since.  **(correct)**
+- D. They contain no radioactive atoms.
+
+Feedback shown to students: Meteorites are leftover building material from when the planets formed. Because they were not recycled, their ages are close to the age of the solar system.
+
+**ESS1-6.2.4** (choice)
+
+Scientists measured the ages of several materials:
+Material | Age (billion years) | 
+Meteorites | 4.56 | 
+Moon highland rocks | up to 4.4 | 
+Oldest Earth mineral (zircon) | 4.4 | 
+Oldest known Earth rock | 4.0 | 
+Which gives the best estimate of the age of the solar system, and why?
+
+- A. The average of the four ages, because every material is equally reliable
+- B. The Moon rocks, because the Moon is closest to Earth
+- C. The oldest Earth rock, 4.0 billion years, because it is from Earth
+- D. The meteorites, about 4.56 billion years, because they are the oldest materials and have changed little since they formed  **(correct)**
+
+Feedback shown to students: The oldest, least-altered materials give the best estimate. Earth rocks are younger because the earlier ones were destroyed or changed.
+
+**ESS1-6.2.5** (tf)
+
+True or false: Because the oldest Earth rock is about 4.0 billion years old, Earth must be 4.0 billion years old.
+
+- Answer: **False**
+
+Feedback shown to students: False. The oldest rock that has survived is only a minimum age for Earth. Earlier rocks were recycled, and meteorites and moon rocks show Earth formed about 4.5 billion years ago.
+
+### CFA ESS1-6.3: Telling the story of Earth's formation
+
+*I can use evidence from rocks, meteorites, and other planets to tell how Earth formed.*
+
+Workbook target (Supporting, DOK 3): Apply scientific reasoning and evidence from ancient Earth materials, meteorites, and other planetary surfaces to construct an account of Earth's formation and early history.
+
+**ESS1-6.3.1** (choice)
+
+Which list puts these events in order from earliest to latest, based on the evidence?
+
+- A. Oldest rocks, meteorites, oldest fossils, oldest minerals
+- B. Oldest fossils, oldest rocks, oldest minerals, meteorites
+- C. Meteorites form (4.56 billion years ago), Earth's oldest minerals form (4.4 billion), Earth's oldest rocks form (4.0 billion), the oldest fossils form (3.5 billion)  **(correct)**
+- D. Oldest minerals, meteorites, oldest fossils, oldest rocks
+
+Feedback shown to students: The ages in billions of years ago order the events: 4.56, 4.4, 4.0, and 3.5.
+
+**ESS1-6.3.2** (choice)
+
+The Moon and Mars have large, heavily cratered regions. Earth's surface has few craters. Which explanation best uses this evidence to tell about Earth's early history?
+
+- A. Earth was never hit by impacts.
+- B. Craters on the Moon and Mars are made by volcanoes, so Earth was not affected.
+- C. Earth formed after the Moon and Mars stopped being hit.
+- D. All three bodies were hit by many impacts early on; the Moon and Mars kept the record, while Earth's surface was renewed by plate tectonics, erosion, and weathering.  **(correct)**
+
+Feedback shown to students: The cratered surfaces of other bodies show how many impacts early planets took. Earth was hit too, but its surface keeps renewing itself, so most of the record is gone.
+
+**ESS1-6.3.3** (choice)
+
+Which statement is the best evidence that Earth formed about 4.5 billion years ago?
+
+- A. Meteorites are about 4.56 billion years old and Earth's oldest minerals are about 4.4 billion years old, so Earth must be about as old as the oldest materials in the solar system.  **(correct)**
+- B. The ocean floor is about 200 million years old.
+- C. Fossils have been found that are 3.5 billion years old.
+- D. Mountains exist on Earth.
+
+Feedback shown to students: The meteorite age marks when the solar system formed. Earth's oldest minerals are only slightly younger, which fits Earth forming at about the same time.
+
+**ESS1-6.3.4** (multi)
+
+A table lists the ages of several materials: meteorites 4.56 billion years, moon highland rocks up to 4.4, Earth's oldest zircon 4.4, Earth's oldest rock 4.0, oldest fossils 3.5, and the oldest ocean floor 0.2. Select the TWO statements that are supported by this evidence.
+
+- A. Solid rock and minerals had formed on Earth by about 4.4 billion years ago.  **(correct)**
+- B. Earth formed about 4.0 billion years ago.
+- C. Life existed by about 3.5 billion years ago.  **(correct)**
+- D. Earth's ocean floor is the oldest material on Earth.
+
+Feedback shown to students: Zircons about 4.4 billion years old show solid crust existed by then, and fossils about 3.5 billion years old show life existed by then. Earth is older than 4.0 billion years, and the ocean floor is the youngest material in the table.
+
+**ESS1-6.3.5** (choice)
+
+A student writes: “Earth formed 4.0 billion years ago because that is the age of the oldest rock.” Which revision is best?
+
+- A. Earth formed about 4.5 billion years ago. The oldest surviving rocks are younger because the earliest crust was recycled, and meteorites and moon rocks, which were not recycled, are about 4.4 to 4.56 billion years old.  **(correct)**
+- B. Earth formed 3.5 billion years ago, when life began.
+- C. Earth formed 4.0 billion years ago, but scientists are not sure.
+- D. Earth formed 200 million years ago, the age of the ocean floor.
+
+Feedback shown to students: A strong account uses several lines of evidence and explains why the oldest Earth rock is not the same as the age of Earth.
+
+## CSA (16 questions on the five priority targets; Q12 and Q16 are teacher-graded, 4 points each)
 
 **Q1 · ESS1-5.1** (choice)
 
-Glossopteris was a seed fern whose seeds were large and heavy. Fossils of Glossopteris that are about 270 million years old are found in South America, Africa, India, Australia, and Antarctica. Which explanation is best supported?
+Which sequence correctly describes the path of a piece of ocean crust?
 
-- A. The landmasses were joined as one supercontinent when the plant lived.  **(correct)**
-- B. Glossopteris evolved separately on every continent in the same way.
-- C. The plant grew in the ocean and washed ashore.
-- D. The seeds were carried across the oceans by wind.
+- A. It forms at a trench, moves across the ocean, and ends at a ridge.
+- B. It forms at a ridge and stays there for billions of years.
+- C. It forms at a transform fault and moves onto a continent.
+- D. It forms at a mid-ocean ridge, moves away on a plate, and sinks into the mantle at a trench.  **(correct)**
 
-Feedback shown to students: Heavy seeds cannot cross thousands of kilometers of ocean. Matching fossils of the same age on separated continents are best explained by the continents being joined.
+Feedback shown to students: Ocean crust is made at ridges where plates pull apart and destroyed at trenches where one plate sinks beneath another.
 
-**Q2 · ESS1-5.1** (multi)
+**Q2 · ESS1-5.1** (choice)
 
-Select the THREE observations that are evidence that Africa, India, Antarctica, and South America were once joined.
+Which pair correctly matches a plate boundary type with a real example?
 
-- A. Earthquakes occur in Japan.
-- B. Rock layers of the same type and age are found in the matching places across the fitted continents.  **(correct)**
-- C. Fossils of Lystrosaurus, a land animal about 250 million years old, are found in Africa, India, and Antarctica.  **(correct)**
-- D. Glacial scratches from the same ice age line up in direction when the continents are fitted together.  **(correct)**
-- E. The Atlantic Ocean is saltier than the Indian Ocean.
+- A. Divergent: the Peru-Chile Trench. Convergent: the San Andreas Fault. Transform: the Mid-Atlantic Ridge.
+- B. Divergent: the Andes. Convergent: the San Andreas Fault. Transform: the Mid-Atlantic Ridge.
+- C. Divergent: the Mid-Atlantic Ridge. Convergent: the Andes and the Peru-Chile Trench. Transform: the San Andreas Fault.  **(correct)**
+- D. Divergent: the San Andreas Fault. Convergent: the Mid-Atlantic Ridge. Transform: the Andes.
 
-Feedback shown to students: Matching land fossils, glacial scratches that line up, and matching rock layers are all evidence for a joined landmass. Earthquakes in Japan and ocean salt do not bear on the past positions of the continents.
+Feedback shown to students: The Mid-Atlantic Ridge is where plates move apart, the Andes and the trench are where the Nazca plate sinks beneath South America, and the San Andreas Fault is where plates slide past each other.
 
 **Q3 · ESS1-5.1** (tf)
 
-True or false: One reason many scientists rejected Wegener's idea of continental drift was that he could not explain what force could move continents.
+True or false: Earth's lithosphere is broken into moving plates, and a single plate can carry both continental crust and oceanic crust.
 
 - Answer: **True**
 
-Feedback shown to students: True. The evidence for joined continents was strong, but without a mechanism the idea was not accepted until seafloor spreading was discovered.
+Feedback shown to students: True. The North American plate, for example, carries a continent and part of the Atlantic seafloor.
 
 **Q4 · ESS1-5.2** (choice)
 
@@ -340,123 +566,154 @@ Site | Distance from ridge (km) | Crust age (million years) |
 A | 0 | 0 | 
 B | 750 | 30 | 
 C | 1,750 | ? | 
-If the seafloor keeps spreading at the same rate, what is the age of Site C?
+If the pattern continues at the same rate, what is the age of Site C?
 
 - A. About 70 million years  **(correct)**
 - B. About 175 million years
 - C. About 130 million years
 - D. About 35 million years
 
-Feedback shown to students: Rate = 750 km / 30 million years = 25 km per million years. 1,750 km / 25 = 70 million years.
+Feedback shown to students: The rate is 750 km in 30 million years, or 25 km per million years. 1,750 ÷ 25 = 70 million years.
 
 **Q5 · ESS1-5.2** (choice)
 
-Which observation best supports the idea that new crust forms at a mid-ocean ridge and moves away in both directions?
+A map of seafloor ages in the Atlantic shows bands of color. Which description matches the pattern a ridge produces?
 
-- A. Both sides of the ridge are covered with the same thickness of sediment near the crest.
-- B. The ridge is the highest mountain range on the seafloor.
-- C. Hot water comes out of the seafloor at the ridge.
-- D. The stripe pattern of magnetic reversals on one side of the ridge is a mirror image of the pattern on the other side.  **(correct)**
+- A. The ages are scattered with no pattern.
+- B. The youngest bands are next to the continents, and the oldest is along the ridge.
+- C. The youngest band is on one side of the ocean and the oldest is on the other.
+- D. The youngest band is along the ridge, and bands get older in both directions away from it, matching on the two sides.  **(correct)**
 
-Feedback shown to students: Mirror-image magnetic stripes show that crust formed at the same time on both sides of the ridge and then split apart. The other observations are true but do not show symmetric spreading.
+Feedback shown to students: New crust forms at the ridge and spreads both ways, so the youngest band is at the ridge and the ages are symmetrical on the two sides.
 
 **Q6 · ESS1-5.2** (choice)
 
-Scientists drill sediment cores at three sites on the same side of a mid-ocean ridge:
-Site | Distance from ridge (km) | Sediment thickness (m) | 
-X | 100 | about 20 | 
-Y | 1,200 | about 180 | 
-Z | 2,400 | about 420 | 
-Which explanation fits the data best?
+A table shows the age of North America's continental crust:
+Region of North America | Distance from the central core (km) | Age of the crust | 
+Canadian Shield (the central core) | 0 | about 2.7 billion years | 
+Grenville Province (Great Lakes to Quebec) | about 1,200 | about 1.1 billion years | 
+Appalachian Mountains | about 2,000 | about 400 million years | 
+Simplified from geologic maps.
+Which statement describes the pattern?
 
-- A. Older crust has had more time to collect the shells of dead plankton and other particles.  **(correct)**
-- B. Plankton live only in the middle of the ocean.
-- C. Waves bring more sediment to the middle of the ocean than to the ridge.
-- D. Sediment is pushed up from the mantle at the ridge.
+- A. The crust is oldest near the central core and gets younger toward the outer regions.  **(correct)**
+- B. The crust is youngest near the central core and gets older toward the outer regions.
+- C. The crust is oldest at the Appalachian Mountains.
+- D. The crust is the same age everywhere.
 
-Feedback shown to students: Sediment slowly settles onto the seafloor. The farther from the ridge, the older the crust and the longer it has been collecting sediment.
+Feedback shown to students: Ages decrease from about 2.7 billion years at the core to about 400 million years at the Appalachians.
 
 **Q7 · ESS1-5.3** (choice)
 
-A map shows a deep trench off the coast of a continent, with a line of active volcanoes on land running parallel to the coast. Earthquakes occur at increasing depths moving inland. What does this pattern show?
-
-- A. A transform boundary where plates slide past each other.
-- B. A hot spot in the middle of a plate.
-- C. A convergent boundary where an ocean plate is sinking beneath the continent.  **(correct)**
-- D. A divergent boundary where new crust is forming.
-
-Feedback shown to students: A trench, a volcanic arc, and earthquakes that get deeper inland are the signature of subduction at a convergent boundary.
-
-**Q8 · ESS1-5.3** (choice)
-
 Two plates collide. Plate A is old ocean crust with an average density of about 3.0 g/cm³. Plate B is continental crust with an average density of about 2.7 g/cm³. What will happen, and why?
 
-- A. Plate B will sink because it is thicker.
-- B. Plate A will sink beneath Plate B because it is denser.  **(correct)**
-- C. Both plates will rise to form a mountain range because they have similar densities.
-- D. Neither plate will move, because plates are not affected by density.
+- A. Both plates will rise to form a mountain range because they have similar densities.
+- B. Neither plate will move, because density does not affect plates.
+- C. Plate A will sink beneath Plate B because it is denser.  **(correct)**
+- D. Plate B will sink because it is thicker.
 
 Feedback shown to students: The denser plate sinks beneath the less-dense one. Old ocean crust is cold and dense, so it subducts.
 
+**Q8 · ESS1-5.3** (choice)
+
+North America's continental crust is oldest in the central core and gets younger toward the edges. Which explanation fits best?
+
+- A. Pieces of crust and volcanic arcs were added to the edges of the continent over time, so the newest material is farthest from the core.  **(correct)**
+- B. The edges of the continent formed first and the center formed last.
+- C. The center was recycled at subduction zones, so it is the youngest part.
+- D. New crust forms at the center of the continent, like a mid-ocean ridge.
+
+Feedback shown to students: Continents grow outward as new material is added at their margins, like rings on a tree.
+
 **Q9 · ESS1-5.3** (choice)
 
-Some continental rocks are nearly 4 billion years old, but no ocean floor is older than about 200 million years. Which statement best explains why continental crust survives longer?
+Some continental rock is nearly 4 billion years old, but no ocean floor is older than about 200 million years. Which statement best explains why?
 
-- A. Continental crust forms at the same ridges as ocean crust.
+- A. Ocean crust formed later than the continents.
 - B. Continental crust is never weathered or eroded.
-- C. Continental crust is made of the same material as the mantle.
-- D. Continental crust is less dense, so it resists sinking at subduction zones.  **(correct)**
+- C. Ocean crust is made of the same material as the mantle.
+- D. Ocean crust is made at ridges and recycled at trenches, and continental crust is too buoyant to sink, so it stays at the surface.  **(correct)**
 
-Feedback shown to students: Continental crust is thick and less dense, so it stays at the surface while denser ocean crust is recycled into the mantle.
+Feedback shown to students: The ocean floor is on a short recycling cycle. Less-dense continental crust resists sinking and survives.
 
-**Q10 · ESS1-6.1** (choice)
+**Q10 · ESS1-5.4** (choice)
 
-A radioactive isotope has a half-life of 100 million years. A rock sample contains 1/8 of the original amount of this isotope. About how old is the rock?
+The Hawaiian Islands form a chain as the Pacific plate moves over a fixed hot spot. Kilauea, on the Big Island, is active now. Kauai is about 500 km northwest of Kilauea, and its oldest rock is about 5 million years old. GPS stations on the Pacific plate near Hawaii measure about 7 to 8 cm per year of motion. How does the rate from the island ages compare, and what does it suggest?
 
-- A. 100 million years
-- B. 300 million years  **(correct)**
-- C. 1.2 billion years
-- D. 800 million years
+- A. The island ages give about 10 cm per year, close to the GPS rate, so two independent methods agree that the plate is moving.  **(correct)**
+- B. The island ages give about 1 cm per year, so the methods disagree and the plate is not moving.
+- C. The island ages cannot be used to find a rate.
+- D. The island ages give about 100 cm per year, which proves the GPS data are wrong.
 
-Feedback shown to students: 1/8 means 3 half-lives have passed (1/2 → 1/4 → 1/8). 3 × 100 million = 300 million years.
+Feedback shown to students: 500 km in 5 million years is 100 km per million years, or about 10 cm per year. That is close to the GPS rate, so a measurement of the present and a record of the past agree, which strengthens the evidence.
 
-**Q11 · ESS1-6.1** (choice)
+**Q11 · ESS1-5.4** (multi)
 
-Which pair correctly matches a sample to the dating method that fits it?
+Select the TWO lines of evidence that are independent of each other (they use different kinds of data) and both support seafloor spreading.
 
-- A. A 12,000-year-old piece of charcoal from a campfire — carbon-14  **(correct)**
-- B. A 12,000-year-old piece of charcoal from a campfire — uranium-238
-- C. A 4-billion-year-old zircon crystal in granite — none; it is too old to date
-- D. A 4-billion-year-old zircon crystal in granite — carbon-14
+- A. Mirror-image magnetic stripes on the two sides of a ridge.  **(correct)**
+- B. Earthquakes occur in Japan.
+- C. Ages of seafloor rock increase with distance from the ridge.  **(correct)**
+- D. The coastline of Africa looks like a puzzle piece.
+- E. Two copies of the same age table, one in a textbook and one on a website.
 
-Feedback shown to students: Charcoal was once living wood and is young enough for carbon-14. Billion-year-old zircon is dated with uranium decaying to lead.
+Feedback shown to students: Rock ages come from radiometric dating, and magnetic stripes come from the magnetic field recorded in the rock. They are different kinds of data pointing to the same conclusion. Two copies of the same table are not independent.
 
-**Q12 · ESS1-6.1** (choice)
+**Q12 · ESS1-5.4** (essay)
 
-The oldest known minerals on Earth (zircon crystals) are about 4.4 billion years old. The oldest known meteorites are about 4.56 billion years old. Which conclusion is best supported by this evidence?
+Scientists claim that the seafloor spreads away from mid-ocean ridges. Here are three lines of evidence:
+Rock ages: Seafloor crust is 0 million years old at the ridge and 40 million years old 1,000 km away, 80 million 2,000 km away, and 120 million 3,000 km away.
+Magnetic stripes: Stripes of normal and reversed magnetism on one side of the ridge are a mirror image of the stripes on the other side.
+Measured motion: GPS stations on opposite sides of the Mid-Atlantic Ridge in Iceland move apart about 2 cm per year, compared with about 2.5 cm per year from the rock ages.
+Write an evaluation of this evidence. (1) State which line of evidence you think is the strongest and why. (2) Explain how the lines of evidence work together. (3) Describe one limitation of the evidence or one new finding that would weaken the claim.
 
-- A. Meteorites formed on Earth and were thrown into space.
-- B. Earth is only 4.4 billion years old.
-- C. Earth has no rocks older than 4.4 billion years because none formed before then.
-- D. Earth formed about 4.5 billion years ago, and most of its earliest rock has since been destroyed or recycled.  **(correct)**
+Rubric and grading notes:
 
-Feedback shown to students: Meteorites preserve the age of the solar system, about 4.56 billion years. Earth's oldest surviving minerals are slightly younger because Earth's early crust was recycled.
+> Rubric (4 pts)
+> - 4: Advanced. Chooses a line of evidence and justifies it with a specific reason (for example, GPS is a direct measurement of present motion, or the rock-age pattern is quantitative and checkable). Explains that the lines are independent yet agree (rock ages give 2.5 cm per year, GPS about 2 cm per year, stripes are symmetric), which strengthens the claim. Describes a valid limitation or a finding that would weaken the claim (for example, only a short record of GPS data, or crust at the ridge being old). 3: Proficient. Judges the evidence with a reason and notes that the lines agree, but one of the three parts is general or missing. 2: Developing. Lists or restates the evidence with little evaluation; limited or generic reasoning about strength. 1: Beginning. Little evaluation, or an incorrect idea about what the evidence shows. 0: blank or off-topic. 
+> Grading notes:
+> - Look for: 'independent', 'agree', 'direct measurement', 'quantitative', 'limitation', 'would weaken'.
+> - Common misconception: more of the same data is stronger evidence (independent lines are stronger).
+> - Common misconception: older evidence is weaker.
+> - Sample 4-point response: The strongest evidence is the measured GPS motion because it directly shows the plates moving apart today. The rock ages show crust gets older at a steady 2.5 cm per year, and the mirror-image stripes show crust forms at the ridge and splits both ways. These three lines of evidence use different kinds of data, yet they agree, which makes the claim much stronger. A limitation is that GPS has only been measured for a few decades, so we have to rely on rock ages and stripes to show what happened millions of years ago. If crust at the ridge were found to be old, that would weaken the claim.
 
-**Q13 · ESS1-5.4** (choice)
+**Q13 · ESS1-5.5** (choice)
 
 Which statement completes the reasoning best?
-Continental rock can be billions of years old but ocean-floor rock is less than 200 million years old because…
+Plate tectonics explains the ages of oceanic and continental rock because…
 
-- A. the ocean was not on Earth until 200 million years ago.
+- A. scientists have not found the older ocean rocks yet.
 - B. ocean plates are continuously made at ridges and recycled at subduction zones, while buoyant continental crust is not.  **(correct)**
-- C. scientists have not found the older ocean rocks yet.
+- C. the ocean was not on Earth until 200 million years ago.
 - D. ocean rock erodes faster than continental rock.
 
-Feedback shown to students: The ocean floor is a conveyor belt: created at ridges, destroyed at subduction zones. Continental crust is too buoyant to be recycled that way.
+Feedback shown to students: One process, new crust at ridges and destruction at trenches, accounts for the young, regular ages of the ocean floor and for the old continents.
 
-**Q14 · ESS1-5.4** (essay)
+**Q14 · ESS1-5.5** (multi)
 
-A student says, “The ocean floor is young because the ocean is young.” Use the data below to write a scientific argument that explains why the ocean floor is so much younger than the continents.
+Select the TWO observations that support the theory of plate tectonics as an explanation for the ages of crustal rocks.
+
+- A. North American crust is oldest at its central core and younger toward its edges, where material was added by past plate interactions.  **(correct)**
+- B. Rock ages are the same on every continent.
+- C. Ocean crust ages increase steadily away from ridges and none is older than about 200 million years.  **(correct)**
+- D. The ocean floor is older than the continents.
+
+Feedback shown to students: Both patterns are explained by plate processes: crust made and destroyed on the ocean floor, and continents growing outward from an ancient core.
+
+**Q15 · ESS1-5.5** (choice)
+
+The oldest widely accepted fossils, about 3.5 billion years old, are in continental rock in Western Australia. No ocean-floor rock is that old. Which statement best evaluates what this shows about plate tectonics?
+
+- A. It disproves the theory because ocean rock should hold fossils.
+- B. It has nothing to do with the ages of rocks.
+- C. It shows life began only in Australia.
+- D. It is consistent with the theory: ocean floor that old has been recycled at subduction zones, so the early record survives only in continental rock.  **(correct)**
+
+Feedback shown to students: The theory predicts that ocean floor older than about 200 million years has been destroyed, and the lack of old ocean rock matches that prediction.
+
+**Q16 · ESS1-5.5** (essay)
+
+A student says, “Plate tectonics is just one idea. It does not really explain why the ocean floor is so much younger than the continents.” Evaluate how well the theory of plate tectonics explains the ages of Earth's crustal rocks, using the data below.
 Data
 Distance from Mid-Atlantic Ridge (km) | Crust age (million years) | 
 0 | 0 | 
@@ -465,101 +722,97 @@ Distance from Mid-Atlantic Ridge (km) | Crust age (million years) |
 3,000 | 120 | 
 The oldest ocean floor on Earth is about 200 million years old.
 The oldest minerals found in continental rock are about 4.4 billion years old.
-Ocean crust is denser (about 3.0 g/cm³) than continental crust (about 2.7 g/cm³).
-Ocean plates sink into the mantle at trenches.
-Claim: Answer the question: why is the ocean floor so much younger than the continents?
-Evidence: Use at least two specific pieces of data.
-Reasoning: Explain how the evidence supports your claim using what you know about seafloor spreading and subduction.
-Counterclaim: Explain why the student's idea that “the ocean is young” does not fit the evidence.
+In North America, crust is about 2.7 billion years old at the central core and about 400 million years old in the Appalachian Mountains.
+Ocean crust is denser (about 3.0 g/cm³) than continental crust (about 2.7 g/cm³), and ocean plates sink into the mantle at trenches.
+Claim: How well does plate tectonics explain the ages of crustal rocks?
+Evidence: Use at least two specific pieces of data, including at least one from oceanic crust and one from continental crust.
+Reasoning: Explain how the evidence supports your claim.
+Limit or counterclaim: Describe one thing the theory cannot show with this evidence, or answer the student's statement.
 
 Rubric and grading notes:
 
 > Rubric (4 pts)
-> - 4: Advanced. Accurate claim that ocean floor is young because it is continually made at ridges and destroyed (recycled) at subduction zones, while less-dense continental crust is not recycled. Cites at least two accurate data points (for example, crust age increases with distance from the ridge from 0 to 120 million years, or the oldest ocean floor is about 200 million years versus continental minerals about 4.4 billion years). Reasoning connects the evidence to the process (new crust at ridges moves away; dense ocean plates sink at trenches; buoyant continents stay at the surface). Counterclaim is addressed: the ocean itself is older than its floor, and the floor is replaced. 3: Proficient. Accurate claim, at least two accurate data points, reasoning present but missing one piece (for example, density or the role of subduction), counterclaim brief or missing. 2: Developing. Claim is partly correct (for example, 'the seafloor is recycled') without a cause. One data point, or inaccurate use of data. Reasoning is vague or restates the evidence. 1: Beginning. Claim is wrong or missing (for example, 'the ocean is young' or 'the seafloor is eroded away'). Little or no data. Major misconception. 0: blank or off-topic. 
+> - 4: Advanced. Accurate claim that plate tectonics explains the ages well, because the ocean floor is continually made at ridges and recycled at subduction zones while less-dense continental crust survives and grows outward. Cites at least two accurate data points including both ocean and continental crust (for example, ages increase 40 million years per 1,000 km from the ridge or the oldest ocean floor is about 200 million years, and continental minerals about 4.4 billion years or North American crust from 2.7 billion years at the core to about 400 million years at the Appalachians). Reasoning connects the evidence to the process (new crust at ridges, dense ocean plates sinking at trenches, buoyant continents staying and growing at their edges). Notes a limit or answers the student (for example, no ocean floor older than about 200 million years remains, so early Earth must be studied in continental rock). 3: Proficient. Accurate claim, at least two accurate data points with both ocean and continental crust, reasoning present but missing one piece, limit or counterclaim brief or missing. 2: Developing. Claim is partly correct without a cause, or data come from only one kind of crust. Reasoning is vague or restates the evidence. 1: Beginning. Claim is incorrect or missing (for example, 'the ocean is young' or 'the seafloor is eroded away'). Little or no data. Major misconception. 0: blank or off-topic. 
 > Grading notes:
-> - Look for: 'made at ridges', 'sinks/subducts at trenches', 'recycled', 'continents are less dense/buoyant'.
-> - Key data: ages increase 40 million years per 1,000 km (about 2.5 cm per year); oldest ocean floor about 200 million years; continental minerals about 4.4 billion years.
-> - Common misconception: ocean floor is 'eroded away' (sediment gets thicker on older crust, so it is not eroded).
-> - Common misconception: the continents are 'older' because they formed first and the ocean formed later.
-> - Sample 4-point response: The ocean floor is much younger than the continents because it is constantly being made at mid-ocean ridges and recycled back into the mantle at subduction zones, but continental crust is too buoyant to sink. The data show the crust is 0 million years old at the ridge and 120 million years old 3,000 km away, so new rock is made at the ridge and moves outward, and the oldest ocean floor is only about 200 million years old. In contrast, continental rock contains minerals 4.4 billion years old. Since ocean crust is denser (3.0 g/cm3) than continental crust (2.7 g/cm3), it sinks at trenches, and the ocean floor is destroyed within a few hundred million years while the continents survive. The student's claim that the ocean is young does not fit, since the ocean basins are old but their floor is constantly replaced.
-
-**Q15 · ESS1-5.4** (choice)
-
-The oldest widely accepted fossils, about 3.5 billion years old, are found in continental rock in Western Australia. No fossils of that age have been found in ocean-floor rock. What is the best explanation?
-
-- A. Life did not exist in the oceans until 200 million years ago.
-- B. Scientists have not drilled the ocean floor yet.
-- C. Ocean floor that old has been recycled at subduction zones, so it no longer exists.  **(correct)**
-- D. Fossils cannot form in rock made at mid-ocean ridges.
-
-Feedback shown to students: The ocean floor does not last long enough to hold the first 3 billion years of life's history. The early fossil record comes from continental rock, which survives much longer.
-
-**Q16 · ESS1-6.1** (essay)
-
-A student writes: “Scientists cannot know how old Earth is, because the oldest rock found on Earth is only about 4 billion years old.”
-Revise this explanation so it is correct and complete. Use these facts:
-The oldest known Earth rocks are about 4.0 billion years old, and the oldest minerals (zircons) are about 4.4 billion years old.
-The oldest meteorites are about 4.56 billion years old.
-Plate tectonics recycles ocean crust, and erosion wears down rock at Earth's surface.
-Radiometric dating uses the half-lives of unstable isotopes.
-In your revision, explain (1) why the oldest Earth rocks are not the same age as Earth, (2) what meteorites tell us and why, and (3) how scientists find these ages.
-
-Rubric and grading notes:
-
-> Rubric (4 pts)
-> - 4: Advanced. Revision states that Earth is about 4.5 to 4.6 billion years old and that the oldest rocks do not give Earth's age because Earth's earliest rocks were destroyed or recycled by plate tectonics and erosion. Explains that meteorites formed with the solar system and have changed little, so their age (about 4.56 billion years) is the best estimate for Earth. Explains that radiometric dating uses the steady decay (half-life) of isotopes such as uranium to lead. Uses at least two of the given facts accurately. 3: Proficient. Correct conclusion with two of the three required ideas explained clearly (recycling, meteorites, radiometric dating). 2: Developing. Partly correct (for example, mentions meteorites or recycling, but not why) or the conclusion is vague. May confuse the oldest rock with Earth's age. 1: Beginning. Repeats the student's misconception or gives an incorrect conclusion (for example, 'Earth is 4 billion years old because that is the oldest rock'). 0: blank or off-topic. 
-> Grading notes:
-> - Look for: 'recycled/destroyed by plate tectonics', 'meteorites changed little', 'half-life', 'uranium', 'about 4.5 billion'.
-> - Common misconception: dating methods work by 'reading rings' or 'counting layers' for all rocks.
-> - Common misconception: radiometric dating changes with temperature or pressure (it does not; decay rates are steady).
-> - Sample 4-point response: Scientists can know Earth's age even though the oldest Earth rocks are only about 4 billion years old, because Earth's earliest rocks were destroyed or recycled by plate tectonics and erosion. Meteorites formed at the same time as the solar system and have changed very little since, so their ages, about 4.56 billion years, show when Earth formed. Scientists find these ages with radiometric dating, which measures how much of an unstable isotope like uranium has decayed to lead, using its steady half-life. So Earth is about 4.5 billion years old.
+> - Look for: 'made at ridges', 'sinks/subducts at trenches', 'recycled', 'continents are less dense/buoyant', 'added to the edges'.
+> - Key data: ages increase 40 million years per 1,000 km (about 2.5 cm per year); oldest ocean floor about 200 million years; continental minerals about 4.4 billion years; North American core about 2.7 billion years.
+> - Common misconception: ocean floor is 'eroded away' (sediment is thicker on older crust).
+> - Common misconception: the ocean is young.
+> - Sample 4-point response: Plate tectonics explains the ages of crustal rocks very well. The data show crust is 0 million years old at the ridge and 120 million years old 3,000 km away, so ocean crust is made at ridges and moves away, and the oldest ocean floor is only about 200 million years old because ocean plates are denser than continental crust (3.0 versus 2.7 g/cm3) and sink at trenches. In contrast, continental crust contains minerals up to 4.4 billion years old and in North America gets younger from 2.7 billion years at the core to about 400 million years in the Appalachians, which shows the continent grew outward and is too buoyant to be recycled. One limit is that no ocean floor older than about 200 million years survives, so the early history of Earth has to be studied in continental rock. The ocean is not young; its floor is just constantly replaced.
 
 ## Mastery Path review assignments (3 written questions each)
 
 Students answer in a text box or upload a photo. Pass/fail, 4 points. Suggested answers below.
 
-### Review ESS1-5.1: Evidence for continental drift
+### Review ESS1-5.1: Plates, boundaries, and crust
 
-1. A fossil fern is found in Antarctica and India. Name two other pieces of evidence you would look for to test whether those lands were once joined.
-   - Suggested answer: Any two: matching rock layers, matching mountain belts, glacial scratches that line up, or continental shelf fit.
-2. Explain, using the Mesosaurus example, why a fossil on two separated continents can be evidence that they were once joined.
-   - Suggested answer: Mesosaurus lived in fresh water and could not cross the salt-water Atlantic, so finding it on both continents means the continents were joined when it lived.
-3. Why did Wegener's idea need more than fossils to be accepted?
-   - Suggested answer: He could not explain what force moves continents; scientists needed a mechanism, which came from seafloor spreading.
+1. Name the three kinds of plate boundaries and describe how the plates move at each.
+   - Suggested answer: Divergent: plates move apart. Convergent: plates move toward each other. Transform: plates slide past each other.
+2. Explain where new ocean crust is made and how it forms.
+   - Suggested answer: At mid-ocean ridges (divergent boundaries): plates pull apart, magma rises into the gap, and it hardens into new ocean crust.
+3. Explain what happens to ocean crust at a subduction zone and name the landform that marks it.
+   - Suggested answer: The old ocean plate sinks beneath another plate into the mantle and is recycled; a deep-sea trench marks the spot.
 
-### Review ESS1-5.2: Seafloor spreading and the age pattern
+### Review ESS1-5.2: Reading rock ages
 
-1. Crust 2,500 km from a ridge is 100 million years old. Calculate the spreading rate in km per million years, and in cm per year.
-   - Suggested answer: 2,500 km / 100 million years = 25 km per million years = 2.5 cm per year.
-2. Explain why magnetic stripes on both sides of a ridge are mirror images.
-   - Suggested answer: Crust forms at the ridge recording the magnetic field, then splits and moves away in both directions, so the same sequence of reversals is carried to both sides.
-3. Describe how sediment thickness changes with distance from the ridge and explain why.
-   - Suggested answer: It gets thicker farther from the ridge because older crust has had more time to collect sediment.
+1. Crust 2,500 km from a ridge is 100 million years old. Calculate the spreading rate in km per million years and in cm per year. How old would crust 4,000 km away be?
+   - Suggested answer: 2,500 km / 100 million years = 25 km per million years = 2.5 cm per year. 4,000 km / 25 = 160 million years.
+2. Describe the pattern of seafloor ages on the two sides of a mid-ocean ridge.
+   - Suggested answer: The youngest crust is at the ridge, and ages increase with distance on both sides, matching on the two sides.
+3. Describe the pattern of continental crust ages in North America, starting from the Canadian Shield.
+   - Suggested answer: The crust is oldest in the central core (about 2.7 billion years) and gets younger moving outward (about 1.1 billion years, then about 400 million years in the Appalachians).
 
-### Review ESS1-5.3: Plate boundaries and subduction
+### Review ESS1-5.3: Why ocean crust is young and continents are old
 
-1. A trench and a chain of volcanoes form where an ocean plate meets a continent. Name the boundary type and explain which plate sinks and why.
-   - Suggested answer: Convergent boundary; the ocean plate sinks because it is denser than continental crust.
-2. Explain why continental crust is rarely subducted.
-   - Suggested answer: It is thick and less dense (more buoyant) than ocean plates, so it floats instead of sinking.
-3. Describe how subduction connects plate tectonics to the carbon cycle.
-   - Suggested answer: Plankton shells in seafloor sediment hold carbon; subduction carries it into the mantle, and some returns to the air as CO2 from volcanoes.
+1. Explain why the ocean floor is under 200 million years old while some continental rock is billions of years old.
+   - Suggested answer: Ocean crust is made at ridges and recycled at subduction zones, so it is replaced in about 200 million years; continental crust is less dense, so it is not recycled and can last billions of years.
+2. Explain why continental crust is oldest at its core and youngest at its edges.
+   - Suggested answer: The continent grew outward from an ancient core as volcanic arcs and pieces of crust were added at the edges, so the newest crust is farthest from the core.
+3. An ocean plate meets a continental plate. Say which sinks, and use density to explain why.
+   - Suggested answer: The ocean plate sinks because it is denser (about 3.0 versus 2.7 g/cm3), so it goes beneath the less-dense continental plate.
 
-### Review ESS1-6.1: Radiometric dating and Earth's oldest rocks
+### Review ESS1-5.4: Evidence for moving crust
+
+1. Which line of evidence best shows that plates are moving right now? Explain why.
+   - Suggested answer: GPS and satellite measurements, because they directly measure present motion.
+2. Name two independent lines of evidence for seafloor spreading and explain why it matters that they agree.
+   - Suggested answer: Any two of rock ages, magnetic stripes, measured motion. They use different kinds of data, so when they agree the conclusion is much more trustworthy.
+3. A student says, “Matching fossils prove the continents moved.” Evaluate this claim in two sentences.
+   - Suggested answer: Matching fossils show the lands were once connected, but they do not show how or when they moved. The case is stronger when rock ages, magnetic stripes, and measured motion agree.
+
+### Review ESS1-5.5: How well plate tectonics explains rock ages
+
+1. Rewrite this weak claim so it says how well and why: “Plate tectonics explains rock ages.”
+   - Suggested answer: Plate tectonics explains the ages of rocks very well because the ocean floor is made at ridges and recycled at subduction zones, while buoyant continental crust survives and grows outward.
+2. List two pieces of specific evidence, one from the ocean floor and one from the continents.
+   - Suggested answer: Ocean: ages increase from 0 to 120 million years over 3,000 km, or the oldest ocean floor is about 200 million years. Continent: minerals up to 4.4 billion years, or North American crust from 2.7 billion years at the core to 400 million years in the Appalachians.
+3. Write one sentence of reasoning that links your evidence to your claim, and one limit of the evidence.
+   - Suggested answer: Because ocean plates are denser, they sink at trenches and are destroyed, while less-dense continents stay at the surface. Limit: no ocean floor older than about 200 million years remains, so early Earth must be studied in continental rock.
+
+### Review ESS1-6.1: Evidence for early Earth
 
 1. A rock formed with 160 atoms of a parent isotope. How many parent atoms are left after 4 half-lives? Show your work.
    - Suggested answer: 160 -> 80 -> 40 -> 20 -> 10. 10 atoms remain.
-2. A bone from a campsite is 9,000 years old, and a zircon crystal in granite is 3 billion years old. Which dating method (carbon-14 or uranium-lead) fits each? Explain why.
-   - Suggested answer: Bone: carbon-14, because it was once living and is younger than 50,000 years. Zircon: uranium-lead, because it is billions of years old and carbon-14 would be gone.
-3. Explain why meteorites give a better estimate of Earth's age than the oldest rock found on Earth.
-   - Suggested answer: Earth's earliest rocks were recycled by plate tectonics and erosion, so none survive from Earth's formation; meteorites changed little since they formed with the solar system.
+2. Name three kinds of materials whose radiometric ages give evidence for early Earth and give the age of each.
+   - Suggested answer: Meteorites about 4.56 billion years; moon rocks up to about 4.4 billion years; Earth's oldest minerals (zircons) about 4.4 billion years. (The oldest Earth rock is about 4.0 billion years.)
+3. What does the crater record on the Moon show about the early solar system?
+   - Suggested answer: The Moon's surface is heavily cratered, which shows it was hit by many impacts early on, and it kept that record because it has no plate tectonics or weathering to erase the craters.
 
-### Review ESS1-5.4: Argue why the seafloor is young and the continents are old
+### Review ESS1-6.2: Why meteorites and moon rocks give the age
 
-1. Rewrite this weak claim so it fully answers the question: “The seafloor is young because it is new rock.”
-   - Suggested answer: The seafloor is young because new rock is made at mid-ocean ridges and old ocean plates sink into the mantle at subduction zones, while buoyant continental crust stays at the surface.
-2. List two pieces of specific evidence for your claim, using numbers or patterns.
-   - Suggested answer: Any two: ages increase with distance from the ridge (0 to 120 million years across 3,000 km); mirror-image magnetic stripes; sediment thicker on older crust; oldest ocean floor about 200 million years versus continents up to 4.4 billion.
-3. Write one sentence of reasoning that links your evidence to your claim.
-   - Suggested answer: Because ocean plates are denser than continental crust, they sink at trenches and are destroyed, so the ocean floor is always replaced while the continents survive.
+1. Explain why the age of the oldest rock on Earth does not give the age of Earth.
+   - Suggested answer: Earth's earliest rocks were destroyed or recycled by plate tectonics, erosion, and weathering, so the oldest surviving rock is younger than Earth.
+2. Explain why meteorites and moon rocks give a better estimate of the age of the solar system than Earth rocks do.
+   - Suggested answer: Meteorites formed with the solar system and changed little; the Moon is geologically quiet, so its early rocks survive. Both kept their original ages.
+3. Using the table, say which material gives the best estimate of the age of the solar system and why.
+   - Suggested answer: Meteorites, about 4.56 billion years, because they are the oldest material and have changed little since they formed.
+
+### Review ESS1-6.3: Telling the story of Earth's formation
+
+1. Put these events in order and give an age for each: oldest fossils, meteorites form, oldest Earth rock, oldest zircon.
+   - Suggested answer: Meteorites form (4.56 billion years ago), oldest zircon (4.4), oldest Earth rock (4.0), oldest fossils (3.5).
+2. Choose two of the events and say what evidence supports each.
+   - Suggested answer: For example: meteorites form at 4.56 billion years, shown by radiometric ages of meteorites; life by 3.5 billion years, shown by stromatolite fossils; solid crust by 4.4 billion years, shown by zircons.
+3. Explain why scientists study the Moon and Mars to learn about Earth's early history.
+   - Suggested answer: The Moon and Mars kept their ancient, cratered surfaces, while Earth's surface was renewed by plate tectonics and erosion, so they preserve the early record that Earth lost.
 

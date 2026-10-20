@@ -1,22 +1,28 @@
 # Unit 3.1 Age of the Earth assessments (HS-ESS1-5, supporting HS-ESS1-6)
 
-Grade 9 Living Earth. Five CFAs, one CSA, and five Mastery Path review assignments, built as Canvas New Quizzes. See `../../units/HS-ESS1-5/unit_plan.md` for the unit.
+Grade 9 Living Earth. Eight CFAs (one per learning target in the team workbook), one CSA on the five priority targets, and eight Mastery Path review assignments, built as Canvas New Quizzes. See `../../units/HS-ESS1-5/unit_plan.md` for the unit.
 
 | Piece | Items | Notes |
 | --- | --- | --- |
-| CFA ESS1-5.1 (continental drift evidence) | 5 | Auto-graded, 4-point scale |
-| CFA ESS1-5.2 (seafloor spreading and age pattern) | 5 | Auto-graded |
-| CFA ESS1-5.3 (plate boundaries and subduction) | 5 | Auto-graded |
-| CFA ESS1-6.1 (radiometric dating) | 5 | Auto-graded |
-| CFA ESS1-5.4 (building the argument) | 5 | Auto-graded |
-| CSA | 16 | 14 auto-graded, Q14 (CER) and Q16 (revise an explanation) teacher-graded with 4-point rubrics |
-| Mastery Path reviews | 5 | One per CFA. Opens when the CFA score is below 3 of 4 (fewer than 4 of 5 correct). Pass/fail, 4 points, 3 written questions |
+| CFA ESS1-5.1 (plates, boundaries, and crust) | 5 | Auto-graded, 4-point scale |
+| CFA ESS1-5.2 (reading rock ages) | 5 | Auto-graded |
+| CFA ESS1-5.3 (why ocean crust is young and continents are old) | 5 | Auto-graded |
+| CFA ESS1-5.4 (evidence for moving crust) | 5 | Auto-graded |
+| CFA ESS1-5.5 (how well plate tectonics explains rock ages) | 5 | Auto-graded |
+| CFA ESS1-6.1 (evidence for early Earth) | 5 | Auto-graded |
+| CFA ESS1-6.2 (why meteorites and moon rocks give the age) | 5 | Auto-graded |
+| CFA ESS1-6.3 (telling the story of Earth's formation) | 5 | Auto-graded |
+| CSA | 16 | Priority targets ESS1-5.1 to 5.5 only (supporting targets are never on the CSA). 14 auto-graded; Q12 (evaluate evidence) and Q16 (evaluate plate tectonics with data) teacher-graded with 4-point rubrics |
+| Mastery Path reviews | 8 | One per CFA. Opens when the CFA score is below 3 of 4 (fewer than 4 of 5 correct). Pass/fail, 4 points, 3 written questions |
+
+Targets and tiers come from the team workbook "Renick Living Earth Standards and Learning Targets (26-27)" (Targets tab).
 
 ## Files
 
 - `questions.py`: the question bank (CFAs, CSA, reviews). Answer order is shuffled with a fixed seed.
 - `canvas_upload.py`: builds the CFAs, CSA, reviews, and Mastery Path rules in a Canvas course through the API.
 - `lessons.py`: the student pages, teacher pages, and extra assignments (Lesson 1, Lesson 4 SketchNotes, CER, Enrichment).
+- `slides_spec.py`, `make_requests.py`, `lines.py`: generate the eight Google Slides lesson decks (see the unit plan).
 - `canvas_lessons.py`: builds the pages and assignments and replaces the simple module with the full day-by-day module plus a teacher module.
 - `build_key.py` and `HS-ESS1-5_teacher_key.md`: the teacher key, generated from the bank.
 - `canvas_ids.json`: IDs created in the last upload, used by `--cleanup`.

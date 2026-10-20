@@ -37,12 +37,12 @@ CSA_TITLE = f"{UNIT} CSA: Age of the Earth (HS-ESS1-5)"
 
 DAYS = {
     1: "Where Did the Old Ocean Floor Go?",
-    2: "The Fossil Puzzle",
-    3: "Making New Crust",
-    4: "Where Crust Goes, and Where It Stays",
-    5: "Reading Deep Time",
-    6: "Build the Argument",
-    7: "Cushion, Practice Test and Review",
+    2: "Reading Rock Ages",
+    3: "Reading Deep Time and Early Earth",
+    4: "Why the Ocean Is Young and the Continents Old",
+    5: "Evidence for Moving Crust",
+    6: "Evaluate the Theory, Tell Earth's Story",
+    7: "Review Day",
     8: "Unit 3.1 CSA",
 }
 
@@ -70,6 +70,15 @@ class Canvas:
 
     def v1(self, method, path, body=None):
         return self.call(method, f"/api/v1/courses/{self.course}{path}", body)
+
+    def delete_quiet(self, path):
+        """DELETE that tolerates items that are already gone (404), so a cleanup can be re-run."""
+        try:
+            self.v1("DELETE", path)
+        except SystemExit as e:
+            if "404" not in str(e):
+                raise
+            print("  already gone:", path)
 
     def quiz(self, method, path, body=None):
         return self.call(method, f"/api/quiz/v1/courses/{self.course}{path}", body)
@@ -160,9 +169,9 @@ def main():
     if "--cleanup" in flags:
         ids = json.loads(IDS_FILE.read_text())
         for aid in ids["assignments"]:
-            cv.v1("DELETE", f"/assignments/{aid}")
+            cv.delete_quiet(f"/assignments/{aid}")
         if ids.get("module"):
-            cv.v1("DELETE", f"/modules/{ids['module']}")
+            cv.delete_quiet(f"/modules/{ids['module']}")
         IDS_FILE.unlink()
         print("Deleted", len(ids["assignments"]), "assignments and the module.")
         return
