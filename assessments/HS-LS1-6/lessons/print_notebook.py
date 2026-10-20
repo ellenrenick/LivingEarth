@@ -156,7 +156,7 @@ def block(b):
     raise ValueError(k)
 
 
-def page(d, label, side, blocks, student=False):
+def page(d, label, side, blocks, student=False, unit="Unit 1.3"):
     parts = [b for b in blocks]
     # Let the last write-in area stretch to the bottom of the page.
     body = [block(b) for b in parts]
@@ -165,7 +165,7 @@ def page(d, label, side, blocks, student=False):
         body[-1] = '<div class="lines grow">' + "<div></div>" * (n + 12) + "</div>"
     else:
         body.append('<div class="grow"></div>')
-    head = f'<div class="meta"><span>Unit 1.3 · {html.escape(label)}</span><span>{side} page</span></div>'
+    head = f'<div class="meta"><span>{unit} · {html.escape(label)}</span><span>{side} page</span></div>'
     if student:
         head += '<div class="name">Name ______________________________   Period ______   Date ____________</div>'
     if side == "Left":
