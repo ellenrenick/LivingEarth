@@ -4,6 +4,10 @@ Every day now fits 40 minutes, including the 6-minute CFA: fewer questions, sent
 one worked example done together, no cutting. Each deck gets one simple notebook setup slide (slide 2).
 Day 3 (gummy DNA lab) and Day 8 (CSA) are not touched.
 
+Oct 2026: learning targets follow the department workbook (26-27). LS1-1 now has 5 targets: the old 1.1 (structure) and
+1.2 (instructions) are LS1-1.1, and the old 1.3-1.6 are 1.2-1.5. Day 1 has no CFA; its 6 minutes teach LS3-1. See
+new_lts.py for the CFAs, reviews, outcomes, and Mastery Paths.
+
   python3 revise_40min.py canvas 330720     # student assignments + teacher pages (keeps the slides embed)
   python3 revise_40min.py slides 1          # print the Google Slides batchUpdate requests for one day's deck
 """
@@ -126,6 +130,12 @@ STUDENT = {
 <li>The molecule that stores the instructions in a cat's cells is {B}.</li>
 <li>A section of DNA with the instructions for one protein is a {B}. It makes a {B}, which does a job for the cell.</li>
 <li><strong>Initial model (quick sketch).</strong> Draw a cell from a Siamese cat's ear. Label: <em>DNA, gene, protein, dark fur</em>. Use arrows. We will fix it on Day 7.</li>
+</ol>
+<h3>Chromosomes and genes</h3>
+{bank(["chromosome", "gene", "protein", "parent"])}
+<ol start="8">
+<li>A {B} is one long DNA molecule packed with proteins. A {B} is a section of that DNA that codes for a {B} that affects a trait. A kitten gets one set of chromosomes from each {B}.</li>
+<li><strong>Ask a question.</strong> Write 1 question about how DNA and chromosomes pass the Siamese pattern from parents to kittens. Start with <em>How</em>, <em>Why</em>, or <em>What</em>.</li>
 </ol>"""),
     2: ("Day 2: What is DNA made of?", f"""
 <h3>Key ideas</h3>
@@ -254,43 +264,48 @@ NB = "Students copy the 4-line notebook setup slide (title and date, target, key
 
 TEACHER_PAGES = {
     1: "<h2>Day 1: Launch with the Siamese cat</h2>" + header([
-        ("Targets", "LS1-1.2 (priority): DNA holds the instructions for building proteins. LS3-1 (supporting, light): genes come from both parents."),
+        ("Targets", "LS1-1.1 (priority), second half: DNA holds the instructions for building proteins (the structure half is Day 2). "
+                    "LS3-1.1, LS3-1.2, LS3-1.3 (supporting, not on the CSA): a chromosome is one long DNA molecule and a gene is a section of it; "
+                    "one set of chromosomes from each parent; ask questions about how traits are passed on."),
         ("Goal", "Students notice and wonder about a Siamese cat's colors, find patterns in two data tables, and sketch a first model."),
         ("Materials", "A projected photo of an adult Siamese cat and of a white newborn Siamese kitten; the student page."),
-        ("CFA", "LS1-1.2 (last 6 minutes)")]) + plan([
+        ("CFA", "None today. CFA LS1-1.1 on Day 2 covers Day 1 and Day 2.")]) + plan([
         ("Notebook setup and notice/wonder", 7, NB + " Then show the adult Siamese and the white newborn. Each student writes 1 notice and 1 wonder; take 3 or 4 aloud. Steer toward: <em>Why are only the ears, face, paws, and tail dark?</em>"),
         ("Temperature data", 7, "Read the table together. Students circle Question 1 and finish the Question 2 sentence. Debrief: dark fur goes with cool parts (27 to 30), cream with warm parts (34 to 36); a newborn was warm all over, so it is born white."),
         ("Litter data", 6, "Four litters only. Students circle Questions 3 and 4. Debrief: two solid parents can still have a Siamese kitten, so a kitten gets something from both parents."),
         ("Key ideas", 8, "Read the Key Ideas aloud. Board: <em>DNA &rarr; gene &rarr; protein &rarr; job</em>. Do Questions 5 and 6 together with the word bank. Big question: <em>How can a difference in DNA change which parts of a cat are dark?</em>"),
         ("Initial model", 6, "Quick sketch, Question 7, with the four labels given. Do not correct; it is revised on Day 7."),
-        ("CFA LS1-1.2", 6, "")]) + key([
+        ("Chromosomes and genes", 6, "LS3-1.1 and LS3-1.2: a chromosome is one long DNA molecule packed with proteins; a gene is a section of that DNA that codes for a protein that affects a trait; a kitten gets one set of chromosomes from each parent. Students do Question 8 with the word bank, then Question 9: one question of their own (LS3-1.3). Collect a few to answer on Day 2.")]) + key([
         "Cooler; warmer.", "Warm.", "All.", "Can; both parents.", "DNA.", "Gene; protein.",
-        "Look for: DNA or a gene in the cell, a protein, and dark fur, joined by arrows. Do not correct yet."]) + notes([
+        "Look for: DNA or a gene in the cell, a protein, and dark fur, joined by arrows. Do not correct yet.",
+        "chromosome; gene; protein; parent.",
+        "Any How, Why, or What question about DNA, chromosomes, or genes and how the pattern passes from parents to kittens (for example: <em>How can two solid parents have a Siamese kitten?</em>)."]) + notes([
+        "Updated Oct 2026 for the new learning targets: Day 1 has no CFA now. The old CFA LS1-1.2 (DNA holds the instructions) is part of CFA LS1-1.1 on Day 2, and the 6 minutes go to LS3-1 (chromosomes and genes).",
         "Cut from the 45-minute version: the second notice and wonder, the open-ended pattern questions (now circle or finish-the-sentence), three of the seven litters (the Siamese &times; solid pairs), and the chromosome-count question.",
         "The Siamese pattern is recessive: a kitten needs a changed copy of the gene from both parents. Do not name recessive/dominant unless students ask."]),
     2: "<h2>Day 2: What is DNA made of?</h2>" + header([
-        ("Target", "LS1-1.1 (priority): DNA is a double helix built from nucleotides, each with a sugar, a phosphate, and a base."),
+        ("Target", "LS1-1.1 (priority): DNA is a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and DNA holds the instructions for building proteins (Day 1)."),
         ("Goal", "Students describe DNA's structure and base pairing, and see that the message is the order of the bases. Prepares for the lab on Day 3."),
-        ("Materials", "Student page; colored pencils."), ("CFA", "LS1-1.1 (6 minutes)")]) + plan([
+        ("Materials", "Student page; colored pencils."), ("CFA", "LS1-1.1 (6 minutes; covers Day 1 and Day 2)")]) + plan([
         ("Notebook setup and warm-up", 4, NB + " Then: sketch what you think DNA looks like (1 minute)."),
         ("Mini-lesson and Part A", 8, "Draw it on the board while students draw Part A with you: nucleotide (pentagon sugar, circle phosphate, rectangle base), a strand, the four bases, the second strand, A&ndash;T and C&ndash;G, the twist. Key point: the order of the bases is the message."),
         ("Part B: partner strands", 8, "Do the example A T G &rarr; T A C together. Students write the partner strand for two sequences. Check with a partner."),
         ("Part C: fill in the blanks", 8, "Questions 1 to 4 with the word bank."),
         ("Connect to the cats", 6, "Question 5: the same short stretch of a gene in a solid and a Siamese cat, one letter different. Ask: Could one letter change which parts of a cat are dark? We find out on Days 3 and 4. The letters are an illustration."),
-        ("CFA LS1-1.1", 6, "")]) + key([
+        ("CFA LS1-1.1", 6, "It covers Day 1 (DNA holds the instructions for proteins) and today (DNA structure).")]) + key([
         "Part A: sugar (pentagon), phosphate (circle), base (rectangle).",
         "Part B: (1) T A C G G A. (2) A A A C T G.",
         "Part C: 1. double helix. 2. sugar and phosphate; bases. 3. T; G. 4. order of the bases. 5. One letter (the 4th: G in the solid cat, A in the Siamese cat)."]) + notes([
         "Cut from the 45-minute version: the third partner strand, open-ended Part C questions (now fill-in-the-blank), and the scissors and tape. The 12-minute lecture and the separate drawing time are merged so students draw along."]),
     4: "<h2>Day 4: What can one letter do?</h2>" + header([
-        ("Target", "LS1-1.4 (priority): changing one DNA base can change a protein and what it does."),
+        ("Target", "LS1-1.3 (priority): changing one DNA base can change a protein and what it does."),
         ("Goal", "Students sort one-letter DNA changes by their effect, see that not every change matters, and connect an amino acid change to the Siamese cat."),
-        ("Materials", "Student page (no cutting: the cards are a table)."), ("CFA", "LS1-1.4 (6 minutes)")]) + plan([
+        ("Materials", "Student page (no cutting: the cards are a table)."), ("CFA", "LS1-1.3 (6 minutes)")]) + plan([
         ("Notebook setup and warm-up", 4, NB + " Recap from the lab: base order sets amino acid order."),
         ("Mini-lesson", 7, "The three things a one-letter change can do. Then model card B with the code table: GAG and GAA both make Glu, so category 3."),
         ("Card sort", 15, "Partners write 1, 2, or 3 and a reason from the reason bank for cards A, C, D, E, F. Circulate; check card E (category 2) and card D (category 3), the two that use no code table."),
         ("The Siamese cat", 8, "Reveal: card A is the real Siamese change. The pigment-making protein has one different amino acid; it stops working at warm body temperatures and works only in the cooler ears, nose, paws, and tail tip. Students finish Questions 1 and 2."),
-        ("CFA LS1-1.4", 6, "")]) + key([
+        ("CFA LS1-1.3", 6, "")]) + key([
         "Card A (GGA &rarr; AGA, Gly &rarr; Arg): 1, the amino acid changes.",
         "Card B (GAG &rarr; GAA, Glu &rarr; Glu): 3, the amino acid stays the same (done for students).",
         "Card C (CTG &rarr; CCG, Leu &rarr; Pro): 1.",
@@ -302,15 +317,15 @@ TEACHER_PAGES = {
         "Cut from the 45-minute version: cutting out the cards, sorting all six from scratch (card B is now the worked example), and the open-ended reasons (now a reason bank).",
         "Keep the protein story at the level of the standard: a different amino acid changes how the protein works."]),
     5: "<h2>Day 5: Same DNA, different jobs</h2>" + header([
-        ("Target", "LS1-1.5 (priority): DNA, through proteins, gives different cells their different jobs."),
+        ("Target", "LS1-1.4 (priority): DNA, through proteins, gives different cells their different jobs."),
         ("Goal", "Students explain that all cells have the same genes but use different ones, and use the Siamese cat to explain why only some parts of the body are dark."),
-        ("Materials", "Student page."), ("CFA", "LS1-1.5 (6 minutes)")]) + plan([
+        ("Materials", "Student page."), ("CFA", "LS1-1.4 (6 minutes)")]) + plan([
         ("Notebook setup and warm-up", 4, NB + " Ask: Your skin cells and nerve cells have the same DNA. Why are they so different?"),
         ("Mini-lesson", 7, "Every cell has all the genes, but each kind of cell uses a different set. The proteins a cell makes decide its job. In a cat, only pigment-making cells use the gene for the pigment-making protein."),
         ("Part A", 6, "Students read the cell P and Q table and finish Question 1."),
         ("Part B", 8, "Do the ear row together (28 is cooler than 33, so yes, dark). Students finish the table."),
         ("Explain it", 9, "Questions 2 and 3 with the word bank. Read two answers aloud."),
-        ("CFA LS1-1.5", 6, "")]) + key([
+        ("CFA LS1-1.4", 6, "")]) + key([
         "Part A, Question 1: the same; genes; proteins.",
         "Part B table: ear, nose, paw, tail tip: yes, dark. Upper leg, back, belly: no, cream.",
         "Question 2: pigment-making.",
@@ -318,15 +333,15 @@ TEACHER_PAGES = {
         "Cut from the 45-minute version: the Part B table of skin, nerve, and pigment cells (its idea is now Question 2) and the open-ended questions (now a frame with a word bank).",
         "The 33-degree line is a simplified class number. The idea to keep: the changed protein works in cool skin and not in warm skin."]),
     6: "<h2>Day 6: Case data, from a DNA change to the body</h2>" + header([
-        ("Target", "LS1-1.6 (priority): use case data, like sickle cell, to explain how a DNA change affects the body."),
+        ("Target", "LS1-1.5 (priority): use case data, like sickle cell, to explain how a DNA change affects the body."),
         ("Goal", "Students trace a DNA change through a protein to the body in two cases and write a claim-evidence-reasoning explanation with a frame."),
-        ("Materials", "Student page."), ("CFA", "LS1-1.6 (6 minutes)")]) + plan([
+        ("Materials", "Student page."), ("CFA", "LS1-1.5 (6 minutes)")]) + plan([
         ("Notebook setup and warm-up", 4, NB + " Say the cat chain together: one-letter DNA change &rarr; one different amino acid &rarr; protein works only in cool skin &rarr; dark points."),
         ("Case 1 together", 8, "Read the table aloud. Fill in the Question 1 chain together."),
         ("Case 2 with a partner", 8, "Partners fill in the Question 2 chain with the word bank."),
         ("Compare", 4, "Question 3, one sentence."),
         ("Write", 10, "Question 4: claim, evidence, reasoning with the frame. Share two samples."),
-        ("CFA LS1-1.6", 6, "")]) + key([
+        ("CFA LS1-1.5", 6, "")]) + key([
         "Question 1: gene; amino acid; in cool skin; ears, nose, paws, and tail.",
         "Question 2: gene; amino acid; protein; symptoms.",
         "Question 3: amino acid; differently (or poorly).",
@@ -335,7 +350,7 @@ TEACHER_PAGES = {
     7: "<h2>Day 7: Review and return to the Siamese cat</h2>" + header([
         ("Goal", "Reteach from CFA results; students fix their Day 1 model and write the final explanation of the phenomenon with a frame."),
         ("Materials", "Students' Day 1 models and CFA scores; the Mastery Path review assignments.")]) + plan([
-        ("Find your focus", 3, "Students look at their six CFA scores. A score below 2.67 opens that target's review through the Mastery Path."),
+        ("Find your focus", 3, "Students look at their five CFA scores. A score below 2.67 opens that target's review through the Mastery Path."),
         ("Review and vocabulary", 15, "Students do the reviews that opened, then the Vocabulary. Pull a small group if several students are below a 3 on the same CFA."),
         ("Fix the model", 8, "Students redraw their Day 1 model using the checklist."),
         ("Write It", 14, "Students write the claim-evidence-reasoning explanation with the frame and submit.")]) + key([
@@ -378,7 +393,7 @@ SLIDE_TEXT = {
                       "We do the ear together. Then fill in each body part: protein works? Fur dark or cream?"],
         "day5_s7_b": ["Use the word bank to finish the frame (Questions 2 and 3).",
                       "Same DNA → only pigment cells use the gene → the protein works only in cool skin → dark points.",
-                      "Then: Exit ticket CFA LS1-1.5 (6 minutes)."]},
+                      "Then: Exit ticket CFA LS1-1.4 (6 minutes)."]},
     6: {"day6_s5_b": ["In both cases: one letter in the DNA changes → one ____ changes → the protein works ____.",
                       "(Question 3, one sentence)"],
         "day6_s6_b": ["Claim: The dark points are caused by ____.", "Evidence: The ear is __ °C and __. The back is __ °C and __.",
