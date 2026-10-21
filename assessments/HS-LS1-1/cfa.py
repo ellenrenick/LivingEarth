@@ -1,6 +1,6 @@
 """CFAs for HS-LS1-1 (unit 2.1): one short exit-ticket check per priority learning target.
 
-Each CFA is worth 6 points. MC items list the correct choice FIRST (the builder shuffles).
+Each CFA is worth 6 points (LS1-1.1 has 6 multiple-choice items covering both the structure of DNA and its role as instructions). MC items list the correct choice FIRST (the builder shuffles).
 Teaching notes: no mRNA/tRNA mechanics; no specific cell types; no protein structure items.
 """
 
@@ -15,7 +15,7 @@ CODE = ("<table border=\"1\" cellpadding=\"4\"><tr><th>DNA triplet</th><th>Amino
 CFAS = [
     {
         "id": "LS1-1.1", "dok": 1,
-        "lt": "I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base.",
+        "lt": "I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins.",
         "items": [
             {"prompt": "<p>What shape is a DNA molecule?</p>",
              "choices": ["A double helix (a twisted ladder)", "A single straight chain", "A flat sheet", "A ball"],
@@ -26,12 +26,6 @@ CFAS = [
             {"prompt": "<p>The letters A, T, C, and G stand for the four</p>",
              "choices": ["bases in DNA", "kinds of amino acid", "kinds of protein", "kinds of cell"],
              "feedback": "A, T, C, and G are the four bases found in DNA."},
-        ],
-    },
-    {
-        "id": "LS1-1.2", "dok": 1,
-        "lt": "I can state that DNA holds the instructions for building proteins.",
-        "items": [
             {"prompt": "<p>DNA stores the instructions for building</p>",
              "choices": ["proteins", "sugars", "water", "light"],
              "feedback": "DNA holds the instructions for building proteins."},
@@ -45,7 +39,7 @@ CFAS = [
         ],
     },
     {
-        "id": "LS1-1.3", "dok": 2,
+        "id": "LS1-1.2", "dok": 2,
         "lt": "I can describe how a gene's message is copied and read to build a chain of amino acids.",
         "items": [
             {"prompt": "<p>Which sequence best describes how a cell uses a gene?</p>",
@@ -64,7 +58,7 @@ CFAS = [
         ],
     },
     {
-        "id": "LS1-1.4", "dok": 2,
+        "id": "LS1-1.3", "dok": 2,
         "lt": "I can explain how changing one DNA base can change a protein and what it does.",
         "items": [
             {"prompt": CODE + "<p>A gene reads ATG GAG CTG. A base change makes it read ATG GTG CTG. What changes in the amino acid chain?</p>",
@@ -83,7 +77,7 @@ CFAS = [
         ],
     },
     {
-        "id": "LS1-1.5", "dok": 3,
+        "id": "LS1-1.4", "dok": 3,
         "lt": "I can explain how DNA, through proteins, gives different cells their different jobs.",
         "items": [
             {"prompt": "<p>Two cells in the same person have the same genes but make different proteins. What explains this?</p>",
@@ -101,7 +95,7 @@ CFAS = [
         ],
     },
     {
-        "id": "LS1-1.6", "dok": 3,
+        "id": "LS1-1.5", "dok": 3,
         "lt": "I can use case data, like sickle cell, to explain how a DNA change affects the body.",
         "items": [
             {"prompt": "<table border=\"1\" cellpadding=\"4\"><tr><th>Person</th><th>Gene</th><th>Protein</th><th>Symptoms</th></tr><tr><td>1</td><td>Normal</td><td>Works</td><td>None</td></tr><tr><td>2</td><td>One base changed</td><td>Works poorly</td><td>Yes</td></tr></table><p>Which conclusion is best supported?</p>",

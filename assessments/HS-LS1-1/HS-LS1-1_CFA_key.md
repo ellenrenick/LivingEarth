@@ -7,18 +7,17 @@
 
 | CFA | Learning target | DOK | Points | Given on |
 | --- | --- | --- | --- | --- |
-| LS1-1.1 | I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base. | 1 | 6 | Unit day 2 (course day 40) |
-| LS1-1.2 | I can state that DNA holds the instructions for building proteins. | 1 | 6 | Unit day 4 (course day 42) |
-| LS1-1.3 | I can describe how a gene's message is copied and read to build a chain of amino acids. | 2 | 6 | Unit day 6 (course day 44) |
-| LS1-1.4 | I can explain how changing one DNA base can change a protein and what it does. | 2 | 6 | Unit day 7 (course day 45) |
-| LS1-1.5 | I can explain how DNA, through proteins, gives different cells their different jobs. | 3 | 6 | Unit day 9 (course day 47) |
-| LS1-1.6 | I can use case data, like sickle cell, to explain how a DNA change affects the body. | 3 | 6 | Unit day 11 (course day 49) |
+| LS1-1.1 | I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins. | 1 | 12 | Unit day 4 (course day 42) |
+| LS1-1.2 | I can describe how a gene's message is copied and read to build a chain of amino acids. | 2 | 6 | Unit day 6 (course day 44) |
+| LS1-1.3 | I can explain how changing one DNA base can change a protein and what it does. | 2 | 6 | Unit day 7 (course day 45) |
+| LS1-1.4 | I can explain how DNA, through proteins, gives different cells their different jobs. | 3 | 6 | Unit day 9 (course day 47) |
+| LS1-1.5 | I can use case data, like sickle cell, to explain how a DNA change affects the body. | 3 | 6 | Unit day 11 (course day 49) |
 
 ---
 
-## LS1-1.1 (DOK 1, 6 points)
+## LS1-1.1 (DOK 1, 12 points)
 
-**Learning target:** I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base.
+**Learning target:** I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins.
 
 **Q1.** What shape is a DNA molecule?
 
@@ -47,52 +46,45 @@ D. kinds of amino acid
 
 *Answer B.* A, T, C, and G are the four bases found in DNA.
 
+**Q4.** DNA stores the instructions for building
 
----
+A. light  
+B. water  
+C. proteins  ✅  
+D. sugars  
 
-## LS1-1.2 (DOK 1, 6 points)
+*Answer C.* DNA holds the instructions for building proteins.
 
-**Learning target:** I can state that DNA holds the instructions for building proteins.
+**Q5.** A section of DNA with the instructions for one protein is called a
 
-**Q1.** DNA stores the instructions for building
+A. tissue  
+B. cell  
+C. nucleotide  
+D. gene  ✅  
 
-A. water  
-B. sugars  
-C. light  
-D. proteins  ✅  
+*Answer D.* A gene is the section of DNA that holds the instructions for one protein.
 
-*Answer D.* DNA holds the instructions for building proteins.
+**Q6.** Which statement is true?
 
-**Q2.** A section of DNA with the instructions for one protein is called a
+A. DNA holds instructions, and proteins do jobs for the cell.  ✅  
+B. Neither DNA nor proteins are found in cells.  
+C. Proteins hold instructions, and DNA does jobs for the cell.  
+D. DNA and proteins are the same thing.  
 
-A. gene  ✅  
-B. nucleotide  
-C. tissue  
-D. cell  
-
-*Answer A.* A gene is the section of DNA that holds the instructions for one protein.
-
-**Q3.** Which statement is true?
-
-A. Proteins hold instructions, and DNA does jobs for the cell.  
-B. DNA holds instructions, and proteins do jobs for the cell.  ✅  
-C. DNA and proteins are the same thing.  
-D. Neither DNA nor proteins are found in cells.  
-
-*Answer B.* DNA stores instructions and proteins carry out jobs.
+*Answer A.* DNA stores instructions and proteins carry out jobs.
 
 
 ---
 
-## LS1-1.3 (DOK 2, 6 points)
+## LS1-1.2 (DOK 2, 6 points)
 
 **Learning target:** I can describe how a gene's message is copied and read to build a chain of amino acids.
 
 **Q1.** Which sequence best describes how a cell uses a gene?
 
-A. The amino acids are copied; the copy is read to build DNA.  
-B. The protein is copied to make a gene.  
-C. The DNA leaves the cell; the cell reads it outside.  
+A. The DNA leaves the cell; the cell reads it outside.  
+B. The amino acids are copied; the copy is read to build DNA.  
+C. The protein is copied to make a gene.  
 D. The gene's message is copied; the copy is read to link amino acids in order.  ✅  
 
 *Answer D.* A gene's message is copied and the copy is read to build a chain of amino acids.
@@ -100,9 +92,9 @@ D. The gene's message is copied; the copy is read to link amino acids in order. 
 **Q2.** What is built when a gene's copy is read?
 
 A. A chain of amino acids  ✅  
-B. A new DNA molecule  
+B. A sugar  
 C. A new cell  
-D. A sugar  
+D. A new DNA molecule  
 
 *Answer A.* Reading the copy links amino acids into a chain.
 
@@ -119,7 +111,7 @@ D. A sugar
 
 ---
 
-## LS1-1.4 (DOK 2, 6 points)
+## LS1-1.3 (DOK 2, 6 points)
 
 **Learning target:** I can explain how changing one DNA base can change a protein and what it does.
 
@@ -143,9 +135,9 @@ D. Glu becomes Val  ✅
 **Q2.** Why can a single base change make a protein work differently?
 
 A. It can change an amino acid in the chain, and a different chain can make a protein that works differently.  ✅  
-B. It does not matter because every base is the same.  
-C. It turns the protein into DNA.  
-D. It always removes the gene from the cell.  
+B. It always removes the gene from the cell.  
+C. It does not matter because every base is the same.  
+D. It turns the protein into DNA.  
 
 *Answer A.* A changed base can mean a different amino acid, which can change how the protein works.
 
@@ -162,15 +154,15 @@ D. It always removes the gene from the cell.
 
 ---
 
-## LS1-1.5 (DOK 3, 6 points)
+## LS1-1.4 (DOK 3, 6 points)
 
 **Learning target:** I can explain how DNA, through proteins, gives different cells their different jobs.
 
 **Q1.** Two cells in the same person have the same genes but make different proteins. What explains this?
 
-A. Proteins are not made from genes.  
-B. Each cell has different DNA.  
-C. Only one of the cells has DNA.  
+A. Each cell has different DNA.  
+B. Only one of the cells has DNA.  
+C. Proteins are not made from genes.  
 D. Each cell uses a different set of its genes.  ✅  
 
 *Answer D.* All cells have the same genes, but they use different genes.
@@ -197,7 +189,7 @@ D. Cell A has only gene 1.
 
 ---
 
-## LS1-1.6 (DOK 3, 6 points)
+## LS1-1.5 (DOK 3, 6 points)
 
 **Learning target:** I can use case data, like sickle cell, to explain how a DNA change affects the body.
 
@@ -219,8 +211,8 @@ D. The DNA change led to a protein that works poorly, and that caused symptoms. 
 
 A. DNA change → different amino acid chain → protein works differently → effect on the body  ✅  
 B. DNA change → no change in any protein  
-C. Effect on the body → protein change → DNA change  
-D. Protein change → DNA change → amino acid change  
+C. Protein change → DNA change → amino acid change  
+D. Effect on the body → protein change → DNA change  
 
 *Answer A.* DNA determines the protein, and the protein affects the body.
 

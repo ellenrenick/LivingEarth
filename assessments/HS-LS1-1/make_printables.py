@@ -86,14 +86,14 @@ NOTEBOOK = [
                hh("Part 4: Claim, evidence, reasoning"), p("<b>Claim:</b> what caused the Siamese cat's dark points?"), lines(2), p("<b>Evidence:</b> at least two numbers from the data."), lines(2),
                p("<b>Reasoning:</b> how does a one-letter DNA change lead to dark color only on the cooler body parts?"), lines(4), hh("Exit ticket"), lines(3)]},
     {"day": 7, "title": "Review and Back to the Cat", "fq": "How can I explain the Siamese cat with DNA, genes, and proteins?",
-     "left": [hh("Warm-up: My CFA scores"), tbl(["CFA", "My score", "Review done?"], [[x, "", ""] for x in ["LS1-1.1", "LS1-1.2", "LS1-1.3", "LS1-1.4", "LS1-1.5", "LS1-1.6"]], [30, 30, 40], rh=0.38),
+     "left": [hh("Warm-up: My CFA scores"), tbl(["CFA", "My score", "Review done?"], [[x, "", ""] for x in ["LS1-1.1", "LS1-1.2", "LS1-1.3", "LS1-1.4", "LS1-1.5"]], [30, 30, 40], rh=0.38),
               hh("Part 1: Vocabulary"), tbl(["Word", "In my words"], [[x, ""] for x in ["DNA", "nucleotide", "gene", "base sequence", "amino acid", "protein"]], [28, 72], rh=0.5)],
      "right": [hh("Part 2: My revised model"), box(2.7, "Show the gene, the one-letter change, the copy-then-read path, the amino acid chain, the protein, and the dark points."),
                hh("Part 3: Write It, two Siamese kittens"), p("Why are the cool-room kitten's ears darker?"), lines(9)]},
     {"day": 8, "title": "Unit Assessment and Reflection", "fq": "What do I know about how DNA leads to traits?",
      "left": [hh("Warm-up: Before the test"), p("Three things I am sure about:"), lines(4), hh("Part 1: Back to the cat"), box(2.9, "What I would add to my Day 1 model now."),
               hh("Part 2: Looking back at my CFAs"), tbl(["CFA", "My score", "What helped me"], [[x, "", ""] for x in ["LS1-1.1", "LS1-1.2", "LS1-1.3"]], [24, 22, 54], rh=0.4)],
-     "right": [tbl(["CFA", "My score", "What helped me"], [[x, "", ""] for x in ["LS1-1.4", "LS1-1.5", "LS1-1.6"]], [24, 22, 54], rh=0.4),
+     "right": [tbl(["CFA", "My score", "What helped me"], [[x, "", ""] for x in ["LS1-1.4", "LS1-1.5"]], [24, 22, 54], rh=0.4),
                hh("Part 3: What I will do next time"), lines(6), hh("Exit ticket"), p("One question I still have about DNA and proteins:"), lines(4)]},
 ]
 

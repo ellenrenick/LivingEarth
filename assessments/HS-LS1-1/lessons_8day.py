@@ -40,10 +40,10 @@ TEACHER = "<p style=\"background:#fff3cd;padding:6px\"><strong>TEACHER PAGE.</st
 
 DAY1_PLAN = TEACHER + """
 <h2>Day 1: Launch with the Siamese cat</h2>
-<table border="1" cellpadding="6"><tr><th>Targets</th><td>LS1-1.2 (priority): DNA holds the instructions for building proteins. LS3-1 (supporting, light): one set of chromosomes and genes from each parent.</td></tr>
+<table border="1" cellpadding="6"><tr><th>Targets</th><td>LS1-1.1 (priority, second half): DNA holds the instructions for building proteins; DNA's structure is the other half, taught on Day 2. LS3-1 (supporting, light): one set of chromosomes and genes from each parent.</td></tr>
 <tr><th>Goal</th><td>Students notice and wonder about a Siamese cat's colors, find patterns in temperature and inheritance data, and start an initial model of what is in the cells.</td></tr>
 <tr><th>Materials</th><td>A projected photo of an adult Siamese cat and of a white newborn Siamese kitten (search &ldquo;Siamese kitten newborn white&rdquo; and &ldquo;Siamese cat&rdquo;); the student page.</td></tr>
-<tr><th>CFA</th><td>LS1-1.2 (last 6 minutes)</td></tr></table>
+<tr><th>CFA</th><td>None today. LS1-1.1 has one CFA on Day 2, after the structure lesson; it covers both halves of the target.</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
 <li><strong>Notice and wonder (7 min).</strong> Show the adult Siamese: dark ears, face mask, paws, and tail; cream body. Then show the newborn kitten: nearly all white. Students write 2 noticings and 2 wonderings. Collect on the board. Steer toward: <em>Why are only the ears, face, paws, and tail dark? Why is the kitten born white? What is different inside a Siamese cat?</em></li>
@@ -51,7 +51,7 @@ DAY1_PLAN = TEACHER + """
 <li><strong>Look for patterns: inheritance (8 min).</strong> Students study the litter table and answer Questions 3 and 4. Debrief: two Siamese-pattern parents have only Siamese-pattern kittens; two solid parents can still have Siamese-pattern kittens; a Siamese-pattern &times; solid pair can have all solid kittens. The pattern is inherited, and a kitten gets something from <em>both</em> parents.</li>
 <li><strong>Mini-lesson: what is passed on (10 min).</strong> Key Ideas on the student page. Board: <em>DNA &rarr; gene &rarr; protein &rarr; job in the cell.</em> A kitten gets one set of chromosomes (each a very long DNA molecule with many genes) from each parent (LS3-1, light). A gene is a section of DNA with the instructions for one protein, and proteins do the jobs of the cell. Question to carry through the unit: <em>How can a difference in DNA change which parts of a cat are dark?</em></li>
 <li><strong>Practice and initial model (6 min).</strong> Students answer Questions 5 to 7 and sketch Question 8, a first model. They revise it on Day 7.</li>
-<li><strong>CFA LS1-1.2 (6 min).</strong></li>
+<li><strong>Wrap-up (6 min).</strong> Students write one thing they learned and one question they still have. Collect as an exit slip (not graded).</li>
 </ol>
 <h3>Answer key for the student page</h3>
 <ol>
@@ -104,10 +104,10 @@ DAY1_STUDENT = """{{SLIDES}}
 
 DAY2_PLAN = TEACHER + """
 <h2>Day 2: What is DNA made of?</h2>
-<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.1 (priority): DNA is a double helix built from nucleotides, each with a sugar, a phosphate, and a base.</td></tr>
+<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.1 (priority, first half): DNA is a double helix built from nucleotides, each with a sugar, a phosphate, and a base. (The second half, DNA holds the instructions for proteins, started on Day 1.)</td></tr>
 <tr><th>Goal</th><td>Students describe DNA's structure and base pairing, and see that the message is the order of the bases. Prepares for the lab on Day 3.</td></tr>
 <tr><th>Materials</th><td>Student page; colored pencils; scissors and tape or glue.</td></tr>
-<tr><th>CFA</th><td>LS1-1.1 (6 minutes)</td></tr></table>
+<tr><th>CFA</th><td>LS1-1.1 (6 minutes). Six items: three on DNA's structure and three on DNA as the instructions for proteins (genes and proteins).</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
 <li><strong>Warm-up (5 min).</strong> Ask: <em>Yesterday we said a gene in the cat's cells holds instructions for a protein that has something to do with dark fur. What do you think DNA looks like?</em> Students sketch for 1 minute, then share.</li>
@@ -209,9 +209,9 @@ LAB_STUDENT = """{{SLIDES}}
 
 LAB_TEACHER = TEACHER + """
 <h2>Day 3 Teacher Key: Gummy DNA Lab</h2>
-<table border="1" cellpadding="6"><tr><th>Targets</th><td>LS1-1.3 (priority): a gene's message is copied and the copy is read to build a chain of amino acids. Applies LS1-1.1 (DNA structure).</td></tr>
+<table border="1" cellpadding="6"><tr><th>Targets</th><td>LS1-1.2 (priority): a gene's message is copied and the copy is read to build a chain of amino acids. Applies LS1-1.1 (DNA structure).</td></tr>
 <tr><th>Prep (15 min before class)</th><td>For each pair: 2 licorice strands (6 to 8 inches, such as Twizzlers or Red Vines), 24 candy bases (6 each of four colors, plus a few spare), a handful of toothpicks, a paper plate. Print the lab sheet and code table. If you cannot use food (gelatin, allergies, or policy), use colored beads and pipe cleaners or paper circles taped to paper strips.</td></tr>
-<tr><th>CFA</th><td>LS1-1.3 (6 minutes; if the lab runs long, give the CFA first and finish Part D at the start of Day 4)</td></tr></table>
+<tr><th>CFA</th><td>LS1-1.2 (6 minutes; if the lab runs long, give the CFA first and finish Part D at the start of Day 4)</td></tr></table>
 <h3>Timing (45 minutes)</h3>
 <ol><li>Intro and safety (5 min): the copy-then-read idea; show a pre-built strand.</li><li>Part A (6 min).</li><li>Part B (8 min).</li><li>Part C (10 min).</li><li>Part D (5 min).</li><li>Clean up and CFA (11 min).</li></ol>
 <h3>Answer key</h3>
@@ -235,22 +235,22 @@ DAY3_PLAN = TEACHER + """
 <p>This is the one hands-on lab and the one day on how a gene's message is copied and read. See the <strong>Teacher Key and Prep</strong> page for materials, timing, and answers, and the <strong>Lab Sheet</strong> assignment for students.</p>
 <ol><li>Intro (5): <em>Yesterday we saw a one-letter difference between a solid cat's gene and a Siamese cat's gene. Today we build a gene, watch how its message is copied and read, and change one letter ourselves.</em></li>
 <li>Lab, Parts A to D (about 29 min).</li>
-<li>CFA LS1-1.3 (6 min) and clean up.</li></ol>
+<li>CFA LS1-1.2 (6 min) and clean up.</li></ol>
 """
 
 DAY4_PLAN = TEACHER + """
 <h2>Day 4: What can one letter do?</h2>
-<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.4 (priority): changing one DNA base can change a protein and what it does.</td></tr>
+<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.3 (priority): changing one DNA base can change a protein and what it does.</td></tr>
 <tr><th>Goal</th><td>Students sort one-letter DNA changes by their effect, see that not every change matters, and connect an amino acid change to a protein that works differently, as in the Siamese cat.</td></tr>
 <tr><th>Materials</th><td>Student page and card strips (six cards per group); gummy models from Day 3 if kept.</td></tr>
-<tr><th>CFA</th><td>LS1-1.4 (6 minutes)</td></tr></table>
+<tr><th>CFA</th><td>LS1-1.3 (6 minutes)</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
 <li><strong>Warm-up (5 min).</strong> Finish Part D of the lab: how many amino acids changed when one letter changed? Recap: base order sets amino acid order.</li>
 <li><strong>Mini-lesson (10 min).</strong> A one-letter change can do one of three things: (1) change one amino acid in the chain, which can change how the protein works; (2) change whether or when the protein is made, if the change is in a switch next to the gene; (3) change nothing noticeable (the amino acid is the same, or the change is in a stretch with no role). Not every change matters.</li>
 <li><strong>Card sort (15 min).</strong> Groups sort the six cards into the three categories and justify each (student page).</li>
 <li><strong>The Siamese cat (8 min).</strong> Reveal: card A is the real Siamese change. The cat's pigment-making protein has one different amino acid. That protein still forms, but the change makes it stop working at warm body temperatures. It works only in the cooler ears, nose, paws, and tail tip. Ask: <em>How does this explain the dark points and the white newborn?</em> (A newborn kitten is warm everywhere, so no pigment is made; as the extremities cool, the protein works there and pigment appears.)</li>
-<li><strong>CFA LS1-1.4 (6 min).</strong></li>
+<li><strong>CFA LS1-1.3 (6 min).</strong></li>
 </ol>
 <h3>Answer key for the card sort</h3>
 <ul>
@@ -297,10 +297,10 @@ DAY4_STUDENT = """{{SLIDES}}
 
 DAY5_PLAN = TEACHER + """
 <h2>Day 5: Same DNA, different jobs</h2>
-<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.5 (priority): DNA, through proteins, gives different cells their different jobs.</td></tr>
+<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.4 (priority): DNA, through proteins, gives different cells their different jobs.</td></tr>
 <tr><th>Goal</th><td>Students explain that all cells have the same genes but use different ones, and use the Siamese cat to explain why only some parts of the body show dark color.</td></tr>
 <tr><th>Materials</th><td>Student page; two colors of pencil.</td></tr>
-<tr><th>CFA</th><td>LS1-1.5 (6 minutes)</td></tr></table>
+<tr><th>CFA</th><td>LS1-1.4 (6 minutes)</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
 <li><strong>Warm-up (5 min).</strong> Ask: <em>Your skin cells and your nerve cells have the same DNA. Why are they so different?</em> Collect ideas.</li>
@@ -308,7 +308,7 @@ DAY5_PLAN = TEACHER + """
 <li><strong>Activity A: cell types (6 min).</strong> Students complete Part A (cell types P and Q).</li>
 <li><strong>Activity B: map the Siamese cat (14 min).</strong> Students complete the tables in Parts B and C: which cells use the gene, and where the changed protein works.</li>
 <li><strong>Explain it (4 min).</strong> Students write the Question 4 explanation.</li>
-<li><strong>CFA LS1-1.5 (6 min).</strong></li>
+<li><strong>CFA LS1-1.4 (6 min).</strong></li>
 </ol>
 <h3>Answer key</h3>
 <ul>
@@ -355,17 +355,17 @@ DAY5_STUDENT = """{{SLIDES}}
 
 DAY6_PLAN = TEACHER + """
 <h2>Day 6: Case data, from a DNA change to the body</h2>
-<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.6 (priority): use case data, like sickle cell, to explain how a DNA change affects the body.</td></tr>
+<table border="1" cellpadding="6"><tr><th>Target</th><td>LS1-1.5 (priority): use case data, like sickle cell, to explain how a DNA change affects the body.</td></tr>
 <tr><th>Goal</th><td>Students trace a DNA change through a protein to an effect on the body using two cases, and write a claim-evidence-reasoning explanation.</td></tr>
 <tr><th>Materials</th><td>Student page.</td></tr>
-<tr><th>CFA</th><td>LS1-1.6 (6 minutes)</td></tr></table>
+<tr><th>CFA</th><td>LS1-1.5 (6 minutes)</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
 <li><strong>Warm-up (5 min).</strong> Students list the chain from Days 4 and 5 for the cat: one-letter DNA change &rarr; one different amino acid &rarr; protein works only in cool skin &rarr; dark points.</li>
 <li><strong>Case 1: the Siamese cat (12 min).</strong> Students complete the chain and the data table.</li>
 <li><strong>Case 2: a human gene change (12 min).</strong> A single base change in a human gene changes one amino acid and the protein works poorly. Students complete the chain and compare the cases.</li>
 <li><strong>Write (10 min).</strong> Students write a claim-evidence-reasoning explanation (Question 6). Share two samples.</li>
-<li><strong>CFA LS1-1.6 (6 min).</strong></li>
+<li><strong>CFA LS1-1.5 (6 min).</strong></li>
 </ol>
 <h3>Answer key</h3>
 <ul>
@@ -408,7 +408,7 @@ DAY7_PLAN = TEACHER + """
 <tr><th>Materials</th><td>Students' Day 1 models and CFA scores; the Mastery Path review assignments.</td></tr></table>
 <h3>Plan (45 minutes)</h3>
 <ol>
-<li><strong>Find your focus (5 min).</strong> Students look at their six CFA scores. The goal is at least a 3 on every CFA. A CFA score below 2.67 (so 2.67 rounds up and counts as a 3) opens that target's review assignment automatically through the Mastery Path; students do it. Pull a small group for reteaching if several students are below a 3 on the same CFA.</li>
+<li><strong>Find your focus (5 min).</strong> Students look at their five CFA scores. The goal is at least a 3 on every CFA. A CFA score below 2.67 (so 2.67 rounds up and counts as a 3) opens that target's review assignment automatically through the Mastery Path; students do it. Pull a small group for reteaching if several students are below a 3 on the same CFA.</li>
 <li><strong>Review sections (20 min).</strong> Students do the Mastery Path reviews that opened for any CFA below a 3, plus Vocabulary (Part 1 of the Day 7 assignment). Vocabulary answers: {{VOCAB_KEY}}</li>
 <li><strong>Revise the model (8 min).</strong> Students redraw their Day 1 model with: DNA with the gene, the one-letter change, the copy-then-read path, the amino acid chain with one amino acid different, the protein working only in cool skin, and dark points.</li>
 <li><strong>Write It: the Siamese kitten (12 min).</strong> Students write a claim-evidence-reasoning explanation using the data below.</li>

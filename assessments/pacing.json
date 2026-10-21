@@ -1,2283 +1,2282 @@
 {
- "HS-LS1-2": {
-  "unit": "1.1",
-  "title": "Organization in Organisms (CP: Cells to Organisms)",
-  "start": 1,
-  "end": 12,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 1,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS1-2",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 2,
-    "focus": "LS1-2.1 I can name the levels of organization in an organism, from cells to the whole organism.; LS1-2.2 I can state that all living things are made of cells, the basic unit of structure and function.",
-    "standard": "LS1-2",
-    "resources": "CFA LS1-2.1 and LS1-2.2 (exit ticket, about 6 min each)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-2.1",
-     "LS1-2.2"
+  "HS-LS1-2": {
+    "unit": "1.1",
+    "title": "Organization in Organisms (CP: Cells to Organisms)",
+    "start": 1,
+    "end": 12,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 1,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS1-2",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 2,
+        "focus": "LS1-2.1 I can name the levels of organization in an organism, from cells to the whole organism.; LS1-2.2 I can state that all living things are made of cells, the basic unit of structure and function.",
+        "standard": "LS1-2",
+        "resources": "CFA LS1-2.1 and LS1-2.2 (exit ticket, about 6 min each)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-2.1",
+          "LS1-2.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 3,
+        "focus": "Supporting: LS1-4.1 I can describe how cell division makes new cells with the same DNA, for growth and repair.",
+        "standard": "LS1-4",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS1-4.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 4,
+        "focus": "Supporting: LS1-4.2 I can explain that cells with the same DNA specialize by using different genes.; LS1-4.3 I can use a model to show how cell division and specialization build and maintain a body.",
+        "standard": "LS1-4",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS1-4.2",
+          "LS1-4.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 5,
+        "focus": "LS1-2.3 I can describe how each level is built from the level below it.",
+        "standard": "LS1-2",
+        "resources": "CFA LS1-2.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-2.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 6,
+        "focus": "Supporting: LS1-3.1 I can describe how negative feedback keeps a body condition steady and how positive feedback differs.; LS1-3.2 I can use data, like heart rate after exercise, to show feedback bringing the body back to normal.; LS1-3.3 I can carry out an investigation that shows feedback keeping the body in balance.",
+        "standard": "LS1-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "LS1-3.1",
+          "LS1-3.2",
+          "LS1-3.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 7,
+        "focus": "LS1-2.4 I can explain how a part's structure fits its job, and how an organism's systems work together.",
+        "standard": "LS1-2",
+        "resources": "CFA LS1-2.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-2.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 8,
+        "focus": "LS1-2.5 I can use a model to show how an organism's systems work together to do one job, like moving.",
+        "standard": "LS1-2",
+        "resources": "CFA LS1-2.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-2.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 9,
+        "focus": "LS1-2.6 I can build my own model showing how levels and systems in an organism work together to carry out functions. (day 1 of 2: build understanding)",
+        "standard": "LS1-2",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS1-2.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 10,
+        "focus": "LS1-2.6 I can build my own model showing how levels and systems in an organism work together to carry out functions. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS1-2",
+        "resources": "CFA LS1-2.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-2.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 11,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS1-2",
+        "resources": "Review page: HS-LS1-2_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS1-2_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 12,
+        "focus": "CSA: priority targets for HS-LS1-2 (45 minutes)",
+        "standard": "LS1-2",
+        "resources": "CSA HS-LS1-2",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 3,
-    "focus": "Supporting: LS1-4.1 I can describe how cell division makes new cells with the same DNA, for growth and repair.",
-    "standard": "LS1-4",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS1-4.1"
+    "cfa_unit_day": {
+      "LS1-2.1": 2,
+      "LS1-2.2": 2,
+      "LS1-2.3": 5,
+      "LS1-2.4": 7,
+      "LS1-2.5": 8,
+      "LS1-2.6": 10
+    }
+  },
+  "HS-LS2-5": {
+    "unit": "1.2",
+    "title": "Energy Through Carbon",
+    "start": 13,
+    "end": 26,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 13,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS2-5",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 14,
+        "focus": "LS2-5.1 I can name the four spheres and where carbon is stored in each one.; LS2-5.2 I can name processes besides photosynthesis and respiration that move carbon, like burning and burial in rock.",
+        "standard": "LS2-5",
+        "resources": "CFA LS2-5.1 and LS2-5.2 (exit ticket, about 6 min each)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-5.1",
+          "LS2-5.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 15,
+        "focus": "Supporting: LS1-5.1 I can name what photosynthesis uses and what it makes.",
+        "standard": "LS1-5",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS1-5.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 16,
+        "focus": "Supporting: LS1-5.2 I can explain how photosynthesis stores light energy as chemical energy in sugar.; LS1-5.3 I can use a model to show photosynthesis storing light energy in sugar, and track the matter in and out.",
+        "standard": "LS1-5",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS1-5.2",
+          "LS1-5.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 17,
+        "focus": "Supporting: LS1-7.1 I can name what cellular respiration uses and what it makes.",
+        "standard": "LS1-7",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS1-7.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 18,
+        "focus": "Supporting: LS1-7.2 I can explain how respiration breaks and forms bonds, releasing energy a cell can use.; LS1-7.3 I can use a model to show respiration breaking and forming bonds, releasing more energy than it uses.",
+        "standard": "LS1-7",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS1-7.2",
+          "LS1-7.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 19,
+        "focus": "LS2-5.3 I can describe how photosynthesis moves carbon from air and water into living things, and respiration moves it back.",
+        "standard": "LS2-5",
+        "resources": "CFA LS2-5.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-5.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 20,
+        "focus": "LS2-5.4 I can trace one carbon atom through at least three spheres and name each process that moves it. (day 1 of 2: build understanding)",
+        "standard": "LS2-5",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-5.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 21,
+        "focus": "LS2-5.4 I can trace one carbon atom through at least three spheres and name each process that moves it. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-5",
+        "resources": "CFA LS2-5.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-5.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 22,
+        "focus": "LS2-5.5 I can use a model to predict what happens to carbon elsewhere when one part of the cycle changes.",
+        "standard": "LS2-5",
+        "resources": "CFA LS2-5.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-5.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 23,
+        "focus": "LS2-5.6 I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres. (day 1 of 2: build understanding)",
+        "standard": "LS2-5",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-5.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 24,
+        "focus": "LS2-5.6 I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-5",
+        "resources": "CFA LS2-5.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-5.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 13,
+        "course_day": 25,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS2-5",
+        "resources": "Review page: HS-LS2-5_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-5_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 14,
+        "course_day": 26,
+        "focus": "CSA: priority targets for HS-LS2-5 (45 minutes)",
+        "standard": "LS2-5",
+        "resources": "CSA HS-LS2-5",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 4,
-    "focus": "Supporting: LS1-4.2 I can explain that cells with the same DNA specialize by using different genes.; LS1-4.3 I can use a model to show how cell division and specialization build and maintain a body.",
-    "standard": "LS1-4",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS1-4.2",
-     "LS1-4.3"
+    "cfa_unit_day": {
+      "LS2-5.1": 2,
+      "LS2-5.2": 2,
+      "LS2-5.3": 7,
+      "LS2-5.4": 9,
+      "LS2-5.5": 10,
+      "LS2-5.6": 12
+    }
+  },
+  "HS-LS1-6": {
+    "unit": "1.3",
+    "title": "Sugar to Structures",
+    "start": 27,
+    "end": 38,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 27,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS1-6",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 28,
+        "focus": "LS1-6.1 I can name the three elements that make up most of sugar and the body's large molecules.",
+        "standard": "LS1-6",
+        "resources": "CFA LS1-6.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-6.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 29,
+        "focus": "Supporting: PS1-7.1 I can count the atoms of each element on both sides of a reaction.; PS1-7.2 I can explain why a reaction keeps every atom, so the total mass stays the same.; PS1-7.3 I can use atom counts to show that no atoms are lost when sugar is rebuilt.",
+        "standard": "PS1-7",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "PS1-7.1",
+          "PS1-7.2",
+          "PS1-7.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 30,
+        "focus": "LS1-6.2 I can describe how living things take in matter and rearrange its atoms, with no atoms lost.",
+        "standard": "LS1-6",
+        "resources": "CFA LS1-6.2 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-6.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 31,
+        "focus": "LS1-6.3 I can explain how atoms from sugar join with other elements, like nitrogen, to build larger molecules.",
+        "standard": "LS1-6",
+        "resources": "CFA LS1-6.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-6.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 32,
+        "focus": "LS1-6.4 I can use a model to trace atoms from sugar into a larger molecule.",
+        "standard": "LS1-6",
+        "resources": "CFA LS1-6.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-6.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 33,
+        "focus": "Supporting: ETS1-3.1 I can list what a solution must do, the limits it must work within, and its possible impacts.; ETS1-3.2 I can use data to compare what two solutions gain and give up.; ETS1-3.3 I can judge a real solution, like algae fuel, by ranking what matters and weighing gains against costs.",
+        "standard": "ETS1-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "ETS1-3.1",
+          "ETS1-3.2",
+          "ETS1-3.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 34,
+        "focus": "LS1-6.5 I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules. (day 1 of 2: build understanding)",
+        "standard": "LS1-6",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS1-6.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 35,
+        "focus": "LS1-6.5 I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS1-6",
+        "resources": "CFA LS1-6.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-6.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 36,
+        "focus": "LS1-6.6 I can revise my explanation when new evidence comes in.",
+        "standard": "LS1-6",
+        "resources": "CFA LS1-6.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-6.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 37,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS1-6",
+        "resources": "Review page: HS-LS1-6_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS1-6_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 38,
+        "focus": "CSA: priority targets for HS-LS1-6 (45 minutes)",
+        "standard": "LS1-6",
+        "resources": "CSA HS-LS1-6",
+        "notes": "The existing test is 36 points and about 50 minutes. Trim it or allow a few extra minutes; the other tests are built for 45.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 5,
-    "focus": "LS1-2.3 I can describe how each level is built from the level below it.",
-    "standard": "LS1-2",
-    "resources": "CFA LS1-2.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-2.3"
+    "cfa_unit_day": {
+      "LS1-6.1": 2,
+      "LS1-6.2": 4,
+      "LS1-6.3": 5,
+      "LS1-6.4": 6,
+      "LS1-6.5": 9,
+      "LS1-6.6": 10
+    }
+  },
+  "HS-LS1-1": {
+    "unit": "2.1",
+    "title": "DNA to Proteins",
+    "start": 39,
+    "end": 51,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 39,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS1-1",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 40,
+        "focus": "LS1-1.1 I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins. (day 1 of 2: DNA structure)",
+        "standard": "LS1-1",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS1-1.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 41,
+        "focus": "Supporting: LS3-1.1 I can describe how chromosomes, DNA, and genes are related.; LS3-1.2 I can explain how a child gets half of its chromosomes from each parent.; LS3-1.3 I can ask questions that clarify how DNA and chromosomes carry the instructions for traits passed to offspring.",
+        "standard": "LS3-1",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "LS3-1.1",
+          "LS3-1.2",
+          "LS3-1.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 42,
+        "focus": "LS1-1.1 I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins. (day 2 of 2: DNA as the instructions, then CFA)",
+        "standard": "LS1-1",
+        "resources": "CFA LS1-1.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-1.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 43,
+        "focus": "LS1-1.2 I can describe how a gene's message is copied and read to build a chain of amino acids. (day 1 of 2: build understanding)",
+        "standard": "LS1-1",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS1-1.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 44,
+        "focus": "LS1-1.2 I can describe how a gene's message is copied and read to build a chain of amino acids. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS1-1",
+        "resources": "CFA LS1-1.2 (exit ticket, about 6 min)",
+        "notes": "Teach copy-then-read only; no mRNA or tRNA mechanics.",
+        "ids": [
+          "LS1-1.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 45,
+        "focus": "LS1-1.3 I can explain how changing one DNA base can change a protein and what it does.",
+        "standard": "LS1-1",
+        "resources": "CFA LS1-1.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-1.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 46,
+        "focus": "LS1-1.4 I can explain how DNA, through proteins, gives different cells their different jobs. (day 1 of 2: build understanding)",
+        "standard": "LS1-1",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS1-1.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 47,
+        "focus": "LS1-1.4 I can explain how DNA, through proteins, gives different cells their different jobs. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS1-1",
+        "resources": "CFA LS1-1.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-1.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 48,
+        "focus": "LS1-1.5 I can use case data, like sickle cell, to explain how a DNA change affects the body. (day 1 of 2: build understanding)",
+        "standard": "LS1-1",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS1-1.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 49,
+        "focus": "LS1-1.5 I can use case data, like sickle cell, to explain how a DNA change affects the body. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS1-1",
+        "resources": "CFA LS1-1.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS1-1.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 50,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS1-1",
+        "resources": "Review page: HS-LS1-1_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS1-1_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 13,
+        "course_day": 51,
+        "focus": "CSA: priority targets for HS-LS1-1 (45 minutes)",
+        "standard": "LS1-1",
+        "resources": "CSA HS-LS1-1",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 6,
-    "focus": "Supporting: LS1-3.1 I can describe how negative feedback keeps a body condition steady and how positive feedback differs.; LS1-3.2 I can use data, like heart rate after exercise, to show feedback bringing the body back to normal.; LS1-3.3 I can carry out an investigation that shows feedback keeping the body in balance.",
-    "standard": "LS1-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "LS1-3.1",
-     "LS1-3.2",
-     "LS1-3.3"
+    "cfa_unit_day": {
+      "LS1-1.1": 4,
+      "LS1-1.2": 6,
+      "LS1-1.3": 7,
+      "LS1-1.4": 9,
+      "LS1-1.5": 11
+    }
+  },
+  "HS-LS3-2": {
+    "unit": "2.2",
+    "title": "Inherited Instructions",
+    "start": 52,
+    "end": 66,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 52,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS3-2",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 53,
+        "focus": "LS3-2.1 I can name three ways new genetic variation arises.",
+        "standard": "LS3-2",
+        "resources": "CFA LS3-2.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS3-2.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 54,
+        "focus": "Supporting: LS3-3.1 I can use a Punnett square to show the possible allele combinations from a cross.",
+        "standard": "LS3-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS3-3.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 55,
+        "focus": "Supporting: LS3-3.2 I can calculate the chance of each trait and compare it with real counts.",
+        "standard": "LS3-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS3-3.2"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 56,
+        "focus": "Supporting: LS3-3.3 I can use probability to explain how traits vary and spread in a population, including effects of environment.",
+        "standard": "LS3-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS3-3.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 57,
+        "focus": "LS3-2.2 I can describe how making sex cells and fertilization mix alleles into new combinations.",
+        "standard": "LS3-2",
+        "resources": "CFA LS3-2.2 (exit ticket, about 6 min)",
+        "notes": "No phases of meiosis.",
+        "ids": [
+          "LS3-2.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 58,
+        "focus": "LS3-2.3 I can explain how copying errors and things like UV light change genes, and when that change is inherited. (day 1 of 2: build understanding)",
+        "standard": "LS3-2",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS3-2.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 59,
+        "focus": "LS3-2.3 I can explain how copying errors and things like UV light change genes, and when that change is inherited. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS3-2",
+        "resources": "CFA LS3-2.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS3-2.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 60,
+        "focus": "LS3-2.4 I can read data as evidence for where a genetic variation came from.",
+        "standard": "LS3-2",
+        "resources": "CFA LS3-2.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS3-2.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 61,
+        "focus": "LS3-2.5 I can make a claim, backed by data, about what caused a genetic variation. (day 1 of 2: build understanding)",
+        "standard": "LS3-2",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS3-2.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 62,
+        "focus": "LS3-2.5 I can make a claim, backed by data, about what caused a genetic variation. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS3-2",
+        "resources": "CFA LS3-2.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS3-2.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 63,
+        "focus": "LS3-2.6 I can defend my claim against another explanation using the evidence. (day 1 of 2: build understanding)",
+        "standard": "LS3-2",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS3-2.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 13,
+        "course_day": 64,
+        "focus": "LS3-2.6 I can defend my claim against another explanation using the evidence. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS3-2",
+        "resources": "CFA LS3-2.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS3-2.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 14,
+        "course_day": 65,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS3-2",
+        "resources": "Review page: HS-LS3-2_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS3-2_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 15,
+        "course_day": 66,
+        "focus": "CSA: priority targets for HS-LS3-2 (45 minutes)",
+        "standard": "LS3-2",
+        "resources": "CSA HS-LS3-2",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 7,
-    "focus": "LS1-2.4 I can explain how a part's structure fits its job, and how an organism's systems work together.",
-    "standard": "LS1-2",
-    "resources": "CFA LS1-2.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-2.4"
+    "cfa_unit_day": {
+      "LS3-2.1": 2,
+      "LS3-2.2": 6,
+      "LS3-2.3": 8,
+      "LS3-2.4": 9,
+      "LS3-2.5": 11,
+      "LS3-2.6": 13
+    }
+  },
+  "HS-ESS1-5": {
+    "unit": "3.1",
+    "title": "Age of the Earth",
+    "start": 67,
+    "end": 78,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 67,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "ESS1-5",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 68,
+        "focus": "ESS1-5.1 I can describe Earth's outer layer as moving plates and name three kinds of plate boundaries.; ESS1-5.2 I can describe where ocean crust is made and where it sinks back down.",
+        "standard": "ESS1-5",
+        "resources": "CFA ESS1-5.1 and ESS1-5.2 (exit ticket, about 6 min each)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS1-5.1",
+          "ESS1-5.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 69,
+        "focus": "ESS1-5.3 I can read a rock-age map and describe the pattern in the ages.",
+        "standard": "ESS1-5",
+        "resources": "CFA ESS1-5.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS1-5.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 70,
+        "focus": "Supporting: ESS1-6.1 I can list the evidence scientists use to learn about early Earth.",
+        "standard": "ESS1-6",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS1-6.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 71,
+        "focus": "Supporting: ESS1-6.2 I can explain why meteorites and moon rocks tell Earth's age better than Earth rocks do.; ESS1-6.3 I can use evidence from rocks, meteorites, and other planets to tell how Earth formed.",
+        "standard": "ESS1-6",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS1-6.2",
+          "ESS1-6.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 72,
+        "focus": "ESS1-5.4 I can explain why ocean crust is young and why continents are oldest at their ancient cores.",
+        "standard": "ESS1-5",
+        "resources": "CFA ESS1-5.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS1-5.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 73,
+        "focus": "ESS1-5.5 I can judge how strong the evidence is that the crust has moved and is still moving. (day 1 of 2: build understanding)",
+        "standard": "ESS1-5",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "ESS1-5.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 74,
+        "focus": "ESS1-5.5 I can judge how strong the evidence is that the crust has moved and is still moving. (day 2 of 2: apply it, then CFA)",
+        "standard": "ESS1-5",
+        "resources": "CFA ESS1-5.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS1-5.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 75,
+        "focus": "ESS1-5.6 I can judge how well plate tectonics explains the ages of rocks, using evidence. (day 1 of 2: build understanding)",
+        "standard": "ESS1-5",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "ESS1-5.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 76,
+        "focus": "ESS1-5.6 I can judge how well plate tectonics explains the ages of rocks, using evidence. (day 2 of 2: apply it, then CFA)",
+        "standard": "ESS1-5",
+        "resources": "CFA ESS1-5.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS1-5.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 77,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "ESS1-5",
+        "resources": "Review page: HS-ESS1-5_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-ESS1-5_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 78,
+        "focus": "CSA: priority targets for HS-ESS1-5 (45 minutes)",
+        "standard": "ESS1-5",
+        "resources": "CSA HS-ESS1-5",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 8,
-    "focus": "LS1-2.5 I can use a model to show how an organism's systems work together to do one job, like moving.",
-    "standard": "LS1-2",
-    "resources": "CFA LS1-2.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-2.5"
+    "cfa_unit_day": {
+      "ESS1-5.1": 2,
+      "ESS1-5.2": 2,
+      "ESS1-5.3": 3,
+      "ESS1-5.4": 6,
+      "ESS1-5.5": 8,
+      "ESS1-5.6": 10
+    }
+  },
+  "HS-ESS2-7": {
+    "unit": "3.2",
+    "title": "Changing Earth, Changing Life",
+    "start": 87,
+    "end": 97,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 87,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "ESS2-7",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 88,
+        "focus": "ESS2-7.1 I can name examples of how Earth has changed and how life has changed.",
+        "standard": "ESS2-7",
+        "resources": "CFA ESS2-7.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS2-7.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 89,
+        "focus": "ESS2-7.2 I can describe one way Earth changed life and one way life changed Earth.",
+        "standard": "ESS2-7",
+        "resources": "CFA ESS2-7.2 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS2-7.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 90,
+        "focus": "ESS2-7.3 I can explain how events in Earth's history changed life, and how life in turn changed Earth. (day 1 of 2: build understanding)",
+        "standard": "ESS2-7",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "ESS2-7.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 91,
+        "focus": "ESS2-7.3 I can explain how events in Earth's history changed life, and how life in turn changed Earth. (day 2 of 2: apply it, then CFA)",
+        "standard": "ESS2-7",
+        "resources": "CFA ESS2-7.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS2-7.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 92,
+        "focus": "ESS2-7.4 I can write an argument, with evidence, that Earth and life changed each other.",
+        "standard": "ESS2-7",
+        "resources": "CFA ESS2-7.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS2-7.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 93,
+        "focus": "ESS2-7.5 I can combine several kinds of evidence into one strong argument about Earth and life.",
+        "standard": "ESS2-7",
+        "resources": "CFA ESS2-7.5 (exit ticket, about 6 min)",
+        "notes": "DOK 4 depth work (Kaplan prompts, compaction for GATE). The CSA stops at DOK 3.",
+        "ids": [
+          "ESS2-7.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 94,
+        "focus": "ESS2-7.6 I can argue from evidence that Earth's systems and life have changed together over time. (day 1 of 2: build understanding)",
+        "standard": "ESS2-7",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "ESS2-7.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 95,
+        "focus": "ESS2-7.6 I can argue from evidence that Earth's systems and life have changed together over time. (day 2 of 2: apply it, then CFA)",
+        "standard": "ESS2-7",
+        "resources": "CFA ESS2-7.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS2-7.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 96,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "ESS2-7",
+        "resources": "Review page: HS-ESS2-7_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-ESS2-7_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 97,
+        "focus": "CSA: priority targets for HS-ESS2-7 (45 minutes)",
+        "standard": "ESS2-7",
+        "resources": "CSA HS-ESS2-7",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 9,
-    "focus": "LS1-2.6 I can build my own model showing how levels and systems in an organism work together to carry out functions. (day 1 of 2: build understanding)",
-    "standard": "LS1-2",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS1-2.6"
+    "cfa_unit_day": {
+      "ESS2-7.1": 2,
+      "ESS2-7.2": 3,
+      "ESS2-7.3": 5,
+      "ESS2-7.4": 6,
+      "ESS2-7.5": 7,
+      "ESS2-7.6": 9
+    }
+  },
+  "HS-LS4-1": {
+    "unit": "3.3",
+    "title": "Patterns of the Past",
+    "start": 98,
+    "end": 106,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 98,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets; LS4-1.1 I can say what I already know and wonder about how living things are related.",
+        "standard": "LS4-1",
+        "resources": "",
+        "notes": "LS4-1.1 is a pre-assessment prompt, not a target, so it has no CFA.",
+        "ids": [
+          "LS4-1.1"
+        ],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 99,
+        "focus": "LS4-1.2 I can describe the kinds of evidence that support common ancestry: DNA, body structures, and embryos.",
+        "standard": "LS4-1",
+        "resources": "CFA LS4-1.2 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-1.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 100,
+        "focus": "LS4-1.3 I can explain to others how several lines of evidence support common ancestry. (day 1 of 2: build understanding)",
+        "standard": "LS4-1",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS4-1.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 101,
+        "focus": "LS4-1.3 I can explain to others how several lines of evidence support common ancestry. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS4-1",
+        "resources": "CFA LS4-1.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-1.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 102,
+        "focus": "LS4-1.4 I can describe the kinds of evidence that support evolution, like the fossil record.",
+        "standard": "LS4-1",
+        "resources": "CFA LS4-1.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-1.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 103,
+        "focus": "LS4-1.5 I can explain to others how several lines of evidence support evolution. (day 1 of 2: build understanding)",
+        "standard": "LS4-1",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS4-1.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 104,
+        "focus": "LS4-1.5 I can explain to others how several lines of evidence support evolution. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS4-1",
+        "resources": "CFA LS4-1.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-1.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 105,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS4-1",
+        "resources": "Review page: HS-LS4-1_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS4-1_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 106,
+        "focus": "CSA: priority targets for HS-LS4-1 (45 minutes)",
+        "standard": "LS4-1",
+        "resources": "CSA HS-LS4-1",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 10,
-    "focus": "LS1-2.6 I can build my own model showing how levels and systems in an organism work together to carry out functions. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS1-2",
-    "resources": "CFA LS1-2.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-2.6"
+    "cfa_unit_day": {
+      "LS4-1.2": 2,
+      "LS4-1.3": 4,
+      "LS4-1.4": 5,
+      "LS4-1.5": 7
+    }
+  },
+  "HS-LS4-4": {
+    "unit": "3.4",
+    "title": "Evolution by Selection",
+    "start": 107,
+    "end": 119,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 107,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS4-4",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 108,
+        "focus": "LS4-4.1 I can define natural selection, adaptation, population, biotic, and abiotic.",
+        "standard": "LS4-4",
+        "resources": "CFA LS4-4.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-4.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 109,
+        "focus": "Supporting: LS4-2.1 I can name the four factors that drive evolution.",
+        "standard": "LS4-2",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS4-2.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 110,
+        "focus": "Supporting: LS4-2.2 I can use simple graphs to describe how each factor affects a population.; LS4-2.3 I can use evidence to explain how the four factors together cause evolution.",
+        "standard": "LS4-2",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS4-2.2",
+          "LS4-2.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 111,
+        "focus": "LS4-4.2 I can describe how natural selection causes a population to evolve.",
+        "standard": "LS4-4",
+        "resources": "CFA LS4-4.2 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-4.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 112,
+        "focus": "Supporting: LS4-3.1 I can read a graph that shows how common a trait is over several generations.",
+        "standard": "LS4-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS4-3.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 113,
+        "focus": "Supporting: LS4-3.2 I can calculate the percent with a trait in each generation and describe the trend.; LS4-3.3 I can use statistics to show that a helpful inherited trait becomes more common.",
+        "standard": "LS4-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS4-3.2",
+          "LS4-3.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 114,
+        "focus": "Supporting: LS2-8.1 I can tell group behavior from individual behavior and give examples.; LS2-8.2 I can find evidence in data of what a group behavior does for survival.; LS2-8.3 I can judge evidence about how group behavior affects an animal's chances to survive and reproduce.",
+        "standard": "LS2-8",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "LS2-8.1",
+          "LS2-8.2",
+          "LS2-8.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 115,
+        "focus": "LS4-4.3 I can use data to show that a population's traits shifted because of natural selection.",
+        "standard": "LS4-4",
+        "resources": "CFA LS4-4.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-4.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 116,
+        "focus": "LS4-4.4 I can use evidence to explain how natural selection makes a population better suited to its environment. (day 1 of 2: build understanding)",
+        "standard": "LS4-4",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS4-4.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 117,
+        "focus": "LS4-4.4 I can use evidence to explain how natural selection makes a population better suited to its environment. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS4-4",
+        "resources": "CFA LS4-4.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS4-4.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 118,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS4-4",
+        "resources": "Review page: HS-LS4-4_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS4-4_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 13,
+        "course_day": 119,
+        "focus": "CSA: priority targets for HS-LS4-4 (45 minutes)",
+        "standard": "LS4-4",
+        "resources": "CSA HS-LS4-4",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
     ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 11,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS1-2",
-    "resources": "Review page: HS-LS1-2_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS1-2_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 12,
-    "focus": "CSA: priority targets for HS-LS1-2 (45 minutes)",
-    "standard": "LS1-2",
-    "resources": "CSA HS-LS1-2",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS1-2.1": 2,
-   "LS1-2.2": 2,
-   "LS1-2.3": 5,
-   "LS1-2.4": 7,
-   "LS1-2.5": 8,
-   "LS1-2.6": 10
+    "cfa_unit_day": {
+      "LS4-4.1": 2,
+      "LS4-4.2": 5,
+      "LS4-4.3": 9,
+      "LS4-4.4": 11
+    }
+  },
+  "HS-LS2-4": {
+    "unit": "4.1",
+    "title": "Cycles of Life",
+    "start": 120,
+    "end": 134,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 120,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS2-4",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 121,
+        "focus": "LS2-4.1 I can name producers, consumers, and decomposers and the role of each.",
+        "standard": "LS2-4",
+        "resources": "CFA LS2-4.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-4.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 122,
+        "focus": "Supporting: LS2-3.1 I can compare what goes in and out of respiration with and without oxygen.; LS2-3.2 I can explain how matter and energy move where oxygen is plentiful and where it is scarce.; LS2-3.3 I can explain, and revise with new evidence, how matter and energy move with and without oxygen.",
+        "standard": "LS2-3",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "LS2-3.1",
+          "LS2-3.2",
+          "LS2-3.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 123,
+        "focus": "LS2-4.2 I can describe how matter cycles and energy flows through a food web.",
+        "standard": "LS2-4",
+        "resources": "CFA LS2-4.2 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-4.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 124,
+        "focus": "LS2-4.3 I can interpret energy pyramids and matter diagrams, including the 10 percent rule. (day 1 of 2: build understanding)",
+        "standard": "LS2-4",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-4.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 125,
+        "focus": "LS2-4.3 I can interpret energy pyramids and matter diagrams, including the 10 percent rule. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-4",
+        "resources": "CFA LS2-4.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-4.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 126,
+        "focus": "LS2-4.4 I can use numbers to show how much energy passes from one level to the next. (day 1 of 2: build understanding)",
+        "standard": "LS2-4",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-4.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 127,
+        "focus": "LS2-4.4 I can use numbers to show how much energy passes from one level to the next. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-4",
+        "resources": "CFA LS2-4.4 (exit ticket, about 6 min)",
+        "notes": "Proportional reasoning only.",
+        "ids": [
+          "LS2-4.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 128,
+        "focus": "Supporting: ESS3-5.1 I can describe what a climate record shows about change over time.",
+        "standard": "ESS3-5",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS3-5.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 129,
+        "focus": "Supporting: ESS3-5.2 I can find how fast one part of climate is changing from a graph.; ESS3-5.3 I can use data and climate models to forecast one climate change and its effects.",
+        "standard": "ESS3-5",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS3-5.2",
+          "ESS3-5.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 130,
+        "focus": "LS2-4.5 I can use numbers to show that matter is conserved as it cycles. (day 1 of 2: build understanding)",
+        "standard": "LS2-4",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-4.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 131,
+        "focus": "LS2-4.5 I can use numbers to show that matter is conserved as it cycles. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-4",
+        "resources": "CFA LS2-4.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-4.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 13,
+        "course_day": 132,
+        "focus": "LS2-4.6 I can use math to support a claim about how matter cycles and energy flows.",
+        "standard": "LS2-4",
+        "resources": "CFA LS2-4.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-4.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 14,
+        "course_day": 133,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS2-4",
+        "resources": "Review page: HS-LS2-4_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-4_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 15,
+        "course_day": 134,
+        "focus": "CSA: priority targets for HS-LS2-4 (45 minutes)",
+        "standard": "LS2-4",
+        "resources": "CSA HS-LS2-4",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
+    ],
+    "cfa_unit_day": {
+      "LS2-4.1": 2,
+      "LS2-4.2": 4,
+      "LS2-4.3": 6,
+      "LS2-4.4": 8,
+      "LS2-4.5": 12,
+      "LS2-4.6": 13
+    }
+  },
+  "HS-LS2-2": {
+    "unit": "4.2",
+    "title": "Patterns in Populations",
+    "start": 135,
+    "end": 149,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 135,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS2-2",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 136,
+        "focus": "LS2-2.1 I can define population and biodiversity and name factors that change them.",
+        "standard": "LS2-2",
+        "resources": "CFA LS2-2.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-2.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 137,
+        "focus": "LS2-2.2 I can read graphs and tables of population or biodiversity data.",
+        "standard": "LS2-2",
+        "resources": "CFA LS2-2.2 (exit ticket, about 6 min)",
+        "notes": "Use the provided data sets only (assessment boundary).",
+        "ids": [
+          "LS2-2.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 138,
+        "focus": "LS2-2.3 I can find averages, rates of change, and trends in population data. (day 1 of 2: build understanding)",
+        "standard": "LS2-2",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-2.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 139,
+        "focus": "LS2-2.3 I can find averages, rates of change, and trends in population data. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-2",
+        "resources": "CFA LS2-2.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-2.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 140,
+        "focus": "LS2-2.4 I can use math to compare populations and biodiversity across ecosystems of different sizes.",
+        "standard": "LS2-2",
+        "resources": "CFA LS2-2.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-2.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 141,
+        "focus": "Supporting: LS2-1.1 I can define carrying capacity and name what limits it.",
+        "standard": "LS2-1",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS2-1.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 142,
+        "focus": "Supporting: LS2-1.2 I can find carrying capacity on a graph and describe the population's growth toward it.; LS2-1.3 I can use graphs and data to explain what sets an ecosystem's carrying capacity.",
+        "standard": "LS2-1",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "LS2-1.2",
+          "LS2-1.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 143,
+        "focus": "LS2-2.5 I can use math as evidence to explain how a factor affects a population or biodiversity. (day 1 of 2: build understanding)",
+        "standard": "LS2-2",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-2.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 144,
+        "focus": "LS2-2.5 I can use math as evidence to explain how a factor affects a population or biodiversity. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-2",
+        "resources": "CFA LS2-2.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-2.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 145,
+        "focus": "Supporting: LS2-6.1 I can describe how an ecosystem's many interactions keep it steady.; LS2-6.2 I can tell a small disturbance from an extreme one by what it does to an ecosystem.; LS2-6.3 I can judge the claim, evidence, and reasoning about whether an ecosystem stays stable or becomes a new one.",
+        "standard": "LS2-6",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "LS2-6.1",
+          "LS2-6.2",
+          "LS2-6.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 146,
+        "focus": "LS2-2.6 I can use new data to revise my explanation of what affects a population or biodiversity. (day 1 of 2: build understanding)",
+        "standard": "LS2-2",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-2.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 13,
+        "course_day": 147,
+        "focus": "LS2-2.6 I can use new data to revise my explanation of what affects a population or biodiversity. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-2",
+        "resources": "CFA LS2-2.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-2.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 14,
+        "course_day": 148,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS2-2",
+        "resources": "Review page: HS-LS2-2_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-2_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 15,
+        "course_day": 149,
+        "focus": "CSA: priority targets for HS-LS2-2 (45 minutes)",
+        "standard": "LS2-2",
+        "resources": "CSA HS-LS2-2",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
+    ],
+    "cfa_unit_day": {
+      "LS2-2.1": 2,
+      "LS2-2.2": 3,
+      "LS2-2.3": 5,
+      "LS2-2.4": 6,
+      "LS2-2.5": 10,
+      "LS2-2.6": 13
+    }
+  },
+  "HS-ESS3-1": {
+    "unit": "4.3",
+    "title": "Earth Shaping Humanity",
+    "start": 150,
+    "end": 161,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 150,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "ESS3-1",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 151,
+        "focus": "ESS3-1.1 I can name the resources, hazards, and climate factors that shape where people live.",
+        "standard": "ESS3-1",
+        "resources": "CFA ESS3-1.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS3-1.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 152,
+        "focus": "ESS3-1.2 I can describe how resources like water and fertile soil are spread unevenly.",
+        "standard": "ESS3-1",
+        "resources": "CFA ESS3-1.2 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS3-1.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 153,
+        "focus": "Supporting: ESS2-5.1 I can describe the properties of water that let it break down and move rock and soil.",
+        "standard": "ESS2-5",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS2-5.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 154,
+        "focus": "Supporting: ESS2-5.2 I can carry out a test of how water wears away or moves Earth materials and record data.; ESS2-5.3 I can plan and carry out my own investigation of water's effect on Earth materials.",
+        "standard": "ESS2-5",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS2-5.2",
+          "ESS2-5.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 155,
+        "focus": "ESS3-1.3 I can describe how hazards like earthquakes and floods affect where and how people live.",
+        "standard": "ESS3-1",
+        "resources": "CFA ESS3-1.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS3-1.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 156,
+        "focus": "ESS3-1.4 I can explain how climate change can move people and change what they grow.",
+        "standard": "ESS3-1",
+        "resources": "CFA ESS3-1.4 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS3-1.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 157,
+        "focus": "ESS3-1.5 I can read maps and data that connect resources, hazards, or climate to human activity.",
+        "standard": "ESS3-1",
+        "resources": "CFA ESS3-1.5 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS3-1.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 158,
+        "focus": "ESS3-1.6 I can use evidence to explain how resources, hazards, and climate have shaped human activity. (day 1 of 2: build understanding)",
+        "standard": "ESS3-1",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "ESS3-1.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 159,
+        "focus": "ESS3-1.6 I can use evidence to explain how resources, hazards, and climate have shaped human activity. (day 2 of 2: apply it, then CFA)",
+        "standard": "ESS3-1",
+        "resources": "CFA ESS3-1.6 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "ESS3-1.6"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 160,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "ESS3-1",
+        "resources": "Review page: HS-ESS3-1_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-ESS3-1_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 161,
+        "focus": "CSA: priority targets for HS-ESS3-1 (45 minutes)",
+        "standard": "ESS3-1",
+        "resources": "CSA HS-ESS3-1",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
+    ],
+    "cfa_unit_day": {
+      "ESS3-1.1": 2,
+      "ESS3-1.2": 3,
+      "ESS3-1.3": 6,
+      "ESS3-1.4": 7,
+      "ESS3-1.5": 8,
+      "ESS3-1.6": 10
+    }
+  },
+  "HS-LS2-7": {
+    "unit": "4.4",
+    "title": "Solutions for Sustainability",
+    "start": 162,
+    "end": 174,
+    "days": [
+      {
+        "unit_day": 1,
+        "course_day": 162,
+        "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
+        "standard": "LS2-7",
+        "resources": "",
+        "notes": "",
+        "ids": [],
+        "kind": "launch"
+      },
+      {
+        "unit_day": 2,
+        "course_day": 163,
+        "focus": "Supporting: ESS3-6.1 I can name Earth's systems, including the frozen cryosphere, and one link between two of them.",
+        "standard": "ESS3-6",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS3-6.1"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 3,
+        "course_day": 164,
+        "focus": "Supporting: ESS3-6.2 I can read a computer model's graph or map of how people change an Earth system.; ESS3-6.3 I can use a computer model's results to show how human activity changes links among Earth's systems.",
+        "standard": "ESS3-6",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA.",
+        "ids": [
+          "ESS3-6.2",
+          "ESS3-6.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 4,
+        "course_day": 165,
+        "focus": "LS2-7.1 I can explain how human activities like pollution and deforestation affect ecosystems and biodiversity.",
+        "standard": "LS2-7",
+        "resources": "CFA LS2-7.1 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-7.1"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 5,
+        "course_day": 166,
+        "focus": "LS2-7.2 I can design a solution, based on evidence, that reduces a human impact on the environment. (day 1 of 2: build understanding)",
+        "standard": "LS2-7",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-7.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 6,
+        "course_day": 167,
+        "focus": "LS2-7.2 I can design a solution, based on evidence, that reduces a human impact on the environment. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-7",
+        "resources": "CFA LS2-7.2 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-7.2"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 7,
+        "course_day": 168,
+        "focus": "Supporting: ESS3-4.1 I can describe data that measures a human impact on a natural system.; ESS3-4.2 I can compare how much different technologies reduce that impact.; ESS3-4.3 I can judge or improve a technology that reduces a human impact on nature.",
+        "standard": "ESS3-4",
+        "resources": "",
+        "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
+        "ids": [
+          "ESS3-4.1",
+          "ESS3-4.2",
+          "ESS3-4.3"
+        ],
+        "kind": "supporting"
+      },
+      {
+        "unit_day": 8,
+        "course_day": 169,
+        "focus": "LS2-7.3 I can judge whether a solution will work, and what it gains and costs. (day 1 of 2: build understanding)",
+        "standard": "LS2-7",
+        "resources": "",
+        "notes": "",
+        "ids": [
+          "LS2-7.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 9,
+        "course_day": 170,
+        "focus": "LS2-7.3 I can judge whether a solution will work, and what it gains and costs. (day 2 of 2: apply it, then CFA)",
+        "standard": "LS2-7",
+        "resources": "CFA LS2-7.3 (exit ticket, about 6 min)",
+        "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
+        "ids": [
+          "LS2-7.3"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 10,
+        "course_day": 171,
+        "focus": "LS2-7.4 I can use feedback and new evidence to improve my solution.",
+        "standard": "LS2-7",
+        "resources": "CFA LS2-7.4 (exit ticket, about 6 min)",
+        "notes": "DOK 4 (the refine verb). The CSA item is written at DOK 3.",
+        "ids": [
+          "LS2-7.4"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 11,
+        "course_day": 172,
+        "focus": "LS2-7.5 I can present and defend my solution with evidence.",
+        "standard": "LS2-7",
+        "resources": "CFA LS2-7.5 (exit ticket, about 6 min)",
+        "notes": "Instructional, DOK 4. The CSA stops at DOK 3.",
+        "ids": [
+          "LS2-7.5"
+        ],
+        "kind": "priority"
+      },
+      {
+        "unit_day": 12,
+        "course_day": 173,
+        "focus": "Review and reteach from CFA results; CSA preparation",
+        "standard": "LS2-7",
+        "resources": "Review page: HS-LS2-7_review.html",
+        "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-7_review_key.md.",
+        "ids": [],
+        "kind": "review"
+      },
+      {
+        "unit_day": 13,
+        "course_day": 174,
+        "focus": "CSA: priority targets for HS-LS2-7 (45 minutes)",
+        "standard": "LS2-7",
+        "resources": "CSA HS-LS2-7",
+        "notes": "Allow the full 45 minutes.",
+        "ids": [],
+        "kind": "csa"
+      }
+    ],
+    "cfa_unit_day": {
+      "LS2-7.1": 4,
+      "LS2-7.2": 6,
+      "LS2-7.3": 9,
+      "LS2-7.4": 10,
+      "LS2-7.5": 11
+    }
+  },
+  "_lt_days": {
+    "LS1-2.1": "2",
+    "LS1-2.2": "2",
+    "LS1-4.1": "3",
+    "LS1-4.2": "4",
+    "LS1-4.3": "4",
+    "LS1-2.3": "5",
+    "LS1-3.1": "6",
+    "LS1-3.2": "6",
+    "LS1-3.3": "6",
+    "LS1-2.4": "7",
+    "LS1-2.5": "8",
+    "LS1-2.6": "9\u201310",
+    "LS2-5.1": "14",
+    "LS2-5.2": "14",
+    "LS1-5.1": "15",
+    "LS1-5.2": "16",
+    "LS1-5.3": "16",
+    "LS1-7.1": "17",
+    "LS1-7.2": "18",
+    "LS1-7.3": "18",
+    "LS2-5.3": "19",
+    "LS2-5.4": "20\u201321",
+    "LS2-5.5": "22",
+    "LS2-5.6": "23\u201324",
+    "LS1-6.1": "28",
+    "PS1-7.1": "29",
+    "PS1-7.2": "29",
+    "PS1-7.3": "29",
+    "LS1-6.2": "30",
+    "LS1-6.3": "31",
+    "LS1-6.4": "32",
+    "ETS1-3.1": "33",
+    "ETS1-3.2": "33",
+    "ETS1-3.3": "33",
+    "LS1-6.5": "34\u201335",
+    "LS1-6.6": "36",
+    "LS1-1.1": "40",
+    "LS3-1.1": "41",
+    "LS3-1.2": "41",
+    "LS3-1.3": "41",
+    "LS1-1.2": "42",
+    "LS1-1.3": "43\u201344",
+    "LS1-1.4": "45",
+    "LS1-1.5": "46\u201347",
+    "LS1-1.6": "48\u201349",
+    "LS3-2.1": "53",
+    "LS3-3.1": "54",
+    "LS3-3.2": "55",
+    "LS3-3.3": "56",
+    "LS3-2.2": "57",
+    "LS3-2.3": "58\u201359",
+    "LS3-2.4": "60",
+    "LS3-2.5": "61\u201362",
+    "LS3-2.6": "63\u201364",
+    "ESS1-5.1": "68",
+    "ESS1-5.2": "68",
+    "ESS1-5.3": "69",
+    "ESS1-6.1": "70",
+    "ESS1-6.2": "71",
+    "ESS1-6.3": "71",
+    "ESS1-5.4": "72",
+    "ESS1-5.5": "73\u201374",
+    "ESS1-5.6": "75\u201376",
+    "ESS2-7.1": "88",
+    "ESS2-7.2": "89",
+    "ESS2-7.3": "90\u201391",
+    "ESS2-7.4": "92",
+    "ESS2-7.5": "93",
+    "ESS2-7.6": "94\u201395",
+    "LS4-1.1": "98",
+    "LS4-1.2": "99",
+    "LS4-1.3": "100\u2013101",
+    "LS4-1.4": "102",
+    "LS4-1.5": "103\u2013104",
+    "LS4-4.1": "108",
+    "LS4-2.1": "109",
+    "LS4-2.2": "110",
+    "LS4-2.3": "110",
+    "LS4-4.2": "111",
+    "LS4-3.1": "112",
+    "LS4-3.2": "113",
+    "LS4-3.3": "113",
+    "LS2-8.1": "114",
+    "LS2-8.2": "114",
+    "LS2-8.3": "114",
+    "LS4-4.3": "115",
+    "LS4-4.4": "116\u2013117",
+    "LS2-4.1": "121",
+    "LS2-3.1": "122",
+    "LS2-3.2": "122",
+    "LS2-3.3": "122",
+    "LS2-4.2": "123",
+    "LS2-4.3": "124\u2013125",
+    "LS2-4.4": "126\u2013127",
+    "ESS3-5.1": "128",
+    "ESS3-5.2": "129",
+    "ESS3-5.3": "129",
+    "LS2-4.5": "130\u2013131",
+    "LS2-4.6": "132",
+    "LS2-2.1": "136",
+    "LS2-2.2": "137",
+    "LS2-2.3": "138\u2013139",
+    "LS2-2.4": "140",
+    "LS2-1.1": "141",
+    "LS2-1.2": "142",
+    "LS2-1.3": "142",
+    "LS2-2.5": "143\u2013144",
+    "LS2-6.1": "145",
+    "LS2-6.2": "145",
+    "LS2-6.3": "145",
+    "LS2-2.6": "146\u2013147",
+    "ESS3-1.1": "151",
+    "ESS3-1.2": "152",
+    "ESS2-5.1": "153",
+    "ESS2-5.2": "154",
+    "ESS2-5.3": "154",
+    "ESS3-1.3": "155",
+    "ESS3-1.4": "156",
+    "ESS3-1.5": "157",
+    "ESS3-1.6": "158\u2013159",
+    "ESS3-6.1": "163",
+    "ESS3-6.2": "164",
+    "ESS3-6.3": "164",
+    "LS2-7.1": "165",
+    "LS2-7.2": "166\u2013167",
+    "ESS3-4.1": "168",
+    "ESS3-4.2": "168",
+    "ESS3-4.3": "168",
+    "LS2-7.3": "169\u2013170",
+    "LS2-7.4": "171",
+    "LS2-7.5": "172"
   }
- },
- "HS-LS2-5": {
-  "unit": "1.2",
-  "title": "Energy Through Carbon",
-  "start": 13,
-  "end": 26,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 13,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS2-5",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 14,
-    "focus": "LS2-5.1 I can name the four spheres and where carbon is stored in each one.; LS2-5.2 I can name processes besides photosynthesis and respiration that move carbon, like burning and burial in rock.",
-    "standard": "LS2-5",
-    "resources": "CFA LS2-5.1 and LS2-5.2 (exit ticket, about 6 min each)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-5.1",
-     "LS2-5.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 15,
-    "focus": "Supporting: LS1-5.1 I can name what photosynthesis uses and what it makes.",
-    "standard": "LS1-5",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS1-5.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 16,
-    "focus": "Supporting: LS1-5.2 I can explain how photosynthesis stores light energy as chemical energy in sugar.; LS1-5.3 I can use a model to show photosynthesis storing light energy in sugar, and track the matter in and out.",
-    "standard": "LS1-5",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS1-5.2",
-     "LS1-5.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 17,
-    "focus": "Supporting: LS1-7.1 I can name what cellular respiration uses and what it makes.",
-    "standard": "LS1-7",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS1-7.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 18,
-    "focus": "Supporting: LS1-7.2 I can explain how respiration breaks and forms bonds, releasing energy a cell can use.; LS1-7.3 I can use a model to show respiration breaking and forming bonds, releasing more energy than it uses.",
-    "standard": "LS1-7",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS1-7.2",
-     "LS1-7.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 19,
-    "focus": "LS2-5.3 I can describe how photosynthesis moves carbon from air and water into living things, and respiration moves it back.",
-    "standard": "LS2-5",
-    "resources": "CFA LS2-5.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-5.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 20,
-    "focus": "LS2-5.4 I can trace one carbon atom through at least three spheres and name each process that moves it. (day 1 of 2: build understanding)",
-    "standard": "LS2-5",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-5.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 21,
-    "focus": "LS2-5.4 I can trace one carbon atom through at least three spheres and name each process that moves it. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-5",
-    "resources": "CFA LS2-5.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-5.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 22,
-    "focus": "LS2-5.5 I can use a model to predict what happens to carbon elsewhere when one part of the cycle changes.",
-    "standard": "LS2-5",
-    "resources": "CFA LS2-5.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-5.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 23,
-    "focus": "LS2-5.6 I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres. (day 1 of 2: build understanding)",
-    "standard": "LS2-5",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-5.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 24,
-    "focus": "LS2-5.6 I can build a model showing how photosynthesis and respiration cycle carbon among all four spheres. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-5",
-    "resources": "CFA LS2-5.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-5.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 13,
-    "course_day": 25,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS2-5",
-    "resources": "Review page: HS-LS2-5_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-5_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 14,
-    "course_day": 26,
-    "focus": "CSA: priority targets for HS-LS2-5 (45 minutes)",
-    "standard": "LS2-5",
-    "resources": "CSA HS-LS2-5",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS2-5.1": 2,
-   "LS2-5.2": 2,
-   "LS2-5.3": 7,
-   "LS2-5.4": 9,
-   "LS2-5.5": 10,
-   "LS2-5.6": 12
-  }
- },
- "HS-LS1-6": {
-  "unit": "1.3",
-  "title": "Sugar to Structures",
-  "start": 27,
-  "end": 38,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 27,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS1-6",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 28,
-    "focus": "LS1-6.1 I can name the three elements that make up most of sugar and the body's large molecules.",
-    "standard": "LS1-6",
-    "resources": "CFA LS1-6.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-6.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 29,
-    "focus": "Supporting: PS1-7.1 I can count the atoms of each element on both sides of a reaction.; PS1-7.2 I can explain why a reaction keeps every atom, so the total mass stays the same.; PS1-7.3 I can use atom counts to show that no atoms are lost when sugar is rebuilt.",
-    "standard": "PS1-7",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "PS1-7.1",
-     "PS1-7.2",
-     "PS1-7.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 30,
-    "focus": "LS1-6.2 I can describe how living things take in matter and rearrange its atoms, with no atoms lost.",
-    "standard": "LS1-6",
-    "resources": "CFA LS1-6.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-6.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 31,
-    "focus": "LS1-6.3 I can explain how atoms from sugar join with other elements, like nitrogen, to build larger molecules.",
-    "standard": "LS1-6",
-    "resources": "CFA LS1-6.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-6.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 32,
-    "focus": "LS1-6.4 I can use a model to trace atoms from sugar into a larger molecule.",
-    "standard": "LS1-6",
-    "resources": "CFA LS1-6.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-6.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 33,
-    "focus": "Supporting: ETS1-3.1 I can list what a solution must do, the limits it must work within, and its possible impacts.; ETS1-3.2 I can use data to compare what two solutions gain and give up.; ETS1-3.3 I can judge a real solution, like algae fuel, by ranking what matters and weighing gains against costs.",
-    "standard": "ETS1-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "ETS1-3.1",
-     "ETS1-3.2",
-     "ETS1-3.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 34,
-    "focus": "LS1-6.5 I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules. (day 1 of 2: build understanding)",
-    "standard": "LS1-6",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS1-6.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 35,
-    "focus": "LS1-6.5 I can use evidence to explain how atoms from sugar combine with other elements to build large carbon-based molecules. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS1-6",
-    "resources": "CFA LS1-6.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-6.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 36,
-    "focus": "LS1-6.6 I can revise my explanation when new evidence comes in.",
-    "standard": "LS1-6",
-    "resources": "CFA LS1-6.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-6.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 37,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS1-6",
-    "resources": "Review page: HS-LS1-6_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS1-6_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 38,
-    "focus": "CSA: priority targets for HS-LS1-6 (45 minutes)",
-    "standard": "LS1-6",
-    "resources": "CSA HS-LS1-6",
-    "notes": "The existing test is 36 points and about 50 minutes. Trim it or allow a few extra minutes; the other tests are built for 45.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS1-6.1": 2,
-   "LS1-6.2": 4,
-   "LS1-6.3": 5,
-   "LS1-6.4": 6,
-   "LS1-6.5": 9,
-   "LS1-6.6": 10
-  }
- },
- "HS-LS1-1": {
-  "unit": "2.1",
-  "title": "DNA to Proteins",
-  "start": 39,
-  "end": 51,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 39,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS1-1",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 40,
-    "focus": "LS1-1.1 I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base.",
-    "standard": "LS1-1",
-    "resources": "CFA LS1-1.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-1.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 41,
-    "focus": "Supporting: LS3-1.1 I can describe how chromosomes, DNA, and genes are related.; LS3-1.2 I can explain how a child gets half of its chromosomes from each parent.; LS3-1.3 I can ask questions that clarify how DNA and chromosomes carry the instructions for traits passed to offspring.",
-    "standard": "LS3-1",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "LS3-1.1",
-     "LS3-1.2",
-     "LS3-1.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 42,
-    "focus": "LS1-1.2 I can state that DNA holds the instructions for building proteins.",
-    "standard": "LS1-1",
-    "resources": "CFA LS1-1.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-1.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 43,
-    "focus": "LS1-1.3 I can describe how a gene's message is copied and read to build a chain of amino acids. (day 1 of 2: build understanding)",
-    "standard": "LS1-1",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS1-1.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 44,
-    "focus": "LS1-1.3 I can describe how a gene's message is copied and read to build a chain of amino acids. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS1-1",
-    "resources": "CFA LS1-1.3 (exit ticket, about 6 min)",
-    "notes": "Teach copy-then-read only; no mRNA or tRNA mechanics.",
-    "ids": [
-     "LS1-1.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 45,
-    "focus": "LS1-1.4 I can explain how changing one DNA base can change a protein and what it does.",
-    "standard": "LS1-1",
-    "resources": "CFA LS1-1.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-1.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 46,
-    "focus": "LS1-1.5 I can explain how DNA, through proteins, gives different cells their different jobs. (day 1 of 2: build understanding)",
-    "standard": "LS1-1",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS1-1.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 47,
-    "focus": "LS1-1.5 I can explain how DNA, through proteins, gives different cells their different jobs. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS1-1",
-    "resources": "CFA LS1-1.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-1.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 48,
-    "focus": "LS1-1.6 I can use case data, like sickle cell, to explain how a DNA change affects the body. (day 1 of 2: build understanding)",
-    "standard": "LS1-1",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS1-1.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 49,
-    "focus": "LS1-1.6 I can use case data, like sickle cell, to explain how a DNA change affects the body. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS1-1",
-    "resources": "CFA LS1-1.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS1-1.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 50,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS1-1",
-    "resources": "Review page: HS-LS1-1_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS1-1_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 13,
-    "course_day": 51,
-    "focus": "CSA: priority targets for HS-LS1-1 (45 minutes)",
-    "standard": "LS1-1",
-    "resources": "CSA HS-LS1-1",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS1-1.1": 2,
-   "LS1-1.2": 4,
-   "LS1-1.3": 6,
-   "LS1-1.4": 7,
-   "LS1-1.5": 9,
-   "LS1-1.6": 11
-  }
- },
- "HS-LS3-2": {
-  "unit": "2.2",
-  "title": "Inherited Instructions",
-  "start": 52,
-  "end": 66,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 52,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS3-2",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 53,
-    "focus": "LS3-2.1 I can name three ways new genetic variation arises.",
-    "standard": "LS3-2",
-    "resources": "CFA LS3-2.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS3-2.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 54,
-    "focus": "Supporting: LS3-3.1 I can use a Punnett square to show the possible allele combinations from a cross.",
-    "standard": "LS3-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS3-3.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 55,
-    "focus": "Supporting: LS3-3.2 I can calculate the chance of each trait and compare it with real counts.",
-    "standard": "LS3-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS3-3.2"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 56,
-    "focus": "Supporting: LS3-3.3 I can use probability to explain how traits vary and spread in a population, including effects of environment.",
-    "standard": "LS3-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS3-3.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 57,
-    "focus": "LS3-2.2 I can describe how making sex cells and fertilization mix alleles into new combinations.",
-    "standard": "LS3-2",
-    "resources": "CFA LS3-2.2 (exit ticket, about 6 min)",
-    "notes": "No phases of meiosis.",
-    "ids": [
-     "LS3-2.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 58,
-    "focus": "LS3-2.3 I can explain how copying errors and things like UV light change genes, and when that change is inherited. (day 1 of 2: build understanding)",
-    "standard": "LS3-2",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS3-2.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 59,
-    "focus": "LS3-2.3 I can explain how copying errors and things like UV light change genes, and when that change is inherited. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS3-2",
-    "resources": "CFA LS3-2.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS3-2.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 60,
-    "focus": "LS3-2.4 I can read data as evidence for where a genetic variation came from.",
-    "standard": "LS3-2",
-    "resources": "CFA LS3-2.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS3-2.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 61,
-    "focus": "LS3-2.5 I can make a claim, backed by data, about what caused a genetic variation. (day 1 of 2: build understanding)",
-    "standard": "LS3-2",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS3-2.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 62,
-    "focus": "LS3-2.5 I can make a claim, backed by data, about what caused a genetic variation. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS3-2",
-    "resources": "CFA LS3-2.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS3-2.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 63,
-    "focus": "LS3-2.6 I can defend my claim against another explanation using the evidence. (day 1 of 2: build understanding)",
-    "standard": "LS3-2",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS3-2.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 13,
-    "course_day": 64,
-    "focus": "LS3-2.6 I can defend my claim against another explanation using the evidence. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS3-2",
-    "resources": "CFA LS3-2.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS3-2.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 14,
-    "course_day": 65,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS3-2",
-    "resources": "Review page: HS-LS3-2_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS3-2_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 15,
-    "course_day": 66,
-    "focus": "CSA: priority targets for HS-LS3-2 (45 minutes)",
-    "standard": "LS3-2",
-    "resources": "CSA HS-LS3-2",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS3-2.1": 2,
-   "LS3-2.2": 6,
-   "LS3-2.3": 8,
-   "LS3-2.4": 9,
-   "LS3-2.5": 11,
-   "LS3-2.6": 13
-  }
- },
- "HS-ESS1-5": {
-  "unit": "3.1",
-  "title": "Age of the Earth",
-  "start": 67,
-  "end": 78,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 67,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "ESS1-5",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 68,
-    "focus": "ESS1-5.1 I can describe Earth's outer layer as moving plates and name three kinds of plate boundaries.; ESS1-5.2 I can describe where ocean crust is made and where it sinks back down.",
-    "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.1 and ESS1-5.2 (exit ticket, about 6 min each)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS1-5.1",
-     "ESS1-5.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 69,
-    "focus": "ESS1-5.3 I can read a rock-age map and describe the pattern in the ages.",
-    "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS1-5.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 70,
-    "focus": "Supporting: ESS1-6.1 I can list the evidence scientists use to learn about early Earth.",
-    "standard": "ESS1-6",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS1-6.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 71,
-    "focus": "Supporting: ESS1-6.2 I can explain why meteorites and moon rocks tell Earth's age better than Earth rocks do.; ESS1-6.3 I can use evidence from rocks, meteorites, and other planets to tell how Earth formed.",
-    "standard": "ESS1-6",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS1-6.2",
-     "ESS1-6.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 72,
-    "focus": "ESS1-5.4 I can explain why ocean crust is young and why continents are oldest at their ancient cores.",
-    "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS1-5.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 73,
-    "focus": "ESS1-5.5 I can judge how strong the evidence is that the crust has moved and is still moving. (day 1 of 2: build understanding)",
-    "standard": "ESS1-5",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "ESS1-5.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 74,
-    "focus": "ESS1-5.5 I can judge how strong the evidence is that the crust has moved and is still moving. (day 2 of 2: apply it, then CFA)",
-    "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS1-5.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 75,
-    "focus": "ESS1-5.6 I can judge how well plate tectonics explains the ages of rocks, using evidence. (day 1 of 2: build understanding)",
-    "standard": "ESS1-5",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "ESS1-5.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 76,
-    "focus": "ESS1-5.6 I can judge how well plate tectonics explains the ages of rocks, using evidence. (day 2 of 2: apply it, then CFA)",
-    "standard": "ESS1-5",
-    "resources": "CFA ESS1-5.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS1-5.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 77,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "ESS1-5",
-    "resources": "Review page: HS-ESS1-5_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-ESS1-5_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 78,
-    "focus": "CSA: priority targets for HS-ESS1-5 (45 minutes)",
-    "standard": "ESS1-5",
-    "resources": "CSA HS-ESS1-5",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "ESS1-5.1": 2,
-   "ESS1-5.2": 2,
-   "ESS1-5.3": 3,
-   "ESS1-5.4": 6,
-   "ESS1-5.5": 8,
-   "ESS1-5.6": 10
-  }
- },
- "HS-ESS2-7": {
-  "unit": "3.2",
-  "title": "Changing Earth, Changing Life",
-  "start": 87,
-  "end": 97,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 87,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "ESS2-7",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 88,
-    "focus": "ESS2-7.1 I can name examples of how Earth has changed and how life has changed.",
-    "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS2-7.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 89,
-    "focus": "ESS2-7.2 I can describe one way Earth changed life and one way life changed Earth.",
-    "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS2-7.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 90,
-    "focus": "ESS2-7.3 I can explain how events in Earth's history changed life, and how life in turn changed Earth. (day 1 of 2: build understanding)",
-    "standard": "ESS2-7",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "ESS2-7.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 91,
-    "focus": "ESS2-7.3 I can explain how events in Earth's history changed life, and how life in turn changed Earth. (day 2 of 2: apply it, then CFA)",
-    "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS2-7.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 92,
-    "focus": "ESS2-7.4 I can write an argument, with evidence, that Earth and life changed each other.",
-    "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS2-7.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 93,
-    "focus": "ESS2-7.5 I can combine several kinds of evidence into one strong argument about Earth and life.",
-    "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.5 (exit ticket, about 6 min)",
-    "notes": "DOK 4 depth work (Kaplan prompts, compaction for GATE). The CSA stops at DOK 3.",
-    "ids": [
-     "ESS2-7.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 94,
-    "focus": "ESS2-7.6 I can argue from evidence that Earth's systems and life have changed together over time. (day 1 of 2: build understanding)",
-    "standard": "ESS2-7",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "ESS2-7.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 95,
-    "focus": "ESS2-7.6 I can argue from evidence that Earth's systems and life have changed together over time. (day 2 of 2: apply it, then CFA)",
-    "standard": "ESS2-7",
-    "resources": "CFA ESS2-7.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS2-7.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 96,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "ESS2-7",
-    "resources": "Review page: HS-ESS2-7_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-ESS2-7_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 97,
-    "focus": "CSA: priority targets for HS-ESS2-7 (45 minutes)",
-    "standard": "ESS2-7",
-    "resources": "CSA HS-ESS2-7",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "ESS2-7.1": 2,
-   "ESS2-7.2": 3,
-   "ESS2-7.3": 5,
-   "ESS2-7.4": 6,
-   "ESS2-7.5": 7,
-   "ESS2-7.6": 9
-  }
- },
- "HS-LS4-1": {
-  "unit": "3.3",
-  "title": "Patterns of the Past",
-  "start": 98,
-  "end": 106,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 98,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets; LS4-1.1 I can say what I already know and wonder about how living things are related.",
-    "standard": "LS4-1",
-    "resources": "",
-    "notes": "LS4-1.1 is a pre-assessment prompt, not a target, so it has no CFA.",
-    "ids": [
-     "LS4-1.1"
-    ],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 99,
-    "focus": "LS4-1.2 I can describe the kinds of evidence that support common ancestry: DNA, body structures, and embryos.",
-    "standard": "LS4-1",
-    "resources": "CFA LS4-1.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-1.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 100,
-    "focus": "LS4-1.3 I can explain to others how several lines of evidence support common ancestry. (day 1 of 2: build understanding)",
-    "standard": "LS4-1",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS4-1.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 101,
-    "focus": "LS4-1.3 I can explain to others how several lines of evidence support common ancestry. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS4-1",
-    "resources": "CFA LS4-1.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-1.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 102,
-    "focus": "LS4-1.4 I can describe the kinds of evidence that support evolution, like the fossil record.",
-    "standard": "LS4-1",
-    "resources": "CFA LS4-1.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-1.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 103,
-    "focus": "LS4-1.5 I can explain to others how several lines of evidence support evolution. (day 1 of 2: build understanding)",
-    "standard": "LS4-1",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS4-1.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 104,
-    "focus": "LS4-1.5 I can explain to others how several lines of evidence support evolution. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS4-1",
-    "resources": "CFA LS4-1.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-1.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 105,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS4-1",
-    "resources": "Review page: HS-LS4-1_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS4-1_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 106,
-    "focus": "CSA: priority targets for HS-LS4-1 (45 minutes)",
-    "standard": "LS4-1",
-    "resources": "CSA HS-LS4-1",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS4-1.2": 2,
-   "LS4-1.3": 4,
-   "LS4-1.4": 5,
-   "LS4-1.5": 7
-  }
- },
- "HS-LS4-4": {
-  "unit": "3.4",
-  "title": "Evolution by Selection",
-  "start": 107,
-  "end": 119,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 107,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS4-4",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 108,
-    "focus": "LS4-4.1 I can define natural selection, adaptation, population, biotic, and abiotic.",
-    "standard": "LS4-4",
-    "resources": "CFA LS4-4.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-4.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 109,
-    "focus": "Supporting: LS4-2.1 I can name the four factors that drive evolution.",
-    "standard": "LS4-2",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS4-2.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 110,
-    "focus": "Supporting: LS4-2.2 I can use simple graphs to describe how each factor affects a population.; LS4-2.3 I can use evidence to explain how the four factors together cause evolution.",
-    "standard": "LS4-2",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS4-2.2",
-     "LS4-2.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 111,
-    "focus": "LS4-4.2 I can describe how natural selection causes a population to evolve.",
-    "standard": "LS4-4",
-    "resources": "CFA LS4-4.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-4.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 112,
-    "focus": "Supporting: LS4-3.1 I can read a graph that shows how common a trait is over several generations.",
-    "standard": "LS4-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS4-3.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 113,
-    "focus": "Supporting: LS4-3.2 I can calculate the percent with a trait in each generation and describe the trend.; LS4-3.3 I can use statistics to show that a helpful inherited trait becomes more common.",
-    "standard": "LS4-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS4-3.2",
-     "LS4-3.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 114,
-    "focus": "Supporting: LS2-8.1 I can tell group behavior from individual behavior and give examples.; LS2-8.2 I can find evidence in data of what a group behavior does for survival.; LS2-8.3 I can judge evidence about how group behavior affects an animal's chances to survive and reproduce.",
-    "standard": "LS2-8",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "LS2-8.1",
-     "LS2-8.2",
-     "LS2-8.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 115,
-    "focus": "LS4-4.3 I can use data to show that a population's traits shifted because of natural selection.",
-    "standard": "LS4-4",
-    "resources": "CFA LS4-4.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-4.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 116,
-    "focus": "LS4-4.4 I can use evidence to explain how natural selection makes a population better suited to its environment. (day 1 of 2: build understanding)",
-    "standard": "LS4-4",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS4-4.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 117,
-    "focus": "LS4-4.4 I can use evidence to explain how natural selection makes a population better suited to its environment. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS4-4",
-    "resources": "CFA LS4-4.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS4-4.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 118,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS4-4",
-    "resources": "Review page: HS-LS4-4_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS4-4_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 13,
-    "course_day": 119,
-    "focus": "CSA: priority targets for HS-LS4-4 (45 minutes)",
-    "standard": "LS4-4",
-    "resources": "CSA HS-LS4-4",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS4-4.1": 2,
-   "LS4-4.2": 5,
-   "LS4-4.3": 9,
-   "LS4-4.4": 11
-  }
- },
- "HS-LS2-4": {
-  "unit": "4.1",
-  "title": "Cycles of Life",
-  "start": 120,
-  "end": 134,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 120,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS2-4",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 121,
-    "focus": "LS2-4.1 I can name producers, consumers, and decomposers and the role of each.",
-    "standard": "LS2-4",
-    "resources": "CFA LS2-4.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-4.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 122,
-    "focus": "Supporting: LS2-3.1 I can compare what goes in and out of respiration with and without oxygen.; LS2-3.2 I can explain how matter and energy move where oxygen is plentiful and where it is scarce.; LS2-3.3 I can explain, and revise with new evidence, how matter and energy move with and without oxygen.",
-    "standard": "LS2-3",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "LS2-3.1",
-     "LS2-3.2",
-     "LS2-3.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 123,
-    "focus": "LS2-4.2 I can describe how matter cycles and energy flows through a food web.",
-    "standard": "LS2-4",
-    "resources": "CFA LS2-4.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-4.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 124,
-    "focus": "LS2-4.3 I can interpret energy pyramids and matter diagrams, including the 10 percent rule. (day 1 of 2: build understanding)",
-    "standard": "LS2-4",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-4.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 125,
-    "focus": "LS2-4.3 I can interpret energy pyramids and matter diagrams, including the 10 percent rule. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-4",
-    "resources": "CFA LS2-4.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-4.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 126,
-    "focus": "LS2-4.4 I can use numbers to show how much energy passes from one level to the next. (day 1 of 2: build understanding)",
-    "standard": "LS2-4",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-4.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 127,
-    "focus": "LS2-4.4 I can use numbers to show how much energy passes from one level to the next. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-4",
-    "resources": "CFA LS2-4.4 (exit ticket, about 6 min)",
-    "notes": "Proportional reasoning only.",
-    "ids": [
-     "LS2-4.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 128,
-    "focus": "Supporting: ESS3-5.1 I can describe what a climate record shows about change over time.",
-    "standard": "ESS3-5",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS3-5.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 129,
-    "focus": "Supporting: ESS3-5.2 I can find how fast one part of climate is changing from a graph.; ESS3-5.3 I can use data and climate models to forecast one climate change and its effects.",
-    "standard": "ESS3-5",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS3-5.2",
-     "ESS3-5.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 130,
-    "focus": "LS2-4.5 I can use numbers to show that matter is conserved as it cycles. (day 1 of 2: build understanding)",
-    "standard": "LS2-4",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-4.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 131,
-    "focus": "LS2-4.5 I can use numbers to show that matter is conserved as it cycles. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-4",
-    "resources": "CFA LS2-4.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-4.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 13,
-    "course_day": 132,
-    "focus": "LS2-4.6 I can use math to support a claim about how matter cycles and energy flows.",
-    "standard": "LS2-4",
-    "resources": "CFA LS2-4.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-4.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 14,
-    "course_day": 133,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS2-4",
-    "resources": "Review page: HS-LS2-4_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-4_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 15,
-    "course_day": 134,
-    "focus": "CSA: priority targets for HS-LS2-4 (45 minutes)",
-    "standard": "LS2-4",
-    "resources": "CSA HS-LS2-4",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS2-4.1": 2,
-   "LS2-4.2": 4,
-   "LS2-4.3": 6,
-   "LS2-4.4": 8,
-   "LS2-4.5": 12,
-   "LS2-4.6": 13
-  }
- },
- "HS-LS2-2": {
-  "unit": "4.2",
-  "title": "Patterns in Populations",
-  "start": 135,
-  "end": 149,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 135,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS2-2",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 136,
-    "focus": "LS2-2.1 I can define population and biodiversity and name factors that change them.",
-    "standard": "LS2-2",
-    "resources": "CFA LS2-2.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-2.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 137,
-    "focus": "LS2-2.2 I can read graphs and tables of population or biodiversity data.",
-    "standard": "LS2-2",
-    "resources": "CFA LS2-2.2 (exit ticket, about 6 min)",
-    "notes": "Use the provided data sets only (assessment boundary).",
-    "ids": [
-     "LS2-2.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 138,
-    "focus": "LS2-2.3 I can find averages, rates of change, and trends in population data. (day 1 of 2: build understanding)",
-    "standard": "LS2-2",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-2.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 139,
-    "focus": "LS2-2.3 I can find averages, rates of change, and trends in population data. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-2",
-    "resources": "CFA LS2-2.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-2.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 140,
-    "focus": "LS2-2.4 I can use math to compare populations and biodiversity across ecosystems of different sizes.",
-    "standard": "LS2-2",
-    "resources": "CFA LS2-2.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-2.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 141,
-    "focus": "Supporting: LS2-1.1 I can define carrying capacity and name what limits it.",
-    "standard": "LS2-1",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS2-1.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 142,
-    "focus": "Supporting: LS2-1.2 I can find carrying capacity on a graph and describe the population's growth toward it.; LS2-1.3 I can use graphs and data to explain what sets an ecosystem's carrying capacity.",
-    "standard": "LS2-1",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "LS2-1.2",
-     "LS2-1.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 143,
-    "focus": "LS2-2.5 I can use math as evidence to explain how a factor affects a population or biodiversity. (day 1 of 2: build understanding)",
-    "standard": "LS2-2",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-2.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 144,
-    "focus": "LS2-2.5 I can use math as evidence to explain how a factor affects a population or biodiversity. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-2",
-    "resources": "CFA LS2-2.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-2.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 145,
-    "focus": "Supporting: LS2-6.1 I can describe how an ecosystem's many interactions keep it steady.; LS2-6.2 I can tell a small disturbance from an extreme one by what it does to an ecosystem.; LS2-6.3 I can judge the claim, evidence, and reasoning about whether an ecosystem stays stable or becomes a new one.",
-    "standard": "LS2-6",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "LS2-6.1",
-     "LS2-6.2",
-     "LS2-6.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 146,
-    "focus": "LS2-2.6 I can use new data to revise my explanation of what affects a population or biodiversity. (day 1 of 2: build understanding)",
-    "standard": "LS2-2",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-2.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 13,
-    "course_day": 147,
-    "focus": "LS2-2.6 I can use new data to revise my explanation of what affects a population or biodiversity. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-2",
-    "resources": "CFA LS2-2.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-2.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 14,
-    "course_day": 148,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS2-2",
-    "resources": "Review page: HS-LS2-2_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-2_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 15,
-    "course_day": 149,
-    "focus": "CSA: priority targets for HS-LS2-2 (45 minutes)",
-    "standard": "LS2-2",
-    "resources": "CSA HS-LS2-2",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS2-2.1": 2,
-   "LS2-2.2": 3,
-   "LS2-2.3": 5,
-   "LS2-2.4": 6,
-   "LS2-2.5": 10,
-   "LS2-2.6": 13
-  }
- },
- "HS-ESS3-1": {
-  "unit": "4.3",
-  "title": "Earth Shaping Humanity",
-  "start": 150,
-  "end": 161,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 150,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "ESS3-1",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 151,
-    "focus": "ESS3-1.1 I can name the resources, hazards, and climate factors that shape where people live.",
-    "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS3-1.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 152,
-    "focus": "ESS3-1.2 I can describe how resources like water and fertile soil are spread unevenly.",
-    "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS3-1.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 153,
-    "focus": "Supporting: ESS2-5.1 I can describe the properties of water that let it break down and move rock and soil.",
-    "standard": "ESS2-5",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS2-5.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 154,
-    "focus": "Supporting: ESS2-5.2 I can carry out a test of how water wears away or moves Earth materials and record data.; ESS2-5.3 I can plan and carry out my own investigation of water's effect on Earth materials.",
-    "standard": "ESS2-5",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS2-5.2",
-     "ESS2-5.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 155,
-    "focus": "ESS3-1.3 I can describe how hazards like earthquakes and floods affect where and how people live.",
-    "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS3-1.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 156,
-    "focus": "ESS3-1.4 I can explain how climate change can move people and change what they grow.",
-    "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.4 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS3-1.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 157,
-    "focus": "ESS3-1.5 I can read maps and data that connect resources, hazards, or climate to human activity.",
-    "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.5 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS3-1.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 158,
-    "focus": "ESS3-1.6 I can use evidence to explain how resources, hazards, and climate have shaped human activity. (day 1 of 2: build understanding)",
-    "standard": "ESS3-1",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "ESS3-1.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 159,
-    "focus": "ESS3-1.6 I can use evidence to explain how resources, hazards, and climate have shaped human activity. (day 2 of 2: apply it, then CFA)",
-    "standard": "ESS3-1",
-    "resources": "CFA ESS3-1.6 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "ESS3-1.6"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 160,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "ESS3-1",
-    "resources": "Review page: HS-ESS3-1_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-ESS3-1_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 161,
-    "focus": "CSA: priority targets for HS-ESS3-1 (45 minutes)",
-    "standard": "ESS3-1",
-    "resources": "CSA HS-ESS3-1",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "ESS3-1.1": 2,
-   "ESS3-1.2": 3,
-   "ESS3-1.3": 6,
-   "ESS3-1.4": 7,
-   "ESS3-1.5": 8,
-   "ESS3-1.6": 10
-  }
- },
- "HS-LS2-7": {
-  "unit": "4.4",
-  "title": "Solutions for Sustainability",
-  "start": 162,
-  "end": 174,
-  "days": [
-   {
-    "unit_day": 1,
-    "course_day": 162,
-    "focus": "Launch: anchoring phenomenon, pre-assessment, preview of targets",
-    "standard": "LS2-7",
-    "resources": "",
-    "notes": "",
-    "ids": [],
-    "kind": "launch"
-   },
-   {
-    "unit_day": 2,
-    "course_day": 163,
-    "focus": "Supporting: ESS3-6.1 I can name Earth's systems, including the frozen cryosphere, and one link between two of them.",
-    "standard": "ESS3-6",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS3-6.1"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 3,
-    "course_day": 164,
-    "focus": "Supporting: ESS3-6.2 I can read a computer model's graph or map of how people change an Earth system.; ESS3-6.3 I can use a computer model's results to show how human activity changes links among Earth's systems.",
-    "standard": "ESS3-6",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA.",
-    "ids": [
-     "ESS3-6.2",
-     "ESS3-6.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 4,
-    "course_day": 165,
-    "focus": "LS2-7.1 I can explain how human activities like pollution and deforestation affect ecosystems and biodiversity.",
-    "standard": "LS2-7",
-    "resources": "CFA LS2-7.1 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-7.1"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 5,
-    "course_day": 166,
-    "focus": "LS2-7.2 I can design a solution, based on evidence, that reduces a human impact on the environment. (day 1 of 2: build understanding)",
-    "standard": "LS2-7",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-7.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 6,
-    "course_day": 167,
-    "focus": "LS2-7.2 I can design a solution, based on evidence, that reduces a human impact on the environment. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-7",
-    "resources": "CFA LS2-7.2 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-7.2"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 7,
-    "course_day": 168,
-    "focus": "Supporting: ESS3-4.1 I can describe data that measures a human impact on a natural system.; ESS3-4.2 I can compare how much different technologies reduce that impact.; ESS3-4.3 I can judge or improve a technology that reduces a human impact on nature.",
-    "standard": "ESS3-4",
-    "resources": "",
-    "notes": "Taught and practiced; not on the CSA. Light coverage: all of this standard's targets in one period.",
-    "ids": [
-     "ESS3-4.1",
-     "ESS3-4.2",
-     "ESS3-4.3"
-    ],
-    "kind": "supporting"
-   },
-   {
-    "unit_day": 8,
-    "course_day": 169,
-    "focus": "LS2-7.3 I can judge whether a solution will work, and what it gains and costs. (day 1 of 2: build understanding)",
-    "standard": "LS2-7",
-    "resources": "",
-    "notes": "",
-    "ids": [
-     "LS2-7.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 9,
-    "course_day": 170,
-    "focus": "LS2-7.3 I can judge whether a solution will work, and what it gains and costs. (day 2 of 2: apply it, then CFA)",
-    "standard": "LS2-7",
-    "resources": "CFA LS2-7.3 (exit ticket, about 6 min)",
-    "notes": "Mastery is 4 of 6 points on each CFA. Reteach anyone below mastery on the review day.",
-    "ids": [
-     "LS2-7.3"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 10,
-    "course_day": 171,
-    "focus": "LS2-7.4 I can use feedback and new evidence to improve my solution.",
-    "standard": "LS2-7",
-    "resources": "CFA LS2-7.4 (exit ticket, about 6 min)",
-    "notes": "DOK 4 (the refine verb). The CSA item is written at DOK 3.",
-    "ids": [
-     "LS2-7.4"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 11,
-    "course_day": 172,
-    "focus": "LS2-7.5 I can present and defend my solution with evidence.",
-    "standard": "LS2-7",
-    "resources": "CFA LS2-7.5 (exit ticket, about 6 min)",
-    "notes": "Instructional, DOK 4. The CSA stops at DOK 3.",
-    "ids": [
-     "LS2-7.5"
-    ],
-    "kind": "priority"
-   },
-   {
-    "unit_day": 12,
-    "course_day": 173,
-    "focus": "Review and reteach from CFA results; CSA preparation",
-    "standard": "LS2-7",
-    "resources": "Review page: HS-LS2-7_review.html",
-    "notes": "Students do the sections for any CFA under 4 of 6, plus Vocabulary and Write It. Key: HS-LS2-7_review_key.md.",
-    "ids": [],
-    "kind": "review"
-   },
-   {
-    "unit_day": 13,
-    "course_day": 174,
-    "focus": "CSA: priority targets for HS-LS2-7 (45 minutes)",
-    "standard": "LS2-7",
-    "resources": "CSA HS-LS2-7",
-    "notes": "Allow the full 45 minutes.",
-    "ids": [],
-    "kind": "csa"
-   }
-  ],
-  "cfa_unit_day": {
-   "LS2-7.1": 4,
-   "LS2-7.2": 6,
-   "LS2-7.3": 9,
-   "LS2-7.4": 10,
-   "LS2-7.5": 11
-  }
- },
- "_lt_days": {
-  "LS1-2.1": "2",
-  "LS1-2.2": "2",
-  "LS1-4.1": "3",
-  "LS1-4.2": "4",
-  "LS1-4.3": "4",
-  "LS1-2.3": "5",
-  "LS1-3.1": "6",
-  "LS1-3.2": "6",
-  "LS1-3.3": "6",
-  "LS1-2.4": "7",
-  "LS1-2.5": "8",
-  "LS1-2.6": "9–10",
-  "LS2-5.1": "14",
-  "LS2-5.2": "14",
-  "LS1-5.1": "15",
-  "LS1-5.2": "16",
-  "LS1-5.3": "16",
-  "LS1-7.1": "17",
-  "LS1-7.2": "18",
-  "LS1-7.3": "18",
-  "LS2-5.3": "19",
-  "LS2-5.4": "20–21",
-  "LS2-5.5": "22",
-  "LS2-5.6": "23–24",
-  "LS1-6.1": "28",
-  "PS1-7.1": "29",
-  "PS1-7.2": "29",
-  "PS1-7.3": "29",
-  "LS1-6.2": "30",
-  "LS1-6.3": "31",
-  "LS1-6.4": "32",
-  "ETS1-3.1": "33",
-  "ETS1-3.2": "33",
-  "ETS1-3.3": "33",
-  "LS1-6.5": "34–35",
-  "LS1-6.6": "36",
-  "LS1-1.1": "40",
-  "LS3-1.1": "41",
-  "LS3-1.2": "41",
-  "LS3-1.3": "41",
-  "LS1-1.2": "42",
-  "LS1-1.3": "43–44",
-  "LS1-1.4": "45",
-  "LS1-1.5": "46–47",
-  "LS1-1.6": "48–49",
-  "LS3-2.1": "53",
-  "LS3-3.1": "54",
-  "LS3-3.2": "55",
-  "LS3-3.3": "56",
-  "LS3-2.2": "57",
-  "LS3-2.3": "58–59",
-  "LS3-2.4": "60",
-  "LS3-2.5": "61–62",
-  "LS3-2.6": "63–64",
-  "ESS1-5.1": "68",
-  "ESS1-5.2": "68",
-  "ESS1-5.3": "69",
-  "ESS1-6.1": "70",
-  "ESS1-6.2": "71",
-  "ESS1-6.3": "71",
-  "ESS1-5.4": "72",
-  "ESS1-5.5": "73–74",
-  "ESS1-5.6": "75–76",
-  "ESS2-7.1": "88",
-  "ESS2-7.2": "89",
-  "ESS2-7.3": "90–91",
-  "ESS2-7.4": "92",
-  "ESS2-7.5": "93",
-  "ESS2-7.6": "94–95",
-  "LS4-1.1": "98",
-  "LS4-1.2": "99",
-  "LS4-1.3": "100–101",
-  "LS4-1.4": "102",
-  "LS4-1.5": "103–104",
-  "LS4-4.1": "108",
-  "LS4-2.1": "109",
-  "LS4-2.2": "110",
-  "LS4-2.3": "110",
-  "LS4-4.2": "111",
-  "LS4-3.1": "112",
-  "LS4-3.2": "113",
-  "LS4-3.3": "113",
-  "LS2-8.1": "114",
-  "LS2-8.2": "114",
-  "LS2-8.3": "114",
-  "LS4-4.3": "115",
-  "LS4-4.4": "116–117",
-  "LS2-4.1": "121",
-  "LS2-3.1": "122",
-  "LS2-3.2": "122",
-  "LS2-3.3": "122",
-  "LS2-4.2": "123",
-  "LS2-4.3": "124–125",
-  "LS2-4.4": "126–127",
-  "ESS3-5.1": "128",
-  "ESS3-5.2": "129",
-  "ESS3-5.3": "129",
-  "LS2-4.5": "130–131",
-  "LS2-4.6": "132",
-  "LS2-2.1": "136",
-  "LS2-2.2": "137",
-  "LS2-2.3": "138–139",
-  "LS2-2.4": "140",
-  "LS2-1.1": "141",
-  "LS2-1.2": "142",
-  "LS2-1.3": "142",
-  "LS2-2.5": "143–144",
-  "LS2-6.1": "145",
-  "LS2-6.2": "145",
-  "LS2-6.3": "145",
-  "LS2-2.6": "146–147",
-  "ESS3-1.1": "151",
-  "ESS3-1.2": "152",
-  "ESS2-5.1": "153",
-  "ESS2-5.2": "154",
-  "ESS2-5.3": "154",
-  "ESS3-1.3": "155",
-  "ESS3-1.4": "156",
-  "ESS3-1.5": "157",
-  "ESS3-1.6": "158–159",
-  "ESS3-6.1": "163",
-  "ESS3-6.2": "164",
-  "ESS3-6.3": "164",
-  "LS2-7.1": "165",
-  "LS2-7.2": "166–167",
-  "ESS3-4.1": "168",
-  "ESS3-4.2": "168",
-  "ESS3-4.3": "168",
-  "LS2-7.3": "169–170",
-  "LS2-7.4": "171",
-  "LS2-7.5": "172"
- }
 }
