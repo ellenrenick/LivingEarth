@@ -1,0 +1,270 @@
+<title>Siamese Points</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one scene card at a time (gene → protein → whole cat → the chain), a step bar on top, Back/Next under the card. */
+:root {
+  --bg: #f7f4ee;            /* cream fur */
+  --card: #fffdf9;
+  --ink: #2b211b;
+  --muted: #6e6258;
+  --line: #e2d9cc;
+  --point: #4a3025;         /* seal-point brown */
+  --cream: #efe2c8;
+  --eye: #3f7fd0;           /* Siamese blue eyes: the accent */
+  --warm: #d4572f;
+  --cool: #2f7fb8;
+  --ok: #2f8a4d;
+  --font-display: "Boogaloo", "Comic Sans MS", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17130f; --card: #211b16; --ink: #f1e9df; --muted: #b5a797; --line: #3a3027;
+    --point: #2a1a13; --cream: #e6d6b7; --eye: #73a8ec; --warm: #f07a52; --cool: #62a8de; --ok: #5cbf7a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17130f; --card: #211b16; --ink: #f1e9df; --muted: #b5a797; --line: #3a3027;
+  --point: #2a1a13; --cream: #e6d6b7; --eye: #73a8ec; --warm: #f07a52; --cool: #62a8de; --ok: #5cbf7a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px;
+}
+main { max-width: 960px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; margin: 0; }
+.eyebrow { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.steps { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.steps button { font: inherit; font-size: .85rem; border: 1.5px solid var(--line); background: var(--card); color: var(--muted); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.steps button[aria-current="step"] { border-color: var(--eye); color: var(--ink); font-weight: 700; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 14px; }
+.card h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.7rem; margin: 0; line-height: 1.1; text-wrap: balance; }
+.card p { margin: 0; max-width: 65ch; }
+.row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: center; }
+.row > * { min-width: 0; }
+@media (max-width: 720px) { .row { grid-template-columns: 1fr; } }
+svg { width: 100%; height: auto; display: block; max-width: 100%; }
+.toggle { display: inline-flex; border: 1.5px solid var(--line); border-radius: 999px; overflow: hidden; }
+.toggle button { font: inherit; border: 0; background: transparent; color: var(--muted); padding: 6px 14px; cursor: pointer; }
+.toggle button[aria-pressed="true"] { background: var(--eye); color: #fff; font-weight: 700; }
+.dna { font-family: var(--font-mono); font-size: clamp(1rem, 3.4vw, 1.5rem); display: flex; flex-wrap: wrap; gap: 10px; }
+.trip { border: 1.5px solid var(--line); border-radius: 8px; padding: 6px 10px; display: grid; justify-items: center; gap: 2px; min-width: 4.6em; }
+.trip small { font-family: var(--font-body); font-size: .8rem; color: var(--muted); }
+.trip.changed { border-color: var(--warm); }
+.trip .b.hot { color: var(--warm); font-weight: 700; }
+.chain { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.aa { border-radius: 999px; padding: 4px 12px; background: var(--cream); color: #2b211b; font-weight: 700; font-size: .95rem; }
+.aa.changed { background: var(--warm); color: #fff; }
+.slider { display: grid; gap: 6px; }
+.slider label { font-weight: 700; }
+input[type=range] { width: 100%; accent-color: var(--eye); }
+.readout { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 1.6rem; }
+.state { font-weight: 700; border-radius: 8px; padding: 6px 10px; border: 1.5px solid currentColor; justify-self: start; }
+.state.on { color: var(--ok); }
+.state.off { color: var(--warm); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+th { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.dot { display: inline-block; width: .8em; height: .8em; border-radius: 50%; vertical-align: -1px; margin-right: 6px; border: 1px solid var(--muted); }
+.links { display: grid; gap: 10px; }
+.link { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; }
+.link b { font-family: var(--font-display); font-weight: 400; font-size: 1.4rem; color: var(--eye); line-height: 1.1; }
+nav { display: flex; justify-content: space-between; gap: 10px; }
+nav button { font: inherit; font-weight: 700; border-radius: 10px; padding: 8px 18px; cursor: pointer; border: 1.5px solid var(--eye); background: var(--card); color: var(--ink); }
+nav button.primary { background: var(--eye); color: #fff; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--eye); outline-offset: 2px; }
+.note { font-size: .85rem; color: var(--muted); }
+</style>
+
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">Unit 2.1 · DNA to Proteins · Review for Days 4 and 5</div>
+      <h1>Siamese Points</h1>
+    </div>
+    <ol class="steps" id="steps"></ol>
+  </header>
+
+  <section class="card" data-scene="0">
+    <h2>1. One letter in the gene</h2>
+    <p>The gene for a pigment-making protein (tyrosinase) is read three bases at a time. Switch between the two cats and watch one triplet.</p>
+    <div class="toggle" role="group" aria-label="Which cat's gene">
+      <button type="button" id="g-solid" aria-pressed="true">Solid cat gene</button>
+      <button type="button" id="g-siam" aria-pressed="false">Siamese cat gene</button>
+    </div>
+    <div class="dna" id="dna"></div>
+    <div class="chain" id="chain" aria-live="polite"></div>
+    <p class="note">Made-up neighbors around the real change: in Siamese cats one letter swaps Gly (glycine) for Arg (arginine).</p>
+  </section>
+
+  <section class="card" data-scene="1" hidden>
+    <h2>2. The changed protein only works in cool skin</h2>
+    <div class="row">
+      <svg id="protein" viewBox="0 0 320 220" role="img" aria-label="The pigment-making protein at the chosen skin temperature"></svg>
+      <div class="slider">
+        <label for="temp">Skin temperature</label>
+        <div class="readout" id="temp-out">28 °C</div>
+        <input id="temp" type="range" min="25" max="38" step="1" value="28">
+        <div class="state on" id="temp-state">Protein works: pigment is made, fur grows dark</div>
+        <p class="note">The solid cat's protein works at every body temperature. The Siamese protein falls apart above about 33 °C (a simplified class number).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-scene="2" hidden>
+    <h2>3. Same DNA in every cell, dark only where it's cool</h2>
+    <div class="row">
+      <svg id="cat" viewBox="0 0 360 230" role="img" aria-label="Siamese cat with each body part colored by its skin temperature"></svg>
+      <div class="slider">
+        <label for="room">Room the kitten grows up in</label>
+        <input id="room" type="range" min="-4" max="4" step="1" value="0">
+        <div class="note" id="room-out">Normal room</div>
+        <table>
+          <thead><tr><th>Body part</th><th>Skin</th><th>Fur</th></tr></thead>
+          <tbody id="parts"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-scene="3" hidden>
+    <h2>4. The whole chain</h2>
+    <div class="links">
+      <div class="link"><b>DNA</b><span>One letter in the pigment gene is different: GGA becomes AGA.</span></div>
+      <div class="link"><b>Amino acid</b><span>The protein's chain has Arg where it used to have Gly.</span></div>
+      <div class="link"><b>Protein</b><span>The changed protein works only in skin cooler than about 33 °C.</span></div>
+      <div class="link"><b>Cells</b><span>Every cell has the same DNA, but only pigment cells use this gene.</span></div>
+      <div class="link"><b>Body</b><span>Ears, face, paws, and tail are cool, so only they grow dark fur. A kitten is born white because it was warm all over before birth.</span></div>
+    </div>
+    <p class="note">Say it in one sentence with the words DNA, gene, amino acid, protein, and cool.</p>
+  </section>
+
+  <nav>
+    <button type="button" id="back">Back</button>
+    <button type="button" id="next" class="primary">Next</button>
+  </nav>
+</main>
+
+<script>
+(() => {
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const scenes = [...document.querySelectorAll("[data-scene]")];
+  const names = ["Gene", "Protein", "Whole cat", "Chain"];
+  const steps = document.getElementById("steps");
+  let at = 0;
+  names.forEach((n, i) => {
+    const li = document.createElement("li");
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = n; b.addEventListener("click", () => go(i));
+    li.append(b); steps.append(li);
+  });
+  function go(i) {
+    at = Math.max(0, Math.min(scenes.length - 1, i));
+    scenes.forEach((s, k) => s.hidden = k !== at);
+    steps.querySelectorAll("button").forEach((b, k) => b.setAttribute("aria-current", k === at ? "step" : "false"));
+    document.getElementById("back").disabled = at === 0;
+    document.getElementById("next").textContent = at === scenes.length - 1 ? "Start over" : "Next";
+    drawAll();
+  }
+  document.getElementById("back").onclick = () => go(at - 1);
+  document.getElementById("next").onclick = () => go(at === scenes.length - 1 ? 0 : at + 1);
+
+  // Scene 1: gene and chain
+  const CODE = { ATG: "Met", GGA: "Gly", AGA: "Arg", CTG: "Leu", TTT: "Phe" };
+  let siamese = false;
+  function gene() {
+    const trips = ["ATG", siamese ? "AGA" : "GGA", "CTG", "TTT"];
+    const dna = document.getElementById("dna"), chain = document.getElementById("chain");
+    dna.innerHTML = ""; chain.innerHTML = "";
+    trips.forEach((t, i) => {
+      const d = document.createElement("div");
+      d.className = "trip" + (i === 1 && siamese ? " changed" : "");
+      d.innerHTML = `<span>${[...t].map((b, j) => `<span class="b${i === 1 && j === 0 && siamese ? " hot" : ""}">${b}</span>`).join("")}</span><small>${CODE[t]}</small>`;
+      dna.append(d);
+      const a = document.createElement("span");
+      a.className = "aa" + (i === 1 && siamese ? " changed" : "");
+      a.textContent = CODE[t];
+      chain.append(a);
+      if (i < trips.length - 1) { const s = document.createElement("span"); s.textContent = "–"; chain.append(s); }
+    });
+    document.getElementById("g-solid").setAttribute("aria-pressed", String(!siamese));
+    document.getElementById("g-siam").setAttribute("aria-pressed", String(siamese));
+  }
+  document.getElementById("g-solid").onclick = () => { siamese = false; gene(); };
+  document.getElementById("g-siam").onclick = () => { siamese = true; gene(); };
+
+  // Scene 2: protein vs temperature
+  const temp = document.getElementById("temp");
+  let t0 = performance.now();
+  function protein(now) {
+    const svg = document.getElementById("protein");
+    const T = +temp.value, works = T < 33;
+    document.getElementById("temp-out").textContent = T + " °C";
+    const st = document.getElementById("temp-state");
+    st.className = "state " + (works ? "on" : "off");
+    st.textContent = works ? "Protein works: pigment is made, fur grows dark" : "Protein falls apart: no pigment, fur stays cream";
+    const ph = (now - t0) / 1000, shake = works ? 0 : (T - 32) * 1.6;
+    let beads = "";
+    for (let i = 0; i < 12; i++) {
+      const ang = i / 12 * Math.PI * 2;
+      const r = works ? 52 : 52 + (i % 3) * 18;
+      const x = 160 + Math.cos(ang) * r + Math.sin(ph * 9 + i) * shake;
+      const y = 105 + Math.sin(ang) * (works ? 40 : 60) + Math.cos(ph * 7 + i * 2) * shake;
+      beads += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9" fill="${i === 4 ? css("--warm") : css("--cream")}" stroke="${css("--point")}" stroke-width="1.5"/>`;
+    }
+    let dots = "";
+    if (works) for (let i = 0; i < 6; i++) {
+      const k = ((ph * 0.6 + i / 6) % 1);
+      dots += `<circle cx="${(160 + 70 + k * 70).toFixed(1)}" cy="${(105 - 20 + Math.sin(i * 2) * 25).toFixed(1)}" r="5" fill="${css("--point")}" opacity="${(1 - k).toFixed(2)}"/>`;
+    }
+    svg.innerHTML = `<text x="160" y="20" text-anchor="middle" font-size="13" fill="${css("--muted")}">Pigment-making protein (Arg bead in orange)</text>${beads}${dots}
+      <text x="160" y="205" text-anchor="middle" font-size="14" font-weight="700" fill="${works ? css("--ok") : css("--warm")}">${works ? "Folded: makes dark pigment" : "Unfolded: makes no pigment"}</text>`;
+  }
+  temp.addEventListener("input", () => protein(performance.now()));
+
+  // Scene 3: the whole cat
+  const PARTS = [["Ear", 28], ["Face", 30], ["Paw", 28], ["Tail tip", 27], ["Upper leg", 34], ["Back", 36], ["Belly", 36]];
+  const room = document.getElementById("room");
+  function cat() {
+    const off = +room.value;
+    document.getElementById("room-out").textContent = off === 0 ? "Normal room" : off < 0 ? `Cooler room: skin ${-off} °C cooler` : `Warmer room: skin ${off} °C warmer`;
+    const tempOf = name => PARTS.find(p => p[0] === name)[1] + off;
+    const fur = name => tempOf(name) < 33 ? css("--point") : css("--cream");
+    const s = css("--muted");
+    const svg = document.getElementById("cat");
+    svg.innerHTML = `
+      <ellipse cx="300" cy="120" rx="48" ry="9" fill="${fur("Tail tip")}" stroke="${s}"/>
+      <rect x="95" y="150" width="20" height="40" fill="${fur("Upper leg")}" stroke="${s}"/>
+      <rect x="215" y="150" width="20" height="40" fill="${fur("Upper leg")}" stroke="${s}"/>
+      <ellipse cx="105" cy="192" rx="16" ry="8" fill="${fur("Paw")}" stroke="${s}"/>
+      <ellipse cx="225" cy="192" rx="16" ry="8" fill="${fur("Paw")}" stroke="${s}"/>
+      <ellipse cx="170" cy="125" rx="100" ry="42" fill="${fur("Back")}" stroke="${s}"/>
+      <ellipse cx="170" cy="150" rx="70" ry="14" fill="${fur("Belly")}" stroke="none" opacity=".9"/>
+      <polygon points="52,52 62,20 78,50" fill="${fur("Ear")}" stroke="${s}"/>
+      <polygon points="82,50 98,20 106,54" fill="${fur("Ear")}" stroke="${s}"/>
+      <ellipse cx="80" cy="82" rx="38" ry="35" fill="${fur("Back")}" stroke="${s}"/>
+      <ellipse cx="80" cy="90" rx="24" ry="22" fill="${fur("Face")}" stroke="none"/>
+      <ellipse cx="70" cy="82" rx="5" ry="4" fill="${css("--eye")}"/><ellipse cx="90" cy="82" rx="5" ry="4" fill="${css("--eye")}"/>`;
+    document.getElementById("parts").innerHTML = PARTS.map(([n]) => {
+      const T = tempOf(n), dark = T < 33;
+      return `<tr><td>${n}</td><td>${T} °C</td><td><span class="dot" style="background:${dark ? css("--point") : css("--cream")}"></span>${dark ? "dark" : "cream"}</td></tr>`;
+    }).join("");
+  }
+  room.addEventListener("input", cat);
+
+  function drawAll() { gene(); protein(performance.now()); cat(); }
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function loop(now) { if (at === 1 && !reduce) protein(now); requestAnimationFrame(loop); }
+  go(0);
+  requestAnimationFrame(loop);
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawAll);
+  new MutationObserver(drawAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+})();
+</script>

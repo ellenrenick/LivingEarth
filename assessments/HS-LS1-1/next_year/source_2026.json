@@ -1,0 +1,739 @@
+{
+ "csa_questions": [
+  {
+   "id": 14395985,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": null,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:05:56Z",
+   "question_name": "Part 1: Vocabulary Matching",
+   "question_type": "text_only_question",
+   "question_text": "<h3>Part 1: Vocabulary Matching</h3>",
+   "points_possible": 0,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "",
+   "answers": [],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395986,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492898,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:05:57Z",
+   "question_name": "Part 1: Vocabulary Matching",
+   "question_type": "matching_question",
+   "question_text": "<p>Match each term with its best definition. Some definitions will not be used.</p>",
+   "points_possible": 0.8,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "",
+   "answers": [
+    {
+     "id": 4535,
+     "text": "DNA",
+     "left": "DNA",
+     "right": "The molecule in a cell that stores the instructions for building proteins, shaped like a twisted ladder",
+     "comments": "",
+     "comments_html": "",
+     "match_id": 3924
+    },
+    {
+     "id": 430,
+     "text": "Nucleotide",
+     "left": "Nucleotide",
+     "right": "One of the repeating building blocks of DNA, made of a sugar, a phosphate, and a base",
+     "comments": "",
+     "comments_html": "",
+     "match_id": 2252
+    },
+    {
+     "id": 1567,
+     "text": "Gene",
+     "left": "Gene",
+     "right": "A section of DNA that holds the instructions for one protein",
+     "comments": "",
+     "comments_html": "",
+     "match_id": 8677
+    },
+    {
+     "id": 2945,
+     "text": "Base sequence",
+     "left": "Base sequence",
+     "right": "The order of the bases (A, T, C, G) along a strand of DNA",
+     "comments": "",
+     "comments_html": "",
+     "match_id": 1821
+    },
+    {
+     "id": 5617,
+     "text": "Amino acid",
+     "left": "Amino acid",
+     "right": "One of the small building blocks that are linked in a chain to make a protein",
+     "comments": "",
+     "comments_html": "",
+     "match_id": 9742
+    },
+    {
+     "id": 7835,
+     "text": "Protein",
+     "left": "Protein",
+     "right": "A large molecule made of a chain of amino acids that carries out jobs for the cell",
+     "comments": "",
+     "comments_html": "",
+     "match_id": 2354
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": [
+    {
+     "text": "The molecule in a cell that stores the instructions for building proteins, shaped like a twisted ladder",
+     "match_id": 3924
+    },
+    {
+     "text": "One of the repeating building blocks of DNA, made of a sugar, a phosphate, and a base",
+     "match_id": 2252
+    },
+    {
+     "text": "A section of DNA that holds the instructions for one protein",
+     "match_id": 8677
+    },
+    {
+     "text": "The order of the bases (A, T, C, G) along a strand of DNA",
+     "match_id": 1821
+    },
+    {
+     "text": "One of the small building blocks that are linked in a chain to make a protein",
+     "match_id": 9742
+    },
+    {
+     "text": "A large molecule made of a chain of amino acids that carries out jobs for the cell",
+     "match_id": 2354
+    },
+    {
+     "text": "A group of similar cells that work together to do a specific job",
+     "match_id": 844
+    },
+    {
+     "text": "The process by which a cell divides to make two new cells",
+     "match_id": 1512
+    }
+   ],
+   "matching_answer_incorrect_matches": "A group of similar cells that work together to do a specific job\nThe process by which a cell divides to make two new cells"
+  },
+  {
+   "id": 14395987,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": null,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:05:58Z",
+   "question_name": "Part 2: Multiple Choice",
+   "question_type": "text_only_question",
+   "question_text": "<h3>Part 2: Multiple Choice</h3>",
+   "points_possible": 0,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "",
+   "answers": [],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395988,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492899,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:05:58Z",
+   "question_name": "MC 1 (DOK 2)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>A student builds a model of DNA from paper and pipe cleaners. Which set of features must her model show to represent DNA <strong>correctly</strong>?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>DNA is a double helix built from nucleotides. Each nucleotide has a sugar, a phosphate, and a base. Amino acids make up proteins, not DNA.</p>",
+   "answers": [
+    {
+     "id": 3152,
+     "text": "",
+     "html": "A single straight strand made of amino acids joined together",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 4577,
+     "text": "",
+     "html": "A ball-shaped molecule made of phosphate groups with no bases",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 4520,
+     "text": "",
+     "html": "Two strands twisted together, each made only of sugar molecules",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 8726,
+     "text": "",
+     "html": "Two strands twisted into a double helix, built from repeating nucleotides, each with a sugar, a phosphate, and a base",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395989,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492900,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:05:59Z",
+   "question_name": "MC 2 (DOK 2)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>The code table below shows the amino acid that each DNA triplet (three bases in a row) calls for.</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>DNA triplet</th><th>Amino acid</th><th>DNA triplet</th><th>Amino acid</th></tr><tr><td>ATG</td><td>Met</td><td>GAG</td><td>Glu</td></tr><tr><td>CTG</td><td>Leu</td><td>GTG</td><td>Val</td></tr><tr><td>TTT</td><td>Phe</td><td>GAC</td><td>Asp</td></tr><tr><td>CCT</td><td>Pro</td><td>GGC</td><td>Gly</td></tr></tbody></table><p>A gene has the base sequence <strong>ATG CTG TTT CCT</strong>. Which chain of amino acids will be built from this gene?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>The triplets are read in order from the start: ATG = Met, CTG = Leu, TTT = Phe, CCT = Pro. The base sequence sets the amino acid order.</p>",
+   "answers": [
+    {
+     "id": 2690,
+     "text": "",
+     "html": "Met – Phe – Leu – Pro",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 3780,
+     "text": "",
+     "html": "Met – Leu – Phe – Pro",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    },
+    {
+     "id": 6224,
+     "text": "",
+     "html": "Met – Leu – Phe – Gly",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 2276,
+     "text": "",
+     "html": "Pro – Phe – Leu – Met",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395990,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492901,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:00Z",
+   "question_name": "MC 3 (DOK 2)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>Use the code table.</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>DNA triplet</th><th>Amino acid</th><th>DNA triplet</th><th>Amino acid</th></tr><tr><td>ATG</td><td>Met</td><td>GAG</td><td>Glu</td></tr><tr><td>CTG</td><td>Leu</td><td>GTG</td><td>Val</td></tr><tr><td>TTT</td><td>Phe</td><td>GAC</td><td>Asp</td></tr><tr><td>CCT</td><td>Pro</td><td>GGC</td><td>Gly</td></tr></tbody></table><p>A gene normally reads <strong>ATG GAG GAC</strong>. In one person, a single base changes and the gene reads <strong>ATG GTG GAC</strong>. Which statement <strong>best</strong> describes the effect?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>GAG calls for Glu and GTG calls for Val. One changed base changed one amino acid. A different amino acid chain can fold or work differently.</p>",
+   "answers": [
+    {
+     "id": 1107,
+     "text": "",
+     "html": "The second amino acid in the chain changes from Glu to Val, so the protein that is built is different and may work differently.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    },
+    {
+     "id": 6592,
+     "text": "",
+     "html": "All three amino acids change, because one base change affects the whole chain.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 1853,
+     "text": "",
+     "html": "The protein is exactly the same, because only one base changed.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 666,
+     "text": "",
+     "html": "No protein is built, because every change in DNA stops protein building.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395991,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492902,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:01Z",
+   "question_name": "MC 4 (DOK 2)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>A student compares a cell to a kitchen. The recipe book is kept safe on a shelf and never leaves it. The cook makes a copy of one recipe, takes the copy to the counter, and follows it to make a dish.</p><p>Which statement <strong>best</strong> matches this to how a cell uses a gene?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>A gene's message is copied and the copy is read to build the amino acid chain. This keeps the original DNA safe.</p>",
+   "answers": [
+    {
+     "id": 913,
+     "text": "",
+     "html": "The amino acids are copied, and the copies are read to build DNA.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 5108,
+     "text": "",
+     "html": "The whole DNA molecule leaves the nucleus and is taken apart to make a protein.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 9985,
+     "text": "",
+     "html": "The gene's message is copied, and the copy is read to link amino acids into a protein; the DNA itself stays protected in the nucleus.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    },
+    {
+     "id": 75,
+     "text": "",
+     "html": "The protein is copied into new DNA, which is then read.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395992,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492903,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:02Z",
+   "question_name": "MC 5 (DOK 3)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>A biologist studies two types of cells from the same person. Each type of cell contains genes 1, 2, and 3. She measures which proteins each type of cell makes:</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>Cell type</th><th>Genes in the cell</th><th>Proteins the cell makes</th></tr><tr><td>Type X</td><td>1, 2, 3</td><td>Protein 1, Protein 2</td></tr><tr><td>Type Y</td><td>1, 2, 3</td><td>Protein 2, Protein 3</td></tr></tbody></table><p>Which explanation <strong>best</strong> accounts for the data?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>Every cell has the same genes, but cells use different genes. The proteins a cell makes give it its specialized job.</p>",
+   "answers": [
+    {
+     "id": 4231,
+     "text": "",
+     "html": "Both types of cells have all the genes, but each type uses a different set of genes to build proteins, so each type has different proteins that do different jobs.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    },
+    {
+     "id": 2718,
+     "text": "",
+     "html": "Type Y lost gene 1 and Type X lost gene 3, so they cannot make the other proteins.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 2202,
+     "text": "",
+     "html": "Type X and Type Y must have different DNA, because they make different proteins.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 5778,
+     "text": "",
+     "html": "Proteins in a cell are made without using DNA, so DNA does not affect cell jobs.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395993,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492904,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:03Z",
+   "question_name": "MC 6 (DOK 2)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>Which statement <strong>best</strong> describes the relationship among DNA, proteins, and the functions of a cell?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>DNA stores instructions, the base sequence determines the amino acid sequence, and proteins do the work of the cell.</p>",
+   "answers": [
+    {
+     "id": 6726,
+     "text": "",
+     "html": "Proteins determine the base sequence of DNA, and DNA carries out jobs for the cell.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 5585,
+     "text": "",
+     "html": "DNA and proteins are the same molecule found in two different places.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 493,
+     "text": "",
+     "html": "DNA carries out most jobs in a cell, and proteins store the instructions for DNA.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 2597,
+     "text": "",
+     "html": "DNA holds the instructions; those instructions determine the amino acid order of proteins, and the proteins carry out jobs for the cell.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395994,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492905,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:04Z",
+   "question_name": "MC 7 (DOK 3)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>Doctors study a condition caused by a single base change in one gene. They test three groups of people:</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>Group</th><th>Gene version in the DNA</th><th>Protein made</th><th>Health effect</th></tr><tr><td>1</td><td>Normal</td><td>Works normally</td><td>No symptoms</td></tr><tr><td>2</td><td>Single base changed</td><td>One amino acid is different; the protein works poorly</td><td>Serious symptoms</td></tr><tr><td>3</td><td>Normal</td><td>Works normally</td><td>No symptoms</td></tr></tbody></table><p>Which conclusion is <strong>best supported</strong> by the data?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>The data link DNA to protein to body effect: the changed DNA built a different protein, which did not work well, and the person had symptoms.</p>",
+   "answers": [
+    {
+     "id": 3098,
+     "text": "",
+     "html": "The protein changed first, and that caused the DNA to change.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 7507,
+     "text": "",
+     "html": "A change in the DNA changed the amino acid chain, which changed how the protein works, and that affected the body.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    },
+    {
+     "id": 2159,
+     "text": "",
+     "html": "Any change in a person's DNA causes symptoms.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 4531,
+     "text": "",
+     "html": "The symptoms are caused by the protein, not by the DNA, because DNA has no effect on proteins.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395995,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492906,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:06Z",
+   "question_name": "MC 8 (DOK 3)",
+   "question_type": "multiple_choice_question",
+   "question_text": "<p>A student claims, “Whenever a base in a gene changes, the cell's protein will stop working.” A scientist records three different single-base changes in the same gene:</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>Change</th><th>Amino acid chain</th><th>Protein works?</th></tr><tr><td>A</td><td>Same as the normal chain</td><td>Yes</td></tr><tr><td>B</td><td>One amino acid is different</td><td>Yes</td></tr><tr><td>C</td><td>One amino acid is different</td><td>No</td></tr></tbody></table><p>Which statement <strong>best</strong> evaluates the student's claim?</p>",
+   "points_possible": 0.2667,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p>Changes A and B left the protein working, so a base change does not always stop it. What matters is whether the amino acid chain changes and how.</p>",
+   "answers": [
+    {
+     "id": 9434,
+     "text": "",
+     "html": "The claim is supported, because all three changes affect the protein.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 9319,
+     "text": "",
+     "html": "The data cannot be used, because DNA never changes the protein.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    },
+    {
+     "id": 487,
+     "text": "",
+     "html": "The claim is not supported: a base change can leave the protein unchanged or change it only slightly, and only some changes stop it from working.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 100.0
+    },
+    {
+     "id": 911,
+     "text": "",
+     "html": "The claim is supported, because change C stops the protein.",
+     "comments": "",
+     "comments_html": "",
+     "weight": 0.0
+    }
+   ],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395996,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": null,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:07Z",
+   "question_name": "Part 3: Free Response",
+   "question_type": "text_only_question",
+   "question_text": "<h3>Part 3: Free Response</h3>",
+   "points_possible": 0,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "",
+   "answers": [],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395997,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492907,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:07Z",
+   "question_name": "Free response 1 (DOK 3)",
+   "question_type": "essay_question",
+   "question_text": "<p>A gene makes a protein that helps a cell move water. Doctors compare the DNA of a healthy person and a person with a condition that affects breathing.</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>DNA triplet</th><th>Amino acid</th><th>DNA triplet</th><th>Amino acid</th></tr><tr><td>ATG</td><td>Met</td><td>GAG</td><td>Glu</td></tr><tr><td>CTG</td><td>Leu</td><td>GTG</td><td>Val</td></tr><tr><td>TTT</td><td>Phe</td><td>GAC</td><td>Asp</td></tr><tr><td>CCT</td><td>Pro</td><td>GGC</td><td>Gly</td></tr></tbody></table><table border=\"1\" cellpadding=\"4\"><tbody><tr><th></th><th>Healthy person</th><th>Person with the condition</th></tr><tr><td>Base sequence of the gene</td><td>ATG CTG GAG GAC</td><td>ATG CTG GTG GAC</td></tr><tr><td>Protein works?</td><td>Yes</td><td>No (too little water moves)</td></tr></tbody></table><p>Write an explanation using <strong>Claim, Evidence, and Reasoning</strong>:</p><ol><li><strong>Claim:</strong> Explain how the DNA difference caused the condition.</li><li><strong>Evidence:</strong> Use at least <strong>two</strong> pieces of data from the tables.</li><li><strong>Reasoning:</strong> Explain how the base sequence of a gene is copied and read to build an amino acid chain, how the change affects that chain, and how a different protein can change what a cell can do.</li></ol>",
+   "points_possible": 0.5333,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p><strong>4-point scoring rubric</strong></p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>Score</th><th>Level</th><th>Descriptor</th></tr><tr><td><strong>4</strong></td><td>Advanced</td><td>Accurate claim that the single base change altered the amino acid chain, producing a protein that does not work, which led to the condition. Cites at least two accurate data points (the sequences differ at one triplet, GAG versus GTG; the amino acid changes from Glu to Val; the protein does not work). Reasoning describes copy-then-read from gene to amino acid chain, links the base sequence to the amino acid order, and explains that a different chain can make a protein that works differently so the cell cannot do its job.</td></tr><tr><td><strong>3</strong></td><td>Proficient</td><td>Accurate claim and two accurate data points. Reasoning links the base change to a different amino acid and to a protein that works differently, but leaves out one piece (for example, copy-then-read, or how the protein affects the cell).</td></tr><tr><td><strong>2</strong></td><td>Developing</td><td>Claim is partly correct (for example, \"the DNA is different\") without linking to the protein. One data point or inaccurate use of data. Reasoning is vague.</td></tr><tr><td><strong>1</strong></td><td>Beginning</td><td>Claim is wrong or missing. Little or no data. Reasoning shows a major misconception (for example, the protein changes the DNA).</td></tr><tr><td><strong>0</strong></td><td>No response</td><td>Blank or off-topic.</td></tr></tbody></table><p><strong>Grading notes</strong></p><ul><li>Key data: GAG (Glu) in the healthy gene versus GTG (Val) in the other; all other triplets are the same; the protein works in one and not in the other.</li><li>Look for the idea of copy-then-read, and a link such as base sequence determines amino acid order, which determines the protein.</li><li>Do not require the names mRNA, tRNA, ribosome, or any steps of protein synthesis; they are outside the HS-LS1-1 assessment boundary.</li><li>Do not require the 3-D shape of the protein or its exact function; both are outside the boundary.</li><li>Common misconception: a protein can change DNA, or DNA does the work of the cell.</li></ul><p><strong>Exemplar (score 4):</strong> The condition happens because one base in the gene changed, which changed one amino acid in the protein so that it no longer works. The healthy gene reads ATG CTG GAG GAC and the other reads ATG CTG GTG GAC; the third triplet changed from GAG, which calls for Glu, to GTG, which calls for Val, and the protein no longer works. A cell copies the message of a gene and reads the copy to link amino acids in order, so the base sequence sets the amino acid order. When one amino acid is different, the chain can build a protein that works differently. Here the protein cannot move enough water, so the cell cannot do its job and the person has symptoms.</p><p><em>Scale: this question is worth 0.5333 point(s) in Canvas. A score of 4 earns all of the points, 3 earns three-fourths, 2 half, 1 one-fourth, and 0 none.</em></p>",
+   "answers": [],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  },
+  {
+   "id": 14395998,
+   "quiz_id": 1571284,
+   "position": null,
+   "assessment_question_id": 13492908,
+   "quiz_group_id": null,
+   "created_at": "2026-10-21T15:06:08Z",
+   "question_name": "Free response 2 (DOK 3)",
+   "question_type": "essay_question",
+   "question_text": "<p>A student says, “If all my cells have the same DNA, then all my cells must do the same job.” A teacher shows her this data about two types of cells from one person:</p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th></th><th>Cell type P</th><th>Cell type Q</th></tr><tr><td>Genes in the cell (DNA)</td><td>Genes 1, 2, 3, 4</td><td>Genes 1, 2, 3, 4</td></tr><tr><td>Proteins the cell makes</td><td>Proteins 1 and 2</td><td>Proteins 3 and 4</td></tr><tr><td>Main job</td><td>Carries signals</td><td>Squeezes to move the body</td></tr></tbody></table><ol><li><strong>Evaluate</strong> the student's statement using at least two pieces of data.</li><li><strong>Explain</strong> how the DNA, through proteins, gives these two types of cells different jobs.</li><li><strong>Predict</strong> what would happen to the job of Cell type Q if the gene for Protein 3 had a base change that stopped Protein 3 from working. Explain your prediction.</li></ol>",
+   "points_possible": 0.5331,
+   "correct_comments": "",
+   "incorrect_comments": "",
+   "neutral_comments": "",
+   "correct_comments_html": "",
+   "incorrect_comments_html": "",
+   "neutral_comments_html": "<p><strong>4-point scoring rubric</strong></p><table border=\"1\" cellpadding=\"4\"><tbody><tr><th>Score</th><th>Level</th><th>Descriptor</th></tr><tr><td><strong>4</strong></td><td>Advanced</td><td>Evaluates the statement correctly: the first part is supported (same genes) but the conclusion is not (different jobs), citing at least two data points. Explains that the cells use different genes, so they build different proteins that carry out different jobs. Predicts that Cell type Q would not do its job well or would lose it, linking the changed gene to the changed protein and then to the job.</td></tr><tr><td><strong>3</strong></td><td>Proficient</td><td>Evaluates correctly with two data points. Explains that different genes lead to different proteins and jobs. Prediction is correct but the link from gene to protein to job is thin.</td></tr><tr><td><strong>2</strong></td><td>Developing</td><td>Partially evaluates (for example, says the student is wrong without evidence). Explanation says cells have different DNA, or says different proteins without linking to the genes used. Prediction is vague.</td></tr><tr><td><strong>1</strong></td><td>Beginning</td><td>Repeats the student's statement or shows a major misconception (for example, each cell has different DNA). Little evidence.</td></tr><tr><td><strong>0</strong></td><td>No response</td><td>Blank or off-topic.</td></tr></tbody></table><p><strong>Grading notes</strong></p><ul><li>Key data: both cells have genes 1 to 4; P makes proteins 1 and 2, Q makes proteins 3 and 4; the jobs differ.</li><li>The idea to look for: same DNA, different genes used, different proteins, different jobs.</li><li>Do not require names of real cell types, tissues, or body systems; they are outside the HS-LS1-1 assessment boundary.</li><li>Common misconception: cells that do different jobs have different DNA.</li></ul><p><strong>Exemplar (score 4):</strong> The student is right that the cells have the same DNA, since both have genes 1, 2, 3, and 4, but she is wrong that they must do the same job. Cell type P makes Proteins 1 and 2 and carries signals, while Cell type Q makes Proteins 3 and 4 and squeezes to move the body. Each cell uses a different set of genes, so each builds different proteins, and the proteins carry out each cell's job. If the gene for Protein 3 had a base change that stopped Protein 3 from working, Cell type Q would not be able to do its job well, because the changed gene would make a protein that does not work and Q depends on that protein.</p><p><em>Scale: this question is worth 0.5331 point(s) in Canvas. A score of 4 earns all of the points, 3 earns three-fourths, 2 half, 1 one-fourth, and 0 none.</em></p>",
+   "answers": [],
+   "variables": null,
+   "formulas": null,
+   "answer_tolerance": null,
+   "formula_decimal_places": null,
+   "matches": null,
+   "matching_answer_incorrect_matches": null
+  }
+ ],
+ "Review LS1-1.1": {
+  "name": "Review LS1-1.1: Describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins (Mastery Path)",
+  "description": "<div style=\"background:#eef5fb;border-left:4px solid #2b6cb0;padding:10px 14px\"><p><strong>Learning target LS1-1.1:</strong> I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins.</p></div><p>Your goal on every CFA is at least a 3. Your CFA score was below a 3, so this review is for you. Work through the questions, check your answers, then submit your answers.</p><h3>DNA and genes</h3><p>Describe DNA and what it does.</p><ol><li>What shape is DNA, and what are the three parts of a nucleotide?<details><summary>Check your answer</summary><p>A double helix (twisted ladder). A nucleotide has a sugar, a phosphate, and a base.</p></details></li><li>Name the four bases.<details><summary>Check your answer</summary><p>A, T, C, and G.</p></details></li><li>What do the instructions in a gene tell the cell to build?<details><summary>Check your answer</summary><p>A protein.</p></details></li><li>True or false: Proteins hold the instructions and DNA does the jobs. Explain.<details><summary>Check your answer</summary><p>False. DNA holds the instructions, and proteins do the jobs for the cell.</p></details></li></ol>"
+ },
+ "Review LS1-1.2": {
+  "name": "Review LS1-1.2: Describe how a gene's message is copied and read to build a chain of amino acids (Mastery Path)",
+  "description": "<div style=\"background:#eef5fb;border-left:4px solid #2b6cb0;padding:10px 14px\"><p><strong>Learning target LS1-1.2:</strong> I can describe how a gene's message is copied and read to build a chain of amino acids.</p></div><p>Your goal on every CFA is at least a 3. Your CFA score was below a 3, so this review is for you. Work through the questions, check your answers, then submit your answers.</p><h3>From gene to amino acid chain</h3><p>Use the code table.</p><table border=\"1\" cellpadding=\"6\"><tbody><tr><th>DNA triplet</th><th>Amino acid</th><th>DNA triplet</th><th>Amino acid</th></tr><tr><td>ATG</td><td>Met</td><td>GAG</td><td>Glu</td></tr><tr><td>CTG</td><td>Leu</td><td>GTG</td><td>Val</td></tr><tr><td>TTT</td><td>Phe</td><td>GAC</td><td>Asp</td></tr><tr><td>CCT</td><td>Pro</td><td>GGC</td><td>Gly</td></tr></tbody></table><ol><li>Think of a recipe book (DNA) that stays on a shelf. A cook copies one recipe and follows the copy. Match each part to the cell: recipe book, one recipe, the copy, the dish.<details><summary>Check your answer</summary><p>DNA; a gene; the copy of the gene's message; the protein.</p></details></li><li>Put in order: (a) amino acids are linked in order, (b) the copy is read, (c) the gene's message is copied.<details><summary>Check your answer</summary><p>(c), then (b), then (a).</p></details></li><li>A gene reads ATG CTG TTT CCT. What amino acid chain is built?<details><summary>Check your answer</summary><p>Met, Leu, Phe, Pro.</p></details></li><li>A gene reads ATG GGC GAC. Write the chain.<details><summary>Check your answer</summary><p>Met, Gly, Asp.</p></details></li></ol>"
+ },
+ "Review LS1-1.3": {
+  "name": "Review LS1-1.3: Explain how changing one DNA base can change a protein and what it does (Mastery Path)",
+  "description": "<div style=\"background:#eef5fb;border-left:4px solid #2b6cb0;padding:10px 14px\"><p><strong>Learning target LS1-1.3:</strong> I can explain how changing one DNA base can change a protein and what it does.</p></div><p>Your goal on every CFA is at least a 3. Your CFA score was below a 3, so this review is for you. Work through the questions, check your answers, then submit your answers.</p><h3>What a base change can do</h3><p>Use the code table.</p><table border=\"1\" cellpadding=\"6\"><tbody><tr><th>DNA triplet</th><th>Amino acid</th><th>DNA triplet</th><th>Amino acid</th></tr><tr><td>ATG</td><td>Met</td><td>GAG</td><td>Glu</td></tr><tr><td>CTG</td><td>Leu</td><td>GTG</td><td>Val</td></tr><tr><td>TTT</td><td>Phe</td><td>GAC</td><td>Asp</td></tr><tr><td>CCT</td><td>Pro</td><td>GGC</td><td>Gly</td></tr></tbody></table><ol><li>A gene reads ATG GAG CTG. A base changes so it reads ATG GTG CTG. Write both amino acid chains.<details><summary>Check your answer</summary><p>Original: Met, Glu, Leu. Changed: Met, Val, Leu.</p></details></li><li>How many amino acids changed? Could this change how the protein works? Explain.<details><summary>Check your answer</summary><p>One amino acid changed (Glu to Val). A chain with a different amino acid can make a protein that works differently.</p></details></li><li>A student says, “Any change in a gene always stops the protein from working.” Use this evidence to respond: change A leaves the chain the same, change B alters one amino acid and the protein still works, change C alters one amino acid and the protein does not work.<details><summary>Check your answer</summary><p>Not every change matters. A and B did not stop the protein. What matters is whether the amino acid chain changes and how.</p></details></li></ol>"
+ },
+ "Review LS1-1.4": {
+  "name": "Review LS1-1.4: Explain how DNA, through proteins, gives different cells their different jobs (Mastery Path)",
+  "description": "<div style=\"background:#eef5fb;border-left:4px solid #2b6cb0;padding:10px 14px\"><p><strong>Learning target LS1-1.4:</strong> I can explain how DNA, through proteins, gives different cells their different jobs.</p></div><p>Your goal on every CFA is at least a 3. Your CFA score was below a 3, so this review is for you. Work through the questions, check your answers, then submit your answers.</p><h3>Same DNA, different jobs</h3><table border=\"1\" cellpadding=\"6\"><tbody><tr><th>Cell type</th><th>Genes in the cell</th><th>Proteins made</th><th>Job</th></tr><tr><td>P</td><td>1, 2, 3, 4</td><td>1 and 2</td><td>Carries signals</td></tr><tr><td>Q</td><td>1, 2, 3, 4</td><td>3 and 4</td><td>Squeezes to move the body</td></tr></tbody></table><ol><li>Do the two cell types have the same DNA? How do you know?<details><summary>Check your answer</summary><p>Yes. Both have genes 1 to 4.</p></details></li><li>Why do they make different proteins?<details><summary>Check your answer</summary><p>Each cell type uses a different set of genes.</p></details></li><li>Explain how DNA, through proteins, gives cell types P and Q different jobs.<details><summary>Check your answer</summary><p>Cell P uses genes 1 and 2 to build proteins 1 and 2 that carry signals; Cell Q uses genes 3 and 4 to build proteins 3 and 4 that squeeze. The proteins carry out each cell's job.</p></details></li><li>Predict: gene 3 has a change that stops Protein 3 from working. What happens to Cell Q's job?<details><summary>Check your answer</summary><p>Cell Q cannot do its job well, because it depends on Protein 3.</p></details></li></ol>"
+ },
+ "Review LS1-1.5": {
+  "name": "Review LS1-1.5: Use case data, like sickle cell, to explain how a DNA change affects the body (Mastery Path)",
+  "description": "<div style=\"background:#eef5fb;border-left:4px solid #2b6cb0;padding:10px 14px\"><p><strong>Learning target LS1-1.5:</strong> I can use case data, like sickle cell, to explain how a DNA change affects the body.</p></div><p>Your goal on every CFA is at least a 3. Your CFA score was below a 3, so this review is for you. Work through the questions, check your answers, then submit your answers.</p><h3>A case study</h3><table border=\"1\" cellpadding=\"6\"><tbody><tr><th>Person</th><th>Gene</th><th>Protein</th><th>Symptoms</th></tr><tr><td>1</td><td>Normal</td><td>Works</td><td>None</td></tr><tr><td>2</td><td>One base changed</td><td>One amino acid different; works poorly</td><td>Yes</td></tr></tbody></table><ol><li>Put these in order: (a) symptoms, (b) a base in the gene changes, (c) the protein works poorly, (d) a different amino acid in the chain.<details><summary>Check your answer</summary><p>(b), (d), (c), (a).</p></details></li><li>Use the table to explain how Person 2's DNA change led to symptoms.<details><summary>Check your answer</summary><p>A single base change altered one amino acid, so the protein works poorly; because the protein does not do its job, the person has symptoms.</p></details></li></ol>"
+ },
+ "lab": {
+  "name": "Gummy DNA Lab Sheet",
+  "description": "<h2>Today's slides</h2><p><iframe title=\"Day 3: LAB, build, copy, and read a gene (gummy DNA)\" src=\"https://docs.google.com/presentation/d/1xQ8vInixkGQ-GSjPvgjxy1tU0Km0WUFePmGom_Vc_Jw/embed?start=false&amp;loop=false&amp;delayms=3000\" width=\"960\" height=\"569\" style=\"max-width:100%;border:0\" allowfullscreen=\"allowfullscreen\" loading=\"lazy\"></iframe></p><p><a href=\"https://docs.google.com/presentation/d/1xQ8vInixkGQ-GSjPvgjxy1tU0Km0WUFePmGom_Vc_Jw/present\" target=\"_blank\">Open the slides full screen</a></p>\n<h2>Gummy DNA Lab: Build, Copy, and Read a Gene</h2>\n<p><strong>Name:</strong> ______________ &nbsp; <strong>Partner:</strong> ______________</p>\n<p><strong>Question:</strong> How does a cell's copy of a gene become a chain of amino acids, and what happens if one letter of DNA changes?</p>\n<p>You will build a short model of the start of a cat's gene for a pigment-making protein. (The letters are an illustration, not the real gene.)</p>\n<h3>Materials (per pair)</h3>\n<ul>\n<li>2 licorice strands (the backbone; the sugars and phosphates)</li>\n<li>Candy “bases”: 6 red (A), 6 yellow (T), 6 green (C), 6 orange (G) gummies, plus 2 extra of each color</li>\n<li>Toothpicks (to attach bases to the backbone and to hold pairs together)</li>\n<li>Paper plate or tray, this sheet, the code table</li>\n</ul>\n<p><strong>Safety:</strong> Keep materials clean. Do not eat the lab materials until your teacher says you may. Toothpicks are sharp. Tell your teacher about any food allergy. If candy is not used, use colored beads or paper circles.</p>\n<h3>Base key and code table</h3>\n<p>Red = A &nbsp; Yellow = T &nbsp; Green = C &nbsp; Orange = G</p>\n<table border=\"1\" cellpadding=\"6\"><tbody><tr><th>DNA triplet</th><th>Amino acid</th><th>DNA triplet</th><th>Amino acid</th></tr><tr><td>ATG</td><td>Met</td><td>AGA</td><td>Arg</td></tr><tr><td>GGA</td><td>Gly</td><td>CTG</td><td>Leu</td></tr><tr><td>TTT</td><td>Phe</td><td>GAC</td><td>Asp</td></tr></tbody></table>\n<h3>Part A: Build the template strand (6 min)</h3>\n<p>This is the strand of the gene that the cell uses as a template. Attach the bases to one licorice strand in order from left to right:</p>\n<p><strong>T A C &nbsp; C C T &nbsp; G A C &nbsp; A A A</strong></p>\n<p>Write the color order you built: ______________________________________________</p>\n<h3>Part B: Build the partner strand and make the ladder (8 min)</h3>\n<p>Build the partner strand on the second licorice strand by pairing each base (A with T, C with G). Write the partner sequence you built:</p>\n<p>_ _ _ &nbsp; _ _ _ &nbsp; _ _ _ &nbsp; _ _ _</p>\n<ol>\n<li>Join the two strands with toothpicks between pairs. Gently twist the ladder. Have your teacher check it before you continue. ☐ Checked</li>\n<li>Which strand carries the “coding” letters (the same as the cell's message copy)? How do you know?</li>\n</ol>\n<h3>Part C: Copy the message, then read it (10 min)</h3>\n<p>The cell does not use the DNA directly to make a protein. It <strong>copies the gene's message</strong> from the template strand, and then the <strong>copy is read</strong> to link amino acids. The DNA stays safe.</p>\n<ol>\n<li>Pull the two strands apart. Keep the template strand. Build a <em>new</em> strand by pairing with the template. This is the <strong>copy</strong>. Write its sequence: ___ ___ ___ ___</li>\n<li>Read the copy three letters at a time with the code table. Write the amino acid chain: ______ – ______ – ______ – ______</li>\n<li>Line up one bead or paper tag per amino acid on the plate in order. This chain would fold to make a protein.</li>\n<li>Explain the path in your own words, starting with the DNA: ______________________________________________</li>\n</ol>\n<h3>Part D: Change one letter (7 min)</h3>\n<ol>\n<li>On your template strand, replace the 4th base (the first C of the second triplet) with a T (swap a green gummy for a yellow one). The template now reads <strong>TAC TCT GAC AAA</strong>.</li>\n<li>Build the new copy by pairing with the changed template. Sequence: ___ ___ ___ ___</li>\n<li>Read it with the code table: ______ – ______ – ______ – ______</li>\n<li>Compare with Part C. How many amino acids changed? Which one?</li>\n<li>Predict: Could a protein built from this changed chain work differently? Explain.</li>\n</ol>\n<h3>Connect to the Siamese cat</h3>\n<ol>\n<li>In a Siamese cat, a one-letter change in the gene for a pigment-making protein swaps one amino acid. In your own words, what did your one-letter change do to the chain in the model?</li>\n<li>Name two ways your gummy model is different from real DNA.</li>\n</ol>\n<h3>Clean up</h3>\n<p>Put toothpicks and candy in the trash or the labeled container. Wipe your table. Wash your hands.</p>\n<h3>How this is scored (4 points)</h3><ul><li>4: complete and accurate</li><li>3: mostly complete, a few errors</li><li>2: partly complete or several errors</li><li>1: started</li></ul>",
+  "points_possible": 4.0
+ },
+ "Day 3 Teacher Plan: Gummy DNA Lab": {
+  "title": "Day 3 Teacher Plan: Gummy DNA Lab",
+  "body": "<p style=\"background:#fff3cd;padding:6px\"><strong>TEACHER PAGE.</strong> Includes answers. Do not share with students.</p>\n<h2>Day 3: Lab day, Build, Copy, and Read a Gene (gummy DNA)</h2>\n<p>This is the one hands-on lab and the one day on how a gene's message is copied and read. See the <strong>Teacher Key and Prep</strong> page for materials, timing, and answers, and the <strong>Lab Sheet</strong> assignment for students.</p>\n<ol><li>Intro (5): <em>Yesterday we saw a one-letter difference between a solid cat's gene and a Siamese cat's gene. Today we build a gene, watch how its message is copied and read, and change one letter ourselves.</em></li>\n<li>Lab, Parts A to D (about 29 min).</li>\n<li>CFA LS1-1.2 (6 min) and clean up.</li></ol>\n"
+ },
+ "Day 3 Teacher Key and Prep: Gummy DNA Lab": {
+  "title": "Day 3 Teacher Key and Prep: Gummy DNA Lab",
+  "body": "<p style=\"background:#fff3cd;padding:6px\"><strong>TEACHER PAGE.</strong> Includes answers. Do not share with students.</p>\n<h2>Day 3 Teacher Key: Gummy DNA Lab</h2>\n<table border=\"1\" cellpadding=\"6\"><tbody><tr><th>Targets</th><td>LS1-1.2 (priority): a gene's message is copied and the copy is read to build a chain of amino acids. Applies LS1-1.1 (DNA structure).</td></tr>\n<tr><th>Prep (15 min before class)</th><td>For each pair: 2 licorice strands (6 to 8 inches, such as Twizzlers or Red Vines), 24 candy bases (6 each of four colors, plus a few spare), a handful of toothpicks, a paper plate. Print the lab sheet and code table. If you cannot use food (gelatin, allergies, or policy), use colored beads and pipe cleaners or paper circles taped to paper strips.</td></tr>\n<tr><th>CFA</th><td>LS1-1.2 (6 minutes; if the lab runs long, give the CFA first and finish Part D at the start of Day 4)</td></tr></tbody></table>\n<h3>Timing (45 minutes)</h3>\n<ol><li>Intro and safety (5 min): the copy-then-read idea; show a pre-built strand.</li><li>Part A (6 min).</li><li>Part B (8 min).</li><li>Part C (10 min).</li><li>Part D (5 min).</li><li>Clean up and CFA (11 min).</li></ol>\n<h3>Answer key</h3>\n<ul>\n<li><strong>Part A</strong> (colors in order): yellow, red, green, green, green, yellow, orange, red, green, red, red, red.</li>\n<li><strong>Part B</strong> partner strand: A T G &nbsp; G G A &nbsp; C T G &nbsp; T T T. The partner strand has the coding letters; it matches the copy the cell makes from the template. Check each pair: A with T, C with G.</li>\n<li><strong>Part C</strong>: the copy (pairing with the template) is <strong>A T G G G A C T G T T T</strong>. Chain: <strong>Met – Gly – Leu – Phe</strong>. Explanation: the gene's message is copied from the template strand, and the copy is read three letters at a time to link amino acids in order.</li>\n<li><strong>Part D</strong>: the changed template TAC TCT GAC AAA gives the copy ATG AGA CTG TTT, which reads <strong>Met – Arg – Leu – Phe</strong>. One amino acid changed (the second, Gly to Arg). Yes, a different chain can fold into a protein that works differently.</li>\n<li><strong>Connect</strong>: (1) One amino acid in the chain changed, so the protein could work differently (in the Siamese cat, it stops working at warm temperatures). (2) Accept: candy versus molecules; the model is huge compared with real DNA; real nucleotides each have a sugar and phosphate and the strands twist; real genes are thousands of bases long.</li>\n</ul>\n<h3>Teaching notes</h3>\n<ul>\n<li>Teach copy-then-read only. Do not teach mRNA, tRNA, or ribosome mechanics (outside the assessment boundary). Say “the cell copies the gene's message.”</li>\n<li>Common mistakes: matching A with C or G; reading the template directly; not reading in groups of three from the start.</li>\n<li>Grade out of 12 (Part A 1, Part B 2, Part C 4, Part D 3, Connect 2), then divide by 3 to enter the 4-point score in Canvas.</li>\n</ul>\n"
+ }
+}
