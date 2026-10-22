@@ -1,0 +1,44 @@
+{
+ "course": 330720,
+ "module": 1646439,
+ "teacher_module": 1646440,
+ "assignments": {
+  "Day 1 Student Assignment: The Puppy Puzzle": 13951111,
+  "Day 2 Student Assignment: Mixing Information": 13951112,
+  "Unit 2.2 Review LS3-2.1: Three sources of variation (Mastery Path)": 13951114,
+  "Day 3 Student Assignment: Genetics Notes, Part 1: Genes and Alleles": 13951115,
+  "Day 4 Student Assignment: Genetics Notes, Part 2: Genotype, Phenotype, and Punnett Squares": 13951116,
+  "Day 5 Student Assignment: Monster Genetics, Part 1: Flip a Coin, Build a Monster": 13951117,
+  "Day 6 Student Assignment: Monster Genetics, Part 2: Predict the Baby": 13951118,
+  "Unit 2.2 Review LS3-2.2: Sex cells and fertilization (Mastery Path)": 13951121,
+  "Day 7 Student Assignment: When Copying Goes Wrong": 13951122,
+  "Unit 2.2 Review LS3-2.3: Copying errors and mutations (Mastery Path)": 13951125,
+  "Day 8 Student Assignment: Where Did This Variation Come From?": 13951126,
+  "Unit 2.2 Review LS3-2.4: Read data, make a claim (Mastery Path)": 13951128,
+  "Day 9 Student Assignment: Catch-Up Day: Reviews and Make-Up Work": 13951129,
+  "Day 10 Student Assignment: Defend Your Claim and Back to the Puppies": 13951130,
+  "Unit 2.2 Review LS3-2.5: Defend the claim (Mastery Path)": 13951132
+ },
+ "quizzes": {
+  "Unit 2.2 CFA LS3-2.1: Three sources of variation": 13951113,
+  "Unit 2.2 CFA LS3-2.2: Sex cells and fertilization": 13951119,
+  "Unit 2.2 CFA LS3-2.3: Copying errors and mutations": 13951124,
+  "Unit 2.2 CFA LS3-2.4: Read data, make a claim": 13951127,
+  "Unit 2.2 CFA LS3-2.5: Defend the claim": 13951131,
+  "Unit 2.2 CSA: Inherited Instructions (HS-LS3-2)": 13951133
+ },
+ "pages": {
+  "Day 1 Teacher Plan: The Puppy Puzzle": "day-1-teacher-plan-the-puppy-puzzle",
+  "Day 2 Teacher Plan: Mixing Information": "day-2-teacher-plan-mixing-information",
+  "Day 3 Teacher Plan: Genetics Notes, Part 1: Genes and Alleles": "day-3-teacher-plan-genetics-notes-part-1-genes-and-alleles",
+  "Day 4 Teacher Plan: Genetics Notes, Part 2: Genotype, Phenotype, and Punnett Squares": "day-4-teacher-plan-genetics-notes-part-2-genotype-phenotype-and-punnett-squares",
+  "Day 5 Teacher Plan: Monster Genetics, Part 1: Flip a Coin, Build a Monster": "day-5-teacher-plan-monster-genetics-part-1-flip-a-coin-build-a-monster",
+  "Day 6 Teacher Plan: Monster Genetics, Part 2: Predict the Baby": "day-6-teacher-plan-monster-genetics-part-2-predict-the-baby",
+  "Day 7 Teacher Plan: When Copying Goes Wrong": "day-7-teacher-plan-when-copying-goes-wrong",
+  "Day 8 Teacher Plan: Where Did This Variation Come From?": "day-8-teacher-plan-where-did-this-variation-come-from",
+  "Day 9 Teacher Plan: Catch-Up Day: Reviews and Make-Up Work": "day-9-teacher-plan-catch-up-day-reviews-and-make-up-work",
+  "Day 10 Teacher Plan: Defend Your Claim and Back to the Puppies": "day-10-teacher-plan-defend-your-claim-and-back-to-the-puppies",
+  "Day 11 Teacher Plan: Unit 2.2 CSA": "day-11-teacher-plan-unit-2-dot-2-csa",
+  "Unit 2.2 Overview and day-by-day plan": "unit-2-dot-2-overview-and-day-by-day-plan"
+ }
+}
