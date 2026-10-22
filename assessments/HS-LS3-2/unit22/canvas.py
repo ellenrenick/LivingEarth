@@ -107,7 +107,7 @@ def teacher_html(d, deck_id):
 
 
 def overview_html(decks):
-    rows = [[t[0], t[4], t[3], str(t[2])] for t in U.TARGETS]
+    rows = [[t[0], t[4], t[3], str(t[2])] for t in U.TARGETS if t[4] == "Priority"]
     days = []
     for d in U.DAYS:
         m = U.minutes(d)

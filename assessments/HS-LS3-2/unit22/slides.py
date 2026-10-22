@@ -364,13 +364,14 @@ def deck(day):
     # --- learning targets
     g = "tpl_targets"
     today = set(d["targets"])
-    lines = [f"{'★ ' if t_[0] in today else ''}{t_[0]}{' (supporting)' if t_[4] == 'Supporting' else ''}: {t_[3]}" for t_ in U.TARGETS]
+    shown = [t_ for t_ in U.TARGETS if t_[4] == "Priority" or t_[0] in today]  # supporting targets only on their own lessons
+    lines = [f"{'★ ' if t_[0] in today else ''}{t_[0]}{' (supporting)' if t_[4] == 'Supporting' else ''}: {t_[3]}" for t_ in shown]
     body = "\n".join(lines)
     reqs += [replace(g, "KICK", f"UNIT 2.2 · {U.STANDARD} · LEARNING TARGETS"), replace(g, "TITLE", "Learning targets"),
              replace(g, "EMO", "🎯"), replace(g, "FOOT", foot), replace(g, "BODY", body)]
     reqs.append(move(f"{g}_kick", 3.6, 0.36, 0.5, 0.27, kick_width(f"UNIT 2.2 · {U.STANDARD} · LEARNING TARGETS"), 0.36))
     start = 0
-    for line, t_ in zip(lines, U.TARGETS):
+    for line, t_ in zip(lines, shown):
         if t_[0] in today:
             reqs.append({"updateTextStyle": {"objectId": f"{g}_body", "textRange": {"type": "FIXED_RANGE", "startIndex": start, "endIndex": start + len(line)},
                                              "style": {"bold": True, "foregroundColor": {"opaqueColor": {"rgbColor": BLUE}}}, "fields": "bold,foregroundColor"}})

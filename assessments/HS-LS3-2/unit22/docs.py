@@ -96,7 +96,7 @@ def plan_doc():
     out = [f"# {U.UNIT}: {U.UNIT_NAME} ({U.STANDARD}) · day-by-day plan\n",
            f"**Anchoring phenomenon:** {U.MYSTERY}. {U.DRIVING_Q}\n", f"**Performance expectation:** {U.PE}\n",
            f"**Boundary:** {U.BOUNDARY}\n", "## Learning targets\n", "| Target | Tier | DOK | I can |", "| --- | --- | --- | --- |"]
-    out += [f"| {t[0]} | {t[4]} | {t[2]} | {t[3]} |" for t in U.TARGETS]
+    out += [f"| {t[0]} | {t[4]} | {t[2]} | {t[3]} |" for t in U.TARGETS if t[4] == "Priority"]
     out += ["\n## Days (LE Planner, Mon Nov 9 to Tue Dec 1)\n", "| Day | Date | Lesson | Targets | CFA | Student minutes |",
             "| --- | --- | --- | --- | --- | --- |"]
     for d in U.DAYS:

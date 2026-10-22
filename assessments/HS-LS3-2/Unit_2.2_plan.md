@@ -15,9 +15,6 @@
 | LS3-2.3 | Priority | 2 | I can explain how copying errors and things like UV light change genes, and when that change is inherited. |
 | LS3-2.4 | Priority | 3 | I can read data and make a claim, backed by that data, about what caused a genetic variation. |
 | LS3-2.5 | Priority | 3 | I can defend my claim against another explanation using the evidence. |
-| LS3-3.1 | Supporting | 1 | I can use a Punnett square to show the possible allele combinations from a cross. |
-| LS3-3.2 | Supporting | 2 | I can calculate the chance of each trait and compare it with real counts. |
-| LS3-3.3 | Supporting | 3 | I can use probability to explain how traits vary and spread in a population, including effects of environment. |
 
 ## Days (LE Planner, Mon Nov 9 to Tue Dec 1)
 
