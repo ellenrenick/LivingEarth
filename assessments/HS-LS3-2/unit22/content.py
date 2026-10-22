@@ -684,23 +684,24 @@ DAYS = [
     ),
     dict(
         day=10, date="Mon Nov 30", kind="lesson", title="Defend Your Claim and Back to the Puppies", targets=["LS3-2.5"],
-        cfa="LS3-2.5", focus="How do I defend my claim against another explanation?",
+        cfa=None, focus="How do I defend my claim against another explanation?",
         ready="Have ready: your notebook (with your Day 1 model), a pencil, and a Chromebook",
-        can=["defend a claim against another explanation using data", "fix my Day 1 model with all three sources of variation",
+        can=["finish my CFA reviews", "defend a claim against another explanation using data",
+             "fix my Day 1 model with all three sources of variation",
              "explain the puppy puzzle with evidence"],
         plan=["Reviews and make-up work", "How to defend a claim", "The new coat pattern", "Fix my Day 1 model",
-              "Write It: the puppy puzzle", "CFA LS3-2.5"],
+              "Write It: the puppy puzzle"],
         sections=[
             dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
-                 minutes=18, title="Do your reviews",
+                 minutes=20, title="Do your reviews",
                  body=["Open Canvas. In this order: 1. Any CFA review that opened for you, lowest target first (LS3-2.1 to "
                        "LS3-2.4). 2. Any missing CFA or Monster Genetics pages.",
                        "The CSA is tomorrow, and a review is the best way to get ready for it. Stop at the end of the work time: "
                        "the puppy puzzle wrap-up starts next."],
                  teacher="This is the main review block (Day 9 was a short catch-up day). Pull small groups by lowest target. Call "
-                         "time at 18 minutes."),
+                         "time at 20 minutes."),
             dict(nb="How to defend a claim", nbnote="Three steps and a worked example.", label="MINI-LESSON", who="WHOLE CLASS",
-                 minutes=3, title="How to defend a claim",
+                 minutes=4, title="How to defend a claim",
                  body=["A counterclaim is another explanation. To defend your claim: 1. Restate it. 2. Cite the data that "
                        "supports it. 3. Show why the other explanation does not fit the data.",
                        "Worked example (Day 8, Case 3): Claim: X-rays caused the extra mutations. Counterclaim: copying errors "
@@ -708,7 +709,7 @@ DAYS = [
                        "high-dose group had 25, so copying errors cannot explain the extra 22."],
                  frame=[f"A counterclaim is {B} explanation. To defend my claim I show why the {B} does not fit the data."],
                  bank=["another", "counterclaim"], teacher="Key: another; counterclaim."),
-            dict(nb="The new coat pattern", nbnote="Table and a defense.", label="CASE", who="WITH A PARTNER", minutes=3,
+            dict(nb="The new coat pattern", nbnote="Table and a defense.", label="CASE", who="WITH A PARTNER", minutes=4,
                  title="The new coat pattern", table=KENNELS,
                  body=["Claim: A chemical in Kennel A's water caused the new coat patterns.",
                        "Counterclaim: \"New patterns are just copying errors. Copying errors happen in every dog.\""],
@@ -718,7 +719,7 @@ DAYS = [
                  teacher="Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can "
                          "be at work (the standard says \"and/or\")."),
             dict(nb="Fix my Day 1 model", nbnote="Redraw with all three sources.", label="MYSTERY SOLVED", who="ON YOUR OWN",
-                 minutes=3, title="Fix your Day 1 model",
+                 minutes=4, title="Fix your Day 1 model",
                  body=["Redraw your Day 1 model. Check off each part as you add it:",
                        "☐ new combinations (sex cells and fertilization)  ☐ copying errors  ☐ mutations from the environment",
                        "☐ a note that only changes in eggs or sperm are inherited  ☐ the puppy traits"],
@@ -737,8 +738,8 @@ DAYS = [
              "Fix my model: all three sources plus the sex-cell note.",
              "Write It: claim: new combinations of alleles (plus copying errors and mutations); evidence: combination; reasoning: "
              "combination; environmental mutations; eggs or sperm."],
-        notes=["Monday is the main review block (Day 9, the early-out catch-up day, was short). The phenomenon wrap-up is kept short: 12 "
-               "minutes of activities, then the 6-minute CFA LS3-2.5. Below 4 of 5 opens the review.",
+        notes=["Monday is the main review block (Day 9, the early-out catch-up day, was short). The phenomenon wrap-up is kept to 15 "
+               "minutes. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.",
                "The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight."],
     ),
     dict(

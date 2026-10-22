@@ -1,6 +1,6 @@
 # HS-LS3-2 CFAs: Inherited Instructions
 
-One CFA per priority target (LS3-2.1 to LS3-2.5): 5 one-point auto-graded questions, taken from memory at the end of the lesson. Below a B (fewer than 4 of 5) opens that target's review (Mastery Path). Canvas shuffles questions and answer choices; the letters here follow this file.
+One CFA per target for LS3-2.1 to LS3-2.4 (none after Nov 19; LS3-2.5 is taught on Nov 30 and assessed on the CSA): 5 one-point auto-graded questions, taken from memory at the end of the lesson. Below a B (fewer than 4 of 5) opens that target's review (Mastery Path). Canvas shuffles questions and answer choices; the letters here follow this file.
 
 | CFA | Target | DOK | Given on |
 | --- | --- | --- | --- |
@@ -8,7 +8,6 @@ One CFA per priority target (LS3-2.1 to LS3-2.5): 5 one-point auto-graded questi
 | LS3-2.2 | I can describe how making sex cells and fertilization mix alleles into new combinations. | 2 | Day 6 (Tue Nov 17) |
 | LS3-2.3 | I can explain how copying errors and things like UV light change genes, and when that change is inherited. | 2 | Day 7 (Wed Nov 18) |
 | LS3-2.4 | I can read data and make a claim, backed by that data, about what caused a genetic variation. | 3 | Day 8 (Thu Nov 19) |
-| LS3-2.5 | I can defend my claim against another explanation using the evidence. | 3 | Day 10 (Mon Nov 30) |
 
 
 ## Unit 2.2 CFA LS3-2.1: Three sources of variation
@@ -237,55 +236,3 @@ A student claims the chemical caused mutations. Which statement best evaluates t
 | 3 | A | The mutation count goes up with the dose. The no-X-ray group shows the baseline from copying errors. |
 | 4 | C | Comparing an exposed group with an unexposed group shows whether the exposure changed the number of mutations. |
 | 5 | C | If the chemical caused mutations, the exposed group would have more. Both groups had 5. |
-
-
-## Unit 2.2 CFA LS3-2.5: Defend the claim
-
-**Target:** I can defend my claim against another explanation using the evidence.
-
-**Question 1.** Scientists counted puppies with a new coat pattern that neither parent had.
-
-| Kennel | Puppies checked | Puppies with a new coat pattern (in neither parent) |
-| --- | --- | --- |
-| A (chemical in the water) | 1,000 | 14 |
-| B (clean water) | 1,000 | 3 |
-
-One student claims the chemical caused the extra new patterns. Another says copying errors caused all of them. Which evidence best defends the first claim?
-
-- A. Both kennels had some puppies with a new coat pattern in them, so something about their DNA changed over time
-- B. Kennel A had 14 new patterns per 1,000 puppies, while Kennel B, with the same copying errors, had only 3
-- C. Copying errors happen in every dog, so they must be the reason for every new pattern in both kennels
-- D. Kennel B's puppies have the same parents' alleles as Kennel A's puppies, so the two kennels match
-
-**Question 2.** A student claims a puppy's new white patch came from a new combination of alleles. Which evidence would show this is **not** the best explanation?
-
-- A. Both parents carry the white-patch allele in their DNA
-- B. The puppy got one allele from each of its two parents
-- C. Other puppies in the litter have different coat patterns
-- D. The white-patch allele is found in neither parent
-
-**Question 3.** A student claims a mutation in a dog's skin cell caused its puppy's new trait. Which statement best defends against this claim?
-
-- A. Skin-cell mutations are not passed on, so the trait needs a change in a cell that makes eggs or sperm
-- B. Skin cells have no DNA in them, so a skin cell cannot have a mutation that would ever affect any puppy
-- C. Puppies get their traits only from their food, so no mutation in any cell can ever change a puppy's trait
-- D. A mutation in one skin cell is always copied into every egg or sperm that the dog makes later in life
-
-**Question 4.** True or false: To defend a claim, it is enough to restate the claim without citing any data.
-
-**Question 5.** Select the **TWO** statements that make a strong defense of a claim against a counterclaim.
-
-- A. It cites numbers from the data that support the claim
-- B. It explains why the other explanation does not fit the data
-- C. It says the claim is right because the student believes it is
-- D. It ignores the counterclaim and repeats the claim more loudly
-
-**Answer key**
-
-| Question | Answer | Why |
-| --- | --- | --- |
-| 1 | B | Copying errors should be about the same in both kennels. The extra patterns in Kennel A point to the chemical. |
-| 2 | D | A new combination can only use alleles the parents already have. An allele neither parent has must be a mutation. |
-| 3 | A | Only changes in cells that make eggs or sperm are inherited. |
-| 4 | False | False. A defense cites evidence and shows why another explanation does not fit it. |
-| 5 | A and B | A strong defense uses data and answers the other explanation. |

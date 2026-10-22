@@ -193,6 +193,7 @@ def canvas(course, decks_file):
         return quizzes[title]
 
     rules = api.v1("GET", "/mastery_paths/rules")
+    wanted_names = set()
     order, teacher_order = [], []  # (kind, title or content id, indent) / page urls
     for d in U.DAYS:
         day, deck_id = d["day"], decks[str(d["day"])]
@@ -205,6 +206,7 @@ def canvas(course, decks_file):
         teacher_order.append(page(f"Day {day} Teacher Plan: {d['title']}", teacher_html(d, deck_id))["url"])
         if d["cfa"]:
             q = cfa(d["cfa"])
+            wanted_names |= {Q.CFA_TITLE[d["cfa"]], f"{U.UNIT} Review {d['cfa']}: {U.TARGET[d['cfa']][1]} (Mastery Path)"}
             rev = assignment(f"{U.UNIT} Review {d['cfa']}: {U.TARGET[d['cfa']][1]} (Mastery Path)", R.REVIEWS[d["cfa"]], review=True)
             order += [("Assignment", int(q["id"]), 1), ("Assignment", rev["id"], 2)]
             body = {"trigger_assignment_id": int(q["id"]), "scoring_ranges": [
@@ -232,6 +234,16 @@ def canvas(course, decks_file):
             else:
                 api.v1("POST", f"/modules/{mod}/items", {"module_item": {**body, "position": pos, "indent": indent}})
 
+    # retire CFAs and reviews that the plan no longer has (sandbox only; the course assert is above)
+    stale = [a for n, a in asg.items() if n.startswith(f"{U.UNIT} Review ") and n not in wanted_names]
+    stale += [q for t, q in quizzes.items() if t.startswith(f"{U.UNIT} CFA ") and t not in wanted_names]
+    for a in stale:
+        for rule in [x for x in rules if x["trigger_assignment_id"] == int(a["id"])]:
+            api.v1("DELETE", f"/mastery_paths/rules/{rule['id']}")
+        api.v1("DELETE", f"/assignments/{int(a['id'])}")
+        print("retired", a.get("name") or a.get("title"))
+    asg = {n: a for n, a in asg.items() if a not in stale}
+    quizzes = {t: q for t, q in quizzes.items() if q not in stale}
     place(student_mod, order)
     place(teacher_mod, [("Page", u, 0) for u in teacher_order])
     print(f"Module {student_mod}: {len(order)} items; teacher module {teacher_mod}: {len(teacher_order)} pages")

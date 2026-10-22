@@ -126,24 +126,4 @@ REVIEWS = {
         "and your reasoning.",
         "Name one more piece of data that would help show a variation came from the environment and not a copying error.",
     ]),
-    "LS3-2.5": review("LS3-2.5", [
-        ("A counterclaim is another explanation",
-         "<p>A scientist who makes a claim has to answer other explanations. A counterclaim is another explanation for the same data.</p>"
-         + try_it("A student says X-rays caused extra mutations. Another says copying errors did. What is the second student's statement?",
-                  "A counterclaim.")),
-        ("Defend in three steps",
-         "<p>1. Restate your claim. 2. Cite the data that supports it. 3. Show why the other explanation does not fit the data.</p>"
-         + table(["Kennel", "Puppies checked", "New coat patterns"], ["A (chemical in water)", "1,000", "14"], ["B (clean water)", "1,000", "3"])
-         + try_it("Defend: the chemical caused the extra patterns, not copying errors.",
-                  "Kennel A had 14 per 1,000 and Kennel B had 3. Copying errors happen in both kennels at about the same rate, so they "
-                  "cannot explain the 11 extra patterns in Kennel A.")),
-        ("Check your defense",
-         "<p>A strong defense (1) cites numbers, (2) answers the counterclaim, and (3) does not just restate the claim.</p>"
-         + try_it("A student writes: \"I think it was the chemical because I believe it is.\" What is missing?",
-                  "Data, and an answer to the counterclaim.")),
-    ], [
-        "Use the kennel table to defend the claim that the chemical caused the extra new coat patterns. Include numbers.",
-        "A classmate says all the new patterns are copying errors. Explain why that does not fit the data.",
-        "Rewrite one weak defense (\"it was the chemical because I think so\") so that it uses evidence.",
-    ]),
 }

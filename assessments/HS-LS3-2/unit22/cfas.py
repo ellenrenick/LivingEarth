@@ -162,44 +162,11 @@ CFAS = {
            "The data cannot be used, because there are two groups to compare in the table"],
           "If the chemical caused mutations, the exposed group would have more. Both groups had 5."),
     ],
-    "LS3-2.5": [
-        c(f"<p>Scientists counted puppies with a new coat pattern that neither parent had.</p>{KENNELS}"
-          "<p>One student claims the chemical caused the extra new patterns. Another says copying errors caused all of them. "
-          "Which evidence best defends the first claim?</p>",
-          ["Kennel A had 14 new patterns per 1,000 puppies, while Kennel B, with the same copying errors, had only 3",
-           "Both kennels had some puppies with a new coat pattern in them, so something about their DNA changed over time",
-           "Copying errors happen in every dog, so they must be the reason for every new pattern in both kennels",
-           "Kennel B's puppies have the same parents' alleles as Kennel A's puppies, so the two kennels match"],
-          "Copying errors should be about the same in both kennels. The extra patterns in Kennel A point to the chemical."),
-        c("<p>A student claims a puppy's new white patch came from a new combination of alleles. Which evidence would show this "
-          "is <strong>not</strong> the best explanation?</p>",
-          ["The white-patch allele is found in neither parent",
-           "Both parents carry the white-patch allele in their DNA",
-           "The puppy got one allele from each of its two parents",
-           "Other puppies in the litter have different coat patterns"],
-          "A new combination can only use alleles the parents already have. An allele neither parent has must be a mutation."),
-        c("<p>A student claims a mutation in a dog's skin cell caused its puppy's new trait. Which statement best defends "
-          "against this claim?</p>",
-          ["Skin-cell mutations are not passed on, so the trait needs a change in a cell that makes eggs or sperm",
-           "Skin cells have no DNA in them, so a skin cell cannot have a mutation that would ever affect any puppy",
-           "Puppies get their traits only from their food, so no mutation in any cell can ever change a puppy's trait",
-           "A mutation in one skin cell is always copied into every egg or sperm that the dog makes later in life"],
-          "Only changes in cells that make eggs or sperm are inherited."),
-        tf("<p>True or false: To defend a claim, it is enough to restate the claim without citing any data.</p>", False,
-           "False. A defense cites evidence and shows why another explanation does not fit it."),
-        multi("<p>Select the <strong>TWO</strong> statements that make a strong defense of a claim against a counterclaim.</p>",
-              ["It cites numbers from the data that support the claim",
-               "It explains why the other explanation does not fit the data",
-               "It says the claim is right because the student believes it is",
-               "It ignores the counterclaim and repeats the claim more loudly"],
-              [0, 1], "A strong defense uses data and answers the other explanation."),
-    ],
 }
 
 CFA_TITLE = {t: f"Unit 2.2 CFA {t}: {n}" for t, n in
              [("LS3-2.1", "Three sources of variation"), ("LS3-2.2", "Sex cells and fertilization"),
-              ("LS3-2.3", "Copying errors and mutations"), ("LS3-2.4", "Read data, make a claim"),
-              ("LS3-2.5", "Defend the claim")]}
+              ("LS3-2.3", "Copying errors and mutations"), ("LS3-2.4", "Read data, make a claim")]}
 
 # ---------------------------------------------------------------------------
 # CSA: 13 questions (new items; nothing repeats a CFA question).

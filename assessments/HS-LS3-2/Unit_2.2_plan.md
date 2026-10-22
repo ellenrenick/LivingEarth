@@ -32,14 +32,14 @@
 | 7 | Wed Nov 18 | When Copying Goes Wrong | LS3-2.3 | CFA LS3-2.3 | 37 |
 | 8 | Thu Nov 19 | Where Did This Variation Come From? | LS3-2.4 | CFA LS3-2.4 | 35 |
 | 9 | Fri Nov 20 (2-hour early out) | Catch-Up Day: Reviews and Make-Up Work | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4 | none | 29 |
-| 10 | Mon Nov 30 | Defend Your Claim and Back to the Puppies | LS3-2.5 | CFA LS3-2.5 | 38 |
+| 10 | Mon Nov 30 | Defend Your Claim and Back to the Puppies | LS3-2.5 | none | 37 |
 | 11 | Tue Dec 1 | Unit 2.2 CSA | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4, LS3-2.5 | none | full period |
 
 ## How this fits the workbook
 
 The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Planner has 11 class days between Nov 9 and Dec 1 (Nov 11 Veterans Day and Nov 23 to 27 Fall Break are off), so the unit is compressed the way Unit 2.1 was (13 days to 8):
 
-- Every priority target keeps its CFA and one class period (LS3-2.3, 2.4, and 2.5 get one day instead of two or three).
+- LS3-2.1 to LS3-2.4 each keep a CFA and class time (LS3-2.3, 2.4, and 2.5 get one day instead of two or three). There are no CFAs after Nov 19, so LS3-2.5 has no CFA or review and is assessed on the CSA.
 - The supporting standard LS3-3 (Punnett squares, chances and real counts) is taught through the planner's four linked resources: Genetics Notes (Nov 12, 13) and Monster Genetics (Nov 16, 17). LS3-3.3 is a short enrichment on Nov 20. None of it is on the CSA.
 - LS3-2.2 (sex cells and fertilization) is taught on Nov 17, right where Monster Genetics' Punnett squares need it.
 - The Nov 20 Catch Up Day keeps its job: CFA reviews (Mastery Paths) and make-up work, then the CSA is Dec 1.
@@ -219,14 +219,13 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | Min | Section | What happens |
 | --- | --- | --- |
 | 2 | Notebook setup | Students copy slide 2. |
-| 18 | Do your reviews | This is the main review block (Day 9 was a short catch-up day). Pull small groups by lowest target. Call time at 18 minutes. |
-| 3 | How to defend a claim | Key: another; counterclaim. |
-| 3 | The new coat pattern | Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can be at work (the standard says "and/or"). |
-| 3 | Fix your Day 1 model | Walk the room with the checklist. |
+| 20 | Do your reviews | This is the main review block (Day 9 was a short catch-up day). Pull small groups by lowest target. Call time at 20 minutes. |
+| 4 | How to defend a claim | Key: another; counterclaim. |
+| 4 | The new coat pattern | Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can be at work (the standard says "and/or"). |
+| 4 | Fix your Day 1 model | Walk the room with the checklist. |
 | 3 | Why are the puppies alike but not identical? | This is the unit's phenomenon explanation. Collect it. |
-| 6 | CFA LS3-2.5 | On their own, from memory. Below 4 of 5 opens the review. |
 
-- Monday is the main review block (Day 9, the early-out catch-up day, was short). The phenomenon wrap-up is kept short: 12 minutes of activities, then the 6-minute CFA LS3-2.5. Below 4 of 5 opens the review.
+- Monday is the main review block (Day 9, the early-out catch-up day, was short). The phenomenon wrap-up is kept to 15 minutes. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.
 - The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight.
 
 ### Day 11 · Tue Dec 1 · Unit 2.2 CSA
