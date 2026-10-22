@@ -27,3 +27,15 @@ Unit 2.1 format: a daily deck (blue theme, orange accents), about 30 minutes of 
 - `content.py`: all lesson content (the single source). `cfas.py`: CFAs and CSA. `reviews.py`: Mastery Path reviews.
 - `slides.py`: Google Slides request generator (`python3 slides.py deck N`). `canvas.py`: Canvas build (sandbox only, safe to rerun).
 - `docs.py`: regenerates the markdown keys and plan.
+
+## Printables and student notebook
+
+Tables students would only copy from a slide are printed as glue-ins instead, which saves setup time. Build them with
+`python3 unit22/printables.py`:
+
+- `Unit22_Printables.pdf`: one cut-and-glue piece per table (13 pieces, days 1, 2, 4 to 10), 1 per student.
+- `Unit22_Printables_Teacher_Key.pdf`: the same pieces with answers.
+- `Unit22_Student_Notebook.pdf`: the left and right notebook pages for days 1 to 10, with a dashed "Glue in" box sized to each piece.
+
+`unit22/nbslide.py` puts the same dashed boxes on each deck's notebook setup slide (`python3 nbslide.py <day> <old slide id>`), and the
+content slides tell students to glue in the printable. Day 3 and the Day 11 CSA need no glue-ins.

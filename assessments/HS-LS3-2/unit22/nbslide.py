@@ -9,6 +9,7 @@ import json
 import sys
 
 import content as U
+import printables as PR
 
 EMU = 914400
 BG = "http://res.publicdomainfiles.com/pdf_view/83/13939457415622.png"
@@ -20,32 +21,30 @@ GREY = {"red": 0.42, "green": 0.46, "blue": 0.55}
 BLACK = {"red": 0, "green": 0, "blue": 0}
 WHITE = {"red": 1, "green": 1, "blue": 1}
 LEFT_X, RIGHT_X, PAGE_W = 0.22, 5.09, 4.45
-BOTTOM = 5.2
+BOTTOM = 5.25
 LEFT_TOP, RIGHT_TOP = 1.02, 0.62
 
 SKETCH = ("sketch", "draw", "model", "glue")
 # Days whose sections need a hand-made block (nb heading -> blocks after the heading)
 OVERRIDE = {
-    (9, "Check my CFAs"): [("table", ["Target", "My CFA score", "Review?"],
-                            [["LS3-2.1", "", ""], ["LS3-2.2", "", ""], ["LS3-2.3", "", ""], ["LS3-2.4", "", ""]], [1.1, 1.65, 1.7], 9, 0.27)],
-    (9, "Reviews and make-up work"): [("lines", 3)],
-    (9, "Self-check"): [("table", ["Target", "Rating 1 to 4"],
-                         [["LS3-2.1 three sources", ""], ["LS3-2.2 sex cells and fertilization", ""],
-                          ["LS3-2.3 copying errors and UV", ""], ["LS3-2.4 read data, make a claim", ""]], [2.9, 1.55], 9, 0.27)],
+    (10, "Check my CFAs"): [("glue",)],
+    (10, "My reviews"): [("lines", 2)],
+    (10, "Self-check"): [("text", "Rate each target 1 to 4 on your tracker (glued in above).")],
+    (10, "Enrichment: environment and traits"): [("glue",), ("lines", 2)],
     (1, "My first model"): [("box", 1.25, "Draw: Parent 1, Parent 2, and two offspring. Use arrows to show information moving from "
                                           "the parents to the offspring. Label one shared trait and one different trait.")],
     (1, "Three possible explanations"): [("box", 0.8, "Three small sketch boxes: one idea in each.")],
-    (10, "Reviews and make-up work"): [("lines", 2)],
-    (10, "Fix my Day 1 model"): [("box", 1.2, "Redraw your Day 1 model. Add: new combinations, copying errors, mutations from the "
-                                              "environment, and which changes are inherited.")],
+    (9, "Make up missing work"): [("lines", 2)],
+    (9, "Fix my Day 1 model"): [("box", 1.2, "Redraw your Day 1 model. Add: new combinations, copying errors, mutations from the "
+                                             "environment, and which changes are inherited.")],
     (5, "Build the female monster"): [("text", "Use Table 1 on your Monster Genetics sheet."), ("lines", 1)],
-    (5, "Fill in the male monster"): [("text", "Use Table 2 on your Monster Genetics sheet."), ("lines", 1)],
-    (6, "Punnett squares for the baby"): [("box", 0.95, "Draw the Punnett square for Skin color, Gg × Gg. Then make 5 more for "
-                                                      "your traits (on your sheet).")],
-    (4, "Punnett squares"): [("box", 0.95, "Draw a 2 × 2 Punnett square for Tt × Tt. Write the alleles on the top and the side.")],
-    (4, "Genotype and phenotype"): [("lines", 2), ("box", 0.95, "Make a table: Genotype and Phenotype for TT, Tt, tt (TT is tall).\nThen draw two eyes. Color one blue and one brown.")],
-    (4, "Homozygous and heterozygous"): [("box", 0.7, "Write CC, Ee, Gg, dd, AA, Hh. Color the homozygous ones green and the heterozygous ones orange."),
-                                         ("lines", 1)],
+    (5, "Fill in the male monster"): [("text", "Use Table 2 (glued in above) and your Monster Genetics sheet."), ("lines", 1)],
+    (6, "Punnett squares for the baby"): [("glue",)],
+    (4, "Punnett squares"): [("glue",)],
+    (4, "Genotype and phenotype"): [("lines", 2), ("box", 0.5, "Draw two eyes. Color one blue and one brown."), ("glue",)],
+    (4, "Homozygous and heterozygous"): [("box", 0.6, "Write CC, Ee, Gg, dd, AA, Hh. Color the homozygous ones green and the heterozygous ones orange. Then write the missing words from the slide.")],
+    (7, "UV and mutations"): [("glue",)],
+    (7, "Who passes it on?"): [("glue",)],
     (3, "Genes make proteins make traits"): [("lines", 4)],
     (3, "Alleles"): [("box", 0.95, "Sketch a pair of chromosomes. Color each set of alleles a different color."), ("lines", 1)],
     (3, "Black or brown cats"): [("box", 0.7, "Draw three cat heads: BB, Bb, bb. Color each one to show its coat."), ("lines", 1)],
@@ -88,6 +87,8 @@ def squeeze(bl):
             out.append(("table", head, rows[:3], w, fs, 0.21))
         elif b[0] == "lines":
             out.append(("lines", min(b[1], 2)))
+        elif b[0] == "box" and len(b) > 3:  # a glue-in box keeps its size
+            out.append(b)
         elif b[0] == "box":
             out.append(("box", min(b[1], 0.75), b[2]))
         else:
@@ -95,16 +96,31 @@ def squeeze(bl):
     return out
 
 
+def glue_block(day, nb):
+    g = PR.glue_for(day, nb)
+    return ("box", PR.glue_box_h(g), f"Glue in: {g['title']}", True)
+
+
 def blocks_for(day, s):
     nb = s["nb"]
     if (day, nb) in OVERRIDE:
-        return [("h", nb)] + OVERRIDE[(day, nb)]
+        return [("h", nb)] + [glue_block(day, nb) if b == ("glue",) else b for b in OVERRIDE[(day, nb)]]
     out = [("h", nb)]
     note = s.get("nbnote", "")
+    sec = PR.glue_second(day, nb)
+    if sec:  # this heading uses a glue-in that sits under an earlier heading
+        out.append(("text", f"Use “{sec['title']}” (glued in above)."))
+        if s.get("frame"):
+            out.append(("lines", 2 if len(s["frame"]) <= 1 else 3))
+        return out
+    if PR.glue_for(day, nb):
+        out.append(glue_block(day, nb))
+        if s.get("frame"):
+            out.append(("lines", 2 if len(s["frame"]) <= 1 else 3))
+        return out
     if s.get("table"):
         head, rows = s["table"]
         rows = [[r[0]] + [""] * (len(r) - 1) if str(r[0]) not in ("",) else [""] * len(r) for r in rows][:5]
-        rows = [r for r in rows]
         w = widths_for(head, rows)
         out.append(("table", head, rows, w, 9 if len(head) <= 3 else 8, 0.25))
         if s.get("frame"):
@@ -124,7 +140,14 @@ def layout(day):
     for s in d["sections"]:
         if s.get("nb") and not (secs and secs[-1]["nb"] == s["nb"]):  # a slide that continues the last notebook section adds no block
             secs.append(s)
-    allb = [blocks_for(day, s) for s in secs]
+    def groups(allb):  # split between headings, so one section's glue box and lines may land on either page
+        out = []
+        for b in (x for bl in allb for x in bl):
+            if b[0] == "h" or not out:
+                out.append([])
+            out[-1].append(b)
+        return out
+    allb = groups([blocks_for(day, s) for s in secs])
     cap_l, cap_r = BOTTOM - LEFT_TOP, BOTTOM - RIGHT_TOP
 
     def split(allb):
@@ -141,7 +164,7 @@ def layout(day):
         return [b for bl in allb[:k] for b in bl], [b for bl in allb[k:] for b in bl]
     left, right = split(allb)
     if sum(block_h(b) for b in right) > cap_r:
-        left, right = split([squeeze(bl) for bl in allb])
+        left, right = split([[squeeze([x])[0] for x in bl] for bl in allb])
     return left, right
 
 
