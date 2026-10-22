@@ -91,13 +91,16 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | --- | --- | --- |
 | 2 | Notebook setup | Students copy slide 2. |
 | 3 | From chromosome to trait | Key: chromosome; gene; trait. Buyout day: these slides run themselves, so a sub can lead the day. |
-| 6 | Heredity and chromosomes | Key: traits; parents; pairs; two. Matches slides 1 to 7 of the Genetics Notes deck. |
-| 5 | Genes make proteins, proteins help make traits | Key: gene; proteins; traits. |
-| 6 | Alleles | Key: alleles; uppercase. Students color the two alleles on the chromosome pair. |
-| 7 | Dominant and recessive | Key: Bb black; bb brown. Frame: black; B; two. |
+| 2 | Heredity | Key: heredity; traits; parents; offspring; inherited. From slide 3 of the Genetics Notes deck. |
+| 3 | Chromosomes | Key: chromosomes; pairs; two. From slide 4 of the Genetics Notes deck (same cell and chromosome graphic). |
+| 3 | How are traits determined? | Key: DNA; gene; proteins; traits. From slide 5 of the Genetics Notes deck (same graphic). |
+| 3 | How tigers get their stripes | Key: DNA; proteins; stripes. From slide 6 of the Genetics Notes deck (same five graphics). |
+| 4 | Alleles | Key: two; gene; alleles; letters. From slide 8 of the Genetics Notes deck (same chromosome pair). Students color the matching A/a, B/b pairs. |
+| 5 | Dominant vs. recessive | Key: always; capital; two; lowercase. From slides 10 to 12 of the Genetics Notes deck (same banner and A = DOMINANT, a = recessive graphics). |
+| 4 | Black or brown cats? | Key: BB black; Bb black; bb brown. Frame: black; B; two. From slide 13 of the Genetics Notes deck (same BB, Bb, bb cat heads). |
 | 3 | Dominant or recessive? | Key: dominant; two. |
 
-- Planner: Thu Nov 12 is a buyout day, so this is a notes day that a sub can run. The slides follow the "26-27 GeneticsHereditySlideshow" Genetics Notes (the first half), turned into short sections with sentence frames and word banks.
+- Planner: Thu Nov 12 is a buyout day, so this is a notes day that a sub can run. The slides follow the "26-27 GeneticsHereditySlideshow" Genetics Notes (the first half): same wording, same fill-in words, and the same graphics (cell and chromosomes; chromosome, DNA, gene; the tiger-stripe chain; the allele chromosome pair; A = DOMINANT and a = recessive; the cat heads). Each fill-in has a scrambled word bank.
 - No CFA today. LS3-3 is a supporting standard: taught and practiced, not on the CSA.
 - Link: Genetics Notes slides, https://docs.google.com/presentation/d/1zLmg_vu7MzxnbCe4xbBWE76xxyEMa8TrHC_Iuja29UM/edit
 

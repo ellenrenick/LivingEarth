@@ -7,6 +7,9 @@ the template (once) and (2) the small batch of requests that turns a copy into a
   python3 slides.py template > template_requests.json     # build the template (into a blank deck)
   python3 slides.py deck 4 > deck4_requests.json           # fill a copy of the template for Day 4
 
+The notebook setup slide (slide 2) is then replaced by nbslide.py (a Unit 2.1-style notebook spread). Day 3 is built by
+`imgdeck` (original Genetics Notes graphics, see image_slide below) instead of `deck`.
+
 Page: 10 x 5.625 in (9144000 x 5143500 EMU). Font: Lexend (as in Unit 2.1). Colors are RGB 0-1 for the API.
 """
 
@@ -463,10 +466,129 @@ def deck(day):
     return reqs, warn
 
 
+# ---------------------------------------------------------------------------
+# Slides with graphics from the original Genetics Notes deck (Day 3). Slides is built from scratch (no template copy).
+# Image urls are expiring docs.google.com/slides-images-rt links: read them from the original deck just before use.
+# ---------------------------------------------------------------------------
+ORIG_DECK = "1zLmg_vu7MzxnbCe4xbBWE76xxyEMa8TrHC_Iuja29UM"
+# object id in the original deck -> (x, y, w, h) in its 20 x 11.25 in page
+ORIG = {
+    "g1ebb2efc9c9_2_96": (6.37, 6.89, 7.15, 3.8), "g1ebb2efc9c9_2_105": (0.22, 3.46, 8.02, 5.22),
+    "g1ebb2efc9c9_2_112": (0.62, 4.92, 3.42, 5.63), "g1ebb2efc9c9_2_113": (2.95, 4.86, 4.55, 5.75),
+    "g1ebb2efc9c9_2_114": (7.67, 4.91, 2.22, 3.26), "g1ebb2efc9c9_2_115": (9.64, 4.93, 5.29, 5.95),
+    "g1ebb2efc9c9_2_116": (15.3, 4.88, 3.95, 5.37), "g1ebb2efc9c9_2_128": (1.41, 2.63, 2.17, 8.11),
+    "g1ebb2efc9c9_2_215": (0.1, 1.17, 20.0, 3.09), "g1ebb2efc9c9_2_221": (3.84, 6.69, 2.98, 3.5),
+    "g1ebb2efc9c9_2_222": (6.95, 7.06, 9.6, 2.19), "g1ebb2efc9c9_2_231": (3.84, 6.69, 2.98, 3.5),
+    "g1ebb2efc9c9_2_232": (6.95, 7.06, 9.6, 2.19), "g1ebb2efc9c9_2_239": (7.56, 8.18, 10.15, 2.37),
+}
+
+
+def group_box(ids, x, y, w):
+    """Height of a group of original images scaled to total width w, and each image's (x, y, w, h) on the new slide."""
+    bx = min(ORIG[i][0] for i in ids)
+    by = min(ORIG[i][1] for i in ids)
+    bw = max(ORIG[i][0] + ORIG[i][2] for i in ids) - bx
+    bh = max(ORIG[i][1] + ORIG[i][3] for i in ids) - by
+    k = w / bw
+    return bh * k, [(i, x + (ORIG[i][0] - bx) * k, y + (ORIG[i][1] - by) * k, ORIG[i][2] * k, ORIG[i][3] * k) for i in ids]
+
+
+def picture(oid, page, url, x, y, w, h):
+    return [{"createImage": {"objectId": oid, "url": url, "elementProperties": props(page, x, y, w, h)}}]
+
+
+CHROME_PARTS = ("card", "kick", "emo", "title", "bar", "foot")
+
+
+def image_slide(day, k, s, index, urls):
+    """One section slide with original graphics. Returns (slide id, requests, warnings)."""
+    d = U.DAY[day]
+    foot = f"Unit 2.2 · Day {day} · {d['title']}"
+    sid = f"u{day}g_s{k:02d}"
+    warn = []
+    kick, title, emo = kicker(s), s["title"], EMOJI.get(s["label"], "📘")
+    tpl = f"u{day}g_tpl"
+    r = [{"duplicateObject": {"objectId": tpl, "objectIds": {tpl: sid, **{f"{tpl}_{p}": f"{sid}_{p}" for p in CHROME_PARTS}}}}]
+    r += [replace(sid, "KICK", kick), replace(sid, "TITLE", title), replace(sid, "EMO", emo), replace(sid, "FOOT", foot),
+          move(f"{sid}_kick", 3.6, 0.36, 0.5, 0.27, kick_width(kick), 0.36)]
+    tfs = 30 if lines_needed(title, 8.1, 30) == 1 else 24
+    r.append({"updateTextStyle": {"objectId": f"{sid}_title", "textRange": {"type": "ALL"}, "style": {"fontSize": {"magnitude": tfs, "unit": "PT"}}, "fields": "fontSize"}})
+    img = s.get("img") or {}
+    n = 0
+
+    def put(ids, x, y, w):
+        nonlocal n
+        h, items = group_box(ids, x, y, w)
+        for i, ix, iy, iw, ih in items:
+            n += 1
+            r.extend(picture(f"{sid}_img{n}", sid, urls[i], ix, iy, iw, ih))
+        return h
+
+    if s.get("layout") == "domrec":
+        put([img["banner"]], 2.4, 1.82, 5.2)
+        top = 2.75
+        bank = bank_line(s)
+        lines = s["frame"]
+        for col, (txt, ids, x) in enumerate([(lines[0], img["dom"], 0.68), (lines[1], img["rec"], 5.12)]):
+            oid = f"{sid}_col{col + 1}"
+            r += shape(oid, sid, "TEXT_BOX", x, top, 4.2, 0.85, text=txt, size=12, color=INK, space_below=3)
+            end = txt.index(":") + 1
+            r += style_ranges(oid, [(0, end)], color=BLUE)
+            put(ids, x + 0.2, top + 0.9, 3.7)
+        oid = f"{sid}_bank"
+        txt = f"In your notebook, under “{s['nb']}”. {bank}"
+        r += shape(oid, sid, "TEXT_BOX", 0.68, 4.62, 8.64, 0.45, text=txt, size=11, color=INK)
+        a = txt.index("Word bank:")
+        r += style_ranges(oid, [(a, a + len("Word bank:"))], color=ORANGE)
+        return sid, r, warn
+
+    h = 0
+    if img:
+        h = put(img["ids"], img["x"], img["y"], img["w"])
+        if img["y"] + h > 5.1:
+            warn.append(f"day {day} {title}: picture ends at {img['y'] + h:.2f} in")
+    intro, frame = section_texts(s)
+    text = "\n".join(t for t in (intro, frame) if t)
+    tx, tw = s.get("text_x", BODY_X), s.get("text_w", BODY_W)
+    th = 3.2 if not img or tw < BODY_W or img["y"] < 2.8 else img["y"] - BODY_Y - 0.05
+    fs = fit(text, tw, th, (16, 15, 14, 13, 12, 11), space=5)
+    if text_h(text, tw, fs, 5) > th:
+        warn.append(f"day {day} {title}: text {text_h(text, tw, fs, 5):.2f}/{th:.2f} in at {fs} pt")
+    oid = f"{sid}_text"
+    r += shape(oid, sid, "TEXT_BOX", tx, BODY_Y, tw, th, text=text, size=fs, color=INK, space_below=5)
+    r += style_ranges(oid, bold_ranges(text))
+    if "Word bank:" in text:
+        a = text.index("Word bank:")
+        r += style_ranges(oid, [(a, a + len("Word bank:"))], color=ORANGE)
+    return sid, r, warn
+
+
+def rebuild_with_images(day, urls, old_ids):
+    """Requests that replace the section slides (everything after the learning-targets slide) of a built deck."""
+    d = U.DAY[day]
+    tpl = f"u{day}g_tpl"
+    reqs, warn = [{"deleteObject": {"objectId": o}} for o in old_ids], []
+    reqs += [new_slide(tpl, 3)] + chrome(tpl)
+    sids = []
+    for k, s in enumerate(d["sections"], 1):
+        sid, rr, w = image_slide(day, k, s, 2 + k, urls)
+        reqs += rr
+        warn += w
+        sids.append(sid)
+    reqs.append({"deleteObject": {"objectId": tpl}})
+    reqs += [{"updateSlidesPosition": {"slideObjectIds": [sid], "insertionIndex": 3 + i}} for i, sid in enumerate(sids)]
+    return reqs, warn
+
+
 if __name__ == "__main__":
     what = sys.argv[1]
     if what == "template":
         print(json.dumps(template_requests(), ensure_ascii=False, separators=(",", ":")))
+    elif what == "imgdeck":  # python3 slides.py imgdeck DAY urls.json old_id,old_id,...
+        r, w = rebuild_with_images(int(sys.argv[2]), json.load(open(sys.argv[3])), sys.argv[4].split(","))
+        for x in w:
+            print("WARN", x, file=sys.stderr)
+        print(json.dumps(r, ensure_ascii=False, separators=(",", ":")))
     elif what == "deck":
         r, w = deck(int(sys.argv[2]))
         for x in w:

@@ -246,8 +246,8 @@ DAYS = [
         ready="Have ready: your notebook and a pencil",
         can=["connect chromosomes, DNA, genes, proteins, and traits", "explain what an allele is",
              "tell a dominant allele from a recessive allele"],
-        plan=["Warm-up", "Heredity and chromosomes", "Genes make proteins make traits", "Alleles", "Dominant and recessive",
-              "Exit ticket"],
+        plan=["Warm-up", "Heredity", "Chromosomes", "Genes make proteins make traits", "How tigers get their stripes", "Alleles",
+              "Dominant vs. recessive", "Black or brown cats", "Exit ticket"],
         sections=[
             dict(nb="Warm-up", nbnote="Finish the chain from Unit 2.1.", label="WARM-UP", who="ON YOUR OWN", minutes=3,
                  layout="warmup", title="From chromosome to trait",
@@ -256,37 +256,68 @@ DAYS = [
                         f"help produce a {B}."],
                  bank=["chromosome", "gene", "trait"],
                  teacher="Key: chromosome; gene; trait. Buyout day: these slides run themselves, so a sub can lead the day."),
-            dict(nb="Heredity and chromosomes", nbnote="Guided notes: heredity and chromosome pairs.", label="NOTES",
-                 who="ON YOUR OWN", minutes=6, title="Heredity and chromosomes",
-                 body=["Genetics is the study of heredity: the passing of traits from parents to offspring.",
-                       "Example: the width of a tiger's stripes is a trait inherited from its parents.",
-                       "Inside each nucleus, DNA is packed into chromosomes. Chromosomes come in pairs: you have two copies "
-                       "of each, one from each parent."],
-                 frame=[f"Heredity is the passing of {B} from {B} to offspring.", f"Chromosomes come in {B}. You have {B} copies "
-                        "of each one, from your two parents."],
-                 bank=["traits", "parents", "pairs", "two"],
-                 teacher="Key: traits; parents; pairs; two. Matches slides 1 to 7 of the Genetics Notes deck."),
-            dict(nb="Genes make proteins make traits", nbnote="Guided notes: the gene to trait chain.", label="NOTES",
-                 who="ON YOUR OWN", minutes=5, title="Genes make proteins, proteins help make traits",
-                 body=["DNA is found within chromosomes.", "A gene is a short segment of DNA. Genes carry instructions for "
-                       "making proteins, and proteins help determine traits.",
-                       "Tiger example: genes in a tiger's DNA make proteins that help determine the width of its stripes."],
-                 frame=[f"A {B} is a short segment of DNA. Genes make {B}, which help determine {B}."],
-                 bank=["gene", "proteins", "traits"], teacher="Key: gene; proteins; traits."),
-            dict(nb="Alleles", nbnote="Guided notes and a chromosome sketch.", label="NOTES", who="ON YOUR OWN", minutes=6,
-                 title="Alleles",
-                 body=["You inherit two forms of each gene, one from each parent.",
-                       "The different forms of a gene are called alleles. We write them as letters, like B and b.",
-                       "Sketch: draw a pair of chromosomes. Color each allele a different color."],
-                 frame=[f"The different forms of a gene are called {B}. Alleles are written as lowercase and {B} letters."],
-                 bank=["alleles", "uppercase"], teacher="Key: alleles; uppercase. Students color the two alleles on the chromosome pair."),
-            dict(nb="Dominant and recessive", nbnote="Table and sentence: black or brown cat.", label="NOTES", who="ON YOUR OWN",
-                 minutes=7, title="Dominant and recessive", table=COAT,
-                 body=["Dominant allele: shows up when it is present. Written as a capital letter (B).",
-                       "Recessive allele: shows up only when two copies are present. Written as a lowercase letter (b).",
-                       "In cats, black (B) is dominant to brown (b). BB is done for you."],
+            dict(nb="Heredity", nbnote="Guided notes: heredity and traits.", label="NOTES", who="ON YOUR OWN", minutes=2,
+                 title="Heredity",
+                 body=["Genetics is the study of heredity. Heredity is the passing of traits (or characteristics) from parents to "
+                       "offspring.",
+                       "For example, a tiger's stripes may be wide or narrow."],
+                 frame=[f"Genetics is the study of {B}. Heredity is the passing of {B} from {B} to {B}. The width of a tiger's "
+                        f"stripes is a trait {B} from its parents."],
+                 bank=["heredity", "traits", "parents", "offspring", "inherited"],
+                 teacher="Key: heredity; traits; parents; offspring; inherited. From slide 3 of the Genetics Notes deck."),
+            dict(nb="Chromosomes", nbnote="Guided notes: chromosomes come in pairs.", label="NOTES", who="ON YOUR OWN", minutes=3,
+                 title="Chromosomes", text_w=4.35,
+                 img=dict(ids=["g1ebb2efc9c9_2_96"], x=5.2, y=2.35, w=4.1),
+                 body=["Look at the graphic: a cell, its nucleus, and its chromosomes."],
+                 frame=[f"Inside each nucleus of a cell are thread-like structures called {B}. Chromosomes come in {B}. "
+                        f"You usually have {B} copies of each chromosome, one from each parent."],
+                 bank=["chromosomes", "pairs", "two"],
+                 teacher="Key: chromosomes; pairs; two. From slide 4 of the Genetics Notes deck (same cell and chromosome graphic)."),
+            dict(nb="Genes make proteins make traits", nbnote="Guided notes: DNA, gene, protein, trait.", label="NOTES",
+                 who="ON YOUR OWN", minutes=3, title="How are traits determined?", text_w=4.4, text_x=4.9,
+                 img=dict(ids=["g1ebb2efc9c9_2_105"], x=0.7, y=2.15, w=3.95),
+                 body=["Trace the graphic: chromosome, DNA, gene."],
+                 frame=[f"{B}, also known as the molecule of life, is found within chromosomes. A {B} is a short segment of DNA. "
+                        f"Genes contain instructions that make {B}, which determine {B}."],
+                 bank=["DNA", "gene", "proteins", "traits"],
+                 teacher="Key: DNA; gene; proteins; traits. From slide 5 of the Genetics Notes deck (same graphic)."),
+            dict(nb="Genes make proteins make traits", nbnote="Guided notes: the chain for a tiger.", label="NOTES",
+                 who="ON YOUR OWN", minutes=3, title="How tigers get their stripes",
+                 img=dict(ids=["g1ebb2efc9c9_2_112", "g1ebb2efc9c9_2_113", "g1ebb2efc9c9_2_114", "g1ebb2efc9c9_2_115",
+                               "g1ebb2efc9c9_2_116"], x=1.85, y=2.95, w=6.3),
+                 body=[],
+                 frame=[f"Genes found within a tiger's {B} produce {B} that determine the width of a tiger's {B}."],
+                 bank=["DNA", "proteins", "stripes"],
+                 teacher="Key: DNA; proteins; stripes. From slide 6 of the Genetics Notes deck (same five graphics)."),
+            dict(nb="Alleles", nbnote="Guided notes and a chromosome sketch.", label="NOTES", who="ON YOUR OWN", minutes=4,
+                 title="Alleles", text_w=7.3, text_x=2.2,
+                 img=dict(ids=["g1ebb2efc9c9_2_128"], x=0.95, y=1.9, w=0.83),
+                 body=["In your notebook, color each set of alleles on the chromosome pair a different color."],
+                 frame=[f"Individuals inherit {B} forms of each {B}, one from each parent. The different variations of a gene are "
+                        f"known as {B}. Alleles are represented with lowercase and uppercase {B}."],
+                 bank=["two", "gene", "alleles", "letters"],
+                 teacher="Key: two; gene; alleles; letters. From slide 8 of the Genetics Notes deck (same chromosome pair). "
+                         "Students color the matching A/a, B/b pairs."),
+            dict(nb="Dominant vs. recessive", nbnote="Guided notes: two columns.", label="NOTES", who="ON YOUR OWN", minutes=5,
+                 title="Dominant vs. recessive", layout="domrec",
+                 img=dict(banner="g1ebb2efc9c9_2_215", dom=["g1ebb2efc9c9_2_221", "g1ebb2efc9c9_2_222"],
+                          rec=["g1ebb2efc9c9_2_231", "g1ebb2efc9c9_2_232"]),
+                 body=["Alleles can be dominant or recessive."],
+                 frame=[f"Dominant: {B} expressed when present. Shown as {B} letters.",
+                        f"Recessive: expressed if {B} copies are present. Shown as {B} letters."],
+                 bank=["always", "capital", "two", "lowercase"],
+                 teacher="Key: always; capital; two; lowercase. From slides 10 to 12 of the Genetics Notes deck (same banner and "
+                         "A = DOMINANT, a = recessive graphics)."),
+            dict(nb="Black or brown cats", nbnote="Color the cat heads: BB, Bb, bb.", label="NOTES", who="ON YOUR OWN",
+                 minutes=4, title="Black or brown cats?",
+                 img=dict(ids=["g1ebb2efc9c9_2_239"], x=2.55, y=3.9, w=4.9),
+                 body=["A black coat (B) is dominant to a brown coat (b) in cats. A cat needs only one B to be black. A cat needs "
+                       "two b alleles to be brown.",
+                       "In your notebook, color each cat head to show its color."],
                  frame=[f"A cat with Bb is {B} because {B} is dominant. A cat needs {B} copies of b to be brown."],
-                 bank=["black", "B", "two"], teacher="Key: Bb black; bb brown. Frame: black; B; two."),
+                 bank=["black", "B", "two"],
+                 teacher="Key: BB black; Bb black; bb brown. Frame: black; B; two. From slide 13 of the Genetics Notes deck "
+                         "(same BB, Bb, bb cat heads)."),
             dict(nb="Exit ticket", nbnote="One sentence on dominant and recessive.", label="EXIT TICKET", who="ON YOUR OWN",
                  minutes=3, title="Dominant or recessive?",
                  body=["Finish both sentences."],
@@ -294,12 +325,15 @@ DAYS = [
                         "copies are present."],
                  bank=["dominant", "two"], teacher="Key: dominant; two."),
         ],
-        key=["Warm-up: chromosome; gene; trait.", "Heredity: traits; parents; pairs; two.", "Genes: gene; proteins; traits.",
-             "Alleles: alleles; uppercase.", "Dominant and recessive: Bb black, bb brown; black; B; two.",
-             "Exit ticket: dominant; two."],
+        key=["Warm-up: chromosome; gene; trait.", "Heredity: heredity; traits; parents; offspring; inherited.",
+             "Chromosomes: chromosomes; pairs; two.", "Genes: DNA; gene; proteins; traits.",
+             "Tiger stripes: DNA; proteins; stripes.", "Alleles: two; gene; alleles; letters.",
+             "Dominant vs. recessive: always; capital; two; lowercase.", "Black or brown cats: BB black, Bb black, bb brown; "
+             "black; B; two.", "Exit ticket: dominant; two."],
         notes=["Planner: Thu Nov 12 is a buyout day, so this is a notes day that a sub can run. The slides follow the \"26-27 "
-               "GeneticsHereditySlideshow\" Genetics Notes (the first half), turned into short sections with sentence frames and "
-               "word banks.",
+               "GeneticsHereditySlideshow\" Genetics Notes (the first half): same wording, same fill-in words, and the same graphics "
+               "(cell and chromosomes; chromosome, DNA, gene; the tiger-stripe chain; the allele chromosome pair; A = DOMINANT and "
+               "a = recessive; the cat heads). Each fill-in has a scrambled word bank.",
                "No CFA today. LS3-3 is a supporting standard: taught and practiced, not on the CSA.",
                "Link: Genetics Notes slides, https://docs.google.com/presentation/d/1zLmg_vu7MzxnbCe4xbBWE76xxyEMa8TrHC_Iuja29UM/edit"],
     ),
@@ -705,6 +739,6 @@ for _d in DAYS:
     for _s in _d["sections"]:
         _s["layout_kind"] = _s.get("layout") or ("table" if _s.get("table") else "list")
     if _d["kind"] == "lesson":
-        assert 20 <= _m <= 40 and len(_d["plan"]) == 6, (_d["day"], _m, len(_d["plan"]))
+        assert 20 <= _m <= 40 and 5 <= len(_d["plan"]) <= 10, (_d["day"], _m, len(_d["plan"]))
     if _d["kind"] == "review":
         assert _m <= 40, _m
