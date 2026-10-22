@@ -135,6 +135,13 @@ def get_all(api, path):
         page += 1
 
 
+# (day label, old title, date text) -> (day label, new title, date text)
+RENAMED_DAYS = [(("Day 9", "Catch-Up Day: Reviews and Make-Up Work", "Fri Nov 20 (2-hour early out)"),
+                 ("Day 9", "Back to the Puppies and Make-Up Work", "Fri Nov 20 (2-hour early out)")),
+                (("Day 10", "Defend Your Claim and Back to the Puppies", "Mon Nov 30"),
+                 ("Day 10", "Review Day: Prepare for the CSA", "Mon Nov 30"))]
+
+
 def canvas(course, decks_file):
     assert str(course) == SANDBOX, "sandbox course only"
     decks = json.loads(Path(decks_file).read_text())
@@ -192,6 +199,21 @@ def canvas(course, decks_file):
         quizzes[title] = N.make_quiz(api, title, instr, items, group)
         return quizzes[title]
 
+    # Days 9 and 10 swapped jobs: rename the existing Canvas objects in place so the planner's module-item links keep working
+    for old_t, new_t in RENAMED_DAYS:
+        for pre in ("Student Assignment", "Teacher Plan"):
+            o, n_ = f"{old_t[0]} {pre}: {old_t[1]}", f"{new_t[0]} {pre}: {new_t[1]}"
+            if o in asg and n_ not in asg:
+                asg[n_] = api.v1("PUT", f"/assignments/{asg[o]['id']}", {"assignment": {"name": n_}})
+                del asg[o]
+            if o in pages and n_ not in pages:
+                pages[n_] = api.v1("PUT", f"/pages/{pages[o]['url']}", {"wiki_page": {"title": n_}})
+                del pages[o]
+        o = f"{old_t[0]} · {old_t[2]}: {old_t[1]}"
+        n_ = f"{new_t[0]} · {new_t[2]}: {new_t[1]}"
+        for it in get_all(api, f"/modules/{student_mod}/items"):
+            if it["type"] == "SubHeader" and it["title"] == o:
+                api.v1("PUT", f"/modules/{student_mod}/items/{it['id']}", {"module_item": {"title": n_}})
     rules = api.v1("GET", "/mastery_paths/rules")
     wanted_names = set()
     order, teacher_order = [], []  # (kind, title or content id, indent) / page urls

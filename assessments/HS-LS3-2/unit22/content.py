@@ -4,7 +4,7 @@ The department workbook (Living_Earth_Linked_Workbook 26-27, tab "2.2 Inherited"
 days between Nov 9 and Dec 1 (Nov 11 Veterans Day and Nov 23-27 Fall Break are off), so this version compresses the way Unit
 2.1 did (13 days to 8): every priority target gets one class period, the supporting standard LS3-3 is taught through the four
 resources already linked in the planner (Genetics Notes and Monster Genetics), the unit ends with the CSA on Dec 1, and the
-Nov 20 "Catch Up Day" is kept as the review and Mastery Path day.
+Nov 20 "Catch Up Day" is the puzzle wrap-up plus make-up work; Nov 30 is the full review (Mastery Path) day.
 
 Every lesson follows CLAUDE.md (pace and style, modeled on Unit 1.3 Short Lessons A and B): about 30 minutes of student work
 including the CFA (20 to 40 in all), short activities, one worked example, a small data table with real numbers, a sentence
@@ -114,7 +114,7 @@ GARDEN = (["Flower color", "Plants (all from one parent plant)"], [["Blue", "42"
 #   nb: notebook heading · nbnote: one line for the notebook setup slide · label/who: slide kicker · minutes · title
 #   body: lines · table: (head, rows) · frame: fill-in lines (each blank is ____) · bank: the answers' words (scrambled when shown)
 #   teacher: what you do
-# Day kinds: lesson (about 30 min with the CFA), review (the Nov 20 catch-up day), csa (full period).
+# Day kinds: lesson (about 30 min with the CFA), review (the Nov 30 review day), csa (full period).
 DAYS = [
     dict(
         day=1, date="Mon Nov 9", kind="lesson", title="The Puppy Puzzle", targets=["LS3-2.1"], cfa=None,
@@ -640,57 +640,13 @@ DAYS = [
                "CFA LS3-2.4 closes the lesson. Below 4 of 5 opens the review."],
     ),
     dict(
-        day=9, date="Fri Nov 20 (2-hour early out)", kind="review", period=37, title="Catch-Up Day: Reviews and Make-Up Work",
-        targets=["LS3-2.1", "LS3-2.2", "LS3-2.3", "LS3-2.4"], cfa=None,
-        focus="What do I still need to work on before the next lesson?",
-        ready="Have ready: your notebook, a pencil, and a Chromebook",
-        can=["check my CFA scores", "make up missing work and start my CFA reviews",
-             "see how the environment can change how a trait shows up"],
-        plan=["Check my CFAs", "Reviews and make-up work", "Enrichment: environment and traits", "Self-check"],
-        sections=[
-            dict(nb="Check my CFAs", nbnote="Four CFA scores.", label="CHECK-IN", who="EVERYONE", minutes=3,
-                 title="Check your CFA scores",
-                 body=["Open Canvas and look at your CFA scores for LS3-2.1, LS3-2.2, LS3-2.3, and LS3-2.4.",
-                       "Below a B (fewer than 4 of 5)? A review for that target opened for you."],
-                 teacher="Everyone does this first."),
-            dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
-                 minutes=21, title="Make up missing work, then do reviews",
-                 body=["In this order: 1. Missing work: any missing CFA and unfinished Monster Genetics pages. 2. Your CFA "
-                       "reviews, lowest target first, if you have time. You will have more review time on Monday.",
-                       "Your teacher will pull small groups."],
-                 teacher="Short periods today (37 minutes). This is the make-up day: the point is catching up on work. Reviews are fine if a student has "
-                         "time, but the main review block is Monday (Day 10). Students with nothing to do go to the enrichment."),
-            dict(nb="Enrichment: environment and traits", nbnote="Table and two sentences.", label="ENRICHMENT",
-                 who="NO REVIEWS, OR ALL DONE", minutes=8, title="The same DNA, different colors", table=HYDRANGEA,
-                 body=["A gardener grew copies of one hydrangea plant (the same DNA) in soils of different pH.",
-                       "In a garden of 100 plants from one parent, the soil varies: 42 plants are blue, 33 purple, and 25 pink."],
-                 frame=[f"The plants have the same {B}. Flower color varied because the {B} changed how the gene works."],
-                 bank=["DNA", "soil"],
-                 teacher="LS3-3.3, supporting (not on the CSA). Key: DNA; soil. The environment changed how the trait showed up, "
-                         "not the DNA, so the color is not inherited. This is idea 3 from Day 1."),
-            dict(nb="Self-check", nbnote="Rate yourself 1 to 4.", label="SELF-CHECK", who="EVERYONE", minutes=3,
-                 title="Rate yourself on each target",
-                 body=["Rate each target 1 to 4 in your notebook (4 = I could teach it).",
-                       "LS3-2.1 three sources · LS3-2.2 sex cells and fertilization · LS3-2.3 copying errors and UV · LS3-2.4 "
-                       "read data and make a claim",
-                       "Monday (Nov 30): reviews and the wrap-up of the puppy puzzle. Then the CSA on Dec 1."],
-                 teacher="Collect the ratings to choose small groups for the Monday review block (Nov 30)."),
-        ],
-        key=["Enrichment: DNA; soil."],
-        notes=["Planner: Fri Nov 20 is a 2-hour early out (37-minute classes) and a Catch Up Day. Use it to get caught up on missing "
-               "work. CFA reviews (Mastery Paths) for LS3-2.1 to 2.4 can start here, but the main review block is Monday, Nov 30 "
-               "(Day 10).",
-               "There is no new CFA. LS3-3.3 is the supporting standard for the enrichment; it is not on the CSA."],
-    ),
-    dict(
-        day=10, date="Mon Nov 30", kind="lesson", period=47, title="Defend Your Claim and Back to the Puppies", targets=["LS3-2.5"],
-        cfa=None, focus="How do I defend my claim against another explanation?",
+        day=9, date="Fri Nov 20 (2-hour early out)", kind="lesson", period=37, title="Back to the Puppies and Make-Up Work",
+        targets=["LS3-2.5"], cfa=None, focus="How do I defend my claim against another explanation?",
         ready="Have ready: your notebook (with your Day 1 model), a pencil, and a Chromebook",
-        can=["finish my CFA reviews", "defend a claim against another explanation using data",
-             "fix my Day 1 model with all three sources of variation",
-             "explain the puppy puzzle with evidence"],
+        can=["defend a claim against another explanation using data", "fix my Day 1 model with all three sources of variation",
+             "explain the puppy puzzle with evidence", "make up missing work"],
         plan=["How to defend a claim", "The new coat pattern", "Fix my Day 1 model", "Write It: the puppy puzzle",
-              "Reviews and make-up work"],
+              "Make up missing work"],
         sections=[
             dict(nb="How to defend a claim", nbnote="Three steps and a worked example.", label="MINI-LESSON", who="WHOLE CLASS",
                  minutes=4, title="How to defend a claim",
@@ -725,21 +681,63 @@ DAYS = [
                         f"and a change is inherited only if it is in {B}."],
                  bank=["new combinations of alleles", "combination", "environmental mutations", "eggs or sperm"],
                  teacher="This is the unit's phenomenon explanation. Collect it."),
-            dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
-                 minutes=28, title="Do your reviews",
-                 body=["Open Canvas. Do the review for each CFA you scored below a B on, lowest target first (LS3-2.1 to "
-                       "LS3-2.4). Finished early? Finish any missing CFA or Monster Genetics pages.",
-                       "The CSA is tomorrow, and a review is the best way to get ready for it. Use all of the work time."],
-                 teacher="This is the 47-minute class for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull "
-                         "small groups by lowest target. Call time at 28 minutes."),
+            dict(nb="Make up missing work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
+                 minutes=20, title="Make up missing work",
+                 body=["Open Canvas and your notebook. Finish any missing CFA, Monster Genetics pages, or other late work, oldest "
+                       "first.", "Your teacher will pull small groups. Finished? Look at your CFA scores. Monday is a full review "
+                       "day."],
+                 teacher="Short periods today (37 minutes). The 15-minute phenomenon wrap-up (LS3-2.5) comes first; the rest of the "
+                         "period is for catching up on missing work. Reviews are saved for Monday, Nov 30."),
         ],
         key=["Defend: another; counterclaim.", "Coat pattern: 14; 3; both; 11.",
              "Fix my model: all three sources plus the sex-cell note.",
              "Write It: claim: new combinations of alleles (plus copying errors and mutations); evidence: combination; reasoning: "
              "combination; environmental mutations; eggs or sperm."],
-        notes=["Monday (47-minute class): the 15-minute phenomenon wrap-up comes first, then the rest of the period is the review block "
-               "for the low-scoring CFAs, to prepare for the CSA on Tuesday. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.",
-               "The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight."],
+        notes=["Planner: Fri Nov 20 is a 2-hour early out (37-minute classes) and a Catch Up Day. The day is the 15-minute "
+               "phenomenon wrap-up, then make-up work. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.",
+               "Monday, Nov 30 is a full review day for the low-scoring CFAs."],
+    ),
+    dict(
+        day=10, date="Mon Nov 30", kind="review", period=47, title="Review Day: Prepare for the CSA",
+        targets=["LS3-2.1", "LS3-2.2", "LS3-2.3", "LS3-2.4"], cfa=None,
+        focus="Which CFA reviews will best get me ready for the CSA?",
+        ready="Have ready: your notebook, a pencil, and a Chromebook",
+        can=["check my CFA scores", "finish the reviews for my low-scoring CFAs",
+             "see how the environment can change how a trait shows up"],
+        plan=["Check my CFAs", "My reviews", "Enrichment: environment and traits", "Self-check"],
+        sections=[
+            dict(nb="Check my CFAs", nbnote="Four CFA scores.", label="CHECK-IN", who="EVERYONE", minutes=4,
+                 title="Check your CFA scores",
+                 body=["Open Canvas and look at your CFA scores for LS3-2.1, LS3-2.2, LS3-2.3, and LS3-2.4.",
+                       "Below a B (fewer than 4 of 5)? A review for that target opened for you."],
+                 teacher="Everyone does this first."),
+            dict(nb="My reviews", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
+                 minutes=34, title="Do your reviews",
+                 body=["Open Canvas. Do the review for each CFA you scored below a B on, lowest target first (LS3-2.1 to "
+                       "LS3-2.4). Keep going until every review is done.",
+                       "The CSA is tomorrow, and a review is the best way to get ready for it. Your teacher will pull small groups."],
+                 teacher="This whole 47-minute class is for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull "
+                         "small groups by lowest target. Students with every review done go to the enrichment."),
+            dict(nb="Enrichment: environment and traits", nbnote="Table and two sentences.", label="ENRICHMENT",
+                 who="IF ALL REVIEWS ARE DONE", minutes=0, title="The same DNA, different colors", table=HYDRANGEA,
+                 body=["A gardener grew copies of one hydrangea plant (the same DNA) in soils of different pH.",
+                       "In a garden of 100 plants from one parent, the soil varies: 42 plants are blue, 33 purple, and 25 pink."],
+                 frame=[f"The plants have the same {B}. Flower color varied because the {B} changed how the gene works."],
+                 bank=["DNA", "soil"],
+                 teacher="LS3-3.3, supporting (not on the CSA). Key: DNA; soil. The environment changed how the trait showed up, "
+                         "not the DNA, so the color is not inherited. This is idea 3 from Day 1."),
+            dict(nb="Self-check", nbnote="Rate yourself 1 to 4.", label="SELF-CHECK", who="EVERYONE", minutes=4,
+                 title="Rate yourself on each target",
+                 body=["Rate each target 1 to 4 in your notebook (4 = I could teach it).",
+                       "LS3-2.1 three sources · LS3-2.2 sex cells and fertilization · LS3-2.3 copying errors and UV · LS3-2.4 "
+                       "read data and make a claim",
+                       "Tomorrow (Tue Dec 1): the CSA."],
+                 teacher="Collect the ratings to see which targets need one more look before the CSA."),
+        ],
+        key=["Enrichment: DNA; soil."],
+        notes=["Planner: Mon Nov 30 is a 47-minute class and a full review day: the Mastery Path reviews for the low-scoring CFAs "
+               "(LS3-2.1 to 2.4), to prepare for the CSA on Tuesday, Dec 1. The puzzle wrap-up was moved to Fri Nov 20.",
+               "There is no CFA after Nov 19. LS3-3.3 is the supporting standard for the enrichment; it is not on the CSA."],
     ),
     dict(
         day=11, date="Tue Dec 1", kind="csa", title="Unit 2.2 CSA", targets=PRIORITY, cfa=None,

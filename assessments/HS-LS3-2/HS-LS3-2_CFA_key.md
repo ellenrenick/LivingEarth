@@ -1,6 +1,6 @@
 # HS-LS3-2 CFAs: Inherited Instructions
 
-One CFA per target for LS3-2.1 to LS3-2.4 (none after Nov 19; LS3-2.5 is taught on Nov 30 and assessed on the CSA): 5 one-point auto-graded questions, taken from memory at the end of the lesson. Below a B (fewer than 4 of 5) opens that target's review (Mastery Path). Canvas shuffles questions and answer choices; the letters here follow this file.
+One CFA per target for LS3-2.1 to LS3-2.4 (none after Nov 19; LS3-2.5 is taught on Nov 20 and assessed on the CSA): 5 one-point auto-graded questions, taken from memory at the end of the lesson. Below a B (fewer than 4 of 5) opens that target's review (Mastery Path). Canvas shuffles questions and answer choices; the letters here follow this file.
 
 | CFA | Target | DOK | Given on |
 | --- | --- | --- | --- |

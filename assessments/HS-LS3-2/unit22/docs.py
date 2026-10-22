@@ -50,7 +50,7 @@ def question(n, it, pos_index):
 
 def cfa_doc():
     out = [f"# {U.STANDARD} CFAs: {U.UNIT_NAME}\n",
-           "One CFA per target for LS3-2.1 to LS3-2.4 (none after Nov 19; LS3-2.5 is taught on Nov 30 and assessed on the CSA): 5 one-point auto-graded questions, taken from memory at the end of the "
+           "One CFA per target for LS3-2.1 to LS3-2.4 (none after Nov 19; LS3-2.5 is taught on Nov 20 and assessed on the CSA): 5 one-point auto-graded questions, taken from memory at the end of the "
            "lesson. Below a B (fewer than 4 of 5) opens that target's review (Mastery Path). Canvas shuffles questions and answer "
            "choices; the letters here follow this file.\n",
            "| CFA | Target | DOK | Given on |", "| --- | --- | --- | --- |"]
@@ -108,9 +108,9 @@ def plan_doc():
             "Dec 1 (Nov 11 Veterans Day and Nov 23 to 27 Fall Break are off), so the unit is compressed the way Unit 2.1 was (13 days to 8):\n",
             "- LS3-2.1 to LS3-2.4 each keep a CFA and class time (LS3-2.3, 2.4, and 2.5 get one day instead of two or three). There are no CFAs after Nov 19, so LS3-2.5 has no CFA or review and is assessed on the CSA.",
             "- The supporting standard LS3-3 (Punnett squares, chances and real counts) is taught through the planner's four linked "
-            "resources: Genetics Notes (Nov 12, 13) and Monster Genetics (Nov 16, 17). LS3-3.3 is a short enrichment on Nov 20. None of it is on the CSA.",
+            "resources: Genetics Notes (Nov 12, 13) and Monster Genetics (Nov 16, 17). LS3-3.3 is a short enrichment on Nov 30. None of it is on the CSA.",
             "- LS3-2.2 (sex cells and fertilization) is taught on Nov 17, right where Monster Genetics' Punnett squares need it.",
-            "- The Nov 20 Catch Up Day keeps its job: CFA reviews (Mastery Paths) and make-up work, then the CSA is Dec 1.",
+            "- Nov 20 (2-hour early out, 37 minutes) is the puzzle wrap-up plus make-up work. Nov 30 (47 minutes) is a full review day for the low-scoring CFAs (Mastery Paths), then the CSA is Dec 1.",
             "- Nothing on the CSA is removed.\n", "## Lessons\n"]
     for d in U.DAYS:
         out.append(f"### Day {d['day']} · {d['date']} · {d['title']}\n")

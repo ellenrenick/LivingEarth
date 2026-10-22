@@ -31,8 +31,8 @@
 | 6 | Tue Nov 17 | Monster Genetics, Part 2: Predict the Baby | LS3-2.2, LS3-3.2 | CFA LS3-2.2 | 37 |
 | 7 | Wed Nov 18 | When Copying Goes Wrong | LS3-2.3 | CFA LS3-2.3 | 37 |
 | 8 | Thu Nov 19 | Where Did This Variation Come From? | LS3-2.4 | CFA LS3-2.4 | 35 |
-| 9 | Fri Nov 20 (2-hour early out) | Catch-Up Day: Reviews and Make-Up Work | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4 | none | 37 |
-| 10 | Mon Nov 30 | Defend Your Claim and Back to the Puppies | LS3-2.5 | none | 45 |
+| 9 | Fri Nov 20 (2-hour early out) | Back to the Puppies and Make-Up Work | LS3-2.5 | none | 37 |
+| 10 | Mon Nov 30 | Review Day: Prepare for the CSA | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4 | none | 44 |
 | 11 | Tue Dec 1 | Unit 2.2 CSA | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4, LS3-2.5 | none | full period |
 
 ## How this fits the workbook
@@ -40,9 +40,9 @@
 The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Planner has 11 class days between Nov 9 and Dec 1 (Nov 11 Veterans Day and Nov 23 to 27 Fall Break are off), so the unit is compressed the way Unit 2.1 was (13 days to 8):
 
 - LS3-2.1 to LS3-2.4 each keep a CFA and class time (LS3-2.3, 2.4, and 2.5 get one day instead of two or three). There are no CFAs after Nov 19, so LS3-2.5 has no CFA or review and is assessed on the CSA.
-- The supporting standard LS3-3 (Punnett squares, chances and real counts) is taught through the planner's four linked resources: Genetics Notes (Nov 12, 13) and Monster Genetics (Nov 16, 17). LS3-3.3 is a short enrichment on Nov 20. None of it is on the CSA.
+- The supporting standard LS3-3 (Punnett squares, chances and real counts) is taught through the planner's four linked resources: Genetics Notes (Nov 12, 13) and Monster Genetics (Nov 16, 17). LS3-3.3 is a short enrichment on Nov 30. None of it is on the CSA.
 - LS3-2.2 (sex cells and fertilization) is taught on Nov 17, right where Monster Genetics' Punnett squares need it.
-- The Nov 20 Catch Up Day keeps its job: CFA reviews (Mastery Paths) and make-up work, then the CSA is Dec 1.
+- Nov 20 (2-hour early out, 37 minutes) is the puzzle wrap-up plus make-up work. Nov 30 (47 minutes) is a full review day for the low-scoring CFAs (Mastery Paths), then the CSA is Dec 1.
 - Nothing on the CSA is removed.
 
 ## Lessons
@@ -197,22 +197,7 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 - The data are classroom models patterned on real experiments (mutation rates rise with radiation dose).
 - CFA LS3-2.4 closes the lesson. Below 4 of 5 opens the review.
 
-### Day 9 · Fri Nov 20 (2-hour early out) · Catch-Up Day: Reviews and Make-Up Work
-
-**Focus question:** What do I still need to work on before the next lesson?
-
-| Min | Section | What happens |
-| --- | --- | --- |
-| 2 | Notebook setup | Students copy slide 2. |
-| 3 | Check your CFA scores | Everyone does this first. |
-| 21 | Make up missing work, then do reviews | Short periods today (37 minutes). This is the make-up day: the point is catching up on work. Reviews are fine if a student has time, but the main review block is Monday (Day 10). Students with nothing to do go to the enrichment. |
-| 8 | The same DNA, different colors | LS3-3.3, supporting (not on the CSA). Key: DNA; soil. The environment changed how the trait showed up, not the DNA, so the color is not inherited. This is idea 3 from Day 1. |
-| 3 | Rate yourself on each target | Collect the ratings to choose small groups for the Monday review block (Nov 30). |
-
-- Planner: Fri Nov 20 is a 2-hour early out (37-minute classes) and a Catch Up Day. Use it to get caught up on missing work. CFA reviews (Mastery Paths) for LS3-2.1 to 2.4 can start here, but the main review block is Monday, Nov 30 (Day 10).
-- There is no new CFA. LS3-3.3 is the supporting standard for the enrichment; it is not on the CSA.
-
-### Day 10 · Mon Nov 30 · Defend Your Claim and Back to the Puppies
+### Day 9 · Fri Nov 20 (2-hour early out) · Back to the Puppies and Make-Up Work
 
 **Focus question:** How do I defend my claim against another explanation?
 
@@ -223,10 +208,25 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | 4 | The new coat pattern | Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can be at work (the standard says "and/or"). |
 | 4 | Fix your Day 1 model | Walk the room with the checklist. |
 | 3 | Why are the puppies alike but not identical? | This is the unit's phenomenon explanation. Collect it. |
-| 28 | Do your reviews | This is the 47-minute class for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull small groups by lowest target. Call time at 28 minutes. |
+| 20 | Make up missing work | Short periods today (37 minutes). The 15-minute phenomenon wrap-up (LS3-2.5) comes first; the rest of the period is for catching up on missing work. Reviews are saved for Monday, Nov 30. |
 
-- Monday (47-minute class): the 15-minute phenomenon wrap-up comes first, then the rest of the period is the review block for the low-scoring CFAs, to prepare for the CSA on Tuesday. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.
-- The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight.
+- Planner: Fri Nov 20 is a 2-hour early out (37-minute classes) and a Catch Up Day. The day is the 15-minute phenomenon wrap-up, then make-up work. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.
+- Monday, Nov 30 is a full review day for the low-scoring CFAs.
+
+### Day 10 · Mon Nov 30 · Review Day: Prepare for the CSA
+
+**Focus question:** Which CFA reviews will best get me ready for the CSA?
+
+| Min | Section | What happens |
+| --- | --- | --- |
+| 2 | Notebook setup | Students copy slide 2. |
+| 4 | Check your CFA scores | Everyone does this first. |
+| 34 | Do your reviews | This whole 47-minute class is for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull small groups by lowest target. Students with every review done go to the enrichment. |
+| 0 | The same DNA, different colors | LS3-3.3, supporting (not on the CSA). Key: DNA; soil. The environment changed how the trait showed up, not the DNA, so the color is not inherited. This is idea 3 from Day 1. |
+| 4 | Rate yourself on each target | Collect the ratings to see which targets need one more look before the CSA. |
+
+- Planner: Mon Nov 30 is a 47-minute class and a full review day: the Mastery Path reviews for the low-scoring CFAs (LS3-2.1 to 2.4), to prepare for the CSA on Tuesday, Dec 1. The puzzle wrap-up was moved to Fri Nov 20.
+- There is no CFA after Nov 19. LS3-3.3 is the supporting standard for the enrichment; it is not on the CSA.
 
 ### Day 11 · Tue Dec 1 · Unit 2.2 CSA
 
