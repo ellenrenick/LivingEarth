@@ -32,7 +32,7 @@
 | 7 | Wed Nov 18 | When Copying Goes Wrong | LS3-2.3 | CFA LS3-2.3 | 35 |
 | 8 | Thu Nov 19 | Where Did This Variation Come From? | LS3-2.4 | CFA LS3-2.4 | 35 |
 | 9 | Fri Nov 20 (2-hour early out) | Catch-Up Day: Reviews and Make-Up Work | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4 | none | 29 |
-| 10 | Mon Nov 30 | Defend Your Claim and Back to the Puppies | LS3-2.5 | CFA LS3-2.5 | 36 |
+| 10 | Mon Nov 30 | Defend Your Claim and Back to the Puppies | LS3-2.5 | CFA LS3-2.5 | 38 |
 | 11 | Tue Dec 1 | Unit 2.2 CSA | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4, LS3-2.5 | none | full period |
 
 ## How this fits the workbook
@@ -203,11 +203,11 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | --- | --- | --- |
 | 2 | Notebook setup | Students copy slide 2. |
 | 3 | Check your CFA scores | Everyone does this first. |
-| 13 | Do your reviews, then make up missing work | Shortened periods today. Pull small groups by lowest target; students with nothing to do go to the enrichment. |
+| 13 | Make up missing work, then do reviews | Shortened periods today (30 minutes). The point is catching up on work. Reviews are fine if a student has time, but the main review block is Monday (Day 10). Students with nothing to do go to the enrichment. |
 | 8 | The same DNA, different colors | LS3-3.3, supporting (not on the CSA). Key: DNA; soil. The environment changed how the trait showed up, not the DNA, so the color is not inherited. This is idea 3 from Day 1. |
-| 3 | Rate yourself on each target | Collect the ratings to choose small groups for Nov 30. |
+| 3 | Rate yourself on each target | Collect the ratings to choose small groups for the Monday review block (Nov 30). |
 
-- Planner: Fri Nov 20 is a 2-hour early out and a Catch Up Day. This day holds the CFA reviews (Mastery Paths) for LS3-2.1 to 2.4 and any make-up work, as in Unit 2.1 Day 7.
+- Planner: Fri Nov 20 is a 2-hour early out (30-minute classes) and a Catch Up Day. Use it to get caught up on missing work. CFA reviews (Mastery Paths) for LS3-2.1 to 2.4 can start here, but the main review block is Monday, Nov 30 (Day 10).
 - There is no new CFA. LS3-3.3 is the supporting standard for the enrichment; it is not on the CSA.
 
 ### Day 10 · Mon Nov 30 · Defend Your Claim and Back to the Puppies
@@ -217,14 +217,14 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | Min | Section | What happens |
 | --- | --- | --- |
 | 2 | Notebook setup | Students copy slide 2. |
-| 3 | Three sources, three clues | Key: already; new; environmental. |
-| 5 | How to defend a claim | Key: another; counterclaim. |
-| 10 | The new coat pattern | Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can be at work (the standard says "and/or"). |
-| 5 | Fix your Day 1 model | Walk the room with the checklist. |
-| 5 | Why are the puppies alike but not identical? | This is the unit's phenomenon explanation. Collect it. |
+| 18 | Do your reviews | This is the main review block (Day 9 was a short catch-up day). Pull small groups by lowest target. Call time at 18 minutes. |
+| 3 | How to defend a claim | Key: another; counterclaim. |
+| 3 | The new coat pattern | Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can be at work (the standard says "and/or"). |
+| 3 | Fix your Day 1 model | Walk the room with the checklist. |
+| 3 | Why are the puppies alike but not identical? | This is the unit's phenomenon explanation. Collect it. |
 | 6 | CFA LS3-2.5 | On their own, from memory. Below 4 of 5 opens the review. |
 
-- Two days after the long break, the warm-up is retrieval. CFA LS3-2.5 closes the lesson; below 4 of 5 opens the review.
+- Monday is the main review block (Day 9, the early-out catch-up day, was short). The phenomenon wrap-up is kept short: 12 minutes of activities, then the 6-minute CFA LS3-2.5. Below 4 of 5 opens the review.
 - The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight.
 
 ### Day 11 · Tue Dec 1 · Unit 2.2 CSA

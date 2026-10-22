@@ -623,7 +623,7 @@ DAYS = [
         targets=["LS3-2.1", "LS3-2.2", "LS3-2.3", "LS3-2.4"], cfa=None,
         focus="What do I still need to work on before the next lesson?",
         ready="Have ready: your notebook, a pencil, and a Chromebook",
-        can=["check my CFA scores", "finish my CFA reviews and any missing work",
+        can=["check my CFA scores", "make up missing work and start my CFA reviews",
              "see how the environment can change how a trait shows up"],
         plan=["Check my CFAs", "Reviews and make-up work", "Enrichment: environment and traits", "Self-check"],
         sections=[
@@ -633,11 +633,12 @@ DAYS = [
                        "Below a B (fewer than 4 of 5)? A review for that target opened for you."],
                  teacher="Everyone does this first."),
             dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
-                 minutes=13, title="Do your reviews, then make up missing work",
-                 body=["In this order: 1. your CFA reviews, lowest target first. 2. Any missing CFA. 3. Unfinished Monster "
-                       "Genetics pages.", "Your teacher will pull small groups."],
-                 teacher="Shortened periods today. Pull small groups by lowest target; students with nothing to do go to the "
-                         "enrichment."),
+                 minutes=13, title="Make up missing work, then do reviews",
+                 body=["In this order: 1. Missing work: any missing CFA and unfinished Monster Genetics pages. 2. Your CFA "
+                       "reviews, lowest target first, if you have time. You will have more review time on Monday.",
+                       "Your teacher will pull small groups."],
+                 teacher="Shortened periods today (30 minutes). The point is catching up on work. Reviews are fine if a student has "
+                         "time, but the main review block is Monday (Day 10). Students with nothing to do go to the enrichment."),
             dict(nb="Enrichment: environment and traits", nbnote="Table and two sentences.", label="ENRICHMENT",
                  who="NO REVIEWS, OR ALL DONE", minutes=8, title="The same DNA, different colors", table=HYDRANGEA,
                  body=["A gardener grew copies of one hydrangea plant (the same DNA) in soils of different pH.",
@@ -651,12 +652,13 @@ DAYS = [
                  body=["Rate each target 1 to 4 in your notebook (4 = I could teach it).",
                        "LS3-2.1 three sources · LS3-2.2 sex cells and fertilization · LS3-2.3 copying errors and UV · LS3-2.4 "
                        "read data and make a claim",
-                       "Next lesson (Nov 30): defend your claim. Then the CSA on Dec 1."],
-                 teacher="Collect the ratings to choose small groups for Nov 30."),
+                       "Monday (Nov 30): reviews and the wrap-up of the puppy puzzle. Then the CSA on Dec 1."],
+                 teacher="Collect the ratings to choose small groups for the Monday review block (Nov 30)."),
         ],
         key=["Enrichment: DNA; soil."],
-        notes=["Planner: Fri Nov 20 is a 2-hour early out and a Catch Up Day. This day holds the CFA reviews (Mastery Paths) for "
-               "LS3-2.1 to 2.4 and any make-up work, as in Unit 2.1 Day 7.",
+        notes=["Planner: Fri Nov 20 is a 2-hour early out (30-minute classes) and a Catch Up Day. Use it to get caught up on missing "
+               "work. CFA reviews (Mastery Paths) for LS3-2.1 to 2.4 can start here, but the main review block is Monday, Nov 30 "
+               "(Day 10).",
                "There is no new CFA. LS3-3.3 is the supporting standard for the enrichment; it is not on the CSA."],
     ),
     dict(
@@ -665,17 +667,19 @@ DAYS = [
         ready="Have ready: your notebook (with your Day 1 model), a pencil, and a Chromebook",
         can=["defend a claim against another explanation using data", "fix my Day 1 model with all three sources of variation",
              "explain the puppy puzzle with evidence"],
-        plan=["Warm-up", "How to defend a claim", "The new coat pattern", "Fix my Day 1 model", "Write It: the puppy puzzle",
-              "CFA LS3-2.5"],
+        plan=["Reviews and make-up work", "How to defend a claim", "The new coat pattern", "Fix my Day 1 model",
+              "Write It: the puppy puzzle", "CFA LS3-2.5"],
         sections=[
-            dict(nb="Warm-up", nbnote="Three clues.", label="WARM-UP", who="ON YOUR OWN", minutes=3, layout="warmup",
-                 title="Three sources, three clues",
-                 body=["Welcome back. Remember the clues from Day 8."],
-                 frame=[f"A new combination uses alleles that were {B} in the parents. A copying error makes a {B} allele. UV "
-                        f"light and chemicals cause {B} mutations."],
-                 bank=["already", "new", "environmental"], teacher="Key: already; new; environmental."),
+            dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
+                 minutes=18, title="Do your reviews",
+                 body=["Open Canvas. In this order: 1. Any CFA review that opened for you, lowest target first (LS3-2.1 to "
+                       "LS3-2.4). 2. Any missing CFA or Monster Genetics pages.",
+                       "The CSA is tomorrow, and a review is the best way to get ready for it. Stop at the end of the work time: "
+                       "the puppy puzzle wrap-up starts next."],
+                 teacher="This is the main review block (Day 9 was a short catch-up day). Pull small groups by lowest target. Call "
+                         "time at 18 minutes."),
             dict(nb="How to defend a claim", nbnote="Three steps and a worked example.", label="MINI-LESSON", who="WHOLE CLASS",
-                 minutes=5, title="How to defend a claim",
+                 minutes=3, title="How to defend a claim",
                  body=["A counterclaim is another explanation. To defend your claim: 1. Restate it. 2. Cite the data that "
                        "supports it. 3. Show why the other explanation does not fit the data.",
                        "Worked example (Day 8, Case 3): Claim: X-rays caused the extra mutations. Counterclaim: copying errors "
@@ -683,7 +687,7 @@ DAYS = [
                        "high-dose group had 25, so copying errors cannot explain the extra 22."],
                  frame=[f"A counterclaim is {B} explanation. To defend my claim I show why the {B} does not fit the data."],
                  bank=["another", "counterclaim"], teacher="Key: another; counterclaim."),
-            dict(nb="The new coat pattern", nbnote="Table and a defense.", label="CASE", who="WITH A PARTNER", minutes=10,
+            dict(nb="The new coat pattern", nbnote="Table and a defense.", label="CASE", who="WITH A PARTNER", minutes=3,
                  title="The new coat pattern", table=KENNELS,
                  body=["Claim: A chemical in Kennel A's water caused the new coat patterns.",
                        "Counterclaim: \"New patterns are just copying errors. Copying errors happen in every dog.\""],
@@ -693,13 +697,13 @@ DAYS = [
                  teacher="Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can "
                          "be at work (the standard says \"and/or\")."),
             dict(nb="Fix my Day 1 model", nbnote="Redraw with all three sources.", label="MYSTERY SOLVED", who="ON YOUR OWN",
-                 minutes=5, title="Fix your Day 1 model",
+                 minutes=3, title="Fix your Day 1 model",
                  body=["Redraw your Day 1 model. Check off each part as you add it:",
                        "☐ new combinations (sex cells and fertilization)  ☐ copying errors  ☐ mutations from the environment",
                        "☐ a note that only changes in eggs or sperm are inherited  ☐ the puppy traits"],
                  teacher="Walk the room with the checklist."),
             dict(nb="Write It: the puppy puzzle", nbnote="Claim, evidence, reasoning.", label="WRITE IT", who="ON YOUR OWN",
-                 minutes=5, title="Why are the puppies alike but not identical?",
+                 minutes=3, title="Why are the puppies alike but not identical?",
                  body=["Write one explanation for the puzzle."],
                  frame=[f"Claim: Puppies from the same parents are alike but not identical because of {B}.",
                         f"Evidence: In the card activity, each offspring got a different {B} of alleles.",
@@ -708,11 +712,12 @@ DAYS = [
                  bank=["new combinations of alleles", "combination", "environmental mutations", "eggs or sperm"],
                  teacher="This is the unit's phenomenon explanation. Collect it."),
         ],
-        key=["Warm-up: already; new; environmental.", "Defend: another; counterclaim.", "Coat pattern: 14; 3; both; 11.",
+        key=["Defend: another; counterclaim.", "Coat pattern: 14; 3; both; 11.",
              "Fix my model: all three sources plus the sex-cell note.",
              "Write It: claim: new combinations of alleles (plus copying errors and mutations); evidence: combination; reasoning: "
              "combination; environmental mutations; eggs or sperm."],
-        notes=["Two days after the long break, the warm-up is retrieval. CFA LS3-2.5 closes the lesson; below 4 of 5 opens the review.",
+        notes=["Monday is the main review block (Day 9, the early-out catch-up day, was short). The phenomenon wrap-up is kept short: 12 "
+               "minutes of activities, then the 6-minute CFA LS3-2.5. Below 4 of 5 opens the review.",
                "The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight."],
     ),
     dict(

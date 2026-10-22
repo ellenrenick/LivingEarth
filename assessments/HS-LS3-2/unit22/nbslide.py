@@ -35,6 +35,7 @@ OVERRIDE = {
     (1, "My first model"): [("box", 1.25, "Draw: Parent 1, Parent 2, and two offspring. Use arrows to show information moving from "
                                           "the parents to the offspring. Label one shared trait and one different trait.")],
     (1, "Three possible explanations"): [("box", 0.8, "Three small sketch boxes: one idea in each.")],
+    (10, "Reviews and make-up work"): [("lines", 2)],
     (10, "Fix my Day 1 model"): [("box", 1.2, "Redraw your Day 1 model. Add: new combinations, copying errors, mutations from the "
                                               "environment, and which changes are inherited.")],
     (5, "Build the female monster"): [("text", "Use Table 1 on your Monster Genetics sheet."), ("lines", 1)],
