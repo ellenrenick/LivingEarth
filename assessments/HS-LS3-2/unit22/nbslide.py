@@ -42,6 +42,9 @@ OVERRIDE = {
     (6, "Punnett squares for the baby"): [("box", 0.95, "Draw the Punnett square for Skin color, Gg × Gg. Then make 5 more for "
                                                       "your traits (on your sheet).")],
     (4, "Punnett squares"): [("box", 0.95, "Draw a 2 × 2 Punnett square for Tt × Tt. Write the alleles on the top and the side.")],
+    (4, "Genotype and phenotype"): [("lines", 2), ("box", 0.95, "Make a table: Genotype and Phenotype for TT, Tt, tt (TT is tall).\nThen draw two eyes. Color one blue and one brown.")],
+    (4, "Homozygous and heterozygous"): [("box", 0.7, "Write CC, Ee, Gg, dd, AA, Hh. Color the homozygous ones green and the heterozygous ones orange."),
+                                         ("lines", 1)],
     (3, "Genes make proteins make traits"): [("lines", 4)],
     (3, "Alleles"): [("box", 0.95, "Sketch a pair of chromosomes. Color each set of alleles a different color."), ("lines", 1)],
     (3, "Black or brown cats"): [("box", 0.7, "Draw three cat heads: BB, Bb, bb. Color each one to show its coat."), ("lines", 1)],

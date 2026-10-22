@@ -26,7 +26,7 @@
 | 1 | Mon Nov 9 | The Puppy Puzzle | LS3-2.1 | none | 35 |
 | 2 | Tue Nov 10 | Mixing Information | LS3-2.1 | CFA LS3-2.1 | 38 |
 | 3 | Thu Nov 12 | Genetics Notes, Part 1: Genes and Alleles | LS3-3.1 | none | 32 |
-| 4 | Fri Nov 13 | Genetics Notes, Part 2: Genotype, Phenotype, and Punnett Squares | LS3-3.1 | none | 33 |
+| 4 | Fri Nov 13 | Genetics Notes, Part 2: Genotype, Phenotype, and Punnett Squares | LS3-3.1 | none | 34 |
 | 5 | Mon Nov 16 | Monster Genetics, Part 1: Flip a Coin, Build a Monster | LS3-3.1 | none | 37 |
 | 6 | Tue Nov 17 | Monster Genetics, Part 2: Predict the Baby | LS3-2.2, LS3-3.2 | CFA LS3-2.2 | 37 |
 | 7 | Wed Nov 18 | When Copying Goes Wrong | LS3-2.3 | CFA LS3-2.3 | 35 |
@@ -112,8 +112,10 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | --- | --- | --- |
 | 2 | Notebook setup | Students copy slide 2. |
 | 3 | Capital or lowercase? | Key: capital; lowercase. |
-| 6 | Genotype and phenotype | Key: Tt tall; tt short; genetic; observable. |
-| 5 | Homozygous and heterozygous | Key: Tt heterozygous; tt homozygous; Rr heterozygous; heterozygous; different. |
+| 2 | Genotypes | Key: genetic; alleles. From slides 15 and 16 of the Genetics Notes deck (same wording and the BB, Bb, bb examples). |
+| 3 | Phenotypes | Key: traits; eye color. Students color the two eyes in their notebook (blue and brown). From slides 17 and 18 of the Genetics Notes deck (same eye graphics). |
+| 3 | From genotype to phenotype | Key: Tt tall; tt short. Frame: tall; short. |
+| 4 | Homozygous and heterozygous | Key: same; homozygous; different; heterozygous. Green (homozygous): CC, dd, AA. Orange (heterozygous): Ee, Gg, Hh. From slide 19 of the Genetics Notes deck (same six genotypes). |
 | 8 | Punnett squares | Draw the square on the board while students copy it. Key: combination. Tell them: the letters on the top and side are the alleles in each parent's sex cells (Day 6 explains why). |
 | 6 | Try two crosses | Key: Cross 1: Tt, Tt, tt, tt: 2 tall, 2 short. Cross 2: TT, TT, Tt, Tt: 4 tall. |
 | 3 | How many are short? | Key: 1. |

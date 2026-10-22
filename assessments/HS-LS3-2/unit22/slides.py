@@ -480,6 +480,8 @@ ORIG = {
     "g1ebb2efc9c9_2_215": (0.1, 1.17, 20.0, 3.09), "g1ebb2efc9c9_2_221": (3.84, 6.69, 2.98, 3.5),
     "g1ebb2efc9c9_2_222": (6.95, 7.06, 9.6, 2.19), "g1ebb2efc9c9_2_231": (3.84, 6.69, 2.98, 3.5),
     "g1ebb2efc9c9_2_232": (6.95, 7.06, 9.6, 2.19), "g1ebb2efc9c9_2_239": (7.56, 8.18, 10.15, 2.37),
+    "g1ebb2efc9c9_2_277": (1.62, 4.54, 8.02, 5.62), "g1ebb2efc9c9_2_278": (10.12, 4.54, 8.1, 5.62),
+    "g1ebb2efc9c9_2_289": (3.05, 8.3, 13.89, 1.98),
 }
 
 
@@ -542,6 +544,16 @@ def image_slide(day, k, s, index, urls):
         r += style_ranges(oid, [(a, a + len("Word bank:"))], color=ORANGE)
         return sid, r, warn
 
+    if s.get("table") and not img:  # intro on top, table on the left, notebook line + sentence frame + word bank on the right
+        head, rows = s["table"]
+        intro, frame = section_texts(s)
+        r += shape(f"{sid}_intro", sid, "TEXT_BOX", BODY_X, BODY_Y, BODY_W, 0.8, text=intro, size=14, color=INK, space_below=4)
+        r += table_requests(f"{sid}_tbl", sid, BODY_X, 2.85, head, rows, 4.3, 12, 0.32)
+        r += shape(f"{sid}_text", sid, "TEXT_BOX", 5.3, 2.8, 4.0, 2.2, text=frame, size=12, color=INK, space_below=4)
+        a = frame.index("Word bank:")
+        r += style_ranges(f"{sid}_text", bold_ranges(frame) + [(0, frame.index(":") + 1)] + [(a, a + len("Word bank:"))])
+        r += style_ranges(f"{sid}_text", [(a, a + len("Word bank:"))], color=ORANGE)
+        return sid, r, warn
     h = 0
     if img:
         h = put(img["ids"], img["x"], img["y"], img["w"])
@@ -551,11 +563,16 @@ def image_slide(day, k, s, index, urls):
     text = "\n".join(t for t in (intro, frame) if t)
     tx, tw = s.get("text_x", BODY_X), s.get("text_w", BODY_W)
     th = 3.2 if not img or tw < BODY_W or img["y"] < 2.8 else img["y"] - BODY_Y - 0.05
+    if s.get("big"):
+        th = 1.25
     fs = fit(text, tw, th, (16, 15, 14, 13, 12, 11), space=5)
     if text_h(text, tw, fs, 5) > th:
         warn.append(f"day {day} {title}: text {text_h(text, tw, fs, 5):.2f}/{th:.2f} in at {fs} pt")
     oid = f"{sid}_text"
     r += shape(oid, sid, "TEXT_BOX", tx, BODY_Y, tw, th, text=text, size=fs, color=INK, space_below=5)
+    if s.get("big"):
+        r += shape(f"{sid}_big", sid, "TEXT_BOX", BODY_X, 3.15, BODY_W, 1.0, text=s["big"], size=44, bold=True, color=BLUE, align="CENTER")
+        r += shape(f"{sid}_note", sid, "TEXT_BOX", BODY_X, 4.25, BODY_W, 0.6, text=s["note"], size=13, color=MUTED, align="CENTER")
     r += style_ranges(oid, bold_ranges(text))
     if "Word bank:" in text:
         a = text.index("Word bank:")
@@ -563,20 +580,22 @@ def image_slide(day, k, s, index, urls):
     return sid, r, warn
 
 
-def rebuild_with_images(day, urls, old_ids):
+def rebuild_with_images(day, urls, old_ids, only=None, start=3):
     """Requests that replace the section slides (everything after the learning-targets slide) of a built deck."""
     d = U.DAY[day]
     tpl = f"u{day}g_tpl"
     reqs, warn = [{"deleteObject": {"objectId": o}} for o in old_ids], []
-    reqs += [new_slide(tpl, 3)] + chrome(tpl)
+    reqs += [new_slide(tpl, start)] + chrome(tpl)
     sids = []
     for k, s in enumerate(d["sections"], 1):
-        sid, rr, w = image_slide(day, k, s, 2 + k, urls)
+        if only and k not in only:
+            continue
+        sid, rr, w = image_slide(day, k, s, start, urls)
         reqs += rr
         warn += w
         sids.append(sid)
     reqs.append({"deleteObject": {"objectId": tpl}})
-    reqs += [{"updateSlidesPosition": {"slideObjectIds": [sid], "insertionIndex": 3 + i}} for i, sid in enumerate(sids)]
+    reqs += [{"updateSlidesPosition": {"slideObjectIds": [sid], "insertionIndex": start + i}} for i, sid in enumerate(sids)]
     return reqs, warn
 
 
@@ -585,7 +604,9 @@ if __name__ == "__main__":
     if what == "template":
         print(json.dumps(template_requests(), ensure_ascii=False, separators=(",", ":")))
     elif what == "imgdeck":  # python3 slides.py imgdeck DAY urls.json old_id,old_id,...
-        r, w = rebuild_with_images(int(sys.argv[2]), json.load(open(sys.argv[3])), sys.argv[4].split(","))
+        only = {int(x) for x in sys.argv[5].split(",")} if len(sys.argv) > 5 else None  # optional: section numbers to build
+        start = int(sys.argv[6]) if len(sys.argv) > 6 else 3  # optional: slide index for the first new slide
+        r, w = rebuild_with_images(int(sys.argv[2]), json.load(open(sys.argv[3])), sys.argv[4].split(",") if sys.argv[4] else [], only, start)
         for x in w:
             print("WARN", x, file=sys.stderr)
         print(json.dumps(r, ensure_ascii=False, separators=(",", ":")))
