@@ -219,13 +219,13 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | Min | Section | What happens |
 | --- | --- | --- |
 | 2 | Notebook setup | Students copy slide 2. |
-| 28 | Do your reviews | This is the 47-minute class for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull small groups by lowest target. Call time at 28 minutes. |
 | 4 | How to defend a claim | Key: another; counterclaim. |
 | 4 | The new coat pattern | Key: 14; 3; both; 11. Good defenses also say copying errors may explain Kennel B's 3, so both sources can be at work (the standard says "and/or"). |
 | 4 | Fix your Day 1 model | Walk the room with the checklist. |
 | 3 | Why are the puppies alike but not identical? | This is the unit's phenomenon explanation. Collect it. |
+| 28 | Do your reviews | This is the 47-minute class for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull small groups by lowest target. Call time at 28 minutes. |
 
-- Monday (47-minute class) is the review block for the low-scoring CFAs, to prepare for the CSA on Tuesday. The phenomenon wrap-up is kept to 15 minutes. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.
+- Monday (47-minute class): the 15-minute phenomenon wrap-up comes first, then the rest of the period is the review block for the low-scoring CFAs, to prepare for the CSA on Tuesday. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.
 - The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight.
 
 ### Day 11 · Tue Dec 1 · Unit 2.2 CSA

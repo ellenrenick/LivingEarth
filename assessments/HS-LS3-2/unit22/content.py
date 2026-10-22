@@ -689,17 +689,9 @@ DAYS = [
         can=["finish my CFA reviews", "defend a claim against another explanation using data",
              "fix my Day 1 model with all three sources of variation",
              "explain the puppy puzzle with evidence"],
-        plan=["Reviews and make-up work", "How to defend a claim", "The new coat pattern", "Fix my Day 1 model",
-              "Write It: the puppy puzzle"],
+        plan=["How to defend a claim", "The new coat pattern", "Fix my Day 1 model", "Write It: the puppy puzzle",
+              "Reviews and make-up work"],
         sections=[
-            dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
-                 minutes=28, title="Do your reviews",
-                 body=["Open Canvas. Do the review for each CFA you scored below a B on, lowest target first (LS3-2.1 to "
-                       "LS3-2.4). Finished early? Finish any missing CFA or Monster Genetics pages.",
-                       "The CSA is tomorrow, and a review is the best way to get ready for it. Stop at the end of the work time: "
-                       "the puppy puzzle wrap-up starts next."],
-                 teacher="This is the 47-minute class for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull "
-                         "small groups by lowest target. Call time at 28 minutes."),
             dict(nb="How to defend a claim", nbnote="Three steps and a worked example.", label="MINI-LESSON", who="WHOLE CLASS",
                  minutes=4, title="How to defend a claim",
                  body=["A counterclaim is another explanation. To defend your claim: 1. Restate it. 2. Cite the data that "
@@ -733,13 +725,20 @@ DAYS = [
                         f"and a change is inherited only if it is in {B}."],
                  bank=["new combinations of alleles", "combination", "environmental mutations", "eggs or sperm"],
                  teacher="This is the unit's phenomenon explanation. Collect it."),
+            dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
+                 minutes=28, title="Do your reviews",
+                 body=["Open Canvas. Do the review for each CFA you scored below a B on, lowest target first (LS3-2.1 to "
+                       "LS3-2.4). Finished early? Finish any missing CFA or Monster Genetics pages.",
+                       "The CSA is tomorrow, and a review is the best way to get ready for it. Use all of the work time."],
+                 teacher="This is the 47-minute class for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull "
+                         "small groups by lowest target. Call time at 28 minutes."),
         ],
         key=["Defend: another; counterclaim.", "Coat pattern: 14; 3; both; 11.",
              "Fix my model: all three sources plus the sex-cell note.",
              "Write It: claim: new combinations of alleles (plus copying errors and mutations); evidence: combination; reasoning: "
              "combination; environmental mutations; eggs or sperm."],
-        notes=["Monday (47-minute class) is the review block for the low-scoring CFAs, to prepare for the CSA on Tuesday. The "
-               "phenomenon wrap-up is kept to 15 minutes. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.",
+        notes=["Monday (47-minute class): the 15-minute phenomenon wrap-up comes first, then the rest of the period is the review block "
+               "for the low-scoring CFAs, to prepare for the CSA on Tuesday. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.",
                "The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight."],
     ),
     dict(
