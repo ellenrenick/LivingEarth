@@ -29,7 +29,7 @@
 | 4 | Fri Nov 13 | Genetics Notes, Part 2: Genotype, Phenotype, and Punnett Squares | LS3-3.1 | none | 34 |
 | 5 | Mon Nov 16 | Monster Genetics, Part 1: Flip a Coin, Build a Monster | LS3-3.1 | none | 37 |
 | 6 | Tue Nov 17 | Monster Genetics, Part 2: Predict the Baby | LS3-2.2, LS3-3.2 | CFA LS3-2.2 | 37 |
-| 7 | Wed Nov 18 | When Copying Goes Wrong | LS3-2.3 | CFA LS3-2.3 | 35 |
+| 7 | Wed Nov 18 | When Copying Goes Wrong | LS3-2.3 | CFA LS3-2.3 | 37 |
 | 8 | Thu Nov 19 | Where Did This Variation Come From? | LS3-2.4 | CFA LS3-2.4 | 35 |
 | 9 | Fri Nov 20 (2-hour early out) | Catch-Up Day: Reviews and Make-Up Work | LS3-2.1, LS3-2.2, LS3-2.3, LS3-2.4 | none | 29 |
 | 10 | Mon Nov 30 | Defend Your Claim and Back to the Puppies | LS3-2.5 | CFA LS3-2.5 | 38 |
@@ -168,9 +168,11 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | 2 | Notebook setup | Students copy slide 2. |
 | 3 | Back to one letter | Key: change; amino acid. |
 | 6 | How do mutations happen? | Key: copying; chemicals. |
+| 3 | Silent and missense mutations | Key: 1 effect, 2 amino acid, 3 codons, 4 different. From slides 22 and 23 of the Genetics Notes deck (the original Effects of Mutations page). |
+| 2 | Frameshift and nonsense mutations | Key: 1 mRNA, 2 backwards, 3 stop, 4 terminates. From slides 24 and 25 of the Genetics Notes deck. |
 | 5 | UV light and mutations | Key: more; copying. The table is a class data set modeled on real experiments. |
-| 9 | Who passes it on? | Key: A No; B Yes; C No; D Yes; E No. In animals, only changes in cells that make eggs or sperm are inherited. |
-| 4 | How can UV light change a gene? | Key: damaging; eggs or sperm. |
+| 7 | Who passes it on? | Key: A No; B Yes; C No; D Yes; E No. In animals, only changes in cells that make eggs or sperm are inherited. |
+| 3 | How can UV light change a gene? | Key: damaging; eggs or sperm. |
 | 6 | CFA LS3-2.3 | On their own, from memory. Below 4 of 5 opens the review. |
 
 - Connects to Unit 2.1 (LS1-1.3, a one-letter change). The boundary applies: no biochemical mechanism of specific steps, so do not teach the enzymes of copying or repair.

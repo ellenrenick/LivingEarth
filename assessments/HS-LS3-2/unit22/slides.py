@@ -585,19 +585,108 @@ def rebuild_with_images(day, urls, old_ids, only=None, start=3):
     d = U.DAY[day]
     tpl = f"u{day}g_tpl"
     reqs, warn = [{"deleteObject": {"objectId": o}} for o in old_ids], []
-    reqs += [new_slide(tpl, start)] + chrome(tpl)
+    wanted = [s for k, s in enumerate(d["sections"], 1) if not only or k in only]
+    use_tpl = any(not s.get("strip") for s in wanted)
+    if use_tpl:
+        reqs += [new_slide(tpl, start)] + chrome(tpl)
     sids = []
     for k, s in enumerate(d["sections"], 1):
         if only and k not in only:
             continue
-        sid, rr, w = image_slide(day, k, s, start, urls)
+        sid, rr, w = (mutation_slide if s.get("strip") else image_slide)(day, k, s, start, urls)
         reqs += rr
         warn += w
         sids.append(sid)
-    reqs.append({"deleteObject": {"objectId": tpl}})
+    if use_tpl:
+        reqs.append({"deleteObject": {"objectId": tpl}})
     reqs += [{"updateSlidesPosition": {"slideObjectIds": [sid], "insertionIndex": start + i}} for i, sid in enumerate(sids)]
     return reqs, warn
 
+
+
+# ---------------------------------------------------------------------------
+# Day 7: the "Effects of Mutations" page from the original Genetics Notes deck. The deck shows it cropped; the API cannot crop, so
+# the whole page is placed enlarged and everything around the window is covered with page-colored rectangles.
+# ---------------------------------------------------------------------------
+MUT_NATURAL = (22.17, 21.52)          # natural size (in, at the original deck's scale) of the page image
+MUT_L, MUT_R = 0.06423206, 0.07243377  # horizontal crop used by the original slides 21 to 25
+# original slides: displayed rect (x, y, w, h in the 20 in page), top and bottom crop, and each blank box (x, y, w, h)
+MUT_SLIDES = {
+    22: dict(rect=(0.428, 3.82, 19.14, 3.226), top=0.40058172, bottom=0.44948876,
+             boxes=[(11.24, 4.86, 1.82, 0.58), (6.95, 5.33, 2.83, 0.58), (12.25, 5.81, 1.66, 0.58)]),   # effect, amino acid, codons
+    23: dict(rect=(0.428, 3.549, 19.14, 3.689), top=0.52881366, bottom=0.29972738, boxes=[(9.74, 5.62, 2.63, 0.58)]),   # different
+    24: dict(rect=(0.428, 3.549, 19.14, 3.689), top=0.67410797, bottom=0.15443309,
+             boxes=[(2.25, 5.28, 1.32, 0.58), (1.46, 5.89, 2.66, 0.58)]),                                 # mRNA, backwards
+    25: dict(rect=(0.428, 3.549, 19.14, 3.689), top=0.8077873, bottom=0.020762578,
+             boxes=[(15.59, 4.62, 1.32, 0.58), (10.91, 5.13, 2.93, 0.58)]),                               # stop, terminates
+}
+
+
+def mut_frac(slide, x, y):
+    """Position (x, y in the original slide) as fractions (u, v) of the whole page image."""
+    m = MUT_SLIDES[slide]
+    ox, oy, ow, oh = m["rect"]
+    u = MUT_L + (x - ox) / ow * (1 - MUT_L - MUT_R)
+    v = m["top"] + (y - oy) / oh * (1 - m["top"] - m["bottom"])
+    return u, v
+
+
+def mutation_slide(day, k, s, index, urls):
+    """Section slide showing a window of the Effects of Mutations page with numbered blank boxes. Returns (id, requests, warnings)."""
+    d = U.DAY[day]
+    foot = f"Unit 2.2 · Day {day} · {d['title']}"
+    sid = f"u{day}g_s{k:02d}"
+    spec = s["strip"]
+    wins = spec["slides"]
+    v0 = MUT_SLIDES[wins[0]]["top"]
+    v1 = 1 - MUT_SLIDES[wins[-1]]["bottom"]
+    X, Y, Wd = 1.3, 1.85, 7.4
+    kk = Wd / (MUT_NATURAL[0] * (1 - MUT_L - MUT_R))
+    nw, nh = MUT_NATURAL[0] * kk, MUT_NATURAL[1] * kk
+    Hd = (v1 - v0) * nh
+    kick, title, emo = kicker(s), s["title"], EMOJI.get(s["label"], "📘")
+    items = chrome(sid)
+    r = [new_slide(sid, index), items[0]]
+    r += shape(f"{sid}_card", sid, "RECTANGLE", 0.5, 1.75, 9.0, 3.35, fill=WHITE)
+    r += picture(f"{sid}_img", sid, urls[spec["url_id"]], X - MUT_L * nw, Y - v0 * nh, nw, nh)
+    n = 0
+
+    def cover(x, y, w, h, color):
+        nonlocal n
+        n += 1
+        return shape(f"{sid}_cv{n}", sid, "RECTANGLE", x, y, w, h, fill=color)
+
+    for x, y, w, h in [(0, 0, 10, 1.75), (0, 5.1, 10, 0.525), (0, 1.75, 0.5, 3.35), (9.5, 1.75, 0.5, 3.35)]:
+        r += cover(x, y, w, h, LIGHT)
+    for x, y, w, h in [(0.5, 1.75, 9.0, Y - 1.75), (0.5, Y, X - 0.5, Hd), (X + Wd, Y, 9.5 - X - Wd, Hd), (0.5, Y + Hd, 9.0, 5.1 - Y - Hd)]:
+        r += cover(x, y, w, h, WHITE)
+    num = 0
+    for sl in wins:
+        for bx, by, bw, bh in MUT_SLIDES[sl]["boxes"]:
+            u, v = mut_frac(sl, bx, by)
+            u2, _ = mut_frac(sl, bx + bw, by)
+            _, v2 = mut_frac(sl, bx, by + bh)
+            num += 1
+            oid = f"{sid}_bx{num}"
+            r += shape(oid, sid, "ROUND_RECTANGLE", X + (u - MUT_L) / (1 - MUT_L - MUT_R) * Wd, Y + (v - v0) * nh,
+                       (u2 - u) / (1 - MUT_L - MUT_R) * Wd, (v2 - v) * nh, fill=ORANGE, text=str(num), size=10, bold=True, color=NAVY,
+                       align="CENTER", valign="MIDDLE")
+    parts = [x for x in items[3:] if True]  # kick, emo, title, bar, foot (the card's two requests are items[1:3])
+    r += parts
+    r += [replace(sid, "KICK", kick), replace(sid, "TITLE", title), replace(sid, "EMO", emo), replace(sid, "FOOT", foot),
+          move(f"{sid}_kick", 3.6, 0.36, 0.5, 0.27, kick_width(kick), 0.36)]
+    tfs = 30 if lines_needed(title, 8.1, 30) == 1 else 24
+    if lines_needed(title, 8.1, tfs) > 1:
+        tfs = 20
+    r.append({"updateTextStyle": {"objectId": f"{sid}_title", "textRange": {"type": "ALL"}, "style": {"fontSize": {"magnitude": tfs, "unit": "PT"}}, "fields": "fontSize"}})
+    txt = f"In your notebook, under “{s['nb']}”: write the missing words 1 to {num}.  {bank_line(s)}"
+    oid = f"{sid}_text"
+    r += shape(oid, sid, "TEXT_BOX", 0.68, Y + Hd + 0.05, 8.64, 0.6, text=txt, size=11, color=INK)
+    a = txt.index("Word bank:")
+    r += style_ranges(oid, [(0, txt.index(":") + 1), (a, a + len("Word bank:"))])
+    r += style_ranges(oid, [(a, a + len("Word bank:"))], color=ORANGE)
+    warn = [] if Y + Hd + 0.65 <= 5.12 else [f"day {day} {title}: text ends at {Y + Hd + 0.65:.2f} in"]
+    return sid, r, warn
 
 if __name__ == "__main__":
     what = sys.argv[1]
