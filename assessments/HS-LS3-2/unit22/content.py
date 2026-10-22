@@ -640,7 +640,7 @@ DAYS = [
                "CFA LS3-2.4 closes the lesson. Below 4 of 5 opens the review."],
     ),
     dict(
-        day=9, date="Fri Nov 20 (2-hour early out)", kind="review", title="Catch-Up Day: Reviews and Make-Up Work",
+        day=9, date="Fri Nov 20 (2-hour early out)", kind="review", period=37, title="Catch-Up Day: Reviews and Make-Up Work",
         targets=["LS3-2.1", "LS3-2.2", "LS3-2.3", "LS3-2.4"], cfa=None,
         focus="What do I still need to work on before the next lesson?",
         ready="Have ready: your notebook, a pencil, and a Chromebook",
@@ -654,11 +654,11 @@ DAYS = [
                        "Below a B (fewer than 4 of 5)? A review for that target opened for you."],
                  teacher="Everyone does this first."),
             dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
-                 minutes=13, title="Make up missing work, then do reviews",
+                 minutes=21, title="Make up missing work, then do reviews",
                  body=["In this order: 1. Missing work: any missing CFA and unfinished Monster Genetics pages. 2. Your CFA "
                        "reviews, lowest target first, if you have time. You will have more review time on Monday.",
                        "Your teacher will pull small groups."],
-                 teacher="Shortened periods today (30 minutes). The point is catching up on work. Reviews are fine if a student has "
+                 teacher="Short periods today (37 minutes). This is the make-up day: the point is catching up on work. Reviews are fine if a student has "
                          "time, but the main review block is Monday (Day 10). Students with nothing to do go to the enrichment."),
             dict(nb="Enrichment: environment and traits", nbnote="Table and two sentences.", label="ENRICHMENT",
                  who="NO REVIEWS, OR ALL DONE", minutes=8, title="The same DNA, different colors", table=HYDRANGEA,
@@ -677,13 +677,13 @@ DAYS = [
                  teacher="Collect the ratings to choose small groups for the Monday review block (Nov 30)."),
         ],
         key=["Enrichment: DNA; soil."],
-        notes=["Planner: Fri Nov 20 is a 2-hour early out (30-minute classes) and a Catch Up Day. Use it to get caught up on missing "
+        notes=["Planner: Fri Nov 20 is a 2-hour early out (37-minute classes) and a Catch Up Day. Use it to get caught up on missing "
                "work. CFA reviews (Mastery Paths) for LS3-2.1 to 2.4 can start here, but the main review block is Monday, Nov 30 "
                "(Day 10).",
                "There is no new CFA. LS3-3.3 is the supporting standard for the enrichment; it is not on the CSA."],
     ),
     dict(
-        day=10, date="Mon Nov 30", kind="lesson", title="Defend Your Claim and Back to the Puppies", targets=["LS3-2.5"],
+        day=10, date="Mon Nov 30", kind="lesson", period=47, title="Defend Your Claim and Back to the Puppies", targets=["LS3-2.5"],
         cfa=None, focus="How do I defend my claim against another explanation?",
         ready="Have ready: your notebook (with your Day 1 model), a pencil, and a Chromebook",
         can=["finish my CFA reviews", "defend a claim against another explanation using data",
@@ -693,13 +693,13 @@ DAYS = [
               "Write It: the puppy puzzle"],
         sections=[
             dict(nb="Reviews and make-up work", nbnote="Your to-do list.", label="WORK TIME", who="ON YOUR OWN + SMALL GROUPS",
-                 minutes=20, title="Do your reviews",
-                 body=["Open Canvas. In this order: 1. Any CFA review that opened for you, lowest target first (LS3-2.1 to "
-                       "LS3-2.4). 2. Any missing CFA or Monster Genetics pages.",
+                 minutes=28, title="Do your reviews",
+                 body=["Open Canvas. Do the review for each CFA you scored below a B on, lowest target first (LS3-2.1 to "
+                       "LS3-2.4). Finished early? Finish any missing CFA or Monster Genetics pages.",
                        "The CSA is tomorrow, and a review is the best way to get ready for it. Stop at the end of the work time: "
                        "the puppy puzzle wrap-up starts next."],
-                 teacher="This is the main review block (Day 9 was a short catch-up day). Pull small groups by lowest target. Call "
-                         "time at 20 minutes."),
+                 teacher="This is the 47-minute class for the reviews from low-scoring CFAs, to prepare for the CSA tomorrow. Pull "
+                         "small groups by lowest target. Call time at 28 minutes."),
             dict(nb="How to defend a claim", nbnote="Three steps and a worked example.", label="MINI-LESSON", who="WHOLE CLASS",
                  minutes=4, title="How to defend a claim",
                  body=["A counterclaim is another explanation. To defend your claim: 1. Restate it. 2. Cite the data that "
@@ -738,8 +738,8 @@ DAYS = [
              "Fix my model: all three sources plus the sex-cell note.",
              "Write It: claim: new combinations of alleles (plus copying errors and mutations); evidence: combination; reasoning: "
              "combination; environmental mutations; eggs or sperm."],
-        notes=["Monday is the main review block (Day 9, the early-out catch-up day, was short). The phenomenon wrap-up is kept to 15 "
-               "minutes. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.",
+        notes=["Monday (47-minute class) is the review block for the low-scoring CFAs, to prepare for the CSA on Tuesday. The "
+               "phenomenon wrap-up is kept to 15 minutes. There is no CFA after Nov 19: LS3-2.5 is taught here and assessed on the CSA.",
                "The CSA is tomorrow (Dec 1). Tell students which CFA reviews to finish tonight."],
     ),
     dict(
@@ -786,6 +786,6 @@ for _d in DAYS:
     for _s in _d["sections"]:
         _s["layout_kind"] = _s.get("layout") or ("table" if _s.get("table") else "list")
     if _d["kind"] == "lesson":
-        assert 20 <= _m <= 40 and 5 <= len(_d["plan"]) <= 10, (_d["day"], _m, len(_d["plan"]))
+        assert 20 <= _m <= _d.get("period", 40) and 5 <= len(_d["plan"]) <= 10, (_d["day"], _m, len(_d["plan"]))
     if _d["kind"] == "review":
-        assert _m <= 40, _m
+        assert _m <= _d.get("period", 40), _m
