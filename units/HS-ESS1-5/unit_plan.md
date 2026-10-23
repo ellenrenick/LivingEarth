@@ -238,6 +238,10 @@ ESS1-6.1 to 6.3 have no CFAs or reviews and are not on the CSA. All CFAs, review
 | 7 | Students' notebooks, Chromebooks, optional Blooket; Mastery Path reviews and the Enrichment choice board on Canvas |
 | 8 | CSA on Canvas |
 
+## Printables and glue-ins
+
+Every table that students would otherwise copy from a slide is a printed glue-in with an ID (U-1, U-2, D1-A to D7-A). The notebook setup slide for each day shows the dashed box for each ID, and an orange "GLUE IN" tag sits on the lesson slides that use it. The checklist is in the doc *Unit 3.1 Printables and Glue-Ins Needed*, and the print-ready pages are in *Unit 3.1 Student Notebook Printout*.
+
 ## Textbook alignment (Inspire Earth Science, optional close reading)
 
 Module 13, Lesson 1: Drifting Continents (pp. 344–348). Module 13, Lesson 2: Seafloor Spreading (pp. 349–355). Module 13, Lesson 3: Plate Boundaries (pp. 356–361). Module 17, Lesson 3: Absolute-Age Dating (pp. 457–461). Module 18, Lesson 1: Early Earth (pp. 471–478). Use only if a day has room; hands-on activities take priority.
