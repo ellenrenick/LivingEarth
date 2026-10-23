@@ -42,7 +42,7 @@ The first version had five targets that I wrote (continental drift evidence, sea
 - ESS1-5.3 now includes how continents grow outward from an ancient core, and ESS1-5.2 includes the North American crust-age pattern.
 - ESS1-5.4 is now "evaluate the evidence" (rock ages, magnetic stripes, measured motion), not the CER. The fossil-puzzle evidence moved into Day 5 as one line of evidence.
 - The CSA dropped its ESS1-6.1 items to follow the tier rule. It has five targets, not six.
-- The magnetic-stripe model moved to Day 5, boundary plotting moved to Day 1, and the impact-crater record moved to Day 3. After the pacing review for low-level 9th graders, the half-life lab was replaced with a crater lab and a timeline strip, Days 1 to 5 were rebuilt around hands-on labs, and vocabulary was cut to 8 words.
+- The magnetic-stripe model moved to Day 5, boundary plotting moved to Day 1, and the impact-crater record moved to Day 3. After the pacing review for low-level 9th graders, the half-life lab was replaced with a crater-counter simulation (slides) and a timeline strip, Days 1 to 5 were rebuilt around hands-on labs, and vocabulary was cut to 8 words.
 
 ## Vocabulary (8 words, Frayer model, homework)
 
@@ -103,7 +103,7 @@ Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the 
 | --- | --- |
 | 0–8 | **CFA ESS1-5.2** |
 | 8–13 | Hook and key ideas: ages come from a steady atomic clock; the oldest Earth rock (4.0 billion) is younger than Earth; meteorites and moon rocks keep the early record. |
-| 13–28 | **Lab A:** impact craters in a flour tray (size and height, old surface, young surface). |
+| 13–28 | **Simulation A:** crater counter. Four slides show the Moon and Earth after 1, 2, 3, and 4 billion years; pairs count craters (Moon 6, 12, 18, 24; Earth 5, 4, 6, 5), then answer three questions. |
 | 28–41 | **Lab B:** build a 45 cm timeline of Earth (1 cm = 100 million years). |
 | 41–45 | Wrap-up: evidence-log row; exit ticket (why meteorites and moon rocks?). |
 
@@ -231,7 +231,7 @@ ESS1-6.1 to 6.3 have no CFAs or reviews and are not on the CSA. All CFAs, review
 | --- | --- |
 | 1 | Seafloor age map; world map with latitude and longitude (one per student); plate boundaries map; per group: 2 foam or cardboard plates, red, blue, and tan modeling clay |
 | 2 | Colored pencils; graph paper; rulers; seafloor age map and North American crust-age table or map |
-| 3 | Per group: tray of flour with a thin cocoa-powder top layer, 2 marbles, ruler, newspaper, goggles; per pair: 45 cm strip of adding-machine tape |
+| 3 | Crater-counter simulation slides projected (Lesson 3 deck); per pair: 45 cm strip of adding-machine tape, ruler, colored pencils |
 | 4 | Per group: clear tub of water, wood block, clay block, balance, ruler; SketchNotes paper |
 | 5 | Paper strips, scissors, red and blue pencils, folded paper for the slit; cut-out continent shapes (Pangaea puzzle); tape |
 | 6 | Evidence log, sentence frames, evidence cards, peer feedback checklist, scissors, glue, paper strips |

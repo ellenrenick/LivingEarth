@@ -243,8 +243,8 @@ TIMELINE = table(["Event", "Age (millions of years ago)", "Position on the 45 cm
     ["Oldest ocean floor", "200", "<br>"],
     ["Today (right end)", "0", "45"],
 ])
-CRATER_RECORD = table(["Test", "Drop height", "Crater width (cm)"], [
-    ["Small marble", "30 cm", "<br>"], ["Small marble", "60 cm", "<br>"], ["Large marble", "30 cm", "<br>"], ["Large marble", "60 cm", "<br>"]])
+CRATER_RECORD = table(["Time step", "Moon craters", "Earth craters"], [
+    ["1 billion years", "<br>", "<br>"], ["2 billion years", "<br>", "<br>"], ["3 billion years", "<br>", "<br>"], ["4 billion years", "<br>", "<br>"]])
 
 DAY3 = dict(
     title="Reading Deep Time and Early Earth",
@@ -252,7 +252,7 @@ DAY3 = dict(
     targets=["ESS1-6.1", "ESS1-6.2"],
     notebook=[
         "Title: <strong>D3 Reading Deep Time</strong>. Add it to your table of contents.",
-        "Leave room for a 4-row crater table, two drawings of a crater tray, and the timeline table.",
+        "Leave room for a 4-row crater count table, three short answers, and the timeline table.",
         "<strong>Unit CER evidence log:</strong> you will add one row about the age of meteorites, moon rocks, or Earth's oldest minerals.",
     ],
     parts=[
@@ -262,14 +262,15 @@ DAY3 = dict(
             "<li>The oldest rock found on Earth is about <strong>4.0 billion</strong> years old, which is <em>younger</em> than Earth itself. Earth's first rocks were destroyed or recycled.</li>"
             "<li><strong>Meteorites</strong> (pieces of asteroids) and <strong>moon rocks</strong> have hardly changed. They keep the early record.</li></ul>"
             "<p>Write one reason scientists use meteorites and moon rocks to find the age of the solar system.</p>"),
-        ("Lab A: Make craters (15 min)", lab("Impact crater lab", 15,
-            "a tray with a layer of flour topped with a little cocoa powder, 2 marbles (small and large), a ruler, newspaper under the tray, safety goggles",
-            ["Smooth the flour. Drop the small marble from 30 cm. Measure the crater width. Repeat from 60 cm, then do the same with the large marble. Record the widths.",
-             "<strong>Old surface:</strong> Without smoothing, drop both marbles 4 times each from random heights. Sketch what the tray looks like.",
-             "<strong>Young surface:</strong> Smooth the tray (this is lava or erosion renewing the surface). Drop each marble once. Sketch it."],
+        ("Simulation: Crater counter (15 min)", lab("Crater counter simulation", 15,
+            "your notebook and a pencil; your teacher shows the simulation slides on the board",
+            ["The Moon and Earth are hit by the same space rocks over time. Watch the four time steps on the board: 1, 2, 3, and 4 billion years.",
+             "At each step, count the craters on the Moon and on Earth. Count with your partner and agree on a number.",
+             "Record both numbers in the table."],
             CRATER_RECORD +
-            ol(["Which tray looks older? How can you tell?",
-                "The Moon highlands are covered with craters, but Earth has only about 190 known craters. Earth was hit just as often. Why does Earth show so few?"]))),
+            ol(["Which surface looks older? How can you tell?",
+                "The Moon highlands are covered with craters, but Earth has only about 190 known craters. Earth was hit just as often. Why does Earth show so few?",
+                "A surface has a lot of craters. Is it old or young? Why?"]))),
         ("Lab B: Build a 45 cm timeline of Earth (13 min)", lab("Earth timeline strip", 13,
             "a 45 cm strip of adding-machine tape (or paper), a ruler, a pencil, colored pencils",
             ["Mark the left end <strong>Earth forms</strong> and the right end <strong>today</strong>. Scale: <strong>1 cm = 100 million years</strong>.",
@@ -576,24 +577,24 @@ TEACHER[2] = dict(
 )
 
 TEACHER[3] = dict(
-    glance="CFA ESS1-5.2 opens the day (8 min), then a 5-minute hook. Students run an impact-crater lab (15 min) and build a 45 cm timeline of Earth (13 min) to see why meteorites and moon rocks give the age of the solar system and why Earth's own early record is missing. About 28 of 45 minutes are lab.",
-    materials=["Per group: a shallow tray or box lid with about 2 cm of flour topped with a thin layer of cocoa powder, 2 marbles (one small, one large), a ruler, newspaper under the tray, safety goggles",
+    glance="CFA ESS1-5.2 opens the day (8 min), then a 5-minute hook. Students run a crater-counter simulation (15 min) and build a 45 cm timeline of Earth (13 min) to see why meteorites and moon rocks give the age of the solar system and why Earth's own early record is missing. About 28 of 45 minutes are lab.",
+    materials=["Crater-counter simulation slides (in the Lesson 3 deck) projected on the board; students need only their notebooks",
                "Per pair: a 45 cm strip of adding-machine tape or paper, a ruler, colored pencils", "Images of the Moon and Mars surfaces (optional)", "Chromebooks for the CFA"],
-    agenda=[["0–8", "CFA ESS1-5.2"], ["8–13", "Hook and key ideas (radiometric dating as a steady clock; why the oldest Earth rock is younger than Earth)"], ["13–28", "Lab A: impact craters"],
+    agenda=[["0–8", "CFA ESS1-5.2"], ["8–13", "Hook and key ideas (radiometric dating as a steady clock; why the oldest Earth rock is younger than Earth)"], ["13–28", "Simulation: crater counter"],
             ["28–41", "Lab B: 45 cm timeline of Earth"], ["41–45", "Wrap-up: evidence-log row and exit ticket"]],
     notes=["The half-life lab was removed to save time and reading. Radiometric dating is told in one sentence (a steady atomic clock); students are not asked to calculate with it. The CFAs and CSA do not use half-life.",
-           "Lab A pacing: 5 minutes for the size and height tests, 5 for the old surface, 5 for the young surface. Do the flour work on newspaper; marbles can be dropped in a box lid to keep the mess small.",
+           "Simulation pacing: 2 minutes to explain, 1 minute per time step for counting (click through the four slides, pausing so pairs can count), then 7 minutes for the three questions and a quick share-out. The simulation is slides in the Lesson 3 deck; it replaced the flour-tray crater lab.",
            "Timeline positions use 1 cm = 100 million years, so Earth is 45 cm long and all of the surviving ocean floor fits in the last 2 cm. Meteorites (4.56 billion years) are about as old as the left end.",
            "ESS1-6 is a supporting standard, taught here to feed ESS1-5.3 and ESS1-5.5. ESS1-6 has no CFAs or reviews and is not on the CSA.",
            "Crater counts: the Moon has no plate tectonics and almost no weathering, so craters last. Earth has about 190 known craters because erosion, volcanism, and plate tectonics erase them.",
            READING],
-    key=["Crater lab: higher drops and bigger marbles make wider craters. The tray with many overlapping craters (not smoothed) looks older; the smoothed tray with 2 craters looks young.",
+    key=["Simulation counts: Moon 6, 12, 18, 24 craters at 1, 2, 3, and 4 billion years; Earth 5, 4, 6, 5. The Moon surface looks older (more craters, still piling up); Earth stays nearly clear because erosion, volcanism, and plate tectonics keep renewing the surface. A surface with many craters is old.",
          "Earth shows few craters because plate tectonics, erosion, weathering, and volcanism erase them; the Moon highlands are oldest (most craters) and are the better archive of the early solar system.",
          "Timeline positions: oldest rock (4,000) = 5 cm; oldest fossils (3,500) = 10 cm; oldest ocean floor (200) = 43 cm. All existing ocean floor is in the last 2 cm of the 45 cm strip.",
          "The oldest Earth rocks are younger than Earth because Earth's earliest rocks were destroyed or recycled by plate tectonics and erosion.",
          "Meteorites formed with the solar system and have changed little, so their ages (about 4.56 billion years) are the best estimate; the Moon is geologically quiet and kept its early rocks.",
          "Fossils that old are in continental rock; ocean floor of that age has been subducted."],
-    supports="Pre-cut the timeline strips and mark the ends. Give a partially filled timeline table. Let students describe the craters orally before sketching.",
+    supports="Pre-cut the timeline strips and mark the ends. Give a partially filled timeline table. Let students describe the craters orally before writing.",
 )
 
 TEACHER[4] = dict(

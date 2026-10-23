@@ -207,20 +207,21 @@ def build_day3():
                        "Have ready: your notebook, a ruler, and colored pencils.")]
     out.append(goals_slide(3, 2, lesson,
                            ["list the evidence scientists use to learn about early Earth", "explain why meteorites and moon rocks give the age of the solar system"],
-                           [["8", "CFA ESS1-5.2"], ["5", "Hook and key ideas"], ["15", "Lab A: make craters"], ["13", "Lab B: Earth timeline"], ["4", "Wrap-up"]]))
+                           [["8", "CFA ESS1-5.2"], ["5", "Hook and key ideas"], ["15", "Simulation: crater counter"], ["13", "Lab B: Earth timeline"], ["4", "Wrap-up"]]))
     out.append(cfa_slide(3, 3, lesson, ["ESS1-5.2"], 8))
     s = Slide(3, 4, "Hook"); head(s, "Hook · 5 min", "How could anyone know Earth is 4.5 billion years old?", lesson)
     bullets(s, "b", ["The oldest ocean floor is only about 200 million years old.", "Scientists date rock with atoms that change at a steady rate, like a clock.",
                      "The oldest Earth rock is about 4.0 billion years old. That is younger than Earth.", "Meteorites and moon rocks have hardly changed. They keep the early record."], size=19)
     out.append(s)
-    s = Slide(3, 5, "Lab A"); head(s, "Lab A · 15 min · in a group of 3 or 4", "Make craters in a flour tray", lesson)
-    bullets(s, "b", ["Smooth the flour. Drop the small marble from 30 cm, then 60 cm. Measure the crater width.", "Do the same with the large marble.",
-                     "Old surface: do not smooth. Drop each marble 4 times from random heights. Sketch it.", "Young surface: smooth the tray. Drop each marble once. Sketch it."], size=18)
+    s = Slide(3, 5, "Sim"); head(s, "Simulation A · 15 min · with a partner", "Crater counter: the Moon and Earth, same sky", lesson)
+    bullets(s, "b", ["The Moon and Earth are hit by the same space rocks over time.", "Watch four time steps on the board: 1, 2, 3, and 4 billion years.",
+                     "At each step, count the craters on the Moon and on Earth. Record both numbers in your table.", "Then answer the questions after step 4."], size=19)
     out.append(s)
-    s = Slide(3, 6, "Craters"); head(s, "Lab A · record and think", "Crater widths", lesson)
-    table(s, "t", [["Test", "Drop height", "Crater width (cm)"], ["Small marble", "30 cm", ""], ["Small marble", "60 cm", ""], ["Large marble", "30 cm", ""], ["Large marble", "60 cm", ""]], widths=[3.6, 2.6, 2.8], align=["START", "START", "START"])
-    note(s, "q", "Which tray looks older? Why does Earth show so few craters when the Moon shows so many?", y=4.3, h=0.7, size=15)
+    s = Slide(3, 6, "Craters"); head(s, "Simulation A · record and think", "What do the craters tell us?", lesson)
+    table(s, "t", [["Time step", "Moon craters", "Earth craters"], ["1 billion years", "", ""], ["2 billion years", "", ""], ["3 billion years", "", ""], ["4 billion years", "", ""]], w=4.4, widths=[1.8, 1.3, 1.3], align=["START", "START", "START"], size=13)
+    note(s, "q", "Which surface looks older? Why does Earth show so few craters? A surface has many craters: old or young?", y=4.3, h=0.7, size=15)
     out.append(s)
+    # the four animated time-step slides are built in Google Slides (a3sim1 to a3sim4): see the Day 3 deck
     s = Slide(3, 7, "Lab B"); head(s, "Lab B · 13 min · with a partner", "Build a 45 cm timeline of Earth", lesson)
     bullets(s, "b", ["Left end: Earth forms. Right end: today.", "Scale: 1 cm = 100 million years.", "Position = (4,500 − age in millions of years) ÷ 100.", "Mark and label each event on your strip."], size=20)
     out.append(s)
