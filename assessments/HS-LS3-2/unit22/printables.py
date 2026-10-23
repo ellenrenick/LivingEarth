@@ -241,8 +241,95 @@ def notebook_html():
     return P21.wrap(PN.CSS, sheets)
 
 
+TCSS = """
+.tn { font-family: Handlee, cursive; color: #1a1a1a; font-size: 10.5pt; line-height: 1.25; border-bottom: 1px solid #aaa; padding: 1px 2px; min-height: .3in; }
+.tn.small { font-size: 9.5pt; }
+.tbox { border: 1px solid #888; padding: 4px 6px; font-family: Handlee, cursive; font-size: 10pt; color: #1a1a1a; }
+.tglue { border: 1.5px dashed #777; padding: 0; margin: .02in 0 .06in; overflow: hidden; }
+.tglue .half { border: 0; margin: 0; }
+.ans { font-weight: 700; text-decoration: underline; }
+.cut { overflow: hidden; }
+"""
+
+
+def _filled(s):
+    """The section's sentence frames with each blank filled from the bank (answers are listed in blank order)."""
+    out, bank = [], list(s.get("bank") or [])
+    if not bank and any(U.B in fr for fr in s.get("frame") or []):
+        return None  # open response: the teacher note is the model
+    for fr in s.get("frame") or []:
+        parts = fr.split(U.B)
+        if len(parts) - 1 > len(bank) and bank:
+            return None
+        t = parts[0]
+        for part in parts[1:]:
+            t += f'<span class="ans">{html.escape(bank.pop(0)) if bank else "____"}</span>' + html.escape(part)
+        out.append(t if len(parts) > 1 else html.escape(fr))
+    return out
+
+
+def teacher_blocks(day, blocks):
+    """Turn a student notebook page (nbslide blocks) into a filled-in model page."""
+    import nbslide
+    secs = {s["nb"]: s for s in U.DAY[day]["sections"] if s.get("nb")}
+    out, cur = [], None
+    for b in blocks:
+        k = b[0]
+        if k == "h":
+            cur = secs.get(b[1])
+            out.append(("raw", f"<h2>{html.escape(b[1])}</h2>"))
+        elif k == "box" and len(b) > 3:  # glue-in: show the glued, answered piece
+            title = b[2].replace("Glue in: ", "")
+            piece = next(p for p in PIECES if p["title"] == title)
+            out.append(("raw", f'<div class="tglue">{piece_html(piece, key=True)}</div>'))
+        elif k == "lines":
+            lines = _filled(cur) if cur else None
+            if lines:
+                out.append(("raw", "".join(f'<div class="tn">{t}</div>' for t in lines)))
+            elif cur and cur.get("teacher"):
+                out.append(("raw", f'<div class="tn small">Model: {html.escape(cur["teacher"])}</div>'))
+            else:
+                out.append(("raw", '<div class="tn"></div>'))
+        elif k == "box":
+            say = " ".join(cur.get("body") or []) if cur else ""
+            note = (cur.get("nbnote") if cur else "") or b[2]
+            out.append(("raw", f'<div class="tbox" style="height:{b[1] * K:.2f}in"><b>Model:</b> {html.escape(note)} {html.escape(say)}</div>'))
+        elif k == "table" and cur and cur.get("table"):
+            head, rows = cur["table"]
+            th = "".join(f"<th>{html.escape(c)}</th>" for c in head)
+            trs = "".join("<tr>" + "".join(f"<td>{html.escape(str(c))}</td>" for c in r) + "</tr>" for r in rows)
+            out.append(("raw", f'<table style="font-size:9pt"><tr>{th}</tr>{trs}</table>'))
+            if cur.get("frame"):
+                out.append(("raw", "".join(f'<div class="tn">{t}</div>' for t in (_filled(cur) or []))))
+        else:
+            out.append(b)
+    return out
+
+
+def teacher_notebook_html():
+    import nbslide
+    import print_notebook as PN
+    P21 = _p21()
+    sheets = []
+    for d in U.DAYS:
+        if d["kind"] == "csa":
+            continue
+        left, right = nbslide.layout(d["day"])
+        label = f"Day {d['day']} · {d['date'].split(' (')[0]}"
+        for side, bl in (("Left", left), ("Right", right)):
+            tb = teacher_blocks(d["day"], bl)
+            raw = [x for x in tb if x[0] == "raw"]
+            other = [x for x in tb if x[0] != "raw"]
+            html_ = PN.page(d, label, side, [("text", "")], student=False, unit="Unit 2.2 · TEACHER KEY")
+            body = "".join(x[1] if x[0] == "raw" else PN.block(x) for x in tb)
+            html_ = html_.replace('<p class="text"></p>', body, 1)
+            sheets.append(html_)
+    return P21.wrap(PN.CSS + TCSS + CSS22, sheets)
+
+
 if __name__ == "__main__":
     P21 = _p21()
     P21.to_pdf(printables_html(), OUT / "Unit22_Printables.pdf")
     P21.to_pdf(key_html(), OUT / "Unit22_Printables_Teacher_Key.pdf")
     P21.to_pdf(notebook_html(), OUT / "Unit22_Student_Notebook.pdf")
+    P21.to_pdf(teacher_notebook_html(), OUT / "Unit22_Teacher_Notebook_Key.pdf")

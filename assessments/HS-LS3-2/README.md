@@ -39,3 +39,4 @@ Tables students would only copy from a slide are printed as glue-ins instead, wh
 
 `unit22/nbslide.py` puts the same dashed boxes on each deck's notebook setup slide (`python3 nbslide.py <day> <old slide id>`), and the
 content slides tell students to glue in the printable. Day 3 and the Day 11 CSA need no glue-ins.
+- `Unit22_Teacher_Notebook_Key.pdf`: the student notebook pages filled in with model answers (frames completed, glued pieces answered).
