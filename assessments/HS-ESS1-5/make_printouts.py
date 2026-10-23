@@ -27,6 +27,16 @@ ol, ul { margin: 4pt 0 4pt 18pt; padding: 0; } li { margin: 3pt 0; }
 .note { font-size: 9.5pt; color: #5e7f8f; }
 """
 
+INK_SAVER = """
+body { color: #000; }
+h1, h2, .gi h3, .gi h3 b, .gi h3 span, .note { color: #000; }
+h2 { border-bottom: 1px solid #000; }
+.gi { border: 1px dashed #000; }
+.gi h3 { background: none; border-bottom: 1px solid #000; border-radius: 0; }
+th { background: none; font-weight: bold; border-bottom: 2px solid #000; }
+th, td { border: 1px solid #777; }
+"""
+
 def esc(s): return html.escape(s)
 
 def table(head, rows, h="b", cls=None):
@@ -172,9 +182,9 @@ def teacher():
         "Students fill in blank rows with pencil. Ask them to keep the tables on the slide as a check, not to copy them."])
     return t
 
-def pdf(body, out):
+def pdf(body, out, saver=False):
     out = Path(out); h = out.with_suffix(".html")
-    h.write_text(f"<!doctype html><meta charset='utf-8'><style>{CSS}</style><body>{body}</body>")
+    h.write_text(f"<!doctype html><meta charset='utf-8'><style>{CSS}{INK_SAVER if saver else ''}</style><body>{body}</body>")
     exe = sorted(glob.glob("/opt/pw-browsers/chromium-*/chrome-linux*/chrome"))[0]
     subprocess.run([exe, "--headless", "--no-sandbox", "--disable-gpu", f"--print-to-pdf={out}", "--no-pdf-header-footer", f"file://{h}"], check=True, capture_output=True)
     h.unlink()
@@ -183,4 +193,6 @@ if __name__ == "__main__":
     o = Path(sys.argv[1]); o.mkdir(parents=True, exist_ok=True)
     pdf(student(), o / "Unit_3.1_Student_Notebook_Printout.pdf")
     pdf(teacher(), o / "Unit_3.1_Printables_and_Glue-Ins_Needed.pdf")
+    pdf(student(), o / "Unit_3.1_Student_Notebook_Printout_INK-SAVER.pdf", True)
+    pdf(teacher(), o / "Unit_3.1_Printables_and_Glue-Ins_Needed_INK-SAVER.pdf", True)
     print("done")
