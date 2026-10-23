@@ -12,7 +12,7 @@ Owner: Ellen. Built from the Earth Science 11 Unit 4 ("Clues in the Crust") blue
 | Priority standard | **HS-ESS1-5**: Evaluate evidence of the past and current movements of continental and oceanic crust and the theory of plate tectonics to explain the ages of crustal rocks. |
 | Supporting standard | **HS-ESS1-6**: Apply scientific reasoning and evidence from ancient Earth materials, meteorites, and other planetary surfaces to construct an account of Earth's formation and early history. |
 | SEP | ESS1-5: Engaging in argument from evidence. ESS1-6: Constructing explanations. |
-| DCI | ESS1.C The History of Planet Earth. ESS2.B Plate Tectonics and Large-Scale System Interactions. PS1.C Nuclear Processes (half-life, for ESS1-6). |
+| DCI | ESS1.C The History of Planet Earth. ESS2.B Plate Tectonics and Large-Scale System Interactions. PS1.C Nuclear Processes (radioactive dating in words only, for ESS1-6). |
 | CCC | Patterns (ESS1-5). Stability and Change (ESS1-6). |
 | Anchoring phenomenon | Almost none of the ocean floor is older than about 200 million years, yet some continental rock is about 4 billion years old, and life has existed for about 3.5 billion years. |
 | Driving question | **Earth is 4.5 billion years old, so why is the ocean floor so young, and where did the rest of Earth's early record go?** |
@@ -42,9 +42,9 @@ The first version had five targets that I wrote (continental drift evidence, sea
 - ESS1-5.3 now includes how continents grow outward from an ancient core, and ESS1-5.2 includes the North American crust-age pattern.
 - ESS1-5.4 is now "evaluate the evidence" (rock ages, magnetic stripes, measured motion), not the CER. The fossil-puzzle evidence moved into Day 5 as one line of evidence.
 - The CSA dropped its ESS1-6.1 items to follow the tier rule. It has five targets, not six.
-- The magnetic-stripe model moved to Day 5, boundary plotting moved to Day 1, and the half-life lab moved to Day 3 with the impact-crater record.
+- The magnetic-stripe model moved to Day 5, boundary plotting moved to Day 1, and the impact-crater record moved to Day 3. After the pacing review for low-level 9th graders, the half-life lab was replaced with a crater lab and a timeline strip, Days 1 to 5 were rebuilt around hands-on labs, and vocabulary was cut to 8 words.
 
-## Vocabulary (10 words, Frayer model)
+## Vocabulary (8 words, Frayer model, homework)
 
 1. lithosphere (plate)
 2. plate boundary (divergent, convergent, transform: students sort these under one entry)
@@ -53,9 +53,9 @@ The first version had five targets that I wrote (continental drift evidence, sea
 5. trench
 6. magnetic reversal
 7. craton (a continent's ancient core)
-8. radiometric dating
-9. half-life
-10. impact crater
+8. impact crater
+
+Frayer cards are made as the words come up and finished by Day 7. Radiometric dating and half-life are mentioned in words only; students do not define or calculate with them.
 
 ## Where the biology lives (and where it stops)
 
@@ -65,7 +65,6 @@ The first version had five targets that I wrote (continental drift evidence, sea
 | Seafloor sediment made of plankton shells, thicker on older crust | 2, 6 | Does sediment thickness agree with the crust-age pattern, and does it rule out "erosion" as the cause of young ocean floor? |
 | Subduction carries ocean sediment and carbonate shells into the mantle; arc volcanoes return CO2 | 4 | Where does ocean floor go, and what happens to what is on it? (Links back to Unit 1.2 Carbon.) |
 | Fossils on separated continents (Glossopteris, Mesosaurus, Lystrosaurus) | 5 | Is matching life evidence that continents were once joined? |
-| Carbon-14 versus uranium-lead | 3 | Which "clock" can date which sample? |
 | Life's oldest fossils are in continental rock | 3, 6 | What does the young seafloor cost us? |
 
 Kept out on purpose: evolution mechanisms, speciation, and extinction causes. Those belong to Units 3.2 and 3.3.
@@ -76,75 +75,78 @@ Kept out on purpose: evolution mechanisms, speciation, and extinction causes. Th
 
 Each Canvas day follows the Unit 1.3 pattern: SubHeader, student Page, then the CFA and its Mastery Path review. Every CFA is taken at the start of the class after its lesson (spaced retrieval). Every student page opens with the day's learning targets, a notebook setup, and a unit CER evidence-log row. Teacher pages (unpublished) have the agenda, notes, and answers.
 
-### Day 1 · Where Did the Old Ocean Floor Go? (launch + ESS1-5.1)
+**Pacing rules for low-level 9th graders (45 minutes).** Each lesson is lab-first: a short intro, one to three hands-on labs that fill most of the period, and a short wrap-up. Directions are short numbered steps on the slides and are read aloud. Reading is cut to a few lines per slide, and students get sentence frames or fill-in notes. CFAs (about 8 minutes) open Days 2 to 6. Vocabulary is 8 words, made as Frayer cards for homework, not class time.
+
+### Day 1 · Where Did the Old Ocean Floor Go? (launch + ESS1-5.1) · 32 of 45 minutes are labs
 
 | Min | What happens |
 | --- | --- |
-| 0–3 | Warm-up guesses: ocean floor age and oldest continental rock. |
-| 3–11 | Phenomenon: seafloor and continental age tables (and projected seafloor age map). Notice and wonder. |
-| 11–17 | Mystery and first claim; initial model. |
-| 17–32 | Plot 10 earthquakes and volcanoes on a world map; find the plate-boundary pattern. |
-| 32–40 | Three boundary types; the crust conveyor belt (made at ridges, destroyed at trenches). Revise the model. |
-| 40–45 | Vocabulary preview and exit ticket. |
+| 0–8 | Hook: seafloor and continental age tables; notice and wonder; first claim (one sentence). |
+| 8–21 | **Lab A:** plot 10 earthquakes and volcanoes on a world map; find the plate-boundary pattern. |
+| 21–40 | **Lab B:** clay models of divergent, convergent, and transform boundaries; sketch each and fill in the table. |
+| 40–45 | Wrap-up: revise the claim; exit ticket (where is crust made and destroyed?). |
 
-### Day 2 · Reading Rock Ages (ESS1-5.2; CFA ESS1-5.1 opens the day)
+### Day 2 · Reading Rock Ages (ESS1-5.2; CFA ESS1-5.1 opens the day) · 31 of 37 lesson minutes are labs
 
 | Min | What happens |
 | --- | --- |
 | 0–8 | **CFA ESS1-5.1** |
-| 8–12 | Warm-up prediction: ridge sample versus Brazil sample. |
-| 12–25 | Ocean data: graph age and sediment against distance; find the rate (about 2.5 cm per year). |
-| 25–33 | Read a seafloor age map: youngest band at the ridge, symmetric bands, oldest about 180 to 200 million years. |
-| 33–45 | Continents have a pattern too: North American crust is oldest in the Canadian Shield core (about 2.7 billion years) and younger outward. CER log. |
+| 8–11 | Warm-up prediction: ridge sample versus Brazil sample. |
+| 11–23 | **Lab A:** color a strip of 13 boxes by crust age; youngest at the ridge, symmetric sides. |
+| 23–32 | **Lab B:** graph age against distance; find the rate (about 2.5 cm per year). |
+| 32–42 | **Lab C:** color a 5-box strip of North America by crust age; oldest at the Canadian Shield core (about 2.7 billion years). |
+| 42–45 | Wrap-up: two evidence-log rows; preview the CFA. |
 
-### Day 3 · Reading Deep Time and Early Earth (ESS1-6.1, ESS1-6.2; CFA ESS1-5.2 opens the day)
-
-| Min | What happens |
-| --- | --- |
-| 0–7 | **CFA ESS1-5.2** |
-| 7–10 | Hook; radioactive decay and half-life. |
-| 10–22 | Half-life lab (coins). |
-| 22–26 | Which clock for which sample? (carbon-14 versus uranium-lead.) |
-| 26–34 | Oldest materials: meteorites 4.56 billion, moon rocks to 4.4, Earth's zircons 4.4, oldest rock 4.0. 45 m timeline. |
-| 34–40 | Impact-crater record: Moon, Mars, Earth. |
-| 40–45 | Why meteorites and moon rocks give the age of the solar system; why the oldest Earth rock is younger than Earth. |
-
-### Day 4 · Why the Ocean Is Young and the Continents Old (ESS1-5.3; no CFA opens the day)
+### Day 3 · Reading Deep Time and Early Earth (ESS1-6.1, ESS1-6.2; CFA ESS1-5.2 opens the day) · 28 of 37 lesson minutes are labs
 
 | Min | What happens |
 | --- | --- |
-| 0–2 | Warm-up. |
-| 2–12 | Density and subduction (ocean crust 3.0, continental crust 2.7 g/cm³). |
-| 12–18 | The life of ocean crust: 3,000 km at 25 km per million years is 120 million years. |
-| 18–28 | How continents grow: an ancient core with arcs and crust added at the edges, like tree rings. |
-| 28–32 | Biology link: plankton-shell carbon rides the plate down. |
-| 32–45 | SketchNotes: ridge, trench, growing continent. |
+| 0–8 | **CFA ESS1-5.2** |
+| 8–13 | Hook and key ideas: ages come from a steady atomic clock; the oldest Earth rock (4.0 billion) is younger than Earth; meteorites and moon rocks keep the early record. |
+| 13–28 | **Lab A:** impact craters in a flour tray (size and height, old surface, young surface). |
+| 28–41 | **Lab B:** build a 45 cm timeline of Earth (1 cm = 100 million years). |
+| 41–45 | Wrap-up: evidence-log row; exit ticket (why meteorites and moon rocks?). |
 
-**Teacher note:** Ocean *crust* alone is slightly less dense than the mantle. It is the old, cold ocean *plate* that is denser than the hot mantle below and sinks. Keep comparisons to plate against plate.
+The half-life coin lab was removed. Radiometric dating is told in one sentence; nothing in the CFAs or CSA uses half-life.
 
-### Day 5 · Evidence for Moving Crust (ESS1-5.4; CFA ESS1-5.3 opens the day)
+### Day 4 · Why the Ocean Is Young and the Continents Old (ESS1-5.3; no CFA opens the day) · 32 of 45 minutes are lab and SketchNotes
 
 | Min | What happens |
 | --- | --- |
-| 0–7 | **CFA ESS1-5.3** |
-| 7–10 | Warm-up: how to show motion in the past and motion today. |
-| 10–20 | Evidence A: paper magnetic-stripe model. |
-| 20–28 | Evidence B: measured motion. GPS (about 2 cm per year at Iceland, 7 to 8 cm per year for the Pacific plate) and the Hawaiian chain (about 10 cm per year). |
-| 28–33 | Evidence C: matching fossils, rocks, and glacial scratches. |
-| 33–44 | Evaluate the four lines of evidence in a table (measured, past or present, independent, strength). |
+| 0–3 | Warm-up. |
+| 3–10 | Guided notes (fill-in): the life of ocean crust (3,000 km at 25 km per million years is 120 million years), density (3.0 versus 2.7 g/cm³), continents grow like tree rings. |
+| 10–27 | **Lab:** sink or float. Measure mass and volume, find density, and watch which block dives under the other. |
+| 27–42 | **SketchNotes:** ridge, trench, volcanic arc, growing continent, and a carbon arrow. |
+| 42–45 | Wrap-up: evidence-log row; preview the CFA. |
+
+**Teacher note:** Ocean *crust* alone is slightly less dense than the mantle. It is the old, cold ocean *plate* that is denser than the hot mantle below and sinks. In the lab, water stands in for the mantle, wood for the continent, and clay for an old, cold plate; name the model's limits.
+
+### Day 5 · Evidence for Moving Crust (ESS1-5.4; CFA ESS1-5.3 opens the day) · 28 of 37 lesson minutes are labs
+
+| Min | What happens |
+| --- | --- |
+| 0–8 | **CFA ESS1-5.3** |
+| 8–10 | Warm-up: how to show motion in the past and motion today. |
+| 10–22 | **Lab A:** paper magnetic-stripe model (mirror-image stripes). |
+| 22–29 | **Lab B:** measured motion. Hawaii rates (about 10 cm per year) against GPS (7 to 8 cm per year). |
+| 29–38 | **Lab C:** Pangaea puzzle with fossil locations. |
+| 38–44 | Evaluate the four lines of evidence in a table (measured, past or present, independent, strength). |
+| 44–45 | Preview the CFA. |
 
 ### Day 6 · Evaluate the Theory, Tell Earth's Story (ESS1-5.5, ESS1-6.3; CFA ESS1-5.4 opens the day)
 
 | Min | What happens |
 | --- | --- |
-| 0–7 | **CFA ESS1-5.4** |
-| 7–11 | Sort the evidence log; revisit the Day 1 claim. |
-| 11–24 | Part A: evaluate how well plate tectonics explains the ages of crustal rocks, with sentence frames. |
-| 24–31 | Peer feedback (star and step). |
-| 31–42 | Part B: tell the story of Earth's formation from evidence cards (ESS1-6.3). |
-| 42–45 | Preview CFA ESS1-5.5. |
+| 0–8 | **CFA ESS1-5.4** |
+| 8–11 | Sort the evidence log into three buckets; revisit the Day 1 claim. |
+| 11–25 | Part A: evaluate how well plate tectonics explains the ages of crustal rocks, with five sentence frames. |
+| 25–30 | Peer feedback (star and step). |
+| 30–42 | Part B: card-sort six evidence cards onto a strip and tell the story of Earth's formation (ESS1-6.3). |
+| 42–45 | Wrap-up: preview CFA ESS1-5.5. |
 
-**Sentence frames (Part A):** Claim (very well / partly / poorly); Evidence 1 and 2 from the ocean; Evidence 3 from the continents; Reasoning; Limit or counterclaim.
+This is a writing and synthesis day, so it is not lab-majority. Part B is hands-on (cut, order, glue).
+
+**Sentence frames (Part A):** Claim (very well / partly / poorly); ocean evidence; continent evidence; reasoning; limit or counterclaim.
 
 ### Day 7 · Review Day
 
@@ -227,12 +229,12 @@ ESS1-6.1 to 6.3 have no CFAs or reviews and are not on the CSA. All CFAs, review
 
 | Day | Materials |
 | --- | --- |
-| 1 | Seafloor age map; world map with latitude and longitude; plate boundaries map; Frayer template |
-| 2 | Graph paper; seafloor age map; North American crust-age table or map |
-| 3 | Coins or candies with a marked side, cups, graph paper, Moon and Mars crater images (optional) |
-| 4 | SketchNotes paper, optional density demo |
-| 5 | Paper strips, scissors, red and blue pencils, Hawaiian chain map (optional), fossil range cards (optional) |
-| 6 | Evidence log, sentence frames, evidence cards, peer feedback checklist |
+| 1 | Seafloor age map; world map with latitude and longitude (one per student); plate boundaries map; per group: 2 foam or cardboard plates, red, blue, and tan modeling clay |
+| 2 | Colored pencils; graph paper; rulers; seafloor age map and North American crust-age table or map |
+| 3 | Per group: tray of flour with a thin cocoa-powder top layer, 2 marbles, ruler, newspaper, goggles; per pair: 45 cm strip of adding-machine tape |
+| 4 | Per group: clear tub of water, wood block, clay block, balance, ruler; SketchNotes paper |
+| 5 | Paper strips, scissors, red and blue pencils, folded paper for the slit; cut-out continent shapes (Pangaea puzzle); tape |
+| 6 | Evidence log, sentence frames, evidence cards, peer feedback checklist, scissors, glue, paper strips |
 | 7 | Students' notebooks, Chromebooks, optional Blooket; Mastery Path reviews and the Enrichment choice board on Canvas |
 | 8 | CSA on Canvas |
 
@@ -242,7 +244,7 @@ Module 13, Lesson 1: Drifting Continents (pp. 344–348). Module 13, Lesson 2: S
 
 ## Optional Gizmos (not in pacing)
 
-Plate Tectonics (plate boundaries and landforms); Building Pangaea; Half-life (alternate for Day 3).
+Plate Tectonics (plate boundaries and landforms); Building Pangaea (alternate for the Day 5 puzzle).
 
 ## Canvas build (done in the 26-27 CP Living Earth Sandbox, course 330720, all unpublished)
 
