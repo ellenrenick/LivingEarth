@@ -240,7 +240,7 @@ ESS1-6.1 to 6.3 have no CFAs or reviews and are not on the CSA. All CFAs, review
 
 ## Printables and glue-ins
 
-Every table that students would otherwise copy from a slide is a printed glue-in with an ID (U-1, U-2, D1-A to D7-A). The notebook setup slide for each day shows the dashed box for each ID, and an orange "GLUE IN" tag sits on the lesson slides that use it. The checklist is in the doc *Unit 3.1 Printables and Glue-Ins Needed*, and the print-ready pages are in *Unit 3.1 Student Notebook Printout*.
+Every table that students would otherwise copy from a slide is a printed glue-in with an ID (U-1, U-2, D1-A to D7-A). The notebook setup slide for each day shows the dashed box for each ID, and an orange "GLUE IN" tag sits on the lesson slides that use it. The checklist is in the PDF `printables/Unit31_Printables.pdf` (cut-apart pieces, with a cover table) and the matching notebook pages are in `printables/Unit31_Student_Notebook.pdf`.
 
 ## Textbook alignment (Inspire Earth Science, optional close reading)
 
