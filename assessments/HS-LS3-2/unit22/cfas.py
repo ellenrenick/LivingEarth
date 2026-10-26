@@ -1,6 +1,7 @@
 """Unit 2.2 (HS-LS3-2): one CFA per priority target (5 one-point auto-graded questions each, the Unit 1.3 model) and the CSA on the
 Unit 1.3 blueprint: a DOK 1-2 target gets 3 auto-graded questions, a DOK 3 target gets 1 multiple-choice question plus 1
-four-point written response that the teacher grades. 5 targets -> 13 questions, 19 raw points, graded out of 4.
+four-point written response that the teacher grades. 5 targets -> 13 questions, 19 raw points; the 26-27 CSA items were then merged in: 17 questions,
+26 raw points (one extra written response), graded out of 4.
 
 Item format is unit13_bank's: "choice" (answer = index of the key, written first; the key is moved by KEY_POSITIONS on upload),
 "multi" (answer = list of indexes, all or nothing), "tf", "essay" (4-point rubric).
@@ -15,6 +16,10 @@ def c(prompt, choices, fb):
 
 def multi(prompt, choices, answer, fb):
     return {"type": "multi", "prompt": prompt, "choices": choices, "answer": answer, "feedback": fb}
+
+
+def match(prompt, pairs, fb, distractors=()):
+    return {"type": "match", "prompt": prompt, "pairs": pairs, "distractors": list(distractors), "feedback": fb}
 
 
 def tf(prompt, answer, fb):
@@ -169,7 +174,8 @@ CFA_TITLE = {t: f"Unit 2.2 CFA {t}: {n}" for t, n in
               ("LS3-2.3", "Copying errors and mutations"), ("LS3-2.4", "Read data, make a claim")]}
 
 # ---------------------------------------------------------------------------
-# CSA: 13 questions (new items; nothing repeats a CFA question).
+# CSA: 17 questions (26 raw points). Includes the items from the old 26-27 HS-LS3-2 CSA (docs 1EmaRdAk3v...), rewritten with
+# similar-length choices. Nothing repeats a CFA question.
 # ---------------------------------------------------------------------------
 CSA = [
     # LS3-2.1 (DOK 1): 3 auto-graded
@@ -180,12 +186,29 @@ CSA = [
                    "Photosynthesis in plants, the carbon cycle in the soil, and heat energy leaving the cage",
                    "Changes in the cage temperature, changes in the pups' weight, and changes in the length of their fur"],
                   "New combinations of alleles, copying errors, and mutations from the environment are the three sources.")),
-    ("LS3-2.1", c("<p>Which statement about mutations is true?</p>",
-                  ["A mutation is a change in the DNA sequence of a cell",
-                   "A mutation is a new pairing of alleles at fertilization",
-                   "A mutation is a trait that a recessive allele hides",
-                   "A mutation is a protein made from a gene in the cell"],
-                  "A mutation is a change in DNA. A new pairing of alleles is a combination, not a mutation.")),
+    ("LS3-2.1", match("<p>Match each vocabulary word to its definition.</p>",
+                      [("Mutation", "A change in the DNA sequence"),
+                       ("Chromosome", "A DNA structure that holds many genes"),
+                       ("Sex cell (gamete)", "An egg cell or a sperm cell"),
+                       ("Meiosis", "Cell division that makes sex cells with mixed genes"),
+                       ("Crossing over", "Chromosomes swap pieces while sex cells form")],
+                      "Mutation = change in DNA. Chromosome = DNA structure with many genes. Sex cell = egg or sperm. Meiosis = "
+                      "division that makes sex cells. Crossing over = chromosomes swap segments.",
+                      ["A copy of a gene found in a body cell"])),
+    ("LS3-2.1", match("<p>Match each source of variation to the correct description.</p>",
+                      [("Crossing over", "Chromosomes exchange pieces of DNA"),
+                       ("Independent assortment", "Chromosomes are sorted into sex cells at random"),
+                       ("DNA copying error", "A mistake is made while DNA is copied"),
+                       ("Environmental mutation", "Radiation or chemicals change the DNA")],
+                      "Crossing over and independent assortment mix the genes in sex cells. A copying error happens when DNA is "
+                      "copied. An environmental mutation is caused by something outside the cell, like radiation.",
+                      ["New foods switch on genes in every cell"])),
+    ("LS3-2.1", c("<p>Which statement best explains why siblings can inherit different traits from the same parents?</p>",
+                  ["Each sex cell carries a different mix of the parents' genes",
+                   "Each sibling receives the same set of chromosomes from both parents",
+                   "Each sibling's DNA is rewritten by the environment before birth",
+                   "Each sibling gets a mutation in every gene that a parent has"],
+                  "Meiosis and fertilization make a different mix of genes for each sibling.")),
     ("LS3-2.1", multi("<p>Select the <strong>TWO</strong> environmental factors that can cause mutations by damaging DNA.</p>",
                       ["UV light from the sun", "Certain chemicals in smoke", "A diet with plenty of protein",
                        "Regular exercise every day"], [0, 1],
@@ -203,8 +226,10 @@ CSA = [
     ("LS3-2.2", c(tbl(["", "Alleles for shell stripes (S = stripes, s = none)"],
                       [["Snail 1", "S and s"], ["Snail 2", "S and S"]])
                   + "<p>These two snails are the parents. Which offspring genotypes are possible?</p>",
-                  ["SS or Ss only, because Snail 2 can only pass on S", "ss only, because Snail 1 passes on s",
-                   "Ss only, because each parent passes on a different allele", "SS, Ss, or ss, because both parents can pass on S or s"],
+                  ["SS or Ss only, because Snail 2 can only pass on S",
+                   "ss only, because Snail 1 is the parent that passes on s",
+                   "Ss only, because each parent passes on a different allele",
+                   "SS, Ss, or ss, because both parents can pass on S or s"],
                   "Snail 2 can only pass on S. Snail 1 passes on S or s. The offspring are SS or Ss.")),
     # LS3-2.3 (DOK 2): 3 auto-graded
     ("LS3-2.3", c("<p>Which event can lead to a mutation that is passed on to the next generation?</p>",
@@ -228,6 +253,15 @@ CSA = [
                    "The pups' alleles came from X-rays, because Pup 2 is the only one like the parents",
                    "The pups' alleles came from copying errors, because Pup 3 has two copies of the same allele"],
                   "L and l are both in the parents. The pups show new pairings of those alleles.")),
+    ("LS3-2.4", c("<p>In a population of plants near a nuclear power plant, scientists find a few plants with twisted stems "
+                  "and spotted leaves. DNA tests show changes in their genes that were not present in earlier generations.</p>"
+                  "<p>Which explanation best supports how these new traits could have appeared?</p>",
+                  ["Radiation near the plant likely caused DNA mutations, which led to the new traits",
+                   "The traits appeared at random during meiosis because the plants were exposed to heat",
+                   "The changes came from normal aging in the plants, so they will not be passed on",
+                   "Chemicals in the soil changed the plants' RNA but not their DNA, causing the traits"],
+                  "The genes changed and were not in earlier generations, and the plants grew near radiation, so radiation-caused "
+                  "mutations fit best.")),
     ("LS3-2.4", {
         "type": "essay",
         "prompt": f"<p>Scientists exposed fruit flies to radiation and counted new mutations in the cells that make eggs.</p>{RADIATION}"
@@ -253,14 +287,15 @@ CSA = [
                     "caused the extra mutations.",
     }),
     # LS3-2.5 (DOK 3): 1 MC + 1 written response
-    ("LS3-2.5", c("<p>A student claims a litter's new fur color came from a mutation caused by a chemical. A second student says "
-                  "it came from a copying error. Which evidence best defends the first claim?</p>",
-                  ["Litters from a chemical-exposed kennel had many more new fur colors than litters from a clean kennel",
-                   "Every litter from both kennels had at least one puppy whose fur color is a little different from its parents'",
-                   "Copying errors happen in all dogs, so they probably explain every new fur color in every kennel",
-                   "The puppies in both kennels were fed the same brand of food and kept at the same temperature"],
-                  "A big difference between exposed and unexposed kennels shows the chemical added mutations beyond the copying "
-                  "errors that happen everywhere.")),
+    ("LS3-2.5", c("<p>A student is studying why siblings can look very different. The student writes: “Siblings have different "
+                  "traits because sometimes meiosis doesn't copy genes correctly, which creates mistakes in the DNA.”</p>"
+                  "<p>Meiosis makes egg and sperm cells by mixing chromosomes from each parent through crossing over and "
+                  "independent assortment. Which evaluation best explains the strengths or weaknesses of the student's claim?</p>",
+                  ["The claim is partly incorrect, because meiosis mixes genes into new combinations, not DNA mistakes",
+                   "The claim is correct, because meiosis always causes mutations and mutations make siblings look different",
+                   "The claim is supported, because copying mistakes in meiosis are the main cause of inherited variation",
+                   "The claim is wrong, because traits are controlled only by the environment and are not set by the DNA"],
+                  "Meiosis mixes genes into new combinations. That mixing, not DNA mistakes, is the main reason siblings differ.")),
     ("LS3-2.5", {
         "type": "essay",
         "prompt": f"<p>A farmer finds a calf with a new coat pattern that neither parent has. The farmer claims a chemical in the pasture's "
@@ -287,6 +322,30 @@ CSA = [
                     "the barn with clean water had 5 out of 2,000. That is almost the same, so the chemical did not add many mutations. Copying "
                     "errors happen in every herd at a similar low rate, which fits both numbers. For a calf to have a pattern that neither "
                     "parent has, the change had to happen in a cell that makes eggs or sperm, because only those changes are inherited.",
+    }),
+    ("LS3-2.5", {
+        "type": "essay",
+        "prompt": "<p>In families, children do not always look the same as their parents. What leads to variation (differences) "
+                  "within a family?</p><p>Make a <strong>claim</strong> explaining how inheritable genetic variation occurs. Use "
+                  "<strong>evidence from at least two different sources</strong> of genetic variation to support your claim. Then "
+                  "<strong>explain</strong> how your evidence supports your claim.</p>",
+        "rubric": [
+            (4, "Advanced", "Clear claim that inherited variation comes from changes in the genetic information passed to offspring. Uses "
+                            "at least two sources (new combinations of alleles, copying errors, environmental mutations) with a specific "
+                            "example for each, and explains why each example would be inherited (it is in a cell that makes eggs or sperm)."),
+            (3, "Proficient", "Correct claim with two sources named and one example explained; reasoning is partly complete."),
+            (2, "Developing", "Names one source, or names two without examples or reasoning."),
+            (1, "Beginning", "Mentions variation or mutations in general with no source tied to inheritance."),
+        ],
+        "grading_notes": ["Accept alleles mixing at fertilization, crossing over, or independent assortment as one source.",
+                          "Accept DNA copying errors and radiation, chemicals, or UV as sources.",
+                          "Reasoning must say why the change is inherited, not only that it happens."],
+        "exemplar": "Claim: Genetic variation in a family comes from new combinations of alleles and from mutations. Evidence: Each parent "
+                    "makes sex cells with a different mix of alleles, so two siblings get different pairs, like one puppy that is Bb and a "
+                    "sibling that is bb. Mutations also add new alleles: an error when DNA is copied, or radiation, can change a gene. "
+                    "Reasoning: A mixed combination is inherited because it is in the egg and sperm that join at fertilization, and a "
+                    "mutation is inherited only if it happens in a cell that makes eggs or sperm. Both sources change the information "
+                    "children receive, so children differ from their parents.",
     }),
 ]
 

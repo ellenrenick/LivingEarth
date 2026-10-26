@@ -128,6 +128,20 @@ def entry(item, title, n_choice):
             "scoring_data": {"value": item["answer"]},
             "scoring_algorithm": "Equivalence",
         }
+    elif t == "match":
+        pairs, distractors = item["pairs"], item.get("distractors", [])
+        qids = [str(uuid.uuid4()) for _ in pairs]
+        e = {
+            "interaction_type_slug": "matching",
+            "interaction_data": {"answers": [r for _, r in pairs] + list(distractors),
+                                 "questions": [{"id": i, "item_body": left} for i, (left, _) in zip(qids, pairs)]},
+            "properties": {"shuffle_rules": {"questions": {"shuffled": False}}},
+            "scoring_data": {"value": {i: right for i, (_, right) in zip(qids, pairs)},
+                             "edit_data": {"matches": [{"answer_body": right, "question_id": i, "question_body": left}
+                                                       for i, (left, right) in zip(qids, pairs)],
+                                           "distractors": list(distractors)}},
+            "scoring_algorithm": "PartialDeep",
+        }
     elif t == "essay":
         e = {
             "interaction_type_slug": "essay",

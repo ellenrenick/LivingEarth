@@ -121,7 +121,7 @@ def overview_html(decks):
             + html_table(["Target", "Tier", "I can", "DOK"], rows)
             + "<h3>Day by day</h3>" + html_table(["Day", "Lesson", "Targets", "CFA", "Time"], days)
             + "<p>CFAs: 5 questions each, below a B (fewer than 4 of 5) opens that target's review (Mastery Path). "
-              "The CSA has 13 questions (19 raw points, graded out of 4).</p>")
+              "The CSA has 17 questions (26 raw points, graded out of 4).</p>")
 
 
 def get_all(api, path):
@@ -192,10 +192,19 @@ def canvas(course, decks_file):
         targets = "".join(f"<li><strong>{t}:</strong> {U.TARGET[t][3]}</li>" for t in U.PRIORITY)
         instr = (f"<p><strong>Living Earth (Biology) – {U.STANDARD}</strong></p><p>{U.PE}</p>"
                  f"<p><strong>Learning targets on this test:</strong></p><ul>{targets}</ul>"
-                 "<p>13 questions. Two are written responses your teacher will grade. Work on your own; you have the full period.</p>")
-        if title in quizzes:
-            return quizzes[title]
+                 "<p>17 questions. Three are written responses your teacher will grade. Work on your own; you have the full period.</p>")
         items = [(f"Q{n} · {t}", it) for n, (t, it) in enumerate(Q.CSA, 1)]
+        if title in quizzes:  # rebuild the items in place so the module item and planner links stay valid
+            qid = quizzes[title]["id"]
+            for old in api.nq("GET", f"/quizzes/{qid}/items") or []:
+                api.nq("DELETE", f"/quizzes/{qid}/items/{old['id']}")
+            n_choice = 0
+            for pos, (qtitle, it) in enumerate(items, 1):
+                api.nq("POST", f"/quizzes/{qid}/items", {"item": {"position": pos, "points_possible": 4 if it["type"] == "essay" else 1,
+                                                                 "entry_type": "Item", "entry": N.entry(it, qtitle, n_choice)}})
+                n_choice += it["type"] == "choice"
+            api.nq("PATCH", f"/quizzes/{qid}", {"quiz": {"instructions": instr, "quiz_settings": N.CFA_CSA_SETTINGS}})
+            return quizzes[title]
         quizzes[title] = N.make_quiz(api, title, instr, items, group)
         return quizzes[title]
 

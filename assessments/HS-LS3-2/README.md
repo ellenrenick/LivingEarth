@@ -3,7 +3,7 @@
 Built from the LE Planner and the Linked Workbook (tab "2.2 Inherited"). Eleven class days (Nov 11 and Nov 23 to 27 are off), in the
 Unit 2.1 format: a daily deck (blue theme, orange accents), about 30 minutes of student work including the CFA, five CFAs
 (one per priority target, 5 auto-graded questions each, below 4 of 5 opens a Mastery Path review), and a 13-question CSA
-(19 raw points, graded out of 4).
+(26 raw points, graded out of 4).
 
 | Day | Date | Deck | Targets | CFA |
 | --- | --- | --- | --- | --- |

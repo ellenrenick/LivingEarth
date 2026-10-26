@@ -45,6 +45,10 @@ def question(n, it, pos_index):
         key = " and ".join(L[i] for i in it["answer"])
     elif it["type"] == "tf":
         key = "True" if it["answer"] else "False"
+    elif it["type"] == "match":
+        out.append("\n".join(f"- {i}. {l} → {r}" for i, (l, r) in enumerate(it["pairs"], 1))
+                   + (f"\n- Extra choice (not used): {'; '.join(it['distractors'])}" if it["distractors"] else "") + "\n")
+        key = "; ".join(f"{l} → {r}" for l, r in it["pairs"])
     return "\n".join(out), key
 
 
@@ -73,9 +77,9 @@ def cfa_doc():
 
 def csa_doc():
     out = [f"# {Q.CSA_TITLE}\n",
-           "13 questions on the 5 priority targets, graded out of 4 (19 raw points). Items for DOK 1 and 2 targets are 1 point each, "
-           "auto-graded; each DOK 3 target has 1 multiple-choice question and 1 four-point written response that you grade. "
-           "Mastery is 3 of 4. Full period.\n"]
+           f"{len(Q.CSA)} questions on the 5 priority targets, graded out of 4 ({sum(4 if i['type'] == 'essay' else 1 for _, i in Q.CSA)} raw points). "
+           "Items are 1 point each and auto-graded (the two matching questions give partial credit); the three written responses are 4 points each and you grade them. "
+           "It includes the items from the old 26-27 HS-LS3-2 CSA. Mastery is 3 of 4. Full period.\n"]
     key, n_choice = [], 0
     for n, (tid, it) in enumerate(Q.CSA, 1):
         text, k = question(n, it, n_choice)

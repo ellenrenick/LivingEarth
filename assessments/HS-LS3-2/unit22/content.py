@@ -757,7 +757,7 @@ DAYS = [
                  teacher="Read the slide aloud. Students open Canvas when you say go."),
             dict(nb=None, label="CSA", who="FULL PERIOD · ON YOUR OWN", minutes=40, title="Show what you know: Unit 2.2 CSA",
                  body=["Open Canvas: Unit 2.2 CSA: Inherited Instructions (HS-LS3-2).",
-                       "13 questions on the 5 priority targets. Two are written responses your teacher grades.",
+                       "17 questions on the 5 priority targets (includes the old CSA items). Three are written responses your teacher grades.",
                        "Work on your own. Check every answer, then submit."],
                  teacher="Allow the full period."),
             dict(nb=None, label="REMINDERS", who="EVERYONE", minutes=0, title="Reminders",
