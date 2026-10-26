@@ -340,7 +340,7 @@ The oldest widely accepted fossils, about 3.5 billion years old, are found in co
 
 Feedback shown to students: The ocean floor does not last long enough to hold the first three billion years of life's history. That record is in the continents, which survive much longer.
 
-## CSA (16 questions on the five priority targets; Q12 and Q16 are teacher-graded, 4 points each)
+## CSA (12 questions on the five priority targets; Q10 and Q12 are teacher-graded, 4 points each)
 
 **Q1 · ESS1-5.1** (choice)
 
@@ -364,15 +364,7 @@ Which pair correctly matches a plate boundary type with a real example?
 
 Feedback shown to students: The Mid-Atlantic Ridge is where plates move apart, the Andes and the trench are where the Nazca plate sinks beneath South America, and the San Andreas Fault is where plates slide past each other.
 
-**Q3 · ESS1-5.1** (tf)
-
-True or false: Earth's lithosphere is broken into moving plates, and a single plate can carry both continental crust and oceanic crust.
-
-- Answer: **True**
-
-Feedback shown to students: True. The North American plate, for example, carries a continent and part of the Atlantic seafloor.
-
-**Q4 · ESS1-5.2** (choice)
+**Q3 · ESS1-5.2** (choice)
 
 A research ship samples the seafloor along a line away from a mid-ocean ridge:
 Site | Distance from ridge (km) | Crust age (million years) | 
@@ -388,7 +380,7 @@ If the pattern continues at the same rate, what is the age of Site C?
 
 Feedback shown to students: The rate is 750 km in 30 million years, or 25 km per million years. 1,750 ÷ 25 = 70 million years.
 
-**Q5 · ESS1-5.2** (choice)
+**Q4 · ESS1-5.2** (choice)
 
 A map of seafloor ages in the Atlantic shows bands of color. Which description matches the pattern a ridge produces?
 
@@ -399,159 +391,110 @@ A map of seafloor ages in the Atlantic shows bands of color. Which description m
 
 Feedback shown to students: New crust forms at the ridge and spreads both ways, so the youngest band is at the ridge and the ages are symmetrical on the two sides.
 
-**Q6 · ESS1-5.2** (choice)
-
-A table shows the age of North America's continental crust:
-Region of North America | Distance from the central core (km) | Age of the crust | 
-Canadian Shield (the central core) | 0 | about 2.7 billion years | 
-Grenville Province (Great Lakes to Quebec) | about 1,200 | about 1.1 billion years | 
-Appalachian Mountains | about 2,000 | about 400 million years | 
-Simplified from geologic maps.
-Which statement describes the pattern?
-
-- A. The crust is oldest near the central core and gets younger toward the outer regions.  **(correct)**
-- B. The crust is youngest near the central core and gets older toward the outer regions.
-- C. The crust is oldest at the Appalachian Mountains.
-- D. The crust is the same age everywhere.
-
-Feedback shown to students: Ages decrease from about 2.7 billion years at the core to about 400 million years at the Appalachians.
-
-**Q7 · ESS1-5.3** (choice)
+**Q5 · ESS1-5.3** (choice)
 
 Two plates collide. Plate A is old ocean crust with an average density of about 3.0 g/cm³. Plate B is continental crust with an average density of about 2.7 g/cm³. What will happen, and why?
 
-- A. Both plates will rise to form a mountain range because they have similar densities.
-- B. Neither plate will move, because density does not affect plates.
-- C. Plate A will sink beneath Plate B because it is denser.  **(correct)**
-- D. Plate B will sink because it is thicker.
+- A. Plate B will sink because it is thicker.
+- B. Plate A will sink beneath Plate B because it is denser.  **(correct)**
+- C. Neither plate will move, because density does not affect plates.
+- D. Both plates will rise to form a mountain range because they have similar densities.
 
 Feedback shown to students: The denser plate sinks beneath the less-dense one. Old ocean crust is cold and dense, so it subducts.
 
-**Q8 · ESS1-5.3** (choice)
+**Q6 · ESS1-5.3** (choice)
 
 North America's continental crust is oldest in the central core and gets younger toward the edges. Which explanation fits best?
 
-- A. Pieces of crust and volcanic arcs were added to the edges of the continent over time, so the newest material is farthest from the core.  **(correct)**
-- B. The edges of the continent formed first and the center formed last.
-- C. The center was recycled at subduction zones, so it is the youngest part.
-- D. New crust forms at the center of the continent, like a mid-ocean ridge.
+- A. The center was recycled at subduction zones, so it is the youngest part.
+- B. New crust forms at the center of the continent, like a mid-ocean ridge.
+- C. The edges of the continent formed first and the center formed last.
+- D. Pieces of crust and volcanic arcs were added to the edges of the continent over time, so the newest material is farthest from the core.  **(correct)**
 
 Feedback shown to students: Continents grow outward as new material is added at their margins, like rings on a tree.
 
-**Q9 · ESS1-5.3** (choice)
+**Q7 · ESS1-5.3** (choice)
 
 Some continental rock is nearly 4 billion years old, but no ocean floor is older than about 200 million years. Which statement best explains why?
 
-- A. Ocean crust formed later than the continents.
-- B. Continental crust is never weathered or eroded.
-- C. Ocean crust is made of the same material as the mantle.
-- D. Ocean crust is made at ridges and recycled at trenches, and continental crust is too buoyant to sink, so it stays at the surface.  **(correct)**
+- A. Ocean crust is made at ridges and recycled at trenches, and continental crust is too buoyant to sink, so it stays at the surface.  **(correct)**
+- B. Ocean crust formed later than the continents.
+- C. Continental crust is never weathered or eroded.
+- D. Ocean crust is made of the same material as the mantle.
 
 Feedback shown to students: The ocean floor is on a short recycling cycle. Less-dense continental crust resists sinking and survives.
 
-**Q10 · ESS1-5.4** (choice)
+**Q8 · ESS1-5.4** (choice)
 
-The Hawaiian Islands form a chain as the Pacific plate moves over a fixed hot spot. Kilauea, on the Big Island, is active now. Kauai is about 500 km northwest of Kilauea, and its oldest rock is about 5 million years old. GPS stations on the Pacific plate near Hawaii measure about 7 to 8 cm per year of motion. How does the rate from the island ages compare, and what does it suggest?
+Hawaii sits over a hot spot that stays in one place while the Pacific plate moves over it. The island of Kauai is 500 km from the active volcano Kilauea, and Kauai's oldest rock is 5 million years old. GPS stations show the Pacific plate moving 7 to 8 cm per year.
+The island ages give a rate of about 10 cm per year. What does this tell you?
 
-- A. The island ages give about 10 cm per year, close to the GPS rate, so two independent methods agree that the plate is moving.  **(correct)**
-- B. The island ages give about 1 cm per year, so the methods disagree and the plate is not moving.
+- A. The two rates are far apart, so the plate is not moving.
+- B. The GPS data must be wrong.
 - C. The island ages cannot be used to find a rate.
-- D. The island ages give about 100 cm per year, which proves the GPS data are wrong.
+- D. The two rates are close, so two different methods agree that the plate is moving.  **(correct)**
 
-Feedback shown to students: 500 km in 5 million years is 100 km per million years, or about 10 cm per year. That is close to the GPS rate, so a measurement of the present and a record of the past agree, which strengthens the evidence.
+Feedback shown to students: 500 km in 5 million years is 100 km per million years, or about 10 cm per year. That is close to the GPS rate, so a record of the past and a measurement of the present agree, which strengthens the evidence.
 
-**Q11 · ESS1-5.4** (multi)
+**Q9 · ESS1-5.4** (multi)
 
-Select the TWO lines of evidence that are independent of each other (they use different kinds of data) and both support seafloor spreading.
+Seafloor spreading is stronger when different kinds of evidence agree. Select the TWO pieces of evidence that use different kinds of data and both support seafloor spreading.
 
-- A. Mirror-image magnetic stripes on the two sides of a ridge.  **(correct)**
+- A. Ages of seafloor rock increase with distance from the ridge.  **(correct)**
 - B. Earthquakes occur in Japan.
-- C. Ages of seafloor rock increase with distance from the ridge.  **(correct)**
+- C. Mirror-image magnetic stripes on the two sides of a ridge.  **(correct)**
 - D. The coastline of Africa looks like a puzzle piece.
 - E. Two copies of the same age table, one in a textbook and one on a website.
 
 Feedback shown to students: Rock ages come from radiometric dating, and magnetic stripes come from the magnetic field recorded in the rock. They are different kinds of data pointing to the same conclusion. Two copies of the same table are not independent.
 
-**Q12 · ESS1-5.4** (essay)
+**Q10 · ESS1-5.4** (essay)
 
-Scientists claim that the seafloor spreads away from mid-ocean ridges. Here are three lines of evidence:
-Rock ages: Seafloor crust is 0 million years old at the ridge and 40 million years old 1,000 km away, 80 million 2,000 km away, and 120 million 3,000 km away.
-Magnetic stripes: Stripes of normal and reversed magnetism on one side of the ridge are a mirror image of the stripes on the other side.
-Measured motion: GPS stations on opposite sides of the Mid-Atlantic Ridge in Iceland move apart about 2 cm per year, compared with about 2.5 cm per year from the rock ages.
-Write an evaluation of this evidence. (1) State which line of evidence you think is the strongest and why. (2) Explain how the lines of evidence work together. (3) Describe one limitation of the evidence or one new finding that would weaken the claim.
+Scientists say the seafloor spreads away from mid-ocean ridges. Here is the evidence:
+Rock ages: Seafloor crust is 0 million years old at the ridge, 40 million years old 1,000 km away, and 80 million years old 2,000 km away.
+Magnetic stripes: The stripes on one side of the ridge are a mirror image of the stripes on the other side.
+GPS: Stations on opposite sides of the ridge in Iceland move apart about 2 cm per year.
+In 3 to 5 sentences: (1) Which piece of evidence is strongest, and why? (2) How do the three pieces work together? (3) What is one thing that could weaken the claim?
 
 Rubric and grading notes:
 
 > Rubric (4 pts)
-> - 4: Advanced. Chooses a line of evidence and justifies it with a specific reason (for example, GPS is a direct measurement of present motion, or the rock-age pattern is quantitative and checkable). Explains that the lines are independent yet agree (rock ages give 2.5 cm per year, GPS about 2 cm per year, stripes are symmetric), which strengthens the claim. Describes a valid limitation or a finding that would weaken the claim (for example, only a short record of GPS data, or crust at the ridge being old). 3: Proficient. Judges the evidence with a reason and notes that the lines agree, but one of the three parts is general or missing. 2: Developing. Lists or restates the evidence with little evaluation; limited or generic reasoning about strength. 1: Beginning. Little evaluation, or an incorrect idea about what the evidence shows. 0: blank or off-topic. 
+> - 4: Advanced. Picks one line of evidence with a specific reason (for example, GPS is a direct measurement of present motion, or the rock-age pattern is numbers you can check). Explains that the different kinds of evidence agree, which makes the claim stronger (rock ages give about 2.5 cm per year, GPS about 2 cm per year, stripes are symmetric). Gives a valid weakness (for example, GPS has only been measured for a few decades, or old crust found at the ridge). 3: Proficient. Judges the evidence with a reason and notes that the pieces agree, but one of the three parts is general or missing. 2: Developing. Lists or restates the evidence with little evaluation. 1: Beginning. Little evaluation, or an incorrect idea about what the evidence shows. 0: blank or off-topic. 
 > Grading notes:
-> - Look for: 'independent', 'agree', 'direct measurement', 'quantitative', 'limitation', 'would weaken'.
-> - Common misconception: more of the same data is stronger evidence (independent lines are stronger).
-> - Common misconception: older evidence is weaker.
-> - Sample 4-point response: The strongest evidence is the measured GPS motion because it directly shows the plates moving apart today. The rock ages show crust gets older at a steady 2.5 cm per year, and the mirror-image stripes show crust forms at the ridge and splits both ways. These three lines of evidence use different kinds of data, yet they agree, which makes the claim much stronger. A limitation is that GPS has only been measured for a few decades, so we have to rely on rock ages and stripes to show what happened millions of years ago. If crust at the ridge were found to be old, that would weaken the claim.
+> - Look for: 'agree', 'different kinds of evidence', 'direct measurement', 'would weaken'.
+> - Common misconception: more of the same data is stronger evidence (different kinds agreeing is stronger).
+> - Sample 4-point response: The strongest evidence is the GPS because it directly measures the plates moving apart today. The rock ages show crust gets older away from the ridge and the mirror-image stripes show crust forms at the ridge and splits both ways. These are different kinds of evidence that agree, so the claim is much stronger. GPS has only been measured for a few decades, so if old crust were found at the ridge, that would weaken the claim.
 
-**Q13 · ESS1-5.5** (choice)
+**Q11 · ESS1-5.5** (choice)
 
 Which statement completes the reasoning best?
 Plate tectonics explains the ages of oceanic and continental rock because…
 
-- A. scientists have not found the older ocean rocks yet.
-- B. ocean plates are continuously made at ridges and recycled at subduction zones, while buoyant continental crust is not.  **(correct)**
-- C. the ocean was not on Earth until 200 million years ago.
-- D. ocean rock erodes faster than continental rock.
+- A. ocean rock erodes faster than continental rock.
+- B. the ocean was not on Earth until 200 million years ago.
+- C. scientists have not found the older ocean rocks yet.
+- D. ocean plates are continuously made at ridges and recycled at subduction zones, while buoyant continental crust is not.  **(correct)**
 
 Feedback shown to students: One process, new crust at ridges and destruction at trenches, accounts for the young, regular ages of the ocean floor and for the old continents.
 
-**Q14 · ESS1-5.5** (multi)
+**Q12 · ESS1-5.5** (essay)
 
-Select the TWO observations that support the theory of plate tectonics as an explanation for the ages of crustal rocks.
-
-- A. North American crust is oldest at its central core and younger toward its edges, where material was added by past plate interactions.  **(correct)**
-- B. Rock ages are the same on every continent.
-- C. Ocean crust ages increase steadily away from ridges and none is older than about 200 million years.  **(correct)**
-- D. The ocean floor is older than the continents.
-
-Feedback shown to students: Both patterns are explained by plate processes: crust made and destroyed on the ocean floor, and continents growing outward from an ancient core.
-
-**Q15 · ESS1-5.5** (choice)
-
-The oldest widely accepted fossils, about 3.5 billion years old, are in continental rock in Western Australia. No ocean-floor rock is that old. Which statement best evaluates what this shows about plate tectonics?
-
-- A. It disproves the theory because ocean rock should hold fossils.
-- B. It has nothing to do with the ages of rocks.
-- C. It shows life began only in Australia.
-- D. It is consistent with the theory: ocean floor that old has been recycled at subduction zones, so the early record survives only in continental rock.  **(correct)**
-
-Feedback shown to students: The theory predicts that ocean floor older than about 200 million years has been destroyed, and the lack of old ocean rock matches that prediction.
-
-**Q16 · ESS1-5.5** (essay)
-
-A student says, “Plate tectonics is just one idea. It does not really explain why the ocean floor is so much younger than the continents.” Evaluate how well the theory of plate tectonics explains the ages of Earth's crustal rocks, using the data below.
+A student says, “Plate tectonics does not explain why the ocean floor is so much younger than the continents.”
 Data
-Distance from Mid-Atlantic Ridge (km) | Crust age (million years) | 
-0 | 0 | 
-1,000 | 40 | 
-2,000 | 80 | 
-3,000 | 120 | 
-The oldest ocean floor on Earth is about 200 million years old.
-The oldest minerals found in continental rock are about 4.4 billion years old.
-In North America, crust is about 2.7 billion years old at the central core and about 400 million years old in the Appalachian Mountains.
-Ocean crust is denser (about 3.0 g/cm³) than continental crust (about 2.7 g/cm³), and ocean plates sink into the mantle at trenches.
-Claim: How well does plate tectonics explain the ages of crustal rocks?
-Evidence: Use at least two specific pieces of data, including at least one from oceanic crust and one from continental crust.
-Reasoning: Explain how the evidence supports your claim.
-Limit or counterclaim: Describe one thing the theory cannot show with this evidence, or answer the student's statement.
+Ocean crust is 0 million years old at a ridge and 120 million years old 3,000 km away. The oldest ocean floor is about 200 million years old.
+Some continental rock is about 4 billion years old.
+Ocean crust is denser than continental crust, and ocean plates sink into the mantle at trenches.
+Do you agree with the student? Write 3 to 5 sentences. Claim: Does plate tectonics explain the ages? Evidence: Use at least two facts from the data, one from the ocean and one from a continent. Reasoning: Explain how the facts support your claim.
 
 Rubric and grading notes:
 
 > Rubric (4 pts)
-> - 4: Advanced. Accurate claim that plate tectonics explains the ages well, because the ocean floor is continually made at ridges and recycled at subduction zones while less-dense continental crust survives and grows outward. Cites at least two accurate data points including both ocean and continental crust (for example, ages increase 40 million years per 1,000 km from the ridge or the oldest ocean floor is about 200 million years, and continental minerals about 4.4 billion years or North American crust from 2.7 billion years at the core to about 400 million years at the Appalachians). Reasoning connects the evidence to the process (new crust at ridges, dense ocean plates sinking at trenches, buoyant continents staying and growing at their edges). Notes a limit or answers the student (for example, no ocean floor older than about 200 million years remains, so early Earth must be studied in continental rock). 3: Proficient. Accurate claim, at least two accurate data points with both ocean and continental crust, reasoning present but missing one piece, limit or counterclaim brief or missing. 2: Developing. Claim is partly correct without a cause, or data come from only one kind of crust. Reasoning is vague or restates the evidence. 1: Beginning. Claim is incorrect or missing (for example, 'the ocean is young' or 'the seafloor is eroded away'). Little or no data. Major misconception. 0: blank or off-topic. 
+> - 4: Advanced. Accurate claim that plate tectonics does explain the ages, because ocean floor is made at ridges and recycled at trenches while less-dense continental crust stays at the surface. Cites at least two accurate facts, one from ocean crust and one from continental crust. Reasoning connects the facts to the process (new crust at ridges, dense ocean plates sinking at trenches, buoyant continents surviving). 3: Proficient. Accurate claim, two accurate facts from both kinds of crust, reasoning present but missing one piece. 2: Developing. Claim is partly correct without a cause, or facts come from only one kind of crust. Reasoning is vague or restates the evidence. 1: Beginning. Claim is incorrect or missing (for example, 'the ocean is young' or 'the seafloor is eroded away'). Little or no data. 0: blank or off-topic. 
 > Grading notes:
-> - Look for: 'made at ridges', 'sinks/subducts at trenches', 'recycled', 'continents are less dense/buoyant', 'added to the edges'.
-> - Key data: ages increase 40 million years per 1,000 km (about 2.5 cm per year); oldest ocean floor about 200 million years; continental minerals about 4.4 billion years; North American core about 2.7 billion years.
-> - Common misconception: ocean floor is 'eroded away' (sediment is thicker on older crust).
+> - Look for: 'made at ridges', 'sinks/subducts at trenches', 'recycled', 'continents are less dense/buoyant'.
+> - Common misconception: ocean floor is 'eroded away'.
 > - Common misconception: the ocean is young.
-> - Sample 4-point response: Plate tectonics explains the ages of crustal rocks very well. The data show crust is 0 million years old at the ridge and 120 million years old 3,000 km away, so ocean crust is made at ridges and moves away, and the oldest ocean floor is only about 200 million years old because ocean plates are denser than continental crust (3.0 versus 2.7 g/cm3) and sink at trenches. In contrast, continental crust contains minerals up to 4.4 billion years old and in North America gets younger from 2.7 billion years at the core to about 400 million years in the Appalachians, which shows the continent grew outward and is too buoyant to be recycled. One limit is that no ocean floor older than about 200 million years survives, so the early history of Earth has to be studied in continental rock. The ocean is not young; its floor is just constantly replaced.
+> - Sample 4-point response: I disagree with the student. Plate tectonics explains the ages well. Ocean crust is 0 million years old at the ridge and 120 million years old 3,000 km away, so it is made at ridges and moves away, and no ocean floor is older than about 200 million years. Continental rock can be about 4 billion years old. Ocean crust is denser, so it sinks at trenches and is recycled, but continents are less dense and stay at the surface. The ocean is not young; its floor is just constantly replaced.
 
 ## Mastery Path review assignments (3 written questions each)
 

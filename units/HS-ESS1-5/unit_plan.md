@@ -16,7 +16,7 @@ Owner: Ellen. Built from the Earth Science 11 Unit 4 ("Clues in the Crust") blue
 | CCC | Patterns (ESS1-5). Stability and Change (ESS1-6). |
 | Anchoring phenomenon | Almost none of the ocean floor is older than about 200 million years, yet some continental rock is about 4 billion years old, and life has existed for about 3.5 billion years. |
 | Driving question | **Earth is 4.5 billion years old, so why is the ocean floor so young, and where did the rest of Earth's early record go?** |
-| Summative (CSA) | 16 items on the five priority targets (ESS1-5.1 to 5.5): 14 auto-graded and 2 written responses (Q12 evaluate the evidence for seafloor spreading; Q16 evaluate how well plate tectonics explains rock ages, using data). ESS1-6 is not on the CSA. |
+| Summative (CSA) | 12 items on the five priority targets (ESS1-5.1 to 5.5): 10 auto-graded and 2 short written responses (Q10 evaluate the evidence for seafloor spreading; Q12 evaluate how well plate tectonics explains rock ages, using data). ESS1-6 is not on the CSA. |
 | Unit CER | Day 1 first claim "Why is the seafloor so much younger than the continents?" and an evidence log all unit. Day 6 final: "How well does plate tectonics explain the ages of Earth's crustal rocks?" (Part A), plus a short account of Earth's formation (Part B, ESS1-6.3). |
 
 ## Learning targets (from the workbook)
@@ -192,17 +192,17 @@ One row per day. Columns: Day, evidence (specific number, pattern, or fossil), w
 
 ## Unit 3.1 CSA: Age of the Earth (HS-ESS1-5)
 
-About 45 minutes. 16 questions on a 4-point scale, built as a New Quiz in the same layout as the Unit 1.3 CSA. Questions 12 and 16 are teacher-graded written responses (4-point rubrics); the other 14 are auto-graded.
+About 45 minutes. 12 questions on a 4-point scale, built as a New Quiz in the same layout as the Unit 1.3 CSA. Questions 10 and 12 are teacher-graded short written responses (4-point rubrics, 3 to 5 sentences); the other 10 are auto-graded.
 
 | Target | Questions | Item types |
 | --- | --- | --- |
-| ESS1-5.1 | Q1–Q3 | Path of ocean crust, matching boundary types with examples, plates carry continental and oceanic crust (true/false) |
-| ESS1-5.2 | Q4–Q6 | Age from distance and rate (table), reading a seafloor age map, reading the North American crust-age table |
-| ESS1-5.3 | Q7–Q9 | Which plate sinks given densities, why continental crust is youngest far from its core, why ocean floor is young and continents are old |
-| ESS1-5.4 | Q10–Q12 | Hawaiian-chain rate versus GPS, two independent lines of evidence (select two), written evaluation of three lines of evidence for seafloor spreading |
-| ESS1-5.5 | Q13–Q16 | Completing the reasoning, two observations plate tectonics explains (select two), oldest fossils in continental rock, written evaluation with data (ocean and continents) |
+| ESS1-5.1 | Q1–Q2 | Path of ocean crust, matching boundary types with examples |
+| ESS1-5.2 | Q3–Q4 | Age from distance and rate (table), reading a seafloor age map |
+| ESS1-5.3 | Q5–Q7 | Which plate sinks given densities, why continental crust is youngest far from its core, why ocean floor is young and continents are old |
+| ESS1-5.4 | Q8–Q10 | Hawaiian-chain rate versus GPS, two different kinds of evidence (select two), short written evaluation of three pieces of evidence for seafloor spreading |
+| ESS1-5.5 | Q11–Q12 | Completing the reasoning, short written claim-evidence-reasoning with data (ocean and continents) |
 
-**Q12 (evaluate the evidence, 4 points)** and **Q16 (evaluate how well plate tectonics explains the ages, 4 points)** are scored with the rubrics stored in each question's scoring data; sample answers are in the teacher key.
+**Q10 (evaluate the evidence, 4 points)** and **Q12 (evaluate how well plate tectonics explains the ages, 4 points)** are scored with the rubrics stored in each question's scoring data; sample answers are in the teacher key.
 
 ESS1-6.1 to 6.3 have no CFAs or reviews and are not on the CSA. All CFAs, reviews, and the CSA assess ESS1-5 only.
 

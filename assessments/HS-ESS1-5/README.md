@@ -9,7 +9,7 @@ Grade 9 Living Earth. Five CFAs (one per priority target ESS1-5.1 to 5.5; the su
 | CFA ESS1-5.3 (why ocean crust is young and continents are old) | 5 | Auto-graded |
 | CFA ESS1-5.4 (evidence for moving crust) | 5 | Auto-graded |
 | CFA ESS1-5.5 (how well plate tectonics explains rock ages) | 5 | Auto-graded |
-| CSA | 16 | Priority targets ESS1-5.1 to 5.5 only (supporting targets are never on the CSA). 14 auto-graded; Q12 (evaluate evidence) and Q16 (evaluate plate tectonics with data) teacher-graded with 4-point rubrics |
+| CSA | 12 | Priority targets ESS1-5.1 to 5.5 only (supporting targets are never on the CSA). 10 auto-graded; Q10 (evaluate evidence) and Q12 (evaluate plate tectonics with data) teacher-graded with 4-point rubrics |
 | Mastery Path reviews | 5 | One per CFA. Opens when the CFA score is below 3 of 4 (fewer than 4 of 5 correct). Pass/fail, 4 points, 3 written questions |
 
 Targets and tiers come from the team workbook "Renick Living Earth Standards and Learning Targets (26-27)" (Targets tab).

@@ -473,7 +473,7 @@ DAY8 = dict(
     targets=[c for c in Q.TARGETS if c.startswith("ESS1-5")],
     notebook=["Bring a pencil. You do not need your notebook for the CSA."],
     parts=[
-        ("About the CSA", "<p>The Common Summative Assessment has <strong>16 questions</strong> on the five priority targets, ESS1-5.1 to ESS1-5.5: 14 multiple-choice, select-all, and true/false questions, and 2 written responses (an evaluation of evidence for seafloor spreading, and an evaluation of how well plate tectonics explains rock ages using data). Read each question carefully and use the data provided.</p>"),
+        ("About the CSA", "<p>The Common Summative Assessment has <strong>12 questions</strong> on the five priority targets, ESS1-5.1 to ESS1-5.5: 10 multiple-choice and select-all questions, and 2 short written responses (3 to 5 sentences each) (an evaluation of evidence for seafloor spreading, and an evaluation of how well plate tectonics explains rock ages using data). Read each question carefully and use the data provided.</p>"),
         ("Take the CSA", "<p>Open <strong>Unit 3.1 CSA: Age of the Earth (HS-ESS1-5)</strong> on Canvas when your teacher says to begin.</p>"),
         ("When you finish", "<p>Check your written answers. Then work quietly on any missing Canvas work. If your score on a target is below a 3, you will have a chance to reassess after an intervention.</p>"),
     ],
@@ -671,11 +671,11 @@ TEACHER[7] = dict(
 )
 
 TEACHER[8] = dict(
-    glance="CSA day. 16 questions on the five priority targets, 14 auto-graded and two written responses (Q12 evaluate the evidence and Q16 evaluate plate tectonics) graded with the 4-point rubrics in the quiz.",
+    glance="CSA day. 12 questions on the five priority targets, 10 auto-graded and two short written responses (Q10 evaluate the evidence and Q12 evaluate plate tectonics) graded with the 4-point rubrics in the quiz.",
     materials=["Chromebooks with Canvas open", "Pencils"],
     agenda=[["0–3", "Directions"], ["3–43", "CSA"], ["43–45", "Collect Chromebooks; early finishers work quietly"]],
-    notes=["Grade Q12 and Q16 in SpeedGrader; the rubric and sample answers are in each question's scoring data.",
-           "Targets and CSA questions: ESS1-5.1 (Q1–3), ESS1-5.2 (Q4–6), ESS1-5.3 (Q7–9), ESS1-5.4 (Q10–12), ESS1-5.5 (Q13–16). Supporting ESS1-6 targets are not on the CSA.",
+    notes=["Grade Q10 and Q12 in SpeedGrader; the rubric and sample answers are in each question's scoring data.",
+           "Targets and CSA questions: ESS1-5.1 (Q1–2), ESS1-5.2 (Q3–4), ESS1-5.3 (Q5–7), ESS1-5.4 (Q8–10), ESS1-5.5 (Q11–12). Supporting ESS1-6 targets are not on the CSA.",
            "For students below a 3 on a target, assign the matching Mastery Path review as intervention, then reassess."],
     key=["See HS-ESS1-5_teacher_key.md for answers to every CSA question and the full rubrics."],
     supports="Provide extended time, read aloud, or a quiet room as outlined in IEP/504 plans.",

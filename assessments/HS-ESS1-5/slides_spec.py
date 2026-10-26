@@ -387,8 +387,8 @@ def build_day7():
 def build_day8():
     lesson = "Lesson 8 · Unit 3.1 CSA"
     out = [title_slide(8, "Unit 3.1 CSA", "What do you know about the ages of Earth's crust?", "Chromebook open to Canvas. Pencil ready.")]
-    s = Slide(8, 2, "About"); head(s, "About the CSA", "16 questions on the five priority targets", lesson)
-    bullets(s, "b", ["14 multiple-choice, select-all, and true/false questions.", "2 written responses: an evaluation of evidence for seafloor spreading (Q12), and an evaluation of how well plate tectonics explains rock ages using data (Q16).",
+    s = Slide(8, 2, "About"); head(s, "About the CSA", "12 questions on the five priority targets", lesson)
+    bullets(s, "b", ["10 multiple-choice and select-all questions.", "2 short written responses: an evaluation of evidence for seafloor spreading (Q10), and an evaluation of how well plate tectonics explains rock ages using data (Q12).",
                      "Open Unit 3.1 CSA: Age of the Earth (HS-ESS1-5) on Canvas when your teacher says to begin."], size=17)
     out.append(s)
     s = Slide(8, 3, "Tips"); head(s, "To do your best", "Read carefully and use the data", lesson)
@@ -396,7 +396,7 @@ def build_day8():
                      "For written answers: make a claim, support it with two specific pieces of evidence, explain why they support it, and name a limit."], size=18)
     out.append(s)
     s = Slide(8, 4, "Done"); head(s, "When you finish", "Check your written answers, then work quietly", lesson)
-    bullets(s, "b", ["Reread Q12 and Q16.", "Work quietly on any missing Canvas work.", "A target below 3 gets an intervention and a chance to reassess."], size=18)
+    bullets(s, "b", ["Reread Q10 and Q12.", "Work quietly on any missing Canvas work.", "A target below 3 gets an intervention and a chance to reassess."], size=18)
     out.append(s)
     return out
 
