@@ -75,7 +75,14 @@ REVIEWS = {
          "<p>Put one parent's sex-cell alleles across the top and the other's down the side. Each box is one possible offspring.</p>"
          + table(["", "G", "g"], ["G", "GG", "Gg"], ["g", "Gg", "gg"])
          + try_it("For Gg × Gg, how many of the 4 boxes are gg?", "1 of 4 boxes, or 25%.")),
+        ("Meiosis and crossing over",
+         "<p>Meiosis is the cell division that makes sex cells in the body parts that make eggs and sperm. During crossing over, paired "
+         "chromosomes swap pieces of DNA, so the alleles on a chromosome get mixed. Chromosomes are also sorted into each sex cell at "
+         "random (independent assortment).</p>"
+         + try_it("What happens to paired chromosomes during crossing over?",
+                  "They swap pieces of DNA, which mixes the alleles before the sex cells form.")),
     ], [
+        "What does meiosis make, and where does crossing over happen?",
         "How many alleles of one gene does a sex cell carry, and how does an offspring end up with two?",
         "A parent has the alleles Tt. List the two kinds of sex cells this parent can make.",
         "Explain in one or two sentences why two Gg parents can have a gg offspring.",

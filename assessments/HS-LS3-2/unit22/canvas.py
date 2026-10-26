@@ -180,10 +180,18 @@ def canvas(course, decks_file):
         title = Q.CFA_TITLE[tid]
         instr = (N.CFA_NOTE + f"<p><strong>Learning target {tid}:</strong> {U.TARGET[tid][3]}</p>"
                  "<p>5 questions. If you score below a B (fewer than 4 of 5 correct), a review for this target will open for you.</p>")
-        if title in quizzes:
-            api.nq("PATCH", f"/quizzes/{quizzes[title]['id']}", {"quiz": {"instructions": instr, "quiz_settings": N.CFA_CSA_SETTINGS}})
-            return quizzes[title]
         items = [(f"{tid}.{n} · {tid}", it) for n, it in enumerate(Q.CFAS[tid], 1)]
+        if title in quizzes:  # rebuild the items in place so the module item and Mastery Path rule stay valid
+            qid = quizzes[title]["id"]
+            for old in api.nq("GET", f"/quizzes/{qid}/items") or []:
+                api.nq("DELETE", f"/quizzes/{qid}/items/{old['id']}")
+            n_choice = 0
+            for pos, (qtitle, it) in enumerate(items, 1):
+                api.nq("POST", f"/quizzes/{qid}/items", {"item": {"position": pos, "points_possible": 4 if it["type"] == "essay" else 1,
+                                                                 "entry_type": "Item", "entry": N.entry(it, qtitle, n_choice)}})
+                n_choice += it["type"] == "choice"
+            api.nq("PATCH", f"/quizzes/{qid}", {"quiz": {"instructions": instr, "quiz_settings": N.CFA_CSA_SETTINGS}})
+            return quizzes[title]
         quizzes[title] = N.make_quiz(api, title, instr, items, group)
         return quizzes[title]
 

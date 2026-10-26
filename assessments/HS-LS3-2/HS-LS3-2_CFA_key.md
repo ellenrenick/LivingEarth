@@ -94,12 +94,12 @@ How many of the 4 boxes show the genotype gg?
 - C. A sperm and an egg join, so the offspring gets one allele from each parent
 - D. A mutation changes the alleles, so the offspring gets alleles that neither parent had
 
-**Question 5.** Two siblings have the same parents. One is BB and the other is Bb. What best explains this?
+**Question 5.** Sex cells are made by meiosis. What happens during crossing over?
 
-- A. One sibling's DNA mutated, because siblings can never have different genotypes
-- B. Siblings with the same parents always get the same alleles, so a record is wrong
-- C. Each sibling got a different combination of alleles from the same two parents
-- D. The environment changed one sibling's alleles after that sibling was born
+- A. A chromosome copies itself, so a sex cell gets two identical sets of DNA
+- B. An egg and a sperm join, so the offspring gets one allele from each parent
+- C. Paired chromosomes swap pieces of DNA, which makes a new mix of alleles
+- D. A base in the DNA changes, so a chromosome gets an allele that is new
 
 **Answer key**
 
@@ -109,7 +109,7 @@ How many of the 4 boxes show the genotype gg?
 | 2 | D | Each sex cell gets just one of the parent's two alleles, so about half carry G and half carry g. |
 | 3 | A | Only one box has a g from the top and a g from the side, so 1 of 4 boxes is gg. |
 | 4 | C | Fertilization joins two sex cells. The offspring gets one allele from each parent: a new combination. |
-| 5 | C | Sex cells carry one allele at random, so each fertilization can make a different combination. |
+| 5 | C | During meiosis, paired chromosomes swap pieces of DNA (crossing over). This mixes alleles before the sex cells form. |
 
 
 ## Unit 2.2 CFA LS3-2.3: Copying errors and mutations
