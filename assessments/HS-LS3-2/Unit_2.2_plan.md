@@ -146,7 +146,7 @@ The workbook tab "2.2 Inherited" plans 15 days (course days 52 to 66). The LE Pl
 | --- | --- | --- |
 | 2 | Notebook setup | Students copy slide 2. |
 | 3 | One parent, two kinds of sex cells | Key: G; g (either order). |
-| 5 | Sex cells and fertilization | Key: one; sex cells; combination. No phases of meiosis. Link to yesterday: a coin flip was a sex cell's allele. |
+| 5 | Sex cells and fertilization | Key: sex cells; swap; combination. Meiosis function only: it makes eggs and sperm, each with one allele of each gene. Crossing over: paired chromosomes swap pieces of DNA during meiosis. Independent assortment: chromosomes are sorted into each sex cell at random. No phases of meiosis. Link to yesterday: a coin flip was a sex cell's allele. |
 | 10 | Part 3: Punnett squares for the baby monster | Required: Eyes (ee), Skin color (Gg), Teeth (ss), Feet (Ff), Horn color (ww), Claws (Ll). The other 6 squares are "if time." Key: alleles. |
 | 5 | From boxes to percent | Key: 75; 25. Eyes (male ee): a female EE gives 0% one large eye, Ee gives 50%, and ee gives 100%. Check a few. |
 | 6 | Real counts: Gg × Gg | Replace the sample with your class's tally (the sample is 22 green and 8 blue out of 30). Key: 75; 73 (or your class's number); random. Real counts rarely match the prediction exactly. |

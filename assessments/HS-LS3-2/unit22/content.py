@@ -223,7 +223,8 @@ DAYS = [
                  minutes=5, title="Three sources of new variation",
                  body=["Scientists name three ways new genetic variation arises:",
                        "1. New combinations of alleles: sex cells carry one version of each gene, and fertilization puts two "
-                       "together. That is what the cards modeled.",
+                       "together. That is what the cards modeled. Meiosis, the cell division that makes sex cells, mixes alleles even more "
+                       "(crossing over and independent assortment, Day 6).",
                        "2. Copying errors: DNA is copied before cells divide, and a rare error can slip through.",
                        "3. Mutations from the environment: UV light and some chemicals can damage DNA."],
                  frame=[f"1. New {B} of alleles. 2. {B} when DNA is copied. 3. Mutations caused by the {B}."],
@@ -479,12 +480,17 @@ DAYS = [
             dict(nb="Sex cells and fertilization", nbnote="Copy the key ideas and finish the frame.", label="MINI-LESSON",
                  who="WHOLE CLASS", minutes=5, title="Sex cells and fertilization",
                  body=["Body cells have two alleles of each gene.",
-                       "Meiosis is the cell division that makes sex cells (eggs and sperm). Each sex cell gets only one allele "
-                       "of each gene, chosen at random, like a coin flip.",
+                       "Meiosis is the cell division that makes sex cells (eggs and sperm, also called gametes). Each sex cell "
+                       "gets only one allele of each gene, like a coin flip.",
+                       "Two things mix the alleles during meiosis, in the body parts that make eggs and sperm: crossing over (paired "
+                       "chromosomes swap pieces of DNA) and independent assortment (chromosomes are sorted into each sex cell at random).",
                        "At fertilization, a sperm and an egg join. The offspring gets one allele from each parent: a new combination."],
-                 frame=[f"Each sex cell carries {B} allele of each gene. Fertilization joins two {B} to make a new {B} of alleles."],
-                 bank=["one", "sex cells", "combination"],
-                 teacher="Key: one; sex cells; combination. No phases of meiosis. Link to yesterday: a coin flip was a sex cell's allele."),
+                 frame=[f"Meiosis makes ____ with one allele of each gene. Crossing over happens during meiosis, when paired "
+                        f"chromosomes ____ pieces of DNA. Fertilization joins two sex cells to make a new ____ of alleles."],
+                 bank=["sex cells", "swap", "combination"],
+                 teacher="Key: sex cells; swap; combination. Meiosis function only: it makes eggs and sperm, each with one allele of each "
+                         "gene. Crossing over: paired chromosomes swap pieces of DNA during meiosis. Independent assortment: chromosomes "
+                         "are sorted into each sex cell at random. No phases of meiosis. Link to yesterday: a coin flip was a sex cell's allele."),
             dict(nb="Punnett squares for the baby", nbnote="Six Punnett squares on your sheet.", label="LAB", who="WITH A PARTNER",
                  minutes=10, title="Part 3: Punnett squares for the baby monster", table=PUNNETT_GG,
                  body=["Make a Punnett square for 6 traits: Eyes, Skin color, Teeth, Feet, Horn color, and Claws. Use your "
@@ -510,7 +516,7 @@ DAYS = [
                  teacher="Replace the sample with your class's tally (the sample is 22 green and 8 blue out of 30). Key: 75; "
                          "73 (or your class's number); random. Real counts rarely match the prediction exactly."),
         ],
-        key=["Warm-up: G; g.", "Sex cells: one; sex cells; combination.",
+        key=["Warm-up: G; g.", "Sex cells: sex cells; swap; combination.",
              "Punnett squares: use the male's genotypes. Gg × Gg: GG, Gg, Gg, gg. alleles.",
              "Percent chance: 75; 25.", "Class data: 75; 73; random."],
         notes=["Planner: Tue Nov 17, Finish Monster Genetics. Part 3 is trimmed to 6 required squares (the sheet has 12), so the "
