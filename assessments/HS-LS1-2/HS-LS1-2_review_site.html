@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unit 1.1 Review Site</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: single reading column, sticky section nav, cards only for questions */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --fg:#17212e; --muted:#5a6676; --line:#d9dfe7;
+  --accent:#1f5fbf; --accent-ink:#ffffff; --accent-soft:#e3edfb;
+  --good:#17703f; --good-soft:#e1f4e8; --bad:#a3302a; --bad-soft:#fbe7e5; --warn-soft:#fff3d6;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#7db0ff; --accent-ink:#0b1420; --accent-soft:#1b2c45;
+  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#7db0ff; --accent-ink:#0b1420; --accent-soft:#1b2c45;
+  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:18px/1.55 var(--font-body);margin:0;
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;text-wrap:balance;margin:0}
+header.top{padding-block:32px 8px}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(1.9rem,6vw,2.7rem);margin-top:6px}
+.lede{color:var(--muted);margin:10px 0 0}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+  margin-top:18px;display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+nav.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:999px;font-weight:600;font-size:.95rem}
+nav.tabs a:hover,nav.tabs a:focus-visible{background:var(--accent-soft);color:var(--accent);outline:none}
+.meter{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:.95rem;color:var(--muted)}
+.meter .bar{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter .bar i{display:block;height:100%;width:0;background:var(--good);transition:width .3s}
+section{padding-top:40px}
+section>h2{font-size:1.6rem;margin-bottom:6px}
+section>p.sub{color:var(--muted);margin:0 0 18px}
+.ideas{display:grid;gap:14px;counter-reset:idea;padding:0;list-style:none;margin:0}
+.ideas li{counter-increment:idea;display:grid;grid-template-columns:2.2rem 1fr;gap:12px}
+.ideas li::before{content:counter(idea);font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--accent);
+  background:var(--accent-soft);border-radius:8px;height:2.2rem;display:grid;place-items:center}
+.ideas b{font-family:var(--font-display)}
+.eq{background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin-top:6px;font-weight:600;overflow-x:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:92px}
+.card:focus-visible{outline:3px solid var(--accent)}
+.card .t{font-family:var(--font-display);font-weight:700;display:block}
+.card .d{display:none;color:var(--muted);font-size:.95rem;margin-top:4px}
+.card.open{background:var(--accent-soft);border-color:var(--accent)}
+.card.open .d{display:block}
+.card .hint{font-size:.8rem;color:var(--muted)}
+.card.open .hint{display:none}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
+.q .tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.q .stem{margin:4px 0 10px}
+.q .ctx{background:var(--bg);border-left:4px solid var(--accent);padding:8px 12px;margin:0 0 10px;border-radius:0 8px 8px 0}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--surface)}
+.opt:hover{border-color:var(--accent)}
+.opt input{margin-top:5px;accent-color:var(--accent)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:10px;align-items:center;margin-bottom:8px}
+.row .l{font-weight:600}
+.row select{font:inherit;padding:8px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);width:100%;min-width:0}
+.row select.right{border-color:var(--good);background:var(--good-soft)}
+.row select.wrong{border-color:var(--bad);background:var(--bad-soft)}
+@media(max-width:520px){.row{grid-template-columns:1fr;gap:4px}}
+button.go{font:inherit;font-weight:700;background:var(--accent);color:var(--accent-ink);border:0;border-radius:9px;padding:9px 18px;cursor:pointer;margin-top:10px}
+button.go.alt{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+button.go:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.fb{margin-top:10px;padding:10px 12px;border-radius:9px;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--good-soft);color:var(--fg);border-left:4px solid var(--good)}
+.fb.no{background:var(--bad-soft);border-left:4px solid var(--bad)}
+.fb b.s{display:block}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px;padding:0;list-style:none}
+.flow li{background:var(--accent-soft);border-radius:8px;padding:6px 10px;font-weight:600;font-size:.95rem}
+.flow li.arrow{background:none;padding:0;color:var(--muted)}
+figure{margin:0 0 6px;overflow-x:auto}
+figure svg{width:100%;height:auto;min-width:520px;display:block}
+figcaption{font-size:.9rem;color:var(--muted)}
+textarea{width:100%;min-height:120px;font:inherit;padding:10px;border-radius:9px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);resize:vertical}
+.frames{font-size:.95rem;color:var(--muted);margin:0 0 8px;padding-left:1.2rem}
+.chk{display:grid;gap:6px;margin:10px 0 0}
+.chk label{display:flex;gap:10px;align-items:flex-start}
+.chk input{margin-top:6px;accent-color:var(--accent)}
+.sample{display:none;margin-top:10px;background:var(--warn-soft);padding:10px 12px;border-radius:9px}
+.sample.show{display:block}
+table.rubric{border-collapse:collapse;width:100%;font-size:.95rem}
+table.rubric td,table.rubric th{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+.scroll{overflow-x:auto}
+.ready{list-style:none;padding:0;display:grid;gap:8px}
+.ready label{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.ready input{margin-top:6px;accent-color:var(--accent);width:18px;height:18px}
+.done-msg{display:none;margin-top:14px;padding:14px;border-radius:10px;background:var(--good-soft);border:1px solid var(--good)}
+.done-msg.show{display:block}
+footer{margin-top:48px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>window.UNIT={"code": "HS-LS1-2", "eyebrow": "Unit 1.1 \u00b7 HS-LS1-2", "title": "From Cells to Organisms", "lede": "Review before your reassessment. Work top to bottom, or jump to the part you missed.", "footer": "Living Earth (Biology) \u00b7 Unit 1.1 review. Your progress saves in this browser.", "ideas": [{"t": "Living things are built in levels.", "d": "Cells make tissues. Tissues make organs. Organs make organ systems. Organ systems make an organism. Each level is made of the one before it.", "eq": "cell \u2192 tissue \u2192 organ \u2192 organ system \u2192 organism"}, {"t": "Every system has a main job.", "d": "Digestive breaks down food. Respiratory takes in oxygen and gets rid of carbon dioxide. Circulatory carries blood to every cell. Nervous sends messages. Muscular moves the body. Skeletal holds up the body and protects organs. Excretory removes wastes."}, {"t": "Systems work together.", "d": "No system works alone. A body job almost always needs two or more systems.", "eq": "Respiratory + Circulatory \u2192 oxygen reaches cells<br>Digestive + Circulatory \u2192 nutrients reach cells<br>Nervous + Muscular \u2192 sense and respond<br>Skeletal + Muscular \u2192 movement"}, {"t": "A model shows parts and arrows.", "d": "Read an arrow as \u201cgoes to.\u201d If one part stops working, every part after it is affected."}, {"t": "To explain, name both parts and connect them.", "d": "Say what each system does. Then use a word like <b>then<\/b>, <b>so<\/b>, or <b>because<\/b> to show how one leads to the other."}], "vocab": [["cell", "The smallest unit of a living thing. All living things are made of cells."], ["tissue", "A group of the same kind of cells working together."], ["organ", "A body part made of different tissues that does one main job, like the heart."], ["organ system", "A group of organs that work together to do a big job."], ["organism", "A whole living thing."], ["stimulus", "Something that causes the body to react, like heat or a loud noise."], ["response", "How the body reacts to a stimulus."], ["model", "A drawing or diagram that shows how parts of something connect and work."]], "vocabQuiz": [{"q": "Match each word to its meaning. One meaning will not be used.", "tag": "Vocabulary", "pairs": [["tissue", "A group of the same kind of cells working together"], ["organ", "A body part made of tissues that does one main job"], ["organ system", "Organs that work together to do a big job"], ["organism", "A whole living thing"], ["response", "How the body reacts to something"]], "extra": ["The smallest part of an atom"], "why": "These five words show up on the reassessment."}], "practice": [{"q": "Which list is in order from smallest to largest?", "opts": ["organ, cell, tissue, organ system", "cell, tissue, organ, organ system", "tissue, cell, organ system, organ", "cell, organ, tissue, organ system"], "a": 1, "why": "Cells join to make tissues, tissues make organs, and organs make organ systems.", "hint": "Start with the smallest unit of life."}, {"q": "Many muscle cells that look the same and work together form a\u2026", "opts": ["tissue", "organ", "organ system", "organism"], "a": 0, "why": "Same kind of cells working together is a tissue.", "hint": "The cells are all the same type."}, {"q": "The stomach, small intestine, and liver all work together to break down food. Together they are an\u2026", "opts": ["organism", "tissue", "organ system", "cell"], "a": 2, "why": "Several organs doing one big job make an organ system. This one is the digestive system.", "hint": "More than one organ is working together."}, {"q": "Which system has the main job of holding up the body and protecting organs like the brain and heart?", "opts": ["Skeletal", "Nervous", "Digestive", "Respiratory"], "a": 0, "why": "Bones, like the skull and rib cage, hold you up and protect organs.", "hint": "Think about what the skull and ribs do."}, {"q": "The kidneys filter wastes out of the blood. The blood carries those wastes to the kidneys. Which TWO systems work together here?", "type": "multi", "opts": ["Circulatory", "Excretory", "Skeletal", "Muscular", "Nervous"], "a": [0, 1], "why": "The circulatory system carries the wastes, and the excretory system removes them.", "hint": "One carries, one removes."}, {"type": "match", "q": "Match each system to its main job. One job will not be used.", "pairs": [["Respiratory", "Takes in oxygen and gets rid of carbon dioxide"], ["Digestive", "Breaks down food into nutrients"], ["Circulatory", "Carries blood to every cell"], ["Nervous", "Sends messages between the brain and body"], ["Muscular", "Pulls on bones to move the body"]], "extra": ["Fights germs that make you sick"], "why": "Know each system's one main job."}, {"type": "match", "q": "Match each level to an example from the human body. One example will not be used.", "pairs": [["Cell", "One nerve cell"], ["Tissue", "Nervous tissue (many nerve cells together)"], ["Organ", "The brain"], ["Organ system", "The nervous system (brain, spinal cord, nerves)"], ["Organism", "A whole dog"]], "extra": ["A pond with fish and plants"], "why": "Each level is made of the level before it."}, {"q": "A cyclist rides up a hill. Her breathing and heart rate both go up. Which TWO systems work together to get more oxygen to her leg muscles?", "type": "multi", "opts": ["Respiratory", "Circulatory", "Digestive", "Skeletal", "Excretory"], "a": [0, 1], "why": "The respiratory system takes in the oxygen. The circulatory system carries it to the muscle cells.", "hint": "One brings oxygen in, one delivers it."}, {"q": "Which pair of systems must work together for you to pick up a pencil you see on the floor?", "opts": ["Nervous and muscular", "Digestive and skeletal", "Respiratory and excretory", "Circulatory and digestive"], "a": 0, "why": "The nervous system takes in what you see and sends the message. The muscular system moves your arm.", "hint": "One senses and sends the message. One moves."}], "model": {"title": "Read a model", "sub": "Models use arrows. Read each arrow as \u201cgoes to.\u201d", "caption": "Model: how a runner's brain cells get energy.", "figure": "<ul class=\"flow\"><li>Food<\/li><li class=\"arrow\">\u2192<\/li><li>Stomach and intestines<br><small>digestive system<\/small><\/li><li class=\"arrow\">\u2192<\/li><li>Nutrients go into the blood<\/li><li class=\"arrow\">\u2192<\/li><li>Heart and blood vessels<br><small>circulatory system<\/small><\/li><li class=\"arrow\">\u2192<\/li><li>Brain cells<\/li><\/ul>", "qs": [{"q": "According to the model, what does the circulatory system do?", "opts": ["Breaks down food", "Carries nutrients to the brain cells", "Makes nutrients", "Takes in air"], "a": 1, "why": "The arrow goes from the blood to the brain cells, so it carries nutrients there.", "hint": "Follow the arrow that starts at the heart and blood vessels."}, {"q": "The heart and blood vessels stop working well. Which result is most likely?", "opts": ["Food would not be swallowed.", "Brain cells would not get enough nutrients.", "Bones would break.", "The lungs would fill with food."], "a": 1, "why": "Every part after the circulatory system is affected. Brain cells come after it.", "hint": "What comes after the circulatory system in the model?"}, {"q": "The digestive system cannot break down food. What happens next in the model?", "opts": ["Nutrients never get into the blood.", "The blood carries extra oxygen.", "The brain sends more messages.", "Nothing changes."], "a": 0, "why": "The digestive system makes the nutrients. With no breakdown, there are no nutrients to enter the blood.", "hint": "Look at the step right after the digestive system."}, {"q": "This model shows two systems working together. Why does the model need both?", "opts": ["One system breaks down food and the other carries the nutrients to cells.", "Both systems do the exact same job.", "The second system makes food.", "The first system carries oxygen."], "a": 0, "why": "Breaking down food and delivering nutrients are two different jobs. The cells need both to get energy.", "hint": "Compare the job of each system."}]}, "rubric": [["4", "Correct and complete. Uses the key science words. Explains every part of the question and connects the ideas."], ["3", "Mostly correct. Connects the ideas but leaves out one piece."], ["2", "Partly correct. Names the parts but does not explain how they connect, or is vague."], ["1", "Has a major mistake or does not answer the question."]], "write": [{"ctx": "A girl sees a ball flying toward her face and ducks. ", "q": "Explain how the nervous system and the muscular system work together so she can duck. Use the words <b>message<\/b>, <b>brain<\/b>, and <b>muscles<\/b>.", "frames": ["First, the nervous system \u2026", "Then, the muscular system \u2026"], "check": ["I named both systems.", "I said what the nervous system does (eyes see the ball, the brain sends a message).", "I said what the muscular system does (muscles move the body).", "I used a connecting word like <i>then<\/i> or <i>so<\/i>."], "sample": "First, the nervous system uses her eyes to see the ball, and her brain sends a message to the muscles in her neck and body. Then, the muscular system gets the message and the muscles pull on bones to move her head down, so she ducks."}, {"ctx": "A soccer player is running hard in a game and her muscle cells need a lot of oxygen.", "q": "Explain how the respiratory system and the circulatory system work together to help her muscle cells.", "frames": ["The respiratory system \u2026", "Then the circulatory system \u2026", "This helps her muscles because \u2026"], "check": ["I named both systems.", "I said the respiratory system takes in oxygen.", "I said the circulatory system (blood) carries it to the muscle cells.", "I connected the two systems."], "sample": "The respiratory system takes in oxygen from the air through the lungs. Then the circulatory system moves that oxygen into the blood, and the heart pumps the blood to her muscle cells. This helps her muscles because the cells need oxygen to keep working."}], "ready": ["I can put the levels of organization in order and give an example of each.", "I can say the main job of each body system.", "I can name two systems that work together and say how.", "I can read a model and say what happens if one part stops working.", "I can write an explanation that names both systems and connects them."]};</script>
+<script>
+(function(){
+const D=window.UNIT, $=(s,r=document)=>r.querySelector(s);
+const KEY='review:'+D.code;
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const h=(tag,attrs,html)=>{const e=document.createElement(tag);for(const k in attrs||{}){if(k==='class')e.className=attrs[k];else e.setAttribute(k,attrs[k])}if(html!=null)e.innerHTML=html;return e};
+let total=0,qid=0;
+const meter=h('div',{class:'meter'},'<span id="mtxt"></span><div class="bar"><i id="mbar"></i></div>');
+function upd(){const n=Object.keys(saved).filter(k=>saved[k]==='ok').length;$('#mtxt').textContent=n+' of '+total+' correct';$('#mbar').style.width=(total?100*n/total:0)+'%';
+  const dm=$('#done');if(dm)dm.classList.toggle('show',n===total&&total>0)}
+function feedback(box,ok,why){box.className='fb show '+(ok?'ok':'no');
+  box.innerHTML='<b class="s">'+(ok?'Correct.':'Not yet.')+'</b>'+(ok?'':'Look again and try once more. ')+(why?why:'')}
+function wrapQ(q,body,tag){const id=D.code+'-q'+(++qid);total++;const box=h('div',{class:'q',id});
+  box.appendChild(h('div',{class:'tag'},tag||q.tag||'Practice'));
+  if(q.ctx)box.appendChild(h('div',{class:'ctx'},q.ctx));
+  box.appendChild(h('div',{class:'stem'},q.q));box.appendChild(body);
+  const fb=h('div',{class:'fb',role:'status'});box.appendChild(fb);return {box,fb,id}}
+function mc(q,multi){
+  const opts=q.opts.map((t,i)=>({t,i,right:multi?q.a.includes(i):q.a===i}));
+  const list=h('div',{class:'opts'}),name='n'+(qid+1);
+  shuffle(opts).forEach(o=>{const l=h('label',{class:'opt'},'<input type="'+(multi?'checkbox':'radio')+'" name="'+name+'"><span>'+o.t+'</span>');l._o=o;list.appendChild(l)});
+  const {box,fb,id}=wrapQ(q,list,multi?'Choose '+q.a.length:null);
+  const b=h('button',{class:'go',type:'button'},'Check');box.insertBefore(b,fb);
+  b.onclick=()=>{let ok=true;const sel=[...list.children];
+    sel.forEach(l=>{const c=l.firstChild.checked;l.classList.remove('right','wrong');
+      if(c&&l._o.right)l.classList.add('right');else if(c&&!l._o.right){l.classList.add('wrong');ok=false}else if(!c&&l._o.right)ok=false});
+    if(!sel.some(l=>l.firstChild.checked)){fb.className='fb show no';fb.innerHTML='Pick an answer first.';return}
+    saved[id]=ok?'ok':'no';save();upd();feedback(fb,ok,ok?q.why:(q.hint||''))
+    if(ok)sel.forEach(l=>l.firstChild.disabled=true)};
+  if(saved[id]==='ok'){/* progress counted; question stays fresh for re-practice */}
+  return box}
+function match(q){
+  const rights=shuffle(q.pairs.map(p=>p[1]).concat(q.extra||[]));const body=h('div');
+  q.pairs.forEach(p=>{const r=h('div',{class:'row'},'<div class="l">'+p[0]+'</div>');
+    const s=h('select',{'aria-label':p[0].replace(/<[^>]+>/g,'')},'<option value="">Choose…</option>'+rights.map((t,i)=>'<option value="'+i+'">'+t+'</option>').join(''));
+    s._ans=rights.indexOf(p[1]);r.appendChild(s);body.appendChild(r)});
+  const {box,fb,id}=wrapQ(q,body,'Match');const b=h('button',{class:'go',type:'button'},'Check');box.insertBefore(b,fb);
+  b.onclick=()=>{let ok=true,blank=false;body.querySelectorAll('select').forEach(s=>{s.classList.remove('right','wrong');
+    if(s.value===''){blank=true;ok=false;return}if(+s.value===s._ans)s.classList.add('right');else{s.classList.add('wrong');ok=false}});
+    if(blank&&ok===false&&!body.querySelector('.wrong')){fb.className='fb show no';fb.innerHTML='Choose an answer for every row.';return}
+    saved[id]=ok?'ok':'no';save();upd();feedback(fb,ok,ok?q.why:'Fix the red rows and check again.')};
+  return box}
+function write(q){
+  const body=h('div');
+  if(q.frames)body.appendChild(h('ul',{class:'frames'},q.frames.map(f=>'<li>'+f+'</li>').join('')));
+  const ta=h('textarea',{id:D.code+'-w'+(++qid),placeholder:'Write your answer here…'});
+  try{ta.value=localStorage.getItem(KEY+':'+ta.id)||''}catch(e){}ta.oninput=()=>{try{localStorage.setItem(KEY+':'+ta.id,ta.value)}catch(e){}};
+  body.appendChild(ta);qid--;
+  body.appendChild(h('div',{class:'tag',style:'margin-top:12px'},'Check your own answer'));
+  const chk=h('div',{class:'chk'});q.check.forEach((c,i)=>chk.appendChild(h('label',{},'<input type="checkbox"><span>'+c+'</span>')));body.appendChild(chk);
+  const id=D.code+'-q'+(++qid);const box=h('div',{class:'q',id});total++;
+  box.appendChild(h('div',{class:'tag'},'Write it'));if(q.ctx)box.appendChild(h('div',{class:'ctx'},q.ctx));
+  box.appendChild(h('div',{class:'stem'},q.q));box.appendChild(body);
+  const sample=h('div',{class:'sample'},'<b>Sample answer (about a 4)</b><br>'+q.sample);
+  const b=h('button',{class:'go alt',type:'button'},'Show a sample answer');b.onclick=()=>{sample.classList.toggle('show')};
+  const done=h('button',{class:'go',type:'button'},'I wrote it and checked every box');
+  const fb=h('div',{class:'fb',role:'status'});
+  done.onclick=()=>{const all=[...chk.querySelectorAll('input')].every(i=>i.checked);
+    if(!ta.value.trim()){fb.className='fb show no';fb.textContent='Write your answer first.';return}
+    if(!all){fb.className='fb show no';fb.innerHTML='Some boxes are not checked. Add the missing piece to your answer, then check the box. You can look at the sample answer to compare.';return}
+    saved[id]='ok';save();upd();fb.className='fb show ok';fb.innerHTML='<b class="s">Nice work.</b>Compare with the sample answer and fix anything you missed.'};
+  box.append(done,' ',b,fb,sample);return box}
+function sec(id,title,sub){const s=h('section',{id});s.appendChild(h('h2',{},title));if(sub)s.appendChild(h('p',{class:'sub'},sub));return s}
+
+const root=$('#app');
+const hd=h('header',{class:'top'},'<div class="eyebrow">'+D.eyebrow+'</div><h1>'+D.title+'</h1><p class="lede">'+D.lede+'</p>');
+hd.appendChild(meter);root.appendChild(hd);
+const nav=h('nav',{class:'tabs','aria-label':'Sections'});root.appendChild(nav);
+const add=(id,t)=>nav.appendChild(h('a',{href:'#'+id},t));
+
+let s=sec('ideas','Key ideas','Read these first. Then try the practice.');add('ideas','Key ideas');
+const ul=h('ol',{class:'ideas'});D.ideas.forEach(i=>ul.appendChild(h('li',{},'<div><b>'+i.t+'</b> '+i.d+(i.eq?'<div class="eq">'+i.eq+'</div>':'')+'</div>')));
+s.appendChild(ul);root.appendChild(s);
+
+s=sec('words','Vocabulary','Tap a card to see the meaning. Then say it in your own words.');add('words','Vocabulary');
+const cards=h('div',{class:'cards'});D.vocab.forEach(v=>{const c=h('button',{class:'card',type:'button','aria-expanded':'false'},'<span class="t">'+v[0]+'</span><span class="hint">Tap to flip</span><span class="d">'+v[1]+'</span>');
+  c.onclick=()=>{const o=c.classList.toggle('open');c.setAttribute('aria-expanded',o)};cards.appendChild(c)});
+s.appendChild(cards);D.vocabQuiz.forEach(q=>s.appendChild(match(q)));root.appendChild(s);
+
+s=sec('practice','Practice','Each question tells you right away. Missed one? Read the explanation, then try it again.');add('practice','Practice');
+D.practice.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+
+s=sec('model',D.model.title,D.model.sub);add('model','Models');
+const fig=h('figure',{},D.model.figure+'<figcaption>'+D.model.caption+'</figcaption>');s.appendChild(fig);
+D.model.qs.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+
+s=sec('write','Explain it','Written answers are scored out of 4. Write, check yourself, then compare with the sample.');add('write','Explain it');
+const rub=h('div',{class:'scroll'},'<table class="rubric"><tr><th>Score</th><th>What it looks like</th></tr>'+D.rubric.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>').join('')+'</table>');
+s.appendChild(rub);D.write.forEach(q=>s.appendChild(write(q)));root.appendChild(s);
+
+s=sec('ready','Ready check','Check each one only when you can do it without notes.');add('ready','Ready check');
+const rl=h('ul',{class:'ready'});D.ready.forEach((t,i)=>{const id=D.code+'-r'+i;const li=h('li',{},'<label><input type="checkbox" id="'+id+'"><span>'+t+'</span></label>');
+  const c=li.querySelector('input');c.checked=saved[id]==='1';c.onchange=()=>{saved[id]=c.checked?'1':'';save()};rl.appendChild(li)});
+s.appendChild(rl);s.appendChild(h('div',{class:'done-msg',id:'done'},'<b>You answered everything.</b> Take what you got wrong back to your notes, then tell your teacher you are ready to reassess.'));
+root.appendChild(s);root.appendChild(h('footer',{},D.footer));
+upd();
+})();
+
+</script>
+</body>
+</html>
