@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bootcamp Review Site</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: single reading column, sticky section nav, cards only for questions */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --fg:#17212e; --muted:#5a6676; --line:#d9dfe7;
+  --accent:#b4501e; --accent-ink:#ffffff; --accent-soft:#e3edfb;
+  --good:#17703f; --good-soft:#e1f4e8; --bad:#a3302a; --bad-soft:#fbe7e5; --warn-soft:#fff3d6;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#7db0ff; --accent-ink:#0b1420; --accent-soft:#1b2c45;
+  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#7db0ff; --accent-ink:#0b1420; --accent-soft:#1b2c45;
+  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:18px/1.55 var(--font-body);margin:0;
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;text-wrap:balance;margin:0}
+header.top{padding-block:32px 8px}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(1.9rem,6vw,2.7rem);margin-top:6px}
+.lede{color:var(--muted);margin:10px 0 0}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+  margin-top:18px;display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+nav.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:999px;font-weight:600;font-size:.95rem}
+nav.tabs a:hover,nav.tabs a:focus-visible{background:var(--accent-soft);color:var(--accent);outline:none}
+.meter{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:.95rem;color:var(--muted)}
+.meter .bar{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter .bar i{display:block;height:100%;width:0;background:var(--good);transition:width .3s}
+section{padding-top:40px}
+section>h2{font-size:1.6rem;margin-bottom:6px}
+section>p.sub{color:var(--muted);margin:0 0 18px}
+.ideas{display:grid;gap:14px;counter-reset:idea;padding:0;list-style:none;margin:0}
+.ideas li{counter-increment:idea;display:grid;grid-template-columns:2.2rem 1fr;gap:12px}
+.ideas li::before{content:counter(idea);font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--accent);
+  background:var(--accent-soft);border-radius:8px;height:2.2rem;display:grid;place-items:center}
+.ideas b{font-family:var(--font-display)}
+.eq{background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin-top:6px;font-weight:600;overflow-x:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:92px}
+.card:focus-visible{outline:3px solid var(--accent)}
+.card .t{font-family:var(--font-display);font-weight:700;display:block}
+.card .d{display:none;color:var(--muted);font-size:.95rem;margin-top:4px}
+.card.open{background:var(--accent-soft);border-color:var(--accent)}
+.card.open .d{display:block}
+.card .hint{font-size:.8rem;color:var(--muted)}
+.card.open .hint{display:none}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
+.q .tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.q .stem{margin:4px 0 10px}
+.q .ctx{background:var(--bg);border-left:4px solid var(--accent);padding:8px 12px;margin:0 0 10px;border-radius:0 8px 8px 0}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--surface)}
+.opt:hover{border-color:var(--accent)}
+.opt input{margin-top:5px;accent-color:var(--accent)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:10px;align-items:center;margin-bottom:8px}
+.row .l{font-weight:600}
+.row select{font:inherit;padding:8px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);width:100%;min-width:0}
+.row select.right{border-color:var(--good);background:var(--good-soft)}
+.row select.wrong{border-color:var(--bad);background:var(--bad-soft)}
+@media(max-width:520px){.row{grid-template-columns:1fr;gap:4px}}
+button.go{font:inherit;font-weight:700;background:var(--accent);color:var(--accent-ink);border:0;border-radius:9px;padding:9px 18px;cursor:pointer;margin-top:10px}
+button.go.alt{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+button.go:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.fb{margin-top:10px;padding:10px 12px;border-radius:9px;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--good-soft);color:var(--fg);border-left:4px solid var(--good)}
+.fb.no{background:var(--bad-soft);border-left:4px solid var(--bad)}
+.fb b.s{display:block}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px;padding:0;list-style:none}
+.flow li{background:var(--accent-soft);border-radius:8px;padding:6px 10px;font-weight:600;font-size:.95rem}
+.flow li.arrow{background:none;padding:0;color:var(--muted)}
+figure{margin:0 0 6px;overflow-x:auto}
+figure svg{width:100%;height:auto;min-width:520px;display:block}
+figcaption{font-size:.9rem;color:var(--muted)}
+textarea{width:100%;min-height:120px;font:inherit;padding:10px;border-radius:9px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);resize:vertical}
+.frames{font-size:.95rem;color:var(--muted);margin:0 0 8px;padding-left:1.2rem}
+.chk{display:grid;gap:6px;margin:10px 0 0}
+.chk label{display:flex;gap:10px;align-items:flex-start}
+.chk input{margin-top:6px;accent-color:var(--accent)}
+.sample{display:none;margin-top:10px;background:var(--warn-soft);padding:10px 12px;border-radius:9px}
+.sample.show{display:block}
+table.rubric{border-collapse:collapse;width:100%;font-size:.95rem}
+table.rubric td,table.rubric th{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+.scroll{overflow-x:auto}
+.ready{list-style:none;padding:0;display:grid;gap:8px}
+.ready label{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.ready input{margin-top:6px;accent-color:var(--accent);width:18px;height:18px}
+.done-msg{display:none;margin-top:14px;padding:14px;border-radius:10px;background:var(--good-soft);border:1px solid var(--good)}
+.done-msg.show{display:block}
+footer{margin-top:48px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>window.UNIT={"code": "BOOTCAMP", "eyebrow": "Unit 0 \u00b7 Bootcamp", "title": "Science Skills Bootcamp", "lede": "Review before your reassessment. Work top to bottom, or jump to the part you missed.", "footer": "Living Earth (Biology) \u00b7 Bootcamp review. Your progress saves in this browser.", "ideas": [{"t": "A scientific question can be tested.", "d": "It asks about something you can measure or observe, and it names what changes and what you measure. \u201cWhich is best?\u201d and \u201cWhy is it cute?\u201d are opinions.", "eq": "What happens to <u>plant height<\/u> when <u>sunlight<\/u> is reduced?"}, {"t": "All living things share characteristics.", "d": "They are made of cells, use energy, grow and develop, respond to their environment, reproduce, and keep a stable inside (homeostasis). Nonliving things like rocks and puddles do not do these things."}, {"t": "CER is how scientists make an argument.", "d": "<b>Claim<\/b>: the answer to the question. <b>Evidence<\/b>: data from the investigation, with numbers. <b>Reasoning<\/b>: explain WHY the evidence supports the claim, using biology.", "eq": "Claim \u2192 Evidence \u2192 Reasoning"}, {"t": "Sketchnotes have four elements.", "d": "<b>Color, Picture, Text, Template.<\/b> Follow the <b>50/50 rule<\/b>: about equal amounts of pictures and text."}, {"t": "Focused notes show you are thinking.", "d": "Highlight the important words. Write questions about the notes. Write a summary in your own words. Do not copy without thinking about the meaning."}], "vocab": [["claim", "A statement that answers the question."], ["evidence", "Data or observations from the investigation that support the claim."], ["reasoning", "The explanation of WHY the evidence supports the claim, using science ideas."], ["variable", "Something that can change in an experiment."], ["cell", "The basic unit of all living things."], ["organism", "A whole living thing."], ["response", "How an organism reacts to a change in its environment."], ["sketchnote", "Notes that combine pictures, text, color, and a template."]], "vocabQuiz": [{"q": "Match each word to its meaning. One meaning will not be used.", "tag": "Vocabulary", "pairs": [["Claim", "A statement that answers the question"], ["Evidence", "Data from the investigation that supports the claim"], ["Reasoning", "Explains WHY the evidence supports the claim"], ["Organism", "A whole living thing"], ["Sketchnote", "Notes with pictures, text, color, and a template"]], "extra": ["A guess with no data"], "why": "These words appear in the CER and notes questions."}], "practice": [{"q": "Which question is the BEST scientific question?", "opts": ["Which pet is the cutest?", "How does the amount of water change how fast a bean seed sprouts?", "Why is summer the best season?", "Is chocolate better than vanilla?"], "a": 1, "why": "It can be tested. You can change the water and measure how fast the seed sprouts.", "hint": "Which one can you test by measuring?"}, {"q": "Which characteristic is shared by ALL living things?", "opts": ["They have legs.", "They live on land.", "They use energy.", "They are green."], "a": 2, "why": "All living things use energy. Many do not have legs, live in water, or are green.", "hint": "Think about what a mushroom, a fish, and a person all have in common."}, {"q": "Which example BEST shows an organism responding to its environment?", "opts": ["A snowman melting", "A lizard moving into the shade when it gets hot", "A river flowing downhill", "A car rusting"], "a": 1, "why": "The lizard is a living thing reacting to a change in its surroundings.", "hint": "Look for a living thing that reacts."}, {"q": "Which TWO things are alive or show a characteristic of life?", "type": "multi", "opts": ["A seed sprouting into a seedling", "A rock rolling down a hill", "A bird building a nest and laying eggs", "A candle flame burning", "A cloud moving"], "a": [0, 2], "why": "Growing and reproducing are characteristics of life. Fire and clouds move or change, but they are not made of cells.", "hint": "Look for growing, reproducing, and being made of cells."}, {"q": "According to the Sketchnote Bootcamp, what are the FOUR essential elements of sketchnoting?", "opts": ["Color, Picture, Text, Template", "Reading, Writing, Testing, Memorizing", "Notes, Homework, Labs, Quizzes", "Highlighting, Typing, Coloring, Copying"], "a": 0, "why": "Color, Picture, Text, Template."}, {"q": "The 50/50 rule of sketchnoting means your notes should have\u2026", "opts": ["Half the page blank", "About equal amounts of pictures and text", "50 words and 50 pictures", "Only pictures"], "a": 1, "why": "Balance pictures and text. Pictures help you remember. Text holds the details."}, {"q": "Which action is part of focused note-taking?", "opts": ["Copying every word from the board", "Highlighting key words and writing a question about the notes", "Using one color so it looks neat", "Skipping the confusing parts"], "a": 1, "why": "Focused notes show you are thinking: highlight, question, and summarize."}, {"type": "match", "q": "Match each part of a CER to its job. One job will not be used.", "pairs": [["Claim", "Answers the question"], ["Evidence", "Uses data and numbers from the investigation"], ["Reasoning", "Explains why the evidence supports the claim"]], "extra": ["Gives your opinion"], "why": "Claim answers, evidence shows, reasoning explains."}, {"type": "match", "q": "Match each characteristic of life to an example. One example will not be used.", "pairs": [["Made of cells", "Skin from a frog under a microscope shows many tiny units"], ["Uses energy", "A fox eats a mouse and runs"], ["Grows and develops", "A tadpole changes into a frog"], ["Reproduces", "A hen lays eggs that hatch into chicks"]], "extra": ["A rock is warmed by the sun"], "why": "Each example matches one characteristic of life."}], "model": {"title": "Read the data", "sub": "A CER uses numbers from the data as evidence. Use the graph for these questions.", "caption": "Bean plants grown for 14 days. Same type of plant, same soil, same water. Only the light changed.", "figure": "<svg viewBox=\"0 0 520 250\" role=\"img\" aria-label=\"Bar graph of bean plant height after 14 days: sunny window 15 cm, closet 4 cm\">\n<g font-family=\"system-ui,sans-serif\" font-size=\"14\" fill=\"var(--fg)\">\n<line x1=\"70\" y1=\"20\" x2=\"70\" y2=\"200\" stroke=\"var(--muted)\"/><line x1=\"70\" y1=\"200\" x2=\"500\" y2=\"200\" stroke=\"var(--muted)\"/>\n<g stroke=\"var(--line)\"><line x1=\"70\" y1=\"20\" x2=\"500\" y2=\"20\"/><line x1=\"70\" y1=\"65\" x2=\"500\" y2=\"65\"/><line x1=\"70\" y1=\"110\" x2=\"500\" y2=\"110\"/><line x1=\"70\" y1=\"155\" x2=\"500\" y2=\"155\"/><\/g>\n<g text-anchor=\"end\" fill=\"var(--muted)\"><text x=\"62\" y=\"205\">0<\/text><text x=\"62\" y=\"160\">5<\/text><text x=\"62\" y=\"115\">10<\/text><text x=\"62\" y=\"70\">15<\/text><text x=\"62\" y=\"25\">20<\/text><\/g>\n<rect x=\"130\" y=\"65\" width=\"110\" height=\"135\" fill=\"var(--good)\"/><rect x=\"330\" y=\"164\" width=\"110\" height=\"36\" fill=\"var(--accent)\"/>\n<text x=\"185\" y=\"57\" text-anchor=\"middle\" font-weight=\"700\">15 cm<\/text><text x=\"385\" y=\"156\" text-anchor=\"middle\" font-weight=\"700\">4 cm<\/text>\n<text x=\"185\" y=\"224\" text-anchor=\"middle\">Sunny window<\/text><text x=\"385\" y=\"224\" text-anchor=\"middle\">Dark closet<\/text>\n<text x=\"18\" y=\"115\" transform=\"rotate(-90 18 115)\" text-anchor=\"middle\" fill=\"var(--muted)\">Height after 14 days (cm)<\/text><\/g><\/svg>", "qs": [{"q": "Which sentence is the best CLAIM?", "opts": ["Bean plants grew taller in the sunny window than in the dark closet.", "The bar is green.", "I like the sunny window.", "Plants are alive."], "a": 0, "why": "A claim answers the question: which condition helped growth?"}, {"q": "Which sentence is the best EVIDENCE?", "opts": ["Plants like sunlight.", "The plant in the sunny window grew 15 cm and the plant in the closet grew 4 cm.", "The graph looks good.", "Sunlight is important."], "a": 1, "why": "Evidence uses specific numbers from the data."}, {"q": "Which sentence is the best REASONING?", "opts": ["The plant grew 15 cm.", "Sunlight is yellow.", "Plants use light energy in photosynthesis to make sugar they need to grow, so more light means more growth.", "The closet is dark."], "a": 2, "why": "Reasoning explains WHY using science. Here it connects light to photosynthesis and growth."}, {"q": "Why must the plants have the same soil and the same amount of water?", "opts": ["So the only thing that changes is the light.", "So the plants look the same.", "So they grow the same height.", "It does not matter."], "a": 0, "why": "If other things changed too, you could not tell what caused the difference."}]}, "rubric": [["4 Mastery", "Clear claim, relevant evidence with numbers, and strong reasoning that explains WHY using biology words."], ["3 Proficient", "Clear claim and evidence that supports it. Reasoning is weak or missing one piece."], ["2 Developing", "Claim and some data, but the data is not used to prove the claim."], ["1 Emerging", "Some vocabulary or ideas, but the claim or evidence is missing."]], "write": [{"ctx": "Two groups of radish seeds were planted. Group A was watered every day and grew 9 cm in 10 days. Group B was watered once and grew 2 cm.", "q": "Write a CER. <b>Claim:<\/b> Which condition helped radishes grow better? <b>Evidence:<\/b> Use the data. <b>Reasoning:<\/b> Explain WHY, using biology.", "frames": ["My claim is that \u2026", "The evidence is that \u2026", "This supports my claim because \u2026"], "check": ["My claim answers the question.", "My evidence uses numbers (9 cm and 2 cm).", "My reasoning explains WHY (plants need water for photosynthesis and growth).", "I used biology words."], "sample": "Radishes grew better when they were watered every day. In the investigation, the radishes watered daily grew 9 cm, but the radishes watered once grew only 2 cm. This supports the claim because plants need water for photosynthesis, which makes the sugar they use for energy and to grow. With more water, the plants could make more food, so they grew taller."}, {"ctx": "A class investigated whether plants grow better with sunlight or without. Plant A had sunlight and grew 12 cm. Plant B had no sunlight and grew 3 cm.", "q": "Write a CER response. Your reasoning must explain why the evidence supports your claim.", "frames": ["Claim: \u2026", "Evidence: \u2026", "Reasoning: \u2026"], "check": ["Clear claim.", "Both numbers (12 cm and 3 cm) are in my evidence.", "My reasoning explains WHY using photosynthesis or energy.", "I used accurate vocabulary."], "sample": "Claim: Plants grow better with sunlight. Evidence: Plant A received sunlight and grew 12 cm, while Plant B received no sunlight and grew only 3 cm. Reasoning: Plants use light energy during photosynthesis to make sugar. Plant A could make more sugar, which gave it the energy and matter to grow. Plant B could not make enough food, so it grew much less."}], "ready": ["I can pick a question that can be tested.", "I can name characteristics shared by all living things and give an example.", "I can write a Claim, Evidence, and Reasoning that use numbers and biology.", "I can name the four elements of sketchnotes and the 50/50 rule.", "I can say what focused note-taking looks like."]};</script>
+<script>
+(function(){
+const D=window.UNIT, $=(s,r=document)=>r.querySelector(s);
+const KEY='review:'+D.code;
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const h=(tag,attrs,html)=>{const e=document.createElement(tag);for(const k in attrs||{}){if(k==='class')e.className=attrs[k];else e.setAttribute(k,attrs[k])}if(html!=null)e.innerHTML=html;return e};
+let total=0,qid=0;
+const meter=h('div',{class:'meter'},'<span id="mtxt"></span><div class="bar"><i id="mbar"></i></div>');
+function upd(){const n=Object.keys(saved).filter(k=>saved[k]==='ok').length;$('#mtxt').textContent=n+' of '+total+' correct';$('#mbar').style.width=(total?100*n/total:0)+'%';
+  const dm=$('#done');if(dm)dm.classList.toggle('show',n===total&&total>0)}
+function feedback(box,ok,why){box.className='fb show '+(ok?'ok':'no');
+  box.innerHTML='<b class="s">'+(ok?'Correct.':'Not yet.')+'</b>'+(ok?'':'Look again and try once more. ')+(why?why:'')}
+function wrapQ(q,body,tag){const id=D.code+'-q'+(++qid);total++;const box=h('div',{class:'q',id});
+  box.appendChild(h('div',{class:'tag'},tag||q.tag||'Practice'));
+  if(q.ctx)box.appendChild(h('div',{class:'ctx'},q.ctx));
+  box.appendChild(h('div',{class:'stem'},q.q));box.appendChild(body);
+  const fb=h('div',{class:'fb',role:'status'});box.appendChild(fb);return {box,fb,id}}
+function mc(q,multi){
+  const opts=q.opts.map((t,i)=>({t,i,right:multi?q.a.includes(i):q.a===i}));
+  const list=h('div',{class:'opts'}),name='n'+(qid+1);
+  shuffle(opts).forEach(o=>{const l=h('label',{class:'opt'},'<input type="'+(multi?'checkbox':'radio')+'" name="'+name+'"><span>'+o.t+'</span>');l._o=o;list.appendChild(l)});
+  const {box,fb,id}=wrapQ(q,list,multi?'Choose '+q.a.length:null);
+  const b=h('button',{class:'go',type:'button'},'Check');box.insertBefore(b,fb);
+  b.onclick=()=>{let ok=true;const sel=[...list.children];
+    sel.forEach(l=>{const c=l.firstChild.checked;l.classList.remove('right','wrong');
+      if(c&&l._o.right)l.classList.add('right');else if(c&&!l._o.right){l.classList.add('wrong');ok=false}else if(!c&&l._o.right)ok=false});
+    if(!sel.some(l=>l.firstChild.checked)){fb.className='fb show no';fb.innerHTML='Pick an answer first.';return}
+    saved[id]=ok?'ok':'no';save();upd();feedback(fb,ok,ok?q.why:(q.hint||''))
+    if(ok)sel.forEach(l=>l.firstChild.disabled=true)};
+  if(saved[id]==='ok'){/* progress counted; question stays fresh for re-practice */}
+  return box}
+function match(q){
+  const rights=shuffle(q.pairs.map(p=>p[1]).concat(q.extra||[]));const body=h('div');
+  q.pairs.forEach(p=>{const r=h('div',{class:'row'},'<div class="l">'+p[0]+'</div>');
+    const s=h('select',{'aria-label':p[0].replace(/<[^>]+>/g,'')},'<option value="">Choose…</option>'+rights.map((t,i)=>'<option value="'+i+'">'+t+'</option>').join(''));
+    s._ans=rights.indexOf(p[1]);r.appendChild(s);body.appendChild(r)});
+  const {box,fb,id}=wrapQ(q,body,'Match');const b=h('button',{class:'go',type:'button'},'Check');box.insertBefore(b,fb);
+  b.onclick=()=>{let ok=true,blank=false;body.querySelectorAll('select').forEach(s=>{s.classList.remove('right','wrong');
+    if(s.value===''){blank=true;ok=false;return}if(+s.value===s._ans)s.classList.add('right');else{s.classList.add('wrong');ok=false}});
+    if(blank&&ok===false&&!body.querySelector('.wrong')){fb.className='fb show no';fb.innerHTML='Choose an answer for every row.';return}
+    saved[id]=ok?'ok':'no';save();upd();feedback(fb,ok,ok?q.why:'Fix the red rows and check again.')};
+  return box}
+function write(q){
+  const body=h('div');
+  if(q.frames)body.appendChild(h('ul',{class:'frames'},q.frames.map(f=>'<li>'+f+'</li>').join('')));
+  const ta=h('textarea',{id:D.code+'-w'+(++qid),placeholder:'Write your answer here…'});
+  try{ta.value=localStorage.getItem(KEY+':'+ta.id)||''}catch(e){}ta.oninput=()=>{try{localStorage.setItem(KEY+':'+ta.id,ta.value)}catch(e){}};
+  body.appendChild(ta);qid--;
+  body.appendChild(h('div',{class:'tag',style:'margin-top:12px'},'Check your own answer'));
+  const chk=h('div',{class:'chk'});q.check.forEach((c,i)=>chk.appendChild(h('label',{},'<input type="checkbox"><span>'+c+'</span>')));body.appendChild(chk);
+  const id=D.code+'-q'+(++qid);const box=h('div',{class:'q',id});total++;
+  box.appendChild(h('div',{class:'tag'},'Write it'));if(q.ctx)box.appendChild(h('div',{class:'ctx'},q.ctx));
+  box.appendChild(h('div',{class:'stem'},q.q));box.appendChild(body);
+  const sample=h('div',{class:'sample'},'<b>Sample answer (about a 4)</b><br>'+q.sample);
+  const b=h('button',{class:'go alt',type:'button'},'Show a sample answer');b.onclick=()=>{sample.classList.toggle('show')};
+  const done=h('button',{class:'go',type:'button'},'I wrote it and checked every box');
+  const fb=h('div',{class:'fb',role:'status'});
+  done.onclick=()=>{const all=[...chk.querySelectorAll('input')].every(i=>i.checked);
+    if(!ta.value.trim()){fb.className='fb show no';fb.textContent='Write your answer first.';return}
+    if(!all){fb.className='fb show no';fb.innerHTML='Some boxes are not checked. Add the missing piece to your answer, then check the box. You can look at the sample answer to compare.';return}
+    saved[id]='ok';save();upd();fb.className='fb show ok';fb.innerHTML='<b class="s">Nice work.</b>Compare with the sample answer and fix anything you missed.'};
+  box.append(done,' ',b,fb,sample);return box}
+function sec(id,title,sub){const s=h('section',{id});s.appendChild(h('h2',{},title));if(sub)s.appendChild(h('p',{class:'sub'},sub));return s}
+
+const root=$('#app');
+const hd=h('header',{class:'top'},'<div class="eyebrow">'+D.eyebrow+'</div><h1>'+D.title+'</h1><p class="lede">'+D.lede+'</p>');
+hd.appendChild(meter);root.appendChild(hd);
+const nav=h('nav',{class:'tabs','aria-label':'Sections'});root.appendChild(nav);
+const add=(id,t)=>nav.appendChild(h('a',{href:'#'+id},t));
+
+let s=sec('ideas','Key ideas','Read these first. Then try the practice.');add('ideas','Key ideas');
+const ul=h('ol',{class:'ideas'});D.ideas.forEach(i=>ul.appendChild(h('li',{},'<div><b>'+i.t+'</b> '+i.d+(i.eq?'<div class="eq">'+i.eq+'</div>':'')+'</div>')));
+s.appendChild(ul);root.appendChild(s);
+
+s=sec('words','Vocabulary','Tap a card to see the meaning. Then say it in your own words.');add('words','Vocabulary');
+const cards=h('div',{class:'cards'});D.vocab.forEach(v=>{const c=h('button',{class:'card',type:'button','aria-expanded':'false'},'<span class="t">'+v[0]+'</span><span class="hint">Tap to flip</span><span class="d">'+v[1]+'</span>');
+  c.onclick=()=>{const o=c.classList.toggle('open');c.setAttribute('aria-expanded',o)};cards.appendChild(c)});
+s.appendChild(cards);D.vocabQuiz.forEach(q=>s.appendChild(match(q)));root.appendChild(s);
+
+s=sec('practice','Practice','Each question tells you right away. Missed one? Read the explanation, then try it again.');add('practice','Practice');
+D.practice.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+
+s=sec('model',D.model.title,D.model.sub);add('model','Models');
+const fig=h('figure',{},D.model.figure+'<figcaption>'+D.model.caption+'</figcaption>');s.appendChild(fig);
+D.model.qs.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+
+s=sec('write','Explain it','Written answers are scored out of 4. Write, check yourself, then compare with the sample.');add('write','Explain it');
+const rub=h('div',{class:'scroll'},'<table class="rubric"><tr><th>Score</th><th>What it looks like</th></tr>'+D.rubric.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>').join('')+'</table>');
+s.appendChild(rub);D.write.forEach(q=>s.appendChild(write(q)));root.appendChild(s);
+
+s=sec('ready','Ready check','Check each one only when you can do it without notes.');add('ready','Ready check');
+const rl=h('ul',{class:'ready'});D.ready.forEach((t,i)=>{const id=D.code+'-r'+i;const li=h('li',{},'<label><input type="checkbox" id="'+id+'"><span>'+t+'</span></label>');
+  const c=li.querySelector('input');c.checked=saved[id]==='1';c.onchange=()=>{saved[id]=c.checked?'1':'';save()};rl.appendChild(li)});
+s.appendChild(rl);s.appendChild(h('div',{class:'done-msg',id:'done'},'<b>You answered everything.</b> Take what you got wrong back to your notes, then tell your teacher you are ready to reassess.'));
+root.appendChild(s);root.appendChild(h('footer',{},D.footer));
+upd();
+})();
+
+</script>
+</body>
+</html>

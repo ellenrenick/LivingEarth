@@ -226,4 +226,108 @@ U12 = dict(
            "I can explain a result using photosynthesis and respiration together."],
 )
 
-UNITS = [U11, U12]
+
+# ---------------------------------------------------------------- Unit 0
+BAR_SVG = """<svg viewBox="0 0 520 250" role="img" aria-label="Bar graph of bean plant height after 14 days: sunny window 15 cm, closet 4 cm">
+<g font-family="system-ui,sans-serif" font-size="14" fill="var(--fg)">
+<line x1="70" y1="20" x2="70" y2="200" stroke="var(--muted)"/><line x1="70" y1="200" x2="500" y2="200" stroke="var(--muted)"/>
+<g stroke="var(--line)"><line x1="70" y1="20" x2="500" y2="20"/><line x1="70" y1="65" x2="500" y2="65"/><line x1="70" y1="110" x2="500" y2="110"/><line x1="70" y1="155" x2="500" y2="155"/></g>
+<g text-anchor="end" fill="var(--muted)"><text x="62" y="205">0</text><text x="62" y="160">5</text><text x="62" y="115">10</text><text x="62" y="70">15</text><text x="62" y="25">20</text></g>
+<rect x="130" y="65" width="110" height="135" fill="var(--good)"/><rect x="330" y="164" width="110" height="36" fill="var(--accent)"/>
+<text x="185" y="57" text-anchor="middle" font-weight="700">15 cm</text><text x="385" y="156" text-anchor="middle" font-weight="700">4 cm</text>
+<text x="185" y="224" text-anchor="middle">Sunny window</text><text x="385" y="224" text-anchor="middle">Dark closet</text>
+<text x="18" y="115" transform="rotate(-90 18 115)" text-anchor="middle" fill="var(--muted)">Height after 14 days (cm)</text></g></svg>"""
+
+CER_RUBRIC = [
+    ("4 Mastery", "Clear claim, relevant evidence with numbers, and strong reasoning that explains WHY using biology words."),
+    ("3 Proficient", "Clear claim and evidence that supports it. Reasoning is weak or missing one piece."),
+    ("2 Developing", "Claim and some data, but the data is not used to prove the claim."),
+    ("1 Emerging", "Some vocabulary or ideas, but the claim or evidence is missing."),
+]
+
+U0 = dict(
+    code="BOOTCAMP",
+    out="Bootcamp/Bootcamp_review_site.html",
+    page_title="Bootcamp Review Site",
+    description="Interactive review for the Bootcamp skills assessment: scientific questions, living things, CER, and sketchnotes.",
+    accent="#b4501e",
+    eyebrow="Unit 0 · Bootcamp",
+    title="Science Skills Bootcamp",
+    lede="Review before your reassessment. Work top to bottom, or jump to the part you missed.",
+    footer="Living Earth (Biology) · Bootcamp review. Your progress saves in this browser.",
+    ideas=[
+        dict(t="A scientific question can be tested.", d="It asks about something you can measure or observe, and it names what changes and what you measure. “Which is best?” and “Why is it cute?” are opinions.",
+             eq="What happens to <u>plant height</u> when <u>sunlight</u> is reduced?"),
+        dict(t="All living things share characteristics.", d="They are made of cells, use energy, grow and develop, respond to their environment, reproduce, and keep a stable inside (homeostasis). Nonliving things like rocks and puddles do not do these things."),
+        dict(t="CER is how scientists make an argument.", d="<b>Claim</b>: the answer to the question. <b>Evidence</b>: data from the investigation, with numbers. <b>Reasoning</b>: explain WHY the evidence supports the claim, using biology.",
+             eq="Claim → Evidence → Reasoning"),
+        dict(t="Sketchnotes have four elements.", d="<b>Color, Picture, Text, Template.</b> Follow the <b>50/50 rule</b>: about equal amounts of pictures and text."),
+        dict(t="Focused notes show you are thinking.", d="Highlight the important words. Write questions about the notes. Write a summary in your own words. Do not copy without thinking about the meaning."),
+    ],
+    vocab=[
+        ("claim", "A statement that answers the question."),
+        ("evidence", "Data or observations from the investigation that support the claim."),
+        ("reasoning", "The explanation of WHY the evidence supports the claim, using science ideas."),
+        ("variable", "Something that can change in an experiment."),
+        ("cell", "The basic unit of all living things."),
+        ("organism", "A whole living thing."),
+        ("response", "How an organism reacts to a change in its environment."),
+        ("sketchnote", "Notes that combine pictures, text, color, and a template."),
+    ],
+    vocabQuiz=[dict(q="Match each word to its meaning. One meaning will not be used.", tag="Vocabulary",
+        pairs=[("Claim", "A statement that answers the question"), ("Evidence", "Data from the investigation that supports the claim"),
+               ("Reasoning", "Explains WHY the evidence supports the claim"), ("Organism", "A whole living thing"), ("Sketchnote", "Notes with pictures, text, color, and a template")],
+        extra=["A guess with no data"], why="These words appear in the CER and notes questions.")],
+    practice=[
+        dict(q="Which question is the BEST scientific question?", opts=["Which pet is the cutest?", "How does the amount of water change how fast a bean seed sprouts?", "Why is summer the best season?", "Is chocolate better than vanilla?"], a=1,
+             why="It can be tested. You can change the water and measure how fast the seed sprouts.", hint="Which one can you test by measuring?"),
+        dict(q="Which characteristic is shared by ALL living things?", opts=["They have legs.", "They live on land.", "They use energy.", "They are green."], a=2,
+             why="All living things use energy. Many do not have legs, live in water, or are green.", hint="Think about what a mushroom, a fish, and a person all have in common."),
+        dict(q="Which example BEST shows an organism responding to its environment?", opts=["A snowman melting", "A lizard moving into the shade when it gets hot", "A river flowing downhill", "A car rusting"], a=1,
+             why="The lizard is a living thing reacting to a change in its surroundings.", hint="Look for a living thing that reacts."),
+        dict(q="Which TWO things are alive or show a characteristic of life?", type="multi", opts=["A seed sprouting into a seedling", "A rock rolling down a hill", "A bird building a nest and laying eggs", "A candle flame burning", "A cloud moving"], a=[0, 2],
+             why="Growing and reproducing are characteristics of life. Fire and clouds move or change, but they are not made of cells.", hint="Look for growing, reproducing, and being made of cells."),
+        dict(q="According to the Sketchnote Bootcamp, what are the FOUR essential elements of sketchnoting?", opts=["Color, Picture, Text, Template", "Reading, Writing, Testing, Memorizing", "Notes, Homework, Labs, Quizzes", "Highlighting, Typing, Coloring, Copying"], a=0,
+             why="Color, Picture, Text, Template."),
+        dict(q="The 50/50 rule of sketchnoting means your notes should have…", opts=["Half the page blank", "About equal amounts of pictures and text", "50 words and 50 pictures", "Only pictures"], a=1,
+             why="Balance pictures and text. Pictures help you remember. Text holds the details."),
+        dict(q="Which action is part of focused note-taking?", opts=["Copying every word from the board", "Highlighting key words and writing a question about the notes", "Using one color so it looks neat", "Skipping the confusing parts"], a=1,
+             why="Focused notes show you are thinking: highlight, question, and summarize."),
+        dict(type="match", q="Match each part of a CER to its job. One job will not be used.",
+             pairs=[("Claim", "Answers the question"), ("Evidence", "Uses data and numbers from the investigation"), ("Reasoning", "Explains why the evidence supports the claim")],
+             extra=["Gives your opinion"], why="Claim answers, evidence shows, reasoning explains."),
+        dict(type="match", q="Match each characteristic of life to an example. One example will not be used.",
+             pairs=[("Made of cells", "Skin from a frog under a microscope shows many tiny units"), ("Uses energy", "A fox eats a mouse and runs"), ("Grows and develops", "A tadpole changes into a frog"), ("Reproduces", "A hen lays eggs that hatch into chicks")],
+             extra=["A rock is warmed by the sun"], why="Each example matches one characteristic of life."),
+    ],
+    model=dict(
+        title="Read the data", sub="A CER uses numbers from the data as evidence. Use the graph for these questions.",
+        caption="Bean plants grown for 14 days. Same type of plant, same soil, same water. Only the light changed.",
+        figure=BAR_SVG,
+        qs=[
+            dict(q="Which sentence is the best CLAIM?", opts=["Bean plants grew taller in the sunny window than in the dark closet.", "The bar is green.", "I like the sunny window.", "Plants are alive."], a=0, why="A claim answers the question: which condition helped growth?"),
+            dict(q="Which sentence is the best EVIDENCE?", opts=["Plants like sunlight.", "The plant in the sunny window grew 15 cm and the plant in the closet grew 4 cm.", "The graph looks good.", "Sunlight is important."], a=1, why="Evidence uses specific numbers from the data."),
+            dict(q="Which sentence is the best REASONING?", opts=["The plant grew 15 cm.", "Sunlight is yellow.", "Plants use light energy in photosynthesis to make sugar they need to grow, so more light means more growth.", "The closet is dark."], a=2, why="Reasoning explains WHY using science. Here it connects light to photosynthesis and growth."),
+            dict(q="Why must the plants have the same soil and the same amount of water?", opts=["So the only thing that changes is the light.", "So the plants look the same.", "So they grow the same height.", "It does not matter."], a=0, why="If other things changed too, you could not tell what caused the difference."),
+        ]),
+    rubric=CER_RUBRIC,
+    write=[
+        dict(ctx="Two groups of radish seeds were planted. Group A was watered every day and grew 9 cm in 10 days. Group B was watered once and grew 2 cm.",
+             q="Write a CER. <b>Claim:</b> Which condition helped radishes grow better? <b>Evidence:</b> Use the data. <b>Reasoning:</b> Explain WHY, using biology.",
+             frames=["My claim is that …", "The evidence is that …", "This supports my claim because …"],
+             check=["My claim answers the question.", "My evidence uses numbers (9 cm and 2 cm).", "My reasoning explains WHY (plants need water for photosynthesis and growth).", "I used biology words."],
+             sample="Radishes grew better when they were watered every day. In the investigation, the radishes watered daily grew 9 cm, but the radishes watered once grew only 2 cm. This supports the claim because plants need water for photosynthesis, which makes the sugar they use for energy and to grow. With more water, the plants could make more food, so they grew taller."),
+        dict(ctx="A class investigated whether plants grow better with sunlight or without. Plant A had sunlight and grew 12 cm. Plant B had no sunlight and grew 3 cm.",
+             q="Write a CER response. Your reasoning must explain why the evidence supports your claim.",
+             frames=["Claim: …", "Evidence: …", "Reasoning: …"],
+             check=["Clear claim.", "Both numbers (12 cm and 3 cm) are in my evidence.", "My reasoning explains WHY using photosynthesis or energy.", "I used accurate vocabulary."],
+             sample="Claim: Plants grow better with sunlight. Evidence: Plant A received sunlight and grew 12 cm, while Plant B received no sunlight and grew only 3 cm. Reasoning: Plants use light energy during photosynthesis to make sugar. Plant A could make more sugar, which gave it the energy and matter to grow. Plant B could not make enough food, so it grew much less."),
+    ],
+    ready=["I can pick a question that can be tested.",
+           "I can name characteristics shared by all living things and give an example.",
+           "I can write a Claim, Evidence, and Reasoning that use numbers and biology.",
+           "I can name the four elements of sketchnotes and the 50/50 rule.",
+           "I can say what focused note-taking looks like."],
+)
+
+UNITS = [U0, U11, U12]
