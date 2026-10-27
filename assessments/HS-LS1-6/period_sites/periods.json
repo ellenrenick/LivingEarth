@@ -1,0 +1,2395 @@
+[
+ {
+  "teacher": "Bogner",
+  "level": "CP",
+  "period": 1,
+  "n": 14,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 50,
+    "answered": 14,
+    "wrong": [
+     [
+      "Nitrogen and sulfur",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 21,
+    "answered": 14,
+    "wrong": [
+     [
+      "Sugar contains nitrogen.,\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\"",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 79,
+    "answered": 14,
+    "wrong": [
+     [
+      "true",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 71,
+    "answered": 14,
+    "wrong": [
+     [
+      "Most came from the soil, because roots absorb nutrients and minerals that are built directly into wood, leaves, and proteins as the tree grows.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 43,
+    "answered": 14,
+    "wrong": [
+     [
+      "6 on the left and 12 on the right",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 93,
+    "answered": 14,
+    "wrong": [
+     [
+      "false",
+      1
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 71,
+    "answered": 14,
+    "wrong": [
+     [
+      "Nitrogen in the soil is the main source of the carbon atoms that plants use to build the stems, leaves, and proteins of new tissue.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 75,
+    "answered": 12,
+    "wrong": [
+     [
+      "All three molecules contain carbon, hydrogen, and oxygen.",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 71,
+    "answered": 14,
+    "wrong": [
+     [
+      "Phosphorus and nitrogen give the Lake 1 algae extra carbon atoms to build sugar.",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 64,
+    "answered": 14,
+    "wrong": [
+     [
+      "The labeled carbon atoms were changed into nitrogen atoms so they could become part of amino acids.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 57,
+    "answered": 14,
+    "wrong": [
+     [
+      "Light directly builds amino acids and fats, so less light means fewer of these molecules regardless of sugar.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 64,
+    "answered": 14,
+    "wrong": [
+     [
+      "She can build amino acids from only the glucose beads because atoms can change from one element into another.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 64,
+    "answered": 14,
+    "wrong": [
+     [
+      "Group B had less protein because the extra sugar in its leaves broke down the proteins it already had.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 36,
+    "answered": 14
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 21,
+    "answered": 14,
+    "wrong": [
+     [
+      "Plants use light energy to build sugar from CO2 and water; atoms from that sugar are rearranged and combined with elements like nitrogen from the soil to make amino acids, proteins, and other carbon-based molecules.",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 100,
+    "answered": 14
+   },
+   {
+    "q": 17,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 100,
+    "answered": 2,
+    "wrong": []
+   }
+  ],
+  "skills": {
+   "6.1": 50,
+   "6.2": 69,
+   "6.3": 79,
+   "6.4": 62,
+   "6.5": 50,
+   "6.6": 21
+  },
+  "avg_pct": 64
+ },
+ {
+  "teacher": "Bogner",
+  "level": "CP",
+  "period": 2,
+  "n": 16,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 69,
+    "answered": 16,
+    "wrong": [
+     [
+      "Nitrogen and sulfur",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 44,
+    "answered": 16,
+    "wrong": [
+     [
+      "Sugar contains nitrogen.,\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\"",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 69,
+    "answered": 16,
+    "wrong": [
+     [
+      "true",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 56,
+    "answered": 16,
+    "wrong": [
+     [
+      "Most came from the soil, because roots absorb nutrients and minerals that are built directly into wood, leaves, and proteins as the tree grows.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 19,
+    "answered": 16,
+    "wrong": [
+     [
+      "6 on the left and 12 on the right",
+      8
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 88,
+    "answered": 16,
+    "wrong": [
+     [
+      "false",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 56,
+    "answered": 16,
+    "wrong": [
+     [
+      "Nitrogen in the soil is the main source of the carbon atoms that plants use to build the stems, leaves, and proteins of new tissue.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": null,
+    "answered": 0,
+    "wrong": []
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 50,
+    "answered": 16,
+    "wrong": [
+     [
+      "Phosphorus and nitrogen give the Lake 1 algae extra carbon atoms to build sugar.",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 44,
+    "answered": 16,
+    "wrong": [
+     [
+      "The labeled carbon atoms were changed into nitrogen atoms so they could become part of amino acids.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 44,
+    "answered": 16,
+    "wrong": [
+     [
+      "Light directly builds amino acids and fats, so less light means fewer of these molecules regardless of sugar.",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 38,
+    "answered": 16,
+    "wrong": [
+     [
+      "She can build amino acids from only the glucose beads because atoms can change from one element into another.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 31,
+    "answered": 16,
+    "wrong": [
+     [
+      "Group A grew more because nitrate is a sugar that gave the plants extra energy for photosynthesis.",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 27,
+    "answered": 16
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 25,
+    "answered": 16,
+    "wrong": [
+     [
+      "Plants use light energy to build sugar from CO2 and water; atoms from that sugar are rearranged and combined with elements like nitrogen from the soil to make amino acids, proteins, and other carbon-based molecules.",
+      8
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 75,
+    "answered": 16
+   },
+   {
+    "q": 17,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 56,
+    "answered": 16,
+    "wrong": [
+     [
+      "Glucose has more carbon atoms than either amino acid.",
+      4
+     ]
+    ]
+   }
+  ],
+  "skills": {
+   "6.1": 61,
+   "6.2": 54,
+   "6.3": 54,
+   "6.4": 42,
+   "6.5": 29,
+   "6.6": 25
+  },
+  "avg_pct": 51
+ },
+ {
+  "teacher": "Bogner",
+  "level": "CP",
+  "period": 3,
+  "n": 23,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 78,
+    "answered": 23,
+    "wrong": [
+     [
+      "All five elements",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 57,
+    "answered": 23,
+    "wrong": [
+     [
+      "Sugar contains nitrogen.,\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\"",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 83,
+    "answered": 23,
+    "wrong": [
+     [
+      "true",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 57,
+    "answered": 23,
+    "wrong": [
+     [
+      "Most came from the soil, because roots absorb nutrients and minerals that are built directly into wood, leaves, and proteins as the tree grows.",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 30,
+    "answered": 23,
+    "wrong": [
+     [
+      "12 on the left and 6 on the right",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 96,
+    "answered": 23,
+    "wrong": [
+     [
+      "false",
+      1
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 70,
+    "answered": 23,
+    "wrong": [
+     [
+      "Without nitrogen the plants cannot carry out photosynthesis, so they have no sugar to use for growth.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": null,
+    "answered": 0,
+    "wrong": []
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 78,
+    "answered": 23,
+    "wrong": [
+     [
+      "Algae in Lake 2 cannot carry out photosynthesis without phosphorus, so they make no sugar at all.",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 70,
+    "answered": 23,
+    "wrong": [
+     [
+      "The labeled carbon atoms were changed into nitrogen atoms so they could become part of amino acids.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 65,
+    "answered": 23,
+    "wrong": [
+     [
+      "Light directly builds amino acids and fats, so less light means fewer of these molecules regardless of sugar.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 65,
+    "answered": 23,
+    "wrong": [
+     [
+      "She must throw away the glucose beads and start over because atoms from sugar cannot be reused in other molecules.",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 74,
+    "answered": 23,
+    "wrong": [
+     [
+      "Group A grew more because nitrate is a sugar that gave the plants extra energy for photosynthesis.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 46,
+    "answered": 23
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 41,
+    "answered": 23,
+    "wrong": [
+     [
+      "Plants use light energy to build sugar from CO2 and water; atoms from that sugar are rearranged and combined with elements like nitrogen from the soil to make amino acids, proteins, and other carbon-based molecules.",
+      17
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 96,
+    "answered": 23
+   },
+   {
+    "q": 17,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 61,
+    "answered": 23,
+    "wrong": [
+     [
+      "All three molecules contain carbon, hydrogen, and oxygen.",
+      4
+     ]
+    ]
+   }
+  ],
+  "skills": {
+   "6.1": 73,
+   "6.2": 61,
+   "6.3": 70,
+   "6.4": 67,
+   "6.5": 60,
+   "6.6": 41
+  },
+  "avg_pct": 70
+ },
+ {
+  "teacher": "Bogner",
+  "level": "CP",
+  "period": 6,
+  "n": 14,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 50,
+    "answered": 14,
+    "wrong": [
+     [
+      "All five elements",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 21,
+    "answered": 14,
+    "wrong": [
+     [
+      "\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\",Sugar contains sulfur.",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 71,
+    "answered": 14,
+    "wrong": [
+     [
+      "true",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 57,
+    "answered": 14,
+    "wrong": [
+     [
+      "Most came from the soil, because roots absorb nutrients and minerals that are built directly into wood, leaves, and proteins as the tree grows.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 43,
+    "answered": 14,
+    "wrong": [
+     [
+      "6 on the left and 12 on the right",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 86,
+    "answered": 14,
+    "wrong": [
+     [
+      "false",
+      1
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 79,
+    "answered": 14,
+    "wrong": [
+     [
+      "Nitrogen in the soil is the main source of the carbon atoms that plants use to build the stems, leaves, and proteins of new tissue.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 100,
+    "answered": 1,
+    "wrong": []
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 86,
+    "answered": 14,
+    "wrong": [
+     [
+      "Phosphorus and nitrogen give the Lake 1 algae extra carbon atoms to build sugar.",
+      1
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 79,
+    "answered": 14,
+    "wrong": [
+     [
+      "The plant created new carbon atoms in its seeds because seeds need more carbon than leaves.",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 64,
+    "answered": 14,
+    "wrong": [
+     [
+      "Light directly builds amino acids and fats, so less light means fewer of these molecules regardless of sugar.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 71,
+    "answered": 14,
+    "wrong": [
+     [
+      "She can build amino acids from the glucose beads alone, and any leftover beads will disappear because they are no longer part of a molecule.",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 79,
+    "answered": 14,
+    "wrong": [
+     [
+      "Group B made more sugar, so it should have grown more; the results must be caused by an error in measuring mass.",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 31,
+    "answered": 13
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 43,
+    "answered": 14,
+    "wrong": [
+     [
+      "Plants use light energy to build sugar from CO2 and water; atoms from that sugar are rearranged and combined with elements like nitrogen from the soil to make amino acids, proteins, and other carbon-based molecules.",
+      12
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 100,
+    "answered": 13
+   },
+   {
+    "q": 17,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 77,
+    "answered": 13,
+    "wrong": [
+     [
+      "All three molecules contain carbon, hydrogen, and oxygen.",
+      2
+     ]
+    ]
+   }
+  ],
+  "skills": {
+   "6.1": 47,
+   "6.2": 62,
+   "6.3": 86,
+   "6.4": 71,
+   "6.5": 55,
+   "6.6": 43
+  },
+  "avg_pct": 65
+ },
+ {
+  "teacher": "Bogner",
+  "level": "CP",
+  "period": 7,
+  "n": 17,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 53,
+    "answered": 17,
+    "wrong": [
+     [
+      "Nitrogen and sulfur",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 59,
+    "answered": 17,
+    "wrong": [
+     [
+      "Sugar contains nitrogen.,\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\"",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 76,
+    "answered": 17,
+    "wrong": [
+     [
+      "true",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 47,
+    "answered": 17,
+    "wrong": [
+     [
+      "Most came from the soil, because roots absorb nutrients and minerals that are built directly into wood, leaves, and proteins as the tree grows.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 53,
+    "answered": 17,
+    "wrong": [
+     [
+      "6 on the left and 12 on the right",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 88,
+    "answered": 17,
+    "wrong": [
+     [
+      "false",
+      2
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 53,
+    "answered": 17,
+    "wrong": [
+     [
+      "Nitrogen in the soil is the main source of the carbon atoms that plants use to build the stems, leaves, and proteins of new tissue.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": null,
+    "answered": 0,
+    "wrong": []
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 65,
+    "answered": 17,
+    "wrong": [
+     [
+      "Phosphorus and nitrogen give the Lake 1 algae extra carbon atoms to build sugar.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 53,
+    "answered": 17,
+    "wrong": [
+     [
+      "The labeled carbon atoms were changed into nitrogen atoms so they could become part of amino acids.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 47,
+    "answered": 17,
+    "wrong": [
+     [
+      "The cell used up all its nitrogen at low light, so it could not build amino acids.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 65,
+    "answered": 17,
+    "wrong": [
+     [
+      "She can build amino acids from only the glucose beads because atoms can change from one element into another.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 59,
+    "answered": 17,
+    "wrong": [
+     [
+      "Group A grew more because nitrate is a sugar that gave the plants extra energy for photosynthesis.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 49,
+    "answered": 17
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 41,
+    "answered": 17,
+    "wrong": [
+     [
+      "Plants use light energy to build sugar from CO2 and water; atoms from that sugar are rearranged and combined with elements like nitrogen from the soil to make amino acids, proteins, and other carbon-based molecules.",
+      14
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 94,
+    "answered": 17
+   },
+   {
+    "q": 17,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 53,
+    "answered": 17,
+    "wrong": [
+     [
+      "All three molecules contain carbon, hydrogen, and oxygen.",
+      5
+     ]
+    ]
+   }
+  ],
+  "skills": {
+   "6.1": 63,
+   "6.2": 63,
+   "6.3": 57,
+   "6.4": 55,
+   "6.5": 54,
+   "6.6": 41
+  },
+  "avg_pct": 65
+ },
+ {
+  "teacher": "Boyles",
+  "level": "GATE",
+  "period": 1,
+  "n": 30,
+  "items": [
+   {
+    "q": 1,
+    "type": "matching",
+    "skill": "vocab",
+    "unscored": false,
+    "pct": 78,
+    "answered": 30
+   },
+   {
+    "q": 2,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 78,
+    "answered": 30
+   },
+   {
+    "q": 3,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 78,
+    "answered": 30
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 70,
+    "answered": 30
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 82,
+    "answered": 30
+   },
+   {
+    "q": 6,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 63,
+    "answered": 30
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 78,
+    "answered": 30
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 65,
+    "answered": 30
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 77,
+    "answered": 30
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 80,
+    "answered": 30
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 77,
+    "answered": 30
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 88,
+    "answered": 30
+   },
+   {
+    "q": 13,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 68,
+    "answered": 30
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 49,
+    "answered": 30
+   }
+  ],
+  "skills": {
+   "6.2": 74,
+   "6.3": 79,
+   "6.4": 63,
+   "6.5": 70,
+   "6.6": 74,
+   "vocab": 78
+  },
+  "avg_pct": 69
+ },
+ {
+  "teacher": "Boyles",
+  "level": "GATE",
+  "period": 2,
+  "n": 30,
+  "items": [
+   {
+    "q": 1,
+    "type": "matching",
+    "skill": "vocab",
+    "unscored": false,
+    "pct": 73,
+    "answered": 30
+   },
+   {
+    "q": 2,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 72,
+    "answered": 30
+   },
+   {
+    "q": 3,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 82,
+    "answered": 30
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 65,
+    "answered": 30
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 68,
+    "answered": 30
+   },
+   {
+    "q": 6,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 48,
+    "answered": 30
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 62,
+    "answered": 30
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 67,
+    "answered": 30
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 58,
+    "answered": 30
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 83,
+    "answered": 30
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 75,
+    "answered": 30
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 80,
+    "answered": 30
+   },
+   {
+    "q": 13,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 52,
+    "answered": 29
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 43,
+    "answered": 29
+   }
+  ],
+  "skills": {
+   "6.2": 68,
+   "6.3": 69,
+   "6.4": 48,
+   "6.5": 60,
+   "6.6": 70,
+   "vocab": 73
+  },
+  "avg_pct": 60
+ },
+ {
+  "teacher": "Leapley",
+  "level": "CP",
+  "period": 7,
+  "n": 21,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 62,
+    "answered": 21,
+    "wrong": [
+     [
+      "Carbon only",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 43,
+    "answered": 21,
+    "wrong": [
+     [
+      "Most of the atoms in sugar and the large carbon-based molecules are iron and calcium.,\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\"",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 62,
+    "answered": 21,
+    "wrong": [
+     [
+      "true",
+      8
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 62,
+    "answered": 21,
+    "wrong": [
+     [
+      "Most came from the soil. The roots pull nutrients and minerals out of the soil. The tree builds those nutrients and minerals straight into its wood, its leaves, and its proteins as the tree grows a little bigger each year.",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 33,
+    "answered": 21,
+    "wrong": [
+     [
+      "6 on the left and 12 on the right",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 86,
+    "answered": 21,
+    "wrong": [
+     [
+      "false",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 48,
+    "answered": 21,
+    "wrong": [
+     [
+      "Plants get most of their carbon atoms from nitrogen in the soil. This soil has very little nitrogen, so the plants run short of the carbon they need for new stems, leaves, and proteins.",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 57,
+    "answered": 21,
+    "wrong": [
+     [
+      "Glucose has more carbon atoms than either amino acid: 6 carbon atoms, compared with 2 in glycine and 3 in cysteine.",
+      8
+     ]
+    ]
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 38,
+    "answered": 21,
+    "wrong": [
+     [
+      "Phosphorus and nitrogen give the Lake 1 algae extra carbon atoms for building sugar. With more carbon, the Lake 1 algae make more sugar than the Lake 2 algae, so the Lake 1 algae grow faster.",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 52,
+    "answered": 21,
+    "wrong": [
+     [
+      "The plant's proteins and fats were absorbed from the soil, and the labeled carbon only stayed in the sugar.",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 76,
+    "answered": 21,
+    "wrong": [
+     [
+      "Light directly builds amino acids and fats, so less light means fewer of these molecules regardless of sugar.",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 71,
+    "answered": 21,
+    "wrong": [
+     [
+      "She can build amino acids from the glucose beads alone, and any leftover beads will disappear because they are no longer part of a molecule.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 67,
+    "answered": 21,
+    "wrong": [
+     [
+      "Group A grew more because nitrate is a kind of sugar. The extra sugar from the nitrate gave the Group A plants more energy for photosynthesis and for building new leaves, stems, and roots.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 36,
+    "answered": 21
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 62,
+    "answered": 21,
+    "wrong": [
+     [
+      "Plants absorb proteins and other large carbon-based molecules from the soil through their roots and use light energy to store them in their cells.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 100,
+    "answered": 21
+   }
+  ],
+  "skills": {
+   "6.1": 56,
+   "6.2": 60,
+   "6.3": 48,
+   "6.4": 66,
+   "6.5": 52,
+   "6.6": 62
+  },
+  "avg_pct": 62
+ },
+ {
+  "teacher": "Leapley",
+  "level": "GATE",
+  "period": 5,
+  "n": 30,
+  "items": [
+   {
+    "q": 1,
+    "type": "matching",
+    "skill": "vocab",
+    "unscored": false,
+    "pct": 68,
+    "answered": 30
+   },
+   {
+    "q": 2,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 80,
+    "answered": 30
+   },
+   {
+    "q": 3,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 87,
+    "answered": 30
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 58,
+    "answered": 30
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 78,
+    "answered": 30
+   },
+   {
+    "q": 6,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 50,
+    "answered": 30
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 67,
+    "answered": 30
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 65,
+    "answered": 30
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 72,
+    "answered": 30
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 55,
+    "answered": 30
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 80,
+    "answered": 30
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 80,
+    "answered": 30
+   },
+   {
+    "q": 13,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 55,
+    "answered": 29
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 43,
+    "answered": 29
+   }
+  ],
+  "skills": {
+   "6.2": 69,
+   "6.3": 79,
+   "6.4": 50,
+   "6.5": 62,
+   "6.6": 64,
+   "vocab": 68
+  },
+  "avg_pct": 61
+ },
+ {
+  "teacher": "Leapley",
+  "level": "GATE",
+  "period": 6,
+  "n": 32,
+  "items": [
+   {
+    "q": 1,
+    "type": "matching",
+    "skill": "vocab",
+    "unscored": false,
+    "pct": 79,
+    "answered": 32
+   },
+   {
+    "q": 2,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 80,
+    "answered": 32
+   },
+   {
+    "q": 3,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 86,
+    "answered": 32
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 62,
+    "answered": 32
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 73,
+    "answered": 32
+   },
+   {
+    "q": 6,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 58,
+    "answered": 32
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 70,
+    "answered": 32
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 70,
+    "answered": 32
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 72,
+    "answered": 32
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 72,
+    "answered": 32
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 75,
+    "answered": 32
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 84,
+    "answered": 32
+   },
+   {
+    "q": 13,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 59,
+    "answered": 32
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 56,
+    "answered": 32
+   }
+  ],
+  "skills": {
+   "6.2": 71,
+   "6.3": 77,
+   "6.4": 58,
+   "6.5": 66,
+   "6.6": 72,
+   "vocab": 79
+  },
+  "avg_pct": 67
+ },
+ {
+  "teacher": "Renick",
+  "level": "CP",
+  "period": 5,
+  "n": 24,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 38,
+    "answered": 24,
+    "wrong": [
+     [
+      "All five elements",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 25,
+    "answered": 24,
+    "wrong": [
+     [
+      "Most of the atoms in sugar and the large carbon-based molecules are iron and calcium.,\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\"",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 58,
+    "answered": 24,
+    "wrong": [
+     [
+      "true",
+      10
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 33,
+    "answered": 24,
+    "wrong": [
+     [
+      "Most came from sunlight, which the leaves absorb and convert directly into the solid matter that makes up wood, leaves, and proteins, so the more light energy the tree takes in, the more of its mass is made of that light.",
+      10
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 33,
+    "answered": 24,
+    "wrong": [
+     [
+      "6 on the left and 12 on the right",
+      8
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 88,
+    "answered": 24,
+    "wrong": [
+     [
+      "false",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 12,
+    "answered": 24,
+    "wrong": [
+     [
+      "Without nitrogen the plants cannot carry out photosynthesis, so they have no sugar to use for growth, and with no sugar they cannot build any new stems, leaves, or other tissue.",
+      10
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 42,
+    "answered": 24,
+    "wrong": [
+     [
+      "Glucose has more carbon atoms than either amino acid: 6 carbon atoms, compared with 2 in glycine and 3 in cysteine.",
+      8
+     ]
+    ]
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 21,
+    "answered": 24,
+    "wrong": [
+     [
+      "Phosphorus and nitrogen give the Lake 1 algae extra carbon atoms to build sugar, so the Lake 1 algae can make more sugar than the Lake 2 algae do and can grow much faster as a result.",
+      10
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 62,
+    "answered": 24,
+    "wrong": [
+     [
+      "The plant's proteins and fats were absorbed from the soil, and the labeled carbon only stayed in the sugar.",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 42,
+    "answered": 24,
+    "wrong": [
+     [
+      "Light directly builds amino acids and fats, so less light means fewer of these molecules regardless of sugar.",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 38,
+    "answered": 24,
+    "wrong": [
+     [
+      "She can build amino acids from the glucose beads alone, and any leftover beads will disappear because they are no longer part of a molecule.",
+      9
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 46,
+    "answered": 24,
+    "wrong": [
+     [
+      "Group A grew more because nitrate is a sugar that gave the plants extra energy for photosynthesis, so Group A had more energy to build new tissue and gain dry mass than Group B did.",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 39,
+    "answered": 24
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 46,
+    "answered": 24,
+    "wrong": [
+     [
+      "Plants use light energy to make sugar from CO2 and water, and sugar is then stored unchanged as the only building material in every plant cell, so no other elements are needed to make any of the plant's other molecules.",
+      9
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 100,
+    "answered": 19
+   }
+  ],
+  "skills": {
+   "6.1": 40,
+   "6.2": 51,
+   "6.3": 25,
+   "6.4": 47,
+   "6.5": 42,
+   "6.6": 46
+  },
+  "avg_pct": 46
+ },
+ {
+  "teacher": "Renick",
+  "level": "CP",
+  "period": 7,
+  "n": 23,
+  "items": [
+   {
+    "q": 1,
+    "type": "choice",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 61,
+    "answered": 23,
+    "wrong": [
+     [
+      "Nitrogen and sulfur",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 2,
+    "type": "multi-answer",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 48,
+    "answered": 23,
+    "wrong": [
+     [
+      "Most of the atoms in sugar and the large carbon-based molecules are iron and calcium.,\"Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\"",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 3,
+    "type": "true-false",
+    "skill": "6.1",
+    "unscored": false,
+    "pct": 78,
+    "answered": 23,
+    "wrong": [
+     [
+      "true",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 4,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 26,
+    "answered": 23,
+    "wrong": [
+     [
+      "Most came from the soil, because roots absorb nutrients and minerals that are built directly into wood, leaves, and proteins as the tree grows, so the tree's mass comes mainly from what its roots take out of the soil.",
+      10
+     ]
+    ]
+   },
+   {
+    "q": 5,
+    "type": "choice",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 39,
+    "answered": 23,
+    "wrong": [
+     [
+      "6 on the left and 12 on the right",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 6,
+    "type": "true-false",
+    "skill": "6.2",
+    "unscored": false,
+    "pct": 87,
+    "answered": 23,
+    "wrong": [
+     [
+      "false",
+      3
+     ]
+    ]
+   },
+   {
+    "q": 7,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 35,
+    "answered": 23,
+    "wrong": [
+     [
+      "Without nitrogen the plants cannot carry out photosynthesis, so they have no sugar to use for growth, and with no sugar they cannot build any new stems, leaves, or other tissue.",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 8,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 43,
+    "answered": 23,
+    "wrong": [
+     [
+      "Glucose has more carbon atoms than either amino acid: 6 carbon atoms, compared with 2 in glycine and 3 in cysteine.",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 9,
+    "type": "choice",
+    "skill": "6.3",
+    "unscored": false,
+    "pct": 52,
+    "answered": 23,
+    "wrong": [
+     [
+      "Phosphorus and nitrogen give the Lake 1 algae extra carbon atoms to build sugar, so the Lake 1 algae can make more sugar than the Lake 2 algae do and can grow much faster as a result.",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 10,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 52,
+    "answered": 23,
+    "wrong": [
+     [
+      "The plant's proteins and fats were absorbed from the soil, and the labeled carbon only stayed in the sugar.",
+      7
+     ]
+    ]
+   },
+   {
+    "q": 11,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 70,
+    "answered": 23,
+    "wrong": [
+     [
+      "At low light, amino acids and fats were broken down to make more sugar.",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 12,
+    "type": "choice",
+    "skill": "6.4",
+    "unscored": false,
+    "pct": 65,
+    "answered": 23,
+    "wrong": [
+     [
+      "She can build amino acids from the glucose beads alone, and any leftover beads will disappear because they are no longer part of a molecule.",
+      4
+     ]
+    ]
+   },
+   {
+    "q": 13,
+    "type": "choice",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 57,
+    "answered": 23,
+    "wrong": [
+     [
+      "Group A grew more because nitrate is a sugar that gave the plants extra energy for photosynthesis, so Group A had more energy to build new tissue and gain dry mass than Group B did.",
+      5
+     ]
+    ]
+   },
+   {
+    "q": 14,
+    "type": "essay",
+    "skill": "6.5",
+    "unscored": false,
+    "pct": 62,
+    "answered": 23
+   },
+   {
+    "q": 15,
+    "type": "choice",
+    "skill": "6.6",
+    "unscored": false,
+    "pct": 48,
+    "answered": 23,
+    "wrong": [
+     [
+      "Plants change sunlight into new carbon atoms, and then combine those new carbon atoms with nitrogen from the soil to make amino acids and proteins, so the carbon in a plant comes from the light and not from the air.",
+      6
+     ]
+    ]
+   },
+   {
+    "q": 16,
+    "type": "essay",
+    "skill": "6.6",
+    "unscored": true,
+    "pct": 100,
+    "answered": 23
+   }
+  ],
+  "skills": {
+   "6.1": 62,
+   "6.2": 51,
+   "6.3": 43,
+   "6.4": 62,
+   "6.5": 60,
+   "6.6": 48
+  },
+  "avg_pct": 61
+ }
+]

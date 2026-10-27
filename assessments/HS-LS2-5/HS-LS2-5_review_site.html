@@ -11,18 +11,18 @@
 :root{
   --bg:#f5f7fa; --surface:#ffffff; --fg:#17212e; --muted:#5a6676; --line:#d9dfe7;
   --accent:#1f7a4d; --accent-ink:#ffffff; --accent-soft:#e3edfb;
-  --good:#17703f; --good-soft:#e1f4e8; --bad:#a3302a; --bad-soft:#fbe7e5; --warn-soft:#fff3d6;
+  --warn:#9a5b00; --good:#17703f; --good-soft:#e1f4e8; --bad:#a3302a; --bad-soft:#fbe7e5; --warn-soft:#fff3d6;
   --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
   --font-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
   --accent:#7db0ff; --accent-ink:#0b1420; --accent-soft:#1b2c45;
-  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}}
+  --warn:#f0b955; --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
   --accent:#7db0ff; --accent-ink:#0b1420; --accent-soft:#1b2c45;
-  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}
+  --warn:#f0b955; --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font:18px/1.55 var(--font-body);margin:0;
   padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -105,6 +105,37 @@ table.rubric td,table.rubric th{border:1px solid var(--line);padding:6px 10px;te
 footer{margin-top:48px;color:var(--muted);font-size:.9rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
+/* class snapshot + grouped practice */
+.stats{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 18px}
+.stats div{min-width:0}.stats b{font-family:var(--font-display);font-size:1.6rem;display:block;line-height:1.1}.stats span{font-size:.85rem;color:var(--muted)}
+.bars{display:grid;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.bars li{display:grid;grid-template-columns:minmax(0,11rem) 1fr 3rem;gap:10px;align-items:center;font-size:.95rem}
+.bars .nm{line-height:1.25}
+.bars .tr{height:16px;background:var(--line);border-radius:4px;overflow:hidden}
+.bars .tr i{display:block;height:100%}
+.bars .pc{font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
+.t-low{background:var(--bad)}.t-mid{background:var(--warn)}.t-hi{background:var(--good)}
+.legend{font-size:.85rem;color:var(--muted);margin:-8px 0 18px}
+@media(max-width:520px){.bars li{grid-template-columns:1fr 3rem}.bars .tr{grid-column:1 / -1;grid-row:2}}
+.prio{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:12px}
+.prio h3{font-size:1.1rem}.prio .rk{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bad);font-weight:700}
+.prio table{border-collapse:collapse;width:100%;font-size:.92rem;margin-top:8px}
+.prio td,.prio th{border-top:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.prio td.n{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+.prio .wr{color:var(--muted);font-size:.88rem}
+details.grp{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+details.grp>summary{cursor:pointer;padding:12px 16px;display:grid;gap:2px;list-style:none}
+details.grp>summary::-webkit-details-marker{display:none}
+details.grp>summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:12px}
+details.grp .gt{font-family:var(--font-display);font-weight:700;font-size:1.15rem}
+details.grp .gs{font-size:.88rem;color:var(--muted)}
+details.grp>summary::after{content:"Show";justify-self:start;font-size:.8rem;font-weight:700;color:var(--accent)}
+details.grp[open]>summary::after{content:"Hide"}
+details.grp>.q,details.grp>.teach{margin:0 12px 12px}
+.teach{background:var(--accent-soft);border-radius:10px;padding:12px 14px}
+.teach .fix{margin-top:8px}
+.scroll{overflow-x:auto}
+
 </style>
 </head>
 <body>
@@ -182,21 +213,28 @@ hd.appendChild(meter);root.appendChild(hd);
 const nav=h('nav',{class:'tabs','aria-label':'Sections'});root.appendChild(nav);
 const add=(id,t)=>nav.appendChild(h('a',{href:'#'+id},t));
 
-let s=sec('ideas','Key ideas','Read these first. Then try the practice.');add('ideas','Key ideas');
+let s;
+if(D.pre){s=sec('snapshot',D.preTitle||'Your class','');add('snapshot',D.preNav||'Your class');s.insertAdjacentHTML('beforeend',D.pre);root.appendChild(s)}
+s=sec('ideas','Key ideas',D.ideasSub||'Read these first. Then try the practice.');add('ideas','Key ideas');
+if(D.figure)s.appendChild(h('figure',{},D.figure+(D.figureCaption?'<figcaption>'+D.figureCaption+'</figcaption>':'')));
 const ul=h('ol',{class:'ideas'});D.ideas.forEach(i=>ul.appendChild(h('li',{},'<div><b>'+i.t+'</b> '+i.d+(i.eq?'<div class="eq">'+i.eq+'</div>':'')+'</div>')));
 s.appendChild(ul);root.appendChild(s);
 
-s=sec('words','Vocabulary','Tap a card to see the meaning. Then say it in your own words.');add('words','Vocabulary');
+if(D.vocab){s=sec('words','Vocabulary','Tap a card to see the meaning. Then say it in your own words.');add('words','Vocabulary');
 const cards=h('div',{class:'cards'});D.vocab.forEach(v=>{const c=h('button',{class:'card',type:'button','aria-expanded':'false'},'<span class="t">'+v[0]+'</span><span class="hint">Tap to flip</span><span class="d">'+v[1]+'</span>');
   c.onclick=()=>{const o=c.classList.toggle('open');c.setAttribute('aria-expanded',o)};cards.appendChild(c)});
-s.appendChild(cards);D.vocabQuiz.forEach(q=>s.appendChild(match(q)));root.appendChild(s);
+s.appendChild(cards);(D.vocabQuiz||[]).forEach(q=>s.appendChild(match(q)));root.appendChild(s)}
 
+const mk=q=>q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false);
 s=sec('practice','Practice','Each question tells you right away. Missed one? Read the explanation, then try it again.');add('practice','Practice');
-D.practice.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+(D.practice||[]).forEach(q=>s.appendChild(mk(q)));
+(D.groups||[]).forEach(g=>{const d=h('details',{class:'grp'});if(g.open)d.open=true;d.appendChild(h('summary',{},'<span class="gt">'+g.title+'</span><span class="gs">'+g.sub+'</span>'));
+  if(g.teach)d.appendChild(h('div',{class:'teach'},g.teach));g.qs.forEach(q=>d.appendChild(mk(q)));s.appendChild(d)});
+root.appendChild(s);
 
-s=sec('model',D.model.title,D.model.sub);add('model','Models');
+if(D.model){s=sec('model',D.model.title,D.model.sub);add('model','Models');
 const fig=h('figure',{},D.model.figure+'<figcaption>'+D.model.caption+'</figcaption>');s.appendChild(fig);
-D.model.qs.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+D.model.qs.forEach(q=>s.appendChild(mk(q)));root.appendChild(s)}
 
 s=sec('write','Explain it','Written answers are scored out of 4. Write, check yourself, then compare with the sample.');add('write','Explain it');
 const rub=h('div',{class:'scroll'},'<table class="rubric"><tr><th>Score</th><th>What it looks like</th></tr>'+D.rubric.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>').join('')+'</table>');

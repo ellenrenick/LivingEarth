@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unit 1.3 Review Bogner P1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: single reading column, sticky section nav, cards only for questions */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --fg:#17212e; --muted:#5a6676; --line:#d9dfe7;
+  --accent:#7a4bb8; --accent-ink:#ffffff; --accent-soft:#e3edfb;
+  --warn:#9a5b00; --good:#17703f; --good-soft:#e1f4e8; --bad:#a3302a; --bad-soft:#fbe7e5; --warn-soft:#fff3d6;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#c3a2f0; --accent-ink:#0b1420; --accent-soft:#1b2c45;
+  --warn:#f0b955; --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#c3a2f0; --accent-ink:#0b1420; --accent-soft:#1b2c45;
+  --warn:#f0b955; --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:18px/1.55 var(--font-body);margin:0;
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;text-wrap:balance;margin:0}
+header.top{padding-block:32px 8px}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(1.9rem,6vw,2.7rem);margin-top:6px}
+.lede{color:var(--muted);margin:10px 0 0}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+  margin-top:18px;display:flex;gap:4px;overflow-x:auto;padding-block:8px}
+nav.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:999px;font-weight:600;font-size:.95rem}
+nav.tabs a:hover,nav.tabs a:focus-visible{background:var(--accent-soft);color:var(--accent);outline:none}
+.meter{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:.95rem;color:var(--muted)}
+.meter .bar{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter .bar i{display:block;height:100%;width:0;background:var(--good);transition:width .3s}
+section{padding-top:40px}
+section>h2{font-size:1.6rem;margin-bottom:6px}
+section>p.sub{color:var(--muted);margin:0 0 18px}
+.ideas{display:grid;gap:14px;counter-reset:idea;padding:0;list-style:none;margin:0}
+.ideas li{counter-increment:idea;display:grid;grid-template-columns:2.2rem 1fr;gap:12px}
+.ideas li::before{content:counter(idea);font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--accent);
+  background:var(--accent-soft);border-radius:8px;height:2.2rem;display:grid;place-items:center}
+.ideas b{font-family:var(--font-display)}
+.eq{background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin-top:6px;font-weight:600;overflow-x:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.card{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:92px}
+.card:focus-visible{outline:3px solid var(--accent)}
+.card .t{font-family:var(--font-display);font-weight:700;display:block}
+.card .d{display:none;color:var(--muted);font-size:.95rem;margin-top:4px}
+.card.open{background:var(--accent-soft);border-color:var(--accent)}
+.card.open .d{display:block}
+.card .hint{font-size:.8rem;color:var(--muted)}
+.card.open .hint{display:none}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
+.q .tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.q .stem{margin:4px 0 10px}
+.q .ctx{background:var(--bg);border-left:4px solid var(--accent);padding:8px 12px;margin:0 0 10px;border-radius:0 8px 8px 0}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:var(--surface)}
+.opt:hover{border-color:var(--accent)}
+.opt input{margin-top:5px;accent-color:var(--accent)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:10px;align-items:center;margin-bottom:8px}
+.row .l{font-weight:600}
+.row select{font:inherit;padding:8px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--fg);width:100%;min-width:0}
+.row select.right{border-color:var(--good);background:var(--good-soft)}
+.row select.wrong{border-color:var(--bad);background:var(--bad-soft)}
+@media(max-width:520px){.row{grid-template-columns:1fr;gap:4px}}
+button.go{font:inherit;font-weight:700;background:var(--accent);color:var(--accent-ink);border:0;border-radius:9px;padding:9px 18px;cursor:pointer;margin-top:10px}
+button.go.alt{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+button.go:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.fb{margin-top:10px;padding:10px 12px;border-radius:9px;display:none}
+.fb.show{display:block}
+.fb.ok{background:var(--good-soft);color:var(--fg);border-left:4px solid var(--good)}
+.fb.no{background:var(--bad-soft);border-left:4px solid var(--bad)}
+.fb b.s{display:block}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px;padding:0;list-style:none}
+.flow li{background:var(--accent-soft);border-radius:8px;padding:6px 10px;font-weight:600;font-size:.95rem}
+.flow li.arrow{background:none;padding:0;color:var(--muted)}
+figure{margin:0 0 6px;overflow-x:auto}
+figure svg{width:100%;height:auto;min-width:520px;display:block}
+figcaption{font-size:.9rem;color:var(--muted)}
+textarea{width:100%;min-height:120px;font:inherit;padding:10px;border-radius:9px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);resize:vertical}
+.frames{font-size:.95rem;color:var(--muted);margin:0 0 8px;padding-left:1.2rem}
+.chk{display:grid;gap:6px;margin:10px 0 0}
+.chk label{display:flex;gap:10px;align-items:flex-start}
+.chk input{margin-top:6px;accent-color:var(--accent)}
+.sample{display:none;margin-top:10px;background:var(--warn-soft);padding:10px 12px;border-radius:9px}
+.sample.show{display:block}
+table.rubric{border-collapse:collapse;width:100%;font-size:.95rem}
+table.rubric td,table.rubric th{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+.scroll{overflow-x:auto}
+.ready{list-style:none;padding:0;display:grid;gap:8px}
+.ready label{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.ready input{margin-top:6px;accent-color:var(--accent);width:18px;height:18px}
+.done-msg{display:none;margin-top:14px;padding:14px;border-radius:10px;background:var(--good-soft);border:1px solid var(--good)}
+.done-msg.show{display:block}
+footer{margin-top:48px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* class snapshot + grouped practice */
+.stats{display:flex;flex-wrap:wrap;gap:10px 24px;margin:0 0 18px}
+.stats div{min-width:0}.stats b{font-family:var(--font-display);font-size:1.6rem;display:block;line-height:1.1}.stats span{font-size:.85rem;color:var(--muted)}
+.bars{display:grid;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.bars li{display:grid;grid-template-columns:minmax(0,11rem) 1fr 3rem;gap:10px;align-items:center;font-size:.95rem}
+.bars .nm{line-height:1.25}
+.bars .tr{height:16px;background:var(--line);border-radius:4px;overflow:hidden}
+.bars .tr i{display:block;height:100%}
+.bars .pc{font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
+.t-low{background:var(--bad)}.t-mid{background:var(--warn)}.t-hi{background:var(--good)}
+.legend{font-size:.85rem;color:var(--muted);margin:-8px 0 18px}
+@media(max-width:520px){.bars li{grid-template-columns:1fr 3rem}.bars .tr{grid-column:1 / -1;grid-row:2}}
+.prio{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:12px}
+.prio h3{font-size:1.1rem}.prio .rk{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bad);font-weight:700}
+.prio table{border-collapse:collapse;width:100%;font-size:.92rem;margin-top:8px}
+.prio td,.prio th{border-top:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.prio td.n{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+.prio .wr{color:var(--muted);font-size:.88rem}
+details.grp{margin-top:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+details.grp>summary{cursor:pointer;padding:12px 16px;display:grid;gap:2px;list-style:none}
+details.grp>summary::-webkit-details-marker{display:none}
+details.grp>summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:12px}
+details.grp .gt{font-family:var(--font-display);font-weight:700;font-size:1.15rem}
+details.grp .gs{font-size:.88rem;color:var(--muted)}
+details.grp>summary::after{content:"Show";justify-self:start;font-size:.8rem;font-weight:700;color:var(--accent)}
+details.grp[open]>summary::after{content:"Hide"}
+details.grp>.q,details.grp>.teach{margin:0 12px 12px}
+.teach{background:var(--accent-soft);border-radius:10px;padding:12px 14px}
+.teach .fix{margin-top:8px}
+.scroll{overflow-x:auto}
+
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>window.UNIT={"code": "LS1-6-Bogner-CP-P1", "eyebrow": "Unit 1.3 \u00b7 HS-LS1-6 \u00b7 Bogner \u00b7 Period 1 CP", "title": "Sugar to Structures: your class\u2019s review", "lede": "Built from your class\u2019s results on the Unit 1.3 CSA. Start with the top 3 targets, then practice before your reassessment.", "footer": "Living Earth (Biology) \u00b7 Unit 1.3 review for one class period. Class results only, no individual scores. Your progress saves in this browser.", "pre": "<div class=\"stats\"><div><b>14<\/b><span>students tested<\/span><\/div><div><b>64%<\/b><span>class average<\/span><\/div><div><b>Revise an explanation<\/b><span>biggest target<\/span><\/div><\/div><p class=\"sub\">Percent of points your class earned on each skill, weakest first.<\/p><ul class=\"bars\"><li><span class=\"nm\">Revise an explanation<\/span><span class=\"tr\"><i class=\"t-low\" style=\"width:21%\"><\/i><\/span><span class=\"pc\">21%<\/span><\/li><li><span class=\"nm\">Elements in sugar and large molecules<\/span><span class=\"tr\"><i class=\"t-mid\" style=\"width:50%\"><\/i><\/span><span class=\"pc\">50%<\/span><\/li><li><span class=\"nm\">Explain with evidence<\/span><span class=\"tr\"><i class=\"t-mid\" style=\"width:50%\"><\/i><\/span><span class=\"pc\">50%<\/span><\/li><li><span class=\"nm\">Trace atoms with a model<\/span><span class=\"tr\"><i class=\"t-mid\" style=\"width:62%\"><\/i><\/span><span class=\"pc\">62%<\/span><\/li><li><span class=\"nm\">Taking in and rearranging matter<\/span><span class=\"tr\"><i class=\"t-mid\" style=\"width:69%\"><\/i><\/span><span class=\"pc\">69%<\/span><\/li><li><span class=\"nm\">Sugar atoms plus other elements<\/span><span class=\"tr\"><i class=\"t-hi\" style=\"width:79%\"><\/i><\/span><span class=\"pc\">79%<\/span><\/li><\/ul><p class=\"legend\">Red: under 50% (reteach). Gold: 50\u201369% (practice). Green: 70% and up (keep sharp).<\/p><p class=\"legend\">The written answer on test question 16 was not scored yet, so it is left out of these numbers.<\/p><h3 style=\"margin-top:22px\">Your top 3 targets<\/h3><div class=\"prio\"><div class=\"rk\">Target 1<\/div><h3>Revise an explanation \u00b7 21%<\/h3><div class=\"scroll\"><table><tr><th>Class got<\/th><th>Test question<\/th><\/tr><tr><td class=\"n\">21%<\/td><td><b>Q15.<\/b> Revise \u201cplants make everything out of sunlight\u201d<div class=\"wr\">Know this: Light builds sugar from CO\u2082 and water, then sugar atoms plus soil nitrogen build other molecules.<\/div><div class=\"wr\">Most common wrong answer (6 of 14 students): \u201cPlants use light energy to build sugar from CO2 and water; atoms from that sugar are rearranged and combined with elements like nitrogen from the soil to make amino acid\u2026\u201d<\/div><\/td><\/tr><\/table><\/div><\/div><div class=\"prio\"><div class=\"rk\">Target 2<\/div><h3>Elements in sugar and large molecules \u00b7 50%<\/h3><div class=\"scroll\"><table><tr><th>Class got<\/th><th>Test question<\/th><\/tr><tr><td class=\"n\">21%<\/td><td><b>Q2.<\/b> Pick two true statements about elements in sugar and large molecules<div class=\"wr\">Know this: All contain carbon, and amino acids also contain nitrogen.<\/div><div class=\"wr\">Most common wrong answer (2 of 14 students): \u201cSugar contains nitrogen. Amino acids contain nitrogen as well as carbon, hydrogen, and oxygen.\u201d<\/div><\/td><\/tr><tr><td class=\"n\">50%<\/td><td><b>Q1.<\/b> Which elements in a bean-seed protein could come from sugar?<div class=\"wr\">Know this: Only carbon, hydrogen, and oxygen. Sugar has no N or S.<\/div><div class=\"wr\">Most common wrong answer (4 of 14 students): \u201cNitrogen and sulfur\u201d<\/div><\/td><\/tr><tr><td class=\"n\">79%<\/td><td><b>Q3.<\/b> True or false: glucose contains nitrogen<div class=\"wr\">Know this: False. Glucose is only C, H, and O.<\/div><div class=\"wr\">Most common wrong answer (3 of 14 students): \u201ctrue\u201d<\/div><\/td><\/tr><\/table><\/div><\/div><div class=\"prio\"><div class=\"rk\">Target 3<\/div><h3>Explain with evidence \u00b7 50%<\/h3><div class=\"scroll\"><table><tr><th>Class got<\/th><th>Test question<\/th><\/tr><tr><td class=\"n\">36%<\/td><td><b>Q14.<\/b> Lettuce CER (written, 4 pts)<div class=\"wr\">Know this: Claim, two data points, and reasoning about sugar plus nitrogen.<\/div><\/td><\/tr><tr><td class=\"n\">64%<\/td><td><b>Q13.<\/b> Hydroponic beans with and without nitrate<div class=\"wr\">Know this: Both made sugar. Only Group A could combine sugar atoms with nitrogen to build proteins.<\/div><div class=\"wr\">Most common wrong answer (4 of 14 students): \u201cGroup B had less protein because the extra sugar in its leaves broke down the proteins it already had.\u201d<\/div><\/td><\/tr><\/table><\/div><\/div>", "preTitle": "Your class results", "preNav": "Your class", "ideas": [{"t": "Sugar is built from air and water.", "d": "In photosynthesis, light energy rearranges the atoms of CO\u2082 and water into sugar. Light is the energy. The atoms are the matter."}, {"t": "Sugar has only carbon, hydrogen, and oxygen.", "d": "Fats are also only C, H, and O. Amino acids and proteins also contain nitrogen, and some contain sulfur."}, {"t": "Other elements come from outside the sugar.", "d": "A cell combines atoms from sugar with nitrogen (and sulfur or phosphorus) from the soil or water to build amino acids and proteins."}, {"t": "Atoms are rearranged, never created or destroyed.", "d": "When an animal eats, it breaks food into small pieces and rebuilds those atoms into its own molecules."}, {"t": "Good explanations use evidence.", "d": "Use specific data, say what each result shows, and revise your explanation when new evidence does not fit."}], "ideasSub": "The big picture for every class.", "figure": "<svg viewBox=\"0 0 640 230\" role=\"img\" aria-label=\"Flow from light, carbon dioxide and water to sugar, then sugar plus nitrogen to amino acids and proteins\">\n<defs><marker id=\"ah\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0 0L10 5L0 10z\" fill=\"currentColor\"/><\/marker><\/defs>\n<g style=\"color:var(--fg)\" font-family=\"system-ui,sans-serif\" font-size=\"14\" fill=\"var(--fg)\">\n<rect x=\"8\" y=\"20\" width=\"150\" height=\"62\" rx=\"10\" fill=\"var(--accent-soft)\" stroke=\"var(--line)\"/><text x=\"83\" y=\"46\" text-anchor=\"middle\" font-weight=\"700\">CO\u2082 + H\u2082O<\/text><text x=\"83\" y=\"66\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted)\">atoms from air and water<\/text>\n<rect x=\"8\" y=\"130\" width=\"150\" height=\"40\" rx=\"10\" fill=\"var(--warn-soft)\" stroke=\"var(--line)\"/><text x=\"83\" y=\"155\" text-anchor=\"middle\" font-weight=\"700\">Light energy<\/text>\n<rect x=\"240\" y=\"60\" width=\"150\" height=\"70\" rx=\"10\" fill=\"var(--good-soft)\" stroke=\"var(--line)\"/><text x=\"315\" y=\"88\" text-anchor=\"middle\" font-weight=\"700\">Sugar (glucose)<\/text><text x=\"315\" y=\"108\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted)\">only C, H, and O<\/text>\n<rect x=\"480\" y=\"20\" width=\"152\" height=\"62\" rx=\"10\" fill=\"var(--accent-soft)\" stroke=\"var(--line)\"/><text x=\"556\" y=\"46\" text-anchor=\"middle\" font-weight=\"700\">Amino acids<\/text><text x=\"556\" y=\"66\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted)\">C, H, O + N (and S)<\/text>\n<rect x=\"480\" y=\"130\" width=\"152\" height=\"62\" rx=\"10\" fill=\"var(--accent-soft)\" stroke=\"var(--line)\"/><text x=\"556\" y=\"156\" text-anchor=\"middle\" font-weight=\"700\">Fats, starch<\/text><text x=\"556\" y=\"176\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted)\">only C, H, and O<\/text>\n<rect x=\"400\" y=\"196\" width=\"232\" height=\"30\" rx=\"8\" fill=\"var(--bg)\" stroke=\"var(--line)\"/><text x=\"516\" y=\"216\" text-anchor=\"middle\" font-size=\"12\">N, S, P come from outside the sugar<\/text>\n<g stroke=\"currentColor\" stroke-width=\"2.5\" fill=\"none\" marker-end=\"url(#ah)\"><path d=\"M160 55 L238 85\"/><path d=\"M160 150 C200 150 215 125 238 112\"/><path d=\"M392 80 L478 55\"/><path d=\"M392 112 L478 150\"/><\/g>\n<text x=\"436\" y=\"58\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--accent)\" font-weight=\"700\">+ N<\/text>\n<\/g><\/svg>", "figureCaption": "Sugar has only C, H, and O. Other elements join in to build amino acids and proteins.", "vocab": [["atom", "The smallest unit of an element."], ["element", "A substance made of only one kind of atom, like carbon or nitrogen."], ["glucose", "The sugar plants make. Its atoms are only C, H, and O."], ["amino acid", "A small building block of proteins. It contains nitrogen."], ["protein", "A large molecule built from amino acids."], ["photosynthesis", "Plants use light energy to build sugar from CO\u2082 and water."], ["conservation of matter", "Atoms are rearranged, never created or destroyed."], ["polymer", "A chain made of many small units."]], "vocabQuiz": [], "groups": [{"title": "Revise an explanation (21%)", "sub": "Your class\u2019s target 1. Read the mini-lesson, then try the questions.", "open": true, "teach": "<b>Revising means changing your explanation so it fits ALL the evidence.<\/b> Say what each new result shows, then say whether it changes your explanation. Evidence can <b>support<\/b>, <b>weaken<\/b>, or <b>contradict<\/b> an explanation. A contradiction means that part must change.<div class=\"fix\">Common mix-up: keeping the old explanation, or revising with a new idea that does not fit the data (\u201csugar is stored unchanged and is the only building material\u201d).<\/div>", "qs": [{"q": "A student writes: \u201cSeaweed makes all of its body from the minerals dissolved in seawater.\u201d The class then learned: (1) labeled carbon from CO\u2082 ends up in seaweed sugar and proteins, (2) seaweed without dissolved nitrate makes sugar but little protein, (3) bead models show atoms are rearranged, never created. Which revision uses all of this?", "opts": ["Seaweed uses light energy to build sugar from CO\u2082 and water. Atoms from that sugar are rearranged and combined with nitrogen from the seawater to make proteins and other molecules.", "Seaweed stores sugar unchanged and uses it as its only building material.", "Seaweed absorbs finished proteins from the water and stores them.", "Seaweed changes sunlight into new carbon atoms."], "a": 0, "why": "It includes the energy source, where the atoms come from, and the need for nitrogen.", "hint": "Check each choice against all three results."}, {"q": "A student says: \u201cFish get every atom of their protein straight from the protein they eat.\u201d Tracer result: carbon marked in the fish\u2019s SUGAR food later shows up in the fish\u2019s muscle protein. What does this result do to the explanation?", "opts": ["It contradicts it, because the carbon in the protein came from sugar, not from protein food.", "It supports it completely.", "It does nothing, because tracer results are not evidence.", "It shows fish do not need protein."], "a": 0, "why": "If sugar carbon ends up in muscle protein, not every atom came from eaten protein.", "hint": "Where did the marked carbon start?"}, {"q": "Which new result would make you REVISE the explanation \u201cPlants without nitrogen cannot make sugar\u201d?", "opts": ["Plants with no nitrogen still have a lot of sugar in their leaves.", "Plants with nitrogen grow bigger.", "Plants need light.", "Plants make O\u2082."], "a": 0, "why": "If they still have sugar, they can make sugar without nitrogen, so the explanation must change.", "hint": "Which result goes against the explanation?"}]}, {"title": "Elements in sugar and large molecules (50%)", "sub": "Your class\u2019s target 2. Read the mini-lesson, then try the questions.", "open": false, "teach": "<b>Sugar (glucose, C\u2086H\u2081\u2082O\u2086) has only carbon, hydrogen, and oxygen.<\/b> Fats are also only C, H, and O. Amino acids and proteins also contain <b>nitrogen<\/b>, and some contain <b>sulfur<\/b>. Every large carbon-based molecule has a backbone of carbon.<div class=\"fix\">Common mix-up: \u201cSugar contains nitrogen\u201d or \u201cthe large molecules are made of iron and calcium.\u201d Check the formula. If an element is not in the formula, it is not in the molecule.<\/div>", "qs": [{"q": "Which list shows ALL of the elements in a glucose molecule?", "opts": ["Carbon, hydrogen, oxygen", "Carbon, hydrogen, oxygen, nitrogen", "Carbon only", "Carbon, hydrogen, oxygen, nitrogen, sulfur"], "a": 0, "why": "Glucose is C\u2086H\u2081\u2082O\u2086. No nitrogen and no sulfur.", "hint": "Look at the formula C\u2086H\u2081\u2082O\u2086."}, {"q": "Select the TWO true statements.", "type": "multi", "opts": ["Proteins contain nitrogen.", "Sugar contains sulfur.", "Fats are made of only carbon, hydrogen, and oxygen.", "Proteins contain no carbon.", "Sugar contains iron."], "a": [0, 2], "why": "Proteins have nitrogen. Fats have only C, H, and O. Sugar has neither sulfur nor iron.", "hint": "Match each statement to the elements in the molecule."}, {"type": "match", "q": "Match each molecule to the elements it contains. One answer will not be used.", "pairs": [["Glucose (sugar)", "C, H, O"], ["Glycine (amino acid)", "C, H, O, N"], ["Cysteine (amino acid)", "C, H, O, N, S"], ["A fat", "Only C, H, and O, like sugar"]], "extra": ["C and N only"], "why": "Nitrogen shows up when you move from sugar to amino acids. Sulfur shows up in some amino acids like cysteine."}]}, {"title": "Explain with evidence (50%)", "sub": "Your class\u2019s target 3. Read the mini-lesson, then try the questions.", "open": false, "teach": "<b>A strong explanation has a claim, evidence, and reasoning.<\/b> Evidence uses <b>specific numbers or observations<\/b> from the data. Reasoning says <b>why<\/b> that evidence supports the claim, using science ideas (for example: sugar is made of only C, H, and O, so building proteins needs nitrogen).<div class=\"fix\">Common mix-up: listing data with no explanation, or explaining with no numbers, or saying \u201cmore sugar means more growth.\u201d Always connect data to the science idea.<\/div>", "qs": [{"q": "Two groups of pea seedlings grow for 3 weeks. Group A (with nitrate): 4.8 g dry mass, 35 mg/g protein. Group B (no nitrate): 1.2 g dry mass, 8 mg/g protein. Which is the best EVIDENCE sentence?", "opts": ["Group A gained 4.8 g and had 35 mg/g protein, while Group B gained 1.2 g and had 8 mg/g.", "Group A looks healthier.", "Plants need nitrogen.", "Group B was unlucky."], "a": 0, "why": "Evidence uses specific numbers from both groups.", "hint": "Look for the sentence with numbers from the table."}, {"q": "Which is the best REASONING sentence for the pea data above?", "opts": ["Both groups made sugar, but only Group A had nitrogen to combine with sugar atoms into amino acids and proteins, so only A could grow much.", "Group A grew more because it got more sugar.", "Group A had more protein.", "Nitrate is a kind of sugar that gave Group A extra energy."], "a": 0, "why": "Reasoning explains why using the science idea: sugar atoms plus nitrogen make proteins.", "hint": "Which sentence explains WHY, not just what?"}, {"q": "A farmer sees that a no-nitrogen row of spinach has MORE sugar (22 mg/g vs 11 mg/g) but is much smaller. Which claim does the data best support?", "opts": ["Without nitrogen, the plants made sugar but could not use it to build enough proteins to grow.", "Sugar makes plants grow smaller.", "The no-nitrogen plants did not photosynthesize.", "Nitrogen is turned into sugar."], "a": 0, "why": "More sugar plus little growth shows sugar alone is not enough. Nitrogen is needed for proteins.", "hint": "More sugar, less growth. What is missing?"}]}, {"title": "Trace atoms with a model (62%)", "sub": "Your class did well here. Two quick questions to stay sharp.", "open": false, "teach": "<b>Follow the atom.<\/b> In tracer experiments, labeled carbon from CO\u2082 shows up first in sugar, then in amino acids, proteins, and fats built from that sugar. In bead models, you can reuse the black (C), white (H), and red (O) beads from glucose, but you must <b>add blue (N) beads from outside<\/b> to make an amino acid. No beads are created or destroyed. Less light means less sugar, which means fewer of the molecules built from sugar.<div class=\"fix\">Common mix-up: \u201cLight directly builds amino acids,\u201d \u201catoms change into other elements,\u201d or \u201cleftover beads disappear.\u201d Atoms keep their identity and are only rearranged.<\/div>", "qs": [{"q": "A sunflower seedling is given CO\u2082 with labeled carbon. The label is found in sugar after 15 minutes, and in seed oil and leaf proteins after 10 days. What does this show?", "opts": ["Carbon from the air went into sugar first, then sugar atoms were used to build proteins.", "The plant absorbed protein from the soil.", "The labeled carbon changed into nitrogen.", "Proteins were made first and then broken down into sugar."], "a": 0, "why": "The order tells the story: air, then sugar, then protein.", "hint": "Which came first, sugar or protein?"}, {"q": "You break apart one glucose model (6 C, 12 H, 6 O) to build one glycine model (2 C, 5 H, 2 O, 1 N). What must you add from outside the glucose beads?", "opts": ["One nitrogen bead", "More carbon beads", "More oxygen beads", "Nothing, the beads can change color"], "a": 0, "why": "Glucose has plenty of C, H, and O. It has no nitrogen, so an N bead has to come from outside.", "hint": "Which element is in glycine but not in glucose?"}]}, {"title": "Taking in and rearranging matter (69%)", "sub": "Your class did well here. Two quick questions to stay sharp.", "open": false, "teach": "<b>Atoms are rearranged. They are never created or destroyed.<\/b> A tree\u2019s wood, leaves, and proteins are built mostly from <b>carbon dioxide and water<\/b>, not from soil and not from sunlight. Light is <em>energy<\/em> that powers the building. It does not turn into matter. You can count the atoms on each side of an equation to check.<div class=\"fix\">Common mix-up: \u201cMost of the tree came from the soil\u201d or \u201cthe tree turns sunlight into wood.\u201d Soil barely loses mass. Sunlight is energy, not matter.<\/div>", "qs": [{"q": "A pumpkin plant grows from a 5 g seed to 4 kg in a tub of soil over one summer. The soil loses only 20 g. Where did most of the added mass come from?", "opts": ["Carbon dioxide from the air and water", "The soil", "Sunlight turning into matter", "The pot"], "a": 0, "why": "Soil lost almost nothing. The plant built its mass from CO\u2082 and water, rearranging those atoms into sugar and then other molecules.", "hint": "The soil barely lost any mass."}, {"q": "In 6 CO\u2082 + 6 H\u2082O \u2192 C\u2086H\u2081\u2082O\u2086 + 6 O\u2082, how many oxygen atoms are on each side?", "opts": ["18 on the left and 18 on the right", "12 on the left and 6 on the right", "18 on the left and 6 on the right", "6 on the left and 12 on the right"], "a": 0, "why": "Left: 6 \u00d7 2 = 12 in CO\u2082, plus 6 in H\u2082O = 18. Right: 6 in glucose plus 6 \u00d7 2 = 12 in O\u2082 = 18. Atoms are conserved.", "hint": "Count the oxygen in CO\u2082, in H\u2082O, in glucose, and in O\u2082."}]}, {"title": "Sugar atoms plus other elements (79%)", "sub": "Your class did well here. Two quick questions to stay sharp.", "open": false, "teach": "<b>Sugar supplies carbon, hydrogen, and oxygen. To build amino acids and proteins, a cell also needs nitrogen<\/b> (and sometimes sulfur or phosphorus) from outside the sugar, such as nitrate in the soil. A plant low in nitrogen can still make sugar, but it cannot build enough proteins. It stays small and the extra sugar builds up.<div class=\"fix\">Common mix-up: \u201cWithout nitrogen the plant cannot do photosynthesis,\u201d or \u201cnitrogen gives the plant more carbon.\u201d Photosynthesis only needs CO\u2082, water, and light. Nitrogen is used <em>after<\/em> sugar is made, to build amino acids.<\/div>", "qs": [{"q": "Tomato plants grown with no nitrogen are small and pale. Their leaves hold more starch (made from sugar) than healthy plants. Which explanation fits?", "opts": ["They can make sugar, but they lack the nitrogen needed to build enough proteins for new cells.", "Without nitrogen they cannot do photosynthesis, so they have no sugar.", "Nitrogen supplies the carbon atoms for building sugar.", "The plants absorbed all their proteins from the soil."], "a": 0, "why": "Sugar built up because the plant could not build proteins without nitrogen. If photosynthesis had stopped, there would be less sugar, not more.", "hint": "Extra starch means sugar was being made."}, {"q": "Methionine has the formula C\u2085H\u2081\u2081NO\u2082S. Which atoms could NOT have come from the plant\u2019s sugar?", "opts": ["Nitrogen and sulfur", "Carbon and oxygen", "Hydrogen and oxygen", "Carbon and hydrogen"], "a": 0, "why": "Sugar has only C, H, and O. The N and S must come from other sources, such as the soil.", "hint": "Which elements are in methionine but not in glucose?"}]}], "rubric": [["4", "Correct and complete. Specific data, correct science words, and reasoning that explains WHY."], ["3", "Mostly correct. One piece is missing."], ["2", "Partly correct. Names ideas but does not connect them or use data."], ["1", "Major mistake or does not answer the question."]], "write": [{"ctx": "A student wrote: \u201cA caterpillar\u2019s body protein is just the leaf protein it eats, moved over unchanged.\u201d Evidence: (1) Carbon marked in leaf sugar later appeared in the caterpillar\u2019s body protein. (2) The order of amino acids in caterpillar protein is very different from any leaf protein. (3) In a bead model, leaf proteins were taken apart and rebuilt into a new protein with no beads added or lost.", "q": "Say whether each part of the student\u2019s claim is right or wrong, and revise the explanation using the evidence.", "frames": ["The claim is right that \u2026 but wrong that \u2026", "Evidence 1 shows \u2026", "Revised explanation: \u2026"], "check": ["I said which part of the claim is right (the leaf\u2019s atoms end up in the caterpillar).", "I said which part is wrong (the proteins are not stored unchanged).", "I used at least two pieces of evidence and said what each shows.", "My revision says the leaf\u2019s proteins are broken down and the atoms are rebuilt into new caterpillar proteins."], "sample": "The student is right that atoms from the leaves end up in the caterpillar, because carbon marked in the leaf sugar showed up in the caterpillar\u2019s body protein. The student is wrong that the protein is moved over unchanged, because the amino acid order in caterpillar protein is very different from leaf protein. The bead model shows how: leaf proteins can be taken apart and the same atoms rebuilt into a new protein, with none added or lost. Revised explanation: The caterpillar breaks the leaf\u2019s proteins and sugars into smaller pieces and rearranges those atoms to build its own body proteins."}, {"ctx": "Tomato plants: Batch 1 got a nitrogen fertilizer. Batch 2 got none. Same light, water, and CO\u2082. After 4 weeks, Batch 1: 210 g average mass, 30 mg/g protein, 12 mg/g sugar. Batch 2: 70 g, 6 mg/g protein, 25 mg/g sugar.", "q": "Write a CER that explains why Batch 2 is smaller even though it has more sugar. Use at least two numbers as evidence and explain how the sugar\u2019s atoms are used with other elements.", "frames": ["Claim: \u2026", "Evidence: \u2026", "Reasoning: \u2026"], "check": ["My claim answers why Batch 2 is smaller.", "I used at least two numbers from the data.", "I said sugar is made of only carbon, hydrogen, and oxygen.", "I said proteins also need nitrogen, so without it the plant cannot build enough.", "I said the extra sugar built up because it was not being used."], "sample": "Claim: Batch 2 is smaller because it did not have nitrogen to build proteins, even though it made plenty of sugar. Evidence: Batch 2 had 25 mg/g sugar but only 6 mg/g protein, and it reached only 70 g. Batch 1 had 12 mg/g sugar and 30 mg/g protein, and reached 210 g. Reasoning: Both batches did photosynthesis and made sugar. Sugar has only carbon, hydrogen, and oxygen. To build amino acids and proteins, the plant has to combine atoms from sugar with nitrogen from the fertilizer. Batch 2 had no nitrogen, so it could not build enough proteins for new cells. Its sugar built up unused, and the plants stayed small."}], "ready": ["I can revise an explanation so it fits all of the evidence.", "I can say which elements are in sugar, fats, and proteins.", "I can write a claim, evidence, and reasoning with at least two data points.", "I can trace atoms with a tracer or bead model and say what changes.", "I can explain where a plant\u2019s matter comes from and count atoms in an equation.", "I can explain why a plant with no nitrogen makes sugar but cannot grow."]};</script>
+<script>
+(function(){
+const D=window.UNIT, $=(s,r=document)=>r.querySelector(s);
+const KEY='review:'+D.code;
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const h=(tag,attrs,html)=>{const e=document.createElement(tag);for(const k in attrs||{}){if(k==='class')e.className=attrs[k];else e.setAttribute(k,attrs[k])}if(html!=null)e.innerHTML=html;return e};
+let total=0,qid=0;
+const meter=h('div',{class:'meter'},'<span id="mtxt"></span><div class="bar"><i id="mbar"></i></div>');
+function upd(){const n=Object.keys(saved).filter(k=>saved[k]==='ok').length;$('#mtxt').textContent=n+' of '+total+' correct';$('#mbar').style.width=(total?100*n/total:0)+'%';
+  const dm=$('#done');if(dm)dm.classList.toggle('show',n===total&&total>0)}
+function feedback(box,ok,why){box.className='fb show '+(ok?'ok':'no');
+  box.innerHTML='<b class="s">'+(ok?'Correct.':'Not yet.')+'</b>'+(ok?'':'Look again and try once more. ')+(why?why:'')}
+function wrapQ(q,body,tag){const id=D.code+'-q'+(++qid);total++;const box=h('div',{class:'q',id});
+  box.appendChild(h('div',{class:'tag'},tag||q.tag||'Practice'));
+  if(q.ctx)box.appendChild(h('div',{class:'ctx'},q.ctx));
+  box.appendChild(h('div',{class:'stem'},q.q));box.appendChild(body);
+  const fb=h('div',{class:'fb',role:'status'});box.appendChild(fb);return {box,fb,id}}
+function mc(q,multi){
+  const opts=q.opts.map((t,i)=>({t,i,right:multi?q.a.includes(i):q.a===i}));
+  const list=h('div',{class:'opts'}),name='n'+(qid+1);
+  shuffle(opts).forEach(o=>{const l=h('label',{class:'opt'},'<input type="'+(multi?'checkbox':'radio')+'" name="'+name+'"><span>'+o.t+'</span>');l._o=o;list.appendChild(l)});
+  const {box,fb,id}=wrapQ(q,list,multi?'Choose '+q.a.length:null);
+  const b=h('button',{class:'go',type:'button'},'Check');box.insertBefore(b,fb);
+  b.onclick=()=>{let ok=true;const sel=[...list.children];
+    sel.forEach(l=>{const c=l.firstChild.checked;l.classList.remove('right','wrong');
+      if(c&&l._o.right)l.classList.add('right');else if(c&&!l._o.right){l.classList.add('wrong');ok=false}else if(!c&&l._o.right)ok=false});
+    if(!sel.some(l=>l.firstChild.checked)){fb.className='fb show no';fb.innerHTML='Pick an answer first.';return}
+    saved[id]=ok?'ok':'no';save();upd();feedback(fb,ok,ok?q.why:(q.hint||''))
+    if(ok)sel.forEach(l=>l.firstChild.disabled=true)};
+  if(saved[id]==='ok'){/* progress counted; question stays fresh for re-practice */}
+  return box}
+function match(q){
+  const rights=shuffle(q.pairs.map(p=>p[1]).concat(q.extra||[]));const body=h('div');
+  q.pairs.forEach(p=>{const r=h('div',{class:'row'},'<div class="l">'+p[0]+'</div>');
+    const s=h('select',{'aria-label':p[0].replace(/<[^>]+>/g,'')},'<option value="">Choose…</option>'+rights.map((t,i)=>'<option value="'+i+'">'+t+'</option>').join(''));
+    s._ans=rights.indexOf(p[1]);r.appendChild(s);body.appendChild(r)});
+  const {box,fb,id}=wrapQ(q,body,'Match');const b=h('button',{class:'go',type:'button'},'Check');box.insertBefore(b,fb);
+  b.onclick=()=>{let ok=true,blank=false;body.querySelectorAll('select').forEach(s=>{s.classList.remove('right','wrong');
+    if(s.value===''){blank=true;ok=false;return}if(+s.value===s._ans)s.classList.add('right');else{s.classList.add('wrong');ok=false}});
+    if(blank&&ok===false&&!body.querySelector('.wrong')){fb.className='fb show no';fb.innerHTML='Choose an answer for every row.';return}
+    saved[id]=ok?'ok':'no';save();upd();feedback(fb,ok,ok?q.why:'Fix the red rows and check again.')};
+  return box}
+function write(q){
+  const body=h('div');
+  if(q.frames)body.appendChild(h('ul',{class:'frames'},q.frames.map(f=>'<li>'+f+'</li>').join('')));
+  const ta=h('textarea',{id:D.code+'-w'+(++qid),placeholder:'Write your answer here…'});
+  try{ta.value=localStorage.getItem(KEY+':'+ta.id)||''}catch(e){}ta.oninput=()=>{try{localStorage.setItem(KEY+':'+ta.id,ta.value)}catch(e){}};
+  body.appendChild(ta);qid--;
+  body.appendChild(h('div',{class:'tag',style:'margin-top:12px'},'Check your own answer'));
+  const chk=h('div',{class:'chk'});q.check.forEach((c,i)=>chk.appendChild(h('label',{},'<input type="checkbox"><span>'+c+'</span>')));body.appendChild(chk);
+  const id=D.code+'-q'+(++qid);const box=h('div',{class:'q',id});total++;
+  box.appendChild(h('div',{class:'tag'},'Write it'));if(q.ctx)box.appendChild(h('div',{class:'ctx'},q.ctx));
+  box.appendChild(h('div',{class:'stem'},q.q));box.appendChild(body);
+  const sample=h('div',{class:'sample'},'<b>Sample answer (about a 4)</b><br>'+q.sample);
+  const b=h('button',{class:'go alt',type:'button'},'Show a sample answer');b.onclick=()=>{sample.classList.toggle('show')};
+  const done=h('button',{class:'go',type:'button'},'I wrote it and checked every box');
+  const fb=h('div',{class:'fb',role:'status'});
+  done.onclick=()=>{const all=[...chk.querySelectorAll('input')].every(i=>i.checked);
+    if(!ta.value.trim()){fb.className='fb show no';fb.textContent='Write your answer first.';return}
+    if(!all){fb.className='fb show no';fb.innerHTML='Some boxes are not checked. Add the missing piece to your answer, then check the box. You can look at the sample answer to compare.';return}
+    saved[id]='ok';save();upd();fb.className='fb show ok';fb.innerHTML='<b class="s">Nice work.</b>Compare with the sample answer and fix anything you missed.'};
+  box.append(done,' ',b,fb,sample);return box}
+function sec(id,title,sub){const s=h('section',{id});s.appendChild(h('h2',{},title));if(sub)s.appendChild(h('p',{class:'sub'},sub));return s}
+
+const root=$('#app');
+const hd=h('header',{class:'top'},'<div class="eyebrow">'+D.eyebrow+'</div><h1>'+D.title+'</h1><p class="lede">'+D.lede+'</p>');
+hd.appendChild(meter);root.appendChild(hd);
+const nav=h('nav',{class:'tabs','aria-label':'Sections'});root.appendChild(nav);
+const add=(id,t)=>nav.appendChild(h('a',{href:'#'+id},t));
+
+let s;
+if(D.pre){s=sec('snapshot',D.preTitle||'Your class','');add('snapshot',D.preNav||'Your class');s.insertAdjacentHTML('beforeend',D.pre);root.appendChild(s)}
+s=sec('ideas','Key ideas',D.ideasSub||'Read these first. Then try the practice.');add('ideas','Key ideas');
+if(D.figure)s.appendChild(h('figure',{},D.figure+(D.figureCaption?'<figcaption>'+D.figureCaption+'</figcaption>':'')));
+const ul=h('ol',{class:'ideas'});D.ideas.forEach(i=>ul.appendChild(h('li',{},'<div><b>'+i.t+'</b> '+i.d+(i.eq?'<div class="eq">'+i.eq+'</div>':'')+'</div>')));
+s.appendChild(ul);root.appendChild(s);
+
+if(D.vocab){s=sec('words','Vocabulary','Tap a card to see the meaning. Then say it in your own words.');add('words','Vocabulary');
+const cards=h('div',{class:'cards'});D.vocab.forEach(v=>{const c=h('button',{class:'card',type:'button','aria-expanded':'false'},'<span class="t">'+v[0]+'</span><span class="hint">Tap to flip</span><span class="d">'+v[1]+'</span>');
+  c.onclick=()=>{const o=c.classList.toggle('open');c.setAttribute('aria-expanded',o)};cards.appendChild(c)});
+s.appendChild(cards);(D.vocabQuiz||[]).forEach(q=>s.appendChild(match(q)));root.appendChild(s)}
+
+const mk=q=>q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false);
+s=sec('practice','Practice','Each question tells you right away. Missed one? Read the explanation, then try it again.');add('practice','Practice');
+(D.practice||[]).forEach(q=>s.appendChild(mk(q)));
+(D.groups||[]).forEach(g=>{const d=h('details',{class:'grp'});if(g.open)d.open=true;d.appendChild(h('summary',{},'<span class="gt">'+g.title+'</span><span class="gs">'+g.sub+'</span>'));
+  if(g.teach)d.appendChild(h('div',{class:'teach'},g.teach));g.qs.forEach(q=>d.appendChild(mk(q)));s.appendChild(d)});
+root.appendChild(s);
+
+if(D.model){s=sec('model',D.model.title,D.model.sub);add('model','Models');
+const fig=h('figure',{},D.model.figure+'<figcaption>'+D.model.caption+'</figcaption>');s.appendChild(fig);
+D.model.qs.forEach(q=>s.appendChild(mk(q)));root.appendChild(s)}
+
+s=sec('write','Explain it','Written answers are scored out of 4. Write, check yourself, then compare with the sample.');add('write','Explain it');
+const rub=h('div',{class:'scroll'},'<table class="rubric"><tr><th>Score</th><th>What it looks like</th></tr>'+D.rubric.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>').join('')+'</table>');
+s.appendChild(rub);D.write.forEach(q=>s.appendChild(write(q)));root.appendChild(s);
+
+s=sec('ready','Ready check','Check each one only when you can do it without notes.');add('ready','Ready check');
+const rl=h('ul',{class:'ready'});D.ready.forEach((t,i)=>{const id=D.code+'-r'+i;const li=h('li',{},'<label><input type="checkbox" id="'+id+'"><span>'+t+'</span></label>');
+  const c=li.querySelector('input');c.checked=saved[id]==='1';c.onchange=()=>{saved[id]=c.checked?'1':'';save()};rl.appendChild(li)});
+s.appendChild(rl);s.appendChild(h('div',{class:'done-msg',id:'done'},'<b>You answered everything.</b> Take what you got wrong back to your notes, then tell your teacher you are ready to reassess.'));
+root.appendChild(s);root.appendChild(h('footer',{},D.footer));
+upd();
+})();
+
+</script>
+</body>
+</html>

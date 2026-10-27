@@ -69,21 +69,28 @@ hd.appendChild(meter);root.appendChild(hd);
 const nav=h('nav',{class:'tabs','aria-label':'Sections'});root.appendChild(nav);
 const add=(id,t)=>nav.appendChild(h('a',{href:'#'+id},t));
 
-let s=sec('ideas','Key ideas','Read these first. Then try the practice.');add('ideas','Key ideas');
+let s;
+if(D.pre){s=sec('snapshot',D.preTitle||'Your class','');add('snapshot',D.preNav||'Your class');s.insertAdjacentHTML('beforeend',D.pre);root.appendChild(s)}
+s=sec('ideas','Key ideas',D.ideasSub||'Read these first. Then try the practice.');add('ideas','Key ideas');
+if(D.figure)s.appendChild(h('figure',{},D.figure+(D.figureCaption?'<figcaption>'+D.figureCaption+'</figcaption>':'')));
 const ul=h('ol',{class:'ideas'});D.ideas.forEach(i=>ul.appendChild(h('li',{},'<div><b>'+i.t+'</b> '+i.d+(i.eq?'<div class="eq">'+i.eq+'</div>':'')+'</div>')));
 s.appendChild(ul);root.appendChild(s);
 
-s=sec('words','Vocabulary','Tap a card to see the meaning. Then say it in your own words.');add('words','Vocabulary');
+if(D.vocab){s=sec('words','Vocabulary','Tap a card to see the meaning. Then say it in your own words.');add('words','Vocabulary');
 const cards=h('div',{class:'cards'});D.vocab.forEach(v=>{const c=h('button',{class:'card',type:'button','aria-expanded':'false'},'<span class="t">'+v[0]+'</span><span class="hint">Tap to flip</span><span class="d">'+v[1]+'</span>');
   c.onclick=()=>{const o=c.classList.toggle('open');c.setAttribute('aria-expanded',o)};cards.appendChild(c)});
-s.appendChild(cards);D.vocabQuiz.forEach(q=>s.appendChild(match(q)));root.appendChild(s);
+s.appendChild(cards);(D.vocabQuiz||[]).forEach(q=>s.appendChild(match(q)));root.appendChild(s)}
 
+const mk=q=>q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false);
 s=sec('practice','Practice','Each question tells you right away. Missed one? Read the explanation, then try it again.');add('practice','Practice');
-D.practice.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+(D.practice||[]).forEach(q=>s.appendChild(mk(q)));
+(D.groups||[]).forEach(g=>{const d=h('details',{class:'grp'});if(g.open)d.open=true;d.appendChild(h('summary',{},'<span class="gt">'+g.title+'</span><span class="gs">'+g.sub+'</span>'));
+  if(g.teach)d.appendChild(h('div',{class:'teach'},g.teach));g.qs.forEach(q=>d.appendChild(mk(q)));s.appendChild(d)});
+root.appendChild(s);
 
-s=sec('model',D.model.title,D.model.sub);add('model','Models');
+if(D.model){s=sec('model',D.model.title,D.model.sub);add('model','Models');
 const fig=h('figure',{},D.model.figure+'<figcaption>'+D.model.caption+'</figcaption>');s.appendChild(fig);
-D.model.qs.forEach(q=>s.appendChild(q.type==='multi'?mc(q,true):q.type==='match'?match(q):mc(q,false)));root.appendChild(s);
+D.model.qs.forEach(q=>s.appendChild(mk(q)));root.appendChild(s)}
 
 s=sec('write','Explain it','Written answers are scored out of 4. Write, check yourself, then compare with the sample.');add('write','Explain it');
 const rub=h('div',{class:'scroll'},'<table class="rubric"><tr><th>Score</th><th>What it looks like</th></tr>'+D.rubric.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>').join('')+'</table>');
