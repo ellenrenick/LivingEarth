@@ -10,6 +10,7 @@ unit folder under the CP 26-27 curriculum folder:
 - Root: "LE CP 26-27" (`1aOwJ0mLbd-xJ79MPERtyIjrGLIFV20yk`)
   https://drive.google.com/drive/folders/1aOwJ0mLbd-xJ79MPERtyIjrGLIFV20yk
 - Unit folders sit directly under the root, for example:
+  - Unit 0 Bootcamp (Science Skills): `11G_CZH6nrF4P7X6nayiQyGYWSQPGphcs`
   - Unit 1.3 Sugar to Structures (LS1-6): `1yvFf77Y0j9kt4Do091Hh39gqWNj5G00x`
   - Unit 2.1 DNA to Proteins (LS1-1): `1-ouynhFQDpnWGAXcirLho4PaPH90nUAe`
   - Unit 2.2 Inherited Instructions (LS3-2): `18O5hdyMhkl8-VJmOLhearBc-oJUDG_bI`
