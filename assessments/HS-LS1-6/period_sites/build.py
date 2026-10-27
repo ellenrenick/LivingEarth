@@ -74,7 +74,7 @@ def snapshot(P, ranked, focus, level):
     return out
 
 
-def build(P):
+def unit(P):
     level, ps = P["level"], P["skills"]
     skills = sorted((k for k in ps if k in S.SKILLS), key=lambda k: ps[k])
     ranked = [(k, ps[k]) for k in skills]
@@ -102,6 +102,11 @@ def build(P):
              vocab=[list(v) for v in vocab], vocabQuiz=[S.VOCAB_QUIZ_GATE] if level == "GATE" else [],
              groups=groups, rubric=[["4", "Correct and complete. Specific data, correct science words, and reasoning that explains WHY."], ["3", "Mostly correct. One piece is missing."], ["2", "Partly correct. Names ideas but does not connect them or use data."], ["1", "Major mistake or does not answer the question."]],
              write=writes, ready=[READY[k] for k in skills])
+    return D, skills, focus
+
+
+def build(P):
+    D, skills, focus = unit(P)
     data = json.dumps(D).replace("</", "<\\/")
     title = f"Unit 1.3 Review {P['teacher']} P{P['period']}"
     return title, f"""<!doctype html>
