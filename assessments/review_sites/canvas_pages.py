@@ -36,8 +36,8 @@ def strip(s):
 
 
 def question(n, q):
+    """Return (student html, teacher-key html) for one question."""
     out = f"<p><b>{n}.</b> {q.get('ctx', '')} {q['q']}</p>"
-    ans = ""
     if q.get("type") == "match" or "pairs" in q:
         rights = sorted({p[1] for p in q["pairs"]} | set(q.get("extra", [])))
         out += "<table border='1' cellpadding='6'><tr><th>Item</th><th>Your match</th></tr>" + "".join(f"<tr><td>{l}</td><td>&nbsp;</td></tr>" for l, _ in q["pairs"]) + "</table>"
@@ -49,7 +49,9 @@ def question(n, q):
         ans = "<p><b>Answer:</b> " + ", ".join(f"{LET[i]}. {q['opts'][i]}" for i in idx) + "</p>"
     if q.get("type") == "multi":
         out = out.replace("</p>", f" <i>(Choose {len(q['a'])}.)</i></p>", 1)
-    return out + f"<details><summary>Show answer</summary>{ans}<p>{q.get('why', '')}</p></details>"
+    stem = strip(q["q"])
+    key = f"<p><b>{n}.</b> {html.escape(stem if len(stem) <= 150 else stem[:149] + '…')}</p>{ans}<p><i>Why:</i> {q.get('why', '')}</p>"
+    return out, key
 
 
 def write_q(i, w):
@@ -57,13 +59,14 @@ def write_q(i, w):
     if w.get("frames"):
         o += "<ul>" + "".join(f"<li>{f}</li>" for f in w["frames"]) + "</ul>"
     o += "<p><b>Check your own answer:</b></p><ul>" + "".join(f"<li>☐ {c}</li>" for c in w["check"]) + "</ul>"
-    return o + f"<details><summary>Show a sample answer (about a 4)</summary><p>{w['sample']}</p></details>"
+    key = f"<p><b>Written answer {i}.</b> {html.escape(strip(w['q']))}</p><p><b>Look for:</b></p><ul>" + "".join(f"<li>{c}</li>" for c in w["check"]) + f"</ul><p><b>Sample answer (about a 4):</b> {w['sample']}</p>"
+    return o, key
 
 
 def button(code):
     u = ART + code
     return (f"<p><a class='Button Button--primary' href='{u}' target='_blank' rel='noopener noreferrer'><b>Open the interactive review site</b></a></p>"
-            f"<p>The interactive site checks your answers right away and saves your progress. This page has the same content to read or print. Answers are hidden under “Show answer.”</p>")
+            f"<p>The interactive site checks your answers right away and saves your progress. This page has the same content to read or print. Use the interactive site to check your answers.</p>")
 
 
 def snapshot13(P, D):
@@ -86,51 +89,70 @@ def snapshot13(P, D):
     return out
 
 
-def render(D, link, fig=None, snap=None, groups=None):
+def render(D, link, fig=None, snap=None):
+    """Return (student body, teacher key body)."""
     body = f"<h1>{D['title']}</h1><p><b>{D['eyebrow']}</b></p><p>{D['lede']}</p>" + button(link)
+    keys = []
     if snap:
         body += "<h2>Your class results</h2>" + snap
     body += "<h2>Key ideas</h2>"
     if fig:
         body += fig
     body += "<ol>" + "".join(f"<li><b>{i['t']}</b> {i['d']}{('<br><b>' + i['eq'] + '</b>') if i.get('eq') else ''}</li>" for i in D["ideas"]) + "</ol>"
+
+    def add(n, q):
+        nonlocal body
+        st, k = question(n, q)
+        body += st
+        keys.append(k)
+
     if D.get("vocab"):
         body += "<h2>Vocabulary</h2><table border='1' cellpadding='6'><tr><th>Word</th><th>Meaning</th></tr>" + "".join(f"<tr><td><b>{w}</b></td><td>{m}</td></tr>" for w, m in D["vocab"]) + "</table>"
         for q in D.get("vocabQuiz", []):
-            body += question("V", q)
+            add("V", q)
     n = 0
     body += "<h2>Practice</h2>"
     for q in D.get("practice", []):
         n += 1
-        body += question(n, q)
+        add(n, q)
     for g in D.get("groups", []):
         body += f"<h3>{g['title']}</h3><div style='background:#eef3fb;padding:10px 14px;border-radius:6px'>{g['teach']}</div>"
+        keys.append(f"<h3>{g['title']}</h3>")
         for q in g["qs"]:
             n += 1
-            body += question(n, q)
+            add(n, q)
     if D.get("model"):
         m = D["model"]
         body += f"<h2>{m['title']}</h2><p>{m['sub']}</p>" + (FIGS.get(D["code"]) or m["figure"]) + f"<p><i>{m['caption']}</i></p>"
+        keys.append(f"<h3>{m['title']}</h3>")
         for q in m["qs"]:
             n += 1
-            body += question(n, q)
+            add(n, q)
     body += "<h2>Explain it</h2><table border='1' cellpadding='6'><tr><th>Score</th><th>What it looks like</th></tr>" + "".join(f"<tr><td>{r[0]}</td><td>{r[1]}</td></tr>" for r in D["rubric"]) + "</table>"
+    keys.append("<h3>Written answers</h3>")
     for i, w in enumerate(D["write"], 1):
-        body += write_q(i, w)
+        st, k = write_q(i, w)
+        body += st
+        keys.append(k)
     body += "<h2>Ready check</h2><ul>" + "".join(f"<li>☐ {r}</li>" for r in D["ready"]) + "</ul>" + button(link) + f"<p><i>{D['footer']}</i></p>"
-    return body
+    head = (f"<h1>TEACHER KEY: {D['title']}</h1><p><b>{D['eyebrow']}</b></p><p><i>Teacher only. Keep this page unpublished.</i> "
+            f"Question numbers match the student page and the interactive site.</p>")
+    return body, head + "".join(keys)
 
 
 def pages():
     for u in UNITS:
         D = {k: u[k] for k in ("code", "eyebrow", "title", "lede", "footer", "ideas", "vocab", "vocabQuiz", "practice", "model", "rubric", "write", "ready")}
         label = {"BOOTCAMP": "Bootcamp", "HS-LS1-2": "Unit 1.1", "HS-LS2-5": "Unit 1.2"}[u["code"]]
-        yield f"{label} Review Site: {u['title']}", render(D, LINKS[u["code"]], fig=None), u["code"]
+        t = f"{label} Review Site: {u['title']}"
+        st, k = render(D, LINKS[u["code"]], fig=None)
+        yield t, st, k, u["code"]
     for P in json.load(open(HERE.parent / "HS-LS1-6" / "period_sites" / "periods.json")):
         D, skills, focus = b13.unit(P)
         key = (P["teacher"], P["level"], P["period"])
-        yield (f"Unit 1.3 Review: {P['teacher']} P{P['period']} ({P['level']})",
-               render(D, LINKS[key], fig=FIGS["13"], snap=snapshot13(P, D)), key)
+        t = f"Unit 1.3 Review: {P['teacher']} P{P['period']} ({P['level']})"
+        st, k = render(D, LINKS[key], fig=FIGS["13"], snap=snapshot13(P, D))
+        yield t, st, k, key
 
 
 if __name__ == "__main__":
@@ -139,8 +161,9 @@ if __name__ == "__main__":
     if "--dump" in sys.argv:
         out = HERE / "canvas_pages_preview"
         out.mkdir(exist_ok=True)
-        for t, body, _ in pages():
+        for t, body, kb, _ in pages():
             (out / (re.sub(r"\W+", "_", t) + ".html")).write_text(body)
+            (out / ("KEY_" + re.sub(r"\W+", "_", t) + ".html")).write_text(kb)
         sys.exit()
 
     def api(method, path, body=None):
@@ -150,21 +173,35 @@ if __name__ == "__main__":
             return json.loads(r.read() or "null")
     C = f"/api/v1/courses/{course}"
     existing = {p["title"]: p for p in api("GET", C + "/pages?per_page=100")}
-    mod = next(m for m in api("GET", C + "/modules?per_page=50") if m["name"].startswith("Review Sites"))
-    items = api("GET", f"{C}/modules/{mod['id']}/items?per_page=100")
-    have = {i.get("page_url") for i in items}
-    heads = {i["title"] for i in items if i["type"] == "SubHeader"}
+    def upsert(title, body, published=False):
+        if title in existing:
+            return api("PUT", f"{C}/pages/{existing[title]['url']}", {"wiki_page": {"body": body}})
+        return api("POST", C + "/pages", {"wiki_page": {"title": title, "body": body, "published": False}})
 
-    def head(title):
-        if title not in heads:
-            api("POST", f"{C}/modules/{mod['id']}/items", {"module_item": {"title": title, "type": "SubHeader"}})
-            heads.add(title)
-    for t, body, key in pages():
-        if t in existing:
-            pg = api("PUT", f"{C}/pages/{existing[t]['url']}", {"wiki_page": {"body": body}})
-        else:
-            pg = api("POST", C + "/pages", {"wiki_page": {"title": t, "body": body, "published": False}})
-        head("Unit 1.3 CSA Review by Class Period (HS-LS1-6)" if isinstance(key, tuple) else "Unit Reviews: Bootcamp, Unit 1.1, Unit 1.2")
-        if pg["url"] not in have:
-            api("POST", f"{C}/modules/{mod['id']}/items", {"module_item": {"title": t, "type": "Page", "page_url": pg["url"], "indent": 1 if isinstance(key, tuple) else 0}})
+    def module_sync(m, rows):
+        """rows: (kind, title, page_url, indent); adds missing subheaders/pages at the end, in order."""
+        cur = api("GET", f"{C}/modules/{m['id']}/items?per_page=100")
+        have_pages = {i.get("page_url") for i in cur}
+        have_heads = {i["title"] for i in cur if i["type"] == "SubHeader"}
+        for kind, title, url, indent in rows:
+            if kind == "head" and title not in have_heads:
+                api("POST", f"{C}/modules/{m['id']}/items", {"module_item": {"title": title, "type": "SubHeader"}})
+                have_heads.add(title)
+            elif kind == "page" and url not in have_pages:
+                api("POST", f"{C}/modules/{m['id']}/items", {"module_item": {"title": title, "type": "Page", "page_url": url, "indent": indent}})
+                have_pages.add(url)
+
+    mods = api("GET", C + "/modules?per_page=50")
+    review = next(m for m in mods if m["name"].startswith("Review Sites"))
+    teacher = next(m for m in mods if "Teacher Resources" in m["name"])
+    srows, krows = [], []
+    for t, body, keybody, key in pages():
+        pg = upsert(t, body)
+        kt = "TEACHER KEY: " + t
+        kp = upsert(kt, keybody)
+        grp = "Unit 1.3 CSA Review by Class Period (HS-LS1-6)" if isinstance(key, tuple) else "Unit Reviews: Bootcamp, Unit 1.1, Unit 1.2"
+        srows.append(("head", grp, None, 0)); srows.append(("page", t, pg["url"], 1 if isinstance(key, tuple) else 0))
+        krows.append(("head", "Review Site Answer Keys (teacher only, keep unpublished)", None, 0)); krows.append(("page", kt, kp["url"], 1))
         print("ok", t)
+    module_sync(review, srows)
+    module_sync(teacher, krows)
