@@ -410,6 +410,8 @@ def plan_html(unit, l, links=None):
     h = ['<html><body>']
     h.append('<h1>Unit %s Lesson %d: %s</h1>' % (unit['id'], l['n'], esc(l['title'])))
     h.append('<p><i>Teacher plan · %s · %s</i></p>' % (esc(unit['name']), esc(unit['std_short'])))
+    if l.get('days'):
+        h.append('<p><b>Workbook day%s:</b> %s</p>' % ('s' if len(l['days']) > 1 else '', ', '.join(str(d) for d in l['days'])))
     h.append('<h2>Focus question</h2><p>%s</p>' % esc(l['focus']))
     h.append('<h2>Learning target</h2><ul>' + ''.join('<li>%s</li>' % esc(t) for t in l['target_labels']) + '</ul>')
     h.append('<h2>Objective</h2><p>%s</p>' % esc(l['objective']))

@@ -383,6 +383,19 @@ KEYNB = {
 for l in L:
     l['key_nb'] = [('p', t) for t in KEYNB.get(l['n'], [])]
 
+AGENDA = {
+ 2: [('8', 'Warm-up', 'Recall the map pattern'), ('10', 'Reading notes', 'Lesson 8.1, first chunk (pp. 206-218)'), ('17', 'Lab B', 'Clay plate models and boundary table'), ('10', 'Exit ticket and CFA', 'CFA ESS1-5.1 in Canvas')],
+ 3: [('3', 'Warm-up', 'Which rock is older?'), ('3', 'Reading notes', 'Lesson 8.1 (continued)'), ('12', 'Lab A', 'Color the seafloor'), ('9', 'Lab B', 'Graph age against distance'), ('8', 'Lab C', 'Color North America'), ('10', 'Wrap-up and CFA', 'Add two rows to the evidence log; CFA ESS1-5.2 in Canvas')],
+ 4: [('3', 'Warm-up', 'How could anyone know Earth is 4.5 billion years old?'), ('5', 'Hook', 'Key ideas about old rocks'), ('15', 'Lab B', '45 cm timeline of Earth'), ('14', 'Evidence list', 'List the evidence for early Earth'), ('8', 'Wrap-up', 'Exit ticket and evidence log')],
+ 5: [('3', 'Warm-up', 'Why are there so few craters on Earth?'), ('5', 'Hook', 'Key ideas about meteorites and moon rocks'), ('15', 'Simulation A', 'Crater counter: the Moon and Earth, same sky'), ('12', 'Quick lab', 'Half-life model with pennies'), ('10', 'How Earth formed', 'Link meteorites and moon rocks to Earth\'s formation; exit ticket')],
+ 6: [('3', 'Warm-up', 'Where does the old ocean crust go?'), ('7', 'Guided notes', 'The life of ocean crust; density and continents'), ('15', 'Lab', 'Sink or float: the density of plates'), ('12', 'SketchNotes', 'Half page of notes and a cross-section'), ('8', 'Wrap-up and CFA', 'CFA ESS1-5.3 in Canvas')],
+ 7: [('Day 1: 2', 'Warm-up', 'How could you show that the crust moves?'), ('Day 1: 12', 'Lab A', 'Paper model of seafloor spreading'), ('Day 1: 7', 'Lab B', 'Hawaii and GPS: measured motion'), ('Day 2: 3', 'Warm-up', 'Which lines of evidence have we used?'), ('Day 2: 9', 'Lab C', 'Pangaea puzzle and fossils'), ('Day 2: 14', 'Evaluate the evidence and CFA', 'Rate each line of evidence 1 to 4; CFA ESS1-5.4 in Canvas')],
+ 8: [('Day 1: 3', 'Sort your evidence', 'Put each row of the evidence log in a bucket'), ('Day 1: 14', 'Part A', 'Write the argument with frames'), ('Day 1: 5', 'Peer feedback', 'Star and step; revise and submit Unit 3.2 CER (Part A)'), ('Day 2: 4', 'Warm-up', 'Revisit your Lesson 1 claim'), ('Day 2: 12', 'Part B', 'Order six evidence cards; Earth\'s story'), ('Day 2: 8', 'Wrap-up and CFA', 'Why is the earliest record missing? CFA ESS1-5.5 in Canvas')],
+}
+for l in L:
+    if l['n'] in AGENDA:
+        l['agenda'] = AGENDA[l['n']]
+
 unit = dict(id='3.2', name='Age of the Earth', std_short='HS-ESS1-5 Age of the Earth',
             std_line='Standard: HS-ESS1-5. Evaluate evidence of the past and current movements of continental and oceanic crust and the theory of plate tectonics to explain the ages of crustal rocks. Targets are labeled ESS1-5.1 to ESS1-5.5 (priority) and ESS1-6.1 to ESS1-6.3 (supporting). Pacing follows the 26-27 workbook: 12 days across 10 lessons (Lessons 7 and 8 each take two days).',
             lessons=L, items=sorted(items, key=lambda i: i['lesson']),
