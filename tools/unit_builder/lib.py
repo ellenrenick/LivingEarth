@@ -41,7 +41,8 @@ S = {
 
 
 def san(t):
-    return str(t).replace('\u2192', '->').replace('\u2702 ', '').replace('\u2702', '')
+    return (str(t).replace('\u2192', '->').replace('\u2702 ', '').replace('\u2702', '').replace('\u012b', 'i').replace('\u02bb', "'")
+            .replace('\u2082', '2').replace('\u00b3', '\u00b3'))
 
 
 def esc(t):
@@ -175,6 +176,9 @@ def render_blocks(blocks, width):
             out.append(Spacer(1, 5))
         elif k == 'punnett':
             pend.append(blk_punnett(b[1], width))
+        elif k == 'draw':
+            out.append(b[1](width))
+            out.append(Spacer(1, 4))
         elif k == 'gap':
             out.append(Spacer(1, b[1] * inch))
         else:
@@ -432,3 +436,98 @@ def plan_html(unit, l, links=None):
     h.append('<h2>Answer key</h2><p>Sample answers for this lesson are in the Unit %s Printables Teacher Key (lesson %d).</p>' % (unit['id'], l['n']))
     h.append('</body></html>')
     return '\n'.join(h)
+
+
+# ---------- drawing helpers (maps, graph grids, strips) ----------
+from reportlab.graphics.shapes import Drawing, Polygon, Line, Rect, String, Circle
+
+CONT = {
+    'North America': [(-168, 66), (-162, 70), (-156, 71), (-141, 70), (-128, 70), (-115, 68), (-95, 72), (-85, 70), (-82, 63), (-93, 59), (-88, 56), (-82, 53), (-79, 56), (-77, 62), (-70, 60), (-64, 60), (-61, 56), (-56, 52), (-60, 47), (-66, 45), (-70, 42), (-74, 40), (-76, 35), (-81, 31), (-80, 25), (-82, 27), (-84, 30), (-90, 29), (-94, 29), (-97, 26), (-97, 22), (-95, 19), (-91, 19), (-88, 21), (-87, 16), (-83, 15), (-83, 10), (-79, 9), (-77, 8), (-80, 7), (-85, 10), (-87, 13), (-92, 15), (-96, 16), (-105, 20), (-110, 24), (-115, 30), (-117, 33), (-121, 35), (-124, 40), (-124, 47), (-130, 54), (-137, 58), (-146, 61), (-152, 59), (-158, 57), (-164, 55), (-166, 60)],
+    'South America': [(-77, 8), (-72, 12), (-62, 10), (-52, 5), (-50, 0), (-44, -2), (-35, -5), (-35, -9), (-39, -14), (-41, -22), (-48, -26), (-53, -34), (-58, -38), (-63, -41), (-65, -47), (-68, -52), (-70, -55), (-74, -52), (-74, -42), (-72, -30), (-70, -18), (-76, -14), (-81, -5), (-80, 0)],
+    'Africa': [(-17, 21), (-13, 28), (-6, 36), (10, 37), (11, 33), (20, 32), (32, 31), (34, 27), (38, 18), (43, 12), (51, 12), (44, 2), (40, -4), (40, -15), (35, -24), (32, -29), (27, -34), (20, -35), (18, -31), (14, -22), (12, -12), (9, -1), (9, 4), (5, 6), (-4, 5), (-8, 4), (-13, 8), (-17, 14)],
+    'Eurasia': [(-9, 43), (-9, 37), (-5, 36), (0, 38), (3, 43), (8, 44), (12, 42), (16, 38), (18, 40), (14, 45), (20, 40), (24, 38), (26, 40), (28, 36), (36, 36), (35, 31), (35, 29), (39, 22), (43, 13), (52, 16), (58, 23), (57, 26), (67, 25), (73, 20), (77, 8), (80, 15), (88, 22), (92, 20), (98, 16), (100, 6), (103, 2), (105, 9), (109, 12), (108, 20), (122, 31), (120, 38), (125, 40), (129, 35), (131, 42), (141, 52), (155, 58), (163, 60), (180, 65), (180, 69), (150, 71), (120, 73), (100, 78), (80, 73), (68, 70), (60, 68), (44, 68), (40, 66), (30, 70), (18, 70), (5, 62), (8, 58), (12, 56), (10, 54), (5, 53), (2, 51), (-2, 48), (-5, 48), (-1, 44)],
+    'Australia': [(114, -22), (122, -18), (130, -12), (137, -12), (142, -11), (146, -19), (153, -26), (151, -34), (146, -39), (139, -35), (131, -31), (124, -33), (115, -34)],
+    'Antarctica': [(-180, -78), (-120, -74), (-60, -65), (-40, -78), (0, -70), (40, -68), (90, -67), (120, -66), (160, -72), (180, -78), (180, -90), (-180, -90)],
+    'Greenland': [(-73, 78), (-60, 82), (-30, 83), (-18, 76), (-22, 70), (-43, 60), (-52, 65), (-58, 75)],
+    'Great Britain': [(-5, 50), (1, 51), (2, 53), (-2, 57), (-5, 58), (-6, 55), (-3, 53)],
+    'Iceland': [(-24, 64), (-14, 64), (-14, 66), (-22, 66)],
+    'Japan': [(130, 31), (132, 34), (136, 35), (140, 36), (141, 39), (142, 43), (145, 44), (141, 45), (140, 41), (137, 37), (133, 35)],
+    'Madagascar': [(44, -25), (47, -25), (50, -15), (49, -12), (45, -17)],
+}
+PUZZLE = ['North America', 'South America', 'Africa', 'Eurasia', 'Australia', 'Antarctica', 'Greenland']
+
+
+def map_drawing(width, sites=None, labels=True, grid=30):
+    W_, H_ = width, width * 0.5
+    d = Drawing(W_, H_)
+    X = lambda lon: (lon + 180) / 360.0 * W_
+    Y = lambda lat: (lat + 90) / 180.0 * H_
+    d.add(Rect(0, 0, W_, H_, strokeColor=BLACK, fillColor=None, strokeWidth=1))
+    for lon in range(-180 + grid, 180, grid):
+        d.add(Line(X(lon), 0, X(lon), H_, strokeColor=GREY, strokeWidth=0.3))
+        if labels:
+            d.add(String(X(lon) - 7, 2, '%d°%s' % (abs(lon), 'E' if lon > 0 else ('W' if lon < 0 else '')), fontName='Helvetica', fontSize=5, fillColor=GREY))
+    for lat in range(-90 + grid, 90, grid):
+        d.add(Line(0, Y(lat), W_, Y(lat), strokeColor=GREY, strokeWidth=0.3))
+        if labels:
+            d.add(String(2, Y(lat) + 1, '%d°%s' % (abs(lat), 'N' if lat > 0 else ('S' if lat < 0 else '')), fontName='Helvetica', fontSize=5, fillColor=GREY))
+    for name, pts in CONT.items():
+        flat = []
+        for lon, lat in pts:
+            flat += [X(lon), Y(lat)]
+        d.add(Polygon(flat, strokeColor=BLACK, strokeWidth=0.7, fillColor=None))
+    return d
+
+
+def graph_drawing(width, height, xmax, ymax, xstep, ystep, xlabel, ylabel):
+    d = Drawing(width, height)
+    L, B, R, T = 34, 22, 8, 8
+    pw, ph = width - L - R, height - B - T
+    d.add(Rect(L, B, pw, ph, strokeColor=BLACK, fillColor=None, strokeWidth=0.8))
+    x = 0
+    while x <= xmax + 1e-9:
+        px = L + x / xmax * pw
+        d.add(Line(px, B, px, B + ph, strokeColor=GREY, strokeWidth=0.3))
+        d.add(String(px - 6, B - 9, ('%g' % x), fontName='Helvetica', fontSize=6, fillColor=BLACK))
+        x += xstep
+    y = 0
+    while y <= ymax + 1e-9:
+        py = B + y / ymax * ph
+        d.add(Line(L, py, L + pw, py, strokeColor=GREY, strokeWidth=0.3))
+        d.add(String(L - 22, py - 2, ('%g' % y), fontName='Helvetica', fontSize=6, fillColor=BLACK))
+        y += ystep
+    d.add(String(L + pw / 2 - 40, 2, xlabel, fontName='Helvetica', fontSize=6.5, fillColor=BLACK))
+    d.add(String(2, B + ph + 1, ylabel, fontName='Helvetica', fontSize=6.5, fillColor=BLACK))
+    return d
+
+
+def puzzle_drawing(width, scale=0.5):
+    """Cut-out continents drawn with dashed outlines, laid out in a grid (not to scale for position)."""
+    names = PUZZLE
+    cell = width / 4.0
+    rows = 2
+    d = Drawing(width, cell * rows * 0.9)
+    for i, name in enumerate(names):
+        pts = CONT[name]
+        lons = [p[0] for p in pts]
+        lats = [p[1] for p in pts]
+        w = max(lons) - min(lons)
+        h = max(lats) - min(lats)
+        s = min(cell * 0.85 / w, cell * 0.8 / h) * scale * 2
+        ox = (i % 4) * cell + cell * 0.08
+        oy = (rows - 1 - i // 4) * cell * 0.9 + 6
+        flat = []
+        for lon, lat in pts:
+            flat += [ox + (lon - min(lons)) * s, oy + (lat - min(lats)) * s]
+        p = Polygon(flat, strokeColor=BLACK, strokeWidth=1.0, fillColor=None)
+        p.strokeDashArray = [3, 2]
+        d.add(p)
+        d.add(String(ox, oy - 5, name, fontName='Helvetica-Bold', fontSize=6.5, fillColor=BLACK))
+    return d
+
+
+def strip_table(n, width, label_first=None, label_last=None):
+    cells = [[''] * n]
+    t = Table(cells, colWidths=[width / n] * n, rowHeights=[0.34 * inch])
+    t.setStyle(TableStyle([('GRID', (0, 0), (-1, -1), 0.7, BLACK)]))
+    return t
