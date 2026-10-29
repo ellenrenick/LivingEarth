@@ -422,8 +422,9 @@ def plan_html(unit, l, links=None):
     for m in l.get('materials', []):
         h.append('<li>%s</li>' % esc(m))
     h.append('</ul>')
-    h.append('<h2>Notebook</h2><p>Pages: ________ (fill in from the student notebook). Left and right page for this lesson%s.</p>' %
-             (' plus a Part 2 reading spread' if l['nb'].get('part2') else ''))
+    h.append('<h2>Notebook</h2><p>Pages: ________ (fill in from the student notebook). %s%s.</p>' %
+             ('One reflection page' if not l['nb']['right'] else 'Left and right page for this lesson',
+              ' plus a Part 2 reading spread' if l['nb'].get('part2') else ''))
     h.append('<h2>Teacher moves</h2><ul>' + ''.join('<li>%s</li>' % esc(t) for t in l['moves']) + '</ul>')
     h.append('<h2>Look-fors and common misconceptions</h2><ul>' + ''.join('<li>%s</li>' % esc(t) for t in l['misc']) + '</ul>')
     h.append('<h2>Check for understanding</h2><p>%s</p>' % esc(l['check']))
