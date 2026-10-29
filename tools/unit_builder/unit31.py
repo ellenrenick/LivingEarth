@@ -410,7 +410,7 @@ unit = dict(id='3.1', name='Changing Earth, Changing Life', std_short='HS-ESS2-7
                      'The "Big Five" extinction percentages are rounded approximations (Barnosky et al. 2011) and different studies give different ranges.',
                      'Evidence cards (E1 to E6, C1 to C8) summarize types of evidence for classroom use; they are not quotations from the cited papers.',
                      'Sorting by E, L or B has more than one defensible answer for several cards; accept reasoned answers.'],
-            match=dict(intro='Use this table to check Lesson 5 and Lesson 6 answers: match each piece of evidence to its kind and what it shows.',
+            match=dict(heading='Matching table: evidence to kind', intro='Use this table to check Lesson 5 and Lesson 6 answers: match each piece of evidence to its kind and what it shows.',
                        table=dict(header=['Evidence', 'Kind', 'What it shows'],
                                   rows=[['Banded iron formation', 'Rock', 'Oxygen reached the oceans and rusted iron'], ['Stromatolites', 'Fossil', 'Photosynthetic life existed 3.5 billion years ago'],
                                         ['Ancient rock chemistry (low oxygen before 2.4 billion years ago)', 'Chemical data', 'Oxygen was rare, then rose'], ['Computer model of oxygen rise', 'Model', 'Photosynthetic spread can raise oxygen'],

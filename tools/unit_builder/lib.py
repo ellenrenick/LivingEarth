@@ -339,7 +339,7 @@ def build_key(unit, path):
             st += render_blocks(l['key_nb'], CW)
     if unit.get('match'):
         st.append(PageBreak())
-        st.append(P('Matching table: data to source of variation', 'h1'))
+        st.append(P(esc(unit['match'].get('heading', 'Matching table: data to source of variation')), 'h1'))
         st.append(P(esc(unit['match']['intro']), 'body'))
         st.append(Spacer(1, 5))
         st.append(blk_table(unit['match']['table'], CW))
@@ -395,7 +395,7 @@ def key_html(unit):
         if l.get('key_nb'):
             h.append('<h3>Notebook sample answers</h3>' + blocks_html(l['key_nb']))
     if unit.get('match'):
-        h.append('<h2>Matching table: data to source of variation</h2><p>%s</p>' % esc(unit['match']['intro']))
+        h.append('<h2>%s</h2><p>%s</p>' % (esc(unit['match'].get('heading', 'Matching table: data to source of variation')), esc(unit['match']['intro'])))
         h.append(_h_table(unit['match']['table']))
     h.append('</body></html>')
     return '\n'.join(h)
