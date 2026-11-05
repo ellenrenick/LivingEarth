@@ -1,0 +1,285 @@
+"""Build the five Unit 2.1 (HS-LS1-1) CFA review websites.
+
+Each review is one self-contained HTML page (an Artifact page) where a student
+types answers, checks them against the model answer, then copies all answers as
+plain text to paste into the Canvas assignment's text box.
+
+Usage:
+  python3 build_review_sites.py            # writes review_sites/LS1-1.<n>.html
+
+The content below mirrors the "Review LS1-1.x (Mastery Path)" assignments in
+the Canvas course "Living Earth Renick".
+"""
+
+import json
+from pathlib import Path
+
+HERE = Path(__file__).parent
+OUT = HERE / "review_sites"
+
+CODE_TABLE = """<table>
+<tr><th>DNA triplet</th><th>Amino acid</th><th>DNA triplet</th><th>Amino acid</th></tr>
+<tr><td>ATG</td><td>Met</td><td>GAG</td><td>Glu</td></tr>
+<tr><td>CTG</td><td>Leu</td><td>GTG</td><td>Val</td></tr>
+<tr><td>TTT</td><td>Phe</td><td>GAC</td><td>Asp</td></tr>
+<tr><td>CCT</td><td>Pro</td><td>GGC</td><td>Gly</td></tr>
+</table>"""
+
+CELL_TABLE = """<table>
+<tr><th>Cell type</th><th>Genes in the cell</th><th>Proteins made</th><th>Job</th></tr>
+<tr><td>P</td><td>1, 2, 3, 4</td><td>1 and 2</td><td>Carries signals</td></tr>
+<tr><td>Q</td><td>1, 2, 3, 4</td><td>3 and 4</td><td>Squeezes to move the body</td></tr>
+</table>"""
+
+CASE_TABLE = """<table>
+<tr><th>Person</th><th>Gene</th><th>Protein</th><th>Symptoms</th></tr>
+<tr><td>1</td><td>Normal</td><td>Works</td><td>None</td></tr>
+<tr><td>2</td><td>One base changed</td><td>One amino acid different; works poorly</td><td>Yes</td></tr>
+</table>"""
+
+REVIEWS = [
+    {
+        "code": "LS1-1.1",
+        "title": "DNA and genes",
+        "target": "I can describe DNA as a double helix built from nucleotides, each with a sugar, a phosphate, and a base, and state that DNA holds the instructions for building proteins.",
+        "intro": "Describe DNA and what it does.",
+        "table": None,
+        "qs": [
+            {"q": "What shape is DNA, and what are the three parts of a nucleotide?",
+             "a": "A double helix (twisted ladder). A nucleotide has a sugar, a phosphate, and a base."},
+            {"q": "Name the four bases.",
+             "a": "A, T, C, and G."},
+            {"q": "What do the instructions in a gene tell the cell to build?",
+             "a": "A protein."},
+            {"q": "True or false: Proteins hold the instructions and DNA does the jobs. Explain.",
+             "a": "False. DNA holds the instructions, and proteins do the jobs for the cell."},
+        ],
+    },
+    {
+        "code": "LS1-1.2",
+        "title": "From gene to amino acid chain",
+        "target": "I can describe how a gene's message is copied and read to build a chain of amino acids.",
+        "intro": "Use the code table to read each gene.",
+        "table": CODE_TABLE,
+        "qs": [
+            {"q": "Think of a recipe book (DNA) that stays on a shelf. A cook copies one recipe and follows the copy. Match each part to the cell: recipe book, one recipe, the copy, the dish.",
+             "a": "DNA; a gene; the copy of the gene's message; the protein.",
+             "ph": "recipe book = …, one recipe = …, the copy = …, the dish = …"},
+            {"q": "Put in order: (a) amino acids are linked in order, (b) the copy is read, (c) the gene's message is copied.",
+             "a": "(c), then (b), then (a).",
+             "ph": "Write the three letters in order."},
+            {"q": "A gene reads ATG CTG TTT CCT. What amino acid chain is built?",
+             "a": "Met, Leu, Phe, Pro.",
+             "ph": "Write the chain, for example: Met, …"},
+            {"q": "A gene reads ATG GGC GAC. Write the chain.",
+             "a": "Met, Gly, Asp."},
+        ],
+    },
+    {
+        "code": "LS1-1.3",
+        "title": "What a base change can do",
+        "target": "I can explain how changing one DNA base can change a protein and what it does.",
+        "intro": "Use the code table to read each gene.",
+        "table": CODE_TABLE,
+        "qs": [
+            {"q": "A gene reads ATG GAG CTG. A base changes so it reads ATG GTG CTG. Write both amino acid chains.",
+             "a": "Original: Met, Glu, Leu. Changed: Met, Val, Leu.",
+             "ph": "Original: …  Changed: …"},
+            {"q": "How many amino acids changed? Could this change how the protein works? Explain.",
+             "a": "One amino acid changed (Glu to Val). A chain with a different amino acid can make a protein that works differently."},
+            {"q": "A student says, “Any change in a gene always stops the protein from working.” Use this evidence to respond: change A leaves the chain the same, change B alters one amino acid and the protein still works, change C alters one amino acid and the protein does not work.",
+             "a": "Not every change matters. A and B did not stop the protein. What matters is whether the amino acid chain changes and how.",
+             "ph": "The student is wrong because …"},
+        ],
+    },
+    {
+        "code": "LS1-1.4",
+        "title": "Same DNA, different jobs",
+        "target": "I can explain how DNA, through proteins, gives different cells their different jobs.",
+        "intro": "Use the table about two cell types.",
+        "table": CELL_TABLE,
+        "qs": [
+            {"q": "Do the two cell types have the same DNA? How do you know?",
+             "a": "Yes. Both have genes 1 to 4."},
+            {"q": "Why do they make different proteins?",
+             "a": "Each cell type uses a different set of genes."},
+            {"q": "Explain how DNA, through proteins, gives cell types P and Q different jobs.",
+             "a": "Cell P uses genes 1 and 2 to build proteins 1 and 2 that carry signals; Cell Q uses genes 3 and 4 to build proteins 3 and 4 that squeeze. The proteins carry out each cell's job."},
+            {"q": "Predict: gene 3 has a change that stops Protein 3 from working. What happens to Cell Q's job?",
+             "a": "Cell Q cannot do its job well, because it depends on Protein 3."},
+        ],
+    },
+    {
+        "code": "LS1-1.5",
+        "title": "A case study",
+        "target": "I can use case data, like sickle cell, to explain how a DNA change affects the body.",
+        "intro": "Use the table about two people.",
+        "table": CASE_TABLE,
+        "qs": [
+            {"q": "Put these in order: (a) symptoms, (b) a base in the gene changes, (c) the protein works poorly, (d) a different amino acid in the chain.",
+             "a": "(b), (d), (c), (a).",
+             "ph": "Write the four letters in order."},
+            {"q": "Use the table to explain how Person 2's DNA change led to symptoms.",
+             "a": "A single base change altered one amino acid, so the protein works poorly; because the protein does not do its job, the person has symptoms."},
+        ],
+    },
+]
+
+TEMPLATE = r"""<title>Unit 2.1 Review __CODE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one reading column. Reference table, then one card per question, then a copy-to-Canvas step. */
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --fg:#17212e; --muted:#5a6676; --line:#d9dfe7;
+  --accent:#7a4bb8; --accent-ink:#ffffff; --accent-soft:#e8defa;
+  --good:#17703f; --good-soft:#e1f4e8; --bad:#a3302a; --bad-soft:#fbe7e5; --warn-soft:#fff3d6;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#c3a2f0; --accent-ink:#0b1420; --accent-soft:#2a2142;
+  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151d; --surface:#18212c; --fg:#e8edf3; --muted:#9aa7b6; --line:#2b3745;
+  --accent:#c3a2f0; --accent-ink:#0b1420; --accent-soft:#2a2142;
+  --good:#6fd39a; --good-soft:#143323; --bad:#ff9a92; --bad-soft:#3a1c1a; --warn-soft:#3a3016;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:18px/1.55 var(--font-body);margin:0;
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:720px;margin:0 auto}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;text-wrap:balance;margin:0}
+header.top{padding-block:32px 8px}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(1.9rem,6vw,2.6rem);margin-top:6px}
+.target{margin:14px 0 0;padding:10px 14px;background:var(--accent-soft);border-radius:10px}
+.target b{font-family:var(--font-display)}
+.steps{margin:16px 0 0;padding-left:1.3rem;color:var(--muted)}
+.steps li{margin-bottom:2px}
+.meter{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:.95rem;color:var(--muted)}
+.meter .bar{flex:1;height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.meter .bar i{display:block;height:100%;width:0;background:var(--good);transition:width .3s}
+section{padding-top:32px}
+section>h2{font-size:1.45rem;margin-bottom:6px}
+.sub{color:var(--muted);margin:0 0 14px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.98rem;background:var(--surface)}
+th,td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-family:var(--font-display)}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px}
+.q .tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.q .stem{margin:4px 0 10px;font-weight:600}
+textarea{width:100%;min-height:96px;font:inherit;padding:10px;border-radius:9px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);resize:vertical}
+button{font:inherit;font-weight:700;border-radius:9px;padding:9px 18px;cursor:pointer;margin-top:10px;background:var(--accent);color:var(--accent-ink);border:1.5px solid var(--accent)}
+button.alt{background:transparent;color:var(--accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.ans{display:none;margin-top:12px;padding:10px 12px;border-radius:9px;background:var(--good-soft);border-left:4px solid var(--good)}
+.ans.show{display:block}
+.ans b{display:block}
+.hintline{font-size:.9rem;color:var(--muted);margin-top:6px}
+#out{min-height:200px;font-size:.95rem;line-height:1.45}
+.status{margin-top:12px;padding:10px 12px;border-radius:9px;display:none}
+.status.show{display:block}
+.status.ok{background:var(--good-soft);border-left:4px solid var(--good)}
+.status.no{background:var(--bad-soft);border-left:4px solid var(--bad)}
+footer{margin-top:40px;color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap" id="app"></div>
+<script>window.REVIEW=__DATA__;</script>
+<script>
+(function(){
+const D=window.REVIEW, $=(s,r)=>(r||document).querySelector(s);
+const KEY='review:2.1:'+D.code;
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+if(!saved.a)saved.a={};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}};
+const h=(tag,attrs,html)=>{const e=document.createElement(tag);for(const k in attrs||{})e.setAttribute(k,attrs[k]);if(html!=null)e.innerHTML=html;return e};
+const plain=s=>{const d=document.createElement('div');d.innerHTML=s;return d.textContent};
+const root=$('#app');
+const N=D.qs.length;
+
+root.appendChild(h('header',{class:'top'},
+  '<div class="eyebrow">Unit 2.1 · HS-LS1-1 · Review '+D.code+'</div>'+
+  '<h1>'+D.title+'</h1>'+
+  '<p class="target"><b>Learning target '+D.code+':</b> '+D.target+'</p>'+
+  '<ol class="steps"><li>Type your answer to each question.</li><li>Press <b>Check my answer</b> and compare.</li><li>Fix your answer if you missed something.</li><li>Press <b>Copy my answers</b> at the bottom and paste them into the Canvas assignment.</li></ol>'+
+  '<div class="meter"><span id="mtxt"></span><div class="bar"><i id="mbar"></i></div></div>'));
+
+const qsec=h('section',{id:'questions'});
+qsec.appendChild(h('h2',{},D.title));
+qsec.appendChild(h('p',{class:'sub'},D.intro));
+if(D.table)qsec.appendChild(h('div',{class:'scroll'},D.table));
+const boxes=[];
+D.qs.forEach((q,i)=>{
+  const box=h('div',{class:'q',id:'q'+i});
+  box.appendChild(h('div',{class:'tag'},'Question '+(i+1)+' of '+N));
+  box.appendChild(h('div',{class:'stem'},q.q));
+  const ta=h('textarea',{id:'a'+i,'aria-label':'Your answer to question '+(i+1),placeholder:q.ph||'Type your answer here…'});
+  ta.value=saved.a[i]||'';
+  const chk=h('button',{type:'button',class:'alt',id:'c'+i},'Check my answer');
+  const hint=h('div',{class:'hintline'},'Type an answer first, then check it.');
+  const ans=h('div',{class:'ans',role:'status'},'<b>Model answer</b>'+q.a+'<div class="hintline">Compare it with yours. If you missed something, fix your answer above before you copy it.</div>');
+  const sync=()=>{const has=ta.value.trim().length>0;chk.disabled=!has;hint.style.display=has?'none':'block'};
+  ta.oninput=()=>{saved.a[i]=ta.value;save();sync();update()};
+  chk.onclick=()=>{ans.classList.add('show');chk.textContent='Model answer shown'};
+  box.append(ta,chk,hint,ans);qsec.appendChild(box);boxes.push({ta,sync});sync();
+});
+root.appendChild(qsec);
+
+const sub=h('section',{id:'turnin'});
+sub.appendChild(h('h2',{},'Turn it in'));
+sub.appendChild(h('p',{class:'sub'},'Press the button, then open the Canvas assignment, click in the text box, and paste (Ctrl+V on a Chromebook or PC, Command+V on a Mac). The box below shows exactly what will be copied.'));
+const out=h('textarea',{id:'out',readonly:'readonly','aria-label':'Your answers, ready to copy'});
+const cp=h('button',{type:'button',id:'copy'},'Copy my answers');
+const st=h('div',{class:'status',role:'status'});
+sub.append(out,cp,st);
+root.appendChild(sub);
+root.appendChild(h('footer',{},'Living Earth (Biology) · Unit 2.1 · DNA to Proteins. Your answers stay in this browser so you can come back. They are not sent anywhere until you paste them into Canvas.'));
+
+function compose(){
+  let t='Review '+D.code+': '+D.title+'\n\n';
+  D.qs.forEach((q,i)=>{t+=(i+1)+'. '+plain(q.q)+'\nMy answer: '+((saved.a[i]||'').trim()||'(no answer)')+'\n\n'});
+  return t.trim();
+}
+function update(){
+  const n=D.qs.filter((q,i)=>(saved.a[i]||'').trim()).length;
+  $('#mtxt').textContent=n+' of '+N+' answered';$('#mbar').style.width=(100*n/N)+'%';
+  out.value=compose();
+}
+cp.onclick=()=>{
+  const n=D.qs.filter((q,i)=>(saved.a[i]||'').trim()).length;
+  update();
+  const text=out.value;
+  const done=(ok)=>{
+    st.className='status show '+(ok?'ok':'no');
+    st.innerHTML=ok
+      ?'<b>Copied.</b> Now paste it into the Canvas assignment.'+(n<N?' You have '+(N-n)+' question'+(N-n===1?'':'s')+' with no answer yet.':'')
+      :'<b>The copy did not work on this device.</b> Click in the box above, press Ctrl+A then Ctrl+C (Command+A then Command+C on a Mac), and paste into Canvas.';
+  };
+  if(n===0){st.className='status show no';st.innerHTML='Answer at least one question first.';return}
+  let p;
+  try{p=navigator.clipboard.writeText(text)}catch(e){p=null}
+  const fallback=()=>{let ok=false;try{out.focus();out.select();ok=document.execCommand('copy')}catch(e){}done(ok)};
+  if(p&&p.then)p.then(()=>done(true),fallback);else fallback();
+};
+update();
+})();
+</script>
+"""
+
+
+def build():
+    OUT.mkdir(exist_ok=True)
+    for r in REVIEWS:
+        data = json.dumps(r, ensure_ascii=False).replace("</", "<\\/")
+        html = TEMPLATE.replace("__CODE__", r["code"]).replace("__DATA__", data)
+        path = OUT / f"{r['code']}.html"
+        path.write_text(html, encoding="utf-8")
+        print("wrote", path)
+
+
+if __name__ == "__main__":
+    build()
