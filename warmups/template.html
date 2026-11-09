@@ -348,7 +348,7 @@ td.num, th.num { text-align: right; }
     var ld = document.getElementById("ld"); if (!ld) return;
     ld.className = "status"; ld.textContent = "Loading responses…";
     db.collection("responses").get().then(function (snap) {
-      T.rows = []; snap.docs.forEach(function (d) { var x = d.data(); (x && x.attempts || []).forEach(function (a) { a._uid = d.id; T.rows.push(a); }); });
+      T.rows = []; snap.docs.forEach(function (d) { var x = d.data(); (x && x.attempts || []).forEach(function (a) { var c = {}; Object.keys(a).forEach(function (k) { c[k] = a[k]; }); c._uid = d.id; T.rows.push(c); }); });
       try { renderTeacher(); } catch (e) { loadFail(e, "Could not display the results"); }
     }).catch(function (e) { loadFail(e, "Could not load responses"); });
   }
