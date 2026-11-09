@@ -76,6 +76,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .progress span.ok { background: var(--good); }
 .progress span.miss { background: var(--bad); }
 
+.ref { font-size: .85rem; color: var(--muted); font-weight: 700; }
 .choices { display: flex; flex-direction: column; gap: 10px; }
 .choice { display: flex; gap: 12px; align-items: flex-start; text-align: left; width: 100%; padding: 12px 14px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font-weight: 400; }
 .choice .mark { flex: none; width: 22px; height: 22px; border: 2px solid var(--muted); border-radius: 50%; margin-top: 1px; display: grid; place-items: center; font-size: .8rem; font-weight: 700; }
@@ -129,48 +130,48 @@ td.num, th.num { text-align: right; }
 
   // Question bank. "why" is the reteach for that specific wrong answer.
   var ITEMS = [
-    { skill: "Name the three sources", type: "single",
-      text: "Which list names three ways new genetic variation can arise?",
-      key: "The three sources are (1) new combinations of alleles, from sex cells and fertilization, (2) copying errors when DNA is copied, and (3) mutations from the environment.",
+    { skill: "Name the three sources", ref: "Day 2 mini-lesson: Three sources of new variation", type: "single",
+      text: "Scientists name three ways new genetic variation arises. Which list names all three?",
+      key: "The three sources are (1) new combinations of alleles, (2) copying errors when DNA is copied, and (3) mutations from the environment, like UV light and some chemicals.",
       choices: [
-        { t: "Eating new foods, exercising more often, and learning new skills over many years", why: "These are things a person does or experiences. They can change how a person looks or what they can do, but they do not change the DNA in the sex cells, so they are not passed to offspring." },
-        { t: "New combinations of alleles, copying errors in DNA, and mutations from the environment", ok: true },
-        { t: "Photosynthesis, cellular respiration, and the movement of carbon through all ecosystems", why: "Those are processes that move matter and energy (Unit 1.3). None of them is a way that DNA gets changed or rearranged." },
-        { t: "Changes in the weather, changes in the soil, and changes in how much food there is", why: "Weather, soil, and food can change how an organism grows or looks, but they do not change the order of bases in its DNA. Only some environmental factors, like UV light, X-rays, and certain chemicals, damage DNA." }
+        { t: "New combinations of alleles, errors when DNA is copied, and mutations from the environment", ok: true },
+        { t: "New combinations of alleles, errors when DNA is copied, and a suntan from the sun", why: "A suntan changes how skin looks, but the change is not in the DNA, so it is not inherited. UV light can also change the DNA itself, and that is the mutation source." },
+        { t: "Offspring getting information from only one parent, errors when DNA is copied, and UV light", why: "Every offspring gets information from both parents. That is why they look like both parents. Getting information from one parent is not a source of variation." },
+        { t: "The food an animal eats, the temperature, and the amount of sunlight", why: "Food, temperature, and sunlight can change how an animal looks, but that change is not in the DNA, so it is not inherited." }
       ] },
-    { skill: "Define mutation", type: "single",
-      text: "What is a mutation?",
-      key: "A mutation is a change in the order of the bases in a cell's DNA.",
+    { skill: "New combinations (card activity)", ref: "Day 2 card activity: Make possible offspring", type: "single",
+      text: "In the card activity, you made offspring from Parent 1 and Parent 2. Why did each offspring end up with a different combination of cards?",
+      key: "A sex cell carries one allele of each gene, and fertilization puts two together. The alleles are combined in different ways, so each offspring gets a different combination. The cards themselves did not change.",
       choices: [
-        { t: "A new combination of alleles made when an egg and a sperm join", why: "That is a new combination, which is a different source of variation. It shuffles alleles the parents already have. Nothing in the DNA itself is changed, so it is not a mutation." },
-        { t: "A protein that copies the DNA before a cell divides into two cells", why: "That is an enzyme doing the copying. A mutation is not a protein. It is a change in the DNA, for example when a base is copied wrong." },
-        { t: "A trait that shows when an offspring has two recessive alleles", why: "That describes how a recessive trait shows up (genotype to phenotype). The alleles were already there, so no change to the DNA happened." },
-        { t: "A change in the order of the bases in the DNA of a cell", ok: true }
+        { t: "Each sex cell carries one allele of each gene, and the alleles were combined in different ways", ok: true },
+        { t: "The cards changed while we shuffled them", why: "The cards did not change. Every card was an allele the parents already had. Only the combination changed. A change in the DNA itself would be a mutation, which is a different source." },
+        { t: "Each offspring got information from only one parent", why: "Every offspring got information from both parents. You took one card from each of the 6 piles, so every offspring had cards from Parent 1 and Parent 2." },
+        { t: "The environment changed the cards", why: "The environment did not play a part in the card activity. The offspring were different because the alleles were combined in different ways." }
       ] },
-    { skill: "Causes from the environment", type: "tf",
-      text: "True or false: UV light and some chemicals can cause mutations by damaging DNA.",
-      key: "UV light, X-rays, and some chemicals are environmental factors that can damage DNA and cause mutations.",
+    { skill: "Suntan is not a mutation", ref: "Day 2 mini-lesson: Mutations from the environment", type: "tf",
+      text: "True or false: A suntan changes the DNA, so a person can pass the suntan on to their offspring.",
+      key: "A suntan changes how a body looks. That change is not in the DNA, so it is not inherited. UV light can change the DNA itself, and a change in the DNA is a mutation.",
       choices: [
-        { t: "True", ok: true },
-        { t: "False", why: "This one is true. Some things in the environment, like UV light, X-rays, and certain chemicals, can damage DNA. That damage is the third source of new variation." }
+        { t: "True", why: "A suntan changes how skin looks, but the change is not in the DNA, so it is not inherited. Food and temperature work the same way. UV light can change the DNA itself, and that is what makes a mutation." },
+        { t: "False", ok: true }
       ] },
-    { skill: "Match a case to a source", type: "single",
-      text: "Two parents each have the alleles B and b. Which source of variation best explains why their puppies can be BB, Bb, or bb?",
-      key: "Each parent passes on one allele, so the puppies get different combinations of alleles the parents already have. That is a new combination, not a change to the DNA.",
+    { skill: "Match a case to a source", ref: "Day 1 puppy puzzle and Day 2 card activity", type: "single",
+      text: "Mom and Dad are both Bb. They have puppies that are BB, Bb, and bb. Which source explains why the puppies are different from each other?",
+      key: "Every allele in the puppies, B and b, was already in the parents. No allele changed. Fertilization put two alleles together in different combinations, so this is a new combination of alleles.",
       choices: [
-        { t: "New combinations of alleles when sex cells join at fertilization", ok: true },
-        { t: "Copying errors that happen in every cell of the developing puppy", why: "Copying errors are rare, and they do not happen in every cell. BB, Bb, and bb use only the B and b alleles the parents already carry, so nothing new had to be created." },
-        { t: "Mutations caused by UV light shining on the puppies after birth", why: "The puppies' alleles were set at fertilization, before birth. Light after birth cannot change which alleles they got, and these three combinations use alleles the parents already have." },
-        { t: "The puppies' food and water changing their DNA as they grow", why: "Food and water do not change DNA. The puppies' alleles come from the sex cells that joined." }
+        { t: "New combinations of alleles: each parent's sex cell carries one allele, and fertilization puts two together", ok: true },
+        { t: "A copying error: a rare error slipped through when DNA was copied", why: "Copying errors are rare, and they make a new allele. Here the puppies have only B and b, which both parents already had. Nothing new had to be made." },
+        { t: "A mutation from the environment: UV light damaged the DNA", why: "A mutation is a change in the DNA. No allele changed here, since B and b were already in the parents. The puppies just got different combinations of them." },
+        { t: "The food and temperature changed the puppies' DNA", why: "Food and temperature can change how an animal looks, but they do not change the DNA. They cannot explain BB, Bb, and bb." }
       ] },
-    { skill: "Inherited or not", type: "multi", pick: 2,
-      text: "Select the TWO sources of new genetic variation.",
-      key: "Copying errors and mutations from the environment both change the DNA. Exercise and learning change what a body does or looks like, not its DNA.",
+    { skill: "Which sources change the DNA", ref: "Day 2 mini-lesson: Three sources of new variation", type: "multi", pick: 2,
+      text: "Two of the three sources of new variation change the DNA itself. Select the TWO.",
+      key: "Copying errors and mutations from the environment both change the DNA. A change in how a body looks from food, exercise, or temperature is not in the DNA, so it is not inherited.",
       choices: [
-        { t: "Errors made when DNA is copied before a cell divides", ok: true },
-        { t: "Mutations caused by UV light or chemicals", ok: true },
-        { t: "Exercise and a healthy diet during a puppy's whole life", why: "Exercise and diet change the body, but not the DNA, so they are not passed on to offspring and are not a source of genetic variation." },
-        { t: "Learning new tricks from other dogs in the kennel", why: "Learning changes behavior, not DNA. Offspring do not inherit what a parent learned." }
+        { t: "A rare error slips through when DNA is copied before a cell divides", ok: true },
+        { t: "UV light or some chemicals damage DNA", ok: true },
+        { t: "Food, exercise, or temperature change how a body looks", why: "That change is in how the body looks, not in the DNA, so it is not inherited. It is like the suntan example from Day 2." },
+        { t: "A suntan from the sun", why: "A suntan changes how skin looks. The change is not in the DNA, so it is not inherited. UV light can damage DNA, but a tan is not that damage." }
       ] }
   ];
 
@@ -201,7 +202,7 @@ td.num, th.num { text-align: right; }
       '<div class="topbar"><span class="eyebrow">Unit 2.2 · Warm-up</span>' + (canEdit ? '<button class="ghost" id="tbtn">Teacher data</button>' : "") + "</div>" +
       "<h1>Three Sources of Variation</h1>" +
       '<div class="target"><b>Learning target ' + TARGET + ':</b> I can name three ways new genetic variation arises.</div>' +
-      '<p>Answer 5 questions from memory. After each one you get feedback right away. If you miss one, you get a short reteach and a second try.</p>' +
+      '<p>Answer 5 questions about Day 1 and Day 2 from memory. After each one you get feedback right away. If you miss one, you get a short reteach and a second try.</p>' +
       '<form class="card" id="f" novalidate>' +
       '<label class="field" for="nm">First and last name<input type="text" id="nm" autocomplete="off" value="' + esc(w.name || "") + '"></label>' +
       '<fieldset><legend>My teacher</legend><div class="pills" id="tp">' + TEACHERS.map(function (t) {
@@ -240,7 +241,7 @@ td.num, th.num { text-align: right; }
     var it = ITEMS[S.i], multi = it.type === "multi";
     app.className = "wrap";
     var html = '<div class="topbar"><span class="eyebrow">Question ' + (S.i + 1) + " of " + ITEMS.length + "</span><span class=\"status\">" + esc(S.who.name) + "</span></div>" + progressHtml();
-    html += '<div class="card"><h2>' + esc(it.text) + "</h2>" + (multi ? '<p class="status">Pick ' + it.pick + " answers.</p>" : "") + '<div class="choices" role="group" aria-label="Answer choices">';
+    html += '<div class="card"><span class="ref">Think back to: ' + esc(it.ref) + "</span><h2>" + esc(it.text) + "</h2>" + (multi ? '<p class="status">Pick ' + it.pick + " answers.</p>" : "") + '<div class="choices" role="group" aria-label="Answer choices">';
     S.order[S.i].forEach(function (ci) {
       var c = it.choices[ci], pressed = S.sel.indexOf(ci) >= 0, cls = "choice" + (multi ? " multi" : "");
       var mark = "";
