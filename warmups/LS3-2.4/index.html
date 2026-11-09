@@ -1,0 +1,806 @@
+<title>Claims and Evidence Warm-Up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<style>
+/* Layout: one centered column (max 720px) with a progress strip on top; question, then feedback panel directly beneath it. Teacher view is a wider table layout behind a button. */
+:root {
+  --bg: #f3f6f5;
+  --surface: #ffffff;
+  --ink: #15302b;
+  --muted: #556964;
+  --line: #d3dedb;
+  --accent: #0e7566;
+  --accent-ink: #ffffff;
+  --good: #1f7a3a;
+  --good-bg: #e3f4e8;
+  --bad: #a8431a;
+  --bad-bg: #fbece3;
+  --focus: #1a5fd0; --alt: #b4531a; --alt-ink: #ffffff;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1b19; --surface: #172826; --ink: #e5f0ed; --muted: #9db4ae; --line: #2c423e;
+    --accent: #3fc2ad; --accent-ink: #072520; --good: #6fd68c; --good-bg: #17331f;
+    --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; --alt: #f0a27a; --alt-ink: #2a1408; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1b19; --surface: #172826; --ink: #e5f0ed; --muted: #9db4ae; --line: #2c423e;
+  --accent: #3fc2ad; --accent-ink: #072520; --good: #6fd68c; --good-bg: #17331f;
+  --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; --alt: #f0a27a; --alt-ink: #2a1408; color-scheme: dark;
+}
+:root { --muted: #4d625d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --muted: #9db4ae; } }
+:root[data-theme="dark"] { --muted: #9db4ae; }
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  padding-block: 20px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.wrap.wide { max-width: 1100px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: 2rem; font-weight: 800; }
+h2 { font-size: 1.35rem; font-weight: 600; }
+h3 { font-size: 1.05rem; font-weight: 600; }
+p { margin: 0; }
+.eyebrow { font-size: .8rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.target { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+label.field { display: flex; flex-direction: column; gap: 6px; font-weight: 700; }
+input[type=text] { font: inherit; padding: 12px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); width: 100%; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+legend { font-weight: 700; padding: 0; margin-bottom: 8px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pills label { min-width: 64px; padding: 10px 16px; text-align: center; border: 2px solid var(--line); border-radius: 8px; cursor: pointer; background: var(--bg); font-weight: 700; user-select: none; }
+.pills input:checked + label { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.pills input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+button { font: inherit; font-weight: 700; padding: 12px 20px; border-radius: 8px; border: 2px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button.ghost { background: transparent; color: var(--accent); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.err { color: var(--bad); font-weight: 700; min-height: 1.4em; }
+
+.progress { display: flex; gap: 6px; }
+.progress span { flex: 1; height: 8px; border-radius: 4px; background: var(--line); }
+.progress span.cur { background: var(--accent); }
+.progress span.ok { background: var(--good); }
+.progress span.miss { background: var(--bad); }
+
+.punnett { width: auto; font-size: 1.1rem; text-align: center; }
+.punnett th, .punnett td { text-align: center; border: 1px solid var(--line); padding: 8px 16px; font-size: 1.1rem; text-transform: none; letter-spacing: 0; color: var(--ink); }
+.punnett th { background: var(--bg); }
+.ref { font-size: .85rem; color: var(--muted); font-weight: 700; }
+.choices { display: flex; flex-direction: column; gap: 10px; }
+.choice { display: flex; gap: 12px; align-items: flex-start; text-align: left; width: 100%; padding: 12px 14px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font-weight: 400; }
+.choice .mark { flex: none; width: 22px; height: 22px; border: 2px solid var(--muted); border-radius: 50%; margin-top: 1px; display: grid; place-items: center; font-size: .8rem; font-weight: 700; }
+.choice.multi .mark { border-radius: 5px; }
+.choice[aria-pressed="true"] { border-color: var(--accent); }
+.choice[aria-pressed="true"] .mark { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.choice.locked { cursor: default; }
+.choice.right { border-color: var(--good); background: var(--good-bg); }
+.choice.wrong { border-color: var(--bad); background: var(--bad-bg); }
+.choice.out { opacity: .55; }
+
+.fb { border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border: 2px solid; }
+.fb.good { background: var(--good-bg); border-color: var(--good); }
+.fb.bad { background: var(--bad-bg); border-color: var(--bad); }
+.fb .head { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; }
+.fb.good .head { color: var(--good); } .fb.bad .head { color: var(--bad); }
+.fb ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.fb .keyidea { font-weight: 700; }
+
+.big { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.score { font-family: var(--font-display); font-size: 4.5rem; font-weight: 800; line-height: 1; color: var(--accent); }
+.score small { font-size: 1.4rem; color: var(--muted); font-weight: 600; }
+.levels { display: grid; gap: 6px; }
+.level { display: flex; gap: 10px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); }
+.level b { flex: none; width: 1.4em; }
+.level.you { border: 2px solid var(--accent); background: var(--surface); font-weight: 700; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: .95rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+td.num, th.num { text-align: right; }
+.scroll { overflow-x: auto; max-width: 100%; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.grid2 > * { min-width: 0; }
+.bar { display: flex; align-items: center; gap: 10px; }
+.bar i { display: block; height: 14px; border-radius: 3px; background: var(--accent); }
+.s4 { background: var(--good-bg); } .s1 { background: var(--bad-bg); }
+.status { font-size: .95rem; color: var(--muted); }
+.status.bad { color: var(--bad); font-weight: 700; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.react { border: 2px solid var(--accent); }
+.rhead { color: var(--accent); }
+.step, .sortrow { display: flex; flex-direction: column; gap: 8px; padding: 12px 0 4px; border-top: 1px solid var(--line); }
+.stepq, .sorttext { margin: 0; }
+.stepopts, .sortbtns { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { background: var(--bg); color: var(--ink); border: 2px solid var(--line); font-weight: 400; padding: 10px 14px; text-align: left; }
+.opt.ok { border-color: var(--good); background: var(--good-bg); }
+.opt.x { border-color: var(--bad); background: var(--bad-bg); }
+.stepfb { margin: 0; min-height: 1.2em; font-size: .95rem; }
+.stepfb.good { color: var(--good); font-weight: 700; }
+.stepfb.bad { color: var(--bad); font-weight: 700; }
+.viz { display: flex; flex-direction: column; gap: 12px; padding: 4px 0 12px; }
+.cellrow, .chrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.lab { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+.lab.spc { margin-left: 16px; }
+.chip { display: inline-grid; place-items: center; min-width: 40px; height: 40px; padding: 0 8px; border-radius: 8px; border: 2px solid var(--accent); font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; background: var(--surface); color: var(--ink); }
+.chip.sc { border-color: var(--muted); }
+button.chip.btn { cursor: pointer; }
+button.chip.ok { border-color: var(--good); background: var(--good-bg); }
+button.chip.x { border-color: var(--bad); background: var(--bad-bg); }
+.listbox { display: flex; flex-direction: column; gap: 6px; max-height: 240px; overflow: auto; }
+.geno { font-family: var(--font-display); font-size: 1.2rem; }
+.chroms { display: flex; gap: 28px; }
+.chrom { display: flex; flex-direction: column; width: 72px; border-radius: 8px; overflow: hidden; border: 2px solid var(--line); }
+.seg { height: 38px; display: grid; place-items: center; font-weight: 800; font-family: var(--font-display); }
+.seg.s1 { background: var(--accent); color: var(--accent-ink); }
+.seg.s2 { background: var(--alt); color: var(--alt-ink); }
+td.pcell { cursor: pointer; min-width: 64px; }
+td.pcell.ok { background: var(--good-bg); }
+td.pcell.x { background: var(--bad-bg); }
+.rdone { border-top: 1px solid var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+.sortbtns { flex-wrap: nowrap; }
+.sortbtns .opt { flex: 1 1 0; min-width: 0; text-align: center; padding: 8px 6px; }
+.sortrow { gap: 6px; padding-top: 10px; }
+.viz input[type=range] { width: 100%; accent-color: var(--accent); }
+.dzlabels { display: flex; justify-content: space-between; gap: 8px; font-size: .85rem; color: var(--muted); font-weight: 700; }
+.dzbar { height: 22px; background: var(--line); border-radius: 6px; overflow: hidden; }
+.dzfill { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+@media (prefers-reduced-motion: reduce) { .dzfill { transition: none; } }
+.punnett th, .punnett td { white-space: normal; padding: 8px 10px; }
+
+@media (prefers-reduced-motion: no-preference) { .fb { animation: rise .25s ease-out; } @keyframes rise { from { opacity: 0; transform: translateY(6px); } } }
+</style>
+
+<div class="wrap" id="app"></div>
+
+<script>
+(function () {
+  "use strict";
+  var TARGET = "LS3-2.4";
+  var TEACHER_PERIODS = { Renick: [5, 7], Silva: [1, 2, 3, 5, 6, 7], Bogner: [1, 2, 3, 5, 6, 7], Leapley: [7] };
+  var TEACHERS = ["Renick", "Silva", "Bogner", "Leapley"];
+  var PERIODS = [1, 2, 3, 5, 6, 7];
+  function periodsFor(t) { return TEACHER_PERIODS[t] || []; }
+
+  // Question bank. "why" is the reteach for that specific wrong answer.
+  var ITEMS = [
+    { skill: "Read the alleles and name the source", ref: "Day 9 warm-up and Case 1: the puppy litter", type: "single",
+      grid: [["", "Allele 1", "Allele 2"], ["Mom", "F", "f"], ["Dad", "F", "f"], ["Puppy", "f", "f"]],
+      text: "A coat-color gene has the alleles F and f. Which claim is best supported by the data?",
+      key: "Both parents carry f, so the puppy ff is a new pairing of alleles the parents already had. Every allele was already in a parent, which is the clue for a new combination.",
+      choices: [
+        { t: "The puppy's alleles came from a new combination, because f was already in both parents", ok: true },
+        { t: "The puppy's alleles came from a mutation, because the puppy differs from both parents", why: "Looking different is not evidence of a mutation. A mutation leaves a new allele that neither parent has. Here every allele was already in a parent." },
+        { t: "The puppy's alleles came from UV light, because the puppy looks different from its parents", why: "Nothing in the data shows UV light or any other exposure, and looking different is not evidence. The alleles were already in the parents." },
+        { t: "The puppy's alleles came from a copying error, because the puppy has two of the same allele", why: "Two of the same allele is not a clue for a copying error. A copying error leaves a new allele that neither parent has." }
+      ],
+      reteach: {
+        viz: null,
+        sort: { prompt: "Mom is Ff and Dad is Ff. Sort each of the puppy's alleles: was it already in a parent, or is it new?",
+          buckets: ["Already in a parent", "New"],
+          cards: [
+            { t: "The puppy's first f", b: 0, why: "Mom has an f, so it was already in a parent." },
+            { t: "The puppy's second f", b: 0, why: "Dad has an f too, so it was already in a parent." }
+          ] },
+        steps: [
+          { q: "Every allele in the puppy was already in a parent. What does that clue point to?", o: ["A new combination", "A mutation", "An environmental mutation"], right: "A new combination: a new pairing of alleles the parents already had.", hints: { 1: "A mutation leaves an allele that neither parent has. Here none are new.", 2: "An environmental mutation would also leave a new allele, with more mutations in an exposed group. Nothing like that is here." } },
+          { q: "Which clue would point to a mutation instead?", o: ["An allele that neither parent has", "An allele that both parents have", "A puppy that looks different from its parents"], right: "A new allele that neither parent has, like the CCT puppy in Case 2.", hints: { 1: "Alleles both parents have are the clue for a new combination.", 2: "Looking different is not evidence. Check the alleles." } }
+        ] } },
+
+    { skill: "Make a claim from the data", ref: "Day 9 Case 3: X-rays and mice", type: "single",
+      grid: [["Group of mice", "X-ray dose", "New mutations per 1,000 sperm cells"], ["A", "none", "3"], ["B", "low", "12"], ["C", "high", "25"]],
+      text: "Scientists exposed mice to X-rays and counted new mutations in sperm cells. Which claim is best supported by the data?",
+      key: "The count goes up as the dose goes up. The group with no X-rays shows the baseline from copying errors, so the extra mutations came from the X-rays.",
+      choices: [
+        { t: "X-rays increased the number of mutations, because the counts rise as the dose rises", ok: true },
+        { t: "X-rays had no effect on mutations, because the group with no X-rays also had mutations", why: "The no-X-ray group's 3 mutations are the baseline from copying errors. The high-dose group had 25, so the X-rays caused the extra." },
+        { t: "Copying errors caused every mutation, because all three groups had some mutations", why: "Copying errors happen in every group, so they explain about 3. They cannot explain the extra 22 in the high-dose group." },
+        { t: "The low dose caused more mutations than the high dose, because the low dose came first", why: "The order does not matter. Read the numbers: the low dose had 12 and the high dose had 25." }
+      ],
+      reteach: {
+        viz: { type: "dose", label: "X-ray dose", prompt: "Move the slider from no X-rays to a high dose. Watch the number of new mutations.", unit: "mutations per 1,000 sperm cells", max: 25, levels: [{ label: "none", value: 3 }, { label: "low", value: 12 }, { label: "high", value: 25 }] },
+        steps: [
+          { q: "The group with no X-rays still had 3 mutations. Where did they come from?", o: ["Copying errors", "The X-rays", "A new combination"], right: "Copying errors. They happen in every group, so 3 is the baseline.", hints: { 1: "This group had no X-rays.", 2: "A new combination does not change the DNA, so it is not a mutation." } },
+          { q: "As the X-ray dose went up, the number of mutations...", o: ["went up", "stayed the same", "went down"], right: "Went up: 3, then 12, then 25.", hints: { 1: "Look at the slider again. The bar grew.", 2: "The bar got longer, not shorter." } },
+          { q: "Which claim does that evidence support?", o: ["X-rays increased the number of mutations", "X-rays had no effect on mutations", "Copying errors caused every mutation"], right: "X-rays increased the number of mutations. Copying errors only explain the baseline of 3.", hints: { 1: "The no-X-ray group had a few mutations, but the high-dose group had far more.", 2: "Copying errors happen in both groups, so they cannot explain the extra 22." } }
+        ] } },
+
+    { skill: "Evaluate a claim", ref: "Day 8 mini-lesson: How to defend a claim", type: "single",
+      grid: [["Group", "Exposed to the chemical?", "New mutations per 1,000 cells"], ["1", "Yes", "5"], ["2", "No", "5"]],
+      text: "Scientists compared mutation counts. A student claims the chemical caused mutations. Which statement best evaluates the claim?",
+      key: "If the chemical caused mutations, the exposed group would have more than the group that was not exposed. Both groups had 5, so the data do not support the claim.",
+      choices: [
+        { t: "The data do not support the claim, because both groups had the same number of mutations", ok: true },
+        { t: "The data support the claim, because the exposed group had some mutations in its own cells", why: "The group that was not exposed had 5 mutations too, and those come from copying errors. The chemical added none." },
+        { t: "The data support the claim, because chemicals always change the DNA of every cell in the body", why: "That is not evidence from this table. The data would need to show more mutations in the exposed group, and it does not." },
+        { t: "The data cannot be used, because there are two groups to compare in the table", why: "Two groups is what you want: one exposed and one not. Comparing them is how you test the claim." }
+      ],
+      reteach: {
+        viz: { type: "dose", label: "Group", prompt: "Switch between the two groups and compare the number of mutations.", unit: "new mutations per 1,000 cells", max: 10, levels: [{ label: "Not exposed", value: 5 }, { label: "Exposed to the chemical", value: 5 }] },
+        steps: [
+          { q: "How do the two groups compare?", o: ["They are the same: 5 and 5", "The exposed group has more", "The group that was not exposed has more"], right: "The same: 5 and 5.", hints: { 1: "Look at the bars. They are the same length.", 2: "Both bars are the same length." } },
+          { q: "If the chemical caused mutations, the exposed group would have...", o: ["more mutations than the group that was not exposed", "fewer mutations", "exactly the same number"], right: "More. The extra would be the chemical's effect, like the extra 22 in the X-ray case.", hints: { 1: "A chemical that damages DNA would add mutations, not remove them.", 2: "If the numbers were the same, the chemical would have changed nothing." } },
+          { q: "So do the data support the claim that the chemical caused mutations?", o: ["No, both groups had the same number", "Yes, the exposed group had some mutations", "Yes, chemicals always change DNA"], right: "No. Both groups had 5, so the chemical added no extra mutations.", hints: { 1: "The group that was not exposed had 5 as well, so those are not from the chemical.", 2: "The claim has to be backed by the data, not by what is always true." } }
+        ] } }
+  ];
+
+  // 4-point scale from first-try correct answers out of 5.
+  var LEVELS = [
+    { n: 4, name: "Mastery", d: "You got all 3 right on the first try." },
+    { n: 3, name: "Proficient", d: "2 of 3 right on the first try. This meets the class goal." },
+    { n: 2, name: "Developing", d: "1 of 3 right on the first try. Review the notes below." },
+    { n: 1, name: "Beginning", d: "0 of 3 right on the first try. Ask for help and review the notes below." }
+  ];
+  function toScale(c) { return c >= ITEMS.length ? 4 : c === ITEMS.length - 1 ? 3 : c >= 1 ? 2 : 1; }
+
+  var app = document.getElementById("app");
+  var db = null, userCap = null, dl = null, canEdit = false;
+  var S = { who: { name: "", teacher: "", period: "" }, i: 0, order: [], sel: [], tries: 0, firstOk: [], finalOk: [], tryCount: [], saved: "idle", fbHtml: "" };
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  /* ---------- start screen ---------- */
+  function viewStart(err) {
+    var saved = {}; try { saved = JSON.parse(lsGet("ls324who") || "{}"); } catch (e) {}
+    var w = S.draft || (S.who.name ? S.who : saved);
+    if (w.teacher && periodsFor(w.teacher).indexOf(Number(w.period)) < 0) w = { name: w.name, teacher: w.teacher, period: null };
+    app.className = "wrap";
+    app.innerHTML =
+      '<div class="topbar"><span class="eyebrow">Unit 2.2 · Warm-up</span>' + (canEdit ? '<button class="ghost" id="tbtn">Teacher data</button>' : "") + "</div>" +
+      "<h1>Read the Data, Defend the Claim</h1>" +
+      '<div class="target"><b>Learning target ' + TARGET + ':</b> I can read data and make a claim, backed by that data, about what caused a genetic variation, and defend my claim against another explanation using the evidence.</div>' +
+      '<p>Answer 3 questions about Day 8 and Day 9 from memory. If you miss one, you get a quick activity to work it out, then a second try.</p>' +
+      '<form class="card" id="f" novalidate>' +
+      '<label class="field" for="nm">First and last name<input type="text" id="nm" autocomplete="off" value="' + esc(w.name || "") + '"></label>' +
+      '<fieldset><legend>My teacher</legend><div class="pills" id="tp">' + TEACHERS.map(function (t) {
+        return '<input type="radio" name="teacher" id="t_' + t + '" value="' + t + '"' + (w.teacher === t ? " checked" : "") + '><label for="t_' + t + '">' + t + "</label>"; }).join("") + "</div></fieldset>" +
+      '<fieldset><legend>My period</legend><div class="pills" id="pp"></div></fieldset>' +
+      '<div class="err" id="err" role="alert">' + esc(err || "") + '</div>' +
+      '<div class="row"><button type="submit">Start</button></div></form>';
+    function drawPeriods(t, chosen) {
+      var pp = document.getElementById("pp"), list = periodsFor(t);
+      if (!list.length) { pp.innerHTML = '<span class="status">Pick your teacher first.</span>'; return; }
+      pp.innerHTML = list.map(function (p) {
+        return '<input type="radio" name="period" id="p_' + p + '" value="' + p + '"' + (String(chosen) === String(p) ? " checked" : "") + '><label for="p_' + p + '">' + p + "</label>"; }).join("");
+    }
+    drawPeriods(w.teacher, w.period);
+    document.querySelectorAll('input[name=teacher]').forEach(function (r) { r.addEventListener("change", function () { drawPeriods(r.value, null); }); });
+    document.getElementById("f").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("nm").value.trim();
+      var t = (document.querySelector('input[name=teacher]:checked') || {}).value;
+      var p = (document.querySelector('input[name=period]:checked') || {}).value;
+      function fail(msg) { S.draft = { name: name, teacher: t || null, period: p || null }; viewStart(msg); }
+      if (name.length < 3 || name.indexOf(" ") < 0) return fail("Type your first and last name.");
+      if (!t) return fail("Pick your teacher.");
+      if (!p || periodsFor(t).indexOf(Number(p)) < 0) return fail("Pick your period.");
+      S.draft = null; S.who = { name: name, teacher: t, period: p };
+      lsSet("ls324who", JSON.stringify(S.who));
+      S.i = 0; S.firstOk = []; S.finalOk = []; S.tryCount = []; S.saved = "idle";
+      S.order = ITEMS.map(function (it) { return it.type === "tf" ? it.choices.map(function (_, k) { return k; }) : shuffle(it.choices.map(function (_, k) { return k; })); });
+      beginQ();
+    });
+    var tb = document.getElementById("tbtn"); if (tb) tb.addEventListener("click", viewTeacher);
+  }
+
+  /* ---------- questions ---------- */
+  function beginQ() { S.sel = []; S.tries = 0; S.out = []; S.fbHtml = ""; S.locked = false; S.state = "answer"; viewQ(); }
+
+  function progressHtml() {
+    return '<div class="progress" aria-label="Question ' + (S.i + 1) + ' of ' + ITEMS.length + '">' + ITEMS.map(function (_, k) {
+      var c = k < S.i ? (S.firstOk[k] ? "ok" : "miss") : k === S.i ? "cur" : "";
+      return "<span class=\"" + c + "\"></span>"; }).join("") + "</div>";
+  }
+
+  function gridHtml(it) {
+    if (!it.grid) return "";
+    return '<div class="scroll"><table class="punnett" aria-label="Punnett square">' + it.grid.map(function (r, ri) {
+      return "<tr>" + r.map(function (c, ci) { return (ri === 0 || ci === 0 ? "<th>" : "<td>") + esc(c) + (ri === 0 || ci === 0 ? "</th>" : "</td>"); }).join("") + "</tr>"; }).join("") + "</table></div>";
+  }
+
+  function viewQ() {
+    var it = ITEMS[S.i], multi = it.type === "multi";
+    app.className = "wrap";
+    var html = '<div class="topbar"><span class="eyebrow">Question ' + (S.i + 1) + " of " + ITEMS.length + "</span><span class=\"status\">" + esc(S.who.name) + "</span></div>" + progressHtml();
+    html += '<div class="card"><span class="ref">Think back to: ' + esc(it.ref) + "</span><h2>" + esc(it.text) + "</h2>" + gridHtml(it) + (multi ? '<p class="status">Pick ' + it.pick + " answers.</p>" : "") + '<div class="choices" role="group" aria-label="Answer choices">';
+    S.order[S.i].forEach(function (ci) {
+      var c = it.choices[ci], pressed = S.sel.indexOf(ci) >= 0, cls = "choice" + (multi ? " multi" : "");
+      var mark = "";
+      if (S.locked) {
+        cls += " locked";
+        if (pressed && c.ok) { cls += " right"; mark = "✓"; }
+        else if (pressed && !c.ok) { cls += " wrong"; mark = "✗"; }
+        else if (S.state === "reveal" && c.ok) { cls += " right"; mark = "✓"; }
+        else cls += " out";
+      } else if (S.out.indexOf(ci) >= 0) { cls += " out"; }
+      html += '<button type="button" class="' + cls + '" data-ci="' + ci + '" aria-pressed="' + pressed + '"' + (S.locked ? " disabled" : "") + '><span class="mark" aria-hidden="true">' + (mark || (pressed ? "✓" : "")) + "</span><span>" + esc(c.t) + "</span></button>";
+    });
+    html += "</div>";
+    if (S.state === "answer") html += '<div class="row"><button type="button" id="chk" disabled>Check my answer</button></div>';
+    html += "</div>" + S.fbHtml + (S.state === "react" ? '<div class="card react" id="react"></div>' : "");
+    app.innerHTML = html;
+    if (S.state === "react") { mountReteach(it); }
+
+    app.querySelectorAll(".choice:not(.locked)").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var ci = +b.getAttribute("data-ci");
+        if (multi) { var k = S.sel.indexOf(ci); if (k >= 0) S.sel.splice(k, 1); else if (S.sel.length < it.pick) S.sel.push(ci); }
+        else S.sel = [ci];
+        app.querySelectorAll(".choice").forEach(function (x) {
+          var on = S.sel.indexOf(+x.getAttribute("data-ci")) >= 0;
+          x.setAttribute("aria-pressed", on); x.querySelector(".mark").textContent = on ? "✓" : "";
+        });
+        var chk = document.getElementById("chk"); if (chk) chk.disabled = S.sel.length !== (multi ? it.pick : 1);
+      });
+    });
+    var chk = document.getElementById("chk"); if (chk) chk.addEventListener("click", check);
+    var nx = document.getElementById("nx"); if (nx) nx.addEventListener("click", next);
+    var rt = document.getElementById("rt"); if (rt) rt.addEventListener("click", retry);
+    if (S.fbHtml) { var f = app.querySelector(".fb"); if (f) f.scrollIntoView({ block: "nearest", behavior: "smooth" }); }
+  }
+
+  /* ---------- hands-on reteach engine ---------- */
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function pickOne(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function kids(node, fn) { Array.prototype.forEach.call(node.children, fn); }
+  function chips(arr) { return arr.map(function (x) { return '<span class="chip">' + esc(x) + "</span>"; }).join(""); }
+  function geno(x, y) { return (x === x.toLowerCase() && y !== y.toLowerCase()) ? y + x : x + y; }
+
+  function mountReteach(it) {
+    var host = document.getElementById("react"), r = it.reteach || {}, queue = [];
+    host.innerHTML = '<h3 class="rhead">Not quite. Let’s work it out.</h3>';
+    if (r.sort) queue.push(function (n) { runSort(host, r.sort, n); });
+    if (r.viz) queue.push(function (n) { runViz(host, r.viz, n); });
+    if (r.steps) queue.push(function (n) { runSteps(host, r.steps, n); });
+    function go(i) { if (i >= queue.length) return finish(); queue[i](function () { go(i + 1); }); }
+    function finish() {
+      var why = S.sel.filter(function (ci) { return !it.choices[ci].ok && it.choices[ci].why; }).map(function (ci) { return it.choices[ci].why; });
+      var d = el("div", "rdone", '<p class="keyidea">' + esc(it.key) + "</p>" + (why.length ? "<p>About the answer you picked: " + esc(why[0]) + "</p>" : "") + '<div class="row"><button type="button" id="rt2">Try the question again</button></div>');
+      host.appendChild(d);
+      document.getElementById("rt2").addEventListener("click", retry);
+      d.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+    go(0);
+  }
+
+  /* guided steps: o[0] is the right option; options are shuffled on screen */
+  function runSteps(host, steps, done) {
+    var box = el("div", "steps"); host.appendChild(box);
+    function show(i) {
+      if (i >= steps.length) return done();
+      var st = steps[i], d = el("div", "step"), opts = el("div", "stepopts"), fb = el("p", "stepfb");
+      fb.setAttribute("aria-live", "polite");
+      d.appendChild(el("p", "stepq", "<b>" + (i + 1) + ".</b> " + esc(st.q)));
+      shuffle(st.o.map(function (_, k) { return k; })).forEach(function (k) {
+        var b = el("button", "opt"); b.type = "button"; b.textContent = st.o[k];
+        b.addEventListener("click", function () {
+          if (k === 0) {
+            kids(opts, function (x) { x.disabled = true; });
+            b.classList.add("ok"); fb.className = "stepfb good"; fb.textContent = st.right || "Yes.";
+            show(i + 1);
+          } else {
+            b.classList.add("x"); b.disabled = true; fb.className = "stepfb bad";
+            fb.textContent = (st.hints && st.hints[k]) || "Not quite. Try another.";
+          }
+        });
+        opts.appendChild(b);
+      });
+      d.appendChild(opts); d.appendChild(fb); box.appendChild(d);
+    }
+    show(0);
+  }
+
+  /* sort: each card goes into one of two buckets, with feedback on every card */
+  function runSort(host, cfg, done) {
+    var box = el("div", "sortbox"), left = cfg.cards.length; host.appendChild(box);
+    box.appendChild(el("p", "stepq", esc(cfg.prompt)));
+    shuffle(cfg.cards).forEach(function (c) {
+      var row = el("div", "sortrow"), btns = el("div", "sortbtns"), fb = el("p", "stepfb");
+      fb.setAttribute("aria-live", "polite");
+      cfg.buckets.forEach(function (name, bi) {
+        var b = el("button", "opt"); b.type = "button"; b.textContent = name;
+        b.addEventListener("click", function () {
+          if (bi === c.b) {
+            kids(btns, function (x) { x.disabled = true; });
+            b.classList.add("ok"); fb.className = "stepfb good"; fb.textContent = c.why;
+            left--; if (left === 0) done();
+          } else { b.classList.add("x"); b.disabled = true; fb.className = "stepfb bad"; fb.textContent = "Not that one. Try the other."; }
+        });
+        btns.appendChild(b);
+      });
+      row.appendChild(el("p", "sorttext", "<b>" + esc(c.t) + "</b>")); row.appendChild(btns); row.appendChild(fb); box.appendChild(row);
+    });
+  }
+
+  function runViz(host, cfg, done) {
+    var box = el("div", "viz"); host.appendChild(box);
+    VIZ[cfg.type](box, cfg, done);
+  }
+  var VIZ = {};
+
+  /* make sex cells from a body cell: each gets one allele */
+  VIZ.sexcells = function (box, cfg, done) {
+    var a = cfg.alleles, n = 0, fired = false, tally = {};
+    a.forEach(function (x) { tally[x] = 0; });
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">Body cell</span>' + chips(a) + '</div>' +
+      '<div class="row"><button type="button" class="mk">Make a sex cell</button><span class="status vc"></span></div>' +
+      '<div class="cellrow vo"><span class="lab">Sex cells</span></div><p class="status vt"></p>';
+    var out = box.querySelector(".vo"), vc = box.querySelector(".vc"), vt = box.querySelector(".vt");
+    box.querySelector(".mk").addEventListener("click", function () {
+      var x = pickOne(a); n++; tally[x]++;
+      out.appendChild(el("span", "chip sc", esc(x)));
+      vt.textContent = a.map(function (y) { return y + ": " + tally[y]; }).join("   ");
+      if (n < 4) vc.textContent = n + " of 4"; else if (!fired) { fired = true; vc.textContent = "Good. Keep going, or answer the questions below."; done(); }
+    });
+  };
+
+  /* join one sex cell from each parent */
+  VIZ.fertilize = function (box, cfg, done) {
+    var n = 0, fired = false, seen = [];
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">Mom</span>' + chips(cfg.p1) + '<span class="lab spc">Dad</span>' + chips(cfg.p2) + '</div>' +
+      '<div class="row"><button type="button" class="mk">Make a ' + esc(cfg.who) + '</button><span class="status vc"></span></div>' +
+      '<div class="listbox vo"></div><p class="status vt"></p>';
+    var out = box.querySelector(".vo"), vc = box.querySelector(".vc"), vt = box.querySelector(".vt");
+    box.querySelector(".mk").addEventListener("click", function () {
+      n++;
+      var fx = cfg.fixed && cfg.fixed[n], e = fx ? fx[0] : pickOne(cfg.p1), s = fx ? fx[1] : pickOne(cfg.p2);
+      [e, s].forEach(function (x) { if (seen.indexOf(x) < 0) seen.push(x); });
+      out.appendChild(el("div", "chrow", "<span>egg</span>" + chips([e]) + "<span>+ sperm</span>" + chips([s]) + "<span>→ " + esc(cfg.who) + "</span><b class=\"geno\">" + esc(geno(e, s)) + "</b>"));
+      vt.textContent = "Alleles in the " + (cfg.plural || cfg.who + "s") + " so far: " + seen.join(", ");
+      if (n < 4) vc.textContent = n + " of 4"; else if (!fired) { fired = true; vc.textContent = "Good. Keep going, or answer the questions below."; done(); }
+    });
+  };
+
+  /* crossing over: swap the bottom pieces of paired chromosomes */
+  VIZ.crossover = function (box, cfg, done) {
+    var c1 = [{ l: "A", o: 1 }, { l: "B", o: 1 }, { l: "C", o: 1 }], c2 = [{ l: "a", o: 2 }, { l: "b", o: 2 }, { l: "c", o: 2 }], fired = false;
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="chroms"><div class="chrom c1"></div><div class="chrom c2"></div></div>' +
+      '<div class="row"><button type="button" class="mk">Cross over</button><button type="button" class="opt rs" hidden>Reset</button></div><p class="status vt"></p>';
+    var vt = box.querySelector(".vt"), rs = box.querySelector(".rs");
+    function draw() {
+      [c1, c2].forEach(function (c, k) {
+        box.querySelector(".c" + (k + 1)).innerHTML = c.map(function (s) { return '<div class="seg s' + s.o + '">' + esc(s.l) + "</div>"; }).join("");
+      });
+    }
+    function swap() { var t = c1[2]; c1[2] = c2[2]; c2[2] = t; draw(); }
+    draw();
+    box.querySelector(".mk").addEventListener("click", function () {
+      swap(); rs.hidden = false;
+      vt.textContent = "Same pieces, new mix: " + c1.map(function (s) { return s.l; }).join(" ") + " and " + c2.map(function (s) { return s.l; }).join(" ") + ".";
+      if (!fired) { fired = true; done(); }
+    });
+    rs.addEventListener("click", function () { c1 = [{ l: "A", o: 1 }, { l: "B", o: 1 }, { l: "C", o: 1 }]; c2 = [{ l: "a", o: 2 }, { l: "b", o: 2 }, { l: "c", o: 2 }]; draw(); vt.textContent = ""; });
+  };
+
+  /* spot the copying error */
+  VIZ.spot = function (box, cfg, done) {
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">Original</span>' + chips(cfg.orig.split("")) + '</div>' +
+      '<div class="cellrow cp"><span class="lab">Copy</span></div><p class="stepfb vt" aria-live="polite"></p>';
+    var cp = box.querySelector(".cp"), vt = box.querySelector(".vt");
+    cfg.copy.split("").forEach(function (ch, i) {
+      var b = el("button", "chip btn", esc(ch)); b.type = "button";
+      b.addEventListener("click", function () {
+        if (ch !== cfg.orig[i]) { b.classList.add("ok"); vt.className = "stepfb good vt"; vt.textContent = cfg.found; kids(cp, function (x) { x.disabled = true; }); done(); }
+        else { b.classList.add("x"); b.disabled = true; vt.className = "stepfb bad vt"; vt.textContent = "That letter matches the original. Look for the one that is different."; }
+      });
+      cp.appendChild(b);
+    });
+  };
+
+  /* change one DNA letter and watch the amino acid change */
+  VIZ.codon = function (box, cfg, done) {
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">DNA</span><span class="dna">' + chips(cfg.before.split("")) + '</span></div>' +
+      '<p class="stepq">Amino acid: <b class="aa">' + esc(cfg.aa1) + '</b></p><div class="row"><button type="button" class="mk">Change one letter</button></div>';
+    var btn = box.querySelector(".mk");
+    btn.addEventListener("click", function () {
+      box.querySelector(".dna").innerHTML = chips(cfg.after.split(""));
+      box.querySelector(".aa").textContent = cfg.aa2; btn.disabled = true; done();
+    });
+  };
+
+  /* tap the boxes of a Punnett square that match a genotype */
+  VIZ.punnett = function (box, cfg, done) {
+    var total = 0, found = 0;
+    cfg.grid.forEach(function (r, ri) { r.forEach(function (c, ci) { if (ri > 0 && ci > 0 && c === cfg.target) total++; }); });
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="scroll"><table class="punnett pk"></table></div><p class="stepfb vt" aria-live="polite"></p>';
+    var tb = box.querySelector(".pk"), vt = box.querySelector(".vt");
+    cfg.grid.forEach(function (r, ri) {
+      var tr = el("tr");
+      r.forEach(function (c, ci) {
+        if (ri === 0 || ci === 0) { tr.appendChild(el("th", "", esc(c))); return; }
+        var td = el("td", "pcell", esc(c)); td.tabIndex = 0; td.setAttribute("role", "button");
+        function tap() {
+          if (td.className.indexOf("ok") >= 0) return;
+          if (c === cfg.target) { td.classList.add("ok"); found++; vt.className = "stepfb good vt"; vt.textContent = found === total ? cfg.found : "Yes. Keep looking."; if (found === total) done(); }
+          else { td.classList.add("x"); vt.className = "stepfb bad vt"; vt.textContent = "That box is " + c + ". Look for " + cfg.target + "."; }
+        }
+        td.addEventListener("click", tap);
+        td.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); tap(); } });
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+  };
+
+  /* slide between groups and watch how the count changes */
+  VIZ.dose = function (box, cfg, done) {
+    var lv = cfg.levels, seen = {}, n = 0, fired = false, mx = cfg.max || Math.max.apply(null, lv.map(function (l) { return l.value; }));
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><label class="lab" for="dz">' + esc(cfg.label) + '</label>' +
+      '<input type="range" id="dz" min="0" max="' + (lv.length - 1) + '" step="1" value="0">' +
+      '<div class="dzlabels">' + lv.map(function (l) { return "<span>" + esc(l.label) + "</span>"; }).join("") + '</div>' +
+      '<div class="dzbar"><i class="dzfill"></i></div><p class="stepq dzout" aria-live="polite"></p>';
+    var input = box.querySelector("#dz"), fill = box.querySelector(".dzfill"), out = box.querySelector(".dzout");
+    function show() {
+      var i = +input.value, l = lv[i];
+      fill.style.width = (l.value / mx * 100) + "%";
+      out.textContent = l.label + ": " + l.value + " " + cfg.unit;
+      input.setAttribute("aria-valuetext", l.label + ", " + l.value + " " + cfg.unit);
+      if (!seen[i]) { seen[i] = 1; n++; }
+      if (n === lv.length && !fired) { fired = true; done(); }
+    }
+    input.addEventListener("input", show); input.addEventListener("change", show); show();
+  };
+
+  function check() {
+    var it = ITEMS[S.i];
+    var okSel = S.sel.filter(function (ci) { return it.choices[ci].ok; });
+    var needed = it.choices.filter(function (c) { return c.ok; }).length;
+    var correct = okSel.length === needed && S.sel.length === needed;
+    S.tries++;
+    if (S.tries === 1) S.firstOk[S.i] = correct;
+    S.finalOk[S.i] = correct; S.tryCount[S.i] = S.tries;
+    S.locked = true;
+    if (correct) {
+      S.state = "done";
+      S.fbHtml = '<div class="fb good" role="status"><div class="head">' + (S.tries === 1 ? "Correct" : "Correct this time") + '</div><p class="keyidea">' + esc(it.key) + '</p><div class="row"><button type="button" id="nx">' + nextLabel() + "</button></div></div>";
+    } else {
+      var items = [];
+      S.sel.forEach(function (ci) { var c = it.choices[ci]; if (!c.ok) items.push("<li><b>“" + esc(c.t) + "”</b> " + esc(c.why) + "</li>"); });
+      if (it.type === "multi") {
+        var missed = it.choices.filter(function (c, ci) { return c.ok && S.sel.indexOf(ci) < 0; });
+        if (missed.length) items.push("<li>You left out a correct answer. Look again for the choices that change the DNA itself.</li>");
+      }
+      if (S.tries === 1) { S.state = "react"; S.fbHtml = ""; } else {
+        S.state = "reveal";
+        S.fbHtml = '<div class="fb bad" role="status"><div class="head">Still not it. The answer is marked in green.</div><p class="keyidea">' + esc(it.key) + '</p><div class="row"><button type="button" id="nx">' + nextLabel() + "</button></div></div>";
+      }
+    }
+    viewQ();
+  }
+  function nextLabel() { return S.i === ITEMS.length - 1 ? "See my results" : "Next question"; }
+  function retry() {
+    var it = ITEMS[S.i];
+    S.sel.forEach(function (ci) { if (!it.choices[ci].ok) S.out.push(ci); });
+    if (it.type !== "multi") { /* keep wrong choice greyed out */ }
+    S.sel = []; S.locked = false; S.state = "answer"; S.fbHtml = ""; viewQ();
+    var first = app.querySelector(".choice:not(.out)"); if (first) first.focus();
+  }
+  function next() { if (S.i === ITEMS.length - 1) return viewResults(); S.i++; beginQ(); window.scrollTo(0, 0); }
+
+  /* ---------- results ---------- */
+  function record() {
+    var raw = S.firstOk.filter(Boolean).length;
+    return { target: TARGET, nq: ITEMS.length, name: S.who.name, teacher: S.who.teacher, period: Number(S.who.period), score4: toScale(raw), firstTryCorrect: raw,
+      firstTry: S.firstOk.map(function (b) { return b ? 1 : 0; }), finalCorrect: S.finalOk.filter(Boolean).length,
+      tries: S.tryCount.slice(), ts: Date.now() };
+  }
+  function viewResults() {
+    var rec = record();
+    app.className = "wrap";
+    var missed = [];
+    ITEMS.forEach(function (it, k) { if (!S.firstOk[k]) missed.push(k); });
+    var html = '<div class="topbar"><span class="eyebrow">Results · ' + esc(S.who.name) + '</span></div><h1>Your score</h1>' +
+      '<div class="card"><div class="big"><div class="score">' + rec.score4 + "<small> / 4</small></div><div><h2>" + LEVELS[4 - rec.score4].name + "</h2><p>" + LEVELS[4 - rec.score4].d + "</p></div></div>" +
+      '<div class="levels">' + LEVELS.map(function (l) { return '<div class="level' + (l.n === rec.score4 ? " you" : "") + '"><b>' + l.n + "</b><span>" + l.name + "</span></div>"; }).join("") + "</div></div>";
+    if (missed.length) {
+      html += '<div class="card"><h2>Review before you move on</h2><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px">' +
+        missed.map(function (k) { return "<li><b>" + esc(ITEMS[k].skill) + ".</b> " + esc(ITEMS[k].key) + "</li>"; }).join("") + "</ul></div>";
+    } else {
+      html += '<div class="card"><p class="keyidea">Remember: use the data as evidence. A new allele that neither parent has points to a mutation. More mutations in the exposed group points to the environment. If the groups are the same, the data do not support the claim.</p></div>';
+    }
+    html += '<div class="card" id="sv"></div>';
+    html += '<div class="row"><button type="button" class="ghost" id="again">Start over</button></div>';
+    app.innerHTML = html;
+    document.getElementById("again").addEventListener("click", function () { S.who = { name: "", teacher: "", period: "" }; viewStart(); });
+    if (S.saved === "idle") save(rec); else saveStatus(rec);
+  }
+  function saveStatus(rec) {
+    var el = document.getElementById("sv"); if (!el) return;
+    if (S.saved === "ok") el.innerHTML = '<p class="status">Your score was sent to your teacher. You can close this page.</p>';
+    else if (S.saved === "saving") el.innerHTML = '<p class="status">Sending your score…</p>';
+    else {
+      var txt = [rec.target, rec.name, rec.teacher, "Period " + rec.period, "Score " + rec.score4 + "/4", "First try " + rec.firstTryCorrect + "/" + ITEMS.length + ""].join(" | ");
+      el.innerHTML = '<p class="status bad">Your score could not be sent automatically. Show this screen to your teacher, or copy the line below and turn it in.</p>' +
+        '<input type="text" readonly id="cp" value="' + esc(txt) + '"><div class="row"><button type="button" id="cpb">Copy</button><button type="button" class="ghost" id="rs">Try sending again</button></div>';
+      document.getElementById("cpb").addEventListener("click", function () {
+        var i = document.getElementById("cp"); i.select();
+        try { navigator.clipboard.writeText(txt).catch(function () {}); } catch (e) {}
+      });
+      document.getElementById("rs").addEventListener("click", function () { save(rec); });
+    }
+  }
+  function save(rec) {
+    S.saved = "saving"; saveStatus(rec);
+    if (!db || !userCap) { S.saved = "fail"; return saveStatus(rec); }
+    var t = setTimeout(function () { if (S.saved === "saving") { S.saved = "fail"; saveStatus(rec); } }, 12000);
+    userCap.id().then(function (id) {
+      var ref = db.doc("responses/" + id);
+      return ref.get().then(function (snap) {
+        var old = snap.exists && snap.data() && snap.data().attempts ? snap.data().attempts : [];
+        return ref.set({ attempts: old.concat([rec]) });
+      });
+    }).then(function () { clearTimeout(t); S.saved = "ok"; saveStatus(rec); })
+      .catch(function () { clearTimeout(t); S.saved = "fail"; saveStatus(rec); });
+  }
+
+  /* ---------- teacher data ---------- */
+  var T = { rows: [], teacher: "All", period: "All", err: "" };
+  function viewTeacher() {
+    app.className = "wrap wide";
+    app.innerHTML = '<div class="topbar"><h1>Teacher data</h1><div class="row"><button class="ghost" id="rf">Refresh</button><button class="ghost" id="bk">Back to warm-up</button></div></div><p class="status" id="ld">Loading responses…</p>';
+    document.getElementById("bk").addEventListener("click", function () { viewStart(); });
+    document.getElementById("rf").addEventListener("click", viewTeacher);
+    if (!db) { document.getElementById("ld").textContent = "Saved data is not available in this view. Sign in to claude.ai with the account that owns this page."; return; }
+    load();
+  }
+  function load() {
+    var ld = document.getElementById("ld"); if (!ld) return;
+    ld.className = "status"; ld.textContent = "Loading responses…";
+    db.collection("responses").get().then(function (snap) {
+      T.rows = []; snap.docs.forEach(function (d) { var x = d.data(); (x && x.attempts || []).forEach(function (a) { var c = {}; Object.keys(a).forEach(function (k) { c[k] = a[k]; }); c._uid = d.id; T.rows.push(c); }); });
+      try { renderTeacher(); } catch (e) { loadFail(e, "Could not display the results"); }
+    }).catch(function (e) { loadFail(e, "Could not load responses"); });
+  }
+  function loadFail(e, head) {
+    var ld = document.getElementById("ld"); if (!ld) return;
+    var code = e && e.code ? e.code : "error", msg = e && e.message ? e.message : "";
+    var hint = code === "not_granted" ? "This view has not allowed the page to use saved data. Choose Allow access." : "Choose Try again. If it keeps happening, make sure you are signed in with the account that owns this page.";
+    ld.className = "status bad";
+    ld.innerHTML = esc(head) + " (" + esc(code) + (msg ? ": " + esc(msg) : "") + "). " + esc(hint) +
+      '<span class="row"><button type="button" id="rl">Try again</button><button type="button" class="ghost" id="ra2">Allow access</button><button type="button" class="ghost" id="rm">Open permissions</button></span>';
+    document.getElementById("rl").addEventListener("click", load);
+    document.getElementById("ra2").addEventListener("click", function () {
+      claude.use("permissions").then(function (p) { return p ? p.request(["db"]) : null; }).then(load).catch(load);
+    });
+    document.getElementById("rm").addEventListener("click", function () {
+      claude.use("permissions").then(function (p) { return p ? p.manage() : null; }).then(load).catch(function () {
+        var l2 = document.getElementById("ld"); if (l2) l2.insertAdjacentText("beforeend", " Open this page's Permissions menu from the top bar.");
+      });
+    });
+  }
+  /* ---------- Google Sheet sync (run by a teacher with edit access) ---------- */
+  var SHEET_ID = "10WroyFp_Aw3bb_46aYoXDjT3uv7DEZ3Uho-5qGnW4dc", SHEET_SERVER = "Google Sheets";
+  var SHEET_URL = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/edit";
+  function sheetRows() {
+    var cur = T.rows.filter(function (r) { return r.nq === ITEMS.length; }).sort(function (a, b) { return a.ts - b.ts; }), seen = {};
+    return cur.map(function (r) {
+      var k = r._uid || r.name, ft = r.firstTry || []; seen[k] = (seen[k] || 0) + 1;
+      var row = [new Date(r.ts).toLocaleString("sv-SE", { timeZone: "America/Los_Angeles" }).slice(0, 16), TARGET, r.teacher, r.period, r.name, seen[k], r.score4, r.firstTryCorrect, ITEMS.length];
+      for (var i = 0; i < 3; i++) row.push(ft[i] === undefined ? "" : ft[i]);
+      row.push(r.finalCorrect, r._uid || "");
+      return row;
+    });
+  }
+  function sendToSheet(btn, out) {
+    var mine = sheetRows();
+    out.className = "status"; out.textContent = "Sending to Google Sheet…"; btn.disabled = true;
+    var usable = window.claude && claude.use ? claude.use("mcp") : Promise.resolve(null);
+    usable.then(function (mcp) {
+      if (!mcp) throw { code: "unavailable", message: "Google Sheets is not available in this view." };
+      return mcp.callTool(SHEET_SERVER, "get_values", { spreadsheetId: SHEET_ID, range: "Scores!A2:N" }).then(function (res) {
+        var old = (res.payload && res.payload.values) || [];
+        var all = old.filter(function (r) { return r[1] && r[1] !== TARGET; }).concat(mine);
+        all.sort(function (a, b) { return String(a[1]).localeCompare(String(b[1])); });
+        var blanks = Math.max(0, old.length - all.length);
+        for (var i = 0; i < blanks; i++) all.push([]);
+        all = all.map(function (r) { r = r.slice(); while (r.length < 14) r.push(""); return r; });
+        if (!all.length) return 0;
+        return mcp.callTool(SHEET_SERVER, "update_values", { spreadsheetId: SHEET_ID, range: "Scores!A2:N" + (all.length + 1), values: all }).then(function () { return mine.length; });
+      });
+    }).then(function (n) {
+      out.className = "status"; out.innerHTML = "Sent " + n + " rows for " + esc(TARGET) + " to the sheet. <a href=\"" + SHEET_URL + "\" target=\"_blank\" rel=\"noopener\">Open the sheet</a>";
+    }).catch(function (e) { sheetFail(out, e); }).then(function () { btn.disabled = false; });
+  }
+  function sheetFail(out, e) {
+    var c = e && e.code ? e.code : "error", m = e && e.message ? e.message : "", t;
+    if (c === "server_not_connected" || c === "server_not_found") t = "Google Sheets is not connected for your account. Add it in claude.ai Settings, then Connectors, and try again.";
+    else if (c === "needs_reauth") t = "Reconnect Google Sheets in claude.ai Settings, then Connectors, and try again.";
+    else if (c === "approval_required") t = "Google Sheets needs your approval. Choose Send to Google Sheet again and allow it.";
+    else if (c === "not_in_manifest") t = "This page is not allowed to use Google Sheets for you. Turn it on in this page's Permissions menu.";
+    else if (c === "blocked_by_policy") t = "Your organization blocks this connection.";
+    else if (c === "tool_error") t = "Google Sheets reported a problem. Check that the sheet is shared with your Google account with edit access. " + m;
+    else t = "Could not reach Google Sheets (" + c + (m ? ": " + m : "") + "). Try again in a minute.";
+    out.className = "status bad"; out.textContent = t;
+  }
+  function keyOf(r) { return r._uid || [String(r.name).trim().toLowerCase(), r.teacher, r.period].join("|"); }
+  function renderTeacher() {
+    var cur = T.rows.filter(function (r) { return r.nq === ITEMS.length; });
+    var hiddenN = T.rows.length - cur.length;
+    var sorted = cur.slice().sort(function (a, b) { return a.ts - b.ts; });
+    var seen = {};
+    sorted.forEach(function (r) { var k = keyOf(r); seen[k] = (seen[k] || 0) + 1; r._attempt = seen[k]; });
+    var firsts = sorted.filter(function (r) { return r._attempt === 1; });
+    var shown = firsts.filter(function (r) { return (T.teacher === "All" || r.teacher === T.teacher) && (T.period === "All" || String(r.period) === String(T.period)); });
+    function avg(a) { return a.length ? a.reduce(function (s, r) { return s + r.score4; }, 0) / a.length : null; }
+    function f1(x) { return x === null ? "–" : x.toFixed(2); }
+    function pct(n, d) { return d ? Math.round(100 * n / d) + "%" : "–"; }
+    var html = '<div class="topbar"><div class="row"><div class="pills" id="ft">' + ["All"].concat(TEACHERS).map(function (t) { return '<input type="radio" name="ft" id="ft_' + t + '" value="' + t + '"' + (T.teacher === t ? " checked" : "") + '><label for="ft_' + t + '">' + t + "</label>"; }).join("") +
+      '</div><div class="pills" id="fp">' + ["All"].concat(T.teacher === "All" ? PERIODS : periodsFor(T.teacher)).map(function (p) { return '<input type="radio" name="fp" id="fp_' + p + '" value="' + p + '"' + (String(T.period) === String(p) ? " checked" : "") + '><label for="fp_' + p + '">' + (p === "All" ? "All periods" : "P" + p) + "</label>"; }).join("") + "</div></div>" +
+      '<div class="row"><button id="cc">Copy CSV</button><button class="ghost" id="dc">Download CSV</button><button class="ghost" id="sh">Send to Google Sheet</button></div></div>';
+    html += '<p class="status" id="shs" aria-live="polite"></p><p class="status">' + shown.length + " students shown (first attempt per student). " + (cur.length - firsts.length) + " repeat attempts are in the table but not in the averages." + (hiddenN ? " " + hiddenN + " rows from an earlier version of this warm-up are hidden." : "") + "</p>";
+
+    // Distribution
+    var dist = [4, 3, 2, 1].map(function (n) { return shown.filter(function (r) { return r.score4 === n; }).length; });
+    var mx = Math.max.apply(null, dist.concat([1]));
+    var tops = ["Mastery", "Proficient", "Developing", "Beginning"];
+    html += '<div class="grid2"><div class="card"><h3>Scores on the 4-point scale</h3>' + dist.map(function (c, k) {
+      return '<div class="bar"><span style="width:7.5em">' + (4 - k) + " " + tops[k] + '</span><i style="width:' + (c / mx * 60) + '%;min-width:' + (c ? 4 : 0) + 'px"></i><b>' + c + "</b></div>"; }).join("") +
+      '<p class="status">Average ' + f1(avg(shown)) + " · at 3 or 4: " + pct(dist[0] + dist[1], shown.length) + "</p></div>";
+
+    // Per-question
+    html += '<div class="card"><h3>Right on the first try, by question</h3>' + ITEMS.map(function (it, k) {
+      var n = shown.filter(function (r) { return r.firstTry && r.firstTry[k] === 1; }).length;
+      var p = shown.length ? n / shown.length * 100 : 0;
+      return '<div class="bar"><span style="width:2.2em">Q' + (k + 1) + '</span><i style="width:' + (p * .6) + '%;min-width:' + (n ? 4 : 0) + 'px"></i><b>' + pct(n, shown.length) + '</b><span class="status">' + esc(it.skill) + "</span></div>"; }).join("") + "</div></div>";
+
+    // Teacher x period
+    var aTP = firsts;
+    html += '<div class="card"><h3>Average score by teacher and period (first attempts)</h3><div class="scroll"><table><thead><tr><th>Teacher</th>' + PERIODS.map(function (p) { return '<th class="num">P' + p + "</th>"; }).join("") + '<th class="num">All</th></tr></thead><tbody>' +
+      TEACHERS.map(function (t) {
+        var tr = aTP.filter(function (r) { return r.teacher === t; });
+        return "<tr><td><b>" + t + "</b></td>" + PERIODS.map(function (p) {
+          if (periodsFor(t).indexOf(p) < 0) return '<td class="num"></td>';
+          var c = tr.filter(function (r) { return r.period === p; }); var a = avg(c);
+          return '<td class="num ' + (a !== null ? (a >= 3 ? "s4" : a < 2 ? "s1" : "") : "") + '">' + f1(a) + (c.length ? ' <span class="status">(' + c.length + ")</span>" : "") + "</td>"; }).join("") +
+          '<td class="num"><b>' + f1(avg(tr)) + "</b></td></tr>"; }).join("") +
+      '<tr><td><b>All</b></td>' + PERIODS.map(function (p) { return '<td class="num">' + f1(avg(aTP.filter(function (r) { return r.period === p; }))) + "</td>"; }).join("") + '<td class="num"><b>' + f1(avg(aTP)) + "</b></td></tr></tbody></table></div></div>";
+
+    // Student table
+    var tbl = sorted.filter(function (r) { return (T.teacher === "All" || r.teacher === T.teacher) && (T.period === "All" || String(r.period) === String(T.period)); }).sort(function (a, b) { return a.teacher.localeCompare(b.teacher) || a.period - b.period || String(a.name).localeCompare(b.name); });
+    html += '<div class="card"><h3>Students</h3><div class="scroll"><table><thead><tr><th>Teacher</th><th class="num">Per</th><th>Name</th><th class="num">Attempt</th><th class="num">Score (1–4)</th><th class="num">First-try right</th><th>First try by question</th></tr></thead><tbody>' +
+      (tbl.length ? tbl.map(function (r) { return "<tr><td>" + esc(r.teacher) + '</td><td class="num">' + r.period + "</td><td>" + esc(r.name) + '</td><td class="num">' + r._attempt + '</td><td class="num ' + (r.score4 >= 3 ? "s4" : r.score4 < 2 ? "s1" : "") + '"><b>' + r.score4 + '</b></td><td class="num">' + r.firstTryCorrect + "/" + ITEMS.length + "</td><td>" + (r.firstTry || []).map(function (v) { return v ? "✓" : "✗"; }).join(" ") + "</td></tr>"; }).join("") : '<tr><td colspan="7">No responses yet.</td></tr>') + "</tbody></table></div></div>";
+    app.innerHTML = '<div class="topbar"><h1>Teacher data</h1><div class="row"><button class="ghost" id="rf">Refresh</button><button class="ghost" id="bk">Back to warm-up</button></div></div>' + html;
+
+    function csv() {
+      var head = ["target", "teacher", "period", "name", "attempt", "score_4pt", "first_try_correct", "first_try_correct"].concat(ITEMS.map(function (_, k) { return "q" + (k + 1); }), ["final_correct", "timestamp"]);
+      var lines = [head.join(",")].concat(tbl.map(function (r) {
+        return [r.target, r.teacher, r.period, '"' + String(r.name).replace(/"/g, '""') + '"', r._attempt, r.score4, r.firstTryCorrect].concat(r.firstTry || [], [r.finalCorrect, new Date(r.ts).toISOString()]).join(","); }));
+      return lines.join("\n");
+    }
+    document.getElementById("bk").addEventListener("click", function () { viewStart(); });
+    document.getElementById("rf").addEventListener("click", viewTeacher);
+    document.getElementById("cc").addEventListener("click", function () { try { navigator.clipboard.writeText(csv()).then(function () { document.getElementById("cc").textContent = "Copied"; }).catch(function () { document.getElementById("cc").textContent = "Copy blocked: use Download"; }); } catch (e) { document.getElementById("cc").textContent = "Copy blocked: use Download"; } });
+    document.getElementById("dc").addEventListener("click", function () {
+      if (!dl) { document.getElementById("dc").textContent = "Download not available"; return; }
+      dl.save({ filename: "LS3-2.4-warmup-scores.csv", data: csv() }).catch(function () {});
+    });
+    document.getElementById("sh").addEventListener("click", function () { sendToSheet(document.getElementById("sh"), document.getElementById("shs")); });
+    document.querySelectorAll("#ft input").forEach(function (i) { i.addEventListener("change", function () { T.teacher = i.value; if (T.period !== "All" && T.teacher !== "All" && periodsFor(T.teacher).indexOf(Number(T.period)) < 0) T.period = "All"; renderTeacher(); }); });
+    document.querySelectorAll("#fp input").forEach(function (i) { i.addEventListener("change", function () { T.period = i.value; renderTeacher(); }); });
+  }
+
+  viewStart();
+  if (window.claude && claude.use) {
+    claude.use("db").then(function (d) { db = d; }).catch(function () {});
+    claude.use("downloads").then(function (d) { dl = d; }).catch(function () {});
+    claude.use("user").then(function (u) { userCap = u; if (u) return u.canEdit(); }).then(function (ce) {
+      if (ce) { canEdit = true; if (document.getElementById("f")) viewStart(); }
+    }).catch(function () {});
+  }
+})();
+</script>

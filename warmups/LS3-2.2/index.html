@@ -153,6 +153,12 @@ td.pcell.x { background: var(--bad-bg); }
 .sortbtns { flex-wrap: nowrap; }
 .sortbtns .opt { flex: 1 1 0; min-width: 0; text-align: center; padding: 8px 6px; }
 .sortrow { gap: 6px; padding-top: 10px; }
+.viz input[type=range] { width: 100%; accent-color: var(--accent); }
+.dzlabels { display: flex; justify-content: space-between; gap: 8px; font-size: .85rem; color: var(--muted); font-weight: 700; }
+.dzbar { height: 22px; background: var(--line); border-radius: 6px; overflow: hidden; }
+.dzfill { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+@media (prefers-reduced-motion: reduce) { .dzfill { transition: none; } }
+.punnett th, .punnett td { white-space: normal; padding: 8px 10px; }
 
 @media (prefers-reduced-motion: no-preference) { .fb { animation: rise .25s ease-out; } @keyframes rise { from { opacity: 0; transform: translateY(6px); } } }
 </style>
@@ -519,6 +525,25 @@ td.pcell.x { background: var(--bad-bg); }
       });
       tb.appendChild(tr);
     });
+  };
+
+  /* slide between groups and watch how the count changes */
+  VIZ.dose = function (box, cfg, done) {
+    var lv = cfg.levels, seen = {}, n = 0, fired = false, mx = cfg.max || Math.max.apply(null, lv.map(function (l) { return l.value; }));
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><label class="lab" for="dz">' + esc(cfg.label) + '</label>' +
+      '<input type="range" id="dz" min="0" max="' + (lv.length - 1) + '" step="1" value="0">' +
+      '<div class="dzlabels">' + lv.map(function (l) { return "<span>" + esc(l.label) + "</span>"; }).join("") + '</div>' +
+      '<div class="dzbar"><i class="dzfill"></i></div><p class="stepq dzout" aria-live="polite"></p>';
+    var input = box.querySelector("#dz"), fill = box.querySelector(".dzfill"), out = box.querySelector(".dzout");
+    function show() {
+      var i = +input.value, l = lv[i];
+      fill.style.width = (l.value / mx * 100) + "%";
+      out.textContent = l.label + ": " + l.value + " " + cfg.unit;
+      input.setAttribute("aria-valuetext", l.label + ", " + l.value + " " + cfg.unit);
+      if (!seen[i]) { seen[i] = 1; n++; }
+      if (n === lv.length && !fired) { fired = true; done(); }
+    }
+    input.addEventListener("input", show); input.addEventListener("change", show); show();
   };
 
   function check() {

@@ -181,3 +181,22 @@
     });
   };
 
+  /* slide between groups and watch how the count changes */
+  VIZ.dose = function (box, cfg, done) {
+    var lv = cfg.levels, seen = {}, n = 0, fired = false, mx = cfg.max || Math.max.apply(null, lv.map(function (l) { return l.value; }));
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><label class="lab" for="dz">' + esc(cfg.label) + '</label>' +
+      '<input type="range" id="dz" min="0" max="' + (lv.length - 1) + '" step="1" value="0">' +
+      '<div class="dzlabels">' + lv.map(function (l) { return "<span>" + esc(l.label) + "</span>"; }).join("") + '</div>' +
+      '<div class="dzbar"><i class="dzfill"></i></div><p class="stepq dzout" aria-live="polite"></p>';
+    var input = box.querySelector("#dz"), fill = box.querySelector(".dzfill"), out = box.querySelector(".dzout");
+    function show() {
+      var i = +input.value, l = lv[i];
+      fill.style.width = (l.value / mx * 100) + "%";
+      out.textContent = l.label + ": " + l.value + " " + cfg.unit;
+      input.setAttribute("aria-valuetext", l.label + ", " + l.value + " " + cfg.unit);
+      if (!seen[i]) { seen[i] = 1; n++; }
+      if (n === lv.length && !fired) { fired = true; done(); }
+    }
+    input.addEventListener("input", show); input.addEventListener("change", show); show();
+  };
+
