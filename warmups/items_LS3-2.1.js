@@ -29,7 +29,7 @@
         { t: "The food and temperature changed the puppies' DNA", why: "Food and temperature do not change DNA. They cannot explain BB, Bb, and bb." }
       ],
       reteach: {
-        viz: { type: "fertilize", p1: ["B", "b"], p2: ["B", "b"], who: "puppy", plural: "puppies", prompt: "Mom and Dad are both Bb. Each sex cell gets one allele. Make 4 puppies and watch which alleles show up." },
+        viz: { type: "fertilize", p1: ["B", "b"], p2: ["B", "b"], who: "puppy", plural: "puppies", fixed: { 3: ["b", "B"] }, prompt: "Mom and Dad are both Bb. Each sex cell gets one allele. Make 4 puppies and watch which alleles show up." },
         steps: [
           { q: "Which alleles did your puppies have?", o: ["Only B and b, which the parents already had", "A new allele that neither parent has"], right: "Right. Every allele was already in a parent.", hints: { 1: "Look at the list again. Only B and b appear." } },
           { q: "Did any allele change into something different?", o: ["No, the alleles just got combined in different ways", "Yes, a copying error changed one"], right: "Right. Nothing changed. The alleles were combined in different ways.", hints: { 1: "A copying error would make a brand new allele. You only saw B and b." } },

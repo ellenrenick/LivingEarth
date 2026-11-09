@@ -101,7 +101,8 @@
       '<div class="listbox vo"></div><p class="status vt"></p>';
     var out = box.querySelector(".vo"), vc = box.querySelector(".vc"), vt = box.querySelector(".vt");
     box.querySelector(".mk").addEventListener("click", function () {
-      var e = pickOne(cfg.p1), s = pickOne(cfg.p2); n++;
+      n++;
+      var fx = cfg.fixed && cfg.fixed[n], e = fx ? fx[0] : pickOne(cfg.p1), s = fx ? fx[1] : pickOne(cfg.p2);
       [e, s].forEach(function (x) { if (seen.indexOf(x) < 0) seen.push(x); });
       out.appendChild(el("div", "chrow", "<span>egg</span>" + chips([e]) + "<span>+ sperm</span>" + chips([s]) + "<span>→ " + esc(cfg.who) + "</span><b class=\"geno\">" + esc(geno(e, s)) + "</b>"));
       vt.textContent = "Alleles in the " + (cfg.plural || cfg.who + "s") + " so far: " + seen.join(", ");
