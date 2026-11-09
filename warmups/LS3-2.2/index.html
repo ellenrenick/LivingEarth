@@ -637,6 +637,50 @@ td.pcell.x { background: var(--bad-bg); }
       });
     });
   }
+  /* ---------- Google Sheet sync (run by a teacher with edit access) ---------- */
+  var SHEET_ID = "10WroyFp_Aw3bb_46aYoXDjT3uv7DEZ3Uho-5qGnW4dc", SHEET_SERVER = "Google Sheets";
+  var SHEET_URL = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/edit";
+  function sheetRows() {
+    var cur = T.rows.filter(function (r) { return r.nq === ITEMS.length; }).sort(function (a, b) { return a.ts - b.ts; }), seen = {};
+    return cur.map(function (r) {
+      var k = r._uid || r.name, ft = r.firstTry || []; seen[k] = (seen[k] || 0) + 1;
+      var row = [new Date(r.ts).toLocaleString("sv-SE", { timeZone: "America/Los_Angeles" }).slice(0, 16), TARGET, r.teacher, r.period, r.name, seen[k], r.score4, r.firstTryCorrect, ITEMS.length];
+      for (var i = 0; i < 3; i++) row.push(ft[i] === undefined ? "" : ft[i]);
+      row.push(r.finalCorrect, r._uid || "");
+      return row;
+    });
+  }
+  function sendToSheet(btn, out) {
+    var mine = sheetRows();
+    out.className = "status"; out.textContent = "Sending to Google Sheet…"; btn.disabled = true;
+    var usable = window.claude && claude.use ? claude.use("mcp") : Promise.resolve(null);
+    usable.then(function (mcp) {
+      if (!mcp) throw { code: "unavailable", message: "Google Sheets is not available in this view." };
+      return mcp.callTool(SHEET_SERVER, "get_values", { spreadsheetId: SHEET_ID, range: "Scores!A2:N" }).then(function (res) {
+        var old = (res.payload && res.payload.values) || [];
+        var all = old.filter(function (r) { return r[1] && r[1] !== TARGET; }).concat(mine);
+        all.sort(function (a, b) { return String(a[1]).localeCompare(String(b[1])); });
+        var blanks = Math.max(0, old.length - all.length);
+        for (var i = 0; i < blanks; i++) all.push([]);
+        all = all.map(function (r) { r = r.slice(); while (r.length < 14) r.push(""); return r; });
+        if (!all.length) return 0;
+        return mcp.callTool(SHEET_SERVER, "update_values", { spreadsheetId: SHEET_ID, range: "Scores!A2:N" + (all.length + 1), values: all }).then(function () { return mine.length; });
+      });
+    }).then(function (n) {
+      out.className = "status"; out.innerHTML = "Sent " + n + " rows for " + esc(TARGET) + " to the sheet. <a href=\"" + SHEET_URL + "\" target=\"_blank\" rel=\"noopener\">Open the sheet</a>";
+    }).catch(function (e) { sheetFail(out, e); }).then(function () { btn.disabled = false; });
+  }
+  function sheetFail(out, e) {
+    var c = e && e.code ? e.code : "error", m = e && e.message ? e.message : "", t;
+    if (c === "server_not_connected" || c === "server_not_found") t = "Google Sheets is not connected for your account. Add it in claude.ai Settings, then Connectors, and try again.";
+    else if (c === "needs_reauth") t = "Reconnect Google Sheets in claude.ai Settings, then Connectors, and try again.";
+    else if (c === "approval_required") t = "Google Sheets needs your approval. Choose Send to Google Sheet again and allow it.";
+    else if (c === "not_in_manifest") t = "This page is not allowed to use Google Sheets for you. Turn it on in this page's Permissions menu.";
+    else if (c === "blocked_by_policy") t = "Your organization blocks this connection.";
+    else if (c === "tool_error") t = "Google Sheets reported a problem. Check that the sheet is shared with your Google account with edit access. " + m;
+    else t = "Could not reach Google Sheets (" + c + (m ? ": " + m : "") + "). Try again in a minute.";
+    out.className = "status bad"; out.textContent = t;
+  }
   function keyOf(r) { return r._uid || [String(r.name).trim().toLowerCase(), r.teacher, r.period].join("|"); }
   function renderTeacher() {
     var cur = T.rows.filter(function (r) { return r.nq === ITEMS.length; });
@@ -651,8 +695,8 @@ td.pcell.x { background: var(--bad-bg); }
     function pct(n, d) { return d ? Math.round(100 * n / d) + "%" : "–"; }
     var html = '<div class="topbar"><div class="row"><div class="pills" id="ft">' + ["All"].concat(TEACHERS).map(function (t) { return '<input type="radio" name="ft" id="ft_' + t + '" value="' + t + '"' + (T.teacher === t ? " checked" : "") + '><label for="ft_' + t + '">' + t + "</label>"; }).join("") +
       '</div><div class="pills" id="fp">' + ["All"].concat(PERIODS).map(function (p) { return '<input type="radio" name="fp" id="fp_' + p + '" value="' + p + '"' + (String(T.period) === String(p) ? " checked" : "") + '><label for="fp_' + p + '">' + (p === "All" ? "All periods" : "P" + p) + "</label>"; }).join("") + "</div></div>" +
-      '<div class="row"><button id="cc">Copy CSV</button><button class="ghost" id="dc">Download CSV</button></div></div>';
-    html += '<p class="status">' + shown.length + " students shown (first attempt per student). " + (cur.length - firsts.length) + " repeat attempts are in the table but not in the averages." + (hiddenN ? " " + hiddenN + " rows from an earlier version of this warm-up are hidden." : "") + "</p>";
+      '<div class="row"><button id="cc">Copy CSV</button><button class="ghost" id="dc">Download CSV</button><button class="ghost" id="sh">Send to Google Sheet</button></div></div>';
+    html += '<p class="status" id="shs" aria-live="polite"></p><p class="status">' + shown.length + " students shown (first attempt per student). " + (cur.length - firsts.length) + " repeat attempts are in the table but not in the averages." + (hiddenN ? " " + hiddenN + " rows from an earlier version of this warm-up are hidden." : "") + "</p>";
 
     // Distribution
     var dist = [4, 3, 2, 1].map(function (n) { return shown.filter(function (r) { return r.score4 === n; }).length; });
@@ -698,6 +742,7 @@ td.pcell.x { background: var(--bad-bg); }
       if (!dl) { document.getElementById("dc").textContent = "Download not available"; return; }
       dl.save({ filename: "LS3-2.2-warmup-scores.csv", data: csv() }).catch(function () {});
     });
+    document.getElementById("sh").addEventListener("click", function () { sendToSheet(document.getElementById("sh"), document.getElementById("shs")); });
     document.querySelectorAll("#ft input").forEach(function (i) { i.addEventListener("change", function () { T.teacher = i.value; renderTeacher(); }); });
     document.querySelectorAll("#fp input").forEach(function (i) { i.addEventListener("change", function () { T.period = i.value; renderTeacher(); }); });
   }
