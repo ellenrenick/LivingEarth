@@ -15,7 +15,7 @@
   --good-bg: #e3f4e8;
   --bad: #a8431a;
   --bad-bg: #fbece3;
-  --focus: #1a5fd0;
+  --focus: #1a5fd0; --alt: #b4531a; --alt-ink: #ffffff;
   --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
   --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
 }
@@ -23,13 +23,13 @@
   :root:not([data-theme="light"]) {
     --bg: #0f1b19; --surface: #172826; --ink: #e5f0ed; --muted: #9db4ae; --line: #2c423e;
     --accent: #3fc2ad; --accent-ink: #072520; --good: #6fd68c; --good-bg: #17331f;
-    --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; color-scheme: dark;
+    --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; --alt: #f0a27a; --alt-ink: #2a1408; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0f1b19; --surface: #172826; --ink: #e5f0ed; --muted: #9db4ae; --line: #2c423e;
   --accent: #3fc2ad; --accent-ink: #072520; --good: #6fd68c; --good-bg: #17331f;
-  --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; color-scheme: dark;
+  --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; --alt: #f0a27a; --alt-ink: #2a1408; color-scheme: dark;
 }
 :root { --muted: #4d625d; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --muted: #9db4ae; } }
@@ -76,6 +76,9 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .progress span.ok { background: var(--good); }
 .progress span.miss { background: var(--bad); }
 
+.punnett { width: auto; font-size: 1.1rem; text-align: center; }
+.punnett th, .punnett td { text-align: center; border: 1px solid var(--line); padding: 8px 16px; font-size: 1.1rem; text-transform: none; letter-spacing: 0; color: var(--ink); }
+.punnett th { background: var(--bg); }
 .ref { font-size: .85rem; color: var(--muted); font-weight: 700; }
 .choices { display: flex; flex-direction: column; gap: 10px; }
 .choice { display: flex; gap: 12px; align-items: flex-start; text-align: left; width: 100%; padding: 12px 14px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font-weight: 400; }
@@ -116,6 +119,41 @@ td.num, th.num { text-align: right; }
 .status { font-size: .95rem; color: var(--muted); }
 .status.bad { color: var(--bad); font-weight: 700; }
 .topbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.react { border: 2px solid var(--accent); }
+.rhead { color: var(--accent); }
+.step, .sortrow { display: flex; flex-direction: column; gap: 8px; padding: 12px 0 4px; border-top: 1px solid var(--line); }
+.stepq, .sorttext { margin: 0; }
+.stepopts, .sortbtns { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { background: var(--bg); color: var(--ink); border: 2px solid var(--line); font-weight: 400; padding: 10px 14px; text-align: left; }
+.opt.ok { border-color: var(--good); background: var(--good-bg); }
+.opt.x { border-color: var(--bad); background: var(--bad-bg); }
+.stepfb { margin: 0; min-height: 1.2em; font-size: .95rem; }
+.stepfb.good { color: var(--good); font-weight: 700; }
+.stepfb.bad { color: var(--bad); font-weight: 700; }
+.viz { display: flex; flex-direction: column; gap: 12px; padding: 4px 0 12px; }
+.cellrow, .chrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.lab { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+.lab.spc { margin-left: 16px; }
+.chip { display: inline-grid; place-items: center; min-width: 40px; height: 40px; padding: 0 8px; border-radius: 8px; border: 2px solid var(--accent); font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; background: var(--surface); color: var(--ink); }
+.chip.sc { border-color: var(--muted); }
+button.chip.btn { cursor: pointer; }
+button.chip.ok { border-color: var(--good); background: var(--good-bg); }
+button.chip.x { border-color: var(--bad); background: var(--bad-bg); }
+.listbox { display: flex; flex-direction: column; gap: 6px; max-height: 240px; overflow: auto; }
+.geno { font-family: var(--font-display); font-size: 1.2rem; }
+.chroms { display: flex; gap: 28px; }
+.chrom { display: flex; flex-direction: column; width: 72px; border-radius: 8px; overflow: hidden; border: 2px solid var(--line); }
+.seg { height: 38px; display: grid; place-items: center; font-weight: 800; font-family: var(--font-display); }
+.seg.s1 { background: var(--accent); color: var(--accent-ink); }
+.seg.s2 { background: var(--alt); color: var(--alt-ink); }
+td.pcell { cursor: pointer; min-width: 64px; }
+td.pcell.ok { background: var(--good-bg); }
+td.pcell.x { background: var(--bad-bg); }
+.rdone { border-top: 1px solid var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+.sortbtns { flex-wrap: nowrap; }
+.sortbtns .opt { flex: 1 1 0; min-width: 0; text-align: center; padding: 8px 6px; }
+.sortrow { gap: 6px; padding-top: 10px; }
+
 @media (prefers-reduced-motion: no-preference) { .fb { animation: rise .25s ease-out; } @keyframes rise { from { opacity: 0; transform: translateY(6px); } } }
 </style>
 
@@ -135,54 +173,62 @@ td.num, th.num { text-align: right; }
       key: "The three sources are (1) new combinations of alleles, (2) copying errors when DNA is copied, and (3) mutations from the environment, like UV light and some chemicals.",
       choices: [
         { t: "New combinations of alleles, errors when DNA is copied, and mutations from the environment", ok: true },
-        { t: "New combinations of alleles, errors when DNA is copied, and a suntan from the sun", why: "A suntan changes how skin looks, but the change is not in the DNA, so it is not inherited. UV light can also change the DNA itself, and that is the mutation source." },
-        { t: "Offspring getting information from only one parent, errors when DNA is copied, and UV light", why: "Every offspring gets information from both parents. That is why they look like both parents. Getting information from one parent is not a source of variation." },
-        { t: "The food an animal eats, the temperature, and the amount of sunlight", why: "Food, temperature, and sunlight can change how an animal looks, but that change is not in the DNA, so it is not inherited." }
-      ] },
-    { skill: "New combinations (card activity)", ref: "Day 2 card activity: Make possible offspring", type: "single",
-      text: "In the card activity, you made offspring from Parent 1 and Parent 2. Why did each offspring end up with a different combination of cards?",
-      key: "A sex cell carries one allele of each gene, and fertilization puts two together. The alleles are combined in different ways, so each offspring gets a different combination. The cards themselves did not change.",
-      choices: [
-        { t: "Each sex cell carries one allele of each gene, and the alleles were combined in different ways", ok: true },
-        { t: "The cards changed while we shuffled them", why: "The cards did not change. Every card was an allele the parents already had. Only the combination changed. A change in the DNA itself would be a mutation, which is a different source." },
-        { t: "Each offspring got information from only one parent", why: "Every offspring got information from both parents. You took one card from each of the 6 piles, so every offspring had cards from Parent 1 and Parent 2." },
-        { t: "The environment changed the cards", why: "The environment did not play a part in the card activity. The offspring were different because the alleles were combined in different ways." }
-      ] },
-    { skill: "Suntan is not a mutation", ref: "Day 2 mini-lesson: Mutations from the environment", type: "tf",
-      text: "True or false: A suntan changes the DNA, so a person can pass the suntan on to their offspring.",
-      key: "A suntan changes how a body looks. That change is not in the DNA, so it is not inherited. UV light can change the DNA itself, and a change in the DNA is a mutation.",
-      choices: [
-        { t: "True", why: "A suntan changes how skin looks, but the change is not in the DNA, so it is not inherited. Food and temperature work the same way. UV light can change the DNA itself, and that is what makes a mutation." },
-        { t: "False", ok: true }
-      ] },
+        { t: "New combinations of alleles, errors when DNA is copied, and a suntan from the sun", why: "A suntan changes how skin looks, but the change is not in the DNA, so it is not inherited." },
+        { t: "Offspring getting information from only one parent, errors when DNA is copied, and UV light", why: "Every offspring gets information from both parents. That is not a source of variation." },
+        { t: "The food an animal eats, the temperature, and the amount of sunlight", why: "Food, temperature, and sunlight can change how an animal looks, but not its DNA." }
+      ],
+      reteach: { sort: { prompt: "Sort each one. Is it a source of new variation in the DNA, or does it only change how a body looks?",
+        buckets: ["Source of new variation", "Only changes the body"],
+        cards: [
+          { t: "Sex cells join at fertilization", b: 0, why: "Yes. This makes a new combination of alleles." },
+          { t: "A rare error slips through when DNA is copied", b: 0, why: "Yes. A copying error changes the DNA." },
+          { t: "UV light damages DNA", b: 0, why: "Yes. A mutation from the environment changes the DNA." },
+          { t: "A suntan from the sun", b: 1, why: "A suntan changes how skin looks. It is not in the DNA, so it is not inherited." },
+          { t: "Eating different food", b: 1, why: "Food can change how a body looks, but not the DNA." },
+          { t: "Cold weather changes how fur looks", b: 1, why: "Temperature changes how a body looks, but not the DNA." }
+        ] } } },
+
     { skill: "Match a case to a source", ref: "Day 1 puppy puzzle and Day 2 card activity", type: "single",
       text: "Mom and Dad are both Bb. They have puppies that are BB, Bb, and bb. Which source explains why the puppies are different from each other?",
       key: "Every allele in the puppies, B and b, was already in the parents. No allele changed. Fertilization put two alleles together in different combinations, so this is a new combination of alleles.",
       choices: [
         { t: "New combinations of alleles: each parent's sex cell carries one allele, and fertilization puts two together", ok: true },
-        { t: "A copying error: a rare error slipped through when DNA was copied", why: "Copying errors are rare, and they make a new allele. Here the puppies have only B and b, which both parents already had. Nothing new had to be made." },
-        { t: "A mutation from the environment: UV light damaged the DNA", why: "A mutation is a change in the DNA. No allele changed here, since B and b were already in the parents. The puppies just got different combinations of them." },
-        { t: "The food and temperature changed the puppies' DNA", why: "Food and temperature can change how an animal looks, but they do not change the DNA. They cannot explain BB, Bb, and bb." }
-      ] },
+        { t: "A copying error: a rare error slipped through when DNA was copied", why: "Copying errors are rare and make a new allele. These puppies have only B and b, which both parents already had." },
+        { t: "A mutation from the environment: UV light damaged the DNA", why: "A mutation is a change in the DNA. No allele changed here. The puppies got different combinations of B and b." },
+        { t: "The food and temperature changed the puppies' DNA", why: "Food and temperature do not change DNA. They cannot explain BB, Bb, and bb." }
+      ],
+      reteach: {
+        viz: { type: "fertilize", p1: ["B", "b"], p2: ["B", "b"], who: "puppy", plural: "puppies", prompt: "Mom and Dad are both Bb. Each sex cell gets one allele. Make 4 puppies and watch which alleles show up." },
+        steps: [
+          { q: "Which alleles did your puppies have?", o: ["Only B and b, which the parents already had", "A new allele that neither parent has"], right: "Right. Every allele was already in a parent.", hints: { 1: "Look at the list again. Only B and b appear." } },
+          { q: "Did any allele change into something different?", o: ["No, the alleles just got combined in different ways", "Yes, a copying error changed one"], right: "Right. Nothing changed. The alleles were combined in different ways.", hints: { 1: "A copying error would make a brand new allele. You only saw B and b." } },
+          { q: "So which source explains BB, Bb, and bb?", o: ["New combinations of alleles", "Copying errors", "Mutations from the environment"], right: "New combinations of alleles.", hints: { 1: "A copying error would make a new allele.", 2: "UV light would damage DNA. Nothing was damaged here." } }
+        ] } },
+
     { skill: "Which sources change the DNA", ref: "Day 2 mini-lesson: Three sources of new variation", type: "multi", pick: 2,
       text: "Two of the three sources of new variation change the DNA itself. Select the TWO.",
       key: "Copying errors and mutations from the environment both change the DNA. A change in how a body looks from food, exercise, or temperature is not in the DNA, so it is not inherited.",
       choices: [
         { t: "A rare error slips through when DNA is copied before a cell divides", ok: true },
         { t: "UV light or some chemicals damage DNA", ok: true },
-        { t: "Food, exercise, or temperature change how a body looks", why: "That change is in how the body looks, not in the DNA, so it is not inherited. It is like the suntan example from Day 2." },
-        { t: "A suntan from the sun", why: "A suntan changes how skin looks. The change is not in the DNA, so it is not inherited. UV light can damage DNA, but a tan is not that damage." }
-      ] }
+        { t: "Food, exercise, or temperature change how a body looks", why: "That change is in how the body looks, not in the DNA, so it is not inherited." },
+        { t: "A suntan from the sun", why: "A suntan changes how skin looks. It is not in the DNA, so it is not inherited." }
+      ],
+      reteach: { steps: [
+        { q: "A suntan changes how skin looks. Is that change in the DNA?", o: ["No, it is only how the body looks", "Yes, the DNA is changed"], right: "Right. Food, exercise, and temperature work the same way.", hints: { 1: "A suntan is on the skin. The DNA is not changed, so it is not inherited." } },
+        { q: "Which of these does change the DNA itself?", o: ["UV light damaging DNA", "Eating healthy food", "Exercise"], right: "UV light and some chemicals can damage DNA. That is a mutation.", hints: { 1: "Food changes how a body looks, not its DNA.", 2: "Exercise changes the body, not the DNA." } },
+        { q: "A rare error when DNA is copied changes...", o: ["the DNA", "only how the body looks"], right: "The DNA. That is the second source of new variation.", hints: { 1: "A copying error is a mistake in the DNA itself." } }
+      ] } }
   ];
 
   // 4-point scale from first-try correct answers out of 5.
   var LEVELS = [
-    { n: 4, name: "Mastery", d: "You got every question right on the first try." },
-    { n: 3, name: "Proficient", d: "4 of 5 right on the first try. This meets the class goal." },
-    { n: 2, name: "Developing", d: "2 or 3 of 5 right on the first try. Review the reteach notes below." },
-    { n: 1, name: "Beginning", d: "0 or 1 of 5 right on the first try. Ask for help and review the reteach notes below." }
+    { n: 4, name: "Mastery", d: "You got all 3 right on the first try." },
+    { n: 3, name: "Proficient", d: "2 of 3 right on the first try. This meets the class goal." },
+    { n: 2, name: "Developing", d: "1 of 3 right on the first try. Review the notes below." },
+    { n: 1, name: "Beginning", d: "0 of 3 right on the first try. Ask for help and review the notes below." }
   ];
-  function toScale(c) { return c >= 5 ? 4 : c === 4 ? 3 : c >= 2 ? 2 : 1; }
+  function toScale(c) { return c >= ITEMS.length ? 4 : c === ITEMS.length - 1 ? 3 : c >= 1 ? 2 : 1; }
 
   var app = document.getElementById("app");
   var db = null, userCap = null, dl = null, canEdit = false;
@@ -202,7 +248,7 @@ td.num, th.num { text-align: right; }
       '<div class="topbar"><span class="eyebrow">Unit 2.2 · Warm-up</span>' + (canEdit ? '<button class="ghost" id="tbtn">Teacher data</button>' : "") + "</div>" +
       "<h1>Three Sources of Variation</h1>" +
       '<div class="target"><b>Learning target ' + TARGET + ':</b> I can name three ways new genetic variation arises.</div>' +
-      '<p>Answer 5 questions about Day 1 and Day 2 from memory. After each one you get feedback right away. If you miss one, you get a short reteach and a second try.</p>' +
+      '<p>Answer 3 questions about Day 1 and Day 2 from memory. If you miss one, you get a quick activity to work it out, then a second try.</p>' +
       '<form class="card" id="f" novalidate>' +
       '<label class="field" for="nm">First and last name<input type="text" id="nm" autocomplete="off" value="' + esc(w.name || "") + '"></label>' +
       '<fieldset><legend>My teacher</legend><div class="pills" id="tp">' + TEACHERS.map(function (t) {
@@ -237,11 +283,17 @@ td.num, th.num { text-align: right; }
       return "<span class=\"" + c + "\"></span>"; }).join("") + "</div>";
   }
 
+  function gridHtml(it) {
+    if (!it.grid) return "";
+    return '<div class="scroll"><table class="punnett" aria-label="Punnett square">' + it.grid.map(function (r, ri) {
+      return "<tr>" + r.map(function (c, ci) { return (ri === 0 || ci === 0 ? "<th>" : "<td>") + esc(c) + (ri === 0 || ci === 0 ? "</th>" : "</td>"); }).join("") + "</tr>"; }).join("") + "</table></div>";
+  }
+
   function viewQ() {
     var it = ITEMS[S.i], multi = it.type === "multi";
     app.className = "wrap";
     var html = '<div class="topbar"><span class="eyebrow">Question ' + (S.i + 1) + " of " + ITEMS.length + "</span><span class=\"status\">" + esc(S.who.name) + "</span></div>" + progressHtml();
-    html += '<div class="card"><span class="ref">Think back to: ' + esc(it.ref) + "</span><h2>" + esc(it.text) + "</h2>" + (multi ? '<p class="status">Pick ' + it.pick + " answers.</p>" : "") + '<div class="choices" role="group" aria-label="Answer choices">';
+    html += '<div class="card"><span class="ref">Think back to: ' + esc(it.ref) + "</span><h2>" + esc(it.text) + "</h2>" + gridHtml(it) + (multi ? '<p class="status">Pick ' + it.pick + " answers.</p>" : "") + '<div class="choices" role="group" aria-label="Answer choices">';
     S.order[S.i].forEach(function (ci) {
       var c = it.choices[ci], pressed = S.sel.indexOf(ci) >= 0, cls = "choice" + (multi ? " multi" : "");
       var mark = "";
@@ -256,8 +308,9 @@ td.num, th.num { text-align: right; }
     });
     html += "</div>";
     if (S.state === "answer") html += '<div class="row"><button type="button" id="chk" disabled>Check my answer</button></div>';
-    html += "</div>" + S.fbHtml;
+    html += "</div>" + S.fbHtml + (S.state === "react" ? '<div class="card react" id="react"></div>' : "");
     app.innerHTML = html;
+    if (S.state === "react") { mountReteach(it); }
 
     app.querySelectorAll(".choice:not(.locked)").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -276,6 +329,188 @@ td.num, th.num { text-align: right; }
     var rt = document.getElementById("rt"); if (rt) rt.addEventListener("click", retry);
     if (S.fbHtml) { var f = app.querySelector(".fb"); if (f) f.scrollIntoView({ block: "nearest", behavior: "smooth" }); }
   }
+
+  /* ---------- hands-on reteach engine ---------- */
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function pickOne(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function kids(node, fn) { Array.prototype.forEach.call(node.children, fn); }
+  function chips(arr) { return arr.map(function (x) { return '<span class="chip">' + esc(x) + "</span>"; }).join(""); }
+  function geno(x, y) { return (x === x.toLowerCase() && y !== y.toLowerCase()) ? y + x : x + y; }
+
+  function mountReteach(it) {
+    var host = document.getElementById("react"), r = it.reteach || {}, queue = [];
+    host.innerHTML = '<h3 class="rhead">Not quite. Let’s work it out.</h3>';
+    if (r.sort) queue.push(function (n) { runSort(host, r.sort, n); });
+    if (r.viz) queue.push(function (n) { runViz(host, r.viz, n); });
+    if (r.steps) queue.push(function (n) { runSteps(host, r.steps, n); });
+    function go(i) { if (i >= queue.length) return finish(); queue[i](function () { go(i + 1); }); }
+    function finish() {
+      var why = S.sel.filter(function (ci) { return !it.choices[ci].ok && it.choices[ci].why; }).map(function (ci) { return it.choices[ci].why; });
+      var d = el("div", "rdone", '<p class="keyidea">' + esc(it.key) + "</p>" + (why.length ? "<p>About the answer you picked: " + esc(why[0]) + "</p>" : "") + '<div class="row"><button type="button" id="rt2">Try the question again</button></div>');
+      host.appendChild(d);
+      document.getElementById("rt2").addEventListener("click", retry);
+      d.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+    go(0);
+  }
+
+  /* guided steps: o[0] is the right option; options are shuffled on screen */
+  function runSteps(host, steps, done) {
+    var box = el("div", "steps"); host.appendChild(box);
+    function show(i) {
+      if (i >= steps.length) return done();
+      var st = steps[i], d = el("div", "step"), opts = el("div", "stepopts"), fb = el("p", "stepfb");
+      fb.setAttribute("aria-live", "polite");
+      d.appendChild(el("p", "stepq", "<b>" + (i + 1) + ".</b> " + esc(st.q)));
+      shuffle(st.o.map(function (_, k) { return k; })).forEach(function (k) {
+        var b = el("button", "opt"); b.type = "button"; b.textContent = st.o[k];
+        b.addEventListener("click", function () {
+          if (k === 0) {
+            kids(opts, function (x) { x.disabled = true; });
+            b.classList.add("ok"); fb.className = "stepfb good"; fb.textContent = st.right || "Yes.";
+            show(i + 1);
+          } else {
+            b.classList.add("x"); b.disabled = true; fb.className = "stepfb bad";
+            fb.textContent = (st.hints && st.hints[k]) || "Not quite. Try another.";
+          }
+        });
+        opts.appendChild(b);
+      });
+      d.appendChild(opts); d.appendChild(fb); box.appendChild(d);
+    }
+    show(0);
+  }
+
+  /* sort: each card goes into one of two buckets, with feedback on every card */
+  function runSort(host, cfg, done) {
+    var box = el("div", "sortbox"), left = cfg.cards.length; host.appendChild(box);
+    box.appendChild(el("p", "stepq", esc(cfg.prompt)));
+    shuffle(cfg.cards).forEach(function (c) {
+      var row = el("div", "sortrow"), btns = el("div", "sortbtns"), fb = el("p", "stepfb");
+      fb.setAttribute("aria-live", "polite");
+      cfg.buckets.forEach(function (name, bi) {
+        var b = el("button", "opt"); b.type = "button"; b.textContent = name;
+        b.addEventListener("click", function () {
+          if (bi === c.b) {
+            kids(btns, function (x) { x.disabled = true; });
+            b.classList.add("ok"); fb.className = "stepfb good"; fb.textContent = c.why;
+            left--; if (left === 0) done();
+          } else { b.classList.add("x"); b.disabled = true; fb.className = "stepfb bad"; fb.textContent = "Not that one. Try the other."; }
+        });
+        btns.appendChild(b);
+      });
+      row.appendChild(el("p", "sorttext", "<b>" + esc(c.t) + "</b>")); row.appendChild(btns); row.appendChild(fb); box.appendChild(row);
+    });
+  }
+
+  function runViz(host, cfg, done) {
+    var box = el("div", "viz"); host.appendChild(box);
+    VIZ[cfg.type](box, cfg, done);
+  }
+  var VIZ = {};
+
+  /* make sex cells from a body cell: each gets one allele */
+  VIZ.sexcells = function (box, cfg, done) {
+    var a = cfg.alleles, n = 0, fired = false, tally = {};
+    a.forEach(function (x) { tally[x] = 0; });
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">Body cell</span>' + chips(a) + '</div>' +
+      '<div class="row"><button type="button" class="mk">Make a sex cell</button><span class="status vc"></span></div>' +
+      '<div class="cellrow vo"><span class="lab">Sex cells</span></div><p class="status vt"></p>';
+    var out = box.querySelector(".vo"), vc = box.querySelector(".vc"), vt = box.querySelector(".vt");
+    box.querySelector(".mk").addEventListener("click", function () {
+      var x = pickOne(a); n++; tally[x]++;
+      out.appendChild(el("span", "chip sc", esc(x)));
+      vt.textContent = a.map(function (y) { return y + ": " + tally[y]; }).join("   ");
+      if (n < 4) vc.textContent = n + " of 4"; else if (!fired) { fired = true; vc.textContent = "Good. Keep going, or answer the questions below."; done(); }
+    });
+  };
+
+  /* join one sex cell from each parent */
+  VIZ.fertilize = function (box, cfg, done) {
+    var n = 0, fired = false, seen = [];
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">Mom</span>' + chips(cfg.p1) + '<span class="lab spc">Dad</span>' + chips(cfg.p2) + '</div>' +
+      '<div class="row"><button type="button" class="mk">Make a ' + esc(cfg.who) + '</button><span class="status vc"></span></div>' +
+      '<div class="listbox vo"></div><p class="status vt"></p>';
+    var out = box.querySelector(".vo"), vc = box.querySelector(".vc"), vt = box.querySelector(".vt");
+    box.querySelector(".mk").addEventListener("click", function () {
+      var e = pickOne(cfg.p1), s = pickOne(cfg.p2); n++;
+      [e, s].forEach(function (x) { if (seen.indexOf(x) < 0) seen.push(x); });
+      out.appendChild(el("div", "chrow", "<span>egg</span>" + chips([e]) + "<span>+ sperm</span>" + chips([s]) + "<span>→ " + esc(cfg.who) + "</span><b class=\"geno\">" + esc(geno(e, s)) + "</b>"));
+      vt.textContent = "Alleles in the " + (cfg.plural || cfg.who + "s") + " so far: " + seen.join(", ");
+      if (n < 4) vc.textContent = n + " of 4"; else if (!fired) { fired = true; vc.textContent = "Good. Keep going, or answer the questions below."; done(); }
+    });
+  };
+
+  /* crossing over: swap the bottom pieces of paired chromosomes */
+  VIZ.crossover = function (box, cfg, done) {
+    var c1 = [{ l: "A", o: 1 }, { l: "B", o: 1 }, { l: "C", o: 1 }], c2 = [{ l: "a", o: 2 }, { l: "b", o: 2 }, { l: "c", o: 2 }], fired = false;
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="chroms"><div class="chrom c1"></div><div class="chrom c2"></div></div>' +
+      '<div class="row"><button type="button" class="mk">Cross over</button><button type="button" class="opt rs" hidden>Reset</button></div><p class="status vt"></p>';
+    var vt = box.querySelector(".vt"), rs = box.querySelector(".rs");
+    function draw() {
+      [c1, c2].forEach(function (c, k) {
+        box.querySelector(".c" + (k + 1)).innerHTML = c.map(function (s) { return '<div class="seg s' + s.o + '">' + esc(s.l) + "</div>"; }).join("");
+      });
+    }
+    function swap() { var t = c1[2]; c1[2] = c2[2]; c2[2] = t; draw(); }
+    draw();
+    box.querySelector(".mk").addEventListener("click", function () {
+      swap(); rs.hidden = false;
+      vt.textContent = "Same pieces, new mix: " + c1.map(function (s) { return s.l; }).join(" ") + " and " + c2.map(function (s) { return s.l; }).join(" ") + ".";
+      if (!fired) { fired = true; done(); }
+    });
+    rs.addEventListener("click", function () { c1 = [{ l: "A", o: 1 }, { l: "B", o: 1 }, { l: "C", o: 1 }]; c2 = [{ l: "a", o: 2 }, { l: "b", o: 2 }, { l: "c", o: 2 }]; draw(); vt.textContent = ""; });
+  };
+
+  /* spot the copying error */
+  VIZ.spot = function (box, cfg, done) {
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">Original</span>' + chips(cfg.orig.split("")) + '</div>' +
+      '<div class="cellrow cp"><span class="lab">Copy</span></div><p class="stepfb vt" aria-live="polite"></p>';
+    var cp = box.querySelector(".cp"), vt = box.querySelector(".vt");
+    cfg.copy.split("").forEach(function (ch, i) {
+      var b = el("button", "chip btn", esc(ch)); b.type = "button";
+      b.addEventListener("click", function () {
+        if (ch !== cfg.orig[i]) { b.classList.add("ok"); vt.className = "stepfb good vt"; vt.textContent = cfg.found; kids(cp, function (x) { x.disabled = true; }); done(); }
+        else { b.classList.add("x"); b.disabled = true; vt.className = "stepfb bad vt"; vt.textContent = "That letter matches the original. Look for the one that is different."; }
+      });
+      cp.appendChild(b);
+    });
+  };
+
+  /* change one DNA letter and watch the amino acid change */
+  VIZ.codon = function (box, cfg, done) {
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="cellrow"><span class="lab">DNA</span><span class="dna">' + chips(cfg.before.split("")) + '</span></div>' +
+      '<p class="stepq">Amino acid: <b class="aa">' + esc(cfg.aa1) + '</b></p><div class="row"><button type="button" class="mk">Change one letter</button></div>';
+    var btn = box.querySelector(".mk");
+    btn.addEventListener("click", function () {
+      box.querySelector(".dna").innerHTML = chips(cfg.after.split(""));
+      box.querySelector(".aa").textContent = cfg.aa2; btn.disabled = true; done();
+    });
+  };
+
+  /* tap the boxes of a Punnett square that match a genotype */
+  VIZ.punnett = function (box, cfg, done) {
+    var total = 0, found = 0;
+    cfg.grid.forEach(function (r, ri) { r.forEach(function (c, ci) { if (ri > 0 && ci > 0 && c === cfg.target) total++; }); });
+    box.innerHTML = '<p class="stepq">' + esc(cfg.prompt) + '</p><div class="scroll"><table class="punnett pk"></table></div><p class="stepfb vt" aria-live="polite"></p>';
+    var tb = box.querySelector(".pk"), vt = box.querySelector(".vt");
+    cfg.grid.forEach(function (r, ri) {
+      var tr = el("tr");
+      r.forEach(function (c, ci) {
+        if (ri === 0 || ci === 0) { tr.appendChild(el("th", "", esc(c))); return; }
+        var td = el("td", "pcell", esc(c)); td.tabIndex = 0; td.setAttribute("role", "button");
+        function tap() {
+          if (td.className.indexOf("ok") >= 0) return;
+          if (c === cfg.target) { td.classList.add("ok"); found++; vt.className = "stepfb good vt"; vt.textContent = found === total ? cfg.found : "Yes. Keep looking."; if (found === total) done(); }
+          else { td.classList.add("x"); vt.className = "stepfb bad vt"; vt.textContent = "That box is " + c + ". Look for " + cfg.target + "."; }
+        }
+        td.addEventListener("click", tap);
+        td.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); tap(); } });
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+  };
 
   function check() {
     var it = ITEMS[S.i];
@@ -296,10 +531,7 @@ td.num, th.num { text-align: right; }
         var missed = it.choices.filter(function (c, ci) { return c.ok && S.sel.indexOf(ci) < 0; });
         if (missed.length) items.push("<li>You left out a correct answer. Look again for the choices that change the DNA itself.</li>");
       }
-      if (S.tries === 1) {
-        S.state = "retry";
-        S.fbHtml = '<div class="fb bad" role="status"><div class="head">Not quite. Here is the reteach.</div><ul>' + items.join("") + '</ul><p class="keyidea">' + esc(it.key) + '</p><div class="row"><button type="button" id="rt">Try again</button></div></div>';
-      } else {
+      if (S.tries === 1) { S.state = "react"; S.fbHtml = ""; } else {
         S.state = "reveal";
         S.fbHtml = '<div class="fb bad" role="status"><div class="head">Still not it. The answer is marked in green.</div><p class="keyidea">' + esc(it.key) + '</p><div class="row"><button type="button" id="nx">' + nextLabel() + "</button></div></div>";
       }
@@ -319,7 +551,7 @@ td.num, th.num { text-align: right; }
   /* ---------- results ---------- */
   function record() {
     var raw = S.firstOk.filter(Boolean).length;
-    return { target: TARGET, name: S.who.name, teacher: S.who.teacher, period: Number(S.who.period), score4: toScale(raw), firstTryCorrect: raw,
+    return { target: TARGET, nq: ITEMS.length, name: S.who.name, teacher: S.who.teacher, period: Number(S.who.period), score4: toScale(raw), firstTryCorrect: raw,
       firstTry: S.firstOk.map(function (b) { return b ? 1 : 0; }), finalCorrect: S.finalOk.filter(Boolean).length,
       tries: S.tryCount.slice(), ts: Date.now() };
   }
@@ -348,7 +580,7 @@ td.num, th.num { text-align: right; }
     if (S.saved === "ok") el.innerHTML = '<p class="status">Your score was sent to your teacher. You can close this page.</p>';
     else if (S.saved === "saving") el.innerHTML = '<p class="status">Sending your score…</p>';
     else {
-      var txt = [rec.target, rec.name, rec.teacher, "Period " + rec.period, "Score " + rec.score4 + "/4", "First try " + rec.firstTryCorrect + "/5"].join(" | ");
+      var txt = [rec.target, rec.name, rec.teacher, "Period " + rec.period, "Score " + rec.score4 + "/4", "First try " + rec.firstTryCorrect + "/" + ITEMS.length + ""].join(" | ");
       el.innerHTML = '<p class="status bad">Your score could not be sent automatically. Show this screen to your teacher, or copy the line below and turn it in.</p>' +
         '<input type="text" readonly id="cp" value="' + esc(txt) + '"><div class="row"><button type="button" id="cpb">Copy</button><button type="button" class="ghost" id="rs">Try sending again</button></div>';
       document.getElementById("cpb").addEventListener("click", function () {
@@ -387,7 +619,9 @@ td.num, th.num { text-align: right; }
   }
   function keyOf(r) { return r._uid || [String(r.name).trim().toLowerCase(), r.teacher, r.period].join("|"); }
   function renderTeacher() {
-    var sorted = T.rows.slice().sort(function (a, b) { return a.ts - b.ts; });
+    var cur = T.rows.filter(function (r) { return r.nq === ITEMS.length; });
+    var hiddenN = T.rows.length - cur.length;
+    var sorted = cur.slice().sort(function (a, b) { return a.ts - b.ts; });
     var seen = {};
     sorted.forEach(function (r) { var k = keyOf(r); seen[k] = (seen[k] || 0) + 1; r._attempt = seen[k]; });
     var firsts = sorted.filter(function (r) { return r._attempt === 1; });
@@ -398,7 +632,7 @@ td.num, th.num { text-align: right; }
     var html = '<div class="topbar"><div class="row"><div class="pills" id="ft">' + ["All"].concat(TEACHERS).map(function (t) { return '<input type="radio" name="ft" id="ft_' + t + '" value="' + t + '"' + (T.teacher === t ? " checked" : "") + '><label for="ft_' + t + '">' + t + "</label>"; }).join("") +
       '</div><div class="pills" id="fp">' + ["All"].concat(PERIODS).map(function (p) { return '<input type="radio" name="fp" id="fp_' + p + '" value="' + p + '"' + (String(T.period) === String(p) ? " checked" : "") + '><label for="fp_' + p + '">' + (p === "All" ? "All periods" : "P" + p) + "</label>"; }).join("") + "</div></div>" +
       '<div class="row"><button id="cc">Copy CSV</button><button class="ghost" id="dc">Download CSV</button></div></div>';
-    html += '<p class="status">' + shown.length + " students shown (first attempt per student). " + (T.rows.length - firsts.length) + " repeat attempts are in the table but not in the averages.</p>";
+    html += '<p class="status">' + shown.length + " students shown (first attempt per student). " + (cur.length - firsts.length) + " repeat attempts are in the table but not in the averages." + (hiddenN ? " " + hiddenN + " rows from an earlier version of this warm-up are hidden." : "") + "</p>";
 
     // Distribution
     var dist = [4, 3, 2, 1].map(function (n) { return shown.filter(function (r) { return r.score4 === n; }).length; });
@@ -427,12 +661,12 @@ td.num, th.num { text-align: right; }
 
     // Student table
     var tbl = sorted.filter(function (r) { return (T.teacher === "All" || r.teacher === T.teacher) && (T.period === "All" || String(r.period) === String(T.period)); }).sort(function (a, b) { return a.teacher.localeCompare(b.teacher) || a.period - b.period || String(a.name).localeCompare(b.name); });
-    html += '<div class="card"><h3>Students</h3><div class="scroll"><table><thead><tr><th>Teacher</th><th class="num">Per</th><th>Name</th><th class="num">Attempt</th><th class="num">Score (1–4)</th><th class="num">First-try right</th><th>Q1–Q5 first try</th></tr></thead><tbody>' +
-      (tbl.length ? tbl.map(function (r) { return "<tr><td>" + esc(r.teacher) + '</td><td class="num">' + r.period + "</td><td>" + esc(r.name) + '</td><td class="num">' + r._attempt + '</td><td class="num ' + (r.score4 >= 3 ? "s4" : r.score4 < 2 ? "s1" : "") + '"><b>' + r.score4 + '</b></td><td class="num">' + r.firstTryCorrect + "/5</td><td>" + (r.firstTry || []).map(function (v) { return v ? "✓" : "✗"; }).join(" ") + "</td></tr>"; }).join("") : '<tr><td colspan="7">No responses yet.</td></tr>') + "</tbody></table></div></div>";
+    html += '<div class="card"><h3>Students</h3><div class="scroll"><table><thead><tr><th>Teacher</th><th class="num">Per</th><th>Name</th><th class="num">Attempt</th><th class="num">Score (1–4)</th><th class="num">First-try right</th><th>First try by question</th></tr></thead><tbody>' +
+      (tbl.length ? tbl.map(function (r) { return "<tr><td>" + esc(r.teacher) + '</td><td class="num">' + r.period + "</td><td>" + esc(r.name) + '</td><td class="num">' + r._attempt + '</td><td class="num ' + (r.score4 >= 3 ? "s4" : r.score4 < 2 ? "s1" : "") + '"><b>' + r.score4 + '</b></td><td class="num">' + r.firstTryCorrect + "/" + ITEMS.length + "</td><td>" + (r.firstTry || []).map(function (v) { return v ? "✓" : "✗"; }).join(" ") + "</td></tr>"; }).join("") : '<tr><td colspan="7">No responses yet.</td></tr>') + "</tbody></table></div></div>";
     app.innerHTML = '<div class="topbar"><h1>Teacher data</h1><div class="row"><button class="ghost" id="rf">Refresh</button><button class="ghost" id="bk">Back to warm-up</button></div></div>' + html;
 
     function csv() {
-      var head = ["target", "teacher", "period", "name", "attempt", "score_4pt", "first_try_correct", "q1", "q2", "q3", "q4", "q5", "final_correct", "timestamp"];
+      var head = ["target", "teacher", "period", "name", "attempt", "score_4pt", "first_try_correct", "first_try_correct"].concat(ITEMS.map(function (_, k) { return "q" + (k + 1); }), ["final_correct", "timestamp"]);
       var lines = [head.join(",")].concat(tbl.map(function (r) {
         return [r.target, r.teacher, r.period, '"' + String(r.name).replace(/"/g, '""') + '"', r._attempt, r.score4, r.firstTryCorrect].concat(r.firstTry || [], [r.finalCorrect, new Date(r.ts).toISOString()]).join(","); }));
       return lines.join("\n");
