@@ -163,8 +163,10 @@ td.pcell.x { background: var(--bad-bg); }
 (function () {
   "use strict";
   var TARGET = "LS3-2.3";
+  var TEACHER_PERIODS = { Renick: [5, 7], Silva: [1, 2, 3, 5, 6, 7], Bogner: [1, 2, 3, 5, 6, 7], Leapley: [7] };
   var TEACHERS = ["Renick", "Silva", "Bogner", "Leapley"];
   var PERIODS = [1, 2, 3, 5, 6, 7];
+  function periodsFor(t) { return TEACHER_PERIODS[t] || []; }
 
   // Question bank. "why" is the reteach for that specific wrong answer.
   var ITEMS = [
@@ -241,7 +243,8 @@ td.pcell.x { background: var(--bad-bg); }
   /* ---------- start screen ---------- */
   function viewStart(err) {
     var saved = {}; try { saved = JSON.parse(lsGet("ls323who") || "{}"); } catch (e) {}
-    var w = S.who.name ? S.who : saved;
+    var w = S.draft || (S.who.name ? S.who : saved);
+    if (w.teacher && periodsFor(w.teacher).indexOf(Number(w.period)) < 0) w = { name: w.name, teacher: w.teacher, period: null };
     app.className = "wrap";
     app.innerHTML =
       '<div class="topbar"><span class="eyebrow">Unit 2.2 · Warm-up</span>' + (canEdit ? '<button class="ghost" id="tbtn">Teacher data</button>' : "") + "</div>" +
@@ -252,19 +255,27 @@ td.pcell.x { background: var(--bad-bg); }
       '<label class="field" for="nm">First and last name<input type="text" id="nm" autocomplete="off" value="' + esc(w.name || "") + '"></label>' +
       '<fieldset><legend>My teacher</legend><div class="pills" id="tp">' + TEACHERS.map(function (t) {
         return '<input type="radio" name="teacher" id="t_' + t + '" value="' + t + '"' + (w.teacher === t ? " checked" : "") + '><label for="t_' + t + '">' + t + "</label>"; }).join("") + "</div></fieldset>" +
-      '<fieldset><legend>My period</legend><div class="pills" id="pp">' + PERIODS.map(function (p) {
-        return '<input type="radio" name="period" id="p_' + p + '" value="' + p + '"' + (String(w.period) === String(p) ? " checked" : "") + '><label for="p_' + p + '">' + p + "</label>"; }).join("") + "</div></fieldset>" +
+      '<fieldset><legend>My period</legend><div class="pills" id="pp"></div></fieldset>' +
       '<div class="err" id="err" role="alert">' + esc(err || "") + '</div>' +
       '<div class="row"><button type="submit">Start</button></div></form>';
+    function drawPeriods(t, chosen) {
+      var pp = document.getElementById("pp"), list = periodsFor(t);
+      if (!list.length) { pp.innerHTML = '<span class="status">Pick your teacher first.</span>'; return; }
+      pp.innerHTML = list.map(function (p) {
+        return '<input type="radio" name="period" id="p_' + p + '" value="' + p + '"' + (String(chosen) === String(p) ? " checked" : "") + '><label for="p_' + p + '">' + p + "</label>"; }).join("");
+    }
+    drawPeriods(w.teacher, w.period);
+    document.querySelectorAll('input[name=teacher]').forEach(function (r) { r.addEventListener("change", function () { drawPeriods(r.value, null); }); });
     document.getElementById("f").addEventListener("submit", function (e) {
       e.preventDefault();
       var name = document.getElementById("nm").value.trim();
       var t = (document.querySelector('input[name=teacher]:checked') || {}).value;
       var p = (document.querySelector('input[name=period]:checked') || {}).value;
-      if (name.length < 3 || name.indexOf(" ") < 0) return viewStart("Type your first and last name.");
-      if (!t) return viewStart("Pick your teacher.");
-      if (!p) return viewStart("Pick your period.");
-      S.who = { name: name, teacher: t, period: p };
+      function fail(msg) { S.draft = { name: name, teacher: t || null, period: p || null }; viewStart(msg); }
+      if (name.length < 3 || name.indexOf(" ") < 0) return fail("Type your first and last name.");
+      if (!t) return fail("Pick your teacher.");
+      if (!p || periodsFor(t).indexOf(Number(p)) < 0) return fail("Pick your period.");
+      S.draft = null; S.who = { name: name, teacher: t, period: p };
       lsSet("ls323who", JSON.stringify(S.who));
       S.i = 0; S.firstOk = []; S.finalOk = []; S.tryCount = []; S.saved = "idle";
       S.order = ITEMS.map(function (it) { return it.type === "tf" ? it.choices.map(function (_, k) { return k; }) : shuffle(it.choices.map(function (_, k) { return k; })); });
@@ -696,7 +707,7 @@ td.pcell.x { background: var(--bad-bg); }
     function f1(x) { return x === null ? "–" : x.toFixed(2); }
     function pct(n, d) { return d ? Math.round(100 * n / d) + "%" : "–"; }
     var html = '<div class="topbar"><div class="row"><div class="pills" id="ft">' + ["All"].concat(TEACHERS).map(function (t) { return '<input type="radio" name="ft" id="ft_' + t + '" value="' + t + '"' + (T.teacher === t ? " checked" : "") + '><label for="ft_' + t + '">' + t + "</label>"; }).join("") +
-      '</div><div class="pills" id="fp">' + ["All"].concat(PERIODS).map(function (p) { return '<input type="radio" name="fp" id="fp_' + p + '" value="' + p + '"' + (String(T.period) === String(p) ? " checked" : "") + '><label for="fp_' + p + '">' + (p === "All" ? "All periods" : "P" + p) + "</label>"; }).join("") + "</div></div>" +
+      '</div><div class="pills" id="fp">' + ["All"].concat(T.teacher === "All" ? PERIODS : periodsFor(T.teacher)).map(function (p) { return '<input type="radio" name="fp" id="fp_' + p + '" value="' + p + '"' + (String(T.period) === String(p) ? " checked" : "") + '><label for="fp_' + p + '">' + (p === "All" ? "All periods" : "P" + p) + "</label>"; }).join("") + "</div></div>" +
       '<div class="row"><button id="cc">Copy CSV</button><button class="ghost" id="dc">Download CSV</button><button class="ghost" id="sh">Send to Google Sheet</button></div></div>';
     html += '<p class="status" id="shs" aria-live="polite"></p><p class="status">' + shown.length + " students shown (first attempt per student). " + (cur.length - firsts.length) + " repeat attempts are in the table but not in the averages." + (hiddenN ? " " + hiddenN + " rows from an earlier version of this warm-up are hidden." : "") + "</p>";
 
@@ -720,6 +731,7 @@ td.pcell.x { background: var(--bad-bg); }
       TEACHERS.map(function (t) {
         var tr = aTP.filter(function (r) { return r.teacher === t; });
         return "<tr><td><b>" + t + "</b></td>" + PERIODS.map(function (p) {
+          if (periodsFor(t).indexOf(p) < 0) return '<td class="num"></td>';
           var c = tr.filter(function (r) { return r.period === p; }); var a = avg(c);
           return '<td class="num ' + (a !== null ? (a >= 3 ? "s4" : a < 2 ? "s1" : "") : "") + '">' + f1(a) + (c.length ? ' <span class="status">(' + c.length + ")</span>" : "") + "</td>"; }).join("") +
           '<td class="num"><b>' + f1(avg(tr)) + "</b></td></tr>"; }).join("") +
@@ -745,7 +757,7 @@ td.pcell.x { background: var(--bad-bg); }
       dl.save({ filename: "LS3-2.3-warmup-scores.csv", data: csv() }).catch(function () {});
     });
     document.getElementById("sh").addEventListener("click", function () { sendToSheet(document.getElementById("sh"), document.getElementById("shs")); });
-    document.querySelectorAll("#ft input").forEach(function (i) { i.addEventListener("change", function () { T.teacher = i.value; renderTeacher(); }); });
+    document.querySelectorAll("#ft input").forEach(function (i) { i.addEventListener("change", function () { T.teacher = i.value; if (T.period !== "All" && T.teacher !== "All" && periodsFor(T.teacher).indexOf(Number(T.period)) < 0) T.period = "All"; renderTeacher(); }); });
     document.querySelectorAll("#fp input").forEach(function (i) { i.addEventListener("change", function () { T.period = i.value; renderTeacher(); }); });
   }
 
