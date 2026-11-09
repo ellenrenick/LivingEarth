@@ -1,0 +1,460 @@
+<title>Mutations Warm-Up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<style>
+/* Layout: one centered column (max 720px) with a progress strip on top; question, then feedback panel directly beneath it. Teacher view is a wider table layout behind a button. */
+:root {
+  --bg: #f3f6f5;
+  --surface: #ffffff;
+  --ink: #15302b;
+  --muted: #556964;
+  --line: #d3dedb;
+  --accent: #0e7566;
+  --accent-ink: #ffffff;
+  --good: #1f7a3a;
+  --good-bg: #e3f4e8;
+  --bad: #a8431a;
+  --bad-bg: #fbece3;
+  --focus: #1a5fd0;
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1b19; --surface: #172826; --ink: #e5f0ed; --muted: #9db4ae; --line: #2c423e;
+    --accent: #3fc2ad; --accent-ink: #072520; --good: #6fd68c; --good-bg: #17331f;
+    --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1b19; --surface: #172826; --ink: #e5f0ed; --muted: #9db4ae; --line: #2c423e;
+  --accent: #3fc2ad; --accent-ink: #072520; --good: #6fd68c; --good-bg: #17331f;
+  --bad: #f0a27a; --bad-bg: #3a2418; --focus: #7ab0ff; color-scheme: dark;
+}
+:root { --muted: #4d625d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --muted: #9db4ae; } }
+:root[data-theme="dark"] { --muted: #9db4ae; }
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+  padding-block: 20px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.wrap.wide { max-width: 1100px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: 2rem; font-weight: 800; }
+h2 { font-size: 1.35rem; font-weight: 600; }
+h3 { font-size: 1.05rem; font-weight: 600; }
+p { margin: 0; }
+.eyebrow { font-size: .8rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.target { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+label.field { display: flex; flex-direction: column; gap: 6px; font-weight: 700; }
+input[type=text] { font: inherit; padding: 12px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); width: 100%; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+legend { font-weight: 700; padding: 0; margin-bottom: 8px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pills label { min-width: 64px; padding: 10px 16px; text-align: center; border: 2px solid var(--line); border-radius: 8px; cursor: pointer; background: var(--bg); font-weight: 700; user-select: none; }
+.pills input:checked + label { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.pills input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+button { font: inherit; font-weight: 700; padding: 12px 20px; border-radius: 8px; border: 2px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+button.ghost { background: transparent; color: var(--accent); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.err { color: var(--bad); font-weight: 700; min-height: 1.4em; }
+
+.progress { display: flex; gap: 6px; }
+.progress span { flex: 1; height: 8px; border-radius: 4px; background: var(--line); }
+.progress span.cur { background: var(--accent); }
+.progress span.ok { background: var(--good); }
+.progress span.miss { background: var(--bad); }
+
+.ref { font-size: .85rem; color: var(--muted); font-weight: 700; }
+.choices { display: flex; flex-direction: column; gap: 10px; }
+.choice { display: flex; gap: 12px; align-items: flex-start; text-align: left; width: 100%; padding: 12px 14px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font-weight: 400; }
+.choice .mark { flex: none; width: 22px; height: 22px; border: 2px solid var(--muted); border-radius: 50%; margin-top: 1px; display: grid; place-items: center; font-size: .8rem; font-weight: 700; }
+.choice.multi .mark { border-radius: 5px; }
+.choice[aria-pressed="true"] { border-color: var(--accent); }
+.choice[aria-pressed="true"] .mark { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.choice.locked { cursor: default; }
+.choice.right { border-color: var(--good); background: var(--good-bg); }
+.choice.wrong { border-color: var(--bad); background: var(--bad-bg); }
+.choice.out { opacity: .55; }
+
+.fb { border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border: 2px solid; }
+.fb.good { background: var(--good-bg); border-color: var(--good); }
+.fb.bad { background: var(--bad-bg); border-color: var(--bad); }
+.fb .head { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; }
+.fb.good .head { color: var(--good); } .fb.bad .head { color: var(--bad); }
+.fb ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.fb .keyidea { font-weight: 700; }
+
+.big { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.score { font-family: var(--font-display); font-size: 4.5rem; font-weight: 800; line-height: 1; color: var(--accent); }
+.score small { font-size: 1.4rem; color: var(--muted); font-weight: 600; }
+.levels { display: grid; gap: 6px; }
+.level { display: flex; gap: 10px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); }
+.level b { flex: none; width: 1.4em; }
+.level.you { border: 2px solid var(--accent); background: var(--surface); font-weight: 700; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: .95rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+td.num, th.num { text-align: right; }
+.scroll { overflow-x: auto; max-width: 100%; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.grid2 > * { min-width: 0; }
+.bar { display: flex; align-items: center; gap: 10px; }
+.bar i { display: block; height: 14px; border-radius: 3px; background: var(--accent); }
+.s4 { background: var(--good-bg); } .s1 { background: var(--bad-bg); }
+.status { font-size: .95rem; color: var(--muted); }
+.status.bad { color: var(--bad); font-weight: 700; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+@media (prefers-reduced-motion: no-preference) { .fb { animation: rise .25s ease-out; } @keyframes rise { from { opacity: 0; transform: translateY(6px); } } }
+</style>
+
+<div class="wrap" id="app"></div>
+
+<script>
+(function () {
+  "use strict";
+  var TARGET = "LS3-2.3";
+  var TEACHERS = ["Renick", "Silva", "Bogner", "Leapley"];
+  var PERIODS = [1, 2, 3, 5, 6, 7];
+
+  // Question bank. "why" is the reteach for that specific wrong answer.
+  var ITEMS = [
+    { skill: "What a copying error is", ref: "Day 7 mini-lesson: How do mutations happen?", type: "single",
+      text: "Before a cell divides, it copies all of its DNA. Cells check the copy, and most copying errors are fixed. What is a rare copying error that stays?",
+      key: "A rare copying error that is not fixed becomes a mutation. A mutation is a change in the DNA sequence.",
+      choices: [
+        { t: "A mutation, which is a change in the DNA sequence", ok: true },
+        { t: "A new combination of alleles, made when a sperm and an egg join", why: "That is fertilization, which you studied on Day 6. A copying error is a mistake made when DNA is copied, so it changes the DNA itself." },
+        { t: "A change that is always fixed later, so it never affects the DNA", why: "Cells fix most copying errors, but a rare one stays. The ones that stay are the mutations." },
+        { t: "A change in how the body looks, like a suntan, that is not in the DNA", why: "A suntan is a change in how a body looks, and it is not in the DNA. A copying error that stays is a change in the DNA itself." }
+      ] },
+    { skill: "Body cell or eggs and sperm", ref: "Day 7 sort: Who passes it on?", type: "tf",
+      text: "True or false: A mutation in a person's skin cell can be passed on to their children.",
+      key: "A change in a body cell, like a skin cell, is not passed on. A change in a cell that makes eggs or sperm can be.",
+      choices: [
+        { t: "True", why: "A skin cell is a body cell. A change in a body cell is not passed on to children. Only a change in a cell that makes eggs or sperm can be." },
+        { t: "False", ok: true }
+      ] },
+    { skill: "Which change is inherited", ref: "Day 7 sort: Who passes it on? Five cases", type: "single",
+      text: "In an animal, which change could the next generation inherit?",
+      key: "In animals, a change is inherited only if it is in a cell that makes eggs or sperm. Skin, muscle, and lung cells are body cells.",
+      choices: [
+        { t: "A copying error in a cell that makes sperm", ok: true },
+        { t: "UV light damages DNA in a skin cell", why: "Skin is a body cell. UV light can change its DNA, but the change is not passed on, because the skin cell does not make eggs or sperm." },
+        { t: "A copying error in a muscle cell of the leg", why: "Muscle is a body cell. A change in a body cell is not passed on, even when it is a real mutation." },
+        { t: "Smoke damages DNA in a lung cell", why: "Lung is a body cell. A change in a body cell is not passed on. Only a change in a cell that makes eggs or sperm can be." }
+      ] },
+    { skill: "Why a skin mutation is not inherited", ref: "Day 7 evidence: UV light and mutations", type: "single",
+      text: "In the UV data, more UV light meant more mutations. A lifeguard gets a lot of UV light, so many of her skin cells have mutations. Why won't her children inherit these mutations?",
+      key: "UV light damages DNA, and more UV means more mutations. But skin cells are body cells that do not make eggs or sperm, so the change is not passed on.",
+      choices: [
+        { t: "The mutations are in skin cells, which do not make eggs or sperm", ok: true },
+        { t: "UV light cannot change the DNA of any cell in the body", why: "UV light can damage DNA. In the data, more UV light meant more mutations. The reason is where the mutation is, not whether UV can change DNA." },
+        { t: "Mutations are only passed on from fathers, never from mothers", why: "Mothers can pass a change on too, through the cells that make eggs. A change is inherited if it is in a cell that makes eggs or sperm." },
+        { t: "Mutations in skin cells are always fixed before they matter", why: "Cells fix most copying errors, but UV damage can stay in a cell. The reason her children will not inherit it is that skin is a body cell, not a cell that makes eggs or sperm." }
+      ] },
+    { skill: "Why a one-letter change matters", ref: "Unit 2.1 and Day 7 warm-up: GAG to GTG", type: "single",
+      text: "In Unit 2.1, one DNA letter changed (GAG to GTG) and one amino acid changed (Glu to Val). Why might a one-letter mutation matter?",
+      key: "A mutation changes the DNA sequence, and a different amino acid in a protein can make the protein work differently.",
+      choices: [
+        { t: "A different amino acid can make the protein work differently", ok: true },
+        { t: "The protein is no longer made by any cell in the body", why: "In the Glu to Val example, the protein was still made. One amino acid was different, and that can change how the protein works." },
+        { t: "Every other gene in the cell changes in the same way", why: "A mutation changes the DNA only at the spot where it happens. The other genes stay the same." },
+        { t: "The mutation is copied into every cell of the body right away", why: "A mutation is in the cell where it happened, and in copies of that cell. It does not spread to every cell. That is also why a skin-cell mutation stays in the skin." }
+      ] }
+  ];
+
+  // 4-point scale from first-try correct answers out of 5.
+  var LEVELS = [
+    { n: 4, name: "Mastery", d: "You got every question right on the first try." },
+    { n: 3, name: "Proficient", d: "4 of 5 right on the first try. This meets the class goal." },
+    { n: 2, name: "Developing", d: "2 or 3 of 5 right on the first try. Review the reteach notes below." },
+    { n: 1, name: "Beginning", d: "0 or 1 of 5 right on the first try. Ask for help and review the reteach notes below." }
+  ];
+  function toScale(c) { return c >= 5 ? 4 : c === 4 ? 3 : c >= 2 ? 2 : 1; }
+
+  var app = document.getElementById("app");
+  var db = null, userCap = null, dl = null, canEdit = false;
+  var S = { who: { name: "", teacher: "", period: "" }, i: 0, order: [], sel: [], tries: 0, firstOk: [], finalOk: [], tryCount: [], saved: "idle", fbHtml: "" };
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  /* ---------- start screen ---------- */
+  function viewStart(err) {
+    var saved = {}; try { saved = JSON.parse(lsGet("ls323who") || "{}"); } catch (e) {}
+    var w = S.who.name ? S.who : saved;
+    app.className = "wrap";
+    app.innerHTML =
+      '<div class="topbar"><span class="eyebrow">Unit 2.2 · Warm-up</span>' + (canEdit ? '<button class="ghost" id="tbtn">Teacher data</button>' : "") + "</div>" +
+      "<h1>Copying Errors and Mutations</h1>" +
+      '<div class="target"><b>Learning target ' + TARGET + ':</b> I can explain how copying errors and things like UV light change genes, and when that change is inherited.</div>' +
+      '<p>Answer 5 questions about Day 7 from memory. After each one you get feedback right away. If you miss one, you get a short reteach and a second try.</p>' +
+      '<form class="card" id="f" novalidate>' +
+      '<label class="field" for="nm">First and last name<input type="text" id="nm" autocomplete="off" value="' + esc(w.name || "") + '"></label>' +
+      '<fieldset><legend>My teacher</legend><div class="pills" id="tp">' + TEACHERS.map(function (t) {
+        return '<input type="radio" name="teacher" id="t_' + t + '" value="' + t + '"' + (w.teacher === t ? " checked" : "") + '><label for="t_' + t + '">' + t + "</label>"; }).join("") + "</div></fieldset>" +
+      '<fieldset><legend>My period</legend><div class="pills" id="pp">' + PERIODS.map(function (p) {
+        return '<input type="radio" name="period" id="p_' + p + '" value="' + p + '"' + (String(w.period) === String(p) ? " checked" : "") + '><label for="p_' + p + '">' + p + "</label>"; }).join("") + "</div></fieldset>" +
+      '<div class="err" id="err" role="alert">' + esc(err || "") + '</div>' +
+      '<div class="row"><button type="submit">Start</button></div></form>';
+    document.getElementById("f").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("nm").value.trim();
+      var t = (document.querySelector('input[name=teacher]:checked') || {}).value;
+      var p = (document.querySelector('input[name=period]:checked') || {}).value;
+      if (name.length < 3 || name.indexOf(" ") < 0) return viewStart("Type your first and last name.");
+      if (!t) return viewStart("Pick your teacher.");
+      if (!p) return viewStart("Pick your period.");
+      S.who = { name: name, teacher: t, period: p };
+      lsSet("ls323who", JSON.stringify(S.who));
+      S.i = 0; S.firstOk = []; S.finalOk = []; S.tryCount = []; S.saved = "idle";
+      S.order = ITEMS.map(function (it) { return it.type === "tf" ? it.choices.map(function (_, k) { return k; }) : shuffle(it.choices.map(function (_, k) { return k; })); });
+      beginQ();
+    });
+    var tb = document.getElementById("tbtn"); if (tb) tb.addEventListener("click", viewTeacher);
+  }
+
+  /* ---------- questions ---------- */
+  function beginQ() { S.sel = []; S.tries = 0; S.out = []; S.fbHtml = ""; S.locked = false; S.state = "answer"; viewQ(); }
+
+  function progressHtml() {
+    return '<div class="progress" aria-label="Question ' + (S.i + 1) + ' of ' + ITEMS.length + '">' + ITEMS.map(function (_, k) {
+      var c = k < S.i ? (S.firstOk[k] ? "ok" : "miss") : k === S.i ? "cur" : "";
+      return "<span class=\"" + c + "\"></span>"; }).join("") + "</div>";
+  }
+
+  function viewQ() {
+    var it = ITEMS[S.i], multi = it.type === "multi";
+    app.className = "wrap";
+    var html = '<div class="topbar"><span class="eyebrow">Question ' + (S.i + 1) + " of " + ITEMS.length + "</span><span class=\"status\">" + esc(S.who.name) + "</span></div>" + progressHtml();
+    html += '<div class="card"><span class="ref">Think back to: ' + esc(it.ref) + "</span><h2>" + esc(it.text) + "</h2>" + (multi ? '<p class="status">Pick ' + it.pick + " answers.</p>" : "") + '<div class="choices" role="group" aria-label="Answer choices">';
+    S.order[S.i].forEach(function (ci) {
+      var c = it.choices[ci], pressed = S.sel.indexOf(ci) >= 0, cls = "choice" + (multi ? " multi" : "");
+      var mark = "";
+      if (S.locked) {
+        cls += " locked";
+        if (pressed && c.ok) { cls += " right"; mark = "✓"; }
+        else if (pressed && !c.ok) { cls += " wrong"; mark = "✗"; }
+        else if (S.state === "reveal" && c.ok) { cls += " right"; mark = "✓"; }
+        else cls += " out";
+      } else if (S.out.indexOf(ci) >= 0) { cls += " out"; }
+      html += '<button type="button" class="' + cls + '" data-ci="' + ci + '" aria-pressed="' + pressed + '"' + (S.locked ? " disabled" : "") + '><span class="mark" aria-hidden="true">' + (mark || (pressed ? "✓" : "")) + "</span><span>" + esc(c.t) + "</span></button>";
+    });
+    html += "</div>";
+    if (S.state === "answer") html += '<div class="row"><button type="button" id="chk" disabled>Check my answer</button></div>';
+    html += "</div>" + S.fbHtml;
+    app.innerHTML = html;
+
+    app.querySelectorAll(".choice:not(.locked)").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var ci = +b.getAttribute("data-ci");
+        if (multi) { var k = S.sel.indexOf(ci); if (k >= 0) S.sel.splice(k, 1); else if (S.sel.length < it.pick) S.sel.push(ci); }
+        else S.sel = [ci];
+        app.querySelectorAll(".choice").forEach(function (x) {
+          var on = S.sel.indexOf(+x.getAttribute("data-ci")) >= 0;
+          x.setAttribute("aria-pressed", on); x.querySelector(".mark").textContent = on ? "✓" : "";
+        });
+        var chk = document.getElementById("chk"); if (chk) chk.disabled = S.sel.length !== (multi ? it.pick : 1);
+      });
+    });
+    var chk = document.getElementById("chk"); if (chk) chk.addEventListener("click", check);
+    var nx = document.getElementById("nx"); if (nx) nx.addEventListener("click", next);
+    var rt = document.getElementById("rt"); if (rt) rt.addEventListener("click", retry);
+    if (S.fbHtml) { var f = app.querySelector(".fb"); if (f) f.scrollIntoView({ block: "nearest", behavior: "smooth" }); }
+  }
+
+  function check() {
+    var it = ITEMS[S.i];
+    var okSel = S.sel.filter(function (ci) { return it.choices[ci].ok; });
+    var needed = it.choices.filter(function (c) { return c.ok; }).length;
+    var correct = okSel.length === needed && S.sel.length === needed;
+    S.tries++;
+    if (S.tries === 1) S.firstOk[S.i] = correct;
+    S.finalOk[S.i] = correct; S.tryCount[S.i] = S.tries;
+    S.locked = true;
+    if (correct) {
+      S.state = "done";
+      S.fbHtml = '<div class="fb good" role="status"><div class="head">' + (S.tries === 1 ? "Correct" : "Correct this time") + '</div><p class="keyidea">' + esc(it.key) + '</p><div class="row"><button type="button" id="nx">' + nextLabel() + "</button></div></div>";
+    } else {
+      var items = [];
+      S.sel.forEach(function (ci) { var c = it.choices[ci]; if (!c.ok) items.push("<li><b>“" + esc(c.t) + "”</b> " + esc(c.why) + "</li>"); });
+      if (it.type === "multi") {
+        var missed = it.choices.filter(function (c, ci) { return c.ok && S.sel.indexOf(ci) < 0; });
+        if (missed.length) items.push("<li>You left out a correct answer. Look again for the choices that change the DNA itself.</li>");
+      }
+      if (S.tries === 1) {
+        S.state = "retry";
+        S.fbHtml = '<div class="fb bad" role="status"><div class="head">Not quite. Here is the reteach.</div><ul>' + items.join("") + '</ul><p class="keyidea">' + esc(it.key) + '</p><div class="row"><button type="button" id="rt">Try again</button></div></div>';
+      } else {
+        S.state = "reveal";
+        S.fbHtml = '<div class="fb bad" role="status"><div class="head">Still not it. The answer is marked in green.</div><p class="keyidea">' + esc(it.key) + '</p><div class="row"><button type="button" id="nx">' + nextLabel() + "</button></div></div>";
+      }
+    }
+    viewQ();
+  }
+  function nextLabel() { return S.i === ITEMS.length - 1 ? "See my results" : "Next question"; }
+  function retry() {
+    var it = ITEMS[S.i];
+    S.sel.forEach(function (ci) { if (!it.choices[ci].ok) S.out.push(ci); });
+    if (it.type !== "multi") { /* keep wrong choice greyed out */ }
+    S.sel = []; S.locked = false; S.state = "answer"; S.fbHtml = ""; viewQ();
+    var first = app.querySelector(".choice:not(.out)"); if (first) first.focus();
+  }
+  function next() { if (S.i === ITEMS.length - 1) return viewResults(); S.i++; beginQ(); window.scrollTo(0, 0); }
+
+  /* ---------- results ---------- */
+  function record() {
+    var raw = S.firstOk.filter(Boolean).length;
+    return { target: TARGET, name: S.who.name, teacher: S.who.teacher, period: Number(S.who.period), score4: toScale(raw), firstTryCorrect: raw,
+      firstTry: S.firstOk.map(function (b) { return b ? 1 : 0; }), finalCorrect: S.finalOk.filter(Boolean).length,
+      tries: S.tryCount.slice(), ts: Date.now() };
+  }
+  function viewResults() {
+    var rec = record();
+    app.className = "wrap";
+    var missed = [];
+    ITEMS.forEach(function (it, k) { if (!S.firstOk[k]) missed.push(k); });
+    var html = '<div class="topbar"><span class="eyebrow">Results · ' + esc(S.who.name) + '</span></div><h1>Your score</h1>' +
+      '<div class="card"><div class="big"><div class="score">' + rec.score4 + "<small> / 4</small></div><div><h2>" + LEVELS[4 - rec.score4].name + "</h2><p>" + LEVELS[4 - rec.score4].d + "</p></div></div>" +
+      '<div class="levels">' + LEVELS.map(function (l) { return '<div class="level' + (l.n === rec.score4 ? " you" : "") + '"><b>' + l.n + "</b><span>" + l.name + "</span></div>"; }).join("") + "</div></div>";
+    if (missed.length) {
+      html += '<div class="card"><h2>Review before you move on</h2><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px">' +
+        missed.map(function (k) { return "<li><b>" + esc(ITEMS[k].skill) + ".</b> " + esc(ITEMS[k].key) + "</li>"; }).join("") + "</ul></div>";
+    } else {
+      html += '<div class="card"><p class="keyidea">Remember: a copying error that is not fixed, or damage from UV light, is a mutation. A change is inherited only if it is in a cell that makes eggs or sperm.</p></div>';
+    }
+    html += '<div class="card" id="sv"></div>';
+    html += '<div class="row"><button type="button" class="ghost" id="again">Start over</button></div>';
+    app.innerHTML = html;
+    document.getElementById("again").addEventListener("click", function () { S.who = { name: "", teacher: "", period: "" }; viewStart(); });
+    if (S.saved === "idle") save(rec); else saveStatus(rec);
+  }
+  function saveStatus(rec) {
+    var el = document.getElementById("sv"); if (!el) return;
+    if (S.saved === "ok") el.innerHTML = '<p class="status">Your score was sent to your teacher. You can close this page.</p>';
+    else if (S.saved === "saving") el.innerHTML = '<p class="status">Sending your score…</p>';
+    else {
+      var txt = [rec.target, rec.name, rec.teacher, "Period " + rec.period, "Score " + rec.score4 + "/4", "First try " + rec.firstTryCorrect + "/5"].join(" | ");
+      el.innerHTML = '<p class="status bad">Your score could not be sent automatically. Show this screen to your teacher, or copy the line below and turn it in.</p>' +
+        '<input type="text" readonly id="cp" value="' + esc(txt) + '"><div class="row"><button type="button" id="cpb">Copy</button><button type="button" class="ghost" id="rs">Try sending again</button></div>';
+      document.getElementById("cpb").addEventListener("click", function () {
+        var i = document.getElementById("cp"); i.select();
+        try { navigator.clipboard.writeText(txt).catch(function () {}); } catch (e) {}
+      });
+      document.getElementById("rs").addEventListener("click", function () { save(rec); });
+    }
+  }
+  function save(rec) {
+    S.saved = "saving"; saveStatus(rec);
+    if (!db || !userCap) { S.saved = "fail"; return saveStatus(rec); }
+    var t = setTimeout(function () { if (S.saved === "saving") { S.saved = "fail"; saveStatus(rec); } }, 12000);
+    userCap.id().then(function (id) {
+      var ref = db.doc("responses/" + id);
+      return ref.get().then(function (snap) {
+        var old = snap.exists && snap.data() && snap.data().attempts ? snap.data().attempts : [];
+        return ref.set({ attempts: old.concat([rec]) });
+      });
+    }).then(function () { clearTimeout(t); S.saved = "ok"; saveStatus(rec); })
+      .catch(function () { clearTimeout(t); S.saved = "fail"; saveStatus(rec); });
+  }
+
+  /* ---------- teacher data ---------- */
+  var T = { rows: [], teacher: "All", period: "All", err: "" };
+  function viewTeacher() {
+    app.className = "wrap wide";
+    app.innerHTML = '<div class="topbar"><h1>Teacher data</h1><div class="row"><button class="ghost" id="rf">Refresh</button><button class="ghost" id="bk">Back to warm-up</button></div></div><p class="status" id="ld">Loading responses…</p>';
+    document.getElementById("bk").addEventListener("click", function () { viewStart(); });
+    document.getElementById("rf").addEventListener("click", viewTeacher);
+    if (!db) { document.getElementById("ld").textContent = "Saved data is not available in this view."; return; }
+    db.collection("responses").get().then(function (snap) {
+      T.rows = []; snap.docs.forEach(function (d) { var x = d.data(); (x && x.attempts || []).forEach(function (a) { a._uid = d.id; T.rows.push(a); }); });
+      renderTeacher();
+    }).catch(function () { document.getElementById("ld").textContent = "Could not load responses. You need editor access to this page to see them."; });
+  }
+  function keyOf(r) { return r._uid || [String(r.name).trim().toLowerCase(), r.teacher, r.period].join("|"); }
+  function renderTeacher() {
+    var sorted = T.rows.slice().sort(function (a, b) { return a.ts - b.ts; });
+    var seen = {};
+    sorted.forEach(function (r) { var k = keyOf(r); seen[k] = (seen[k] || 0) + 1; r._attempt = seen[k]; });
+    var firsts = sorted.filter(function (r) { return r._attempt === 1; });
+    var shown = firsts.filter(function (r) { return (T.teacher === "All" || r.teacher === T.teacher) && (T.period === "All" || String(r.period) === String(T.period)); });
+    function avg(a) { return a.length ? a.reduce(function (s, r) { return s + r.score4; }, 0) / a.length : null; }
+    function f1(x) { return x === null ? "–" : x.toFixed(2); }
+    function pct(n, d) { return d ? Math.round(100 * n / d) + "%" : "–"; }
+    var html = '<div class="topbar"><div class="row"><div class="pills" id="ft">' + ["All"].concat(TEACHERS).map(function (t) { return '<input type="radio" name="ft" id="ft_' + t + '" value="' + t + '"' + (T.teacher === t ? " checked" : "") + '><label for="ft_' + t + '">' + t + "</label>"; }).join("") +
+      '</div><div class="pills" id="fp">' + ["All"].concat(PERIODS).map(function (p) { return '<input type="radio" name="fp" id="fp_' + p + '" value="' + p + '"' + (String(T.period) === String(p) ? " checked" : "") + '><label for="fp_' + p + '">' + (p === "All" ? "All periods" : "P" + p) + "</label>"; }).join("") + "</div></div>" +
+      '<div class="row"><button id="cc">Copy CSV</button><button class="ghost" id="dc">Download CSV</button></div></div>';
+    html += '<p class="status">' + shown.length + " students shown (first attempt per student). " + (T.rows.length - firsts.length) + " repeat attempts are in the table but not in the averages.</p>";
+
+    // Distribution
+    var dist = [4, 3, 2, 1].map(function (n) { return shown.filter(function (r) { return r.score4 === n; }).length; });
+    var mx = Math.max.apply(null, dist.concat([1]));
+    var tops = ["Mastery", "Proficient", "Developing", "Beginning"];
+    html += '<div class="grid2"><div class="card"><h3>Scores on the 4-point scale</h3>' + dist.map(function (c, k) {
+      return '<div class="bar"><span style="width:7.5em">' + (4 - k) + " " + tops[k] + '</span><i style="width:' + (c / mx * 60) + '%;min-width:' + (c ? 4 : 0) + 'px"></i><b>' + c + "</b></div>"; }).join("") +
+      '<p class="status">Average ' + f1(avg(shown)) + " · at 3 or 4: " + pct(dist[0] + dist[1], shown.length) + "</p></div>";
+
+    // Per-question
+    html += '<div class="card"><h3>Right on the first try, by question</h3>' + ITEMS.map(function (it, k) {
+      var n = shown.filter(function (r) { return r.firstTry && r.firstTry[k] === 1; }).length;
+      var p = shown.length ? n / shown.length * 100 : 0;
+      return '<div class="bar"><span style="width:2.2em">Q' + (k + 1) + '</span><i style="width:' + (p * .6) + '%;min-width:' + (n ? 4 : 0) + 'px"></i><b>' + pct(n, shown.length) + '</b><span class="status">' + esc(it.skill) + "</span></div>"; }).join("") + "</div></div>";
+
+    // Teacher x period
+    var aTP = firsts;
+    html += '<div class="card"><h3>Average score by teacher and period (first attempts)</h3><div class="scroll"><table><thead><tr><th>Teacher</th>' + PERIODS.map(function (p) { return '<th class="num">P' + p + "</th>"; }).join("") + '<th class="num">All</th></tr></thead><tbody>' +
+      TEACHERS.map(function (t) {
+        var tr = aTP.filter(function (r) { return r.teacher === t; });
+        return "<tr><td><b>" + t + "</b></td>" + PERIODS.map(function (p) {
+          var c = tr.filter(function (r) { return r.period === p; }); var a = avg(c);
+          return '<td class="num ' + (a !== null ? (a >= 3 ? "s4" : a < 2 ? "s1" : "") : "") + '">' + f1(a) + (c.length ? ' <span class="status">(' + c.length + ")</span>" : "") + "</td>"; }).join("") +
+          '<td class="num"><b>' + f1(avg(tr)) + "</b></td></tr>"; }).join("") +
+      '<tr><td><b>All</b></td>' + PERIODS.map(function (p) { return '<td class="num">' + f1(avg(aTP.filter(function (r) { return r.period === p; }))) + "</td>"; }).join("") + '<td class="num"><b>' + f1(avg(aTP)) + "</b></td></tr></tbody></table></div></div>";
+
+    // Student table
+    var tbl = sorted.filter(function (r) { return (T.teacher === "All" || r.teacher === T.teacher) && (T.period === "All" || String(r.period) === String(T.period)); }).sort(function (a, b) { return a.teacher.localeCompare(b.teacher) || a.period - b.period || String(a.name).localeCompare(b.name); });
+    html += '<div class="card"><h3>Students</h3><div class="scroll"><table><thead><tr><th>Teacher</th><th class="num">Per</th><th>Name</th><th class="num">Attempt</th><th class="num">Score (1–4)</th><th class="num">First-try right</th><th>Q1–Q5 first try</th></tr></thead><tbody>' +
+      (tbl.length ? tbl.map(function (r) { return "<tr><td>" + esc(r.teacher) + '</td><td class="num">' + r.period + "</td><td>" + esc(r.name) + '</td><td class="num">' + r._attempt + '</td><td class="num ' + (r.score4 >= 3 ? "s4" : r.score4 < 2 ? "s1" : "") + '"><b>' + r.score4 + '</b></td><td class="num">' + r.firstTryCorrect + "/5</td><td>" + (r.firstTry || []).map(function (v) { return v ? "✓" : "✗"; }).join(" ") + "</td></tr>"; }).join("") : '<tr><td colspan="7">No responses yet.</td></tr>') + "</tbody></table></div></div>";
+    app.innerHTML = '<div class="topbar"><h1>Teacher data</h1><div class="row"><button class="ghost" id="rf">Refresh</button><button class="ghost" id="bk">Back to warm-up</button></div></div>' + html;
+
+    function csv() {
+      var head = ["target", "teacher", "period", "name", "attempt", "score_4pt", "first_try_correct", "q1", "q2", "q3", "q4", "q5", "final_correct", "timestamp"];
+      var lines = [head.join(",")].concat(tbl.map(function (r) {
+        return [r.target, r.teacher, r.period, '"' + String(r.name).replace(/"/g, '""') + '"', r._attempt, r.score4, r.firstTryCorrect].concat(r.firstTry || [], [r.finalCorrect, new Date(r.ts).toISOString()]).join(","); }));
+      return lines.join("\n");
+    }
+    document.getElementById("bk").addEventListener("click", function () { viewStart(); });
+    document.getElementById("rf").addEventListener("click", viewTeacher);
+    document.getElementById("cc").addEventListener("click", function () { try { navigator.clipboard.writeText(csv()).then(function () { document.getElementById("cc").textContent = "Copied"; }).catch(function () { document.getElementById("cc").textContent = "Copy blocked: use Download"; }); } catch (e) { document.getElementById("cc").textContent = "Copy blocked: use Download"; } });
+    document.getElementById("dc").addEventListener("click", function () {
+      if (!dl) { document.getElementById("dc").textContent = "Download not available"; return; }
+      dl.save({ filename: "LS3-2.3-warmup-scores.csv", data: csv() }).catch(function () {});
+    });
+    document.querySelectorAll("#ft input").forEach(function (i) { i.addEventListener("change", function () { T.teacher = i.value; renderTeacher(); }); });
+    document.querySelectorAll("#fp input").forEach(function (i) { i.addEventListener("change", function () { T.period = i.value; renderTeacher(); }); });
+  }
+
+  viewStart();
+  if (window.claude && claude.use) {
+    claude.use("db").then(function (d) { db = d; }).catch(function () {});
+    claude.use("downloads").then(function (d) { dl = d; }).catch(function () {});
+    claude.use("user").then(function (u) { userCap = u; if (u) return u.canEdit(); }).then(function (ce) {
+      if (ce) { canEdit = true; if (document.getElementById("f")) viewStart(); }
+    }).catch(function () {});
+  }
+})();
+</script>
