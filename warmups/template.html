@@ -341,11 +341,33 @@ td.num, th.num { text-align: right; }
     app.innerHTML = '<div class="topbar"><h1>Teacher data</h1><div class="row"><button class="ghost" id="rf">Refresh</button><button class="ghost" id="bk">Back to warm-up</button></div></div><p class="status" id="ld">Loading responses…</p>';
     document.getElementById("bk").addEventListener("click", function () { viewStart(); });
     document.getElementById("rf").addEventListener("click", viewTeacher);
-    if (!db) { document.getElementById("ld").textContent = "Saved data is not available in this view."; return; }
+    if (!db) { document.getElementById("ld").textContent = "Saved data is not available in this view. Sign in to claude.ai with the account that owns this page."; return; }
+    load();
+  }
+  function load() {
+    var ld = document.getElementById("ld"); if (!ld) return;
+    ld.className = "status"; ld.textContent = "Loading responses…";
     db.collection("responses").get().then(function (snap) {
       T.rows = []; snap.docs.forEach(function (d) { var x = d.data(); (x && x.attempts || []).forEach(function (a) { a._uid = d.id; T.rows.push(a); }); });
-      renderTeacher();
-    }).catch(function () { document.getElementById("ld").textContent = "Could not load responses. You need editor access to this page to see them."; });
+      try { renderTeacher(); } catch (e) { loadFail(e, "Could not display the results"); }
+    }).catch(function (e) { loadFail(e, "Could not load responses"); });
+  }
+  function loadFail(e, head) {
+    var ld = document.getElementById("ld"); if (!ld) return;
+    var code = e && e.code ? e.code : "error", msg = e && e.message ? e.message : "";
+    var hint = code === "not_granted" ? "This view has not allowed the page to use saved data. Choose Allow access." : "Choose Try again. If it keeps happening, make sure you are signed in with the account that owns this page.";
+    ld.className = "status bad";
+    ld.innerHTML = esc(head) + " (" + esc(code) + (msg ? ": " + esc(msg) : "") + "). " + esc(hint) +
+      '<span class="row"><button type="button" id="rl">Try again</button><button type="button" class="ghost" id="ra2">Allow access</button><button type="button" class="ghost" id="rm">Open permissions</button></span>';
+    document.getElementById("rl").addEventListener("click", load);
+    document.getElementById("ra2").addEventListener("click", function () {
+      claude.use("permissions").then(function (p) { return p ? p.request(["db"]) : null; }).then(load).catch(load);
+    });
+    document.getElementById("rm").addEventListener("click", function () {
+      claude.use("permissions").then(function (p) { return p ? p.manage() : null; }).then(load).catch(function () {
+        var l2 = document.getElementById("ld"); if (l2) l2.insertAdjacentText("beforeend", " Open this page's Permissions menu from the top bar.");
+      });
+    });
   }
   function keyOf(r) { return r._uid || [String(r.name).trim().toLowerCase(), r.teacher, r.period].join("|"); }
   function renderTeacher() {
