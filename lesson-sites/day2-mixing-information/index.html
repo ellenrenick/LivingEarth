@@ -1,0 +1,403 @@
+<title>Day 2 Mixing Information</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: one narrow column of numbered steps, in the order the lesson runs. Blue and orange match the Unit 2.2 slide template. */
+:root {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --ink: #14213a;
+  --muted: #55627a;
+  --line: #d5deec;
+  --blue: #1f4fa8;
+  --blue-soft: #e3ecfb;
+  --orange: #d9600f;
+  --orange-soft: #fdeadb;
+  --done: #1d7a4d;
+  --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1626; --surface: #162239; --ink: #e8eefb; --muted: #9fb0cf; --line: #2a3a58;
+    --blue: #8db2ff; --blue-soft: #1c2f55; --orange: #ff9a4d; --orange-soft: #3a2616; --done: #5fd39a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1626; --surface: #162239; --ink: #e8eefb; --muted: #9fb0cf; --line: #2a3a58;
+  --blue: #8db2ff; --blue-soft: #1c2f55; --orange: #ff9a4d; --orange-soft: #3a2616; --done: #5fd39a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 56px;
+}
+.wrap { max-width: 720px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.12; text-wrap: balance; margin: 0; }
+a { color: var(--blue); }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; border-radius: 4px; }
+
+/* sticky progress */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding: 10px 0 8px; border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.bar-row { display: flex; align-items: center; gap: 12px; }
+.bar-label { font-size: 14px; font-weight: 700; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.track { flex: 1; height: 10px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.fill { height: 100%; width: 0; background: var(--orange); transition: width .3s ease; }
+@media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
+
+/* header */
+header { padding: 28px 0 8px; }
+.kick { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); margin: 0 0 8px; }
+h1 { font-size: clamp(34px, 8vw, 52px); font-weight: 800; color: var(--blue); }
+.sub { margin: 10px 0 0; color: var(--muted); font-size: 18px; }
+.target { margin: 22px 0 0; padding: 16px 18px; background: var(--blue-soft); border-radius: 10px; }
+.target b { display: block; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+.fq { margin: 14px 0 0; font-weight: 700; font-size: 19px; }
+
+.start { margin: 22px 0 0; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.start h2 { font-size: 20px; margin-bottom: 8px; }
+.start ul { margin: 0; padding-left: 20px; }
+.start li + li { margin-top: 4px; }
+
+/* steps */
+ol.steps { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 18px 18px; min-width: 0; }
+.step.done { border-color: var(--done); }
+.step-head { display: flex; gap: 14px; align-items: flex-start; }
+.num { flex: none; width: 42px; height: 42px; border-radius: 50%; background: var(--blue); color: var(--surface); font-family: var(--display); font-weight: 800; font-size: 21px; display: grid; place-items: center; }
+.step.done .num { background: var(--done); }
+.step-head h2 { font-size: 24px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip { font-size: 13px; font-weight: 700; padding: 2px 10px; border-radius: 99px; background: var(--blue-soft); color: var(--blue); }
+.chip.o { background: var(--orange-soft); color: var(--orange); }
+.body { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.body p { margin: 0; }
+.where { font-size: 15px; color: var(--muted); }
+.where b { color: var(--ink); }
+.frame { background: var(--bg); border-left: 4px solid var(--orange); border-radius: 0 8px 8px 0; padding: 12px 14px; }
+.frame p + p { margin-top: 8px; }
+.blank { display: inline-block; min-width: 3.2em; border-bottom: 2px solid var(--ink); margin: 0 2px; transform: translateY(-2px); }
+.bank { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.bank-l { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+.word { padding: 3px 12px; border: 1.5px solid var(--orange); color: var(--orange); border-radius: 99px; font-weight: 700; font-size: 15px; background: var(--surface); }
+dl.vocab { margin: 0; display: grid; gap: 10px; }
+dl.vocab div { padding: 10px 14px; background: var(--bg); border-radius: 8px; }
+dl.vocab dt { font-weight: 800; color: var(--blue); }
+dl.vocab dd { margin: 0; }
+ol.num-list { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 440px; font-size: 15px; }
+th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
+th { background: var(--blue-soft); color: var(--blue); font-weight: 700; }
+td.fill-in { background: var(--bg); }
+.source { padding: 14px; background: var(--bg); border-radius: 8px; display: grid; gap: 4px; }
+.source h3 { font-size: 18px; color: var(--blue); }
+
+.step-foot { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--line); }
+label.check { display: flex; align-items: center; gap: 10px; font-weight: 700; cursor: pointer; }
+label.check input { width: 24px; height: 24px; accent-color: var(--done); }
+button { font: inherit; font-weight: 700; cursor: pointer; border-radius: 8px; padding: 8px 14px; border: 1.5px solid var(--blue); background: transparent; color: var(--blue); }
+button:hover { background: var(--blue-soft); }
+button.primary { background: var(--orange); border-color: var(--orange); color: #1a0d02; }
+button.primary:hover { filter: brightness(1.08); background: var(--orange); }
+.timer { font-variant-numeric: tabular-nums; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; }
+.timer output { min-width: 3.4em; text-align: center; font-family: var(--display); font-size: 22px; }
+.timer.up output { color: var(--orange); }
+
+details { background: var(--bg); border-radius: 8px; padding: 10px 14px; }
+summary { cursor: pointer; font-weight: 700; color: var(--blue); }
+.deck { margin-top: 12px; display: grid; gap: 12px; }
+.piles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.pile { border: 1.5px dashed var(--line); border-radius: 8px; padding: 8px; text-align: center; min-width: 0; background: var(--surface); }
+.pile small { display: block; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.pile strong { display: block; font-family: var(--display); font-size: 18px; color: var(--blue); min-height: 1.4em; overflow-wrap: anywhere; }
+.pile.p2 strong { color: var(--orange); }
+.deck-note { font-size: 14px; color: var(--muted); margin: 0; }
+
+.final { margin-top: 26px; padding: 18px; border-radius: 12px; background: var(--blue-soft); border: 2px solid var(--done); color: var(--ink); display: none; }
+.final.show { display: block; }
+.final h2 { font-size: 24px; color: var(--done); }
+.final p { margin: 6px 0 0; }
+.reset { margin-top: 22px; text-align: center; }
+.reset button { border-color: var(--line); color: var(--muted); font-size: 14px; }
+@media (max-width: 520px) { .step { padding: 16px 14px; } .step-head h2 { font-size: 21px; } body { font-size: 16.5px; } }
+</style>
+
+<div class="bar" role="region" aria-label="Progress">
+  <div class="wrap bar-row">
+    <span class="bar-label" id="barLabel">0 of 6 done</span>
+    <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+  </div>
+</div>
+
+<div class="wrap">
+<header>
+  <p class="kick">Unit 2.2 · Inherited Instructions · HS-LS3-2</p>
+  <h1>Day 2: Mixing Information</h1>
+  <p class="sub">A substitute is here today. Work through the steps below in order. Your notebook is where your answers go.</p>
+  <p class="target"><b>Today's target (LS3-2.1)</b>I can name three ways new genetic variation arises.</p>
+  <p class="fq">Focus question: If offspring get information from the same two parents, why might each get a different combination?</p>
+</header>
+
+<section class="start" aria-labelledby="startH">
+  <h2 id="startH">Before you start</h2>
+  <ul>
+    <li>Get your notebook and a pencil.</li>
+    <li>Your notebook page is titled <b>Day 2: Mixing Information</b>. Copy the focus question onto it.</li>
+    <li>Tick the box at the bottom of each step when you finish it. The page remembers your ticks on this device.</li>
+    <li>Stuck? Reread the step, ask your group, then ask the sub.</li>
+  </ul>
+</section>
+
+<ol class="steps" id="steps">
+
+  <li class="step" data-id="vocab">
+    <div class="step-head">
+      <span class="num">1</span>
+      <div>
+        <h2>Today's vocabulary</h2>
+        <div class="meta"><span class="chip">On your own</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p class="where">In your notebook, find the <b>Vocabulary</b> table. For each word, write the word and its definition in your own words.</p>
+      <dl class="vocab">
+        <div><dt>sex cell</dt><dd>an egg or sperm cell. It carries one allele of each gene.</dd></div>
+        <div><dt>allele</dt><dd>one version of a gene.</dd></div>
+        <div><dt>combination</dt><dd>a particular mix of alleles put together.</dd></div>
+      </dl>
+    </div>
+  </li>
+
+  <li class="step" data-id="warm">
+    <div class="step-head">
+      <span class="num">2</span>
+      <div>
+        <h2>Warm-up: What we thought last lesson</h2>
+        <div class="meta"><span class="chip">3 min</span><span class="chip">On your own</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p class="where">In your notebook, under <b>“Warm-up”</b>, finish the three ideas from Day 1:</p>
+      <div class="frame">
+        <p>Idea 1: information is <span class="blank"></span> in different ways.</p>
+        <p>Idea 2: information <span class="blank"></span>.</p>
+        <p>Idea 3: the <span class="blank"></span> has an effect.</p>
+      </div>
+      <div class="bank"><span class="bank-l">Word bank</span><span class="word">environment</span><span class="word">combined</span><span class="word">changes</span></div>
+    </div>
+    <div class="step-foot" data-minutes="3"></div>
+  </li>
+
+  <li class="step" data-id="cards">
+    <div class="step-head">
+      <span class="num">3</span>
+      <div>
+        <h2>Use the cards to make offspring</h2>
+        <!-- virtual deck only -->
+
+        <div class="meta"><span class="chip">12 min</span><span class="chip">In your group</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p class="where">Glue the <b>“Card table: 3 offspring”</b> printable into your notebook under <b>“Make possible offspring”</b>. Offspring 1 is done for you. You make Offspring 2 and 3.</p>
+      <ol class="num-list">
+        <li>The 6 piles are below: Parent 1 fur color, ear shape, and pattern, then the same 3 for Parent 2.</li>
+        <li>Press <b>Draw 6 cards</b>. Each pile is shuffled and you get its top card, so you now hold 6 cards.</li>
+        <li>Write them in the next row of your table (Offspring 2).</li>
+        <li>Press <b>Draw 6 cards</b> again for Offspring 3. The cards go back into their piles each time.</li>
+      </ol>
+      <div class="deck">
+        <div class="piles" id="piles"></div>
+        <button class="primary" id="draw" type="button">Draw 6 cards</button>
+        <p class="deck-note" id="drawNote">Press the button to draw your first offspring.</p>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Offspring</th><th>Fur color (P1 + P2)</th><th>Ear shape (P1 + P2)</th><th>Pattern (P1 + P2)</th></tr></thead>
+          <tbody>
+            <tr><td>1 (done for you)</td><td>Black + White</td><td>Floppy + Pointed</td><td>Spotted + Solid</td></tr>
+            <tr><td>2</td><td class="fill-in"></td><td class="fill-in"></td><td class="fill-in"></td></tr>
+            <tr><td>3</td><td class="fill-in"></td><td class="fill-in"></td><td class="fill-in"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="step-foot" data-minutes="12"></div>
+  </li>
+
+  <li class="step" data-id="analyze">
+    <div class="step-head">
+      <span class="num">4</span>
+      <div>
+        <h2>What pattern do you see?</h2>
+        <div class="meta"><span class="chip">5 min</span><span class="chip">On your own</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p class="where">Look at your 3 offspring. In your notebook, under <b>“Analyze the pattern”</b>:</p>
+      <div class="frame">
+        <p>Every offspring got information from <span class="blank"></span> parents.</p>
+        <p>Each offspring got a <span class="blank"></span> combination of cards.</p>
+        <p>Different combinations can lead to different <span class="blank"></span>.</p>
+      </div>
+      <div class="bank"><span class="bank-l">Word bank</span><span class="word">different</span><span class="word">traits</span><span class="word">both</span></div>
+    </div>
+    <div class="step-foot" data-minutes="5"></div>
+  </li>
+
+  <li class="step" data-id="model">
+    <div class="step-head">
+      <span class="num">5</span>
+      <div>
+        <h2>Revise your Day 1 model</h2>
+        <div class="meta"><span class="chip">5 min</span><span class="chip">On your own</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p>Redraw or fix your Day 1 model. It must show:</p>
+      <ul class="num-list" style="list-style: disc">
+        <li>Parent 1 and Parent 2</li>
+        <li>information from each parent</li>
+        <li>the information being combined</li>
+        <li>two possible offspring</li>
+        <li>one similarity and one difference</li>
+      </ul>
+      <p class="where">In your notebook, under <b>“Revise our model”</b>, finish these sentences:</p>
+      <div class="frame">
+        <p>Offspring look like their parents because they receive <span class="blank"></span> from both parents.</p>
+        <p>Offspring may differ because <span class="blank"></span>.</p>
+      </div>
+      <div class="bank"><span class="bank-l">Word bank</span><span class="word">the combination is different</span><span class="word">information</span></div>
+    </div>
+    <div class="step-foot" data-minutes="5"></div>
+  </li>
+
+  <li class="step" data-id="read">
+    <div class="step-head">
+      <span class="num">6</span>
+      <div>
+        <h2>Three sources of new variation</h2>
+        <div class="meta"><span class="chip">5 min</span><span class="chip">Read, then write</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p>Scientists name three ways new genetic variation arises. Read all three, then fill in your notes.</p>
+      <div class="source">
+        <h3>1. New combinations of alleles</h3>
+        <p>Sex cells carry one version of each gene, and fertilization puts two together. The cards showed this. An <b>allele</b> is one version of a gene. Letters like B and b stand for two alleles of one gene. A <b>sex cell</b> is an egg or a sperm.</p>
+      </div>
+      <div class="source">
+        <h3>2. Copying errors</h3>
+        <p>DNA is copied before cells divide, and a rare error can slip through.</p>
+      </div>
+      <div class="source">
+        <h3>3. Mutations from the environment</h3>
+        <p>UV light and some chemicals can damage DNA. A <b>mutation</b> is a change in the DNA.</p>
+        <p>Day 1's idea 3 was about how an animal looks. Food, temperature, or a suntan can change how a body looks. That change is not in the DNA, so it is not inherited. UV light and some chemicals can change the DNA itself.</p>
+      </div>
+      <p class="where">In your notebook, under <b>“Three sources of variation”</b>:</p>
+      <div class="frame">
+        <p>1. New <span class="blank"></span> of alleles.</p>
+        <p>2. <span class="blank"></span> when DNA is copied.</p>
+        <p>3. Mutations caused by the <span class="blank"></span>.</p>
+      </div>
+      <div class="bank"><span class="bank-l">Word bank</span><span class="word">environment</span><span class="word">combinations</span><span class="word">errors</span></div>
+    </div>
+    <div class="step-foot" data-minutes="5"></div>
+  </li>
+</ol>
+
+<div class="final" id="final" role="status">
+  <h2>All 6 steps done.</h2>
+  <p>Make sure your notebook pages are complete. Wait quietly for the sub.</p>
+</div>
+
+<div class="reset"><button id="reset" type="button">Clear my ticks</button></div>
+</div>
+
+<script>
+(function () {
+  var KEY = "unit22-day2-done";
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { done = {}; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} }
+
+  function fmt(s) { var m = Math.floor(Math.abs(s) / 60), r = Math.abs(s) % 60; return (s < 0 ? "+" : "") + m + ":" + (r < 10 ? "0" : "") + r; }
+
+  steps.forEach(function (step) {
+    var id = step.getAttribute("data-id");
+    var foot = step.querySelector(".step-foot");
+    if (!foot) { foot = document.createElement("div"); foot.className = "step-foot"; step.appendChild(foot); }
+    var mins = parseInt(foot.getAttribute("data-minutes") || "0", 10);
+
+    if (mins) {
+      var t = document.createElement("div"); t.className = "timer";
+      var out = document.createElement("output"); out.textContent = fmt(mins * 60);
+      var go = document.createElement("button"); go.type = "button"; go.textContent = "Start " + mins + " min timer";
+      t.appendChild(out); t.appendChild(go); foot.appendChild(t);
+      var left = mins * 60, iv = null;
+      go.addEventListener("click", function () {
+        if (iv) { clearInterval(iv); iv = null; left = mins * 60; out.textContent = fmt(left); t.classList.remove("up"); go.textContent = "Start " + mins + " min timer"; return; }
+        go.textContent = "Reset";
+        iv = setInterval(function () { left -= 1; out.textContent = fmt(left); if (left <= 0) t.classList.add("up"); }, 1000);
+      });
+    }
+
+    var lab = document.createElement("label"); lab.className = "check";
+    var cb = document.createElement("input"); cb.type = "checkbox"; cb.id = "done-" + id;
+    lab.appendChild(cb); lab.appendChild(document.createTextNode("I finished this step"));
+    foot.appendChild(lab);
+    cb.checked = !!done[id]; step.classList.toggle("done", cb.checked);
+    cb.addEventListener("change", function () {
+      done[id] = cb.checked; step.classList.toggle("done", cb.checked); save(); update();
+    });
+  });
+
+  function update() {
+    var n = steps.filter(function (s) { return done[s.getAttribute("data-id")]; }).length;
+    document.getElementById("barLabel").textContent = n + " of " + steps.length + " done";
+    document.getElementById("fill").style.width = (n / steps.length * 100) + "%";
+    document.getElementById("final").classList.toggle("show", n === steps.length);
+  }
+  update();
+
+  document.getElementById("reset").addEventListener("click", function () {
+    done = {}; save();
+    steps.forEach(function (s) { s.classList.remove("done"); s.querySelector("input[type=checkbox]").checked = false; });
+    update();
+  });
+
+  // Virtual card deck
+  var genes = [
+    { n: "Fur color", o: ["Black", "White"] },
+    { n: "Ear shape", o: ["Floppy", "Pointed"] },
+    { n: "Pattern", o: ["Spotted", "Solid"] }
+  ];
+  var piles = document.getElementById("piles");
+  var cells = [];
+  [1, 2].forEach(function (p) {
+    genes.forEach(function (g) {
+      var d = document.createElement("div"); d.className = "pile p" + p;
+      d.innerHTML = "<small></small><strong>&ndash;</strong>";
+      d.querySelector("small").textContent = "P" + p + " " + g.n;
+      piles.appendChild(d); cells.push({ el: d.querySelector("strong"), g: g });
+    });
+  });
+  var draws = 0, note = document.getElementById("drawNote");
+  document.getElementById("draw").addEventListener("click", function () {
+    cells.forEach(function (c) { c.el.textContent = c.g.o[Math.floor(Math.random() * c.g.o.length)]; });
+    draws += 1;
+    note.textContent = "Draw " + draws + ". Copy these 6 cards into your table before you draw again." +
+      (draws === 1 ? " This one is for Offspring 2." : draws === 2 ? " This one is for Offspring 3." : " Extra draws are for practice.");
+  });
+})();
+</script>
