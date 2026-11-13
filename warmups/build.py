@@ -15,9 +15,14 @@ META = {
   "LS3-2.3": dict(TITLE="Mutations Warm-Up", H1="Copying Errors and Mutations", TARGET_TEXT="I can explain how copying errors and things like UV light change genes, and when that change is inherited.", LSKEY="ls323who", DAYS="Day 7",
     NOMISS="Remember: a copying error that is not fixed, or damage from UV light, is a mutation. A change is inherited only if it is in a cell that makes eggs or sperm."),
 }
+import json
+OLD="https://docs.google.com/spreadsheets/d/1Fx45ZUkwMlOvpCrSQp93OWG2BQGDjR9zgKSIFJkg37g/edit"
+NEW={"Renick":"14jryKNfUd4socSFmZTtPNqMKznHw3l1lbPpPt1B1MOA","Silva":"1G2MyT4rBntxw7xbxq7zJCy86_da9HBZRAB4HXDQU9-k","Bogner":"1FYK3AH9fwrUXovpCJ9qKpqwg71aZgQ7EBL2yBfncp30","Leapley":"1s7zqHMvuuG4Btf7kK18xBvy0rnoBEb0LKRbNX6Lsp5s"}
 for lt, m in META.items():
     out = T.replace("{{ITEMS}}", (H / f"items_{lt}.js").read_text()).replace("{{ENGINE}}", ENGINE).replace("{{ENGINE_CSS}}", CSS)
     out = out.replace("{{TARGET}}", lt).replace("{{CSV}}", f"{lt}-warmup-scores.csv")
+    pm = {} if lt == "LS3-2.1" else {k: "https://docs.google.com/spreadsheets/d/%s/edit" % v for k, v in NEW.items()}
+    out = out.replace("{{PASTE_MAP}}", json.dumps(pm)).replace("{{PASTE_DEFAULT}}", OLD)
     for k, v in m.items():
         out = out.replace("{{%s}}" % k, v)
     assert "{{" not in out, lt
