@@ -322,7 +322,7 @@ td.num, th.num { text-align: right; }
     else if (S.saved === "saving") el.innerHTML = '<p class="status">Sending your score…</p>';
     else {
       var txt = [rec.target, rec.name, rec.teacher, "Period " + rec.period, "Score " + rec.score4 + "/4", "First try " + rec.firstTryCorrect + "/" + ITEMS.length + ""].join(" | ");
-      el.innerHTML = '<p class="status bad">Your score could not be sent automatically. Show this screen to your teacher, or copy the line below and turn it in.</p>' +
+      el.innerHTML = '<p class="status bad">Your score could not be sent automatically. Show this screen to your teacher, or copy the line below and turn it in.</p><p class="status">Reason: ' + esc(S.why || "unknown") + ".</p>" +
         '<input type="text" readonly id="cp" value="' + esc(txt) + '"><div class="row"><button type="button" id="cpb">Copy</button><button type="button" class="ghost" id="rs">Try sending again</button></div>';
       document.getElementById("cpb").addEventListener("click", function () {
         var i = document.getElementById("cp"); i.select();
@@ -333,8 +333,11 @@ td.num, th.num { text-align: right; }
   }
   function save(rec) {
     S.saved = "saving"; saveStatus(rec);
-    if (!db || !userCap) { S.saved = "fail"; return saveStatus(rec); }
-    var t = setTimeout(function () { if (S.saved === "saving") { S.saved = "fail"; saveStatus(rec); } }, 12000);
+    if (!db || !userCap) {
+      S.why = !(window.claude && claude.use) ? "the page was not opened inside claude.ai" : !db ? "this device is not signed in to claude.ai, so the saving service is unavailable" : "this device is not signed in to claude.ai";
+      S.saved = "fail"; return saveStatus(rec);
+    }
+    var t = setTimeout(function () { if (S.saved === "saving") { S.why = "the saving service did not answer in time"; S.saved = "fail"; saveStatus(rec); } }, 12000);
     userCap.id().then(function (id) {
       var ref = db.doc("responses/" + id);
       return ref.get().then(function (snap) {
@@ -342,7 +345,7 @@ td.num, th.num { text-align: right; }
         return ref.set({ attempts: old.concat([rec]) });
       });
     }).then(function () { clearTimeout(t); S.saved = "ok"; saveStatus(rec); })
-      .catch(function () { clearTimeout(t); S.saved = "fail"; saveStatus(rec); });
+      .catch(function (e) { clearTimeout(t); S.why = "the saving service refused it (" + (e && e.code ? e.code : "unknown error") + ")"; S.saved = "fail"; saveStatus(rec); });
   }
 
   /* ---------- teacher data ---------- */
