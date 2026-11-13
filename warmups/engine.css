@@ -39,3 +39,8 @@ td.pcell.x { background: var(--bad-bg); }
 @media (prefers-reduced-motion: reduce) { .dzfill { transition: none; } }
 .punnett th, .punnett td { white-space: normal; padding: 8px 10px; }
 .turnin textarea { width: 100%; min-height: 190px; font: inherit; font-size: .95rem; line-height: 1.4; padding: 10px; border: 2px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); resize: vertical; }
+a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; border: 2px solid var(--accent); background: var(--accent); color: var(--accent-ink); font-weight: 700; text-decoration: none; }
+.turnin details { margin-top: 4px; }
+.turnin summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.turnin .punnett { width: 100%; font-size: .95rem; }
+.turnin .punnett th, .turnin .punnett td { padding: 6px 8px; font-size: .95rem; }
