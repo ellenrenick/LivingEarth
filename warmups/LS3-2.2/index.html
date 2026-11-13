@@ -254,6 +254,7 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
   function viewStart(err) {
     var saved = {}; try { saved = JSON.parse(lsGet("ls322who") || "{}"); } catch (e) {}
     var w = S.draft || (S.who.name ? S.who : saved);
+    if (w.name && !/^\d{6}$/.test(String(w.name))) w = { name: "", teacher: w.teacher, period: w.period };
     if (w.teacher && periodsFor(w.teacher).indexOf(Number(w.period)) < 0) w = { name: w.name, teacher: w.teacher, period: null };
     app.className = "wrap";
     app.innerHTML =
@@ -262,7 +263,7 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
       '<div class="target"><b>Learning target ' + TARGET + ':</b> I can describe how making sex cells and fertilization mix alleles into new combinations.</div>' +
       '<p>Answer 3 questions about Day 5 and Day 6 from memory. If you miss one, you get a quick activity to work it out, then a second try.</p>' +
       '<form class="card" id="f" novalidate>' +
-      '<label class="field" for="nm">First and last name<input type="text" id="nm" autocomplete="off" value="' + esc(w.name || "") + '"></label>' +
+      '<label class="field" for="nm">Your 6-digit student ID<input type="text" id="nm" inputmode="numeric" maxlength="6" autocomplete="off" value="' + esc(w.name || "") + '"></label>' +
       '<fieldset><legend>My teacher</legend><div class="pills" id="tp">' + TEACHERS.map(function (t) {
         return '<input type="radio" name="teacher" id="t_' + t + '" value="' + t + '"' + (w.teacher === t ? " checked" : "") + '><label for="t_' + t + '">' + t + "</label>"; }).join("") + "</div></fieldset>" +
       '<fieldset><legend>My period</legend><div class="pills" id="pp"></div></fieldset>' +
@@ -282,7 +283,7 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
       var t = (document.querySelector('input[name=teacher]:checked') || {}).value;
       var p = (document.querySelector('input[name=period]:checked') || {}).value;
       function fail(msg) { S.draft = { name: name, teacher: t || null, period: p || null }; viewStart(msg); }
-      if (name.length < 3 || name.indexOf(" ") < 0) return fail("Type your first and last name.");
+      if (!/^\d{6}$/.test(name)) return fail("Type your 6-digit student ID. It is 6 numbers.");
       if (!t) return fail("Pick your teacher.");
       if (!p || periodsFor(t).indexOf(Number(p)) < 0) return fail("Pick your period.");
       S.draft = null; S.who = { name: name, teacher: t, period: p };
@@ -312,7 +313,7 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
   function viewQ() {
     var it = ITEMS[S.i], multi = it.type === "multi";
     app.className = "wrap";
-    var html = '<div class="topbar"><span class="eyebrow">Question ' + (S.i + 1) + " of " + ITEMS.length + "</span><span class=\"status\">" + esc(S.who.name) + "</span></div>" + progressHtml();
+    var html = '<div class="topbar"><span class="eyebrow">Question ' + (S.i + 1) + " of " + ITEMS.length + "</span><span class=\"status\">ID " + esc(S.who.name) + "</span></div>" + progressHtml();
     html += '<div class="card"><span class="ref">Think back to: ' + esc(it.ref) + "</span><h2>" + esc(it.text) + "</h2>" + gridHtml(it) + (multi ? '<p class="status">Pick ' + it.pick + " answers.</p>" : "") + '<div class="choices" role="group" aria-label="Answer choices">';
     S.order[S.i].forEach(function (ci) {
       var c = it.choices[ci], pressed = S.sel.indexOf(ci) >= 0, cls = "choice" + (multi ? " multi" : "");
@@ -600,7 +601,7 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
     app.className = "wrap";
     var missed = [];
     ITEMS.forEach(function (it, k) { if (!S.firstOk[k]) missed.push(k); });
-    var html = '<div class="topbar"><span class="eyebrow">Results · ' + esc(S.who.name) + '</span></div><h1>Your score</h1>' +
+    var html = '<div class="topbar"><span class="eyebrow">Results · ID ' + esc(S.who.name) + '</span></div><h1>Your score</h1>' +
       '<div class="card"><div class="big"><div class="score">' + rec.score4 + "<small> / 4</small></div><div><h2>" + LEVELS[4 - rec.score4].name + "</h2><p>" + LEVELS[4 - rec.score4].d + "</p></div></div>" +
       '<div class="levels">' + LEVELS.map(function (l) { return '<div class="level' + (l.n === rec.score4 ? " you" : "") + '"><b>' + l.n + "</b><span>" + l.name + "</span></div>"; }).join("") + '</div></div><div class="card turnin" id="ti"></div>';
     if (missed.length) {
@@ -618,7 +619,7 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
   }
   function buildBlock(rec) {
     var when = new Date(rec.ts).toLocaleString("sv-SE", { timeZone: "America/Los_Angeles" }).slice(0, 16);
-    var lines = ["Unit 2.2 warm-up: Sex Cells and Fertilization (" + TARGET + ")", "Name: " + rec.name, "Teacher: " + rec.teacher + " | Period " + rec.period, "Score: " + rec.score4 + " out of 4", "Right on the first try: " + rec.firstTryCorrect + " of " + ITEMS.length];
+    var lines = ["Unit 2.2 warm-up: Sex Cells and Fertilization (" + TARGET + ")", "Student ID: " + rec.name, "Teacher: " + rec.teacher + " | Period " + rec.period, "Score: " + rec.score4 + " out of 4", "Right on the first try: " + rec.firstTryCorrect + " of " + ITEMS.length];
     ITEMS.forEach(function (it, k) { lines.push((k + 1) + ". " + it.skill + ": " + (S.firstOk[k] ? "right on the first try" : S.finalOk[k] ? "right after the reteach" : "not right yet")); });
     lines.push("Time: " + when);
     lines.push(["DATA", TARGET, rec.teacher, rec.period, String(rec.name).replace(/\|/g, "/"), rec.score4, rec.firstTryCorrect, rec.firstTry.join("-"), when].join(" | "));
@@ -643,10 +644,10 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
       '<p><b>Step 1.</b> Copy your results.</p>' +
       '<div class="row"><button type="button" id="cpb">Copy my results</button><span class="status" id="cps" aria-live="polite"></span></div>' +
       '<textarea id="tl" rows="2" readonly hidden aria-label="Your results line"></textarea>' +
-      '<div class="scroll"><table class="punnett"><tr><th>Warm-up</th><th>Teacher</th><th>Period</th><th>Name</th><th>Score</th></tr><tr><td>' + esc(TARGET) + "</td><td>" + esc(rec.teacher) + "</td><td>" + esc(rec.period) + "</td><td>" + esc(rec.name) + "</td><td>" + rec.score4 + " of 4</td></tr></table></div>" +
+      '<div class="scroll"><table class="punnett"><tr><th>Warm-up</th><th>Teacher</th><th>Period</th><th>Student ID</th><th>Score</th></tr><tr><td>' + esc(TARGET) + "</td><td>" + esc(rec.teacher) + "</td><td>" + esc(rec.period) + "</td><td>" + esc(rec.name) + "</td><td>" + rec.score4 + " of 4</td></tr></table></div>" +
       '<p><b>Step 2.</b> Open the class sheet. Click the first empty box in column A, under the last row. Then paste (Ctrl+V).</p>' +
       '<div class="row"><a class="btnlink" href="' + PASTE_URL + '" target="_blank" rel="noopener">Open the class sheet</a></div>' +
-      '<p class="status">Check that your name and score show up in the row you pasted.</p>' +
+      '<p class="status">Check that your ID and score show up in the row you pasted.</p>' +
       '<details><summary>Need the full text for Canvas instead?</summary><textarea id="tx" readonly rows="10" aria-label="Your full results"></textarea><div class="row"><button type="button" class="ghost" id="cpf">Copy the full text</button><span class="status" id="cpm" aria-live="polite"></span></div></details>';
     var ta = document.getElementById("tx"); ta.value = full;
     document.getElementById("cpb").addEventListener("click", function () { copyWithFallback(line, document.getElementById("tl"), document.getElementById("cps"), "Copied. Now open the class sheet and paste."); });
@@ -803,12 +804,12 @@ a.btnlink { display: inline-block; padding: 12px 20px; border-radius: 8px; borde
 
     // Student table
     var tbl = sorted.filter(function (r) { return (T.teacher === "All" || r.teacher === T.teacher) && (T.period === "All" || String(r.period) === String(T.period)); }).sort(function (a, b) { return a.teacher.localeCompare(b.teacher) || a.period - b.period || String(a.name).localeCompare(b.name); });
-    html += '<div class="card"><h3>Students</h3><div class="scroll"><table><thead><tr><th>Teacher</th><th class="num">Per</th><th>Name</th><th class="num">Attempt</th><th class="num">Score (1–4)</th><th class="num">First-try right</th><th>First try by question</th></tr></thead><tbody>' +
+    html += '<div class="card"><h3>Students</h3><div class="scroll"><table><thead><tr><th>Teacher</th><th class="num">Per</th><th>Student ID</th><th class="num">Attempt</th><th class="num">Score (1–4)</th><th class="num">First-try right</th><th>First try by question</th></tr></thead><tbody>' +
       (tbl.length ? tbl.map(function (r) { return "<tr><td>" + esc(r.teacher) + '</td><td class="num">' + r.period + "</td><td>" + esc(r.name) + '</td><td class="num">' + r._attempt + '</td><td class="num ' + (r.score4 >= 3 ? "s4" : r.score4 < 2 ? "s1" : "") + '"><b>' + r.score4 + '</b></td><td class="num">' + r.firstTryCorrect + "/" + ITEMS.length + "</td><td>" + (r.firstTry || []).map(function (v) { return v ? "✓" : "✗"; }).join(" ") + "</td></tr>"; }).join("") : '<tr><td colspan="7">No responses yet.</td></tr>') + "</tbody></table></div></div>";
     app.innerHTML = '<div class="topbar"><h1>Teacher data</h1><div class="row"><button class="ghost" id="rf">Refresh</button><button class="ghost" id="bk">Back to warm-up</button></div></div>' + html;
 
     function csv() {
-      var head = ["target", "teacher", "period", "name", "attempt", "score_4pt", "first_try_correct", "first_try_correct"].concat(ITEMS.map(function (_, k) { return "q" + (k + 1); }), ["final_correct", "timestamp"]);
+      var head = ["target", "teacher", "period", "student_id", "attempt", "score_4pt", "first_try_correct"].concat(ITEMS.map(function (_, k) { return "q" + (k + 1); }), ["final_correct", "timestamp"]);
       var lines = [head.join(",")].concat(tbl.map(function (r) {
         return [r.target, r.teacher, r.period, '"' + String(r.name).replace(/"/g, '""') + '"', r._attempt, r.score4, r.firstTryCorrect].concat(r.firstTry || [], [r.finalCorrect, new Date(r.ts).toISOString()]).join(","); }));
       return lines.join("\n");
